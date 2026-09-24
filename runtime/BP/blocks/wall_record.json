@@ -1,0 +1,687 @@
+{
+  "format_version": "1.26.50",
+  "minecraft:block": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:wall_record",
+      "menu_category": {
+        "category": "none"
+      },
+      "states": {
+        "kaleidoscope_tavern:facing": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "kaleidoscope_world_liquor:model_group": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "kaleidoscope_world_liquor:model_variant": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    "components": {
+      "minecraft:geometry": {
+        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__0"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__0",
+          "render_method": "alpha_test_single_sided",
+          "face_dimming": true,
+          "ambient_occlusion": 0
+        },
+        "default": {
+          "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__0",
+          "render_method": "alpha_test_single_sided",
+          "face_dimming": false,
+          "ambient_occlusion": 0
+        }
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          -7,
+          1,
+          7
+        ],
+        "size": [
+          14,
+          14,
+          1
+        ]
+      },
+      "minecraft:selection_box": {
+        "origin": [
+          -7,
+          1,
+          7
+        ],
+        "size": [
+          14,
+          14,
+          1
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.6
+      },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:movable": {
+        "movement_type": "immovable"
+      },
+      "kaleidoscope_world_liquor:furniture": {},
+      "minecraft:tick": {
+        "interval_range": [
+          20,
+          20
+        ],
+        "looping": true
+      },
+      "minecraft:transformation": {
+        "rotation": [
+          0,
+          180,
+          0
+        ]
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('kaleidoscope_tavern:facing') == 1",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_tavern:facing') == 2",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_tavern:facing') == 3",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              270,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__0"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__0",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__0",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__1"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__1",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__1",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__2"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__2",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__2",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__3"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__3",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__3",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__4"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__4",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__4",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__5"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__5",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__5",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__6"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__6",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__6",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__7"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__7",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__7",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__8"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__8",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__8",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__9"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__9",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__9",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__10"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__10",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__10",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__11"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__11",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__11",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__12"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__12",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__12",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__13"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__13",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__13",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__14"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__14",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__14",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__15"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__15",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__15",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__16"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__16",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__16",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__17"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__17",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__17",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__18"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__18",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__18",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__1"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__1",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__1",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__2"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__2",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__2",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__3"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__3",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__3",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__4"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__4",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__4",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__5"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__5",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__5",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__6"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__6",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            },
+            "default": {
+              "texture": "kwl_kaleidoscope_world_liquor__block__wall_record__6",
+              "render_method": "alpha_test_single_sided",
+              "face_dimming": false,
+              "ambient_occlusion": 0
+            }
+          }
+        }
+      }
+    ]
+  }
+}

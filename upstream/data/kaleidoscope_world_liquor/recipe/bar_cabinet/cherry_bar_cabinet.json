@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wood_ring",
+  "pattern": [
+    "XXX",
+    "X X",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:cherry_slab"
+    }
+  },
+  "result": {
+    "id": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+    "count": 1
+  }
+}

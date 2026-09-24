@@ -1,0 +1,7 @@
+{
+  "parent": "kaleidoscope_world_liquor:block/wall_record/base",
+  "textures": {
+    "particle": "kaleidoscope_world_liquor:block/music_disc_wait",
+    "texture": "kaleidoscope_world_liquor:block/music_disc_wait"
+  }
+}

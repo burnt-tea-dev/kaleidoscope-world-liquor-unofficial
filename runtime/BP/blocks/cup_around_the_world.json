@@ -1,0 +1,105 @@
+{
+  "format_version": "1.26.50",
+  "minecraft:block": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:cup_around_the_world",
+      "menu_category": {
+        "category": "none"
+      },
+      "states": {
+        "kaleidoscope_tavern:facing": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "components": {
+      "minecraft:geometry": {
+        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__mixology__around_the_world"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "kwl_kaleidoscope_world_liquor__block__mixology__around_the_world",
+          "render_method": "alpha_test_single_sided",
+          "face_dimming": true,
+          "ambient_occlusion": 0
+        },
+        "default": {
+          "texture": "kwl_kaleidoscope_world_liquor__block__mixology__around_the_world",
+          "render_method": "alpha_test_single_sided",
+          "face_dimming": false,
+          "ambient_occlusion": 0
+        }
+      },
+      "minecraft:collision_box": false,
+      "minecraft:selection_box": {
+        "origin": [
+          -7,
+          0,
+          -7
+        ],
+        "size": [
+          14,
+          16,
+          14
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.6
+      },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:movable": {
+        "movement_type": "immovable"
+      },
+      "kaleidoscope_tavern:cocktail_cup": {},
+      "minecraft:tick": {
+        "interval_range": [
+          20,
+          20
+        ],
+        "looping": true
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('kaleidoscope_tavern:facing') == 1",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_tavern:facing') == 2",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('kaleidoscope_tavern:facing') == 3",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

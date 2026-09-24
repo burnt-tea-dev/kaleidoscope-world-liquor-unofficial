@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,sealed=false": { "model": "kaleidoscope_world_liquor:block/bamboo_barrel" },
+    "facing=east,sealed=false":  { "model": "kaleidoscope_world_liquor:block/bamboo_barrel", "y": 90 },
+    "facing=south,sealed=false": { "model": "kaleidoscope_world_liquor:block/bamboo_barrel", "y": 180 },
+    "facing=west,sealed=false":  { "model": "kaleidoscope_world_liquor:block/bamboo_barrel", "y": 270 },
+    "facing=north,sealed=true":  { "model": "kaleidoscope_world_liquor:block/bamboo_barrel_sealed" },
+    "facing=east,sealed=true":   { "model": "kaleidoscope_world_liquor:block/bamboo_barrel_sealed", "y": 90 },
+    "facing=south,sealed=true":  { "model": "kaleidoscope_world_liquor:block/bamboo_barrel_sealed", "y": 180 },
+    "facing=west,sealed=true":   { "model": "kaleidoscope_world_liquor:block/bamboo_barrel_sealed", "y": 270 }
+  }
+}

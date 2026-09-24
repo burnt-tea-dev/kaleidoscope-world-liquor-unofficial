@@ -1,0 +1,12 @@
+{
+  "project": "Kaleidoscope World Liquor",
+  "authors": [
+    "ChenjdyUltra",
+    "bf_meow"
+  ],
+  "url": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor",
+  "fileId": 8704187,
+  "version": "1.1.8-neoforge+1.21.1",
+  "sha256": "d29a7507b3cfc90f9ff620d75e69102c0d25b3de8dbd0d89c73331e4c9e12205",
+  "license": "MIT + CC BY-NC-SA 4.0"
+}

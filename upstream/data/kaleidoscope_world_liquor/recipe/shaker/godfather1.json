@@ -1,0 +1,17 @@
+{
+  "type": "kaleidoscope_tavern:shaker",
+  "ingredients": [
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+    },
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+    },
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_gold"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:godfather"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "item": "kaleidoscope_world_liquor:around_the_world",
+  "effects": [
+    [
+      {
+        "effect": "kaleidoscope_world_liquor:crazy",
+        "duration": 0,
+        "amplifier": 0,
+        "probability": 1.0
+      }
+    ]
+  ]
+}

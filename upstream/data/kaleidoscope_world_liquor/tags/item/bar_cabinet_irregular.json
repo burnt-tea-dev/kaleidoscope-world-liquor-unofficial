@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "#kaleidoscope_doll:all_dolls",
+      "required": false
+    },
+    {
+      "id": "#kaleidoscope_cookery:feasts",
+      "required": false
+    },
+    {
+      "id": "#vinery:large_bottle",
+      "required": false
+    },
+    {
+      "id": "#farmersdelight:feasts",
+      "required": false
+    },
+    {
+      "id": "#kaleidoscope_chinesefood:feasts",
+      "required": false
+    },
+    "minecraft:cake",
+    "kaleidoscope_tavern:depth_charge",
+    "kaleidoscope_tavern:sculk_special",
+    "#kaleidoscope_tavern:bar_cabinet_irregular"
+  ]
+}

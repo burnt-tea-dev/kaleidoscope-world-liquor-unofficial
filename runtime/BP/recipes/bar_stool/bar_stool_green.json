@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:bar_stool_bar_stool_green"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "result": {
+      "item": "kaleidoscope_world_liquor:bar_stool_green",
+      "count": 1
+    },
+    "pattern": [
+      "W",
+      "C",
+      "L"
+    ],
+    "key": {
+      "C": {
+        "item": "minecraft:chain"
+      },
+      "L": {
+        "item": "minecraft:iron_ingot"
+      },
+      "W": {
+        "item": "minecraft:green_carpet"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:crafting_table"
+      }
+    ]
+  }
+}

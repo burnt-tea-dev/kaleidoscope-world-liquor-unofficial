@@ -1,0 +1,21 @@
+export const RECORD_MODELS = {
+  "minecraft:music_disc_13": 0,
+  "minecraft:music_disc_cat": 1,
+  "minecraft:music_disc_blocks": 2,
+  "minecraft:music_disc_chirp": 3,
+  "minecraft:music_disc_far": 4,
+  "minecraft:music_disc_mall": 5,
+  "minecraft:music_disc_mellohi": 6,
+  "minecraft:music_disc_stal": 7,
+  "minecraft:music_disc_strad": 8,
+  "minecraft:music_disc_ward": 9,
+  "minecraft:music_disc_11": 10,
+  "minecraft:music_disc_wait": 11,
+  "minecraft:music_disc_otherside": 12,
+  "minecraft:music_disc_pigstep": 13,
+  "minecraft:music_disc_5": 14,
+  "minecraft:music_disc_relic": 15,
+  "minecraft:music_disc_creator": 16,
+  "minecraft:music_disc_precipice": 17,
+  "minecraft:music_disc_creator_music_box": 18
+};

@@ -1,0 +1,7 @@
+{
+  "parent": "kaleidoscope_world_liquor:block/wall_record/base",
+  "textures": {
+    "particle": "kaleidoscope_world_liquor:block/4",
+    "texture": "kaleidoscope_world_liquor:block/4"
+  }
+}

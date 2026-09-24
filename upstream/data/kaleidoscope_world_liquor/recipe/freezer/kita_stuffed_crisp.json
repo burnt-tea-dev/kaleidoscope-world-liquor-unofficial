@@ -1,0 +1,16 @@
+{
+  "type": "kaleidoscope_world_liquor:freezer",
+  "fluid": "kaleidoscope_tavern:sweet_berries_juice",
+  "fluid_amount": 1000,
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_twilight:kita_stuffed_crisp",
+    "count": 1
+  },
+  "craft_time": 1800,
+  "texture": "kaleidoscope_world_liquor:block/snow"
+}

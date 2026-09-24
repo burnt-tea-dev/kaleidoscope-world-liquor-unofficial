@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:bar_cabinet_oak_cellar_cabinet"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "result": {
+      "item": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+      "count": 1
+    },
+    "pattern": [
+      "XXX",
+      "XXX",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:oak_slab"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:crafting_table"
+      }
+    ]
+  }
+}

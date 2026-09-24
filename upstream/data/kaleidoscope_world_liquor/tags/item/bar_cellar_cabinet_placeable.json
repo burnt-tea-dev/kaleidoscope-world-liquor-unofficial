@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#vinery:small_bottle",
+      "required": false
+    },
+    {
+      "id": "#youkaisfeasts:bottled",
+      "required": false
+    }
+  ]
+}

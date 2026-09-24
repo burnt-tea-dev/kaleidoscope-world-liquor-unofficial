@@ -1,0 +1,513 @@
+{
+  "resource_pack_name": "World Liquor",
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__dassai__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__dassai__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__dassai__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__dassai__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__dassai__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__dassai__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__dassai__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__dassai__count4"
+    },
+    "kwl_smc__block__brew__drink__ice_tea__count1": {
+      "textures": "textures/kwl/generated/smc__block__brew__drink__ice_tea__count1"
+    },
+    "kwl_smc__block__brew__drink__ice_tea__count2": {
+      "textures": "textures/kwl/generated/smc__block__brew__drink__ice_tea__count2"
+    },
+    "kwl_smc__block__brew__drink__ice_tea__count3": {
+      "textures": "textures/kwl/generated/smc__block__brew__drink__ice_tea__count3"
+    },
+    "kwl_smc__block__brew__drink__ice_tea__count4": {
+      "textures": "textures/kwl/generated/smc__block__brew__drink__ice_tea__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__maotai__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__maotai__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__maotai__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__maotai__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__maotai__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__maotai__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__maotai__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__maotai__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__pina_colada__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__pina_colada__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__pina_colada__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__pina_colada__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__pina_colada__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__pina_colada__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__pina_colada__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__pina_colada__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__sour_plum__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__sour_plum__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__sour_plum__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__sour_plum__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__sour_plum__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__sour_plum__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__sour_plum__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__sour_plum__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__strongbow__count1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__strongbow__count1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__strongbow__count2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__strongbow__count2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__strongbow__count3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__strongbow__count3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__drink__strongbow__count4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__strongbow__count4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__mixology__around_the_world": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__around_the_world"
+    },
+    "kwl_kaleidoscope_world_liquor__block__mixology__gin_tonic": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__gin_tonic"
+    },
+    "kwl_kaleidoscope_world_liquor__block__mixology__jerk": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__jerk"
+    },
+    "kwl_kaleidoscope_world_liquor__block__mixology__long_island_iced_tea": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__long_island_iced_tea"
+    },
+    "kwl_kaleidoscope_world_liquor__block__mixology__pine_colada": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__pine_colada"
+    },
+    "kwl_kaleidoscope_world_liquor__block__mixology__shrimp_cocktail": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__shrimp_cocktail"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_white": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_white"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_orange": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_orange"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_magenta": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_magenta"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_light_blue": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_light_blue"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_yellow": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_yellow"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_lime": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_lime"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_pink": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_pink"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_gray": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_gray"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_light_gray": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_light_gray"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_cyan": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_cyan"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_purple": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_purple"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_blue": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_blue"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_brown": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_brown"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_green": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_green"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_red": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_red"
+    },
+    "kwl_kaleidoscope_world_liquor__block__bar__stool__bar_stool_black": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__bar__stool__bar_stool_black"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__left": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__left"
+    },
+    "kwl_kaleidoscope_world_liquor__block__fridge_close": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__fridge_close"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__middle": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__middle"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__right": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__right"
+    },
+    "kwl_kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__single": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__single"
+    },
+    "kwl_kaleidoscope_world_liquor__block__fridge_open": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__fridge_open"
+    },
+    "kwl_bfxm_painting": {
+      "textures": "textures/kwl/paintings/bfxm_painting"
+    },
+    "kwl_bmt_painting": {
+      "textures": "textures/kwl/paintings/bmt_painting"
+    },
+    "kwl_dream_painting": {
+      "textures": "textures/kwl/paintings/dream_painting"
+    },
+    "kwl_cha_painting": {
+      "textures": "textures/kwl/paintings/cha_painting"
+    },
+    "kwl_chen_painting": {
+      "textures": "textures/kwl/paintings/chen_painting"
+    },
+    "kwl_rabbit_painting": {
+      "textures": "textures/kwl/paintings/rabbit_painting"
+    },
+    "kwl_ch_painting": {
+      "textures": "textures/kwl/paintings/ch_painting"
+    },
+    "kwl_qxxy_painting": {
+      "textures": "textures/kwl/paintings/qxxy_painting"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__0": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__0"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__5": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__5"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__6": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__6"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__7": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__7"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__8": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__8"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__9": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__9"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__10": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__10"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__11": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__11"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__12": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__12"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__13": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__13"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__14": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__14"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__15": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__15"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__16": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__16"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__17": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__17"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__minecraft__18": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__minecraft__18"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__1": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__1"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__2": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__2"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__3": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__3"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__4": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__4"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__5": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__5"
+    },
+    "kwl_kaleidoscope_world_liquor__block__wall_record__6": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__6"
+    }
+  }
+}

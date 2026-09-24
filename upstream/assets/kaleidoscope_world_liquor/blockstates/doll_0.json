@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "kaleidoscope_world_liquor:block/doll_0"
+    },
+    "facing=east": {
+      "model": "kaleidoscope_world_liquor:block/doll_0",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "kaleidoscope_world_liquor:block/doll_0",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "kaleidoscope_world_liquor:block/doll_0",
+      "y": 270
+    }
+  }
+}

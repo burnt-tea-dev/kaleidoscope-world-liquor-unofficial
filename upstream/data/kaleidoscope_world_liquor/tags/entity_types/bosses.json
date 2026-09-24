@@ -1,0 +1,112 @@
+{
+  "values": [
+    "minecraft:ender_dragon",
+    "minecraft:wither",
+    "minecraft:warden",
+    {
+      "id": "youkaishomecoming:rumia",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:warped_mosco",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:void_worm",
+      "required": false
+    },
+    {
+      "id": "cataclysm:ender_golem",
+      "required": false
+    },
+    {
+      "id": "cataclysm:ignited_revenant",
+      "required": false
+    },
+    {
+      "id": "cataclysm:the_prowler",
+      "required": false
+    },
+    {
+      "id": "cataclysm:coralssus",
+      "required": false
+    },
+    {
+      "id": "cataclysm:coral_golem",
+      "required": false
+    },
+    {
+      "id": "cataclysm:amethyst_crab",
+      "required": false
+    },
+    {
+      "id": "cataclysm:kobolediator",
+      "required": false
+    },
+    {
+      "id": "cataclysm:wadjet",
+      "required": false
+    },
+    {
+      "id": "cataclysm:aptrgangr",
+      "required": false
+    },
+    {
+      "id": "cataclysm:clawdian",
+      "required": false
+    },
+    {
+      "id": "cataclysm:hippocamtus",
+      "required": false
+    },
+    {
+      "id": "companions:sacred_pontiff",
+      "required": false
+    },
+    {
+      "id": "legendary_monsters:endersent",
+      "required": false
+    },
+    {
+      "id": "legendary_monsters:chorusling",
+      "required": false
+    },
+    {
+      "id": "legendary_monsters:warped_fungussus",
+      "required": false
+    },
+    {
+      "id": "legendary_monsters:dune_sentinel",
+      "required": false
+    },
+    {
+      "id": "legendary_monsters:flame_drifter",
+      "required": false
+    },
+    {
+      "id": "legendary_monsters:flameborn_guard",
+      "required": false
+    },
+    {
+      "id": "illagerinvasion:inquisitor",
+      "required": false
+    },
+    {
+      "id": "illagerinvasion:invoker",
+      "required": false
+    },
+    {
+      "id": "smc:cloudian",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:dead_king_corpse",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:fire_boss",
+      "required": false
+    }
+  ]
+}
+

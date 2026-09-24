@@ -1,0 +1,4 @@
+pack.name=Kaleidoscope World Liquor (Unofficial) BP
+pack.description=Unofficial Bedrock port. Requires Kaleidoscope Tavern (Unofficial). Public test build.
+kaleidoscope_world_liquor:itemGroup.drinks=Kaleidoscope World Liquor (Unofficial)
+kaleidoscope_world_liquor:itemGroup.furniture=Kaleidoscope World Liquor (Unofficial) — Furniture

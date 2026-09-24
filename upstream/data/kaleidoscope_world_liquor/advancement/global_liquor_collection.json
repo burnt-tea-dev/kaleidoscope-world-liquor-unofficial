@@ -1,0 +1,174 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "bombay_sapphire_gin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:bombay_sapphire_gin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jack_daniel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:jack_daniel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smirnoff_red_vodka": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:smirnoff_red_vodka"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "absolut_vodka": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:absolut_vodka"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pina_colada": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:pina_colada"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "maotai": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:maotai"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bacardi_carta_blanca": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:bacardi_carta_blanca"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "spiryt_vodka": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:spiryt_vodka"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "skyy_vodka": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:skyy_vodka"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "johnnie_walker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:johnnie_walker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "lafite_1982": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:lafite_1982"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "strongbow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:strongbow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "dassai": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:dassai"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bamboo_leaf_green_liquor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.kaleidoscope_world_liquor.collect_all_liquor.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin"
+    },
+    "title": {
+      "translate": "advancements.kaleidoscope_world_liquor.collect_all_liquor.title"
+    }
+  },
+  "requirements": [
+    ["bombay_sapphire_gin"],
+    ["jack_daniel"],
+    ["smirnoff_red_vodka"],
+    ["absolut_vodka"],
+    ["pina_colada"],
+    ["maotai"],
+    ["bacardi_carta_blanca"],
+    ["spiryt_vodka"],
+    ["skyy_vodka"],
+    ["johnnie_walker"],
+    ["lafite_1982"],
+    ["strongbow"],
+    ["dassai"],
+    ["bamboo_leaf_green_liquor"]
+  ]
+}

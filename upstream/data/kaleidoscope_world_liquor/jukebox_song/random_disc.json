@@ -1,0 +1,6 @@
+{
+  "sound_event": "kaleidoscope_world_liquor:music_disc.random_disc",
+  "description": "随机播放酒吧风格音乐",
+  "length_in_seconds": 2920.0,
+  "comparator_output": 5
+}

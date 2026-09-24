@@ -1,0 +1,19 @@
+{
+  "format_version": "1.26.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:custom_record",
+      "menu_category": {
+        "category": "equipment",
+        "group": "kaleidoscope_world_liquor:itemGroup.furniture"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.kaleidoscope_world_liquor:custom_record.name"
+      },
+      "minecraft:icon": "kwl_custom_record",
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

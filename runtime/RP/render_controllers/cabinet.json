@@ -1,0 +1,114 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.kwl.cabinet": {
+      "arrays": {
+        "geometries": {
+          "Array.models": [
+            "Geometry.kind_0",
+            "Geometry.kind_1",
+            "Geometry.kind_2",
+            "Geometry.kind_3",
+            "Geometry.kind_4",
+            "Geometry.kind_5",
+            "Geometry.kind_6",
+            "Geometry.kind_7",
+            "Geometry.kind_8",
+            "Geometry.kind_9",
+            "Geometry.kind_10",
+            "Geometry.kind_11",
+            "Geometry.kind_12",
+            "Geometry.kind_13",
+            "Geometry.kind_14",
+            "Geometry.kind_15",
+            "Geometry.kind_16",
+            "Geometry.kind_17",
+            "Geometry.kind_18",
+            "Geometry.kind_19",
+            "Geometry.kind_20",
+            "Geometry.kind_21",
+            "Geometry.kind_22",
+            "Geometry.kind_23",
+            "Geometry.kind_24",
+            "Geometry.kind_25",
+            "Geometry.kind_26",
+            "Geometry.kind_27",
+            "Geometry.kind_28",
+            "Geometry.kind_29",
+            "Geometry.kind_30",
+            "Geometry.kind_31",
+            "Geometry.kind_32",
+            "Geometry.kind_33",
+            "Geometry.kind_34",
+            "Geometry.kind_35",
+            "Geometry.kind_36",
+            "Geometry.kind_37",
+            "Geometry.kind_38",
+            "Geometry.kind_39",
+            "Geometry.kind_40",
+            "Geometry.kind_41",
+            "Geometry.kind_42",
+            "Geometry.kind_43"
+          ]
+        },
+        "textures": {
+          "Array.textures": [
+            "Texture.kind_0",
+            "Texture.kind_1",
+            "Texture.kind_2",
+            "Texture.kind_3",
+            "Texture.kind_4",
+            "Texture.kind_5",
+            "Texture.kind_6",
+            "Texture.kind_7",
+            "Texture.kind_8",
+            "Texture.kind_9",
+            "Texture.kind_10",
+            "Texture.kind_11",
+            "Texture.kind_12",
+            "Texture.kind_13",
+            "Texture.kind_14",
+            "Texture.kind_15",
+            "Texture.kind_16",
+            "Texture.kind_17",
+            "Texture.kind_18",
+            "Texture.kind_19",
+            "Texture.kind_20",
+            "Texture.kind_21",
+            "Texture.kind_22",
+            "Texture.kind_23",
+            "Texture.kind_24",
+            "Texture.kind_25",
+            "Texture.kind_26",
+            "Texture.kind_27",
+            "Texture.kind_28",
+            "Texture.kind_29",
+            "Texture.kind_30",
+            "Texture.kind_31",
+            "Texture.kind_32",
+            "Texture.kind_33",
+            "Texture.kind_34",
+            "Texture.kind_35",
+            "Texture.kind_36",
+            "Texture.kind_37",
+            "Texture.kind_38",
+            "Texture.kind_39",
+            "Texture.kind_40",
+            "Texture.kind_41",
+            "Texture.kind_42",
+            "Texture.kind_43"
+          ]
+        }
+      },
+      "geometry": "Array.models[q.property('kaleidoscope_world_liquor:kind')]",
+      "textures": [
+        "Array.textures[q.property('kaleidoscope_world_liquor:kind')]"
+      ],
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ]
+    }
+  }
+}

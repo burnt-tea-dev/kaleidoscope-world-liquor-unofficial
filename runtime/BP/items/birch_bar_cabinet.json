@@ -1,0 +1,23 @@
+{
+  "format_version": "1.26.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:birch_bar_cabinet",
+      "menu_category": {
+        "category": "equipment",
+        "group": "kaleidoscope_world_liquor:itemGroup.furniture"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.kaleidoscope_world_liquor:birch_bar_cabinet.name"
+      },
+      "minecraft:icon": "kwl_birch_bar_cabinet",
+      "minecraft:max_stack_size": 64,
+      "minecraft:block_placer": {
+        "block": "kaleidoscope_world_liquor:birch_bar_cabinet",
+        "replace_block_item": false
+      }
+    }
+  }
+}

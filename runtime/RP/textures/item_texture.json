@@ -1,0 +1,474 @@
+{
+  "resource_pack_name": "World Liquor",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "kwl_absolut_vodka_q1": {
+      "textures": "textures/kwl/items/absolut_vodka_q1"
+    },
+    "kwl_absolut_vodka_q2": {
+      "textures": "textures/kwl/items/absolut_vodka_q2"
+    },
+    "kwl_absolut_vodka_q3": {
+      "textures": "textures/kwl/items/absolut_vodka_q3"
+    },
+    "kwl_absolut_vodka_q4": {
+      "textures": "textures/kwl/items/absolut_vodka_q4"
+    },
+    "kwl_absolut_vodka_q5": {
+      "textures": "textures/kwl/items/absolut_vodka_q5"
+    },
+    "kwl_absolut_vodka_q6": {
+      "textures": "textures/kwl/items/absolut_vodka_q6"
+    },
+    "kwl_bacardi_carta_blanca_q1": {
+      "textures": "textures/kwl/items/bacardi_carta_blanca_q1"
+    },
+    "kwl_bacardi_carta_blanca_q2": {
+      "textures": "textures/kwl/items/bacardi_carta_blanca_q2"
+    },
+    "kwl_bacardi_carta_blanca_q3": {
+      "textures": "textures/kwl/items/bacardi_carta_blanca_q3"
+    },
+    "kwl_bacardi_carta_blanca_q4": {
+      "textures": "textures/kwl/items/bacardi_carta_blanca_q4"
+    },
+    "kwl_bacardi_carta_blanca_q5": {
+      "textures": "textures/kwl/items/bacardi_carta_blanca_q5"
+    },
+    "kwl_bacardi_carta_blanca_q6": {
+      "textures": "textures/kwl/items/bacardi_carta_blanca_q6"
+    },
+    "kwl_bamboo_leaf_green_liquor_q1": {
+      "textures": "textures/kwl/items/bamboo_leaf_green_liquor_q1"
+    },
+    "kwl_bamboo_leaf_green_liquor_q2": {
+      "textures": "textures/kwl/items/bamboo_leaf_green_liquor_q2"
+    },
+    "kwl_bamboo_leaf_green_liquor_q3": {
+      "textures": "textures/kwl/items/bamboo_leaf_green_liquor_q3"
+    },
+    "kwl_bamboo_leaf_green_liquor_q4": {
+      "textures": "textures/kwl/items/bamboo_leaf_green_liquor_q4"
+    },
+    "kwl_bamboo_leaf_green_liquor_q5": {
+      "textures": "textures/kwl/items/bamboo_leaf_green_liquor_q5"
+    },
+    "kwl_bamboo_leaf_green_liquor_q6": {
+      "textures": "textures/kwl/items/bamboo_leaf_green_liquor_q6"
+    },
+    "kwl_bombay_sapphire_gin_q1": {
+      "textures": "textures/kwl/items/bombay_sapphire_gin_q1"
+    },
+    "kwl_bombay_sapphire_gin_q2": {
+      "textures": "textures/kwl/items/bombay_sapphire_gin_q2"
+    },
+    "kwl_bombay_sapphire_gin_q3": {
+      "textures": "textures/kwl/items/bombay_sapphire_gin_q3"
+    },
+    "kwl_bombay_sapphire_gin_q4": {
+      "textures": "textures/kwl/items/bombay_sapphire_gin_q4"
+    },
+    "kwl_bombay_sapphire_gin_q5": {
+      "textures": "textures/kwl/items/bombay_sapphire_gin_q5"
+    },
+    "kwl_bombay_sapphire_gin_q6": {
+      "textures": "textures/kwl/items/bombay_sapphire_gin_q6"
+    },
+    "kwl_cool_tea_q1": {
+      "textures": "textures/kwl/items/cool_tea_q1"
+    },
+    "kwl_cool_tea_q2": {
+      "textures": "textures/kwl/items/cool_tea_q2"
+    },
+    "kwl_cool_tea_q3": {
+      "textures": "textures/kwl/items/cool_tea_q3"
+    },
+    "kwl_cool_tea_q4": {
+      "textures": "textures/kwl/items/cool_tea_q4"
+    },
+    "kwl_cool_tea_q5": {
+      "textures": "textures/kwl/items/cool_tea_q5"
+    },
+    "kwl_cool_tea_q6": {
+      "textures": "textures/kwl/items/cool_tea_q6"
+    },
+    "kwl_dassai_q1": {
+      "textures": "textures/kwl/items/dassai_q1"
+    },
+    "kwl_dassai_q2": {
+      "textures": "textures/kwl/items/dassai_q2"
+    },
+    "kwl_dassai_q3": {
+      "textures": "textures/kwl/items/dassai_q3"
+    },
+    "kwl_dassai_q4": {
+      "textures": "textures/kwl/items/dassai_q4"
+    },
+    "kwl_dassai_q5": {
+      "textures": "textures/kwl/items/dassai_q5"
+    },
+    "kwl_dassai_q6": {
+      "textures": "textures/kwl/items/dassai_q6"
+    },
+    "kwl_ice_tea_q1": {
+      "textures": "textures/kwl/items/ice_tea_q1"
+    },
+    "kwl_ice_tea_q2": {
+      "textures": "textures/kwl/items/ice_tea_q2"
+    },
+    "kwl_ice_tea_q3": {
+      "textures": "textures/kwl/items/ice_tea_q3"
+    },
+    "kwl_ice_tea_q4": {
+      "textures": "textures/kwl/items/ice_tea_q4"
+    },
+    "kwl_ice_tea_q5": {
+      "textures": "textures/kwl/items/ice_tea_q5"
+    },
+    "kwl_ice_tea_q6": {
+      "textures": "textures/kwl/items/ice_tea_q6"
+    },
+    "kwl_jack_daniel_q1": {
+      "textures": "textures/kwl/items/jack_daniel_q1"
+    },
+    "kwl_jack_daniel_q2": {
+      "textures": "textures/kwl/items/jack_daniel_q2"
+    },
+    "kwl_jack_daniel_q3": {
+      "textures": "textures/kwl/items/jack_daniel_q3"
+    },
+    "kwl_jack_daniel_q4": {
+      "textures": "textures/kwl/items/jack_daniel_q4"
+    },
+    "kwl_jack_daniel_q5": {
+      "textures": "textures/kwl/items/jack_daniel_q5"
+    },
+    "kwl_jack_daniel_q6": {
+      "textures": "textures/kwl/items/jack_daniel_q6"
+    },
+    "kwl_johnnie_walker_q1": {
+      "textures": "textures/kwl/items/johnnie_walker_q1"
+    },
+    "kwl_johnnie_walker_q2": {
+      "textures": "textures/kwl/items/johnnie_walker_q2"
+    },
+    "kwl_johnnie_walker_q3": {
+      "textures": "textures/kwl/items/johnnie_walker_q3"
+    },
+    "kwl_johnnie_walker_q4": {
+      "textures": "textures/kwl/items/johnnie_walker_q4"
+    },
+    "kwl_johnnie_walker_q5": {
+      "textures": "textures/kwl/items/johnnie_walker_q5"
+    },
+    "kwl_johnnie_walker_q6": {
+      "textures": "textures/kwl/items/johnnie_walker_q6"
+    },
+    "kwl_kwas_chlebowy_q1": {
+      "textures": "textures/kwl/items/kwas_chlebowy_q1"
+    },
+    "kwl_kwas_chlebowy_q2": {
+      "textures": "textures/kwl/items/kwas_chlebowy_q2"
+    },
+    "kwl_kwas_chlebowy_q3": {
+      "textures": "textures/kwl/items/kwas_chlebowy_q3"
+    },
+    "kwl_kwas_chlebowy_q4": {
+      "textures": "textures/kwl/items/kwas_chlebowy_q4"
+    },
+    "kwl_kwas_chlebowy_q5": {
+      "textures": "textures/kwl/items/kwas_chlebowy_q5"
+    },
+    "kwl_kwas_chlebowy_q6": {
+      "textures": "textures/kwl/items/kwas_chlebowy_q6"
+    },
+    "kwl_lafite_1982_q1": {
+      "textures": "textures/kwl/items/lafite_1982_q1"
+    },
+    "kwl_lafite_1982_q2": {
+      "textures": "textures/kwl/items/lafite_1982_q2"
+    },
+    "kwl_lafite_1982_q3": {
+      "textures": "textures/kwl/items/lafite_1982_q3"
+    },
+    "kwl_lafite_1982_q4": {
+      "textures": "textures/kwl/items/lafite_1982_q4"
+    },
+    "kwl_lafite_1982_q5": {
+      "textures": "textures/kwl/items/lafite_1982_q5"
+    },
+    "kwl_lafite_1982_q6": {
+      "textures": "textures/kwl/items/lafite_1982_q6"
+    },
+    "kwl_maotai_q1": {
+      "textures": "textures/kwl/items/maotai_q1"
+    },
+    "kwl_maotai_q2": {
+      "textures": "textures/kwl/items/maotai_q2"
+    },
+    "kwl_maotai_q3": {
+      "textures": "textures/kwl/items/maotai_q3"
+    },
+    "kwl_maotai_q4": {
+      "textures": "textures/kwl/items/maotai_q4"
+    },
+    "kwl_maotai_q5": {
+      "textures": "textures/kwl/items/maotai_q5"
+    },
+    "kwl_maotai_q6": {
+      "textures": "textures/kwl/items/maotai_q6"
+    },
+    "kwl_pina_colada_q1": {
+      "textures": "textures/kwl/items/pina_colada_q1"
+    },
+    "kwl_pina_colada_q2": {
+      "textures": "textures/kwl/items/pina_colada_q2"
+    },
+    "kwl_pina_colada_q3": {
+      "textures": "textures/kwl/items/pina_colada_q3"
+    },
+    "kwl_pina_colada_q4": {
+      "textures": "textures/kwl/items/pina_colada_q4"
+    },
+    "kwl_pina_colada_q5": {
+      "textures": "textures/kwl/items/pina_colada_q5"
+    },
+    "kwl_pina_colada_q6": {
+      "textures": "textures/kwl/items/pina_colada_q6"
+    },
+    "kwl_skyy_vodka_q1": {
+      "textures": "textures/kwl/items/skyy_vodka_q1"
+    },
+    "kwl_skyy_vodka_q2": {
+      "textures": "textures/kwl/items/skyy_vodka_q2"
+    },
+    "kwl_skyy_vodka_q3": {
+      "textures": "textures/kwl/items/skyy_vodka_q3"
+    },
+    "kwl_skyy_vodka_q4": {
+      "textures": "textures/kwl/items/skyy_vodka_q4"
+    },
+    "kwl_skyy_vodka_q5": {
+      "textures": "textures/kwl/items/skyy_vodka_q5"
+    },
+    "kwl_skyy_vodka_q6": {
+      "textures": "textures/kwl/items/skyy_vodka_q6"
+    },
+    "kwl_smirnoff_red_vodka_q1": {
+      "textures": "textures/kwl/items/smirnoff_red_vodka_q1"
+    },
+    "kwl_smirnoff_red_vodka_q2": {
+      "textures": "textures/kwl/items/smirnoff_red_vodka_q2"
+    },
+    "kwl_smirnoff_red_vodka_q3": {
+      "textures": "textures/kwl/items/smirnoff_red_vodka_q3"
+    },
+    "kwl_smirnoff_red_vodka_q4": {
+      "textures": "textures/kwl/items/smirnoff_red_vodka_q4"
+    },
+    "kwl_smirnoff_red_vodka_q5": {
+      "textures": "textures/kwl/items/smirnoff_red_vodka_q5"
+    },
+    "kwl_smirnoff_red_vodka_q6": {
+      "textures": "textures/kwl/items/smirnoff_red_vodka_q6"
+    },
+    "kwl_sour_plum_q1": {
+      "textures": "textures/kwl/items/sour_plum_q1"
+    },
+    "kwl_sour_plum_q2": {
+      "textures": "textures/kwl/items/sour_plum_q2"
+    },
+    "kwl_sour_plum_q3": {
+      "textures": "textures/kwl/items/sour_plum_q3"
+    },
+    "kwl_sour_plum_q4": {
+      "textures": "textures/kwl/items/sour_plum_q4"
+    },
+    "kwl_sour_plum_q5": {
+      "textures": "textures/kwl/items/sour_plum_q5"
+    },
+    "kwl_sour_plum_q6": {
+      "textures": "textures/kwl/items/sour_plum_q6"
+    },
+    "kwl_spiryt_vodka_q1": {
+      "textures": "textures/kwl/items/spiryt_vodka_q1"
+    },
+    "kwl_spiryt_vodka_q2": {
+      "textures": "textures/kwl/items/spiryt_vodka_q2"
+    },
+    "kwl_spiryt_vodka_q3": {
+      "textures": "textures/kwl/items/spiryt_vodka_q3"
+    },
+    "kwl_spiryt_vodka_q4": {
+      "textures": "textures/kwl/items/spiryt_vodka_q4"
+    },
+    "kwl_spiryt_vodka_q5": {
+      "textures": "textures/kwl/items/spiryt_vodka_q5"
+    },
+    "kwl_spiryt_vodka_q6": {
+      "textures": "textures/kwl/items/spiryt_vodka_q6"
+    },
+    "kwl_strongbow_q1": {
+      "textures": "textures/kwl/items/strongbow_q1"
+    },
+    "kwl_strongbow_q2": {
+      "textures": "textures/kwl/items/strongbow_q2"
+    },
+    "kwl_strongbow_q3": {
+      "textures": "textures/kwl/items/strongbow_q3"
+    },
+    "kwl_strongbow_q4": {
+      "textures": "textures/kwl/items/strongbow_q4"
+    },
+    "kwl_strongbow_q5": {
+      "textures": "textures/kwl/items/strongbow_q5"
+    },
+    "kwl_strongbow_q6": {
+      "textures": "textures/kwl/items/strongbow_q6"
+    },
+    "kwl_around_the_world": {
+      "textures": "textures/kwl/items/around_the_world"
+    },
+    "kwl_gin_tonic": {
+      "textures": "textures/kwl/items/gin_tonic"
+    },
+    "kwl_jerk": {
+      "textures": "textures/kwl/items/jerk"
+    },
+    "kwl_long_island_iced_tea": {
+      "textures": "textures/kwl/items/long_island_iced_tea"
+    },
+    "kwl_pine_colada": {
+      "textures": "textures/kwl/items/pine_colada"
+    },
+    "kwl_shrimp_cocktail": {
+      "textures": "textures/kwl/items/shrimp_cocktail"
+    },
+    "kwl_bar_stool_white": {
+      "textures": "textures/kwl/items/bar_stool_white"
+    },
+    "kwl_bar_stool_orange": {
+      "textures": "textures/kwl/items/bar_stool_orange"
+    },
+    "kwl_bar_stool_magenta": {
+      "textures": "textures/kwl/items/bar_stool_magenta"
+    },
+    "kwl_bar_stool_light_blue": {
+      "textures": "textures/kwl/items/bar_stool_light_blue"
+    },
+    "kwl_bar_stool_yellow": {
+      "textures": "textures/kwl/items/bar_stool_yellow"
+    },
+    "kwl_bar_stool_lime": {
+      "textures": "textures/kwl/items/bar_stool_lime"
+    },
+    "kwl_bar_stool_pink": {
+      "textures": "textures/kwl/items/bar_stool_pink"
+    },
+    "kwl_bar_stool_gray": {
+      "textures": "textures/kwl/items/bar_stool_gray"
+    },
+    "kwl_bar_stool_light_gray": {
+      "textures": "textures/kwl/items/bar_stool_light_gray"
+    },
+    "kwl_bar_stool_cyan": {
+      "textures": "textures/kwl/items/bar_stool_cyan"
+    },
+    "kwl_bar_stool_purple": {
+      "textures": "textures/kwl/items/bar_stool_purple"
+    },
+    "kwl_bar_stool_blue": {
+      "textures": "textures/kwl/items/bar_stool_blue"
+    },
+    "kwl_bar_stool_brown": {
+      "textures": "textures/kwl/items/bar_stool_brown"
+    },
+    "kwl_bar_stool_green": {
+      "textures": "textures/kwl/items/bar_stool_green"
+    },
+    "kwl_bar_stool_red": {
+      "textures": "textures/kwl/items/bar_stool_red"
+    },
+    "kwl_bar_stool_black": {
+      "textures": "textures/kwl/items/bar_stool_black"
+    },
+    "kwl_oak_bar_cabinet": {
+      "textures": "textures/kwl/items/oak_bar_cabinet"
+    },
+    "kwl_oak_cellar_cabinet": {
+      "textures": "textures/kwl/items/oak_cellar_cabinet"
+    },
+    "kwl_birch_bar_cabinet": {
+      "textures": "textures/kwl/items/birch_bar_cabinet"
+    },
+    "kwl_birch_cellar_cabinet": {
+      "textures": "textures/kwl/items/birch_cellar_cabinet"
+    },
+    "kwl_spruce_bar_cabinet": {
+      "textures": "textures/kwl/items/spruce_bar_cabinet"
+    },
+    "kwl_spruce_cellar_cabinet": {
+      "textures": "textures/kwl/items/spruce_cellar_cabinet"
+    },
+    "kwl_dark_oak_bar_cabinet": {
+      "textures": "textures/kwl/items/dark_oak_bar_cabinet"
+    },
+    "kwl_dark_oak_cellar_cabinet": {
+      "textures": "textures/kwl/items/dark_oak_cellar_cabinet"
+    },
+    "kwl_cherry_bar_cabinet": {
+      "textures": "textures/kwl/items/cherry_bar_cabinet"
+    },
+    "kwl_cherry_cellar_cabinet": {
+      "textures": "textures/kwl/items/cherry_cellar_cabinet"
+    },
+    "kwl_freezer": {
+      "textures": "textures/kwl/items/freezer"
+    },
+    "kwl_cola": {
+      "textures": "textures/kwl/items/cola"
+    },
+    "kwl_tonic_water": {
+      "textures": "textures/kwl/items/tonic_water"
+    },
+    "kwl_liangshan_ice_cone": {
+      "textures": "textures/kwl/items/liangshan_ice_cone"
+    },
+    "kwl_kita_stuffed_crisp": {
+      "textures": "textures/kwl/items/kita_stuffed_crisp"
+    },
+    "kwl_pochi_pudding": {
+      "textures": "textures/kwl/items/pochi_pudding"
+    },
+    "kwl_magic_crispy_corner": {
+      "textures": "textures/kwl/items/magic_crispy_corner"
+    },
+    "kwl_bfxm_painting": {
+      "textures": "textures/kwl/items/bfxm_painting"
+    },
+    "kwl_bmt_painting": {
+      "textures": "textures/kwl/items/bmt_painting"
+    },
+    "kwl_dream_painting": {
+      "textures": "textures/kwl/items/dream_painting"
+    },
+    "kwl_cha_painting": {
+      "textures": "textures/kwl/items/cha_painting"
+    },
+    "kwl_chen_painting": {
+      "textures": "textures/kwl/items/chen_painting"
+    },
+    "kwl_rabbit_painting": {
+      "textures": "textures/kwl/items/rabbit_painting"
+    },
+    "kwl_ch_painting": {
+      "textures": "textures/kwl/items/ch_painting"
+    },
+    "kwl_qxxy_painting": {
+      "textures": "textures/kwl/items/qxxy_painting"
+    },
+    "kwl_custom_record": {
+      "textures": "textures/kwl/items/custom_record"
+    }
+  }
+}

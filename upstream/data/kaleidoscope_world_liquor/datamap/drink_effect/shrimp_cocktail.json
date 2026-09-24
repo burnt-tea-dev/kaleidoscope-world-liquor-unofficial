@@ -1,0 +1,13 @@
+{
+  "item": "kaleidoscope_world_liquor:shrimp_cocktail",
+  "effects": [
+    [
+      {
+        "effect": "kaleidoscope_world_liquor:level_boost",
+        "duration": 0,
+        "amplifier": 0,
+        "probability": 1.0
+      }
+    ]
+  ]
+}

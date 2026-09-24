@@ -1,0 +1,4 @@
+pack.name=森罗酒馆：世界名酒（非官方） BP
+pack.description=世界名酒的非官方基岩版移植。需要森罗物语：酒馆（非官方）。公开测试版。
+kaleidoscope_world_liquor:itemGroup.drinks=森罗酒馆：世界名酒（非官方）
+kaleidoscope_world_liquor:itemGroup.furniture=森罗酒馆：世界名酒（非官方） — 家具

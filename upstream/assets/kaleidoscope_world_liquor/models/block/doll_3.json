@@ -1,0 +1,10 @@
+{
+  "parent": "kaleidoscope_world_liquor:custom/doll_3",
+  "textures": {
+    "all": "kaleidoscope_world_liquor:custom/doll_3",
+    "particle": "block/white_wool",
+    "0": "kaleidoscope_world_liquor:block/doll_3",
+    "missing": "kaleidoscope_world_liquor:block/doll_3"
+  },
+  "render_type": "cutout_mipped"
+}

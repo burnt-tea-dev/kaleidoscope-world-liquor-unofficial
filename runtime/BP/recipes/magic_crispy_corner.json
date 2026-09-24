@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:magic_crispy_corner"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "result": {
+      "item": "kaleidoscope_world_liquor:magic_crispy_corner",
+      "count": 1
+    },
+    "pattern": [
+      "III",
+      "ILI",
+      "III"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:gold_nugget"
+      },
+      "L": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:crafting_table"
+      }
+    ]
+  }
+}

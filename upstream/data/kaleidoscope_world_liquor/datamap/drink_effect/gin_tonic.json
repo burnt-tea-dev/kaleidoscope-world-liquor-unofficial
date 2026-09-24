@@ -1,0 +1,13 @@
+{
+  "item": "kaleidoscope_world_liquor:gin_tonic",
+  "effects": [
+    [
+      {
+        "effect": "kaleidoscope_world_liquor:continuous_heal",
+        "duration": 60,
+        "amplifier": 0,
+        "probability": 1.0
+      }
+    ]
+  ]
+}

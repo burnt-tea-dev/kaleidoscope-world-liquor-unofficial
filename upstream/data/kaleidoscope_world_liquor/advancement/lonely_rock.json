@@ -1,0 +1,64 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "liangshan_ice_cone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_twilight:liangshan_ice_cone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "kita_stuffed_crisp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_twilight:kita_stuffed_crisp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pochi_pudding": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_twilight:pochi_pudding"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "magic_crispy_corner": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kaleidoscope_twilight:magic_crispy_corner"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "title": {
+      "translate": "advancements.kaleidoscope_twilight.collect_all_twilight_snack.title"
+    },
+    "description": {
+      "translate": "advancements.kaleidoscope_twilight.collect_all_twilight_snack.description"
+    },
+    "icon": {
+      "id": "kaleidoscope_twilight:pochi_pudding",
+      "count": 1
+    },
+    "frame": "challenge"
+  },
+  "requirements": [
+    ["liangshan_ice_cone"],
+    ["kita_stuffed_crisp"],
+    ["pochi_pudding"],
+    ["magic_crispy_corner"]
+  ]
+}

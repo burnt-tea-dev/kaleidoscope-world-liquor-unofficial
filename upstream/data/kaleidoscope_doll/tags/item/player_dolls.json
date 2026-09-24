@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id":"kaleidoscope_world_liquor:doll_0",
+      "required":false
+    },
+    {
+      "id":"kaleidoscope_world_liquor:doll_1",
+      "required":false
+    },
+    {
+      "id":"kaleidoscope_world_liquor:doll_2",
+      "required":false
+    },
+    {
+      "id":"kaleidoscope_world_liquor:doll_3",
+      "required":false
+    },
+    {
+      "id":"kaleidoscope_world_liquor:doll_4",
+      "required":false
+    },
+    {
+      "id":"kaleidoscope_world_liquor:doll_5",
+      "required":false
+    }
+  ]
+}

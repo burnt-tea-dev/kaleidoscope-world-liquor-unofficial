@@ -1,0 +1,19 @@
+{
+  "description": {
+    "translate": "enchantment.kaleidoscope_world_liquor.brew_accelerator"
+  },
+  "max_level": 1,
+  "weight": 5,
+  "min_cost": {
+    "base": 15,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 55,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 2,
+  "supported_items": "#kaleidoscope_world_liquor:empty_enchantable",
+  "slots": [],
+  "effects": {}
+}

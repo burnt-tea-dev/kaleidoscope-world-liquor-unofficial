@@ -1,0 +1,13 @@
+{
+  "item": "kaleidoscope_world_liquor:long_island_iced_tea",
+  "effects": [
+    [
+      {
+        "effect": "kaleidoscope_world_liquor:respawn",
+        "duration": 0,
+        "amplifier": 0,
+        "probability": 1.0
+      }
+    ]
+  ]
+}

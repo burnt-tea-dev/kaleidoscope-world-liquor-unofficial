@@ -1,0 +1,63 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:cellar_cabinet_bottle_visual",
+      "materials": {
+        "default": "entity_alphatest_one_sided"
+      },
+      "textures": {
+        "kind_0": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count1",
+        "kind_1": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count1",
+        "kind_2": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count1",
+        "kind_3": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count1",
+        "kind_4": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count1",
+        "kind_5": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__dassai__count1",
+        "kind_6": "textures/kwl/generated/smc__block__brew__drink__ice_tea__count1",
+        "kind_7": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count1",
+        "kind_8": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count1",
+        "kind_9": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count1",
+        "kind_10": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count1",
+        "kind_11": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__maotai__count1",
+        "kind_12": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__pina_colada__count1",
+        "kind_13": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count1",
+        "kind_14": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count1",
+        "kind_15": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__sour_plum__count1",
+        "kind_16": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count1",
+        "kind_17": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__strongbow__count1"
+      },
+      "geometry": {
+        "kind_0": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count1",
+        "kind_1": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count1",
+        "kind_2": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count1",
+        "kind_3": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count1",
+        "kind_4": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count1",
+        "kind_5": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__dassai__count1",
+        "kind_6": "geometry.kwl.smc__block__brew__drink__ice_tea__count1",
+        "kind_7": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count1",
+        "kind_8": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count1",
+        "kind_9": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count1",
+        "kind_10": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count1",
+        "kind_11": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__maotai__count1",
+        "kind_12": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__pina_colada__count1",
+        "kind_13": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count1",
+        "kind_14": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count1",
+        "kind_15": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__sour_plum__count1",
+        "kind_16": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count1",
+        "kind_17": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__strongbow__count1"
+      },
+      "animations": {
+        "rest": "animation.kt_runtime.storage_bottle.cellar"
+      },
+      "scripts": {
+        "scale": "1.0",
+        "animate": [
+          "rest"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.kwl.cellar_cabinet"
+      ]
+    }
+  }
+}

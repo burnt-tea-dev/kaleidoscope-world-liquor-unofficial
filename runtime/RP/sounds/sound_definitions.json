@@ -1,0 +1,60 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "kaleidoscope_world_liquor.ice_tea_eat": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/kwl/ice_tea_eat",
+          "stream": false,
+          "weight": 1
+        }
+      ]
+    },
+    "kaleidoscope_world_liquor.cool_ice_tea_drink": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/kwl/cool_ice_tea_drink",
+          "stream": false,
+          "weight": 1
+        }
+      ]
+    },
+    "kaleidoscope_world_liquor.sour_plum_drink": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/kwl/sour_plum_drink",
+          "stream": false,
+          "weight": 1
+        }
+      ]
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ]
+    },
+    "kaleidoscope_world_liquor.pochi_pudding_feed": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/kwl/pochi_pudding_feed",
+          "stream": false,
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

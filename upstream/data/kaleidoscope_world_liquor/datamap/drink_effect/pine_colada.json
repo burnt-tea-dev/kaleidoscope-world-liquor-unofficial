@@ -1,0 +1,13 @@
+{
+  "item": "kaleidoscope_world_liquor:pine_colada",
+  "effects": [
+    [
+      {
+        "effect": "kaleidoscope_world_liquor:double_damage",
+        "duration": 1800,
+        "amplifier": 0,
+        "probability": 1.0
+      }
+    ]
+  ]
+}

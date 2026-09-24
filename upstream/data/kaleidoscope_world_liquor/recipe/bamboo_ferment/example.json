@@ -1,0 +1,10 @@
+{
+  "type": "kaleidoscope_world_liquor:bamboo_ferment",
+  "fluid": "minecraft:water",
+  "fluid_amount": 1000,
+  "ingredient": {
+    "item": "minecraft:item"
+  },
+  "result": "kaleidoscope_world_liquor:item",
+  "unit_time": 1200
+}

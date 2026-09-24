@@ -1,0 +1,7 @@
+{
+  "parent": "kaleidoscope_world_liquor:block/brew/base_cellar_cabinet/right",
+  "textures": {
+    "particle": "kaleidoscope_world_liquor:block/spruce_bar_cabinet_right",
+    "texture": "kaleidoscope_world_liquor:block/spruce_bar_cabinet_right"
+  }
+}

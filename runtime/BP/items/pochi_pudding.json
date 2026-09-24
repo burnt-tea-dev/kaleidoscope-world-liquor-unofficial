@@ -1,0 +1,29 @@
+{
+  "format_version": "1.26.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:pochi_pudding",
+      "menu_category": {
+        "category": "equipment",
+        "group": "kaleidoscope_world_liquor:itemGroup.furniture"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.kaleidoscope_world_liquor:pochi_pudding.name"
+      },
+      "minecraft:icon": "kwl_pochi_pudding",
+      "minecraft:max_stack_size": 64,
+      "minecraft:food": {
+        "nutrition": 5,
+        "saturation_modifier": 0.4,
+        "can_always_eat": true
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6
+      },
+      "kaleidoscope_world_liquor:food": {}
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.26.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:smirnoff_red_vodka_q2",
+      "menu_category": {
+        "category": "equipment",
+        "group": "kaleidoscope_world_liquor:itemGroup.drinks"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q2.name"
+      },
+      "minecraft:icon": "kwl_smirnoff_red_vodka_q2",
+      "minecraft:max_stack_size": 16,
+      "minecraft:tags": {
+        "tags": [
+          "kaleidoscope_tavern:alcohol"
+        ]
+      },
+      "minecraft:use_animation": "drink",
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6,
+        "movement_modifier": 0.35,
+        "start_using": "if_first"
+      },
+      "kaleidoscope_tavern:drink_effects": {}
+    }
+  }
+}
