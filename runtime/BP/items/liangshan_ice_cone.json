@@ -5,7 +5,7 @@
       "identifier": "kaleidoscope_world_liquor:liangshan_ice_cone",
       "menu_category": {
         "category": "equipment",
-        "group": "kaleidoscope_world_liquor:itemGroup.furniture"
+        "group": "kaleidoscope_cookery:itemGroup.name.foods"
       }
     },
     "components": {

@@ -17,7 +17,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__mixology__long_island_iced_tea"
+        "identifier": "geometry.kwl.g_5f317f0af7de6211"
       },
       "minecraft:material_instances": {
         "*": {

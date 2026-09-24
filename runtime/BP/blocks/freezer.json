@@ -21,7 +21,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__fridge_close"
+        "identifier": "geometry.kwl.g_5b611b0754ffa64d"
       },
       "minecraft:material_instances": {
         "*": {
@@ -72,8 +72,8 @@
       "kaleidoscope_world_liquor:furniture": {},
       "minecraft:tick": {
         "interval_range": [
-          20,
-          20
+          80,
+          80
         ],
         "looping": true
       }
@@ -119,7 +119,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:open') == false",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__fridge_close"
+            "identifier": "geometry.kwl.g_5b611b0754ffa64d"
           },
           "minecraft:material_instances": {
             "*": {
@@ -141,7 +141,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:open') == true",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__fridge_open"
+            "identifier": "geometry.kwl.g_7c341bb644967296"
           },
           "minecraft:material_instances": {
             "*": {

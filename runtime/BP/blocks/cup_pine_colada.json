@@ -17,7 +17,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__mixology__pine_colada"
+        "identifier": "geometry.kwl.g_d46cc6545ec13ac4"
       },
       "minecraft:material_instances": {
         "*": {

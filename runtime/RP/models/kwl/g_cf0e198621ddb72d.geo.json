@@ -1,0 +1,563 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.kwl.g_cf0e198621ddb72d",
+        "texture_width": 32,
+        "texture_height": 32,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4,
+        "visible_bounds_offset": [
+          0,
+          1,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "instance_0_element_0_0",
+          "parent": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -0.2928899999999999,
+                10,
+                1.7071100000000001
+              ],
+              "size": [
+                6.0,
+                4,
+                0.0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    7.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "east": {
+                  "uv": [
+                    14.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    13.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -6.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    14.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    14.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    14.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                }
+              },
+              "pivot": [
+                1.7071100000000001,
+                14,
+                1.7071100000000001
+              ],
+              "rotation": [
+                0,
+                -45,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instance_0_element_1_1",
+          "parent": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3,
+                0,
+                -3
+              ],
+              "size": [
+                6,
+                4,
+                6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.0,
+                    5.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "east": {
+                  "uv": [
+                    7.0,
+                    5.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    7.0,
+                    5.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    5.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    6.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    0.0,
+                    13.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    -6.0
+                  ],
+                  "material_instance": "default"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "instance_0_element_2_2",
+          "parent": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                4,
+                -1
+              ],
+              "size": [
+                2,
+                9,
+                2
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    7.0,
+                    10.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    9.0
+                  ],
+                  "material_instance": "default"
+                },
+                "east": {
+                  "uv": [
+                    7.0,
+                    10.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    9.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    7.0,
+                    10.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    9.0
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    10.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    9.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    0.0,
+                    14.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    2.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -2.0
+                  ],
+                  "material_instance": "default"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "instance_0_element_3_3",
+          "parent": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1.1999999999999993,
+                3.8,
+                -1.2000000000000002
+              ],
+              "size": [
+                2.3999999999999995,
+                1.4000000000000004,
+                2.3999999999999995
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    1.0
+                  ],
+                  "material_instance": "default"
+                },
+                "east": {
+                  "uv": [
+                    14.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    1.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    14.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    1.0
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    14.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    1.0
+                  ],
+                  "material_instance": "default"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "instance_0_element_4_4",
+          "parent": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                0.2,
+                -3.2
+              ],
+              "size": [
+                2,
+                4.0,
+                0.0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    10.0,
+                    10.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "east": {
+                  "uv": [
+                    2.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    12.0,
+                    10.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    4.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    2.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    2.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "instance_0_element_5_5",
+          "parent": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                4.199,
+                -3.2
+              ],
+              "size": [
+                2,
+                0.0,
+                3.0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "east": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    15.0,
+                    11.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    3.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    15.0,
+                    14.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -3.0
+                  ],
+                  "material_instance": "default"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -17,7 +17,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__mixology__around_the_world"
+        "identifier": "geometry.kwl.g_987bf61b8661fdfa"
       },
       "minecraft:material_instances": {
         "*": {

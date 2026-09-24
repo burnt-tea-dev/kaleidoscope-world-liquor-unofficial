@@ -23,7 +23,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__pina_colada__count1"
+        "identifier": "geometry.kwl.g_bc6f9ff20f8d0f79"
       },
       "minecraft:material_instances": {
         "*": {
@@ -67,7 +67,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 1",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__pina_colada__count1"
+            "identifier": "geometry.kwl.g_bc6f9ff20f8d0f79"
           },
           "minecraft:material_instances": {
             "*": {
@@ -89,7 +89,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 2",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__pina_colada__count2"
+            "identifier": "geometry.kwl.g_b48c697464632831"
           },
           "minecraft:material_instances": {
             "*": {
@@ -111,7 +111,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 3",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__pina_colada__count3"
+            "identifier": "geometry.kwl.g_44ac67a6e90bf8ae"
           },
           "minecraft:material_instances": {
             "*": {
@@ -133,7 +133,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 4",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__pina_colada__count4"
+            "identifier": "geometry.kwl.g_1af65b50fc6a0dd0"
           },
           "minecraft:material_instances": {
             "*": {

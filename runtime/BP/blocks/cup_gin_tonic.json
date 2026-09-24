@@ -17,7 +17,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__mixology__gin_tonic"
+        "identifier": "geometry.kwl.g_5ea58d93bbf7d744"
       },
       "minecraft:material_instances": {
         "*": {

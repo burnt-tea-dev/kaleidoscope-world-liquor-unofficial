@@ -17,7 +17,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__mixology__shrimp_cocktail"
+        "identifier": "geometry.kwl.g_a21c149365149f85"
       },
       "minecraft:material_instances": {
         "*": {

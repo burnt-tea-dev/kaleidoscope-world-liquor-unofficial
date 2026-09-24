@@ -23,7 +23,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count1"
+        "identifier": "geometry.kwl.g_dd882dd2e642f60f"
       },
       "minecraft:material_instances": {
         "*": {
@@ -67,7 +67,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 1",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count1"
+            "identifier": "geometry.kwl.g_dd882dd2e642f60f"
           },
           "minecraft:material_instances": {
             "*": {
@@ -89,7 +89,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 2",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count2"
+            "identifier": "geometry.kwl.g_2f2b849bf54b3450"
           },
           "minecraft:material_instances": {
             "*": {
@@ -111,7 +111,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 3",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count3"
+            "identifier": "geometry.kwl.g_34b44f2251fc190a"
           },
           "minecraft:material_instances": {
             "*": {
@@ -133,7 +133,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 4",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count4"
+            "identifier": "geometry.kwl.g_5c2dc573059c2c37"
           },
           "minecraft:material_instances": {
             "*": {

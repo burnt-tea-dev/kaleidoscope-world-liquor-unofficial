@@ -4,7 +4,7 @@ import {VISUAL_ITEMS} from './visual-items.js';
 import {COMPACT_ITEMS} from './compact-items.js';
 import {RECORD_MODELS} from './wall-record-models.js';
 export const NS='kaleidoscope_world_liquor',KT='kaleidoscope_tavern',FACING=KT+':facing';
-const vectors=[{x:0,y:0,z:-1},{x:1,y:0,z:0},{x:0,y:0,z:1},{x:-1,y:0,z:0}], compact=new Set(COMPACT_ITEMS),cooldown=new Map();
+const vectors=[{x:0,y:0,z:-1},{x:1,y:0,z:0},{x:0,y:0,z:1},{x:-1,y:0,z:0}], compact=new Set(COMPACT_ITEMS),cooldown=new Map(),visualSync=new Map();
 const liquids={'minecraft:water_bucket':'minecraft:water','minecraft:lava_bucket':'minecraft:lava','minecraft:milk_bucket':NS+':milk_still',[KT+':grape_bucket']:KT+':grape_juice',[KT+':sweet_berries_bucket']:KT+':sweet_berries_juice'};
 const container=player=>player.getComponent('minecraft:inventory').container;
 export const hand=player=>container(player).getItem(player.selectedSlotIndex);
@@ -69,8 +69,12 @@ function syncVisuals(b,s){const anchor=key(b),cellar=b.typeId.includes('cellar_c
   if(!item){e?.remove();continue;}
   const row=Math.floor(slot/3),col=slot%3,dx=cellar?.325-col*.325:s.single?0:(slot===0?1:-1)*((f===0||f===2)?.25:-.25),r=rotate(dx,cellar?.375:0,f),at=plus(b.location,{x:.5+r.x,y:cellar?.78-row*.29:.0625,z:.5+r.z});
   if(!e){e=b.dimension.spawnEntity(NS+':cabinet_'+(cellar?'cellar':'bar'),at);e.setDynamicProperty(NS+':anchor',anchor);e.setDynamicProperty(NS+':position',JSON.stringify(b.location));e.setDynamicProperty(NS+':block',b.typeId);e.setDynamicProperty(NS+':slot',slot);}
-  e.setProperty(NS+':kind',VISUAL_ITEMS[item]);e.teleport(at,{rotation:{x:cellar?-90:0,y:[0,90,180,-90][f]}});
+  if(e.getProperty(NS+':kind')!==VISUAL_ITEMS[item])e.setProperty(NS+':kind',VISUAL_ITEMS[item]);
+  const rotation={x:cellar?-90:0,y:[0,90,180,-90][f]};
+  if(Math.abs(e.location.x-at.x)+Math.abs(e.location.y-at.y)+Math.abs(e.location.z-at.z)>.01)e.teleport(at,{rotation});
+  else if(Math.abs(e.getRotation().x-rotation.x)+Math.abs(e.getRotation().y-rotation.y)>.1)e.setRotation(rotation);
  }
+ visualSync.set(anchor,{signature:JSON.stringify([s.slots,s.single,f]),tick:system.currentTick});
 }
 function sit(p,b){const anchor=key(b);let seat=b.dimension.getEntities({type:NS+':seat',location:center(b),maxDistance:1}).find(e=>e.getDynamicProperty(NS+':anchor')===anchor);
  if(!seat){seat=b.dimension.spawnEntity(NS+':seat',plus(b.location,{x:.5,y:0,z:.5}));seat.setDynamicProperty(NS+':anchor',anchor);seat.setDynamicProperty(NS+':position',JSON.stringify(b.location));seat.setDynamicProperty(NS+':block',b.typeId);}
@@ -81,8 +85,8 @@ function interact(p,b,face,point){
  if(!mutable(p)||!furniture(b.typeId))return;const stamp=p.id+'/'+key(b);if(system.currentTick-(cooldown.get(stamp)??-100)<5)return;cooldown.set(stamp,system.currentTick);
  const s=read(b),h=hand(p);if(b.typeId.endsWith(':freezer'))freezer(p,b,s,h);else if(b.typeId.includes('_cabinet'))cabinet(p,b,s,h,face,point);else if(b.typeId.endsWith(':wall_record'))record(p,b,s,h);else if(b.typeId.includes(':bar_stool_')&&!h&&!p.isSneaking)sit(p,b);
 }
-function tick(b){if(b.typeId.endsWith(':freezer')){const s=read(b);if(s.remaining>0){s.remaining=Math.max(0,s.remaining-20);if(!s.remaining){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);s.output=r?.result.count??1;}save(b,s);}}else if(b.typeId.includes('_cabinet')){connect(b);syncVisuals(b,read(b));}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){const item=b.typeId.endsWith(':wall_record')?read(b).record:b.typeId;save(b,undefined);b.setType('minecraft:air');if(item)b.dimension.spawnItem(new ItemStack(item),center(b));}}}
-function drops(b,oldType,p){const s=read(b);save(b,undefined);if(p&&!creative(p)){const out=[[oldType.endsWith(':wall_record')?s.record:oldType,1],...(s.slots??[]).filter(Boolean).map(id=>[id,1]),...(s.input??[]).map(id=>[id,1])];if(s.output){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);if(r)out.push([r.result.id,s.output]);}for(const [id,n] of out)if(id)b.dimension.spawnItem(new ItemStack(id,n),center(b));}
+function tick(b){if(b.typeId.endsWith(':freezer')){const s=read(b);if(s.remaining>0){s.remaining=Math.max(0,s.remaining-80);if(!s.remaining){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);s.output=r?.result.count??1;}save(b,s);}}else if(b.typeId.includes('_cabinet')){connect(b);const s=read(b),anchor=key(b),f=b.permutation.getState(FACING)??0,signature=JSON.stringify([s.slots,s.single,f]),last=visualSync.get(anchor);if(!last||last.signature!==signature||system.currentTick-last.tick>=400)syncVisuals(b,s);}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){const item=b.typeId.endsWith(':wall_record')?read(b).record:b.typeId;save(b,undefined);b.setType('minecraft:air');if(item)b.dimension.spawnItem(new ItemStack(item),center(b));}}}
+function drops(b,oldType,p){const s=read(b);save(b,undefined);visualSync.delete(key(b));if(p&&!creative(p)){const out=[[oldType.endsWith(':wall_record')?s.record:oldType,1],...(s.slots??[]).filter(Boolean).map(id=>[id,1]),...(s.input??[]).map(id=>[id,1])];if(s.output){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);if(r)out.push([r.result.id,s.output]);}for(const [id,n] of out)if(id)b.dimension.spawnItem(new ItemStack(id,n),center(b));}
  for(const e of b.dimension.getEntities({families:['kwl_visual'],location:center(b),maxDistance:2}))if(e.getDynamicProperty(NS+':anchor')===key(b))e.remove();
 }
 export function registerFurniture(e){e.blockComponentRegistry.registerCustomComponent(NS+':furniture',{
@@ -97,7 +101,19 @@ export function installFurniture(){
   if(e.block.typeId==='minecraft:jukebox'&&(e.itemStack?.typeId===NS+':custom_record'||!e.itemStack&&read(e.block).record)){
    e.cancel=true;if(e.isFirstEvent===false)return;const p=e.player,b=e.block;system.run(()=>{try{const h=hand(p),s=read(b);if(s.record&&!h){transaction(p,b,undefined,{give:[[s.record,1]]});return;}if(h?.typeId!==NS+':custom_record'||s.record)return;s.record=h.typeId;if(transaction(p,b,s,{take:1}))b.dimension.playSound(NS+'.music_disc.random_disc',center(b));}catch(err){console.warn('[World Liquor] '+err);}});return;
   }
-  if(furniture(e.block.typeId)){e.cancel=true;if(e.isFirstEvent===false)return;const p=e.player,b=e.block,face=e.blockFace,point=e.faceLocation;system.run(()=>{try{if(furniture(b.typeId))interact(p,b,face,point);}catch(err){console.warn('[World Liquor] '+err);}});return;}
+  if(furniture(e.block.typeId)){
+   const id=e.block.typeId,held=e.itemStack?.typeId;
+   const wantsUse=id.endsWith(':freezer')
+    ||id.includes('_cabinet')&&(!held||held in VISUAL_ITEMS)
+    ||id.endsWith(':wall_record')&&!held
+    ||id.includes(':bar_stool_')&&!held&&!e.player.isSneaking;
+   if(wantsUse){
+    e.cancel=true;if(e.isFirstEvent===false)return;
+    const p=e.player,b=e.block,face=e.blockFace,point=e.faceLocation;
+    system.run(()=>{try{if(furniture(b.typeId))interact(p,b,face,point);}catch(err){console.warn('[World Liquor] '+err);}});
+    return;
+   }
+  }
   const disc=e.itemStack?.typeId;
   if(e.player.isSneaking&&(disc===NS+':custom_record'||disc in RECORD_MODELS)&&['north','east','south','west'].includes(String(e.blockFace).toLowerCase())){
    e.cancel=true;if(e.isFirstEvent===false)return;const p=e.player,d=e.block.dimension,face=String(e.blockFace).toLowerCase(),f=['north','east','south','west'].indexOf(face),pos=plus(e.block.location,vectors[f]);
@@ -110,5 +126,5 @@ export function installFurniture(){
  const clean=e=>{try{if(!e.typeId.startsWith(NS+':')||!e.getDynamicProperty(NS+':position'))return;const b=safeBlock(e.dimension,JSON.parse(e.getDynamicProperty(NS+':position')));if(b&&b.typeId!==e.getDynamicProperty(NS+':block'))e.remove();}catch{}};
  world.afterEvents.entityLoad.subscribe(e=>system.run(()=>clean(e.entity)));
  world.afterEvents.playerBreakBlock.subscribe(e=>{if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!s.record)return;save(e.block,undefined);if(e.player.getGameMode()!=='Creative')e.dimension.spawnItem(new ItemStack(s.record),center(e.block));});
- system.runInterval(()=>{cooldown.clear();for(const p of world.getAllPlayers())for(const e of p.dimension.getEntities({families:['kwl_visual'],location:p.location,maxDistance:40}))clean(e);},100);
+ system.runInterval(()=>{cooldown.clear();for(const [anchor,row] of visualSync)if(system.currentTick-row.tick>1200)visualSync.delete(anchor);for(const p of world.getAllPlayers())for(const e of p.dimension.getEntities({families:['kwl_visual'],location:p.location,maxDistance:24}))clean(e);},600);
 }

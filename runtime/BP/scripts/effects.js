@@ -32,7 +32,7 @@ function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntit
  }
  const tequila=active(target,'tequila');if(tequila)e.damage=Math.min(e.damage,(target.getComponent('minecraft:health')?.effectiveMax??20)*Math.max(.05,.4-.05*tequila.amplifier));
 }
-function freeze(p,amp){if(!p.isOnGround)return;const r=3+amp,at={x:Math.floor(p.location.x),y:Math.floor(p.location.y)-1,z:Math.floor(p.location.z)};for(let x=-r;x<=r;x++)for(let z=-r;z<=r;z++){if(x*x+z*z>r*r)continue;try{const b=p.dimension.getBlock({x:at.x+x,y:at.y,z:at.z+z}),up=p.dimension.getBlock({x:at.x+x,y:at.y+1,z:at.z+z});if(b?.typeId==='minecraft:water'&&(b.permutation.getState('liquid_depth')??0)===0&&up?.isAir)b.setType('minecraft:frosted_ice');}catch{}}}
+function freeze(p,amp){if(!p.isOnGround)return;const r=Math.min(7,3+amp),at={x:Math.floor(p.location.x),y:Math.floor(p.location.y)-1,z:Math.floor(p.location.z)};for(let x=-r;x<=r;x++)for(let z=-r;z<=r;z++){if(x*x+z*z>r*r)continue;try{const b=p.dimension.getBlock({x:at.x+x,y:at.y,z:at.z+z}),up=p.dimension.getBlock({x:at.x+x,y:at.y+1,z:at.z+z});if(b?.typeId==='minecraft:water'&&(b.permutation.getState('liquid_depth')??0)===0&&up?.isAir)b.setType('minecraft:frosted_ice');}catch{}}}
 function doubleFreshDrops(dimension,position,chance){
  if(Math.random()>=chance)return;
  const options={type:'minecraft:item',location:position,maxDistance:1.5},before=new Set(dimension.getEntities(options).map(e=>e.id));

@@ -23,7 +23,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count1"
+        "identifier": "geometry.kwl.g_cf0e198621ddb72d"
       },
       "minecraft:material_instances": {
         "*": {
@@ -67,7 +67,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 1",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count1"
+            "identifier": "geometry.kwl.g_cf0e198621ddb72d"
           },
           "minecraft:material_instances": {
             "*": {
@@ -89,7 +89,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 2",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count2"
+            "identifier": "geometry.kwl.g_3790699d01b991f1"
           },
           "minecraft:material_instances": {
             "*": {
@@ -111,7 +111,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 3",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count3"
+            "identifier": "geometry.kwl.g_786a423a6bad5e4e"
           },
           "minecraft:material_instances": {
             "*": {
@@ -133,7 +133,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 4",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count4"
+            "identifier": "geometry.kwl.g_b9dead9920359fd1"
           },
           "minecraft:material_instances": {
             "*": {

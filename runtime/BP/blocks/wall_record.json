@@ -31,7 +31,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__0"
+        "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
       },
       "minecraft:material_instances": {
         "*": {
@@ -82,8 +82,8 @@
       "kaleidoscope_world_liquor:furniture": {},
       "minecraft:tick": {
         "interval_range": [
-          20,
-          20
+          80,
+          80
         ],
         "looping": true
       },
@@ -136,7 +136,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__0"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -158,7 +158,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__1"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -180,7 +180,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__2"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -202,7 +202,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__3"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -224,7 +224,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 0 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__4"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -246,7 +246,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__5"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -268,7 +268,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__6"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -290,7 +290,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__7"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -312,7 +312,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__8"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -334,7 +334,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 1 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__9"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -356,7 +356,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__10"
+            "identifier": "geometry.kwl.g_e87148eb46475ffa"
           },
           "minecraft:material_instances": {
             "*": {
@@ -378,7 +378,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__11"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -400,7 +400,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__12"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -422,7 +422,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__13"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -444,7 +444,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 2 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__14"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -466,7 +466,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__15"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -488,7 +488,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__16"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -510,7 +510,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__17"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -532,7 +532,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__minecraft__18"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -554,7 +554,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 3 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__1"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -576,7 +576,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 0",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__2"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -598,7 +598,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 1",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__3"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -620,7 +620,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 2",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__4"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -642,7 +642,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 3",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__5"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {
@@ -664,7 +664,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:model_group') == 4 && q.block_state('kaleidoscope_world_liquor:model_variant') == 4",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__wall_record__6"
+            "identifier": "geometry.kwl.g_8c596a0f0cbd0f27"
           },
           "minecraft:material_instances": {
             "*": {

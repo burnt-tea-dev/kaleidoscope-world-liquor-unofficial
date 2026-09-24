@@ -23,7 +23,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__left"
+        "identifier": "geometry.kwl.g_bf5e1b33950f0930"
       },
       "minecraft:material_instances": {
         "*": {
@@ -74,8 +74,8 @@
       "kaleidoscope_world_liquor:furniture": {},
       "minecraft:tick": {
         "interval_range": [
-          20,
-          20
+          80,
+          80
         ],
         "looping": true
       }
@@ -121,7 +121,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:position') == 'left'",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__left"
+            "identifier": "geometry.kwl.g_bf5e1b33950f0930"
           },
           "minecraft:material_instances": {
             "*": {
@@ -143,7 +143,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:position') == 'middle'",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__middle"
+            "identifier": "geometry.kwl.g_e58e1d36a18fe571"
           },
           "minecraft:material_instances": {
             "*": {
@@ -165,7 +165,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:position') == 'right'",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__right"
+            "identifier": "geometry.kwl.g_ad5da8558c3bd3ea"
           },
           "minecraft:material_instances": {
             "*": {
@@ -187,7 +187,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:position') == 'single'",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__single"
+            "identifier": "geometry.kwl.g_3c908a89764781f8"
           },
           "minecraft:material_instances": {
             "*": {

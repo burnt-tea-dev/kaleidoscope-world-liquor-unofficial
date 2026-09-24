@@ -5,7 +5,7 @@
       "identifier": "kaleidoscope_world_liquor:cola",
       "menu_category": {
         "category": "equipment",
-        "group": "kaleidoscope_world_liquor:itemGroup.drinks"
+        "group": "kaleidoscope_tavern:itemGroup.name.tavern_brewing"
       }
     },
     "components": {

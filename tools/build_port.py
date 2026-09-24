@@ -6,7 +6,7 @@ from PIL import Image
 from opencc import OpenCC
 import java_geometry as geo
 ROOT=Path(__file__).resolve().parents[1];UP=ROOT/'upstream';RT=ROOT/'runtime';BP=RT/'BP';RP=RT/'RP'
-TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';cc=OpenCC('s2t')
+TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,1];TAV_VERSION=[0,6,36];cc=OpenCC('s2t')
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 def js(p,name,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text('export const '+name+' = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n')
@@ -18,7 +18,9 @@ for lc in ['en_US','zh_CN','zh_TW']:
  for space in ['kaleidoscope_world_liquor','smc','kaleidoscope_twilight','kaleidoscope_tavern']:
   p=UP/f'assets/{space}/lang/{"zh_cn" if lc=="zh_TW" else lc.lower()}.json'
   if p.exists():langs[lc].update({k:cc.convert(v) if lc=='zh_TW' else v for k,v in read(p).items()})
-texts={lc:{} for lc in langs};items_tex={};terrain={};models={};allitems={};content=[];pages=[];recipes=[];inputs=[];audit={};modelspec={}
+texts={lc:{} for lc in langs};items_tex={};terrain={};models={};geometry_cache={};allitems={};content=[];pages=[];recipes=[];inputs=[];audit={};modelspec={}
+(RP/'models/kwl').mkdir(parents=True,exist_ok=True)
+for stale in (RP/'models/kwl').glob('*.geo.json'):stale.unlink()
 java_alcohol={x.split(':')[1] for x in read(UP/f'data/{KT}/tags/item/alcohol.json')['values'] if x.startswith(NS+':')}
 paintings=['bfxm_painting','bmt_painting','dream_painting','cha_painting','chen_painting','rabbit_painting','ch_painting','qxxy_painting']
 def name(item,lc):
@@ -46,7 +48,16 @@ def model(mid):
  for bone in g['minecraft:geometry'][0]['bones']:
   for cube in bone.get('cubes',[]):
    for uv in cube['uv'].values():uv['material_instance']='default'
- write(RP/f'models/kwl/{key}.geo.json',g)
+ # Geometry describes shape and UVs, while the atlas texture is selected by
+ # the block or render controller. Most Java color/wood variants share one
+ # shape. Reuse it and keep identifiers short for Bedrock client registration.
+ g['minecraft:geometry'][0]['description']['identifier']=''
+ fingerprint=hashlib.sha256(json.dumps(g,sort_keys=True,separators=(',',':')).encode()).hexdigest()[:16]
+ if fingerprint not in geometry_cache:
+  g['minecraft:geometry'][0]['description']['identifier']='geometry.kwl.g_'+fingerprint
+  write(RP/f'models/kwl/g_{fingerprint}.geo.json',g)
+  geometry_cache[fingerprint]=g
+ else:g=geometry_cache[fingerprint]
  texture='kwl_'+key;terrain[texture]={'textures':str(atlas.relative_to(RP).with_suffix(''))}
  result={'geometry':g['minecraft:geometry'][0]['description']['identifier'],'texture':texture,'path':str(atlas.relative_to(RP).with_suffix('')),'model':m,'data':g}
  models[mid]=result;audit[mid]={'inwardSurfaces':changes,'uvLowering':uvchanges};return result
@@ -81,8 +92,13 @@ def item(item,kind='plain',javaitem=None,modelinfo=None):
  if kind in ['bottle','cocktail','drink']:
   c.update({'minecraft:use_animation':'drink','minecraft:use_modifiers':{'use_duration':1.6,'movement_modifier':.35,'start_using':'if_first'},KT+':drink_effects' if kind=='bottle' else KT+':cocktail_effects' if kind=='cocktail' else NS+':consume':{}})
  elif kind=='block':c['minecraft:block_placer']={'block':item,'replace_block_item':False}
- group='drinks' if kind in ['bottle','cocktail','drink'] else 'furniture'
- d={'format_version':'1.26.50','minecraft:item':{'description':{'identifier':item,'menu_category':{'category':'equipment','group':NS+':itemGroup.'+group}},'components':c}}
+ # Match Tavern's creative inventory: quality variants stay out of the broad
+ # equipment list, while mixable drinks and decor share Tavern's groups.
+ group=('kaleidoscope_cookery:itemGroup.name.foods' if kind=='food' else KT+':itemGroup.name.'+('cocktails' if kind=='cocktail' else 'tavern_brewing' if kind=='drink' else 'tavern_decor'))
+ category=None if kind=='bottle' else {'category':'equipment','group':group}
+ description={'identifier':item}
+ if category:description['menu_category']=category
+ d={'format_version':'1.26.50','minecraft:item':{'description':description,'components':c}}
  write(BP/f'items/{short}.json',d);allitems[item]=d
  for lc in langs:texts[lc]['item.'+item+'.name']=name(javaitem or item,lc)
  return d
@@ -92,7 +108,7 @@ def block(identifier,mi,kind,states=None,perms=None):
  c={'minecraft:geometry':{'identifier':mi['geometry']},'minecraft:material_instances':materials,'minecraft:collision_box':False if kind in ['bottle','cocktail'] else {'origin':[-8,0,-8],'size':[16,16,16]},'minecraft:selection_box':{'origin':[-7,0,-7],'size':[14,16,14]},'minecraft:destructible_by_mining':{'seconds_to_destroy':.6},'minecraft:destructible_by_explosion':False,'minecraft:loot':'loot_tables/empty.json','minecraft:movable':{'movement_type':'immovable'}}
  if kind=='bottle':c[KT+':bottle_display']={}
  elif kind=='cocktail':c[KT+':cocktail_cup']={};c['minecraft:tick']={'interval_range':[20,20],'looping':True}
- else:c[NS+':furniture']={};c['minecraft:tick']={'interval_range':[20,20],'looping':True}
+ else:c[NS+':furniture']={};c['minecraft:tick']={'interval_range':[80,80],'looping':True}
  d={'format_version':'1.26.50','minecraft:block':{'description':{'identifier':identifier,'menu_category':{'category':'none'},'states':states or {KT+':facing':[0,1,2,3]}},'components':c,'permutations':perms or []}}
  for facing in range(1,4):d['minecraft:block']['permutations'].append({'condition':f"q.block_state('{KT}:facing') == {facing}",'components':{'minecraft:transformation':{'rotation':[0,[-0,-90,180,90][facing],0]}}})
  
@@ -123,7 +139,9 @@ for n,base in enumerate(bottleids):
  ids=[base+f'_q{q}' for q in range(1,7)]
  for q,i in enumerate(ids,1):
   d=item(i,'bottle',space+':'+short,first)
-  for lc in langs:texts[lc]['item.'+i+'.name']=name(base,lc)+' ['+(['Rough','Ordinary','Fine','Premium','Excellent','Legendary'][q-1] if lc=='en_US' else ['粗劣','普通','優質','佳釀','珍藏','典藏'][q-1] if lc=='zh_TW' else ['粗劣','普通','优质','佳酿','珍藏','典藏'][q-1])+']'
+  # Tavern's own quality bottles use the same visible name at all grades;
+  # quality is carried by the item ID and Tavern's quality UI/effect logic.
+  for lc in langs:texts[lc]['item.'+i+'.name']=name(base,lc)
  descriptor={'kind':'bottle','base':base,'block':blockid,'items':ids,'effects':effects[base],'maxCount':max(variants),'compact':(space+':'+short) not in blocked,'visualKind':1000+n,'visuals':{key:NS+':'+key for key in ['holder_bottle_visual','cellar_cabinet_bottle_visual','tilted_rack_bottle_visual','circular_rack_bottle_visual','bar_cabinet_bottle_visual','thrown_drink']}}
  content.append(descriptor);modelspec[base]=first
 for i in cocktailids:
@@ -228,7 +246,7 @@ for p in sorted((UP/f'data/{NS}/recipe').rglob('*.json')):
  elif typ!=NS+':bamboo_ferment':raise ValueError(typ)
 # Fallback food items are namespaced here to avoid colliding with future Twilight/SMC ports.
 for short in ['liangshan_ice_cone','kita_stuffed_crisp','pochi_pudding','magic_crispy_corner']:
- i=NS+':'+short;d=item(i,'plain','kaleidoscope_twilight:'+short);c=d['minecraft:item']['components'];c['minecraft:food']={'nutrition':5,'saturation_modifier':.4,'can_always_eat':True};c['minecraft:use_animation']='eat';c['minecraft:use_modifiers']={'use_duration':1.6};c[NS+':food']={};write(BP/f'items/{short}.json',d)
+ i=NS+':'+short;d=item(i,'food','kaleidoscope_twilight:'+short);c=d['minecraft:item']['components'];c['minecraft:food']={'nutrition':5,'saturation_modifier':.4,'can_always_eat':True};c['minecraft:use_animation']='eat';c['minecraft:use_modifiers']={'use_duration':1.6};c[NS+':food']={};write(BP/f'items/{short}.json',d)
 # Paintings use Tavern's corrected wall/ceiling geometry and Java frames/textures.
 for short in paintings:
  source=read(TAV/'runtime/BP/blocks/mona_lisa_painting.json');text=json.dumps(source).replace('kaleidoscope_tavern:mona_lisa_painting',NS+':'+short)
@@ -273,7 +291,7 @@ for key,entry in read(UP/f'assets/{NS}/sounds.json').items():
   sounds.append({'name':str(dst.relative_to(RP).with_suffix('')),'stream':value.get('stream',False),'weight':value.get('weight',1)})
  sounddefs[NS+'.'+key]={'category':'record' if 'music_disc' in key else 'player','sounds':sounds}
 write(RP/'sounds/sound_definitions.json',{'format_version':'1.14.0','sound_definitions':sounddefs})
-record=item(NS+':custom_record');record['minecraft:item']['components'].update({'minecraft:max_stack_size':1});write(BP/'items/custom_record.json',record)
+record=item(NS+':custom_record','record');record['minecraft:item']['components'].update({'minecraft:max_stack_size':1});write(BP/'items/custom_record.json',record)
 # Pin the SDK from the matching base release.
 for file in ['tavern-extension-client.js','protocol.js','util.js']:
  dest=BP/'scripts/sdk'/file;dest.parent.mkdir(exist_ok=True);shutil.copyfile(TAV/'sdk'/file,dest)
@@ -345,10 +363,10 @@ js(BP/'scripts/wall-record-models.js','RECORD_MODELS',{'minecraft:music_disc_'+s
 # Manifests: independent addon, required Tavern base; no player or HUD overrides.
 u=lambda x:str(uuid.uuid5(uuid.NAMESPACE_URL,'https://github.com/casama233/kaleidoscope-world-liquor-unofficial/'+x))
 for pack in ['BP','RP']:
- dep=[{'uuid':read(TAV/f'runtime/{pack}/manifest.json')['header']['uuid'],'version':[0,6,35]}]
- mods=[{'type':'data' if pack=='BP' else 'resources','uuid':u(pack+'/module'),'version':[0,1,0]}]
- if pack=='BP':mods.append({'type':'script','language':'javascript','entry':'scripts/main.js','uuid':u('script'),'version':[0,1,0]});dep += [{'uuid':u('RP'),'version':[0,1,0]},{'module_name':'@minecraft/server','version':'2.7.0'}]
- write(RT/pack/'manifest.json',{'format_version':2,'header':{'name':'pack.name','description':'pack.description','uuid':u(pack),'version':[0,1,0],'min_engine_version':[1,26,50]},'modules':mods,'dependencies':dep,**({'capabilities':['pbr']} if pack=='RP' else {})})
+ dep=[{'uuid':read(TAV/f'runtime/{pack}/manifest.json')['header']['uuid'],'version':TAV_VERSION}]
+ mods=[{'type':'data' if pack=='BP' else 'resources','uuid':u(pack+'/module'),'version':VERSION}]
+ if pack=='BP':mods.append({'type':'script','language':'javascript','entry':'scripts/main.js','uuid':u('script'),'version':VERSION});dep += [{'uuid':u('RP'),'version':VERSION},{'module_name':'@minecraft/server','version':'2.7.0'}]
+ write(RT/pack/'manifest.json',{'format_version':2,'header':{'name':'pack.name','description':'pack.description','uuid':u(pack),'version':VERSION,'min_engine_version':[1,26,50]},'modules':mods,'dependencies':dep,**({'capabilities':['pbr']} if pack=='RP' else {})})
  write(RT/pack/'texts/languages.json',list(langs))
  for lc in langs:
   title={'en_US':'Kaleidoscope World Liquor (Unofficial)','zh_CN':'森罗酒馆：世界名酒（非官方）','zh_TW':'森羅酒館：世界名酒（非官方）'}[lc]
@@ -362,7 +380,7 @@ for pack in ['BP','RP']:
 write(BP/'loot_tables/empty.json',{'pools':[]})
 js(BP/'scripts/freezer-recipes.js','FREEZER_RECIPES',freezers)
 js(BP/'scripts/content.js','CONTENT',content)
-js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.0','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
+js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.1','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
 write(RP/'textures/item_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.items','texture_data':items_tex})
 write(RP/'textures/terrain_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.terrain','texture_data':terrain})
 write(ROOT/'docs/conversion-audit.json',audit)

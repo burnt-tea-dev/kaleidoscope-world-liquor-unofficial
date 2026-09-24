@@ -23,7 +23,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__left"
+        "identifier": "geometry.kwl.g_682fa9a149814d9a"
       },
       "minecraft:material_instances": {
         "*": {
@@ -74,8 +74,8 @@
       "kaleidoscope_world_liquor:furniture": {},
       "minecraft:tick": {
         "interval_range": [
-          20,
-          20
+          80,
+          80
         ],
         "looping": true
       }
@@ -121,7 +121,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:position') == 'left'",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__left"
+            "identifier": "geometry.kwl.g_682fa9a149814d9a"
           },
           "minecraft:material_instances": {
             "*": {
@@ -143,7 +143,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:position') == 'middle'",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__middle"
+            "identifier": "geometry.kwl.g_749eae98236d676e"
           },
           "minecraft:material_instances": {
             "*": {
@@ -165,7 +165,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:position') == 'right'",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__right"
+            "identifier": "geometry.kwl.g_1e3ca522ce764b79"
           },
           "minecraft:material_instances": {
             "*": {
@@ -187,7 +187,7 @@
         "condition": "q.block_state('kaleidoscope_world_liquor:position') == 'single'",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__single"
+            "identifier": "geometry.kwl.g_e1663e2f1535b9c4"
           },
           "minecraft:material_instances": {
             "*": {

@@ -23,7 +23,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.smc__block__brew__drink__ice_tea__count1"
+        "identifier": "geometry.kwl.g_7c9f5c302e968f71"
       },
       "minecraft:material_instances": {
         "*": {
@@ -67,7 +67,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 1",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.smc__block__brew__drink__ice_tea__count1"
+            "identifier": "geometry.kwl.g_7c9f5c302e968f71"
           },
           "minecraft:material_instances": {
             "*": {
@@ -89,7 +89,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 2",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.smc__block__brew__drink__ice_tea__count2"
+            "identifier": "geometry.kwl.g_33d63e30edb0052d"
           },
           "minecraft:material_instances": {
             "*": {
@@ -111,7 +111,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 3",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.smc__block__brew__drink__ice_tea__count3"
+            "identifier": "geometry.kwl.g_088ce8ce7ef94a90"
           },
           "minecraft:material_instances": {
             "*": {
@@ -133,7 +133,7 @@
         "condition": "q.block_state('kaleidoscope_tavern:count') == 4",
         "components": {
           "minecraft:geometry": {
-            "identifier": "geometry.kwl.smc__block__brew__drink__ice_tea__count4"
+            "identifier": "geometry.kwl.g_b368e83514cfebcc"
           },
           "minecraft:material_instances": {
             "*": {

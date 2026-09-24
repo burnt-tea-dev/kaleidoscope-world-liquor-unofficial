@@ -2,11 +2,7 @@
   "format_version": "1.26.50",
   "minecraft:item": {
     "description": {
-      "identifier": "kaleidoscope_world_liquor:ice_tea_q6",
-      "menu_category": {
-        "category": "equipment",
-        "group": "kaleidoscope_world_liquor:itemGroup.drinks"
-      }
+      "identifier": "kaleidoscope_world_liquor:ice_tea_q6"
     },
     "components": {
       "minecraft:display_name": {

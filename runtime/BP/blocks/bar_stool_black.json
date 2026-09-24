@@ -17,7 +17,7 @@
     },
     "components": {
       "minecraft:geometry": {
-        "identifier": "geometry.kwl.kaleidoscope_world_liquor__block__bar__stool__bar_stool_black"
+        "identifier": "geometry.kwl.g_1559f531fcdb7ed3"
       },
       "minecraft:material_instances": {
         "*": {
@@ -68,8 +68,8 @@
       "kaleidoscope_world_liquor:furniture": {},
       "minecraft:tick": {
         "interval_range": [
-          20,
-          20
+          80,
+          80
         ],
         "looping": true
       }

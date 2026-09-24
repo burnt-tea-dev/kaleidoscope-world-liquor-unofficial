@@ -5,7 +5,7 @@
       "identifier": "kaleidoscope_world_liquor:dream_painting",
       "menu_category": {
         "category": "equipment",
-        "group": "kaleidoscope_world_liquor:itemGroup.furniture"
+        "group": "kaleidoscope_tavern:itemGroup.name.tavern_decor"
       }
     },
     "components": {
