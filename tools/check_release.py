@@ -15,6 +15,8 @@ geometry=set();owned_geometry=set()
 for pack in [rp,tav/'runtime/RP']:
  for p in (pack/'models').rglob('*.json'):
   try:
+   if pack==rp:
+    check(p.parent in (pack/'models/blocks',pack/'models/entity'),p.name+': geometry is outside a client-scanned models directory')
    for g in read(p).get('minecraft:geometry',[]):
     identifier=g['description']['identifier'];geometry.add(identifier)
     if pack==rp:
@@ -22,8 +24,8 @@ for pack in [rp,tav/'runtime/RP']:
      check(len(identifier)<=48,p.name+': geometry identifier is too long '+identifier)
      owned_geometry.add(identifier)
   except Exception as e:errors.append(str(p)+': '+str(e))
-# Keep the two-pack geometry registry comfortably below the client resource
-# budget; BDS does not exercise the client geometry loader.
+# Keep the combined pack compact. This count alone cannot prove client asset
+# registration: a valid geometry under an arbitrary directory is still missed.
 check(len(geometry)<1024,'combined Tavern + World Liquor geometry budget exceeded')
 for p in (bp/'blocks').glob('*.json'):
  d=read(p)['minecraft:block'];check(all(len(values)<=16 for values in d['description'].get('states',{}).values()),p.name+': state has more than 16 values');selectors=[d['components'],*(x['components'] for x in d.get('permutations',[]))]
@@ -41,7 +43,7 @@ for key,obj in read(rp/'textures/terrain_texture.json')['texture_data'].items():
  path=obj['textures'];check((rp/(path+'.png')).exists(),key+': missing block texture '+path)
 for pack in [bp,rp]:
  m=read(pack/'manifest.json');check(m['header']['name']=='pack.name' and m['header']['description']=='pack.description',pack.name+': manifest strings')
- check(m['header']['version']==[0,1,1],pack.name+': stale package version')
+ check(m['header']['version']==[0,1,2],pack.name+': stale package version')
  tavern_id=read(tav/'runtime'/pack.name/'manifest.json')['header']['uuid']
  check(any(d.get('uuid')==tavern_id and d.get('version')==[0,6,36] for d in m.get('dependencies',[])),pack.name+': stale Tavern dependency')
  icon=pack/'pack_icon.png';check(icon.exists(),pack.name+': missing icon')

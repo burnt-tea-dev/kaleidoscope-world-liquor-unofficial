@@ -1,0 +1,17 @@
+{
+  "version": "0.1.2",
+  "date": "2026-09-24",
+  "bds": "1.26.51.1",
+  "load_log": "load-0.6.36-kwl-0.1.2.log",
+  "load_errors": 0,
+  "extension_ack": "Registered kaleidoscope_world_liquor",
+  "tavern_dependency": "0.6.36",
+  "geometry_files_in_models_entity": 79,
+  "reported_missing_geometry_ids_now_in_supported_directory": 41,
+  "reported_missing_geometry_ids_unresolved": 0,
+  "client_visual_acceptance": "pending device review",
+  "interaction_simulations": 0,
+  "archive": "Kaleidoscope_World_Liquor_Unofficial_0.1.2_preview1.mcaddon",
+  "sha256": "3413e415c5be7125ddb3ee2fc130a2f6c8eb9680d409a6edbede30c629d5feec",
+  "bytes": 6688294
+}

@@ -6,7 +6,7 @@ from PIL import Image
 from opencc import OpenCC
 import java_geometry as geo
 ROOT=Path(__file__).resolve().parents[1];UP=ROOT/'upstream';RT=ROOT/'runtime';BP=RT/'BP';RP=RT/'RP'
-TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,1];TAV_VERSION=[0,6,36];cc=OpenCC('s2t')
+TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,2];TAV_VERSION=[0,6,36];cc=OpenCC('s2t')
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 def js(p,name,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text('export const '+name+' = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n')
@@ -19,8 +19,13 @@ for lc in ['en_US','zh_CN','zh_TW']:
   p=UP/f'assets/{space}/lang/{"zh_cn" if lc=="zh_TW" else lc.lower()}.json'
   if p.exists():langs[lc].update({k:cc.convert(v) if lc=='zh_TW' else v for k,v in read(p).items()})
 texts={lc:{} for lc in langs};items_tex={};terrain={};models={};geometry_cache={};allitems={};content=[];pages=[];recipes=[];inputs=[];audit={};modelspec={}
-(RP/'models/kwl').mkdir(parents=True,exist_ok=True)
-for stale in (RP/'models/kwl').glob('*.geo.json'):stale.unlink()
+# Bedrock scans block/entity geometry from the recognized model directories.
+# An arbitrary models/kwl directory packaged successfully but registered none
+# of its geometry on clients, even though BDS could load the behavior pack.
+legacy=RP/'models/kwl'
+if legacy.exists():shutil.rmtree(legacy)
+(RP/'models/entity').mkdir(parents=True,exist_ok=True)
+for stale in (RP/'models/entity').glob('kwl_g_*.geo.json'):stale.unlink()
 java_alcohol={x.split(':')[1] for x in read(UP/f'data/{KT}/tags/item/alcohol.json')['values'] if x.startswith(NS+':')}
 paintings=['bfxm_painting','bmt_painting','dream_painting','cha_painting','chen_painting','rabbit_painting','ch_painting','qxxy_painting']
 def name(item,lc):
@@ -55,7 +60,7 @@ def model(mid):
  fingerprint=hashlib.sha256(json.dumps(g,sort_keys=True,separators=(',',':')).encode()).hexdigest()[:16]
  if fingerprint not in geometry_cache:
   g['minecraft:geometry'][0]['description']['identifier']='geometry.kwl.g_'+fingerprint
-  write(RP/f'models/kwl/g_{fingerprint}.geo.json',g)
+  write(RP/f'models/entity/kwl_g_{fingerprint}.geo.json',g)
   geometry_cache[fingerprint]=g
  else:g=geometry_cache[fingerprint]
  texture='kwl_'+key;terrain[texture]={'textures':str(atlas.relative_to(RP).with_suffix(''))}
@@ -380,7 +385,7 @@ for pack in ['BP','RP']:
 write(BP/'loot_tables/empty.json',{'pools':[]})
 js(BP/'scripts/freezer-recipes.js','FREEZER_RECIPES',freezers)
 js(BP/'scripts/content.js','CONTENT',content)
-js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.1','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
+js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.2','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
 write(RP/'textures/item_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.items','texture_data':items_tex})
 write(RP/'textures/terrain_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.terrain','texture_data':terrain})
 write(ROOT/'docs/conversion-audit.json',audit)
