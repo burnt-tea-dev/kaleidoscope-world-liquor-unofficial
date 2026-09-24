@@ -57,3 +57,7 @@ python3 tools/build_release.py
 The load gate uses the real Bedrock Dedicated Server with public Cookery 1.0.6,
 Tavern 0.6.37 and both packs of this add-on. No simulated interaction tests are
 part of this project. See `docs/VALIDATION-0.1.3.json` for the exact result.
+
+## Download
+
+[Download 0.1.3 preview 1 (.mcaddon)](https://raw.githubusercontent.com/casama233/kaleidoscope-world-liquor-unofficial/v0.1.3-preview.1/downloads/Kaleidoscope_World_Liquor_Unofficial_0.1.3_preview1.mcaddon). Verify with `downloads/SHA256SUMS`.
