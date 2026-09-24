@@ -4,27 +4,13 @@
     "description": {
       "identifier": "kaleidoscope_world_liquor:seat",
       "materials": {
-        "default": "entity_alphatest_one_sided"
+        "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/kt_derived/a14/bar_stool_white_atlas"
+        "default": "textures/kaleidoscope_tavern/block/deco/sofa/blue"
       },
       "geometry": {
-        "default": "geometry.kt_assets_a13.bar_stool_blue"
-      },
-      "animations": {
-        "seat_turn": "animation.kt_runtime.stool.turn"
-      },
-      "scripts": {
-        "initialize": [
-          "v.kt_seat_angle = q.property('kaleidoscope_tavern:seat_yaw');"
-        ],
-        "pre_animation": [
-          "v.kt_seat_angle = math.lerprotate(v.kt_seat_angle, q.property('kaleidoscope_tavern:seat_yaw'), math.clamp(q.delta_time * 12, 0, 1));"
-        ],
-        "animate": [
-          "seat_turn"
-        ]
+        "default": "geometry.kt_runtime.invisible"
       },
       "render_controllers": [
         "controller.render.kt_runtime.furniture"

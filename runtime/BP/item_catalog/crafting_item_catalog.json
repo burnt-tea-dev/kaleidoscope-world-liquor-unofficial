@@ -1,0 +1,110 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "name": "kaleidoscope_tavern:itemGroup.name.wines",
+              "icon": "kaleidoscope_world_liquor:absolut_vodka_q6"
+            },
+            "items": [
+              "kaleidoscope_world_liquor:absolut_vodka_q6",
+              "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
+              "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
+              "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+              "kaleidoscope_world_liquor:cola",
+              "kaleidoscope_world_liquor:cool_tea_q6",
+              "kaleidoscope_world_liquor:dassai_q6",
+              "kaleidoscope_world_liquor:ice_tea_q6",
+              "kaleidoscope_world_liquor:jack_daniel_q6",
+              "kaleidoscope_world_liquor:johnnie_walker_q6",
+              "kaleidoscope_world_liquor:kwas_chlebowy_q6",
+              "kaleidoscope_world_liquor:lafite_1982_q6",
+              "kaleidoscope_world_liquor:maotai_q6",
+              "kaleidoscope_world_liquor:pina_colada_q6",
+              "kaleidoscope_world_liquor:skyy_vodka_q6",
+              "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+              "kaleidoscope_world_liquor:sour_plum_q6",
+              "kaleidoscope_world_liquor:spiryt_vodka_q6",
+              "kaleidoscope_world_liquor:strongbow_q6",
+              "kaleidoscope_world_liquor:tonic_water"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "kaleidoscope_tavern:itemGroup.name.cocktails",
+              "icon": "kaleidoscope_world_liquor:around_the_world"
+            },
+            "items": [
+              "kaleidoscope_world_liquor:around_the_world",
+              "kaleidoscope_world_liquor:gin_tonic",
+              "kaleidoscope_world_liquor:jerk",
+              "kaleidoscope_world_liquor:long_island_iced_tea",
+              "kaleidoscope_world_liquor:pine_colada",
+              "kaleidoscope_world_liquor:shrimp_cocktail"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "kaleidoscope_tavern:itemGroup.name.tavern_decor",
+              "icon": "kaleidoscope_world_liquor:oak_bar_cabinet"
+            },
+            "items": [
+              "kaleidoscope_world_liquor:bar_stool_black",
+              "kaleidoscope_world_liquor:bar_stool_blue",
+              "kaleidoscope_world_liquor:bar_stool_brown",
+              "kaleidoscope_world_liquor:bar_stool_cyan",
+              "kaleidoscope_world_liquor:bar_stool_gray",
+              "kaleidoscope_world_liquor:bar_stool_green",
+              "kaleidoscope_world_liquor:bar_stool_light_blue",
+              "kaleidoscope_world_liquor:bar_stool_light_gray",
+              "kaleidoscope_world_liquor:bar_stool_lime",
+              "kaleidoscope_world_liquor:bar_stool_magenta",
+              "kaleidoscope_world_liquor:bar_stool_orange",
+              "kaleidoscope_world_liquor:bar_stool_pink",
+              "kaleidoscope_world_liquor:bar_stool_purple",
+              "kaleidoscope_world_liquor:bar_stool_red",
+              "kaleidoscope_world_liquor:bar_stool_white",
+              "kaleidoscope_world_liquor:bar_stool_yellow",
+              "kaleidoscope_world_liquor:bfxm_painting",
+              "kaleidoscope_world_liquor:birch_bar_cabinet",
+              "kaleidoscope_world_liquor:birch_cellar_cabinet",
+              "kaleidoscope_world_liquor:bmt_painting",
+              "kaleidoscope_world_liquor:ch_painting",
+              "kaleidoscope_world_liquor:cha_painting",
+              "kaleidoscope_world_liquor:chen_painting",
+              "kaleidoscope_world_liquor:cherry_bar_cabinet",
+              "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+              "kaleidoscope_world_liquor:custom_record",
+              "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+              "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+              "kaleidoscope_world_liquor:dream_painting",
+              "kaleidoscope_world_liquor:freezer",
+              "kaleidoscope_world_liquor:oak_bar_cabinet",
+              "kaleidoscope_world_liquor:oak_cellar_cabinet",
+              "kaleidoscope_world_liquor:qxxy_painting",
+              "kaleidoscope_world_liquor:rabbit_painting",
+              "kaleidoscope_world_liquor:spruce_bar_cabinet",
+              "kaleidoscope_world_liquor:spruce_cellar_cabinet"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "kaleidoscope_cookery:itemGroup.name.foods",
+              "icon": "kaleidoscope_world_liquor:pochi_pudding"
+            },
+            "items": [
+              "kaleidoscope_world_liquor:kita_stuffed_crisp",
+              "kaleidoscope_world_liquor:liangshan_ice_cone",
+              "kaleidoscope_world_liquor:magic_crispy_corner",
+              "kaleidoscope_world_liquor:pochi_pudding"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

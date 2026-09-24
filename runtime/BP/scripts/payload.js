@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -5270,13 +5270,13 @@ export const payload = {
       "id": "kaleidoscope_world_liquor:guide/spruce_bar_cabinet",
       "title": {
         "en_US": "Spruce Bar Cabinet",
-        "zh_CN": "深色橡木木酒柜",
-        "zh_TW": "深色橡木木酒櫃"
+        "zh_CN": "云杉木酒柜",
+        "zh_TW": "雲杉木酒櫃"
       },
       "body": {
         "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / X·X / XXX\n\nX = Dark Oak Slab\n\n→ Spruce Bar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Dark Oak Slab\n\n→ 深色橡木木酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Dark Oak Slab\n\n→ 深色橡木木酒櫃 ×1"
+        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Dark Oak Slab\n\n→ 云杉木酒柜 ×1",
+        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Dark Oak Slab\n\n→ 雲杉木酒櫃 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/spruce_bar_cabinet"
@@ -5285,13 +5285,13 @@ export const payload = {
       "id": "kaleidoscope_world_liquor:guide/spruce_cellar_cabinet",
       "title": {
         "en_US": "Spruce Cellar Cabinet",
-        "zh_CN": "深色橡木窖藏酒柜",
-        "zh_TW": "深色橡木窖藏酒櫃"
+        "zh_CN": "云杉木窖藏酒柜",
+        "zh_TW": "雲杉木窖藏酒櫃"
       },
       "body": {
         "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / XXX / XXX\n\nX = Dark Oak Slab\n\n→ Spruce Cellar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Dark Oak Slab\n\n→ 深色橡木窖藏酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Dark Oak Slab\n\n→ 深色橡木窖藏酒櫃 ×1"
+        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Dark Oak Slab\n\n→ 云杉木窖藏酒柜 ×1",
+        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Dark Oak Slab\n\n→ 雲杉木窖藏酒櫃 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/spruce_cellar_cabinet"
@@ -5300,13 +5300,13 @@ export const payload = {
       "id": "kaleidoscope_world_liquor:guide/dark_oak_bar_cabinet",
       "title": {
         "en_US": "Dark Oak Bar Cabinet",
-        "zh_CN": "云杉木酒柜",
-        "zh_TW": "雲杉木酒櫃"
+        "zh_CN": "深色橡木酒柜",
+        "zh_TW": "深色橡木酒櫃"
       },
       "body": {
         "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / X·X / XXX\n\nX = Spruce Slab\n\n→ Dark Oak Bar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Spruce Slab\n\n→ 云杉木酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Spruce Slab\n\n→ 雲杉木酒櫃 ×1"
+        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Spruce Slab\n\n→ 深色橡木酒柜 ×1",
+        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Spruce Slab\n\n→ 深色橡木酒櫃 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/dark_oak_bar_cabinet"
@@ -5315,13 +5315,13 @@ export const payload = {
       "id": "kaleidoscope_world_liquor:guide/dark_oak_cellar_cabinet",
       "title": {
         "en_US": "Dark Oak Cellar Cabinet",
-        "zh_CN": "云杉木窖藏酒柜",
-        "zh_TW": "雲杉木窖藏酒櫃"
+        "zh_CN": "深色橡木窖藏酒柜",
+        "zh_TW": "深色橡木窖藏酒櫃"
       },
       "body": {
         "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / XXX / XXX\n\nX = Spruce Slab\n\n→ Dark Oak Cellar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Spruce Slab\n\n→ 云杉木窖藏酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Spruce Slab\n\n→ 雲杉木窖藏酒櫃 ×1"
+        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Spruce Slab\n\n→ 深色橡木窖藏酒柜 ×1",
+        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Spruce Slab\n\n→ 深色橡木窖藏酒櫃 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/dark_oak_cellar_cabinet"
@@ -5464,14 +5464,14 @@ export const payload = {
     {
       "id": "kaleidoscope_world_liquor:guide/bfxm_painting",
       "title": {
-        "en_US": "Painting",
-        "zh_CN": "挂画",
-        "zh_TW": "掛畫"
+        "en_US": "Painting · Artist: White Sail Kitty L",
+        "zh_CN": "挂画 · 白帆小喵L",
+        "zh_TW": "掛畫 · 白帆小喵L"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Cyan Wool\n\n→ Painting ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Cyan Wool\n\n→ 挂画 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Cyan Wool\n\n→ 掛畫 ×1"
+        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Cyan Wool\n\n→ Painting · Artist: White Sail Kitty L ×1",
+        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Cyan Wool\n\n→ 挂画 · 白帆小喵L ×1",
+        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Cyan Wool\n\n→ 掛畫 · 白帆小喵L ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bfxm_painting"
@@ -5479,14 +5479,14 @@ export const payload = {
     {
       "id": "kaleidoscope_world_liquor:guide/bmt_painting",
       "title": {
-        "en_US": "Painting",
-        "zh_CN": "挂画",
-        "zh_TW": "掛畫"
+        "en_US": "Painting · Artist: White Bun",
+        "zh_CN": "挂画 · 白馒头",
+        "zh_TW": "掛畫 · 白饅頭"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Bread\n\n→ Painting ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Bread\n\n→ 挂画 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Bread\n\n→ 掛畫 ×1"
+        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Bread\n\n→ Painting · Artist: White Bun ×1",
+        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Bread\n\n→ 挂画 · 白馒头 ×1",
+        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Bread\n\n→ 掛畫 · 白饅頭 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bmt_painting"
@@ -5494,14 +5494,14 @@ export const payload = {
     {
       "id": "kaleidoscope_world_liquor:guide/dream_painting",
       "title": {
-        "en_US": "Painting",
-        "zh_CN": "挂画",
-        "zh_TW": "掛畫"
+        "en_US": "Painting · Artist: Old Dream",
+        "zh_CN": "挂画 · 旧梦",
+        "zh_TW": "掛畫 · 舊夢"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Lime Wool\n\n→ Painting ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Lime Wool\n\n→ 挂画 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Lime Wool\n\n→ 掛畫 ×1"
+        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Lime Wool\n\n→ Painting · Artist: Old Dream ×1",
+        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Lime Wool\n\n→ 挂画 · 旧梦 ×1",
+        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Lime Wool\n\n→ 掛畫 · 舊夢 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/dream_painting"
@@ -5509,14 +5509,14 @@ export const payload = {
     {
       "id": "kaleidoscope_world_liquor:guide/cha_painting",
       "title": {
-        "en_US": "Painting",
-        "zh_CN": "挂画",
-        "zh_TW": "掛畫"
+        "en_US": "Painting · Artist: Tea Jujube",
+        "zh_CN": "挂画 · 茶枣子",
+        "zh_TW": "掛畫 · 茶棗子"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Magenta Wool\n\n→ Painting ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Magenta Wool\n\n→ 挂画 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Magenta Wool\n\n→ 掛畫 ×1"
+        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Magenta Wool\n\n→ Painting · Artist: Tea Jujube ×1",
+        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Magenta Wool\n\n→ 挂画 · 茶枣子 ×1",
+        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Magenta Wool\n\n→ 掛畫 · 茶棗子 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/cha_painting"
@@ -5524,14 +5524,14 @@ export const payload = {
     {
       "id": "kaleidoscope_world_liquor:guide/chen_painting",
       "title": {
-        "en_US": "Painting",
-        "zh_CN": "挂画",
-        "zh_TW": "掛畫"
+        "en_US": "Painting · Artist: Chen",
+        "zh_CN": "挂画 · 辰",
+        "zh_TW": "掛畫 · 辰"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Light Blue Wool\n\n→ Painting ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Light Blue Wool\n\n→ 挂画 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Light Blue Wool\n\n→ 掛畫 ×1"
+        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Light Blue Wool\n\n→ Painting · Artist: Chen ×1",
+        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Light Blue Wool\n\n→ 挂画 · 辰 ×1",
+        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Light Blue Wool\n\n→ 掛畫 · 辰 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/chen_painting"
@@ -5539,14 +5539,14 @@ export const payload = {
     {
       "id": "kaleidoscope_world_liquor:guide/rabbit_painting",
       "title": {
-        "en_US": "Painting",
-        "zh_CN": "挂画",
-        "zh_TW": "掛畫"
+        "en_US": "Painting · Artist: Be Good Little Bunny",
+        "zh_CN": "挂画 · 小兔子要听话哦",
+        "zh_TW": "掛畫 · 小兔子要聽話哦"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Rabbit\n\n→ Painting ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Rabbit\n\n→ 挂画 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Rabbit\n\n→ 掛畫 ×1"
+        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Rabbit\n\n→ Painting · Artist: Be Good Little Bunny ×1",
+        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Rabbit\n\n→ 挂画 · 小兔子要听话哦 ×1",
+        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Rabbit\n\n→ 掛畫 · 小兔子要聽話哦 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/rabbit_painting"
@@ -5554,14 +5554,14 @@ export const payload = {
     {
       "id": "kaleidoscope_world_liquor:guide/ch_painting",
       "title": {
-        "en_US": "Painting",
-        "zh_CN": "挂画",
-        "zh_TW": "掛畫"
+        "en_US": "Painting · Artist: Star Leap Qianxue F",
+        "zh_CN": "挂画 · 阡雪星跃F",
+        "zh_TW": "掛畫 · 阡雪星躍F"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Orange Wool\n\n→ Painting ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Orange Wool\n\n→ 挂画 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Orange Wool\n\n→ 掛畫 ×1"
+        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Orange Wool\n\n→ Painting · Artist: Star Leap Qianxue F ×1",
+        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Orange Wool\n\n→ 挂画 · 阡雪星跃F ×1",
+        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Orange Wool\n\n→ 掛畫 · 阡雪星躍F ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/ch_painting"
@@ -5569,14 +5569,14 @@ export const payload = {
     {
       "id": "kaleidoscope_world_liquor:guide/qxxy_painting",
       "title": {
-        "en_US": "Painting",
-        "zh_CN": "挂画",
-        "zh_TW": "掛畫"
+        "en_US": "Painting · Artist: Cauliflower",
+        "zh_CN": "挂画 · 花菜",
+        "zh_TW": "掛畫 · 花菜"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Birch Sapling\n\n→ Painting ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Birch Sapling\n\n→ 挂画 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Birch Sapling\n\n→ 掛畫 ×1"
+        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Birch Sapling\n\n→ Painting · Artist: Cauliflower ×1",
+        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Birch Sapling\n\n→ 挂画 · 花菜 ×1",
+        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Birch Sapling\n\n→ 掛畫 · 花菜 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/qxxy_painting"
@@ -5585,13 +5585,13 @@ export const payload = {
       "id": "kaleidoscope_world_liquor:guide/custom_record",
       "title": {
         "en_US": "Bar Music Disc",
-        "zh_CN": "Bar",
-        "zh_TW": "Bar"
+        "zh_CN": "酒馆唱片",
+        "zh_TW": "酒館唱片"
       },
       "body": {
         "en_US": "Insert into a jukebox to play one of the two original tracks.\n\nCrafting:\n\n#kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol\n\n→ Bar Music Disc ×1",
-        "zh_CN": "放入唱片机，随机播放原版两首曲目之一。\n\n合成:\n\n#kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol\n\n→ Bar ×1",
-        "zh_TW": "放入唱片機，隨機播放原版兩首曲目之一。\n\n合成:\n\n#kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol\n\n→ Bar ×1"
+        "zh_CN": "放入唱片机，随机播放原版两首曲目之一。\n\n合成:\n\n#kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol\n\n→ 酒馆唱片 ×1",
+        "zh_TW": "放入唱片機，隨機播放原版兩首曲目之一。\n\n合成:\n\n#kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol\n\n→ 酒館唱片 ×1"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/custom_record"

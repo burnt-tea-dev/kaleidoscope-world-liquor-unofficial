@@ -6,7 +6,7 @@ from PIL import Image
 from opencc import OpenCC
 import java_geometry as geo
 ROOT=Path(__file__).resolve().parents[1];UP=ROOT/'upstream';RT=ROOT/'runtime';BP=RT/'BP';RP=RT/'RP'
-TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,2];TAV_VERSION=[0,6,36];cc=OpenCC('s2t')
+TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,3];TAV_VERSION=[0,6,37];cc=OpenCC('s2t')
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 def js(p,name,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text('export const '+name+' = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n')
@@ -33,7 +33,15 @@ def name(item,lc):
  if item.split(':')[1] in paintings:old=KT+':'+item.split(':')[1]
  if item.endswith(':ice_tea'):old='smc:ice_tea'
  if item.split(':')[1] in ['liangshan_ice_cone','kita_stuffed_crisp','pochi_pudding','magic_crispy_corner']:old='kaleidoscope_twilight:'+item.split(':')[1]
- return langs[lc].get('item.'+old.replace(':','.'),langs[lc].get('block.'+old.replace(':','.'),item.split(':')[1].replace('_',' ').title()))
+ value=langs[lc].get('item.'+old.replace(':','.'),langs[lc].get('block.'+old.replace(':','.'),item.split(':')[1].replace('_',' ').title()))
+ short=item.split(':')[1]
+ if short.startswith('spruce_') and lc!='en_US':value=value.replace('深色橡木木','雲杉木' if lc=='zh_TW' else '云杉木').replace('深色橡木','雲杉木' if lc=='zh_TW' else '云杉木')
+ if short.startswith('dark_oak_') and lc!='en_US':value=value.replace('雲杉木','深色橡木').replace('云杉木','深色橡木')
+ if short=='custom_record' and lc!='en_US':value='酒館唱片' if lc=='zh_TW' else '酒馆唱片'
+ if short in paintings:
+  creator=langs[lc].get('tooltip.'+old.replace(':','.'),short.replace('_painting',''))
+  value=value+' · '+creator
+ return value
 def localized(item):return {lc:name(item,lc) for lc in langs}
 def model(mid):
  if mid in models:return models[mid]
@@ -99,8 +107,8 @@ def item(item,kind='plain',javaitem=None,modelinfo=None):
  elif kind=='block':c['minecraft:block_placer']={'block':item,'replace_block_item':False}
  # Match Tavern's creative inventory: quality variants stay out of the broad
  # equipment list, while mixable drinks and decor share Tavern's groups.
- group=('kaleidoscope_cookery:itemGroup.name.foods' if kind=='food' else KT+':itemGroup.name.'+('cocktails' if kind=='cocktail' else 'tavern_brewing' if kind=='drink' else 'tavern_decor'))
- category=None if kind=='bottle' else {'category':'equipment','group':group}
+ group=('kaleidoscope_cookery:itemGroup.name.foods' if kind=='food' else KT+':itemGroup.name.'+('cocktails' if kind=='cocktail' else 'wines' if kind=='drink' or kind=='bottle' else 'tavern_decor'))
+ category=None if kind=='bottle' and not short.endswith('_q6') else {'category':'equipment','group':group}
  description={'identifier':item}
  if category:description['menu_category']=category
  d={'format_version':'1.26.50','minecraft:item':{'description':description,'components':c}}
@@ -285,7 +293,7 @@ write(RP/'render_controllers/cabinet.json',{'format_version':'1.8.0','render_con
 js(BP/'scripts/visual-items.js','VISUAL_ITEMS',viewitems)
 js(BP/'scripts/compact-items.js','COMPACT_ITEMS',[i for i in viewitems if (i.split('_q')[0] not in [ident(x) for x in blocked]) and (not i.startswith(KT+':') or i.split(':')[1].split('_q')[0] in ['empty_bottle','molotov','champagne','glowflower_brew','honey_wine','ice_wine','luminous_bride','plum_wine','polaris_sweet_white','red_queen','sakura_wine','sauvignon_blanc_dry_white','sherry','vinegar','whiskey','wine'])])
 seat=read(TAV/'runtime/BP/entities/seat_white.json');seat['minecraft:entity']['description']['identifier']=NS+':seat';seat['minecraft:entity']['components']['minecraft:type_family']={'family':['kwl_visual']};write(BP/'entities/seat.json',seat)
-seat=read(TAV/'runtime/RP/entity/runtime_seat_white.entity.json');seat['minecraft:client_entity']['description']['identifier']=NS+':seat';write(RP/'entity/seat.json',seat)
+seat_client=read(TAV/'runtime/RP/entity/runtime_sofa_seat.entity.json');seat_client['minecraft:client_entity']['description']['identifier']=NS+':seat';write(RP/'entity/seat.json',seat_client)
 # All custom sounds remain namespace-local.
 sounddefs={}
 for key,entry in read(UP/f'assets/{NS}/sounds.json').items():
@@ -341,7 +349,7 @@ for i in [*bottleids,*(x for x in cocktailids if x.startswith(NS+':')),*(x for x
  iconid=i+'_q6' if kind=='bottle' else i
  pages.append({'id':NS+':guide/'+short,'title':localized(i),'body':body,'recipeIds':[r['id'] for r in matching],'icon':items_tex['kwl_'+iconid.split(':')[1]]['textures']})
 # Native form/status labels, localized by the receiving client.
-status={'inventory_full':('Inventory full','物品栏已满','物品欄已滿'),'remaining':('Freezing: %s s','冷冻剩余：%s 秒','冷凍剩餘：%s 秒'),'blocked':('The lid is blocked','上方被阻挡，无法开盖','上方被阻擋，無法開蓋'),'need_item':('Requires %s','需要 %s','需要 %s')}
+status={'inventory_full':('Inventory full','物品栏已满','物品欄已滿'),'remaining':('Freezing: %s s','冷冻剩余：%s 秒','冷凍剩餘：%s 秒'),'blocked':('The lid is blocked','上方被阻挡，无法开盖','上方被阻擋，無法開蓋'),'need_item':('Requires %s','需要 %s','需要 %s'),'now_playing':('Now playing: Bar Music Disc','正在播放：酒馆唱片','正在播放：酒館唱片')}
 for lc,n in [('en_US',0),('zh_CN',1),('zh_TW',2)]:
  for key,values in status.items():texts[lc]['kwl.'+key]=values[n]
 
@@ -365,6 +373,14 @@ wall['minecraft:block']['components']['minecraft:selection_box']={'origin':[-7,1
 write(BP/'blocks/wall_record.json',wall)
 js(BP/'scripts/wall-record-models.js','RECORD_MODELS',{'minecraft:music_disc_'+s:n for n,s in enumerate(['13','cat','blocks','chirp','far','mall','mellohi','stal','strad','ward','11','wait','otherside','pigstep','5','relic','creator','precipice','creator_music_box'])})
 
+# One curated creative entry per aged drink, in Tavern's existing family groups.
+def group(group_name,icon,ids):return {'group_identifier':{'name':group_name,'icon':icon},'items':sorted(ids)}
+wines=[i for i in allitems if i.endswith('_q6') or i in (NS+':cola',NS+':tonic_water')]
+cocktails=[i for i in allitems if i in cocktailids]
+decor=[i for i in allitems if i not in wines and i not in cocktails and not re.search(r'_q[1-5]$',i) and i.split(':')[1] not in ['liangshan_ice_cone','kita_stuffed_crisp','pochi_pudding','magic_crispy_corner']]
+foods=[i for i in allitems if i.split(':')[1] in ['liangshan_ice_cone','kita_stuffed_crisp','pochi_pudding','magic_crispy_corner']]
+write(BP/'item_catalog/crafting_item_catalog.json',{'format_version':'1.21.90','minecraft:crafting_items_catalog':{'categories':[{'category_name':'equipment','groups':[group(KT+':itemGroup.name.wines',NS+':absolut_vodka_q6',wines),group(KT+':itemGroup.name.cocktails',NS+':around_the_world',cocktails),group(KT+':itemGroup.name.tavern_decor',NS+':oak_bar_cabinet',decor),group('kaleidoscope_cookery:itemGroup.name.foods',NS+':pochi_pudding',foods)]}]}})
+
 # Manifests: independent addon, required Tavern base; no player or HUD overrides.
 u=lambda x:str(uuid.uuid5(uuid.NAMESPACE_URL,'https://github.com/casama233/kaleidoscope-world-liquor-unofficial/'+x))
 for pack in ['BP','RP']:
@@ -385,7 +401,7 @@ for pack in ['BP','RP']:
 write(BP/'loot_tables/empty.json',{'pools':[]})
 js(BP/'scripts/freezer-recipes.js','FREEZER_RECIPES',freezers)
 js(BP/'scripts/content.js','CONTENT',content)
-js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.2','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
+js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.3','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
 write(RP/'textures/item_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.items','texture_data':items_tex})
 write(RP/'textures/terrain_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.terrain','texture_data':terrain})
 write(ROOT/'docs/conversion-audit.json',audit)

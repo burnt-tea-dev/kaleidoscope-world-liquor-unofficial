@@ -2,7 +2,11 @@
   "format_version": "1.26.50",
   "minecraft:item": {
     "description": {
-      "identifier": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6"
+      "identifier": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+      "menu_category": {
+        "category": "equipment",
+        "group": "kaleidoscope_tavern:itemGroup.name.wines"
+      }
     },
     "components": {
       "minecraft:display_name": {

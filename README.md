@@ -2,9 +2,9 @@
 
 Bedrock port of the [Java addon](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor).
 Requires the public beta of [Kaleidoscope Tavern (Unofficial)](https://github.com/casama233/kaleidoscope-tavern-unofficial)
-version **0.6.36** and its Cookery dependency. Enable both behavior and resource packs alongside Tavern and Cookery. Target: Bedrock/BDS 1.26.50+.
+version **0.6.37** and its Cookery dependency. Enable both behavior and resource packs alongside Tavern and Cookery. Target: Bedrock/BDS 1.26.50+.
 
-Current **0.1.2 preview** contains 18 six-quality bottled drinks, six new
+Current **0.1.3 preview** contains 18 six-quality bottled drinks, six new
 cocktails and their Java barrel/shaker recipes, 16 colored stools, 10 connected
 cabinet blocks, the freezer and five freezer recipes, eight paintings, two
 bottled mixers, four fallback foods, the random record and wall-hung records.
@@ -55,5 +55,5 @@ python3 tools/build_release.py
 ```
 
 The load gate uses the real Bedrock Dedicated Server with public Cookery 1.0.6,
-Tavern 0.6.36 and both packs of this add-on. No simulated interaction tests are
-part of this project. See `docs/VALIDATION-0.1.2.json` for the exact result.
+Tavern 0.6.37 and both packs of this add-on. No simulated interaction tests are
+part of this project. See `docs/VALIDATION-0.1.3.json` for the exact result.

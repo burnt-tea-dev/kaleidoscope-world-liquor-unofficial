@@ -13,13 +13,21 @@ const mutable=p=>!['Adventure','Spectator'].includes(p.getGameMode());
 const key=b=>NS+':storage/'+b.dimension.id.split(':')[1]+'/'+b.location.x+'_'+b.location.y+'_'+b.location.z;
 const center=b=>({x:b.location.x+.5,y:b.location.y+.5,z:b.location.z+.5});
 const plus=(p,v)=>({x:p.x+v.x,y:p.y+(v.y??0),z:p.z+v.z});
-const rotation=p=>(Math.round(p.getRotation().y/90)+2+4)%4;
+// Use Tavern's facing convention: north/east/south/west map to 0/1/2/3.
+const rotation=p=>Math.floor((((p.getRotation().y+45)%360)+360)%360/90);
 const furniture=id=>id?.startsWith(NS+':')&&(/_cabinet$|:freezer$|:bar_stool_|_painting$|:wall_record$/.test(id));
 const read=b=>JSON.parse(world.getDynamicProperty(key(b))??'null')??{type:b.typeId,slots:Array(b.typeId.includes('cellar_cabinet')?9:2).fill(null),input:[],fluid:null,recipe:null,remaining:0,output:0};
 const save=(b,s)=>world.setDynamicProperty(key(b),s?JSON.stringify(s):undefined);
 const safeBlock=(d,p)=>{try{return d.getBlock(p);}catch{return undefined;}};
 function say(p,key,args=[]){p.onScreenDisplay.setActionBar({translate:'kwl.'+key,with:args});}
-function plain(item){return !item||!item.nameTag&&!item.getLore().length&&!item.getDynamicPropertyIds().length&&!item.getComponent('minecraft:enchantable')?.getEnchantments().length;}
+function managedQualityLore(item){
+ if(!/^(kaleidoscope_tavern|kaleidoscope_world_liquor):[a-z_]+_q[1-6]$/.test(item?.typeId??''))return false;
+ const raw=item.getRawLore?.();if(!Array.isArray(raw)||!raw.length)return false;
+ const rows=raw.map(row=>JSON.stringify(row));
+ return rows.some(row=>row.includes('tooltip.kaleidoscope_tavern.bottle_block.brew_level'))
+  &&rows.at(-1).includes('item.kaleidoscope_tavern.mod_name');
+}
+function plain(item){return !item||!item.nameTag&&(!item.getLore().length||managedQualityLore(item))&&!item.getDynamicPropertyIds().length&&!item.getComponent('minecraft:enchantable')?.getEnchantments().length;}
 // Plan inventory changes on copies, then commit storage and inventory together.
 // A full inventory leaves the machine and held item untouched.
 function transaction(p,b,next,{take=0,give=[],permutation}={}){
@@ -99,7 +107,7 @@ export function registerFurniture(e){e.blockComponentRegistry.registerCustomComp
 export function installFurniture(){
  world.beforeEvents.playerInteractWithBlock.subscribe(e=>{
   if(e.block.typeId==='minecraft:jukebox'&&(e.itemStack?.typeId===NS+':custom_record'||!e.itemStack&&read(e.block).record)){
-   e.cancel=true;if(e.isFirstEvent===false)return;const p=e.player,b=e.block;system.run(()=>{try{const h=hand(p),s=read(b);if(s.record&&!h){transaction(p,b,undefined,{give:[[s.record,1]]});return;}if(h?.typeId!==NS+':custom_record'||s.record)return;s.record=h.typeId;if(transaction(p,b,s,{take:1}))b.dimension.playSound(NS+'.music_disc.random_disc',center(b));}catch(err){console.warn('[World Liquor] '+err);}});return;
+   e.cancel=true;if(e.isFirstEvent===false)return;const p=e.player,b=e.block;system.run(()=>{try{const h=hand(p),s=read(b);if(s.record&&!h){transaction(p,b,undefined,{give:[[s.record,1]]});return;}if(h?.typeId!==NS+':custom_record'||s.record)return;s.record=h.typeId;if(transaction(p,b,s,{take:1})){b.dimension.playSound(NS+'.music_disc.random_disc',center(b));say(p,'now_playing');}}catch(err){console.warn('[World Liquor] '+err);}});return;
   }
   if(furniture(e.block.typeId)){
    const id=e.block.typeId,held=e.itemStack?.typeId;
