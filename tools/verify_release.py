@@ -14,7 +14,9 @@ ROOT = Path(__file__).resolve().parents[1]
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--export-env', action='store_true')
+    parser.add_argument('--development', action='store_true', help='Verify integration build bytes, not an authorized publication')
     args = parser.parse_args()
+    assert not (args.development and args.export_env), 'Development builds cannot export publication metadata'
     request = json.loads((ROOT / '.github/release-request.json').read_text())
     version = request['version']
     assert re.fullmatch(r'\d+\.\d+\.\d+', version)
@@ -25,7 +27,8 @@ def main() -> None:
     assert re.fullmatch(r'[0-9a-f]{40}', request['tavern_commit'])
     dependency = ROOT.parent / 'tavern-src'
     actual_commit = subprocess.check_output(['git', '-C', str(dependency), 'rev-parse', 'HEAD'], text=True).strip()
-    assert actual_commit == request['tavern_commit'], 'Wrong pinned Tavern source'
+    if not args.development:
+        assert actual_commit == request['tavern_commit'], 'Wrong pinned Tavern source'
     versions = [int(v) for v in version.split('.')]
     for pack in ('BP', 'RP'):
         manifest = json.loads((ROOT / 'runtime' / pack / 'manifest.json').read_text())
@@ -39,7 +42,8 @@ def main() -> None:
     filename = f'Kaleidoscope_World_Liquor_Unofficial_{version}_preview1.mcaddon'
     archive_path = ROOT / 'dist' / filename
     digest = hashlib.sha256(archive_path.read_bytes()).hexdigest()
-    assert digest == request['expected_archive_sha256'], (digest, request['expected_archive_sha256'])
+    if not args.development:
+        assert digest == request['expected_archive_sha256'], (digest, request['expected_archive_sha256'])
     runtime = ROOT / 'runtime'
     expected = {p.relative_to(runtime).as_posix(): p for p in runtime.rglob('*') if p.is_file()}
     assert all(not p.is_symlink() for p in expected.values())
@@ -49,7 +53,7 @@ def main() -> None:
         assert set(names) == set(expected), 'ZIP is not the complete canonical runtime'
         for name, path in expected.items():
             assert archive.read(name) == path.read_bytes(), name
-    evidence = {'version': version, 'archive': filename, 'sha256': digest, 'bytes': archive_path.stat().st_size,
+    evidence = {'publicationVerified': not args.development, 'version': version, 'archive': filename, 'sha256': digest, 'bytes': archive_path.stat().st_size,
                 'entries': len(expected), 'tavernCommit': actual_commit, 'fullRuntimeMatch': True,
                 'newBdsTest': False, 'clientTest': False, 'playerSimulation': False}
     (ROOT / 'dist/ARCHIVE-VERIFICATION.json').write_text(json.dumps(evidence, indent=2) + '\n')

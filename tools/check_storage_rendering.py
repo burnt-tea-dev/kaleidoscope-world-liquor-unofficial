@@ -23,8 +23,14 @@ def main():
  assert compact[-1]==KT+':watermelon_juice' and object_digest(compact[:-1])==baseline['compactItemsSha256']
  assert items[KT+':molotov']==25 and KT+':molotov' in compact
  assert not any(i.startswith(KT+':watermelon_juice_q') for i in items)
- for path,h in baseline['files'].items():assert digest(ROOT/path)==h,path
- preserved=len(baseline['files'])
+ # Only effect ownership intentionally changes in this foundation refactor.
+ # Keep the historical baseline unchanged and explicitly test its replacement.
+ changed={'runtime/BP/scripts/effects.js'}
+ for path,h in baseline['files'].items():
+  if path not in changed:assert digest(ROOT/path)==h,path
+ effects=(ROOT/'runtime/BP/scripts/effects.js').read_text()
+ assert 'readTavernEffects' in effects and 'setDynamicProperty' not in effects and 'world.getAbsoluteTime' not in effects
+ preserved=len(baseline['files'])-len(changed)
  for prefix,expected in baseline['trees'].items():
   entries={p.relative_to(ROOT).as_posix():digest(p) for p in (ROOT/prefix).rglob('*') if p.is_file()}
   actual=hashlib.sha256(''.join(k+'\0'+v+'\n' for k,v in sorted(entries.items())).encode()).hexdigest()
@@ -35,7 +41,9 @@ def main():
 
  # Pure exported slot math, not the module which subscribes to engine events.
  node="""
- import {cabinetVisualPose} from './runtime/BP/scripts/cabinet-visual-pose.js';
+ import {barCabinetVisualPose} from '../tavern-src/runtime/BP/scripts/core/bar-cabinet.js';
+ import {cellarCabinetVisualPose} from '../tavern-src/runtime/BP/scripts/core/cellar-cabinet.js';
+ const cabinetVisualPose=(f,s,c,single=false)=>{const pose=c?cellarCabinetVisualPose(s,f):barCabinetVisualPose(s?'right':'left',single,f);return {...pose,rotation:{...pose.rotation,x:0}};};
  const cases=[];
  for(let f=0;f<4;f++){
   for(let slot=0;slot<9;slot++)cases.push({family:'cellar_cabinet',slot,facing:f,pose:cabinetVisualPose(f,slot,true)});
@@ -69,8 +77,9 @@ def main():
  for p in blocks:
   d=read(p)['minecraft:block'];assert NS+':furniture' in d['components']
  furniture=(ROOT/'runtime/BP/scripts/furniture.js').read_text()
- assert "import {cabinetVisualPose}" in furniture and 'pose=cabinetVisualPose(f,slot,cellar,!!s.single)' in furniture
- assert 'const rotation=pose.rotation;' in furniture and 'x:cellar?-90' not in furniture
+ assert 'forwardFurnitureTick' in furniture and 'VISUAL_ITEMS' not in furniture and 'function cabinet(' not in furniture
+ assert 'createExtensionFurniture' in (TAV/'runtime/BP/scripts/bedrock/extension-furniture.js').read_text()
+ assert 'entity.setRotation({x:0,y:pose.rotation.y})' in (TAV/'runtime/BP/scripts/bedrock/extension-furniture.js').read_text()
  checks=0;maximum=0
  for case in cases:
   client=clients['cellar' if case['family']=='cellar_cabinet' else 'bar']

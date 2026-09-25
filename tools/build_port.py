@@ -6,7 +6,7 @@ from PIL import Image
 from opencc import OpenCC
 import java_geometry as geo
 ROOT=Path(__file__).resolve().parents[1];UP=ROOT/'upstream';RT=ROOT/'runtime';BP=RT/'BP';RP=RT/'RP'
-TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,5];TAV_VERSION=[0,6,40];cc=OpenCC('s2t')
+TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,5];TAV_VERSION=[0,6,41];cc=OpenCC('s2t')
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 def js(p,name,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text('export const '+name+' = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n')
