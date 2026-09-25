@@ -43,7 +43,7 @@ for key,obj in read(rp/'textures/terrain_texture.json')['texture_data'].items():
  path=obj['textures'];check((rp/(path+'.png')).exists(),key+': missing block texture '+path)
 for pack in [bp,rp]:
  m=read(pack/'manifest.json');check(m['header']['name']=='pack.name' and m['header']['description']=='pack.description',pack.name+': manifest strings')
- check(m['header']['version']==[0,1,5],pack.name+': stale package version')
+ check(m['header']['version']==[0,1,6],pack.name+': stale package version')
  tavern_id=read(tav/'runtime'/pack.name/'manifest.json')['header']['uuid']
  tavern_version=read(tav/'runtime'/pack.name/'manifest.json')['header']['version']
  check(any(d.get('uuid')==tavern_id and d.get('version')==tavern_version for d in m.get('dependencies',[])),pack.name+': stale Tavern dependency')
@@ -71,3 +71,5 @@ subprocess.run(['python3',str(root/'tools/check_storage_rendering.py')],check=Tr
 
 # Use the host's shared taxonomy and checks, not an addon-specific grouping engine.
 subprocess.run(['python3',str(tav/'tools/creative/catalog.py'),'--root',str(root)],check=True,cwd=root)
+
+subprocess.run(['python3',str(tav/'tools/pick_block.py'),'--root',str(root)],check=True)
