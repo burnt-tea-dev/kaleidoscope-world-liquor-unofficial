@@ -23,6 +23,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
+          fetch-depth: 0
           path: world-liquor-src
           persist-credentials: false
       - uses: actions/checkout@v4
@@ -38,6 +39,23 @@ jobs:
         with:
           node-version: '22'
       - run: python -m pip install Pillow==11.3.0
+      - name: Verify optional original source pin for publication-only recovery
+        run: |
+          python - <<'PY'
+          import json,os,re,subprocess
+          from pathlib import Path
+          request=json.loads(Path('.github/release-request.json').read_text())
+          source=request.get('source_commit',os.environ['GITHUB_SHA'])
+          assert re.fullmatch(r'[0-9a-f]{40}',source)
+          subprocess.run(['git','merge-base','--is-ancestor',source,'HEAD'],check=True)
+          # A publisher-only follow-up may resume the original draft, but its
+          # runtime, build tools, documentation and release metadata must match.
+          subprocess.run(['git','diff','--exit-code',source,'HEAD','--','runtime/','tools/','docs/'],check=True)
+          original=json.loads(subprocess.check_output(['git','show',source+':.github/release-request.json']))
+          for data in (original,request):data.pop('source_commit',None)
+          assert original==request,'Pinned source has different release metadata'
+          with open(os.environ['GITHUB_ENV'],'a') as out:out.write('SOURCE_SHA='+source+'\n')
+          PY
       - name: Validate and build exact committed source
         run: |
           python tools/rebuild_guide.py
@@ -46,23 +64,33 @@ jobs:
           python tools/build_release.py
           python tools/verify_release.py --export-env
       - name: Include source and static validation evidence
-        env:
-          SOURCE_SHA: ${{ github.sha }}
         run: |
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
           cp docs/GUIDE-AUDIT-0.1.4.json docs/GUIDE-VALIDATION-0.1.4.json dist/
-      - name: Stage, download, verify and publish prerelease
+      - name: Stage or resume identical draft, verify assets, then publish
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: casama233/kaleidoscope-world-liquor-unofficial
-          SOURCE_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
-          if gh release view "$TAG" --repo "$GH_REPO" >/dev/null 2>&1; then
-            echo 'Release already exists; refusing to overwrite its assets or tag.' >&2
-            exit 1
+          view_draft() {
+            gh release view "$TAG" --repo "$GH_REPO" --json databaseId,tagName,targetCommitish,isDraft,isPrerelease,name,body
+          }
+          if view_draft > "$RUNNER_TEMP/draft-release.json"; then
+            echo 'Existing release found; only an identical unpublished draft may resume.'
+          else
+            gh release create "$TAG" dist/* --repo "$GH_REPO" --target "$SOURCE_SHA" --title "$TITLE" --notes-file dist/RELEASE-NOTES.md --draft --prerelease
+            view_draft > "$RUNNER_TEMP/draft-release.json"
           fi
-          gh release create "$TAG" dist/* --repo "$GH_REPO" --target "$SOURCE_SHA" --title "$TITLE" --notes-file dist/RELEASE-NOTES.md --draft --prerelease
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          r=json.loads(Path(os.environ['RUNNER_TEMP'],'draft-release.json').read_text())
+          assert r['isDraft'] is True and r['isPrerelease'] is True,'Refusing to modify a published release'
+          assert r['tagName']==os.environ['TAG'] and r['targetCommitish']==os.environ['SOURCE_SHA']
+          assert r['name']==os.environ['TITLE']
+          assert r['body'].strip()==Path('dist/RELEASE-NOTES.md').read_text().strip()
+          PY
           VERIFY_DIR="$RUNNER_TEMP/world-liquor-release-readback"
           mkdir -p "$VERIFY_DIR"
           export VERIFY_DIR
@@ -73,19 +101,33 @@ jobs:
           def hashes(root):
               return {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in Path(root).iterdir() if p.is_file()}
           local=hashes('dist');remote=hashes(os.environ['VERIFY_DIR'])
-          assert local==remote, 'Uploaded asset bytes differ from the verified local build'
-          ref=json.loads(subprocess.check_output(['gh','api','repos/'+os.environ['GH_REPO']+'/git/ref/tags/'+os.environ['TAG']]))
-          assert ref['object']['type']=='commit' and ref['object']['sha']==os.environ['SOURCE_SHA'],ref
+          assert local==remote,'Existing draft asset bytes differ; refusing to replace them'
+          # A draft created for a new tag does not materialize that Git ref.
+          # Reject an existing conflicting tag now; verify the new tag after publication.
+          refs=json.loads(subprocess.check_output(['gh','api','repos/'+os.environ['GH_REPO']+'/git/matching-refs/tags/'+os.environ['TAG']]))
+          exact=[r for r in refs if r['ref']=='refs/tags/'+os.environ['TAG']]
+          assert len(exact)<=1
+          if exact:assert exact[0]['object']['type']=='commit' and exact[0]['object']['sha']==os.environ['SOURCE_SHA']
           Path(os.environ['RUNNER_TEMP'],'asset-readback.json').write_text(json.dumps({'sourceCommit':os.environ['SOURCE_SHA'],'assets':remote,'archiveContentMatchesRuntime':True},indent=2)+'\n')
-          print('Every uploaded file and the release tag verified before publication.')
+          print('Every uploaded asset matches the source build; no assets replaced.')
+          PY
+          # Recheck draft identity immediately before its one publication mutation.
+          view_draft > "$RUNNER_TEMP/draft-recheck.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path(os.environ['RUNNER_TEMP'])
+          assert json.loads((root/'draft-release.json').read_text())==json.loads((root/'draft-recheck.json').read_text())
           PY
           gh release edit "$TAG" --repo "$GH_REPO" --draft=false --prerelease --latest=false
-          gh release view "$TAG" --repo "$GH_REPO" --json url,tagName,isDraft,isPrerelease,publishedAt > "$RUNNER_TEMP/published-release.json"
+          test "$(gh api "repos/$GH_REPO/git/ref/tags/$TAG" --jq '.object.sha')" = "$SOURCE_SHA"
+          gh release view "$TAG" --repo "$GH_REPO" --json url,tagName,isDraft,isPrerelease,publishedAt,targetCommitish > "$RUNNER_TEMP/published-release.json"
           python - <<'PY'
           import json,os
           from pathlib import Path
           data=json.loads(Path(os.environ['RUNNER_TEMP'],'published-release.json').read_text())
-          assert data['tagName']==os.environ['TAG'] and not data['isDraft'] and data['isPrerelease']
+          assert data['tagName']==os.environ['TAG'] and not data['isDraft'] and data['isPrerelease'] and data['publishedAt']
+          assert data['targetCommitish']==os.environ['SOURCE_SHA']
           print(data)
           PY
       - uses: actions/upload-artifact@v4
