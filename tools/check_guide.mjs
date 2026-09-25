@@ -57,7 +57,9 @@ const report={entries:payload.entries.length,addonProducts:addon.pages.length,ca
  barrelRecipes:addon.recipes.filter(r=>r.kind==='barrel').length,shakerRecipes:addon.recipes.filter(r=>r.kind==='shaker').length,
  extraCoreRecipes:extras.length,craftingRecipes:addon.pages.reduce((n,p)=>n+(p.crafting?.length??0),0),
  guidePackets:messages.length,guidePacketLimit:514,rawIdsInInstructions:false,cookery106BilingualFallback:true,playerSimulation:false};
-fs.writeFileSync(new URL('../docs/GUIDE-VALIDATION-0.1.5.json',import.meta.url),JSON.stringify(report,null,2)+'\n');
+const version=JSON.parse(fs.readFileSync(new URL('../runtime/BP/manifest.json',import.meta.url))).header.version;
+assert(Array.isArray(version)&&version.length===3&&version.every(n=>Number.isSafeInteger(n)&&n>=0),'Invalid pack version');
+fs.writeFileSync(new URL(`../docs/GUIDE-VALIDATION-${version.join('.')}.json`,import.meta.url),JSON.stringify(report,null,2)+'\n');
 fs.mkdirSync(new URL('../dist/',import.meta.url),{recursive:true});
 fs.writeFileSync(new URL('../dist/combined-guide-review.json',import.meta.url),JSON.stringify(payload,null,2)+'\n');
 console.log(JSON.stringify(report));
