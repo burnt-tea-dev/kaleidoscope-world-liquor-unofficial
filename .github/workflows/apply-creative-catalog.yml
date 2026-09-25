@@ -1,0 +1,42 @@
+name: Apply verified creative catalog adapter
+on:
+  push:
+    branches: [refactor/shared-foundation-20260925]
+    paths: ['.github/workflows/apply-creative-catalog.yml']
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: github.repository == 'casama233/kaleidoscope-world-liquor-unofficial' && github.ref == 'refs/heads/refactor/shared-foundation-20260925'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: world-liquor-src
+          fetch-depth: 2
+      - uses: actions/checkout@v4
+        with:
+          repository: casama233/kaleidoscope-tavern-unofficial
+          ref: 2c597ffaed56367e4878dcb8c29d05980fcc06b3
+          path: tavern-src
+          persist-credentials: false
+      - name: Apply checked metadata-only runtime patch
+        working-directory: world-liquor-src
+        run: |
+          test "$(git rev-parse HEAD^)" = 142188f7575c0f88ad97eb94b49d03d634d79757
+          python - <<'PY'
+          import hashlib,lzma
+          from pathlib import Path
+          patch=lzma.decompress(Path('.creative-transfer/patch.xz').read_bytes())
+          assert len(patch)==30608
+          assert hashlib.sha256(patch).hexdigest()=='bb853529cec6941ed839acafcb161150a80548867c4f37b6ac99230792c097ed'
+          Path('/tmp/creative.patch').write_bytes(patch)
+          PY
+          git apply --check --unidiff-zero /tmp/creative.patch
+          git apply --index --unidiff-zero /tmp/creative.patch
+          test "$(git rev-parse "$(git write-tree):runtime")" = a4cff678da35c246ed930aadb898a06b1464d287
+          python ../tavern-src/tools/creative/catalog.py --root . --peer ../tavern-src
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat: merge liquor furniture into shared native creative groups'
+          git push origin HEAD:refs/heads/refactor/shared-foundation-20260925
