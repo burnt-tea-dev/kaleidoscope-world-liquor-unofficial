@@ -1,8 +1,8 @@
 {
-  "version": "0.1.6",
-  "tag": "v0.1.6-preview.1",
-  "title": "森羅酒館：世界名酒（非官方）0.1.6-preview.1 — 中鍵拿取修復／共用底層",
+  "version": "0.1.7",
+  "tag": "v0.1.7-preview.1",
+  "title": "森羅酒館：世界名酒（非官方）0.1.7-preview.1 — 酒館 0.6.44 配對測試版",
   "prerelease": true,
-  "tavern_commit": "b2c4a7d5c21376df2302725a05b1eb1c4ea10be3",
-  "expected_archive_sha256": "2f31826c73a62372c706c9fc7b554616e071d8a82e859743a4eec282777a14ef"
+  "tavern_commit": "87908f60bc1e28aa6d8689a17a1e73aeb84fc878",
+  "expected_archive_sha256": "c4b3701fee00dd375b6224a002c22e5ce6472cb3a3f06bb3b2944c4a8696e3ac"
 }
