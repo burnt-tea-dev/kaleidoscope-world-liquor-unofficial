@@ -1,0 +1,35 @@
+name: Canonical pack checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: world-liquor-src
+      - uses: actions/checkout@v4
+        with:
+          repository: casama233/kaleidoscope-tavern-unofficial
+          ref: 1446518661ee36d9b4f3eaa4008291642821c9c0
+          path: tavern-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image validation dependency
+        run: python -m pip install Pillow
+      - name: Preserve exact source snapshots
+        run: |
+          mkdir -p source-snapshots
+          git -C world-liquor-src archive --format=zip HEAD > source-snapshots/world-liquor-source.zip
+          git -C tavern-src archive --format=zip HEAD > source-snapshots/tavern-source.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-source-snapshots
+          path: source-snapshots/*.zip
+          retention-days: 14
+      - name: Static resource and dependency checks (no player simulation)
+        run: python world-liquor-src/tools/check_release.py
