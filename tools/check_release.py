@@ -52,7 +52,8 @@ for pack in [bp,rp]:
   with Image.open(icon) as image:check(image.width==image.height and image.width>=16,pack.name+': invalid icon')
  for lc in ['en_US','zh_CN','zh_TW']:
   rows=(pack/f'texts/{lc}.lang').read_text();check('pack.name=' in rows and 'pack.description=' in rows,pack.name+': '+lc+' package labels')
-  for line in rows.splitlines():check(not line.startswith('# ') and (line.startswith('##') or '=' in line),pack.name+': malformed '+lc+' line '+line[:60])
+  # Empty separators are valid .lang lines; retain checks on all content lines.
+  for line in (line for line in rows.splitlines() if line.strip()):check(not line.startswith('# ') and (line.startswith('##') or '=' in line),pack.name+': malformed '+lc+' line '+line[:60])
 recipes=[]
 for p in (bp/'recipes').rglob('*.json'):
  data=read(p);recipe=next(v for k,v in data.items() if k.startswith('minecraft:recipe_'));recipes.append(recipe)
