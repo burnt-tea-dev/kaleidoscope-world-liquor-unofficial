@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: casama233/kaleidoscope-tavern-unofficial
-          ref: 108a893a5f220a3f5965e39618e0420f1aaf2a2e
+          ref: e2343003a522358f33f51eef2bc701b353807096
           path: tavern-src
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -27,19 +27,21 @@ jobs:
       - name: Check reproducible guide, resources and dependencies (no player simulation)
         working-directory: world-liquor-src
         run: |
+          python tools/build_effect_names.py --check
           python tools/build_storage_visuals.py
           python tools/rebuild_guide.py
           git diff --exit-code -- runtime/
           python tools/check_release.py
           python tools/build_release.py
           python tools/verify_release.py --development
-      - name: Shared foundation cross-pack script regressions (not BDS/client)
+      - name: Shared foundation and effect-bar cross-pack script regressions (not BDS/client)
         working-directory: tavern-src
         env:
           LIQUOR_SOURCE: ${{ github.workspace }}/world-liquor-src
         run: |
           set -o pipefail
           node --experimental-loader ./tools/foundation/mock-loader.mjs --test ./tools/foundation/foundation.test.mjs 2>&1 | tee ../world-liquor-src/dist/foundation-tests.tap
+          node --test tools/effect-bar.test.mjs 2>&1 | tee ../world-liquor-src/dist/effect-bar-tests.tap
       - name: Include matching validation evidence
         working-directory: world-liquor-src
         env:
