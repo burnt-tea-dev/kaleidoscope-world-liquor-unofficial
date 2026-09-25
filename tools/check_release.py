@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Asset and progression audit; no interaction emulation."""
 from pathlib import Path
-import json,re
+import json,re,subprocess
 from PIL import Image
 root=Path(__file__).resolve().parents[1];tav=root.parent/'tavern-src';bp=root/'runtime/BP';rp=root/'runtime/RP'
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
@@ -43,7 +43,7 @@ for key,obj in read(rp/'textures/terrain_texture.json')['texture_data'].items():
  path=obj['textures'];check((rp/(path+'.png')).exists(),key+': missing block texture '+path)
 for pack in [bp,rp]:
  m=read(pack/'manifest.json');check(m['header']['name']=='pack.name' and m['header']['description']=='pack.description',pack.name+': manifest strings')
- check(m['header']['version']==[0,1,3],pack.name+': stale package version')
+ check(m['header']['version']==[0,1,4],pack.name+': stale package version')
  tavern_id=read(tav/'runtime'/pack.name/'manifest.json')['header']['uuid']
  tavern_version=read(tav/'runtime'/pack.name/'manifest.json')['header']['version']
  check(any(d.get('uuid')==tavern_id and d.get('version')==tavern_version for d in m.get('dependencies',[])),pack.name+': stale Tavern dependency')
@@ -61,3 +61,7 @@ content=read(root/'docs/item-inventory.json');check(len(content['bottles'])==18 
 print('Compiled BP blocks',len(list((bp/'blocks').glob('*.json'))),'items',len(list((bp/'items').glob('*.json'))),'recipes',len(recipes),'models',len(geometry),'errors',len(errors))
 for error in errors[:80]:print('ERROR',error)
 if errors:raise SystemExit(1)
+
+for path in (bp/'scripts').rglob('*.js'):
+ subprocess.run(['node','--check',str(path)],check=True,capture_output=True)
+subprocess.run(['node',str(root/'tools/check_guide.mjs')],check=True,cwd=root)

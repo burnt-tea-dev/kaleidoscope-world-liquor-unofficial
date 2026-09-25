@@ -2,9 +2,9 @@
 
 Bedrock port of the [Java addon](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor).
 Requires the public beta of [Kaleidoscope Tavern (Unofficial)](https://github.com/casama233/kaleidoscope-tavern-unofficial)
-version **0.6.37** and its Cookery dependency. Enable both behavior and resource packs alongside Tavern and Cookery. Target: Bedrock/BDS 1.26.50+.
+version **0.6.39** and its Cookery dependency. Enable both behavior and resource packs alongside Tavern and Cookery. Target: Bedrock/BDS 1.26.50+.
 
-Current **0.1.3 preview** contains 18 six-quality bottled drinks, six new
+Current **0.1.4 preview** contains 18 six-quality bottled drinks, six new
 cocktails and their Java barrel/shaker recipes, 16 colored stools, 10 connected
 cabinet blocks, the freezer and five freezer recipes, eight paintings, two
 bottled mixers, four fallback foods, the random record and wall-hung records.
@@ -49,15 +49,13 @@ visual fidelity.
 ## Build and validation
 
 ```sh
-python3 tools/build_port.py
+python3 tools/rebuild_guide.py
 python3 tools/check_release.py
 python3 tools/build_release.py
 ```
 
-The load gate uses the real Bedrock Dedicated Server with public Cookery 1.0.6,
-Tavern 0.6.37 and both packs of this add-on. No simulated interaction tests are
-part of this project. See `docs/VALIDATION-0.1.3.json` for the exact result.
+This repair candidate has static JSON, JavaScript, geometry, dependency and guide-payload validation. No simulated player interaction tests, new BDS run or visual client run were performed. Guide names/categories have three locales; Cookery 1.0.6 receives complete Traditional Chinese + English instruction rows because that host drops mechanicsByLocale region-code keys. Its files are not modified.
 
-## Download
+## Build output
 
-[Download 0.1.3 preview 1 (.mcaddon)](https://raw.githubusercontent.com/casama233/kaleidoscope-world-liquor-unofficial/v0.1.3-preview.1/downloads/Kaleidoscope_World_Liquor_Unofficial_0.1.3_preview1.mcaddon). Verify with `downloads/SHA256SUMS`.
+`python3 tools/build_release.py` creates `dist/Kaleidoscope_World_Liquor_Unofficial_0.1.4_preview1.mcaddon` and SHA256SUMS. Install with the matching Tavern 0.6.39 BP/RP and the existing Cookery 1.0.6 BP/RP. This candidate has no new published release tag yet.

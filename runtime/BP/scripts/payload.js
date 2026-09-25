@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -4565,14 +4565,16 @@ export const payload = {
         "zh_TW": "絕對伏特加"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Wheat + Wheat Seeds + Empty Bottle → Absolut Vodka\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); Anti‑Gravity 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); Anti‑Gravity 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); Anti‑Gravity 1 (600s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); Anti‑Gravity 1 (1920s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Wheat + Wheat Seeds + 空瓶子 → 绝对伏特加\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 反重力 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 反重力 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 反重力 1 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 反重力 1 (1920s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Wheat + Wheat Seeds + 空瓶子 → 絕對伏特加\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 反重力 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 反重力 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 反重力 1 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 反重力 1 (1920s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Anti‑Gravity 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Anti‑Gravity 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Anti‑Gravity 1（600s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Anti‑Gravity 1（1920s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；反重力 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；反重力 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；反重力 1（600秒，100%）\n品质 6：微醺 1（10秒，100%）；反重力 1（1920秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；反重力 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；反重力 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；反重力 1（600秒，100%）\n品質 6：微醺 1（10秒，100%）；反重力 1（1920秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/absolut_vodka"
       ],
-      "icon": "textures/kwl/items/absolut_vodka_q6"
+      "icon": "textures/kwl/items/absolut_vodka_q6",
+      "item": "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bacardi_carta_blanca",
@@ -4582,14 +4584,16 @@ export const payload = {
         "zh_TW": "百加得白朗姆"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Sugar Cane + Sugar + Empty Bottle → Bacardi Superior White Rum\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); Treasure Intuition 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); Treasure Intuition 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); Treasure Intuition 1 (600s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); Treasure Intuition 1 (1920s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Sugar Cane + Sugar + 空瓶子 → 百加得白朗姆\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 宝藏感知 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 宝藏感知 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 宝藏感知 1 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 宝藏感知 1 (1920s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Sugar Cane + Sugar + 空瓶子 → 百加得白朗姆\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 寶藏感知 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 寶藏感知 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 寶藏感知 1 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 寶藏感知 1 (1920s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Treasure Intuition 1（80s，100%） [outline unavailable in this port]\nQuality 4：Slightly Tipsy 1（30s，100%）；Treasure Intuition 1（240s，100%） [outline unavailable in this port]\nQuality 5：Slightly Tipsy 1（20s，100%）；Treasure Intuition 1（600s，100%） [outline unavailable in this port]\nQuality 6：Slightly Tipsy 1（10s，100%）；Treasure Intuition 1（1920s，100%） [outline unavailable in this port]",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；宝藏感知 1（80秒，100%）【本移植未实现透视描边】\n品质 4：微醺 1（30秒，100%）；宝藏感知 1（240秒，100%）【本移植未实现透视描边】\n品质 5：微醺 1（20秒，100%）；宝藏感知 1（600秒，100%）【本移植未实现透视描边】\n品质 6：微醺 1（10秒，100%）；宝藏感知 1（1920秒，100%）【本移植未实现透视描边】",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；宝藏感知 1（80秒，100%）【本移植未實作透視描邊】\n品質 4：微醺 1（30秒，100%）；宝藏感知 1（240秒，100%）【本移植未實作透視描邊】\n品質 5：微醺 1（20秒，100%）；宝藏感知 1（600秒，100%）【本移植未實作透視描邊】\n品質 6：微醺 1（10秒，100%）；宝藏感知 1（1920秒，100%）【本移植未實作透視描邊】"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/bacardi_carta_blanca"
       ],
-      "icon": "textures/kwl/items/bacardi_carta_blanca_q6"
+      "icon": "textures/kwl/items/bacardi_carta_blanca_q6",
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bamboo_leaf_green_liquor",
@@ -4599,14 +4603,16 @@ export const payload = {
         "zh_TW": "竹葉青"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Potato + Bamboo + Empty Bottle → Bamboo Leaf Green Liquor\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); invisibility 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); invisibility 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); invisibility 1 (720s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); invisibility 1 (2160s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Potato + Bamboo + 空瓶子 → 竹叶青\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); invisibility 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); invisibility 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); invisibility 1 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); invisibility 1 (2160s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Potato + Bamboo + 空瓶子 → 竹葉青\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); invisibility 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); invisibility 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); invisibility 1 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); invisibility 1 (2160s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Invisibility 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Invisibility 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Invisibility 1（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Invisibility 1（2160s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；隐身 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；隐身 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；隐身 1（720秒，100%）\n品质 6：微醺 1（10秒，100%）；隐身 1（2160秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；隱形 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；隱形 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；隱形 1（720秒，100%）\n品質 6：微醺 1（10秒，100%）；隱形 1（2160秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/bamboo_leaf_green_liquor"
       ],
-      "icon": "textures/kwl/items/bamboo_leaf_green_liquor_q6"
+      "icon": "textures/kwl/items/bamboo_leaf_green_liquor_q6",
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bombay_sapphire_gin",
@@ -4616,14 +4622,16 @@ export const payload = {
         "zh_TW": "孟買藍寶石金酒"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Wheat + Sweet Berries + Empty Bottle → Bombay Sapphire Gin\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); Multi‑Jump 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); Multi‑Jump 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); Multi‑Jump 2 (720s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); Multi‑Jump 3 (2160s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Wheat + Sweet Berries + 空瓶子 → 孟买蓝宝石金酒\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 多段跳 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 多段跳 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 多段跳 2 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 多段跳 3 (2160s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Wheat + Sweet Berries + 空瓶子 → 孟買藍寶石金酒\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 多段跳 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 多段跳 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 多段跳 2 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 多段跳 3 (2160s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Multi‑Jump 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Multi‑Jump 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Multi‑Jump 2（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Multi‑Jump 3（2160s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；多段跳 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；多段跳 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；多段跳 2（720秒，100%）\n品质 6：微醺 1（10秒，100%）；多段跳 3（2160秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；多段跳 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；多段跳 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；多段跳 2（720秒，100%）\n品質 6：微醺 1（10秒，100%）；多段跳 3（2160秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/bombay_sapphire_gin"
       ],
-      "icon": "textures/kwl/items/bombay_sapphire_gin_q6"
+      "icon": "textures/kwl/items/bombay_sapphire_gin_q6",
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/cool_tea",
@@ -4633,14 +4641,16 @@ export const payload = {
         "zh_TW": "勁涼冰紅茶"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Crimson Roots + Sugar + Packed Ice + Empty Bottle → Icy Refreshing Black Tea\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); slow falling 1 (60s, 100%); Frost Walker 1 (60s, 100%)\n\nQ4: weakness 1 (30s, 100%); slow falling 1 (90s, 100%); Frost Walker 1 (90s, 100%); fire resistance 1 (45s, 100%)\n\nQ5: weakness 1 (20s, 100%); slow falling 1 (240s, 100%); Frost Walker 1 (240s, 100%); fire resistance 1 (150s, 100%); resistance 1 (70s, 100%)\n\nQ6: weakness 1 (10s, 100%); slow falling 1 (600s, 100%); Frost Walker 1 (600s, 100%); fire resistance 1 (240s, 100%); resistance 1 (150s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Crimson Roots + Sugar + Packed Ice + 空瓶子 → 劲凉冰红茶\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); slow falling 1 (60s, 100%); 冰霜行者 1 (60s, 100%)\n\nQ4: weakness 1 (30s, 100%); slow falling 1 (90s, 100%); 冰霜行者 1 (90s, 100%); fire resistance 1 (45s, 100%)\n\nQ5: weakness 1 (20s, 100%); slow falling 1 (240s, 100%); 冰霜行者 1 (240s, 100%); fire resistance 1 (150s, 100%); resistance 1 (70s, 100%)\n\nQ6: weakness 1 (10s, 100%); slow falling 1 (600s, 100%); 冰霜行者 1 (600s, 100%); fire resistance 1 (240s, 100%); resistance 1 (150s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Crimson Roots + Sugar + Packed Ice + 空瓶子 → 勁涼冰紅茶\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); slow falling 1 (60s, 100%); 冰霜行者 1 (60s, 100%)\n\nQ4: weakness 1 (30s, 100%); slow falling 1 (90s, 100%); 冰霜行者 1 (90s, 100%); fire resistance 1 (45s, 100%)\n\nQ5: weakness 1 (20s, 100%); slow falling 1 (240s, 100%); 冰霜行者 1 (240s, 100%); fire resistance 1 (150s, 100%); resistance 1 (70s, 100%)\n\nQ6: weakness 1 (10s, 100%); slow falling 1 (600s, 100%); 冰霜行者 1 (600s, 100%); fire resistance 1 (240s, 100%); resistance 1 (150s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Slow Falling 1（60s，100%）；Frost Walker 1（60s，100%）\nQuality 4：Weakness 1（30s，100%）；Slow Falling 1（90s，100%）；Frost Walker 1（90s，100%）；Fire Resistance 1（45s，100%）\nQuality 5：Weakness 1（20s，100%）；Slow Falling 1（240s，100%）；Frost Walker 1（240s，100%）；Fire Resistance 1（150s，100%）；Resistance 1（70s，100%）\nQuality 6：Weakness 1（10s，100%）；Slow Falling 1（600s，100%）；Frost Walker 1（600s，100%）；Fire Resistance 1（240s，100%）；Resistance 1（150s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；缓降 1（60秒，100%）；冰霜行者 1（60秒，100%）\n品质 4：虚弱 1（30秒，100%）；缓降 1（90秒，100%）；冰霜行者 1（90秒，100%）；抗火 1（45秒，100%）\n品质 5：虚弱 1（20秒，100%）；缓降 1（240秒，100%）；冰霜行者 1（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品质 6：虚弱 1（10秒，100%）；缓降 1（600秒，100%）；冰霜行者 1（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；緩降 1（60秒，100%）；冰霜行者 1（60秒，100%）\n品質 4：虛弱 1（30秒，100%）；緩降 1（90秒，100%）；冰霜行者 1（90秒，100%）；抗火 1（45秒，100%）\n品質 5：虛弱 1（20秒，100%）；緩降 1（240秒，100%）；冰霜行者 1（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品質 6：虛弱 1（10秒，100%）；緩降 1（600秒，100%）；冰霜行者 1（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/cool_tea"
       ],
-      "icon": "textures/kwl/items/cool_tea_q6"
+      "icon": "textures/kwl/items/cool_tea_q6",
+      "item": "kaleidoscope_world_liquor:cool_tea_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/dassai",
@@ -4650,14 +4660,16 @@ export const payload = {
         "zh_TW": "獺祭"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Rice + Empty Bottle → Dassai Sake\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); luck 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); luck 2 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); luck 3 (720s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); luck 4 (2160s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Rice + 空瓶子 → 獺祭\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); luck 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); luck 2 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); luck 3 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); luck 4 (2160s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Rice + 空瓶子 → 獺祭\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); luck 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); luck 2 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); luck 3 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); luck 4 (2160s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 2（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Luck (Java-only; unavailable here) 3（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Luck (Java-only; unavailable here) 4（2160s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 2（240秒，100%）\n品质 5：微醺 1（20秒，100%）；幸运（Java 专属，本移植未提供） 3（720秒，100%）\n品质 6：微醺 1（10秒，100%）；幸运（Java 专属，本移植未提供） 4（2160秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 2（240秒，100%）\n品質 5：微醺 1（20秒，100%）；幸運（Java 專屬，本移植未提供） 3（720秒，100%）\n品質 6：微醺 1（10秒，100%）；幸運（Java 專屬，本移植未提供） 4（2160秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/dassai"
       ],
-      "icon": "textures/kwl/items/dassai_q6"
+      "icon": "textures/kwl/items/dassai_q6",
+      "item": "kaleidoscope_world_liquor:dassai_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/ice_tea",
@@ -4667,14 +4679,16 @@ export const payload = {
         "zh_TW": "冰紅茶"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Crimson Roots + Sugar + Ice + Empty Bottle → Iced Black Tea\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); slow falling 1 (60s, 100%); elbow strike 1 (60s, 100%)\n\nQ4: weakness 1 (30s, 100%); slow falling 1 (90s, 100%); elbow strike 1 (90s, 100%); fire resistance 1 (45s, 100%)\n\nQ5: weakness 1 (20s, 100%); slow falling 1 (240s, 100%); elbow strike 2 (240s, 100%); fire resistance 1 (150s, 100%); resistance 1 (70s, 100%)\n\nQ6: weakness 1 (10s, 100%); slow falling 1 (600s, 100%); elbow strike 3 (600s, 100%); fire resistance 1 (240s, 100%); resistance 1 (150s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Crimson Roots + Sugar + Ice + 空瓶子 → 冰红茶\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); slow falling 1 (60s, 100%); elbow strike 1 (60s, 100%)\n\nQ4: weakness 1 (30s, 100%); slow falling 1 (90s, 100%); elbow strike 1 (90s, 100%); fire resistance 1 (45s, 100%)\n\nQ5: weakness 1 (20s, 100%); slow falling 1 (240s, 100%); elbow strike 2 (240s, 100%); fire resistance 1 (150s, 100%); resistance 1 (70s, 100%)\n\nQ6: weakness 1 (10s, 100%); slow falling 1 (600s, 100%); elbow strike 3 (600s, 100%); fire resistance 1 (240s, 100%); resistance 1 (150s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Crimson Roots + Sugar + Ice + 空瓶子 → 冰紅茶\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); slow falling 1 (60s, 100%); elbow strike 1 (60s, 100%)\n\nQ4: weakness 1 (30s, 100%); slow falling 1 (90s, 100%); elbow strike 1 (90s, 100%); fire resistance 1 (45s, 100%)\n\nQ5: weakness 1 (20s, 100%); slow falling 1 (240s, 100%); elbow strike 2 (240s, 100%); fire resistance 1 (150s, 100%); resistance 1 (70s, 100%)\n\nQ6: weakness 1 (10s, 100%); slow falling 1 (600s, 100%); elbow strike 3 (600s, 100%); fire resistance 1 (240s, 100%); resistance 1 (150s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Slow Falling 1（60s，100%）；Elbow Strike 1（60s，100%）\nQuality 4：Weakness 1（30s，100%）；Slow Falling 1（90s，100%）；Elbow Strike 1（90s，100%）；Fire Resistance 1（45s，100%）\nQuality 5：Weakness 1（20s，100%）；Slow Falling 1（240s，100%）；Elbow Strike 2（240s，100%）；Fire Resistance 1（150s，100%）；Resistance 1（70s，100%）\nQuality 6：Weakness 1（10s，100%）；Slow Falling 1（600s，100%）；Elbow Strike 3（600s，100%）；Fire Resistance 1（240s，100%）；Resistance 1（150s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；缓降 1（60秒，100%）；肘击 1（60秒，100%）\n品质 4：虚弱 1（30秒，100%）；缓降 1（90秒，100%）；肘击 1（90秒，100%）；抗火 1（45秒，100%）\n品质 5：虚弱 1（20秒，100%）；缓降 1（240秒，100%）；肘击 2（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品质 6：虚弱 1（10秒，100%）；缓降 1（600秒，100%）；肘击 3（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；緩降 1（60秒，100%）；肘击 1（60秒，100%）\n品質 4：虛弱 1（30秒，100%）；緩降 1（90秒，100%）；肘击 1（90秒，100%）；抗火 1（45秒，100%）\n品質 5：虛弱 1（20秒，100%）；緩降 1（240秒，100%）；肘击 2（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品質 6：虛弱 1（10秒，100%）；緩降 1（600秒，100%）；肘击 3（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/ice_tea"
       ],
-      "icon": "textures/kwl/items/ice_tea_q6"
+      "icon": "textures/kwl/items/ice_tea_q6",
+      "item": "kaleidoscope_world_liquor:ice_tea_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/jack_daniel",
@@ -4684,14 +4698,16 @@ export const payload = {
         "zh_TW": "傑克丹尼"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Wheat + Carrot + Empty Bottle → Jack Daniel's\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); Decapitation 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); Decapitation 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); Decapitation 2 (600s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); Decapitation 3 (1920s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Wheat + Carrot + 空瓶子 → 杰克丹尼\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 斩首 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 斩首 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 斩首 2 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 斩首 3 (1920s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Wheat + Carrot + 空瓶子 → 傑克丹尼\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 斬首 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 斬首 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 斬首 2 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 斬首 3 (1920s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Decapitation 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Decapitation 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Decapitation 2（600s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Decapitation 3（1920s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；斩首 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；斩首 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；斩首 2（600秒，100%）\n品质 6：微醺 1（10秒，100%）；斩首 3（1920秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；斩首 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；斩首 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；斩首 2（600秒，100%）\n品質 6：微醺 1（10秒，100%）；斩首 3（1920秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/jack_daniel"
       ],
-      "icon": "textures/kwl/items/jack_daniel_q6"
+      "icon": "textures/kwl/items/jack_daniel_q6",
+      "item": "kaleidoscope_world_liquor:jack_daniel_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/johnnie_walker",
@@ -4701,14 +4717,16 @@ export const payload = {
         "zh_TW": "尊尼獲加"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Wheat + Beetroot + Empty Bottle → Johnnie Walker\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); Gold Rush 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); Gold Rush 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); Gold Rush 2 (600s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); Gold Rush 3 (1920s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Wheat + Beetroot + 空瓶子 → 尊尼获加\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 淘金热 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 淘金热 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 淘金热 2 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 淘金热 3 (1920s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Wheat + Beetroot + 空瓶子 → 尊尼獲加\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 淘金熱 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 淘金熱 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 淘金熱 2 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 淘金熱 3 (1920s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Gold Rush 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Gold Rush 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Gold Rush 2（600s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Gold Rush 3（1920s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；淘金热 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；淘金热 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；淘金热 2（600秒，100%）\n品质 6：微醺 1（10秒，100%）；淘金热 3（1920秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；淘金热 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；淘金热 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；淘金热 2（600秒，100%）\n品質 6：微醺 1（10秒，100%）；淘金热 3（1920秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/johnnie_walker"
       ],
-      "icon": "textures/kwl/items/johnnie_walker_q6"
+      "icon": "textures/kwl/items/johnnie_walker_q6",
+      "item": "kaleidoscope_world_liquor:johnnie_walker_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/kwas_chlebowy",
@@ -4718,14 +4736,16 @@ export const payload = {
         "zh_TW": "格瓦斯"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Bread + Sugar + Empty Bottle → Kvass\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); Strike Break 1 (80s, 100%)\n\nQ4: weakness 1 (30s, 100%); Strike Break 1 (240s, 100%)\n\nQ5: weakness 1 (20s, 100%); Strike Break 2 (600s, 100%)\n\nQ6: weakness 1 (10s, 100%); Strike Break 3 (1920s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Bread + Sugar + 空瓶子 → 格瓦斯\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); 破势 1 (80s, 100%)\n\nQ4: weakness 1 (30s, 100%); 破势 1 (240s, 100%)\n\nQ5: weakness 1 (20s, 100%); 破势 2 (600s, 100%)\n\nQ6: weakness 1 (10s, 100%); 破势 3 (1920s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Bread + Sugar + 空瓶子 → 格瓦斯\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); 破勢 1 (80s, 100%)\n\nQ4: weakness 1 (30s, 100%); 破勢 1 (240s, 100%)\n\nQ5: weakness 1 (20s, 100%); 破勢 2 (600s, 100%)\n\nQ6: weakness 1 (10s, 100%); 破勢 3 (1920s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Strike Break 1（80s，100%）\nQuality 4：Weakness 1（30s，100%）；Strike Break 1（240s，100%）\nQuality 5：Weakness 1（20s，100%）；Strike Break 2（600s，100%）\nQuality 6：Weakness 1（10s，100%）；Strike Break 3（1920s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；破势 1（80秒，100%）\n品质 4：虚弱 1（30秒，100%）；破势 1（240秒，100%）\n品质 5：虚弱 1（20秒，100%）；破势 2（600秒，100%）\n品质 6：虚弱 1（10秒，100%）；破势 3（1920秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；破势 1（80秒，100%）\n品質 4：虛弱 1（30秒，100%）；破势 1（240秒，100%）\n品質 5：虛弱 1（20秒，100%）；破势 2（600秒，100%）\n品質 6：虛弱 1（10秒，100%）；破势 3（1920秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/kwas_chlebowy"
       ],
-      "icon": "textures/kwl/items/kwas_chlebowy_q6"
+      "icon": "textures/kwl/items/kwas_chlebowy_q6",
+      "item": "kaleidoscope_world_liquor:kwas_chlebowy_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/lafite_1982",
@@ -4735,14 +4755,16 @@ export const payload = {
         "zh_TW": "拉菲1982"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Grape Juice + Grape + Empty Bottle → Château Lafite Rothschild 1982\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); health boost 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); health boost 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); health boost 2 (720s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); health boost 3 (2160s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: 葡萄汁 + 葡萄 + 空瓶子 → 拉菲1982\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); health boost 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); health boost 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); health boost 2 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); health boost 3 (2160s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: 葡萄汁 + 葡萄 + 空瓶子 → 拉菲1982\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); health boost 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); health boost 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); health boost 2 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); health boost 3 (2160s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Health Boost 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Health Boost 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Health Boost 2（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Health Boost 3（2160s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；生命提升 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；生命提升 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；生命提升 2（720秒，100%）\n品质 6：微醺 1（10秒，100%）；生命提升 3（2160秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；生命提升 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；生命提升 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；生命提升 2（720秒，100%）\n品質 6：微醺 1（10秒，100%）；生命提升 3（2160秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/lafite_1982"
       ],
-      "icon": "textures/kwl/items/lafite_1982_q6"
+      "icon": "textures/kwl/items/lafite_1982_q6",
+      "item": "kaleidoscope_world_liquor:lafite_1982_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/maotai",
@@ -4752,14 +4774,16 @@ export const payload = {
         "zh_TW": "飛天茅臺"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Wheat + Rice Panicle + Empty Bottle → Feitian Moutai\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); levitation 1 (15s, 100%); slow falling 1 (35s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); levitation 2 (20s, 100%); slow falling 1 (40s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); levitation 3 (25s, 100%); slow falling 1 (45s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); levitation 4 (30s, 100%); slow falling 1 (50s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Wheat + Rice Panicle + 空瓶子 → 飞天茅台\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); levitation 1 (15s, 100%); slow falling 1 (35s, 100%)\n\nQ4: 微醺 1 (30s, 100%); levitation 2 (20s, 100%); slow falling 1 (40s, 100%)\n\nQ5: 微醺 1 (20s, 100%); levitation 3 (25s, 100%); slow falling 1 (45s, 100%)\n\nQ6: 微醺 1 (10s, 100%); levitation 4 (30s, 100%); slow falling 1 (50s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Wheat + Rice Panicle + 空瓶子 → 飛天茅臺\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); levitation 1 (15s, 100%); slow falling 1 (35s, 100%)\n\nQ4: 微醺 1 (30s, 100%); levitation 2 (20s, 100%); slow falling 1 (40s, 100%)\n\nQ5: 微醺 1 (20s, 100%); levitation 3 (25s, 100%); slow falling 1 (45s, 100%)\n\nQ6: 微醺 1 (10s, 100%); levitation 4 (30s, 100%); slow falling 1 (50s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Levitation 1（15s，100%）；Slow Falling 1（35s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Levitation 2（20s，100%）；Slow Falling 1（40s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Levitation 3（25s，100%）；Slow Falling 1（45s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Levitation 4（30s，100%）；Slow Falling 1（50s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；飘浮 1（15秒，100%）；缓降 1（35秒，100%）\n品质 4：微醺 1（30秒，100%）；飘浮 2（20秒，100%）；缓降 1（40秒，100%）\n品质 5：微醺 1（20秒，100%）；飘浮 3（25秒，100%）；缓降 1（45秒，100%）\n品质 6：微醺 1（10秒，100%）；飘浮 4（30秒，100%）；缓降 1（50秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；懸浮 1（15秒，100%）；緩降 1（35秒，100%）\n品質 4：微醺 1（30秒，100%）；懸浮 2（20秒，100%）；緩降 1（40秒，100%）\n品質 5：微醺 1（20秒，100%）；懸浮 3（25秒，100%）；緩降 1（45秒，100%）\n品質 6：微醺 1（10秒，100%）；懸浮 4（30秒，100%）；緩降 1（50秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/maotai"
       ],
-      "icon": "textures/kwl/items/maotai_q6"
+      "icon": "textures/kwl/items/maotai_q6",
+      "item": "kaleidoscope_world_liquor:maotai_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/pina_colada",
@@ -4769,14 +4793,16 @@ export const payload = {
         "zh_TW": "馬利寶椰子朗姆酒"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Sugar Cane + Sweet Berries + Empty Bottle → Malibu Coconut Rum\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); Boating Mastery 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); Boating Mastery 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); Boating Mastery 1 (720s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); Boating Mastery 1 (2160s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Sugar Cane + Sweet Berries + 空瓶子 → 马利宝椰子朗姆酒\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 船长的祝福 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 船长的祝福 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 船长的祝福 1 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 船长的祝福 1 (2160s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Sugar Cane + Sweet Berries + 空瓶子 → 馬利寶椰子朗姆酒\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 船長的祝福 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 船長的祝福 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 船長的祝福 1 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 船長的祝福 1 (2160s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Boating Mastery 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Boating Mastery 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Boating Mastery 1（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Boating Mastery 1（2160s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；船长的祝福 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；船长的祝福 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；船长的祝福 1（720秒，100%）\n品质 6：微醺 1（10秒，100%）；船长的祝福 1（2160秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；船长的祝福 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；船长的祝福 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；船长的祝福 1（720秒，100%）\n品質 6：微醺 1（10秒，100%）；船长的祝福 1（2160秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/pina_colada"
       ],
-      "icon": "textures/kwl/items/pina_colada_q6"
+      "icon": "textures/kwl/items/pina_colada_q6",
+      "item": "kaleidoscope_world_liquor:pina_colada_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/skyy_vodka",
@@ -4786,14 +4812,16 @@ export const payload = {
         "zh_TW": "深藍伏特加"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Beetroot + Empty Bottle → SKYY Vodka\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); Wraith Sight 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); Wraith Sight 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); Wraith Sight 1 (600s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); Wraith Sight 1 (1920s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Beetroot + 空瓶子 → 深蓝伏特加\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 冥视 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 冥视 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 冥视 1 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 冥视 1 (1920s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Beetroot + 空瓶子 → 深藍伏特加\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 冥視 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 冥視 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 冥視 1 (600s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 冥視 1 (1920s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Wraith Sight 1（80s，100%） [outline unavailable in this port]\nQuality 4：Slightly Tipsy 1（30s，100%）；Wraith Sight 1（240s，100%） [outline unavailable in this port]\nQuality 5：Slightly Tipsy 1（20s，100%）；Wraith Sight 1（600s，100%） [outline unavailable in this port]\nQuality 6：Slightly Tipsy 1（10s，100%）；Wraith Sight 1（1920s，100%） [outline unavailable in this port]",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；冥视 1（80秒，100%）【本移植未实现透视描边】\n品质 4：微醺 1（30秒，100%）；冥视 1（240秒，100%）【本移植未实现透视描边】\n品质 5：微醺 1（20秒，100%）；冥视 1（600秒，100%）【本移植未实现透视描边】\n品质 6：微醺 1（10秒，100%）；冥视 1（1920秒，100%）【本移植未实现透视描边】",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；冥视 1（80秒，100%）【本移植未實作透視描邊】\n品質 4：微醺 1（30秒，100%）；冥视 1（240秒，100%）【本移植未實作透視描邊】\n品質 5：微醺 1（20秒，100%）；冥视 1（600秒，100%）【本移植未實作透視描邊】\n品質 6：微醺 1（10秒，100%）；冥视 1（1920秒，100%）【本移植未實作透視描邊】"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/skyy_vodka"
       ],
-      "icon": "textures/kwl/items/skyy_vodka_q6"
+      "icon": "textures/kwl/items/skyy_vodka_q6",
+      "item": "kaleidoscope_world_liquor:skyy_vodka_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/smirnoff_red_vodka",
@@ -4803,14 +4831,16 @@ export const payload = {
         "zh_TW": "斯米諾紅牌伏特加"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Potato + Beetroot + Empty Bottle → Smirnoff Red Label Vodka\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); hero of the village 1 (60s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); hero of the village 1 (120s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); hero of the village 2 (200s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); hero of the village 3 (300s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Potato + Beetroot + 空瓶子 → 斯米诺红牌伏特加\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); hero of the village 1 (60s, 100%)\n\nQ4: 微醺 1 (30s, 100%); hero of the village 1 (120s, 100%)\n\nQ5: 微醺 1 (20s, 100%); hero of the village 2 (200s, 100%)\n\nQ6: 微醺 1 (10s, 100%); hero of the village 3 (300s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Potato + Beetroot + 空瓶子 → 斯米諾紅牌伏特加\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); hero of the village 1 (60s, 100%)\n\nQ4: 微醺 1 (30s, 100%); hero of the village 1 (120s, 100%)\n\nQ5: 微醺 1 (20s, 100%); hero of the village 2 (200s, 100%)\n\nQ6: 微醺 1 (10s, 100%); hero of the village 3 (300s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Hero of the Village 1（60s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Hero of the Village 1（120s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Hero of the Village 2（200s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Hero of the Village 3（300s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；村庄英雄 1（60秒，100%）\n品质 4：微醺 1（30秒，100%）；村庄英雄 1（120秒，100%）\n品质 5：微醺 1（20秒，100%）；村庄英雄 2（200秒，100%）\n品质 6：微醺 1（10秒，100%）；村庄英雄 3（300秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；村莊英雄 1（60秒，100%）\n品質 4：微醺 1（30秒，100%）；村莊英雄 1（120秒，100%）\n品質 5：微醺 1（20秒，100%）；村莊英雄 2（200秒，100%）\n品質 6：微醺 1（10秒，100%）；村莊英雄 3（300秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/smirnoff_red_vodka"
       ],
-      "icon": "textures/kwl/items/smirnoff_red_vodka_q6"
+      "icon": "textures/kwl/items/smirnoff_red_vodka_q6",
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/sour_plum",
@@ -4820,14 +4850,16 @@ export const payload = {
         "zh_TW": "酸梅湯"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Sweet Berries + Sugar + Empty Bottle → Sour Plum Drink\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); Tequila Fortitude 1 (80s, 100%)\n\nQ4: weakness 1 (30s, 100%); Tequila Fortitude 1 (240s, 100%)\n\nQ5: weakness 1 (20s, 100%); Tequila Fortitude 2 (720s, 100%)\n\nQ6: weakness 1 (10s, 100%); Tequila Fortitude 3 (2160s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Sweet Berries + Sugar + 空瓶子 → 酸梅汤\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); 龙舌兰 1 (80s, 100%)\n\nQ4: weakness 1 (30s, 100%); 龙舌兰 1 (240s, 100%)\n\nQ5: weakness 1 (20s, 100%); 龙舌兰 2 (720s, 100%)\n\nQ6: weakness 1 (10s, 100%); 龙舌兰 3 (2160s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Sweet Berries + Sugar + 空瓶子 → 酸梅湯\n\nQ1: hunger 1 (30s, 100%)\n\nQ2: weakness 1 (45s, 100%)\n\nQ3: weakness 1 (30s, 100%); 龍舌蘭 1 (80s, 100%)\n\nQ4: weakness 1 (30s, 100%); 龍舌蘭 1 (240s, 100%)\n\nQ5: weakness 1 (20s, 100%); 龍舌蘭 2 (720s, 100%)\n\nQ6: weakness 1 (10s, 100%); 龍舌蘭 3 (2160s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Tequila Fortitude 1（80s，100%）\nQuality 4：Weakness 1（30s，100%）；Tequila Fortitude 1（240s，100%）\nQuality 5：Weakness 1（20s，100%）；Tequila Fortitude 2（720s，100%）\nQuality 6：Weakness 1（10s，100%）；Tequila Fortitude 3（2160s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；龙舌兰 1（80秒，100%）\n品质 4：虚弱 1（30秒，100%）；龙舌兰 1（240秒，100%）\n品质 5：虚弱 1（20秒，100%）；龙舌兰 2（720秒，100%）\n品质 6：虚弱 1（10秒，100%）；龙舌兰 3（2160秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；龙舌兰 1（80秒，100%）\n品質 4：虛弱 1（30秒，100%）；龙舌兰 1（240秒，100%）\n品質 5：虛弱 1（20秒，100%）；龙舌兰 2（720秒，100%）\n品質 6：虛弱 1（10秒，100%）；龙舌兰 3（2160秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/sour_plum"
       ],
-      "icon": "textures/kwl/items/sour_plum_q6"
+      "icon": "textures/kwl/items/sour_plum_q6",
+      "item": "kaleidoscope_world_liquor:sour_plum_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/spiryt_vodka",
@@ -4837,14 +4869,16 @@ export const payload = {
         "zh_TW": "生命之水96"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Wheat + Potato + Empty Bottle → Spirytus 96% ABV Vodka\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); Captain's Grace 1 (80s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); Captain's Grace 1 (240s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); Captain's Grace 1 (720s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); Captain's Grace 1 (2160s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Wheat + Potato + 空瓶子 → 生命之水96\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 水上行走 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 水上行走 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 水上行走 1 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 水上行走 1 (2160s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Wheat + Potato + 空瓶子 → 生命之水96\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); 水上行走 1 (80s, 100%)\n\nQ4: 微醺 1 (30s, 100%); 水上行走 1 (240s, 100%)\n\nQ5: 微醺 1 (20s, 100%); 水上行走 1 (720s, 100%)\n\nQ6: 微醺 1 (10s, 100%); 水上行走 1 (2160s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Captain's Grace 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Captain's Grace 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Captain's Grace 1（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Captain's Grace 1（2160s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；水上行走 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；水上行走 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；水上行走 1（720秒，100%）\n品质 6：微醺 1（10秒，100%）；水上行走 1（2160秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；水上行走 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；水上行走 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；水上行走 1（720秒，100%）\n品質 6：微醺 1（10秒，100%）；水上行走 1（2160秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/spiryt_vodka"
       ],
-      "icon": "textures/kwl/items/spiryt_vodka_q6"
+      "icon": "textures/kwl/items/spiryt_vodka_q6",
+      "item": "kaleidoscope_world_liquor:spiryt_vodka_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/strongbow",
@@ -4854,14 +4888,16 @@ export const payload = {
         "zh_TW": "詩莊堡"
       },
       "body": {
-        "en_US": "Brew in a Tavern barrel; extract with an empty bottle. Six quality stages. Drink, place, or store the bottle. Quality 4–6 can be poured into a shaker.\n\nBrewing: Water + Apple + Dandelion + Empty Bottle → Strongbow Cider\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: Slightly Tipsy 1 (45s, 100%)\n\nQ3: Slightly Tipsy 1 (30s, 100%); absorption 1 (70s, 100%); regeneration 2 (10s, 100%)\n\nQ4: Slightly Tipsy 1 (30s, 100%); absorption 2 (150s, 100%); regeneration 2 (15s, 100%)\n\nQ5: Slightly Tipsy 1 (20s, 100%); absorption 3 (230s, 100%); regeneration 2 (20s, 100%); fire resistance 1 (150s, 100%)\n\nQ6: Slightly Tipsy 1 (10s, 100%); absorption 4 (310s, 100%); regeneration 2 (25s, 100%); fire resistance 1 (300s, 100%); resistance 1 (150s, 100%)",
-        "zh_CN": "在酒馆酒桶中酿造，用空酒瓶取出；共有六级品质。可饮用、摆放或存入酒架，佳酿及以上可倒入雪克杯。\n\n酿造: Water + Apple + Dandelion + 空瓶子 → 诗庄堡\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); absorption 1 (70s, 100%); regeneration 2 (10s, 100%)\n\nQ4: 微醺 1 (30s, 100%); absorption 2 (150s, 100%); regeneration 2 (15s, 100%)\n\nQ5: 微醺 1 (20s, 100%); absorption 3 (230s, 100%); regeneration 2 (20s, 100%); fire resistance 1 (150s, 100%)\n\nQ6: 微醺 1 (10s, 100%); absorption 4 (310s, 100%); regeneration 2 (25s, 100%); fire resistance 1 (300s, 100%); resistance 1 (150s, 100%)",
-        "zh_TW": "在酒館酒桶中釀造，用空酒瓶取出；共有六級品質。可飲用、擺放或存入酒架，佳釀及以上可倒入雪克杯。\n\n釀造: Water + Apple + Dandelion + 空瓶子 → 詩莊堡\n\nQ1: nausea 1 (30s, 100%)\n\nQ2: 微醺 1 (45s, 100%)\n\nQ3: 微醺 1 (30s, 100%); absorption 1 (70s, 100%); regeneration 2 (10s, 100%)\n\nQ4: 微醺 1 (30s, 100%); absorption 2 (150s, 100%); regeneration 2 (15s, 100%)\n\nQ5: 微醺 1 (20s, 100%); absorption 3 (230s, 100%); regeneration 2 (20s, 100%); fire resistance 1 (150s, 100%)\n\nQ6: 微醺 1 (10s, 100%); absorption 4 (310s, 100%); regeneration 2 (25s, 100%); fire resistance 1 (300s, 100%); resistance 1 (150s, 100%)"
+        "en_US": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Absorption 1（70s，100%）；Regeneration 2（10s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Absorption 2（150s，100%）；Regeneration 2（15s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Absorption 3（230s，100%）；Regeneration 2（20s，100%）；Fire Resistance 1（150s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Absorption 4（310s，100%）；Regeneration 2（25s，100%）；Fire Resistance 1（300s，100%）；Resistance 1（150s，100%）",
+        "zh_CN": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；伤害吸收 1（70秒，100%）；生命恢复 2（10秒，100%）\n品质 4：微醺 1（30秒，100%）；伤害吸收 2（150秒，100%）；生命恢复 2（15秒，100%）\n品质 5：微醺 1（20秒，100%）；伤害吸收 3（230秒，100%）；生命恢复 2（20秒，100%）；抗火 1（150秒，100%）\n品质 6：微醺 1（10秒，100%）；伤害吸收 4（310秒，100%）；生命恢复 2（25秒，100%）；抗火 1（300秒，100%）；抗性提升 1（150秒，100%）",
+        "zh_TW": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；吸收 1（70秒，100%）；生命恢復 2（10秒，100%）\n品質 4：微醺 1（30秒，100%）；吸收 2（150秒，100%）；生命恢復 2（15秒，100%）\n品質 5：微醺 1（20秒，100%）；吸收 3（230秒，100%）；生命恢復 2（20秒，100%）；抗火 1（150秒，100%）\n品質 6：微醺 1（10秒，100%）；吸收 4（310秒，100%）；生命恢復 2（25秒，100%）；抗火 1（300秒，100%）；抗性提升 1（150秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/strongbow"
       ],
-      "icon": "textures/kwl/items/strongbow_q6"
+      "icon": "textures/kwl/items/strongbow_q6",
+      "item": "kaleidoscope_world_liquor:strongbow_q1",
+      "category": "barrel"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/around_the_world",
@@ -4871,14 +4907,16 @@ export const payload = {
         "zh_TW": "環遊世界"
       },
       "body": {
-        "en_US": "Add the three listed ingredients to a Tavern shaker, hold to shake, then pour into empty glassware. Drink or place the finished glass.\n\nBrewing: Ice Wine Q4 + Luminous Bride Q4 + Plum Wine Q4 + Around the World → Around the World\n\nFrenzy!!! 1 (0s, 100%)",
-        "zh_CN": "将配方的三份原料倒入雪克杯，按住摇匀，再用空玻璃杯接取；成品可饮用或摆放。\n\n酿造: Ice Wine Q4 + Luminous Bride Q4 + Plum Wine Q4 + 环游世界 → 环游世界\n\n疯狂！！！ 1 (0s, 100%)",
-        "zh_TW": "將配方的三份原料倒入雪克杯，按住搖勻，再用空玻璃杯接取；成品可飲用或擺放。\n\n釀造: Ice Wine Q4 + Luminous Bride Q4 + Plum Wine Q4 + 環遊世界 → 環遊世界\n\n瘋狂！！！ 1 (0s, 100%)"
+        "en_US": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nFrenzy!!! 1（instant，100%）",
+        "zh_CN": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n疯狂！！！ 1（即时触发，100%）",
+        "zh_TW": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n疯狂！！！ 1（即時觸發，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/around_the_world"
       ],
-      "icon": "textures/kwl/items/around_the_world"
+      "icon": "textures/kwl/items/around_the_world",
+      "item": "kaleidoscope_world_liquor:around_the_world",
+      "category": "cocktail"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/gin_tonic",
@@ -4888,14 +4926,16 @@ export const payload = {
         "zh_TW": "金湯力"
       },
       "body": {
-        "en_US": "Add the three listed ingredients to a Tavern shaker, hold to shake, then pour into empty glassware. Drink or place the finished glass.\n\nBrewing: Tonic Water + Vodka Q4 + Vodka Q4 + Gin Tonic → Gin Tonic\n\nInstant Restoration 1 (60s, 100%)",
-        "zh_CN": "将配方的三份原料倒入雪克杯，按住摇匀，再用空玻璃杯接取；成品可饮用或摆放。\n\n酿造: 汤力水 + Vodka Q4 + Vodka Q4 + 金汤力 → 金汤力\n\n瞬间恢复 1 (60s, 100%)",
-        "zh_TW": "將配方的三份原料倒入雪克杯，按住搖勻，再用空玻璃杯接取；成品可飲用或擺放。\n\n釀造: 湯力水 + Vodka Q4 + Vodka Q4 + 金湯力 → 金湯力\n\n瞬間恢復 1 (60s, 100%)"
+        "en_US": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nInstant Restoration 1（60s，100%）",
+        "zh_CN": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n瞬间恢复 1（60秒，100%）",
+        "zh_TW": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n瞬间恢复 1（60秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/gin_tonic"
       ],
-      "icon": "textures/kwl/items/gin_tonic"
+      "icon": "textures/kwl/items/gin_tonic",
+      "item": "kaleidoscope_world_liquor:gin_tonic",
+      "category": "cocktail"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/jerk",
@@ -4905,15 +4945,17 @@ export const payload = {
         "zh_TW": "渣男"
       },
       "body": {
-        "en_US": "Add the three listed ingredients to a Tavern shaker, hold to shake, then pour into empty glassware. Drink or place the finished glass.\n\nBrewing: Sauvignon Blanc Dry White Q4 + Absolut Vodka Q4 + Sauvignon Blanc Dry White Q4 + Jerk Cocktail → Jerk Cocktail\n\nBrewing: Bacardi Carta Blanca Q4 + Sauvignon Blanc Dry White Q4 + Vodka Q4 + Jerk Cocktail → Jerk Cocktail\n\nDetonation 1 (0s, 100%)",
-        "zh_CN": "将配方的三份原料倒入雪克杯，按住摇匀，再用空玻璃杯接取；成品可饮用或摆放。\n\n酿造: Sauvignon Blanc Dry White Q4 + Absolut Vodka Q4 + Sauvignon Blanc Dry White Q4 + 渣男 → 渣男\n\n酿造: Bacardi Carta Blanca Q4 + Sauvignon Blanc Dry White Q4 + Vodka Q4 + 渣男 → 渣男\n\n爆炸 1 (0s, 100%)",
-        "zh_TW": "將配方的三份原料倒入雪克杯，按住搖勻，再用空玻璃杯接取；成品可飲用或擺放。\n\n釀造: Sauvignon Blanc Dry White Q4 + Absolut Vodka Q4 + Sauvignon Blanc Dry White Q4 + 渣男 → 渣男\n\n釀造: Bacardi Carta Blanca Q4 + Sauvignon Blanc Dry White Q4 + Vodka Q4 + 渣男 → 渣男\n\n爆炸 1 (0s, 100%)"
+        "en_US": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nDetonation 1（instant，100%）",
+        "zh_CN": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n爆炸 1（即时触发，100%）",
+        "zh_TW": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n爆炸 1（即時觸發，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/jerk",
         "kaleidoscope_world_liquor:shaker/jerk1"
       ],
-      "icon": "textures/kwl/items/jerk"
+      "icon": "textures/kwl/items/jerk",
+      "item": "kaleidoscope_world_liquor:jerk",
+      "category": "cocktail"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/long_island_iced_tea",
@@ -4923,14 +4965,16 @@ export const payload = {
         "zh_TW": "長島冰茶"
       },
       "body": {
-        "en_US": "Add the three listed ingredients to a Tavern shaker, hold to shake, then pour into empty glassware. Drink or place the finished glass.\n\nBrewing: Cola + Cola + Sauvignon Blanc Dry White Q4 + Long Island Iced Tea → Long Island Iced Tea\n\nFamiliar Hearth 1 (0s, 100%)",
-        "zh_CN": "将配方的三份原料倒入雪克杯，按住摇匀，再用空玻璃杯接取；成品可饮用或摆放。\n\n酿造: 可乐 + 可乐 + Sauvignon Blanc Dry White Q4 + 长岛冰茶 → 长岛冰茶\n\n睁眼便身处熟悉居所 1 (0s, 100%)",
-        "zh_TW": "將配方的三份原料倒入雪克杯，按住搖勻，再用空玻璃杯接取；成品可飲用或擺放。\n\n釀造: 可樂 + 可樂 + Sauvignon Blanc Dry White Q4 + 長島冰茶 → 長島冰茶\n\n睜眼便身處熟悉居所 1 (0s, 100%)"
+        "en_US": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nFamiliar Hearth 1（instant，100%）",
+        "zh_CN": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n睁眼便身处熟悉居所 1（即时触发，100%）",
+        "zh_TW": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n睁眼便身处熟悉居所 1（即時觸發，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/long_island_iced_tea"
       ],
-      "icon": "textures/kwl/items/long_island_iced_tea"
+      "icon": "textures/kwl/items/long_island_iced_tea",
+      "item": "kaleidoscope_world_liquor:long_island_iced_tea",
+      "category": "cocktail"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/pine_colada",
@@ -4940,14 +4984,16 @@ export const payload = {
         "zh_TW": "椰林飄香"
       },
       "body": {
-        "en_US": "Add the three listed ingredients to a Tavern shaker, hold to shake, then pour into empty glassware. Drink or place the finished glass.\n\nBrewing: Vodka Q4 + Vodka Q4 + Luminous Bride Q4 + Piña Colada → Piña Colada\n\nHeavy Cleave 1 (1800s, 100%)",
-        "zh_CN": "将配方的三份原料倒入雪克杯，按住摇匀，再用空玻璃杯接取；成品可饮用或摆放。\n\n酿造: Vodka Q4 + Vodka Q4 + Luminous Bride Q4 + 椰林飘香 → 椰林飘香\n\n重斩 1 (1800s, 100%)",
-        "zh_TW": "將配方的三份原料倒入雪克杯，按住搖勻，再用空玻璃杯接取；成品可飲用或擺放。\n\n釀造: Vodka Q4 + Vodka Q4 + Luminous Bride Q4 + 椰林飄香 → 椰林飄香\n\n重斬 1 (1800s, 100%)"
+        "en_US": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nHeavy Cleave 1（1800s，100%）",
+        "zh_CN": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n重斩 1（1800秒，100%）",
+        "zh_TW": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n重斩 1（1800秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/pine_colada"
       ],
-      "icon": "textures/kwl/items/pine_colada"
+      "icon": "textures/kwl/items/pine_colada",
+      "item": "kaleidoscope_world_liquor:pine_colada",
+      "category": "cocktail"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/shrimp_cocktail",
@@ -4957,14 +5003,16 @@ export const payload = {
         "zh_TW": "鮮蝦雞尾酒"
       },
       "body": {
-        "en_US": "Add the three listed ingredients to a Tavern shaker, hold to shake, then pour into empty glassware. Drink or place the finished glass.\n\nBrewing: Plum Wine Q4 + Plum Wine Q4 + Luminous Bride Q4 + Shrimp Cocktail → Shrimp Cocktail\n\nTainted Lake Essence 1 (0s, 100%)",
-        "zh_CN": "将配方的三份原料倒入雪克杯，按住摇匀，再用空玻璃杯接取；成品可饮用或摆放。\n\n酿造: Plum Wine Q4 + Plum Wine Q4 + Luminous Bride Q4 + 鲜虾鸡尾酒 → 鲜虾鸡尾酒\n\n取自泛红湖水，泛着诡异虾腥甜香 1 (0s, 100%)",
-        "zh_TW": "將配方的三份原料倒入雪克杯，按住搖勻，再用空玻璃杯接取；成品可飲用或擺放。\n\n釀造: Plum Wine Q4 + Plum Wine Q4 + Luminous Bride Q4 + 鮮蝦雞尾酒 → 鮮蝦雞尾酒\n\n取自泛紅湖水，泛着詭異蝦腥甜香 1 (0s, 100%)"
+        "en_US": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nTainted Lake Essence 1（instant，100%）",
+        "zh_CN": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n取自泛红湖水，泛着诡异虾腥甜香 1（即时触发，100%）",
+        "zh_TW": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n取自泛红湖水，泛着诡异虾腥甜香 1（即時觸發，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/shrimp_cocktail"
       ],
-      "icon": "textures/kwl/items/shrimp_cocktail"
+      "icon": "textures/kwl/items/shrimp_cocktail",
+      "item": "kaleidoscope_world_liquor:shrimp_cocktail",
+      "category": "cocktail"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_white",
@@ -4974,12 +5022,27 @@ export const payload = {
         "zh_TW": "白色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = White Carpet\n\n→ White Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = White Carpet\n\n→ 白色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = White Carpet\n\n→ 白色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = White Carpet\n· = empty slot; keep the shown arrangement.\nOutput：White Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 白色地毯\n· 表示空格，按图中相对位置摆放。\n成品：白色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 白色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：白色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_white"
+      "icon": "textures/kwl/items/bar_stool_white",
+      "item": "kaleidoscope_world_liquor:bar_stool_white",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:white_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_white"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_orange",
@@ -4989,12 +5052,27 @@ export const payload = {
         "zh_TW": "橙色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Orange Carpet\n\n→ Orange Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Orange Carpet\n\n→ 橙色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Orange Carpet\n\n→ 橙色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Orange Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Orange Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 橙色地毯\n· 表示空格，按图中相对位置摆放。\n成品：橙色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 橙色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：橙色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_orange"
+      "icon": "textures/kwl/items/bar_stool_orange",
+      "item": "kaleidoscope_world_liquor:bar_stool_orange",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:orange_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_orange"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_magenta",
@@ -5004,12 +5082,27 @@ export const payload = {
         "zh_TW": "品紅色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Magenta Carpet\n\n→ Magenta Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Magenta Carpet\n\n→ 品红色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Magenta Carpet\n\n→ 品紅色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Magenta Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Magenta Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 品红色地毯\n· 表示空格，按图中相对位置摆放。\n成品：品红色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 洋紅色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：品紅色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_magenta"
+      "icon": "textures/kwl/items/bar_stool_magenta",
+      "item": "kaleidoscope_world_liquor:bar_stool_magenta",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:magenta_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_magenta"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_light_blue",
@@ -5019,12 +5112,27 @@ export const payload = {
         "zh_TW": "淺藍色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Light Blue Carpet\n\n→ Light Blue Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Light Blue Carpet\n\n→ 浅蓝色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Light Blue Carpet\n\n→ 淺藍色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Light Blue Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Light Blue Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 淡蓝色地毯\n· 表示空格，按图中相对位置摆放。\n成品：浅蓝色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 淺藍色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：淺藍色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_light_blue"
+      "icon": "textures/kwl/items/bar_stool_light_blue",
+      "item": "kaleidoscope_world_liquor:bar_stool_light_blue",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:light_blue_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_light_blue"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_yellow",
@@ -5034,12 +5142,27 @@ export const payload = {
         "zh_TW": "黃色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Yellow Carpet\n\n→ Yellow Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Yellow Carpet\n\n→ 黄色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Yellow Carpet\n\n→ 黃色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Yellow Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Yellow Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 黄色地毯\n· 表示空格，按图中相对位置摆放。\n成品：黄色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 黃色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：黃色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_yellow"
+      "icon": "textures/kwl/items/bar_stool_yellow",
+      "item": "kaleidoscope_world_liquor:bar_stool_yellow",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:yellow_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_yellow"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_lime",
@@ -5049,12 +5172,27 @@ export const payload = {
         "zh_TW": "黃綠色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Lime Carpet\n\n→ Lime Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Lime Carpet\n\n→ 黄绿色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Lime Carpet\n\n→ 黃綠色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Lime Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Lime Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 黄绿色地毯\n· 表示空格，按图中相对位置摆放。\n成品：黄绿色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 淺綠色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：黃綠色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_lime"
+      "icon": "textures/kwl/items/bar_stool_lime",
+      "item": "kaleidoscope_world_liquor:bar_stool_lime",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:lime_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_lime"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_pink",
@@ -5064,12 +5202,27 @@ export const payload = {
         "zh_TW": "粉色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Pink Carpet\n\n→ Pink Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Pink Carpet\n\n→ 粉色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Pink Carpet\n\n→ 粉色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Pink Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Pink Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 粉红色地毯\n· 表示空格，按图中相对位置摆放。\n成品：粉色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 粉紅色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：粉色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_pink"
+      "icon": "textures/kwl/items/bar_stool_pink",
+      "item": "kaleidoscope_world_liquor:bar_stool_pink",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:pink_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_pink"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_gray",
@@ -5079,12 +5232,27 @@ export const payload = {
         "zh_TW": "灰色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Gray Carpet\n\n→ Gray Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Gray Carpet\n\n→ 灰色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Gray Carpet\n\n→ 灰色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Gray Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Gray Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 灰色地毯\n· 表示空格，按图中相对位置摆放。\n成品：灰色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 灰色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：灰色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_gray"
+      "icon": "textures/kwl/items/bar_stool_gray",
+      "item": "kaleidoscope_world_liquor:bar_stool_gray",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:gray_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_gray"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_light_gray",
@@ -5094,12 +5262,27 @@ export const payload = {
         "zh_TW": "淺灰色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Light Gray Carpet\n\n→ Light Gray Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Light Gray Carpet\n\n→ 浅灰色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Light Gray Carpet\n\n→ 淺灰色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Light Gray Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Light Gray Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 淡灰色地毯\n· 表示空格，按图中相对位置摆放。\n成品：浅灰色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 淺灰色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：淺灰色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_light_gray"
+      "icon": "textures/kwl/items/bar_stool_light_gray",
+      "item": "kaleidoscope_world_liquor:bar_stool_light_gray",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:light_gray_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_light_gray"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_cyan",
@@ -5109,12 +5292,27 @@ export const payload = {
         "zh_TW": "青色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Cyan Carpet\n\n→ Cyan Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Cyan Carpet\n\n→ 青色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Cyan Carpet\n\n→ 青色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Cyan Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Cyan Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 青色地毯\n· 表示空格，按图中相对位置摆放。\n成品：青色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 青色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：青色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_cyan"
+      "icon": "textures/kwl/items/bar_stool_cyan",
+      "item": "kaleidoscope_world_liquor:bar_stool_cyan",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:cyan_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_cyan"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_purple",
@@ -5124,12 +5322,27 @@ export const payload = {
         "zh_TW": "紫色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Purple Carpet\n\n→ Purple Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Purple Carpet\n\n→ 紫色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Purple Carpet\n\n→ 紫色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Purple Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Purple Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 紫色地毯\n· 表示空格，按图中相对位置摆放。\n成品：紫色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 紫色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：紫色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_purple"
+      "icon": "textures/kwl/items/bar_stool_purple",
+      "item": "kaleidoscope_world_liquor:bar_stool_purple",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:purple_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_purple"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_blue",
@@ -5139,12 +5352,27 @@ export const payload = {
         "zh_TW": "藍色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Blue Carpet\n\n→ Blue Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Blue Carpet\n\n→ 蓝色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Blue Carpet\n\n→ 藍色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Blue Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Blue Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 蓝色地毯\n· 表示空格，按图中相对位置摆放。\n成品：蓝色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 藍色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：藍色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_blue"
+      "icon": "textures/kwl/items/bar_stool_blue",
+      "item": "kaleidoscope_world_liquor:bar_stool_blue",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:blue_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_blue"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_brown",
@@ -5154,12 +5382,27 @@ export const payload = {
         "zh_TW": "棕色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Brown Carpet\n\n→ Brown Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Brown Carpet\n\n→ 棕色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Brown Carpet\n\n→ 棕色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Brown Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Brown Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 棕色地毯\n· 表示空格，按图中相对位置摆放。\n成品：棕色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 棕色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：棕色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_brown"
+      "icon": "textures/kwl/items/bar_stool_brown",
+      "item": "kaleidoscope_world_liquor:bar_stool_brown",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:brown_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_brown"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_green",
@@ -5169,12 +5412,27 @@ export const payload = {
         "zh_TW": "綠色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Green Carpet\n\n→ Green Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Green Carpet\n\n→ 绿色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Green Carpet\n\n→ 綠色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Green Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Green Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 绿色地毯\n· 表示空格，按图中相对位置摆放。\n成品：绿色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 綠色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：綠色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_green"
+      "icon": "textures/kwl/items/bar_stool_green",
+      "item": "kaleidoscope_world_liquor:bar_stool_green",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:green_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_green"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_red",
@@ -5184,12 +5442,27 @@ export const payload = {
         "zh_TW": "紅色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Red Carpet\n\n→ Red Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Red Carpet\n\n→ 红色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Red Carpet\n\n→ 紅色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Red Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Red Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 红色地毯\n· 表示空格，按图中相对位置摆放。\n成品：红色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 紅色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：紅色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_red"
+      "icon": "textures/kwl/items/bar_stool_red",
+      "item": "kaleidoscope_world_liquor:bar_stool_red",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:red_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_red"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_black",
@@ -5199,12 +5472,27 @@ export const payload = {
         "zh_TW": "黑色高腳方凳"
       },
       "body": {
-        "en_US": "Place and use with an empty hand to sit. Sneak to dismount.\n\nCrafting:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Black Carpet\n\n→ Black Square Bar Stool ×1",
-        "zh_CN": "摆放后空手点击坐下，潜行离开。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Black Carpet\n\n→ 黑色高脚方凳 ×1",
-        "zh_TW": "擺放後空手點擊坐下，潛行離開。\n\n合成:\n\nW / C / L\n\nC = Chain\n\nL = Iron Ingot\n\nW = Black Carpet\n\n→ 黑色高腳方凳 ×1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Black Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Black Square Bar Stool × 1",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 黑色地毯\n· 表示空格，按图中相对位置摆放。\n成品：黑色高脚方凳 × 1",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 黑色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：黑色高腳方凳 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bar_stool_black"
+      "icon": "textures/kwl/items/bar_stool_black",
+      "item": "kaleidoscope_world_liquor:bar_stool_black",
+      "category": "furniture",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:black_carpet",
+            "minecraft:chain",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bar_stool_black"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/oak_bar_cabinet",
@@ -5214,12 +5502,32 @@ export const payload = {
         "zh_TW": "橡木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / X·X / XXX\n\nX = Oak Slab\n\n→ Oak Bar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Oak Slab\n\n→ 橡木酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Oak Slab\n\n→ 橡木酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Oak Slab\n· = empty slot; keep the shown arrangement.\nOutput：Oak Bar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 橡木台阶\n· 表示空格，按图中相对位置摆放。\n成品：橡木酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 橡木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：橡木酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/oak_bar_cabinet"
+      "icon": "textures/kwl/items/oak_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:oak_bar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:oak_bar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/oak_cellar_cabinet",
@@ -5229,12 +5537,33 @@ export const payload = {
         "zh_TW": "橡木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / XXX / XXX\n\nX = Oak Slab\n\n→ Oak Cellar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Oak Slab\n\n→ 橡木窖藏酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Oak Slab\n\n→ 橡木窖藏酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Oak Slab\n· = empty slot; keep the shown arrangement.\nOutput：Oak Cellar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 橡木台阶\n· 表示空格，按图中相对位置摆放。\n成品：橡木窖藏酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 橡木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：橡木窖藏酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/oak_cellar_cabinet"
+      "icon": "textures/kwl/items/oak_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab",
+            "minecraft:oak_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:oak_cellar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/birch_bar_cabinet",
@@ -5244,12 +5573,32 @@ export const payload = {
         "zh_TW": "白樺木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / X·X / XXX\n\nX = Birch Slab\n\n→ Birch Bar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Birch Slab\n\n→ 白桦木酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Birch Slab\n\n→ 白樺木酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Birch Slab\n· = empty slot; keep the shown arrangement.\nOutput：Birch Bar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 白桦木台阶\n· 表示空格，按图中相对位置摆放。\n成品：白桦木酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 樺木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：白樺木酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/birch_bar_cabinet"
+      "icon": "textures/kwl/items/birch_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:birch_bar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:birch_bar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/birch_cellar_cabinet",
@@ -5259,12 +5608,33 @@ export const payload = {
         "zh_TW": "白樺木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / XXX / XXX\n\nX = Birch Slab\n\n→ Birch Cellar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Birch Slab\n\n→ 白桦木窖藏酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Birch Slab\n\n→ 白樺木窖藏酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Birch Slab\n· = empty slot; keep the shown arrangement.\nOutput：Birch Cellar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 白桦木台阶\n· 表示空格，按图中相对位置摆放。\n成品：白桦木窖藏酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 樺木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：白樺木窖藏酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/birch_cellar_cabinet"
+      "icon": "textures/kwl/items/birch_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab",
+            "minecraft:birch_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:birch_cellar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/spruce_bar_cabinet",
@@ -5274,12 +5644,32 @@ export const payload = {
         "zh_TW": "雲杉木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / X·X / XXX\n\nX = Dark Oak Slab\n\n→ Spruce Bar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Dark Oak Slab\n\n→ 云杉木酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Dark Oak Slab\n\n→ 雲杉木酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Dark Oak Slab\n· = empty slot; keep the shown arrangement.\nOutput：Spruce Bar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 深色橡木台阶\n· 表示空格，按图中相对位置摆放。\n成品：云杉木酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 黑橡木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：雲杉木酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/spruce_bar_cabinet"
+      "icon": "textures/kwl/items/spruce_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:spruce_bar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/spruce_cellar_cabinet",
@@ -5289,12 +5679,33 @@ export const payload = {
         "zh_TW": "雲杉木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / XXX / XXX\n\nX = Dark Oak Slab\n\n→ Spruce Cellar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Dark Oak Slab\n\n→ 云杉木窖藏酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Dark Oak Slab\n\n→ 雲杉木窖藏酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Dark Oak Slab\n· = empty slot; keep the shown arrangement.\nOutput：Spruce Cellar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 深色橡木台阶\n· 表示空格，按图中相对位置摆放。\n成品：云杉木窖藏酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 黑橡木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：雲杉木窖藏酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/spruce_cellar_cabinet"
+      "icon": "textures/kwl/items/spruce_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:dark_oak_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:spruce_cellar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/dark_oak_bar_cabinet",
@@ -5304,12 +5715,32 @@ export const payload = {
         "zh_TW": "深色橡木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / X·X / XXX\n\nX = Spruce Slab\n\n→ Dark Oak Bar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Spruce Slab\n\n→ 深色橡木酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Spruce Slab\n\n→ 深色橡木酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Spruce Slab\n· = empty slot; keep the shown arrangement.\nOutput：Dark Oak Bar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 云杉木台阶\n· 表示空格，按图中相对位置摆放。\n成品：深色橡木酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 杉木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：深色橡木酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/dark_oak_bar_cabinet"
+      "icon": "textures/kwl/items/dark_oak_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:dark_oak_bar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/dark_oak_cellar_cabinet",
@@ -5319,12 +5750,33 @@ export const payload = {
         "zh_TW": "深色橡木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / XXX / XXX\n\nX = Spruce Slab\n\n→ Dark Oak Cellar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Spruce Slab\n\n→ 深色橡木窖藏酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Spruce Slab\n\n→ 深色橡木窖藏酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Spruce Slab\n· = empty slot; keep the shown arrangement.\nOutput：Dark Oak Cellar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 云杉木台阶\n· 表示空格，按图中相对位置摆放。\n成品：深色橡木窖藏酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 杉木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：深色橡木窖藏酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/dark_oak_cellar_cabinet"
+      "icon": "textures/kwl/items/dark_oak_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab",
+            "minecraft:spruce_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/cherry_bar_cabinet",
@@ -5334,12 +5786,32 @@ export const payload = {
         "zh_TW": "櫻花木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / X·X / XXX\n\nX = Cherry Slab\n\n→ Cherry Bar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Cherry Slab\n\n→ 樱花木酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / X·X / XXX\n\nX = Cherry Slab\n\n→ 櫻花木酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Cherry Slab\n· = empty slot; keep the shown arrangement.\nOutput：Cherry Bar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 樱花木台阶\n· 表示空格，按图中相对位置摆放。\n成品：樱花木酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 櫻花木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：櫻花木酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/cherry_bar_cabinet"
+      "icon": "textures/kwl/items/cherry_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:cherry_bar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/cherry_cellar_cabinet",
@@ -5349,12 +5821,33 @@ export const payload = {
         "zh_TW": "櫻花木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on a slot to insert; empty hand takes it out. Cellar cabinets have nine slots and accept compact bottles; bar cabinets have two upright slots. Same-wood neighbors connect.\n\nCrafting:\n\nXXX / XXX / XXX\n\nX = Cherry Slab\n\n→ Cherry Cellar Cabinet ×1",
-        "zh_CN": "手持酒瓶点击格子放入，空手取出。酒窖柜有九格，接受适合横放的酒瓶；吧台柜有两个直立格。同材质相邻自动连接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Cherry Slab\n\n→ 樱花木窖藏酒柜 ×1",
-        "zh_TW": "手持酒瓶點擊格子放入，空手取出。酒窖櫃有九格，接受適合橫放的酒瓶；吧台櫃有兩個直立格。同材質相鄰自動連接。\n\n合成:\n\nXXX / XXX / XXX\n\nX = Cherry Slab\n\n→ 櫻花木窖藏酒櫃 ×1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Cherry Slab\n· = empty slot; keep the shown arrangement.\nOutput：Cherry Cellar Cabinet × 1",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 樱花木台阶\n· 表示空格，按图中相对位置摆放。\n成品：樱花木窖藏酒柜 × 1",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 櫻花木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：櫻花木窖藏酒櫃 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/cherry_cellar_cabinet"
+      "icon": "textures/kwl/items/cherry_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+      "category": "storage",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab",
+            "minecraft:cherry_slab"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:cherry_cellar_cabinet"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/freezer",
@@ -5364,12 +5857,32 @@ export const payload = {
         "zh_TW": "冰櫃"
       },
       "body": {
-        "en_US": "Sneak-use to open. Insert one bucket and ingredients in the listed order, then sneak-use to close. Freezing takes 90 seconds while loaded. Open and take one product at a time; pudding requires a bowl. Empty-hand use returns the last ingredient. A bucket drains the liquid.\n\nCrafting:\n\nILI / I·I / III\n\nI = Iron Ingot\n\nL = Iron Trapdoor\n\n→ Freezer ×1\n\nWater + — → Ice ×3 (90s)\n\nSweet Berries Juice + Snowball → Kita Stuffed Crisps ×1 (90s)\n\nMilk Still + Blue Dye → Liangshan Ice Cone ×1 (90s)\n\nLava + — → Magma ×3 (90s)\n\nGrape Juice + Slime Ball → Pochi Pudding ×1 (90s)",
-        "zh_CN": "潜行使用开盖，加入一桶液体和按顺序放入原料，再潜行使用关盖。加载时冷冻 90 秒。开盖逐个取出成品；布丁需用碗接取。空手取回最后放入的原料；空桶可取回液体。\n\n合成:\n\nILI / I·I / III\n\nI = Iron Ingot\n\nL = Iron Trapdoor\n\n→ 冰柜 ×1\n\nWater + — → Ice ×3 (90s)\n\n甜浆果汁 + Snowball → 喜多夹心脆 ×1 (90s)\n\nMilk Still + Blue Dye → 凉山田筒 ×1 (90s)\n\nLava + — → Magma ×3 (90s)\n\n葡萄汁 + Slime Ball → 波奇布丁 ×1 (90s)",
-        "zh_TW": "潛行使用開蓋，加入一桶液體和按順序放入原料，再潛行使用關蓋。載入時冷凍 90 秒。開蓋逐個取出成品；布丁需用碗接取。空手取回最後放入的原料；空桶可取回液體。\n\n合成:\n\nILI / I·I / III\n\nI = Iron Ingot\n\nL = Iron Trapdoor\n\n→ 冰櫃 ×1\n\nWater + — → Ice ×3 (90s)\n\n甜漿果汁 + Snowball → 喜多夾心脆 ×1 (90s)\n\nMilk Still + Blue Dye → 涼山田筒 ×1 (90s)\n\nLava + — → Magma ×3 (90s)\n\n葡萄汁 + Slime Ball → 波奇布丁 ×1 (90s)"
+        "en_US": "Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid.\nCrafting Table • Shaped\nILI / I·I / III\nI = Iron Ingot\nL = Iron Trapdoor\n· = empty slot; keep the shown arrangement.\nOutput：Freezer × 1\nFreezer recipe：Ice\nFluid：Water 1000 mB\nNo ingredient items.\nOutput：Ice × 3\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.\nFreezer recipe：Kita Stuffed Crisps\nFluid：Sweet Berries Juice 1000 mB\nInput slot 1：Snowball × 1\nOutput：Kita Stuffed Crisps × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.\nFreezer recipe：Liangshan Ice Cone\nFluid：Milk 1000 mB\nInput slot 1：Blue Dye × 1\nOutput：Liangshan Ice Cone × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.\nFreezer recipe：Magma Block\nFluid：Lava 1000 mB\nNo ingredient items.\nOutput：Magma Block × 3\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.\nFreezer recipe：Pochi Pudding\nFluid：Grape Juice 1000 mB\nInput slot 1：Slimeball × 1\nOutput：Pochi Pudding × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtraction carrier (not an ingredient)：Bowl × 1",
+        "zh_CN": "潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。\n工作台｜有序合成\nILI / I·I / III\nI = 铁锭\nL = 铁活板门\n· 表示空格，按图中相对位置摆放。\n成品：冰柜 × 1\n冷冻柜配方：冰\n液体：水 1000 mB\n无需固体原料。\n成品：冰 × 3\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。\n冷冻柜配方：喜多夹心脆\n液体：甜浆果汁 1000 mB\n原料槽 1：雪球 × 1\n成品：喜多夹心脆 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。\n冷冻柜配方：凉山田筒\n液体：牛奶 1000 mB\n原料槽 1：蓝色染料 × 1\n成品：凉山田筒 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。\n冷冻柜配方：岩浆块\n液体：熔岩 1000 mB\n无需固体原料。\n成品：岩浆块 × 3\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。\n冷冻柜配方：波奇布丁\n液体：葡萄汁 1000 mB\n原料槽 1：黏液球 × 1\n成品：波奇布丁 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n取出容器（不是原料）：碗 × 1",
+        "zh_TW": "潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。\n工作台｜有序合成\nILI / I·I / III\nI = 鐵錠\nL = 鐵製地板門\n· 表示空格，按圖中相對位置擺放。\n成品：冰櫃 × 1\n冷凍櫃配方：冰\n液體：水 1000 mB\n無需固體原料。\n成品：冰 × 3\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。\n冷凍櫃配方：喜多夾心脆\n液體：甜莓汁 1000 mB\n原料槽 1：雪球 × 1\n成品：喜多夾心脆 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。\n冷凍櫃配方：涼山田筒\n液體：牛奶 1000 mB\n原料槽 1：藍色染料 × 1\n成品：涼山田筒 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。\n冷凍櫃配方：岩漿塊\n液體：熔岩 1000 mB\n無需固體原料。\n成品：岩漿塊 × 3\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。\n冷凍櫃配方：波奇布丁\n液體：葡萄汁 1000 mB\n原料槽 1：史萊姆球 × 1\n成品：波奇布丁 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n取出容器（不是原料）：碗 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/freezer"
+      "icon": "textures/kwl/items/freezer",
+      "item": "kaleidoscope_world_liquor:freezer",
+      "category": "equipment",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:iron_ingot",
+            "minecraft:iron_trapdoor",
+            "minecraft:iron_ingot",
+            "minecraft:iron_ingot",
+            "minecraft:iron_ingot",
+            "minecraft:iron_ingot",
+            "minecraft:iron_ingot",
+            "minecraft:iron_ingot"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:freezer"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/cola",
@@ -5379,12 +5892,27 @@ export const payload = {
         "zh_TW": "可樂"
       },
       "body": {
-        "en_US": "Drink to receive the original 15-second effects; the glass bottle is returned. Can also be mixed in a shaker.\n\nCrafting:\n\nPotion + Sugar + Ink Sac\n\n→ Cola ×1",
-        "zh_CN": "饮用获得原版 15 秒效果，归还玻璃瓶；也可用于雪克杯调酒。\n\n合成:\n\nPotion + Sugar + Ink Sac\n\n→ 可乐 ×1",
-        "zh_TW": "飲用獲得原版 15 秒效果，歸還玻璃瓶；也可用於雪克杯調酒。\n\n合成:\n\nPotion + Sugar + Ink Sac\n\n→ 可樂 ×1"
+        "en_US": "Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.\nCrafting Table • Shapeless\nPotion item (any potion; water recommended) × 1\nSugar × 1\nInk Sac × 1\nOutput：Cola × 1",
+        "zh_CN": "这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。\n工作台｜无序合成\n药水物品（任意药水；建议用水瓶） × 1\n糖 × 1\n墨囊 × 1\n成品：可乐 × 1",
+        "zh_TW": "這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。\n工作台｜無序合成\n藥水物品（任意藥水；建議用水瓶） × 1\n糖 × 1\n墨囊 × 1\n成品：可樂 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/cola"
+      "icon": "textures/kwl/items/cola",
+      "item": "kaleidoscope_world_liquor:cola",
+      "category": "cocktail",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:potion",
+            "minecraft:sugar",
+            "minecraft:ink_sac"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:cola"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/tonic_water",
@@ -5394,12 +5922,27 @@ export const payload = {
         "zh_TW": "湯力水"
       },
       "body": {
-        "en_US": "Drink to receive the original 15-second effects; the glass bottle is returned. Can also be mixed in a shaker.\n\nCrafting:\n\nPotion + Sugar + Vine\n\n→ Tonic Water ×1",
-        "zh_CN": "饮用获得原版 15 秒效果，归还玻璃瓶；也可用于雪克杯调酒。\n\n合成:\n\nPotion + Sugar + Vine\n\n→ 汤力水 ×1",
-        "zh_TW": "飲用獲得原版 15 秒效果，歸還玻璃瓶；也可用於雪克杯調酒。\n\n合成:\n\nPotion + Sugar + Vine\n\n→ 湯力水 ×1"
+        "en_US": "Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.\nCrafting Table • Shapeless\nPotion item (any potion; water recommended) × 1\nSugar × 1\nVines × 1\nOutput：Tonic Water × 1",
+        "zh_CN": "这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。\n工作台｜无序合成\n药水物品（任意药水；建议用水瓶） × 1\n糖 × 1\n藤蔓 × 1\n成品：汤力水 × 1",
+        "zh_TW": "這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。\n工作台｜無序合成\n藥水物品（任意藥水；建議用水瓶） × 1\n糖 × 1\n藤蔓 × 1\n成品：湯力水 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/tonic_water"
+      "icon": "textures/kwl/items/tonic_water",
+      "item": "kaleidoscope_world_liquor:tonic_water",
+      "category": "cocktail",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:potion",
+            "minecraft:sugar",
+            "minecraft:vine"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:tonic_water"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/liangshan_ice_cone",
@@ -5409,12 +5952,14 @@ export const payload = {
         "zh_TW": "涼山田筒"
       },
       "body": {
-        "en_US": "Eat for 5 hunger points and 8-minute effects. Pudding returns a bowl. Bedrock has no native Luck status.\n\nMilk Still + Blue Dye → Liangshan Ice Cone ×1 (90s)",
-        "zh_CN": "食用恢复 5 点饥饿值，效果持续 8 分钟。布丁归还碗。基岩版没有原生幸运状态。\n\nMilk Still + Blue Dye → 凉山田筒 ×1 (90s)",
-        "zh_TW": "食用恢復 5 點飢餓值，效果持續 8 分鐘。布丁歸還碗。基岩版沒有原生幸運狀態。\n\nMilk Still + Blue Dye → 涼山田筒 ×1 (90s)"
+        "en_US": "Make this food using the workstation and recipe shown below, then hold use to eat it.\nFreezer recipe：Liangshan Ice Cone\nFluid：Milk 1000 mB\nInput slot 1：Blue Dye × 1\nOutput：Liangshan Ice Cone × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.",
+        "zh_CN": "按下方指定的工作站与配方制作，再按住使用食用。\n冷冻柜配方：凉山田筒\n液体：牛奶 1000 mB\n原料槽 1：蓝色染料 × 1\n成品：凉山田筒 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。",
+        "zh_TW": "按下方指定的工作站與配方製作，再按住使用食用。\n冷凍櫃配方：涼山田筒\n液體：牛奶 1000 mB\n原料槽 1：藍色染料 × 1\n成品：涼山田筒 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/liangshan_ice_cone"
+      "icon": "textures/kwl/items/liangshan_ice_cone",
+      "item": "kaleidoscope_world_liquor:liangshan_ice_cone",
+      "category": "food"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/kita_stuffed_crisp",
@@ -5424,12 +5969,14 @@ export const payload = {
         "zh_TW": "喜多夾心脆"
       },
       "body": {
-        "en_US": "Eat for 5 hunger points and 8-minute effects. Pudding returns a bowl. Bedrock has no native Luck status.\n\nSweet Berries Juice + Snowball → Kita Stuffed Crisps ×1 (90s)",
-        "zh_CN": "食用恢复 5 点饥饿值，效果持续 8 分钟。布丁归还碗。基岩版没有原生幸运状态。\n\n甜浆果汁 + Snowball → 喜多夹心脆 ×1 (90s)",
-        "zh_TW": "食用恢復 5 點飢餓值，效果持續 8 分鐘。布丁歸還碗。基岩版沒有原生幸運狀態。\n\n甜漿果汁 + Snowball → 喜多夾心脆 ×1 (90s)"
+        "en_US": "Make this food using the workstation and recipe shown below, then hold use to eat it.\nFreezer recipe：Kita Stuffed Crisps\nFluid：Sweet Berries Juice 1000 mB\nInput slot 1：Snowball × 1\nOutput：Kita Stuffed Crisps × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.",
+        "zh_CN": "按下方指定的工作站与配方制作，再按住使用食用。\n冷冻柜配方：喜多夹心脆\n液体：甜浆果汁 1000 mB\n原料槽 1：雪球 × 1\n成品：喜多夹心脆 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。",
+        "zh_TW": "按下方指定的工作站與配方製作，再按住使用食用。\n冷凍櫃配方：喜多夾心脆\n液體：甜莓汁 1000 mB\n原料槽 1：雪球 × 1\n成品：喜多夾心脆 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/kita_stuffed_crisp"
+      "icon": "textures/kwl/items/kita_stuffed_crisp",
+      "item": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+      "category": "food"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/pochi_pudding",
@@ -5439,12 +5986,14 @@ export const payload = {
         "zh_TW": "波奇布丁"
       },
       "body": {
-        "en_US": "Eat for 5 hunger points and 8-minute effects. Pudding returns a bowl. Bedrock has no native Luck status.\n\nGrape Juice + Slime Ball → Pochi Pudding ×1 (90s)",
-        "zh_CN": "食用恢复 5 点饥饿值，效果持续 8 分钟。布丁归还碗。基岩版没有原生幸运状态。\n\n葡萄汁 + Slime Ball → 波奇布丁 ×1 (90s)",
-        "zh_TW": "食用恢復 5 點飢餓值，效果持續 8 分鐘。布丁歸還碗。基岩版沒有原生幸運狀態。\n\n葡萄汁 + Slime Ball → 波奇布丁 ×1 (90s)"
+        "en_US": "Make this food using the workstation and recipe shown below, then hold use to eat it.\nFreezer recipe：Pochi Pudding\nFluid：Grape Juice 1000 mB\nInput slot 1：Slimeball × 1\nOutput：Pochi Pudding × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtraction carrier (not an ingredient)：Bowl × 1",
+        "zh_CN": "按下方指定的工作站与配方制作，再按住使用食用。\n冷冻柜配方：波奇布丁\n液体：葡萄汁 1000 mB\n原料槽 1：黏液球 × 1\n成品：波奇布丁 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n取出容器（不是原料）：碗 × 1",
+        "zh_TW": "按下方指定的工作站與配方製作，再按住使用食用。\n冷凍櫃配方：波奇布丁\n液體：葡萄汁 1000 mB\n原料槽 1：史萊姆球 × 1\n成品：波奇布丁 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n取出容器（不是原料）：碗 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/pochi_pudding"
+      "icon": "textures/kwl/items/pochi_pudding",
+      "item": "kaleidoscope_world_liquor:pochi_pudding",
+      "category": "food"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/magic_crispy_corner",
@@ -5454,12 +6003,33 @@ export const payload = {
         "zh_TW": "妙脆角"
       },
       "body": {
-        "en_US": "Eat for 5 hunger points and 8-minute effects. Pudding returns a bowl. Bedrock has no native Luck status.\n\nCrafting:\n\nIII / ILI / III\n\nI = Gold Nugget\n\nL = Cookie\n\n→ Magic Crispy Corners ×1",
-        "zh_CN": "食用恢复 5 点饥饿值，效果持续 8 分钟。布丁归还碗。基岩版没有原生幸运状态。\n\n合成:\n\nIII / ILI / III\n\nI = Gold Nugget\n\nL = Cookie\n\n→ 妙脆角 ×1",
-        "zh_TW": "食用恢復 5 點飢餓值，效果持續 8 分鐘。布丁歸還碗。基岩版沒有原生幸運狀態。\n\n合成:\n\nIII / ILI / III\n\nI = Gold Nugget\n\nL = Cookie\n\n→ 妙脆角 ×1"
+        "en_US": "Make this food using the workstation and recipe shown below, then hold use to eat it.\nCrafting Table • Shaped\nIII / ILI / III\nI = Gold Nugget\nL = Cookie\n· = empty slot; keep the shown arrangement.\nOutput：Magic Crispy Corners × 1",
+        "zh_CN": "按下方指定的工作站与配方制作，再按住使用食用。\n工作台｜有序合成\nIII / ILI / III\nI = 金粒\nL = 曲奇\n· 表示空格，按图中相对位置摆放。\n成品：妙脆角 × 1",
+        "zh_TW": "按下方指定的工作站與配方製作，再按住使用食用。\n工作台｜有序合成\nIII / ILI / III\nI = 金粒\nL = 餅乾\n· 表示空格，按圖中相對位置擺放。\n成品：妙脆角 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/magic_crispy_corner"
+      "icon": "textures/kwl/items/magic_crispy_corner",
+      "item": "kaleidoscope_world_liquor:magic_crispy_corner",
+      "category": "food",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:gold_nugget",
+            "minecraft:gold_nugget",
+            "minecraft:gold_nugget",
+            "minecraft:gold_nugget",
+            "minecraft:cookie",
+            "minecraft:gold_nugget",
+            "minecraft:gold_nugget",
+            "minecraft:gold_nugget",
+            "minecraft:gold_nugget"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:magic_crispy_corner"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bfxm_painting",
@@ -5469,12 +6039,26 @@ export const payload = {
         "zh_TW": "掛畫 · 白帆小喵L"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Cyan Wool\n\n→ Painting · Artist: White Sail Kitty L ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Cyan Wool\n\n→ 挂画 · 白帆小喵L ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Cyan Wool\n\n→ 掛畫 · 白帆小喵L ×1"
+        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nCyan Wool × 1\nOutput：Painting · Artist: White Sail Kitty L × 1",
+        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n青色羊毛 × 1\n成品：挂画 · 白帆小喵L × 1",
+        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n青色羊毛 × 1\n成品：掛畫 · 白帆小喵L × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bfxm_painting"
+      "icon": "textures/kwl/items/bfxm_painting",
+      "item": "kaleidoscope_world_liquor:bfxm_painting",
+      "category": "art",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:frame",
+            "minecraft:cyan_wool"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bfxm_painting"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bmt_painting",
@@ -5484,12 +6068,26 @@ export const payload = {
         "zh_TW": "掛畫 · 白饅頭"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Bread\n\n→ Painting · Artist: White Bun ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Bread\n\n→ 挂画 · 白馒头 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Bread\n\n→ 掛畫 · 白饅頭 ×1"
+        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nBread × 1\nOutput：Painting · Artist: White Bun × 1",
+        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n面包 × 1\n成品：挂画 · 白馒头 × 1",
+        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n麵包 × 1\n成品：掛畫 · 白饅頭 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/bmt_painting"
+      "icon": "textures/kwl/items/bmt_painting",
+      "item": "kaleidoscope_world_liquor:bmt_painting",
+      "category": "art",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:frame",
+            "minecraft:bread"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:bmt_painting"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/dream_painting",
@@ -5499,12 +6097,26 @@ export const payload = {
         "zh_TW": "掛畫 · 舊夢"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Lime Wool\n\n→ Painting · Artist: Old Dream ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Lime Wool\n\n→ 挂画 · 旧梦 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Lime Wool\n\n→ 掛畫 · 舊夢 ×1"
+        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nLime Wool × 1\nOutput：Painting · Artist: Old Dream × 1",
+        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n黄绿色羊毛 × 1\n成品：挂画 · 旧梦 × 1",
+        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n淺綠色羊毛 × 1\n成品：掛畫 · 舊夢 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/dream_painting"
+      "icon": "textures/kwl/items/dream_painting",
+      "item": "kaleidoscope_world_liquor:dream_painting",
+      "category": "art",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:frame",
+            "minecraft:lime_wool"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:dream_painting"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/cha_painting",
@@ -5514,12 +6126,26 @@ export const payload = {
         "zh_TW": "掛畫 · 茶棗子"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Magenta Wool\n\n→ Painting · Artist: Tea Jujube ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Magenta Wool\n\n→ 挂画 · 茶枣子 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Magenta Wool\n\n→ 掛畫 · 茶棗子 ×1"
+        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nMagenta Wool × 1\nOutput：Painting · Artist: Tea Jujube × 1",
+        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n品红色羊毛 × 1\n成品：挂画 · 茶枣子 × 1",
+        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n洋紅色羊毛 × 1\n成品：掛畫 · 茶棗子 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/cha_painting"
+      "icon": "textures/kwl/items/cha_painting",
+      "item": "kaleidoscope_world_liquor:cha_painting",
+      "category": "art",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:frame",
+            "minecraft:magenta_wool"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:cha_painting"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/chen_painting",
@@ -5529,12 +6155,26 @@ export const payload = {
         "zh_TW": "掛畫 · 辰"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Light Blue Wool\n\n→ Painting · Artist: Chen ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Light Blue Wool\n\n→ 挂画 · 辰 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Light Blue Wool\n\n→ 掛畫 · 辰 ×1"
+        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nLight Blue Wool × 1\nOutput：Painting · Artist: Chen × 1",
+        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n淡蓝色羊毛 × 1\n成品：挂画 · 辰 × 1",
+        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n淺藍色羊毛 × 1\n成品：掛畫 · 辰 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/chen_painting"
+      "icon": "textures/kwl/items/chen_painting",
+      "item": "kaleidoscope_world_liquor:chen_painting",
+      "category": "art",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:frame",
+            "minecraft:light_blue_wool"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:chen_painting"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/rabbit_painting",
@@ -5544,12 +6184,26 @@ export const payload = {
         "zh_TW": "掛畫 · 小兔子要聽話哦"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Rabbit\n\n→ Painting · Artist: Be Good Little Bunny ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Rabbit\n\n→ 挂画 · 小兔子要听话哦 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Rabbit\n\n→ 掛畫 · 小兔子要聽話哦 ×1"
+        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nRaw Rabbit × 1\nOutput：Painting · Artist: Be Good Little Bunny × 1",
+        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n生兔肉 × 1\n成品：挂画 · 小兔子要听话哦 × 1",
+        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n生兔肉 × 1\n成品：掛畫 · 小兔子要聽話哦 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/rabbit_painting"
+      "icon": "textures/kwl/items/rabbit_painting",
+      "item": "kaleidoscope_world_liquor:rabbit_painting",
+      "category": "art",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:frame",
+            "minecraft:rabbit"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:rabbit_painting"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/ch_painting",
@@ -5559,12 +6213,26 @@ export const payload = {
         "zh_TW": "掛畫 · 阡雪星躍F"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Orange Wool\n\n→ Painting · Artist: Star Leap Qianxue F ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Orange Wool\n\n→ 挂画 · 阡雪星跃F ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Orange Wool\n\n→ 掛畫 · 阡雪星躍F ×1"
+        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nOrange Wool × 1\nOutput：Painting · Artist: Star Leap Qianxue F × 1",
+        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n橙色羊毛 × 1\n成品：挂画 · 阡雪星跃F × 1",
+        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n橙色羊毛 × 1\n成品：掛畫 · 阡雪星躍F × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/ch_painting"
+      "icon": "textures/kwl/items/ch_painting",
+      "item": "kaleidoscope_world_liquor:ch_painting",
+      "category": "art",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:frame",
+            "minecraft:orange_wool"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:ch_painting"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/qxxy_painting",
@@ -5574,12 +6242,26 @@ export const payload = {
         "zh_TW": "掛畫 · 花菜"
       },
       "body": {
-        "en_US": "Place on a wall, floor or ceiling.\n\nCrafting:\n\nFrame + Birch Sapling\n\n→ Painting · Artist: Cauliflower ×1",
-        "zh_CN": "可贴墙、贴地或贴天花板放置。\n\n合成:\n\nFrame + Birch Sapling\n\n→ 挂画 · 花菜 ×1",
-        "zh_TW": "可貼牆、貼地或貼天花板放置。\n\n合成:\n\nFrame + Birch Sapling\n\n→ 掛畫 · 花菜 ×1"
+        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nBirch Sapling × 1\nOutput：Painting · Artist: Cauliflower × 1",
+        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n白桦树苗 × 1\n成品：挂画 · 花菜 × 1",
+        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n樺木樹苗 × 1\n成品：掛畫 · 花菜 × 1"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/qxxy_painting"
+      "icon": "textures/kwl/items/qxxy_painting",
+      "item": "kaleidoscope_world_liquor:qxxy_painting",
+      "category": "art",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "minecraft:frame",
+            "minecraft:birch_sapling"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:qxxy_painting"
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/custom_record",
@@ -5589,12 +6271,33 @@ export const payload = {
         "zh_TW": "酒館唱片"
       },
       "body": {
-        "en_US": "Insert into a jukebox to play one of the two original tracks.\n\nCrafting:\n\n#kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol\n\n→ Bar Music Disc ×1",
-        "zh_CN": "放入唱片机，随机播放原版两首曲目之一。\n\n合成:\n\n#kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol\n\n→ 酒馆唱片 ×1",
-        "zh_TW": "放入唱片機，隨機播放原版兩首曲目之一。\n\n合成:\n\n#kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol + #kaleidoscope_tavern:alcohol\n\n→ 酒館唱片 ×1"
+        "en_US": "Use it on an empty jukebox to choose randomly between the two included Java tracks. Use the jukebox with an empty hand to retrieve it. It can also be hung on a wall and retrieved with an empty hand.\nCrafting Table • Shapeless\nAny item with the Tavern alcohol tag × 9\nOutput：Bar Music Disc × 1\nThe native ingredient diagram uses wine as an example; all nine slots accept the alcohol tag stated above.",
+        "zh_CN": "对空唱片机使用，随机播放附带的两首 Java 曲目之一；空手操作唱片机可取回。也可悬挂于墙面，空手取回。\n工作台｜无序合成\n带酒馆 alcohol 标签的任意酒品 × 9\n成品：酒馆唱片 × 1\n下方配方图以葡萄酒举例；九格实际均接受上述 alcohol 标签酒品。",
+        "zh_TW": "對空唱片機使用，隨機播放附帶的兩首 Java 曲目之一；空手操作唱片機可取回。也可懸掛於牆面，空手取回。\n工作台｜無序合成\n帶酒館 alcohol 標籤的任意酒品 × 9\n成品：酒館唱片 × 1\n下方配方圖以葡萄酒舉例；九格實際均接受上述 alcohol 標籤酒品。"
       },
       "recipeIds": [],
-      "icon": "textures/kwl/items/custom_record"
+      "icon": "textures/kwl/items/custom_record",
+      "item": "kaleidoscope_world_liquor:custom_record",
+      "category": "art",
+      "crafting": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "kaleidoscope_tavern:wine_q1",
+            "kaleidoscope_tavern:wine_q1",
+            "kaleidoscope_tavern:wine_q1",
+            "kaleidoscope_tavern:wine_q1",
+            "kaleidoscope_tavern:wine_q1",
+            "kaleidoscope_tavern:wine_q1",
+            "kaleidoscope_tavern:wine_q1",
+            "kaleidoscope_tavern:wine_q1",
+            "kaleidoscope_tavern:wine_q1"
+          ],
+          "count": 1,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:custom_record"
+        }
+      ]
     }
   ]
 };
