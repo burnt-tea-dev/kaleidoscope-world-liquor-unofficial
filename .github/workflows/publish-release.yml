@@ -1,0 +1,98 @@
+name: Publish verified GitHub prerelease
+on:
+  push:
+    branches: [main]
+    paths: ['.github/release-request.json']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: world-liquor-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'casama233/kaleidoscope-world-liquor-unofficial' && github.repository_id == '1385218112' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: world-liquor-src
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: world-liquor-src
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: casama233/kaleidoscope-tavern-unofficial
+          ref: 52a0e42d67e9e1e805bc052be4d9b8d13a8ae1fb
+          path: tavern-src
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install Pillow==11.3.0
+      - name: Validate and build exact committed source
+        run: |
+          python tools/rebuild_guide.py
+          git diff --exit-code -- runtime/
+          python tools/check_release.py
+          python tools/build_release.py
+          python tools/verify_release.py --export-env
+      - name: Include source and static validation evidence
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
+          cp docs/GUIDE-AUDIT-0.1.4.json docs/GUIDE-VALIDATION-0.1.4.json dist/
+      - name: Stage, download, verify and publish prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: casama233/kaleidoscope-world-liquor-unofficial
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" --repo "$GH_REPO" >/dev/null 2>&1; then
+            echo 'Release already exists; refusing to overwrite its assets or tag.' >&2
+            exit 1
+          fi
+          gh release create "$TAG" dist/* --repo "$GH_REPO" --target "$SOURCE_SHA" --title "$TITLE" --notes-file dist/RELEASE-NOTES.md --draft --prerelease
+          VERIFY_DIR="$RUNNER_TEMP/world-liquor-release-readback"
+          mkdir -p "$VERIFY_DIR"
+          export VERIFY_DIR
+          gh release download "$TAG" --repo "$GH_REPO" --dir "$VERIFY_DIR"
+          python - <<'PY'
+          import hashlib,json,os,subprocess
+          from pathlib import Path
+          def hashes(root):
+              return {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in Path(root).iterdir() if p.is_file()}
+          local=hashes('dist');remote=hashes(os.environ['VERIFY_DIR'])
+          assert local==remote, 'Uploaded asset bytes differ from the verified local build'
+          ref=json.loads(subprocess.check_output(['gh','api','repos/'+os.environ['GH_REPO']+'/git/ref/tags/'+os.environ['TAG']]))
+          assert ref['object']['type']=='commit' and ref['object']['sha']==os.environ['SOURCE_SHA'],ref
+          Path(os.environ['RUNNER_TEMP'],'asset-readback.json').write_text(json.dumps({'sourceCommit':os.environ['SOURCE_SHA'],'assets':remote,'archiveContentMatchesRuntime':True},indent=2)+'\n')
+          print('Every uploaded file and the release tag verified before publication.')
+          PY
+          gh release edit "$TAG" --repo "$GH_REPO" --draft=false --prerelease --latest=false
+          gh release view "$TAG" --repo "$GH_REPO" --json url,tagName,isDraft,isPrerelease,publishedAt > "$RUNNER_TEMP/published-release.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          data=json.loads(Path(os.environ['RUNNER_TEMP'],'published-release.json').read_text())
+          assert data['tagName']==os.environ['TAG'] and not data['isDraft'] and data['isPrerelease']
+          print(data)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: World-Liquor-publication-evidence
+          path: |
+            world-liquor-src/dist/
+            ${{ runner.temp }}/published-release.json
+            ${{ runner.temp }}/asset-readback.json
