@@ -1,3 +1,4 @@
+import {withFoundation,setFoundationClient} from './foundation.js';
 import {world,system,ItemStack} from '@minecraft/server';
 import {payload} from './payload.js';
 import {registerTavernExtension} from './sdk/tavern-extension-client.js';
@@ -14,6 +15,7 @@ system.beforeEvents.startup.subscribe(e=>{
  e.itemComponentRegistry.registerCustomComponent(NS+':food',{onCompleteUse:e=>{const short=e.itemStack.typeId.split(':')[1];for(const effect of foods[short]??[])e.source.addEffect(effect,9600,{amplifier:0});if(short==='pochi_pudding')returnItem(e.source,'minecraft:bowl');}});
 });
 world.afterEvents.worldLoad.subscribe(()=>{
- installFurniture();installEffects();registerTavernExtension(system,payload);
- console.warn('[World Liquor] 0.1.5 preview: '+payload.content.length+' drink descriptors, '+payload.recipes.length+' recipes. Client visuals require device review.');
+ installFurniture();installEffects();const foundationPayload=withFoundation(payload);
+setFoundationClient(registerTavernExtension(system,foundationPayload),system,world,foundationPayload);
+ console.warn('[World Liquor] 0.1.6 preview: '+payload.content.length+' drink descriptors, '+payload.recipes.length+' recipes. Client visuals require device review.');
 });

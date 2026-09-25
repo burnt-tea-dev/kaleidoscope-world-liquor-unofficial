@@ -1,3 +1,17 @@
+## BEGIN shared creative decoration groups
+kaleidoscope_tavern:itemGroup.name.tavern_cabinets=酒馆：酒柜
+kaleidoscope_tavern:itemGroup.name.tavern_racks=酒馆：酒架与杯架
+kaleidoscope_tavern:itemGroup.name.tavern_tables=酒馆：桌子与吧台
+kaleidoscope_tavern:itemGroup.name.tavern_sofas=酒馆：沙发
+kaleidoscope_tavern:itemGroup.name.tavern_stools=酒馆：吧椅
+kaleidoscope_tavern:itemGroup.name.tavern_string_lights=酒馆：灯串
+kaleidoscope_tavern:itemGroup.name.tavern_pendant_lamps=酒馆：吊灯
+kaleidoscope_tavern:itemGroup.name.tavern_boards=酒馆：招牌与黑板
+kaleidoscope_tavern:itemGroup.name.tavern_paintings=酒馆：挂画
+kaleidoscope_tavern:itemGroup.name.tavern_incense=酒馆：香薰
+kaleidoscope_tavern:itemGroup.name.tavern_utilities=酒馆：梯具
+kaleidoscope_tavern:itemGroup.name.tavern_music=酒馆：唱片
+## END shared creative decoration groups
 item.kaleidoscope_world_liquor:absolut_vodka_q1.name=绝对伏特加
 item.kaleidoscope_world_liquor:absolut_vodka_q2.name=绝对伏特加
 item.kaleidoscope_world_liquor:absolut_vodka_q3.name=绝对伏特加
@@ -163,3 +177,19 @@ pack.name=森罗酒馆：世界名酒（非官方） RP
 pack.description=世界名酒的非官方基岩版移植。需要森罗物语：酒馆（非官方）。公开测试版。
 kaleidoscope_world_liquor:itemGroup.drinks=森罗酒馆：世界名酒（非官方）
 kaleidoscope_world_liquor:itemGroup.furniture=森罗酒馆：世界名酒（非官方） — 家具
+
+## Shared Tavern effect bar names
+effect.kaleidoscope_world_liquor.beheading=斩首
+effect.kaleidoscope_world_liquor.boating_master=船长的祝福
+effect.kaleidoscope_world_liquor.captain_gift=水上行走
+effect.kaleidoscope_world_liquor.continuous_heal=瞬间恢复
+effect.kaleidoscope_world_liquor.double_damage=重斩
+effect.kaleidoscope_world_liquor.elbow_strike=肘击
+effect.kaleidoscope_world_liquor.frost_walker=冰霜行者
+effect.kaleidoscope_world_liquor.ground_crit=破势
+effect.kaleidoscope_world_liquor.hostile_detection=冥视
+effect.kaleidoscope_world_liquor.multi_jump=多段跳
+effect.kaleidoscope_world_liquor.reverse_gravity=反重力
+effect.kaleidoscope_world_liquor.tequila=龙舌兰
+effect.kaleidoscope_world_liquor.treasure_guide=淘金热
+effect.kaleidoscope_world_liquor.treasure_sense=宝藏感知

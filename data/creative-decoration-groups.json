@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "namespace": "kaleidoscope_world_liquor",
+  "groups": {
+    "brewing": [
+      "freezer"
+    ],
+    "cabinets": [
+      "oak_bar_cabinet",
+      "spruce_bar_cabinet",
+      "birch_bar_cabinet",
+      "dark_oak_bar_cabinet",
+      "cherry_bar_cabinet",
+      "oak_cellar_cabinet",
+      "spruce_cellar_cabinet",
+      "birch_cellar_cabinet",
+      "dark_oak_cellar_cabinet",
+      "cherry_cellar_cabinet"
+    ],
+    "stools": [
+      "bar_stool_white",
+      "bar_stool_light_gray",
+      "bar_stool_gray",
+      "bar_stool_black",
+      "bar_stool_brown",
+      "bar_stool_red",
+      "bar_stool_orange",
+      "bar_stool_yellow",
+      "bar_stool_lime",
+      "bar_stool_green",
+      "bar_stool_cyan",
+      "bar_stool_light_blue",
+      "bar_stool_blue",
+      "bar_stool_purple",
+      "bar_stool_magenta",
+      "bar_stool_pink"
+    ],
+    "paintings": [
+      "bfxm_painting",
+      "bmt_painting",
+      "dream_painting",
+      "cha_painting",
+      "chen_painting",
+      "rabbit_painting",
+      "ch_painting",
+      "qxxy_painting"
+    ],
+    "music": [
+      "custom_record"
+    ]
+  }
+}

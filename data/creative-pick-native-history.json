@@ -1,0 +1,356 @@
+{
+  "schema": 1,
+  "review": "Only native same-ID pick mapping; placement behaviours retained. Script-only registration is restricted to Molang false.",
+  "items": {
+    "runtime/BP/items/bar_stool_yellow.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_yellow",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_yellow",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/dark_oak_bar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/oak_bar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:oak_bar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:oak_bar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/oak_cellar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_white.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_white",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_white",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_magenta.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_magenta",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_magenta",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/birch_bar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:birch_bar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:birch_bar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_blue.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_blue",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_blue",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/ch_painting.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:ch_painting",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:ch_painting",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_brown.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_brown",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_brown",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_gray.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_gray",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_gray",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/birch_cellar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/cherry_cellar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/dark_oak_cellar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bfxm_painting.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bfxm_painting",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bfxm_painting",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/dream_painting.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:dream_painting",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:dream_painting",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/chen_painting.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:chen_painting",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:chen_painting",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_green.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_green",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_green",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/spruce_cellar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/cha_painting.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:cha_painting",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:cha_painting",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_pink.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_pink",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_pink",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_cyan.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_cyan",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_cyan",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bmt_painting.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bmt_painting",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bmt_painting",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_light_gray.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_light_gray",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_light_gray",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/rabbit_painting.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:rabbit_painting",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:rabbit_painting",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_light_blue.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_light_blue",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_light_blue",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_lime.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_lime",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_lime",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/spruce_bar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/freezer.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:freezer",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:freezer",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_purple.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_purple",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_purple",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/qxxy_painting.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:qxxy_painting",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:qxxy_painting",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_orange.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_orange",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_orange",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/cherry_bar_cabinet.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_black.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_black",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_black",
+        "replace_block_item": true
+      }
+    },
+    "runtime/BP/items/bar_stool_red.json": {
+      "before": {
+        "block": "kaleidoscope_world_liquor:bar_stool_red",
+        "replace_block_item": false
+      },
+      "after": {
+        "block": "kaleidoscope_world_liquor:bar_stool_red",
+        "replace_block_item": true
+      }
+    }
+  }
+}

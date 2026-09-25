@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "baselineCommit": "142188f7575c0f88ad97eb94b49d03d634d79757",
+  "note": "Only old menu metadata. Restore these reviewed fields to verify existing unchanged historical whole-tree hashes; no gameplay bytes or golden hashes are replaced.",
+  "groups": [
+    {
+      "menu_category": {
+        "category": "equipment",
+        "group": "kaleidoscope_tavern:itemGroup.name.tavern_decor"
+      },
+      "paths": [
+        "runtime/BP/items/bar_stool_black.json",
+        "runtime/BP/items/bar_stool_blue.json",
+        "runtime/BP/items/bar_stool_brown.json",
+        "runtime/BP/items/bar_stool_cyan.json",
+        "runtime/BP/items/bar_stool_gray.json",
+        "runtime/BP/items/bar_stool_green.json",
+        "runtime/BP/items/bar_stool_light_blue.json",
+        "runtime/BP/items/bar_stool_light_gray.json",
+        "runtime/BP/items/bar_stool_lime.json",
+        "runtime/BP/items/bar_stool_magenta.json",
+        "runtime/BP/items/bar_stool_orange.json",
+        "runtime/BP/items/bar_stool_pink.json",
+        "runtime/BP/items/bar_stool_purple.json",
+        "runtime/BP/items/bar_stool_red.json",
+        "runtime/BP/items/bar_stool_white.json",
+        "runtime/BP/items/bar_stool_yellow.json",
+        "runtime/BP/items/bfxm_painting.json",
+        "runtime/BP/items/birch_bar_cabinet.json",
+        "runtime/BP/items/birch_cellar_cabinet.json",
+        "runtime/BP/items/bmt_painting.json",
+        "runtime/BP/items/ch_painting.json",
+        "runtime/BP/items/cha_painting.json",
+        "runtime/BP/items/chen_painting.json",
+        "runtime/BP/items/cherry_bar_cabinet.json",
+        "runtime/BP/items/cherry_cellar_cabinet.json",
+        "runtime/BP/items/custom_record.json",
+        "runtime/BP/items/dark_oak_bar_cabinet.json",
+        "runtime/BP/items/dark_oak_cellar_cabinet.json",
+        "runtime/BP/items/dream_painting.json",
+        "runtime/BP/items/freezer.json",
+        "runtime/BP/items/oak_bar_cabinet.json",
+        "runtime/BP/items/oak_cellar_cabinet.json",
+        "runtime/BP/items/qxxy_painting.json",
+        "runtime/BP/items/rabbit_painting.json",
+        "runtime/BP/items/spruce_bar_cabinet.json",
+        "runtime/BP/items/spruce_cellar_cabinet.json"
+      ]
+    }
+  ]
+}

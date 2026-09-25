@@ -43,7 +43,7 @@ for key,obj in read(rp/'textures/terrain_texture.json')['texture_data'].items():
  path=obj['textures'];check((rp/(path+'.png')).exists(),key+': missing block texture '+path)
 for pack in [bp,rp]:
  m=read(pack/'manifest.json');check(m['header']['name']=='pack.name' and m['header']['description']=='pack.description',pack.name+': manifest strings')
- check(m['header']['version']==[0,1,5],pack.name+': stale package version')
+ check(m['header']['version']==[0,1,6],pack.name+': stale package version')
  tavern_id=read(tav/'runtime'/pack.name/'manifest.json')['header']['uuid']
  tavern_version=read(tav/'runtime'/pack.name/'manifest.json')['header']['version']
  check(any(d.get('uuid')==tavern_id and d.get('version')==tavern_version for d in m.get('dependencies',[])),pack.name+': stale Tavern dependency')
@@ -52,7 +52,8 @@ for pack in [bp,rp]:
   with Image.open(icon) as image:check(image.width==image.height and image.width>=16,pack.name+': invalid icon')
  for lc in ['en_US','zh_CN','zh_TW']:
   rows=(pack/f'texts/{lc}.lang').read_text();check('pack.name=' in rows and 'pack.description=' in rows,pack.name+': '+lc+' package labels')
-  for line in rows.splitlines():check(not line.startswith('# ') and (line.startswith('##') or '=' in line),pack.name+': malformed '+lc+' line '+line[:60])
+  # Empty separators are valid .lang lines; retain checks on all content lines.
+  for line in (line for line in rows.splitlines() if line.strip()):check(not line.startswith('# ') and (line.startswith('##') or '=' in line),pack.name+': malformed '+lc+' line '+line[:60])
 recipes=[]
 for p in (bp/'recipes').rglob('*.json'):
  data=read(p);recipe=next(v for k,v in data.items() if k.startswith('minecraft:recipe_'));recipes.append(recipe)
@@ -67,3 +68,8 @@ for path in (bp/'scripts').rglob('*.js'):
 subprocess.run(['node',str(root/'tools/check_guide.mjs')],check=True,cwd=root)
 
 subprocess.run(['python3',str(root/'tools/check_storage_rendering.py')],check=True,cwd=root)
+
+# Use the host's shared taxonomy and checks, not an addon-specific grouping engine.
+subprocess.run(['python3',str(tav/'tools/creative/catalog.py'),'--root',str(root)],check=True,cwd=root)
+
+subprocess.run(['python3',str(tav/'tools/pick_block.py'),'--root',str(root)],check=True)

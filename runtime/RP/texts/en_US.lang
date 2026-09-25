@@ -1,3 +1,17 @@
+## BEGIN shared creative decoration groups
+kaleidoscope_tavern:itemGroup.name.tavern_cabinets=Tavern: Cabinets
+kaleidoscope_tavern:itemGroup.name.tavern_racks=Tavern: Bottle & Glass Racks
+kaleidoscope_tavern:itemGroup.name.tavern_tables=Tavern: Tables & Counters
+kaleidoscope_tavern:itemGroup.name.tavern_sofas=Tavern: Sofas
+kaleidoscope_tavern:itemGroup.name.tavern_stools=Tavern: Bar Stools
+kaleidoscope_tavern:itemGroup.name.tavern_string_lights=Tavern: String Lights
+kaleidoscope_tavern:itemGroup.name.tavern_pendant_lamps=Tavern: Pendant Lamps
+kaleidoscope_tavern:itemGroup.name.tavern_boards=Tavern: Signs & Boards
+kaleidoscope_tavern:itemGroup.name.tavern_paintings=Tavern: Paintings
+kaleidoscope_tavern:itemGroup.name.tavern_incense=Tavern: Incense
+kaleidoscope_tavern:itemGroup.name.tavern_utilities=Tavern: Stepladders
+kaleidoscope_tavern:itemGroup.name.tavern_music=Tavern: Records
+## END shared creative decoration groups
 item.kaleidoscope_world_liquor:absolut_vodka_q1.name=Absolut Vodka
 item.kaleidoscope_world_liquor:absolut_vodka_q2.name=Absolut Vodka
 item.kaleidoscope_world_liquor:absolut_vodka_q3.name=Absolut Vodka
@@ -163,3 +177,19 @@ pack.name=Kaleidoscope World Liquor (Unofficial) RP
 pack.description=Unofficial Bedrock port. Requires Kaleidoscope Tavern (Unofficial). Public test build.
 kaleidoscope_world_liquor:itemGroup.drinks=Kaleidoscope World Liquor (Unofficial)
 kaleidoscope_world_liquor:itemGroup.furniture=Kaleidoscope World Liquor (Unofficial) — Furniture
+
+## Shared Tavern effect bar names
+effect.kaleidoscope_world_liquor.beheading=Decapitation
+effect.kaleidoscope_world_liquor.boating_master=Boating Mastery
+effect.kaleidoscope_world_liquor.captain_gift=Captain's Grace
+effect.kaleidoscope_world_liquor.continuous_heal=Instant Restoration
+effect.kaleidoscope_world_liquor.double_damage=Heavy Cleave
+effect.kaleidoscope_world_liquor.elbow_strike=Elbow Strike
+effect.kaleidoscope_world_liquor.frost_walker=Frost Walker
+effect.kaleidoscope_world_liquor.ground_crit=Strike Break
+effect.kaleidoscope_world_liquor.hostile_detection=Wraith Sight
+effect.kaleidoscope_world_liquor.multi_jump=Multi‑Jump
+effect.kaleidoscope_world_liquor.reverse_gravity=Anti‑Gravity
+effect.kaleidoscope_world_liquor.tequila=Tequila Fortitude
+effect.kaleidoscope_world_liquor.treasure_guide=Gold Rush
+effect.kaleidoscope_world_liquor.treasure_sense=Treasure Intuition

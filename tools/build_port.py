@@ -6,7 +6,7 @@ from PIL import Image
 from opencc import OpenCC
 import java_geometry as geo
 ROOT=Path(__file__).resolve().parents[1];UP=ROOT/'upstream';RT=ROOT/'runtime';BP=RT/'BP';RP=RT/'RP'
-TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,5];TAV_VERSION=[0,6,40];cc=OpenCC('s2t')
+TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,6];TAV_VERSION=[0,6,43];cc=OpenCC('s2t')
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 def js(p,name,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text('export const '+name+' = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n')
@@ -104,7 +104,7 @@ def item(item,kind='plain',javaitem=None,modelinfo=None):
  if kind=='bottle' and short.rsplit('_q',1)[0] in java_alcohol:c['minecraft:tags']={'tags':[KT+':alcohol']}
  if kind in ['bottle','cocktail','drink']:
   c.update({'minecraft:use_animation':'drink','minecraft:use_modifiers':{'use_duration':1.6,'movement_modifier':.35,'start_using':'if_first'},KT+':drink_effects' if kind=='bottle' else KT+':cocktail_effects' if kind=='cocktail' else NS+':consume':{}})
- elif kind=='block':c['minecraft:block_placer']={'block':item,'replace_block_item':False}
+ elif kind=='block':c['minecraft:block_placer']={'block':item,'replace_block_item':True}
  # Match Tavern's creative inventory: quality variants stay out of the broad
  # equipment list, while mixable drinks and decor share Tavern's groups.
  group=('kaleidoscope_cookery:itemGroup.name.foods' if kind=='food' else KT+':itemGroup.name.'+('cocktails' if kind=='cocktail' else 'wines' if kind=='drink' or kind=='bottle' else 'tavern_decor'))
@@ -406,7 +406,7 @@ for pack in ['BP','RP']:
 write(BP/'loot_tables/empty.json',{'pools':[]})
 js(BP/'scripts/freezer-recipes.js','FREEZER_RECIPES',freezers)
 js(BP/'scripts/content.js','CONTENT',content)
-js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.5','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
+js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.6','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
 write(RP/'textures/item_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.items','texture_data':items_tex})
 write(RP/'textures/terrain_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.terrain','texture_data':terrain})
 write(ROOT/'docs/conversion-audit.json',audit)
@@ -415,3 +415,10 @@ print('Recipes',len(recipes),'freezer',len(freezers),'crafting',len(crafts),'sha
 # Always replace legacy prose with guide pages derived from the final runtime tables.
 import rebuild_guide
 rebuild_guide.main()
+
+# Keep the authored creative grouping after the legacy Java asset conversion.
+import subprocess
+subprocess.run([sys.executable,str(TAV/'tools/creative/catalog.py'),'--root',str(ROOT),'--write'],check=True)
+
+# Native pick registrations and held icons are verified by the shared host tool.
+subprocess.run([sys.executable,str(TAV/'tools/pick_block.py'),'--root',str(ROOT),'--write'],check=True)
