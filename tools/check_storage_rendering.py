@@ -15,6 +15,9 @@ def readjs(p):return json.loads(p.read_text().split('=',1)[1].strip().rstrip(';'
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def main():
+ spec=importlib.util.spec_from_file_location('creative_history',TAV/'tools/creative/historical.py')
+ history=importlib.util.module_from_spec(spec);spec.loader.exec_module(history)
+ projection=history.LegacyMenuProjection(ROOT)
  baseline=read(ROOT/'data/storage-preserved-0.1.4.json')
  items=readjs(ROOT/'runtime/BP/scripts/visual-items.js')
  compact=readjs(ROOT/'runtime/BP/scripts/compact-items.js')
@@ -32,7 +35,7 @@ def main():
  assert 'readTavernEffects' in effects and 'setDynamicProperty' not in effects and 'world.getAbsoluteTime' not in effects
  preserved=len(baseline['files'])-len(changed)
  for prefix,expected in baseline['trees'].items():
-  entries={p.relative_to(ROOT).as_posix():digest(p) for p in (ROOT/prefix).rglob('*') if p.is_file()}
+  entries={p.relative_to(ROOT).as_posix():hashlib.sha256(projection.read_bytes(p)).hexdigest() for p in (ROOT/prefix).rglob('*') if p.is_file()}
   actual=hashlib.sha256(''.join(k+'\0'+v+'\n' for k,v in sorted(entries.items())).encode()).hexdigest()
   assert len(entries)==expected['files'] and actual==expected['sha256'],prefix
   preserved+=len(entries)
@@ -94,7 +97,7 @@ def main():
      delta=max(abs(a-b) for a,b in zip(expected,actual));maximum=max(maximum,delta)
      assert delta<1e-12,(case,model,expected,actual)
      checks+=1
- report={'baselineCommit':baseline['baselineCommit'],'javaReferenceCommit':contract['upstreamCommit'],'cabinetBlockVariants':len(blocks),'helperFamilies':2,'facings':4,'poseCases':len(cases),'vertexComparisons':checks,'maxCoordinateErrorBlocks':maximum,'modelBindings':bindings,'preservedFiles':preserved,'molotovKind':25,'watermelonKind':44,'playerSimulation':False,'bdsTest':'NOT_RUN','clientVisualTest':'NOT_RUN'}
+ report={'baselineCommit':baseline['baselineCommit'],'javaReferenceCommit':contract['upstreamCommit'],'cabinetBlockVariants':len(blocks),'helperFamilies':2,'facings':4,'poseCases':len(cases),'vertexComparisons':checks,'maxCoordinateErrorBlocks':maximum,'modelBindings':bindings,'preservedFiles':preserved,'creativeMenuProjectionFiles':len(projection.menus),'molotovKind':25,'watermelonKind':44,'playerSimulation':False,'bdsTest':'NOT_RUN','clientVisualTest':'NOT_RUN'}
  version='.'.join(map(str,read(ROOT/'runtime/BP/manifest.json')['header']['version']))
  (ROOT/f'docs/STORAGE-VALIDATION-{version}.json').write_text(json.dumps(report,indent=2)+'\n')
  print(json.dumps(report))

@@ -7,6 +7,14 @@
         "groups": [
           {
             "group_identifier": {
+              "name": "kaleidoscope_tavern:itemGroup.name.tavern_brewing"
+            },
+            "items": [
+              "kaleidoscope_world_liquor:freezer"
+            ]
+          },
+          {
+            "group_identifier": {
               "name": "kaleidoscope_tavern:itemGroup.name.wines",
               "icon": "kaleidoscope_world_liquor:absolut_vodka_q6"
             },
@@ -49,46 +57,66 @@
           },
           {
             "group_identifier": {
-              "name": "kaleidoscope_tavern:itemGroup.name.tavern_decor",
-              "icon": "kaleidoscope_world_liquor:oak_bar_cabinet"
+              "name": "kaleidoscope_tavern:itemGroup.name.tavern_cabinets"
             },
             "items": [
-              "kaleidoscope_world_liquor:bar_stool_black",
-              "kaleidoscope_world_liquor:bar_stool_blue",
-              "kaleidoscope_world_liquor:bar_stool_brown",
-              "kaleidoscope_world_liquor:bar_stool_cyan",
-              "kaleidoscope_world_liquor:bar_stool_gray",
-              "kaleidoscope_world_liquor:bar_stool_green",
-              "kaleidoscope_world_liquor:bar_stool_light_blue",
-              "kaleidoscope_world_liquor:bar_stool_light_gray",
-              "kaleidoscope_world_liquor:bar_stool_lime",
-              "kaleidoscope_world_liquor:bar_stool_magenta",
-              "kaleidoscope_world_liquor:bar_stool_orange",
-              "kaleidoscope_world_liquor:bar_stool_pink",
-              "kaleidoscope_world_liquor:bar_stool_purple",
-              "kaleidoscope_world_liquor:bar_stool_red",
-              "kaleidoscope_world_liquor:bar_stool_white",
-              "kaleidoscope_world_liquor:bar_stool_yellow",
-              "kaleidoscope_world_liquor:bfxm_painting",
+              "kaleidoscope_world_liquor:oak_bar_cabinet",
+              "kaleidoscope_world_liquor:spruce_bar_cabinet",
               "kaleidoscope_world_liquor:birch_bar_cabinet",
+              "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+              "kaleidoscope_world_liquor:cherry_bar_cabinet",
+              "kaleidoscope_world_liquor:oak_cellar_cabinet",
+              "kaleidoscope_world_liquor:spruce_cellar_cabinet",
               "kaleidoscope_world_liquor:birch_cellar_cabinet",
+              "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+              "kaleidoscope_world_liquor:cherry_cellar_cabinet"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "kaleidoscope_tavern:itemGroup.name.tavern_stools"
+            },
+            "items": [
+              "kaleidoscope_world_liquor:bar_stool_white",
+              "kaleidoscope_world_liquor:bar_stool_light_gray",
+              "kaleidoscope_world_liquor:bar_stool_gray",
+              "kaleidoscope_world_liquor:bar_stool_black",
+              "kaleidoscope_world_liquor:bar_stool_brown",
+              "kaleidoscope_world_liquor:bar_stool_red",
+              "kaleidoscope_world_liquor:bar_stool_orange",
+              "kaleidoscope_world_liquor:bar_stool_yellow",
+              "kaleidoscope_world_liquor:bar_stool_lime",
+              "kaleidoscope_world_liquor:bar_stool_green",
+              "kaleidoscope_world_liquor:bar_stool_cyan",
+              "kaleidoscope_world_liquor:bar_stool_light_blue",
+              "kaleidoscope_world_liquor:bar_stool_blue",
+              "kaleidoscope_world_liquor:bar_stool_purple",
+              "kaleidoscope_world_liquor:bar_stool_magenta",
+              "kaleidoscope_world_liquor:bar_stool_pink"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "kaleidoscope_tavern:itemGroup.name.tavern_paintings"
+            },
+            "items": [
+              "kaleidoscope_world_liquor:bfxm_painting",
               "kaleidoscope_world_liquor:bmt_painting",
-              "kaleidoscope_world_liquor:ch_painting",
+              "kaleidoscope_world_liquor:dream_painting",
               "kaleidoscope_world_liquor:cha_painting",
               "kaleidoscope_world_liquor:chen_painting",
-              "kaleidoscope_world_liquor:cherry_bar_cabinet",
-              "kaleidoscope_world_liquor:cherry_cellar_cabinet",
-              "kaleidoscope_world_liquor:custom_record",
-              "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
-              "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
-              "kaleidoscope_world_liquor:dream_painting",
-              "kaleidoscope_world_liquor:freezer",
-              "kaleidoscope_world_liquor:oak_bar_cabinet",
-              "kaleidoscope_world_liquor:oak_cellar_cabinet",
-              "kaleidoscope_world_liquor:qxxy_painting",
               "kaleidoscope_world_liquor:rabbit_painting",
-              "kaleidoscope_world_liquor:spruce_bar_cabinet",
-              "kaleidoscope_world_liquor:spruce_cellar_cabinet"
+              "kaleidoscope_world_liquor:ch_painting",
+              "kaleidoscope_world_liquor:qxxy_painting"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "kaleidoscope_tavern:itemGroup.name.tavern_music",
+              "icon": "kaleidoscope_world_liquor:custom_record"
+            },
+            "items": [
+              "kaleidoscope_world_liquor:custom_record"
             ]
           },
           {

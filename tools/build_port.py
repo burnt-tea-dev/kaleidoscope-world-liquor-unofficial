@@ -415,3 +415,7 @@ print('Recipes',len(recipes),'freezer',len(freezers),'crafting',len(crafts),'sha
 # Always replace legacy prose with guide pages derived from the final runtime tables.
 import rebuild_guide
 rebuild_guide.main()
+
+# Keep the authored creative grouping after the legacy Java asset conversion.
+import subprocess
+subprocess.run([sys.executable,str(TAV/'tools/creative/catalog.py'),'--root',str(ROOT),'--write'],check=True)
