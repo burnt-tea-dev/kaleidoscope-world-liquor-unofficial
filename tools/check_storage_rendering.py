@@ -5,9 +5,11 @@ import importlib.util
 import itertools
 import json
 import subprocess
+import sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 TAV=ROOT.parent/'tavern-src'
+sys.path.insert(0,str(TAV/'tools'))
 NS='kaleidoscope_world_liquor'
 KT='kaleidoscope_tavern'
 def read(p):return json.loads(p.read_text())

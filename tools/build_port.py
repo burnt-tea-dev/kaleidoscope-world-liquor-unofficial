@@ -6,7 +6,7 @@ from PIL import Image
 from opencc import OpenCC
 import java_geometry as geo
 ROOT=Path(__file__).resolve().parents[1];UP=ROOT/'upstream';RT=ROOT/'runtime';BP=RT/'BP';RP=RT/'RP'
-TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,6];TAV_VERSION=[0,6,43];cc=OpenCC('s2t')
+TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=json.loads((ROOT/'package.json').read_text())['version'].split('.');VERSION=list(map(int,VERSION));TAV_VERSION=json.loads((TAV/'runtime/BP/manifest.json').read_text())['header']['version'];cc=OpenCC('s2t')
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 def js(p,name,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text('export const '+name+' = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n')
@@ -406,7 +406,7 @@ for pack in ['BP','RP']:
 write(BP/'loot_tables/empty.json',{'pools':[]})
 js(BP/'scripts/freezer-recipes.js','FREEZER_RECIPES',freezers)
 js(BP/'scripts/content.js','CONTENT',content)
-js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.6','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
+js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'.'.join(map(str,VERSION)),'title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
 write(RP/'textures/item_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.items','texture_data':items_tex})
 write(RP/'textures/terrain_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.terrain','texture_data':terrain})
 write(ROOT/'docs/conversion-audit.json',audit)

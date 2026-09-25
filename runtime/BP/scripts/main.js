@@ -17,5 +17,5 @@ system.beforeEvents.startup.subscribe(e=>{
 world.afterEvents.worldLoad.subscribe(()=>{
  installFurniture();installEffects();const foundationPayload=withFoundation(payload);
 setFoundationClient(registerTavernExtension(system,foundationPayload),system,world,foundationPayload);
- console.warn('[World Liquor] 0.1.6 preview: '+payload.content.length+' drink descriptors, '+payload.recipes.length+' recipes. Client visuals require device review.');
+ console.warn('[World Liquor] '+payload.version+' preview: '+payload.content.length+' drink descriptors, '+payload.recipes.length+' recipes. Client visuals require device review.');
 });
