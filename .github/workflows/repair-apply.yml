@@ -1,0 +1,82 @@
+name: Integrate reviewed World Liquor repairs
+on:
+  push:
+    branches: ['release/0.1.4-repairs']
+    paths: ['.github/workflows/repair-apply.yml', '.github/repair-input/**']
+permissions:
+  contents: read
+concurrency:
+  group: world-liquor-reviewed-repair-integration
+  cancel-in-progress: false
+jobs:
+  integrate:
+    if: github.repository == 'casama233/kaleidoscope-world-liquor-unofficial' && github.repository_id == '1385218112' && github.ref == 'refs/heads/release/0.1.4-repairs'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: world-liquor-src
+      - uses: actions/checkout@v4
+        with:
+          repository: casama233/kaleidoscope-tavern-unofficial
+          ref: 581ac091758ba40ce3a46a280467517ce0016c9f
+          path: tavern-src
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install Pillow==11.3.0
+      - name: Apply checksum-locked source delta
+        working-directory: world-liquor-src
+        run: |
+          python - <<'PY'
+          import base64, hashlib, json, lzma, subprocess
+          from pathlib import Path
+          parts=sorted(Path('.github/repair-input').glob('part-*.b64'))
+          assert len(parts)==3
+          raw=lzma.decompress(base64.b64decode(''.join(p.read_text().strip() for p in parts),validate=True))
+          assert hashlib.sha256(raw).hexdigest()=='2477b88fd6a45896b32d6ac79a12b5c1781642217c6dc691eebc88031c3db43f'
+          delta=json.loads(raw)
+          assert not delta['guideNamesDelta']
+          subprocess.run(['git','apply','--check','-'],input=delta['patch'].encode(),check=True)
+          subprocess.run(['git','apply','-'],input=delta['patch'].encode(),check=True)
+          PY
+      - name: Rebuild guide and validate exact package (no player simulation)
+        working-directory: world-liquor-src
+        run: |
+          python tools/rebuild_guide.py
+          python tools/check_release.py
+          python tools/build_release.py
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          p=Path('dist/Kaleidoscope_World_Liquor_Unofficial_0.1.4_preview1.mcaddon')
+          actual=hashlib.sha256(p.read_bytes()).hexdigest()
+          assert actual=='8f05f16e3ebdbc799aae81032b28f239b7b5f6e7e55857b142835ce3f4508f6f',actual
+          print('Exact locally reviewed full-pack bytes verified:',actual)
+          PY
+      - name: Commit canonical source on repair branch only
+        working-directory: world-liquor-src
+        env:
+          EXPECTED_HEAD: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          git diff --exit-code -- .github/
+          test "$(git ls-remote origin refs/heads/release/0.1.4-repairs | cut -f1)" = "$EXPECTED_HEAD"
+          git add runtime/ docs/ tools/ README.md package.json
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Integrate recipe-driven World Liquor guide and Tavern 0.6.39 dependency for 0.1.4'
+          git push origin HEAD:refs/heads/release/0.1.4-repairs
+          git rev-parse HEAD > dist/INTEGRATED_SOURCE_COMMIT
+          git archive --format=zip HEAD > dist/integrated-source.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: World-Liquor-integrated-repairs
+          path: world-liquor-src/dist/
+          retention-days: 7
