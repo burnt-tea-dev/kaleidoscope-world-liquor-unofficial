@@ -1,0 +1,17 @@
+{
+  "baselineCommit": "950dc1de414bd18ccdd5329629900acd662bbcc2",
+  "javaReferenceCommit": "c4ec1880bd44cf3139d3ba744ab30bb379cf1416",
+  "cabinetBlockVariants": 10,
+  "helperFamilies": 2,
+  "facings": 4,
+  "poseCases": 48,
+  "vertexComparisons": 4992,
+  "maxCoordinateErrorBlocks": 2.220446049250313e-16,
+  "modelBindings": 90,
+  "preservedFiles": 665,
+  "molotovKind": 25,
+  "watermelonKind": 44,
+  "playerSimulation": false,
+  "bdsTest": "NOT_RUN",
+  "clientVisualTest": "NOT_RUN"
+}

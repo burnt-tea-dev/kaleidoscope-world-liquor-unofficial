@@ -15,5 +15,5 @@ system.beforeEvents.startup.subscribe(e=>{
 });
 world.afterEvents.worldLoad.subscribe(()=>{
  installFurniture();installEffects();registerTavernExtension(system,payload);
- console.warn('[World Liquor] 0.1.4 preview: '+payload.content.length+' drink descriptors, '+payload.recipes.length+' recipes. Client visuals require device review.');
+ console.warn('[World Liquor] 0.1.5 preview: '+payload.content.length+' drink descriptors, '+payload.recipes.length+' recipes. Client visuals require device review.');
 });

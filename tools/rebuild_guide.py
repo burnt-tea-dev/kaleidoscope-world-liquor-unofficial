@@ -183,6 +183,6 @@ def main():
   audits.append({'id':old['id'],'item':item,'category':category,'recipeIds':[r['id']for r in linked],'crafting':len(crafting),'freezerRecipes':[r['id']for r in freezing]})
  payload['pages']=out;writejs(ROOT/'runtime/BP/scripts/payload.js','payload',payload)
  audit={'guideVersion':2,'pageCount':len(out),'categories':dict(collections.Counter(p['category']for p in out)),'registeredRecipes':dict(collections.Counter(r['kind']for r in payload['recipes'])),'recipeSource':'canonical runtime registry','freezerRecipes':len(freezers),'nativeCraftingRecipes':sum(len(p.get('crafting',[]))for p in out),'pages':audits}
- (ROOT/'docs/GUIDE-AUDIT-0.1.4.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
+ (ROOT/'docs/GUIDE-AUDIT-0.1.5.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps({k:v for k,v in audit.items()if k!='pages'},ensure_ascii=False))
 if __name__=='__main__':main()

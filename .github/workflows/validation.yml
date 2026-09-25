@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: casama233/kaleidoscope-tavern-unofficial
-          ref: 52a0e42d67e9e1e805bc052be4d9b8d13a8ae1fb
+          ref: 4076925dc04f1ea32882c03393d0328754513f11
           path: tavern-src
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -27,6 +27,7 @@ jobs:
       - name: Check reproducible guide, resources and dependencies (no player simulation)
         working-directory: world-liquor-src
         run: |
+          python tools/build_storage_visuals.py
           python tools/rebuild_guide.py
           git diff --exit-code -- runtime/
           python tools/check_release.py
@@ -38,7 +39,7 @@ jobs:
           SOURCE_SHA: ${{ github.sha }}
         run: |
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
-          cp docs/GUIDE-AUDIT-0.1.4.json docs/GUIDE-VALIDATION-0.1.4.json dist/
+          cp docs/GUIDE-AUDIT-0.1.5.json docs/GUIDE-VALIDATION-0.1.5.json docs/STORAGE-VALIDATION-0.1.5.json dist/
       - uses: actions/upload-artifact@v4
         with:
           name: World-Liquor-public-preview

@@ -43,7 +43,7 @@ for key,obj in read(rp/'textures/terrain_texture.json')['texture_data'].items():
  path=obj['textures'];check((rp/(path+'.png')).exists(),key+': missing block texture '+path)
 for pack in [bp,rp]:
  m=read(pack/'manifest.json');check(m['header']['name']=='pack.name' and m['header']['description']=='pack.description',pack.name+': manifest strings')
- check(m['header']['version']==[0,1,4],pack.name+': stale package version')
+ check(m['header']['version']==[0,1,5],pack.name+': stale package version')
  tavern_id=read(tav/'runtime'/pack.name/'manifest.json')['header']['uuid']
  tavern_version=read(tav/'runtime'/pack.name/'manifest.json')['header']['version']
  check(any(d.get('uuid')==tavern_id and d.get('version')==tavern_version for d in m.get('dependencies',[])),pack.name+': stale Tavern dependency')
@@ -65,3 +65,5 @@ if errors:raise SystemExit(1)
 for path in (bp/'scripts').rglob('*.js'):
  subprocess.run(['node','--check',str(path)],check=True,capture_output=True)
 subprocess.run(['node',str(root/'tools/check_guide.mjs')],check=True,cwd=root)
+
+subprocess.run(['python3',str(root/'tools/check_storage_rendering.py')],check=True,cwd=root)

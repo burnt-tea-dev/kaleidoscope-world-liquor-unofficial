@@ -1,9 +1,8 @@
 {
-  "version": "0.1.4",
-  "tag": "v0.1.4-preview.1",
-  "title": "森羅酒館：世界名酒（非官方）0.1.4-preview.1 — 配方指南重建",
+  "version": "0.1.5",
+  "tag": "v0.1.5-preview.1",
+  "title": "森羅酒館：世界名酒（非官方）0.1.5-preview.1 — 酒櫃展示原點修復",
   "prerelease": true,
-  "tavern_commit": "52a0e42d67e9e1e805bc052be4d9b8d13a8ae1fb",
-  "expected_archive_sha256": "8f05f16e3ebdbc799aae81032b28f239b7b5f6e7e55857b142835ce3f4508f6f",
-  "source_commit": "4c62de7d0b5313fa42452cb3b5e2d3bee866b111"
+  "tavern_commit": "4076925dc04f1ea32882c03393d0328754513f11",
+  "expected_archive_sha256": "82b1d7d80bda739adafd9e7569cd96d3790e82800d407562c81ed655e9b37d69"
 }

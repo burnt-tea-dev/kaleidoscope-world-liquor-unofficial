@@ -1,0 +1,611 @@
+{
+  "guideVersion": 2,
+  "pageCount": 66,
+  "categories": {
+    "barrel": 18,
+    "cocktail": 8,
+    "furniture": 16,
+    "storage": 10,
+    "equipment": 1,
+    "food": 4,
+    "art": 9
+  },
+  "registeredRecipes": {
+    "barrel": 18,
+    "shaker": 14
+  },
+  "recipeSource": "canonical runtime registry",
+  "freezerRecipes": 5,
+  "nativeCraftingRecipes": 39,
+  "pages": [
+    {
+      "id": "kaleidoscope_world_liquor:guide/absolut_vodka",
+      "item": "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/absolut_vodka"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bacardi_carta_blanca",
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/bacardi_carta_blanca"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bamboo_leaf_green_liquor",
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/bamboo_leaf_green_liquor"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bombay_sapphire_gin",
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/bombay_sapphire_gin"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/cool_tea",
+      "item": "kaleidoscope_world_liquor:cool_tea_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/cool_tea"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/dassai",
+      "item": "kaleidoscope_world_liquor:dassai_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/dassai"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/ice_tea",
+      "item": "kaleidoscope_world_liquor:ice_tea_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/ice_tea"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/jack_daniel",
+      "item": "kaleidoscope_world_liquor:jack_daniel_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/jack_daniel"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/johnnie_walker",
+      "item": "kaleidoscope_world_liquor:johnnie_walker_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/johnnie_walker"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/kwas_chlebowy",
+      "item": "kaleidoscope_world_liquor:kwas_chlebowy_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/kwas_chlebowy"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/lafite_1982",
+      "item": "kaleidoscope_world_liquor:lafite_1982_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/lafite_1982"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/maotai",
+      "item": "kaleidoscope_world_liquor:maotai_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/maotai"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/pina_colada",
+      "item": "kaleidoscope_world_liquor:pina_colada_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/pina_colada"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/skyy_vodka",
+      "item": "kaleidoscope_world_liquor:skyy_vodka_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/skyy_vodka"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/smirnoff_red_vodka",
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/smirnoff_red_vodka"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/sour_plum",
+      "item": "kaleidoscope_world_liquor:sour_plum_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/sour_plum"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/spiryt_vodka",
+      "item": "kaleidoscope_world_liquor:spiryt_vodka_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/spiryt_vodka"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/strongbow",
+      "item": "kaleidoscope_world_liquor:strongbow_q1",
+      "category": "barrel",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:barrel/strongbow"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/around_the_world",
+      "item": "kaleidoscope_world_liquor:around_the_world",
+      "category": "cocktail",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:shaker/around_the_world"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/gin_tonic",
+      "item": "kaleidoscope_world_liquor:gin_tonic",
+      "category": "cocktail",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:shaker/gin_tonic"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/jerk",
+      "item": "kaleidoscope_world_liquor:jerk",
+      "category": "cocktail",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:shaker/jerk",
+        "kaleidoscope_world_liquor:shaker/jerk1"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/long_island_iced_tea",
+      "item": "kaleidoscope_world_liquor:long_island_iced_tea",
+      "category": "cocktail",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:shaker/long_island_iced_tea"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/pine_colada",
+      "item": "kaleidoscope_world_liquor:pine_colada",
+      "category": "cocktail",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:shaker/pine_colada"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/shrimp_cocktail",
+      "item": "kaleidoscope_world_liquor:shrimp_cocktail",
+      "category": "cocktail",
+      "recipeIds": [
+        "kaleidoscope_world_liquor:shaker/shrimp_cocktail"
+      ],
+      "crafting": 0,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_white",
+      "item": "kaleidoscope_world_liquor:bar_stool_white",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_orange",
+      "item": "kaleidoscope_world_liquor:bar_stool_orange",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_magenta",
+      "item": "kaleidoscope_world_liquor:bar_stool_magenta",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_light_blue",
+      "item": "kaleidoscope_world_liquor:bar_stool_light_blue",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_yellow",
+      "item": "kaleidoscope_world_liquor:bar_stool_yellow",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_lime",
+      "item": "kaleidoscope_world_liquor:bar_stool_lime",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_pink",
+      "item": "kaleidoscope_world_liquor:bar_stool_pink",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_gray",
+      "item": "kaleidoscope_world_liquor:bar_stool_gray",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_light_gray",
+      "item": "kaleidoscope_world_liquor:bar_stool_light_gray",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_cyan",
+      "item": "kaleidoscope_world_liquor:bar_stool_cyan",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_purple",
+      "item": "kaleidoscope_world_liquor:bar_stool_purple",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_blue",
+      "item": "kaleidoscope_world_liquor:bar_stool_blue",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_brown",
+      "item": "kaleidoscope_world_liquor:bar_stool_brown",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_green",
+      "item": "kaleidoscope_world_liquor:bar_stool_green",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_red",
+      "item": "kaleidoscope_world_liquor:bar_stool_red",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bar_stool_black",
+      "item": "kaleidoscope_world_liquor:bar_stool_black",
+      "category": "furniture",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/oak_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:oak_bar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/oak_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/birch_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:birch_bar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/birch_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/spruce_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/spruce_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/dark_oak_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/dark_oak_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/cherry_bar_cabinet",
+      "item": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/cherry_cellar_cabinet",
+      "item": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+      "category": "storage",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/freezer",
+      "item": "kaleidoscope_world_liquor:freezer",
+      "category": "equipment",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": [
+        "kaleidoscope_world_liquor:freezer/ice",
+        "kaleidoscope_world_liquor:freezer/kita_stuffed_crisp",
+        "kaleidoscope_world_liquor:freezer/liangshan_ice_cone",
+        "kaleidoscope_world_liquor:freezer/magma_block",
+        "kaleidoscope_world_liquor:freezer/pochi_pudding"
+      ]
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/cola",
+      "item": "kaleidoscope_world_liquor:cola",
+      "category": "cocktail",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/tonic_water",
+      "item": "kaleidoscope_world_liquor:tonic_water",
+      "category": "cocktail",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/liangshan_ice_cone",
+      "item": "kaleidoscope_world_liquor:liangshan_ice_cone",
+      "category": "food",
+      "recipeIds": [],
+      "crafting": 0,
+      "freezerRecipes": [
+        "kaleidoscope_world_liquor:freezer/liangshan_ice_cone"
+      ]
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/kita_stuffed_crisp",
+      "item": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+      "category": "food",
+      "recipeIds": [],
+      "crafting": 0,
+      "freezerRecipes": [
+        "kaleidoscope_world_liquor:freezer/kita_stuffed_crisp"
+      ]
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/pochi_pudding",
+      "item": "kaleidoscope_world_liquor:pochi_pudding",
+      "category": "food",
+      "recipeIds": [],
+      "crafting": 0,
+      "freezerRecipes": [
+        "kaleidoscope_world_liquor:freezer/pochi_pudding"
+      ]
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/magic_crispy_corner",
+      "item": "kaleidoscope_world_liquor:magic_crispy_corner",
+      "category": "food",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bfxm_painting",
+      "item": "kaleidoscope_world_liquor:bfxm_painting",
+      "category": "art",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/bmt_painting",
+      "item": "kaleidoscope_world_liquor:bmt_painting",
+      "category": "art",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/dream_painting",
+      "item": "kaleidoscope_world_liquor:dream_painting",
+      "category": "art",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/cha_painting",
+      "item": "kaleidoscope_world_liquor:cha_painting",
+      "category": "art",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/chen_painting",
+      "item": "kaleidoscope_world_liquor:chen_painting",
+      "category": "art",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/rabbit_painting",
+      "item": "kaleidoscope_world_liquor:rabbit_painting",
+      "category": "art",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/ch_painting",
+      "item": "kaleidoscope_world_liquor:ch_painting",
+      "category": "art",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/qxxy_painting",
+      "item": "kaleidoscope_world_liquor:qxxy_painting",
+      "category": "art",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/custom_record",
+      "item": "kaleidoscope_world_liquor:custom_record",
+      "category": "art",
+      "recipeIds": [],
+      "crafting": 1,
+      "freezerRecipes": []
+    }
+  ]
+}

@@ -6,7 +6,7 @@ from PIL import Image
 from opencc import OpenCC
 import java_geometry as geo
 ROOT=Path(__file__).resolve().parents[1];UP=ROOT/'upstream';RT=ROOT/'runtime';BP=RT/'BP';RP=RT/'RP'
-TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,4];TAV_VERSION=[0,6,39];cc=OpenCC('s2t')
+TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=[0,1,5];TAV_VERSION=[0,6,40];cc=OpenCC('s2t')
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 def js(p,name,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text('export const '+name+' = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n')
@@ -279,19 +279,24 @@ for short in paintings:
  item(NS+':'+short,'block',KT+':'+short)
 # Addon-owned cabinet displays support native Tavern bottles and addon bottles.
 stock=read(TAV/'runtime/RP/entity/runtime_bar_cabinet_bottle_visual.entity.json')['minecraft:client_entity']['description']
-viewgeo=list(stock['geometry'].values());viewtex=list(stock['textures'].values())
 bases=json.loads(subprocess.check_output(['node','--input-type=module','-e',"import {STORAGE_BOTTLE_KINDS} from './runtime/BP/scripts/core/holder.js';console.log(JSON.stringify(STORAGE_BOTTLE_KINDS))"],cwd=TAV,text=True))
-viewitems={KT+':'+b+(f'_q{q}' if b not in ['empty_bottle','molotov'] else ''):n for n,b in enumerate(bases) for q in (range(1,7) if b not in ['empty_bottle','molotov'] else [1])}
-for base in bottleids:
- index=len(viewgeo);viewgeo.append(modelspec[base]['geometry']);viewtex.append(modelspec[base]['path'])
- for q in range(1,7):viewitems[base+f'_q{q}']=index
+view_specs={KT+':'+base:(stock['geometry'][f'kind_{n+1}'],stock['textures'][f'kind_{n+1}']) for n,base in enumerate(bases)}
+for base in bottleids:view_specs[base]=(modelspec[base]['geometry'],modelspec[base]['path'])
+# Never shift existing addon indices when the host appends a bottle family.
+vieworder=read(ROOT/'data/storage-kind-order.json');assert set(vieworder)==set(view_specs)
+viewgeo=[view_specs[base][0] for base in vieworder];viewtex=[view_specs[base][1] for base in vieworder]
+viewitems={}
+for n,base in enumerate(vieworder):
+ if base in (KT+':empty_bottle',KT+':molotov',KT+':watermelon_juice'):viewitems[base]=n
+ else:
+  for q in range(1,7):viewitems[base+f'_q{q}']=n
 for mode in ['bar','cellar']:
  src=read(TAV/f'runtime/BP/entities/{"bar_cabinet" if mode=="bar" else "cellar_cabinet"}_bottle_visual.json');desc=src['minecraft:entity']['description'];desc['identifier']=NS+':cabinet_'+mode;desc['properties']={NS+':kind':{'type':'int','range':[0,len(viewgeo)-1],'default':0,'client_sync':True}};src['minecraft:entity']['components']['minecraft:type_family']={'family':['kwl_visual']};write(BP/f'entities/cabinet_{mode}.json',src)
  source=read(TAV/f'runtime/RP/entity/runtime_{"bar_cabinet" if mode=="bar" else "cellar_cabinet"}_bottle_visual.entity.json');desc=source['minecraft:client_entity']['description'];desc.update(identifier=NS+':cabinet_'+mode,geometry={f'kind_{n}':v for n,v in enumerate(viewgeo)},textures={f'kind_{n}':v for n,v in enumerate(viewtex)},materials={'default':'entity_alphatest_one_sided'},render_controllers=['controller.render.kwl.cabinet'])
  write(RP/f'entity/cabinet_{mode}.json',source)
 write(RP/'render_controllers/cabinet.json',{'format_version':'1.8.0','render_controllers':{'controller.render.kwl.cabinet':{'arrays':{'geometries':{'Array.models':[f'Geometry.kind_{n}' for n in range(len(viewgeo))]},'textures':{'Array.textures':[f'Texture.kind_{n}' for n in range(len(viewtex))]}},'geometry':f"Array.models[q.property('{NS}:kind')]",'textures':[f"Array.textures[q.property('{NS}:kind')]"],'materials':[{'*':'Material.default'}]}}})
 js(BP/'scripts/visual-items.js','VISUAL_ITEMS',viewitems)
-js(BP/'scripts/compact-items.js','COMPACT_ITEMS',[i for i in viewitems if (i.split('_q')[0] not in [ident(x) for x in blocked]) and (not i.startswith(KT+':') or i.split(':')[1].split('_q')[0] in ['empty_bottle','molotov','champagne','glowflower_brew','honey_wine','ice_wine','luminous_bride','plum_wine','polaris_sweet_white','red_queen','sakura_wine','sauvignon_blanc_dry_white','sherry','vinegar','whiskey','wine'])])
+js(BP/'scripts/compact-items.js','COMPACT_ITEMS',[i for i in viewitems if (i.split('_q')[0] not in [ident(x) for x in blocked]) and (not i.startswith(KT+':') or i.split(':')[1].split('_q')[0] in ['empty_bottle','molotov','watermelon_juice','champagne','glowflower_brew','honey_wine','ice_wine','luminous_bride','plum_wine','polaris_sweet_white','red_queen','sakura_wine','sauvignon_blanc_dry_white','sherry','vinegar','whiskey','wine'])])
 seat=read(TAV/'runtime/BP/entities/seat_white.json');seat['minecraft:entity']['description']['identifier']=NS+':seat';seat['minecraft:entity']['components']['minecraft:type_family']={'family':['kwl_visual']};write(BP/'entities/seat.json',seat)
 seat_client=read(TAV/'runtime/RP/entity/runtime_sofa_seat.entity.json');seat_client['minecraft:client_entity']['description']['identifier']=NS+':seat';write(RP/'entity/seat.json',seat_client)
 # All custom sounds remain namespace-local.
@@ -401,7 +406,7 @@ for pack in ['BP','RP']:
 write(BP/'loot_tables/empty.json',{'pools':[]})
 js(BP/'scripts/freezer-recipes.js','FREEZER_RECIPES',freezers)
 js(BP/'scripts/content.js','CONTENT',content)
-js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.4','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
+js(BP/'scripts/payload.js','payload',{'api':1,'source':NS,'version':'0.1.5','title':{'en_US':'World Liquor','zh_CN':'世界名酒','zh_TW':'世界名酒'},'recipes':recipes,'shakerInputs':inputs,'content':content,'pages':pages})
 write(RP/'textures/item_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.items','texture_data':items_tex})
 write(RP/'textures/terrain_texture.json',{'resource_pack_name':'World Liquor','texture_name':'atlas.terrain','texture_data':terrain})
 write(ROOT/'docs/conversion-audit.json',audit)

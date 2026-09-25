@@ -132,5 +132,6 @@ export const COMPACT_ITEMS = [
   "kaleidoscope_world_liquor:strongbow_q3",
   "kaleidoscope_world_liquor:strongbow_q4",
   "kaleidoscope_world_liquor:strongbow_q5",
-  "kaleidoscope_world_liquor:strongbow_q6"
+  "kaleidoscope_world_liquor:strongbow_q6",
+  "kaleidoscope_tavern:watermelon_juice"
 ];

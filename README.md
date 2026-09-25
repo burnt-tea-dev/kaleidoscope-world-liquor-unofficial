@@ -2,9 +2,9 @@
 
 Bedrock port of the [Java addon](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor).
 Requires the public beta of [Kaleidoscope Tavern (Unofficial)](https://github.com/casama233/kaleidoscope-tavern-unofficial)
-version **0.6.39** and its Cookery dependency. Enable both behavior and resource packs alongside Tavern and Cookery. Target: Bedrock/BDS 1.26.50+.
+version **0.6.40** and its Cookery dependency. Enable both behavior and resource packs alongside Tavern and Cookery. Target: Bedrock/BDS 1.26.50+.
 
-Current **0.1.4 preview** contains 18 six-quality bottled drinks, six new
+Current **0.1.5 preview** contains 18 six-quality bottled drinks, six new
 cocktails and their Java barrel/shaker recipes, 16 colored stools, 10 connected
 cabinet blocks, the freezer and five freezer recipes, eight paintings, two
 bottled mixers, four fallback foods, the random record and wall-hung records.
@@ -14,9 +14,13 @@ combined brewing/usage entries through Tavern's extension API.
 
 ## Download / 下載
 
-[0.1.4-preview.1 release](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.4-preview.1) · [Full BP/RP .mcaddon](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/download/v0.1.4-preview.1/Kaleidoscope_World_Liquor_Unofficial_0.1.4_preview1.mcaddon)
+[0.1.5-preview.1 release](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.5-preview.1) · [Full BP/RP .mcaddon](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/download/v0.1.5-preview.1/Kaleidoscope_World_Liquor_Unofficial_0.1.5_preview1.mcaddon)
 
-Back up your world before upgrading. Install together with Tavern **0.6.39-beta.1** and Cookery **1.0.6**; update both BP and RP. UUIDs and content IDs remain unchanged. The release includes SHA256SUMS, exact source revision and static validation evidence.
+Back up your world before upgrading. Install together with Tavern **0.6.40-beta.1** and Cookery **1.0.6**; update both BP and RP. UUIDs and content IDs remain unchanged. The release includes SHA256SUMS, exact source revision and static validation evidence.
+
+## 0.1.5 cabinet repair
+
+Both cabinet helpers now use Tavern's storage-only bottom-pivot Molotov model, with model pitch owned only by RP. All five wood sets share these corrected helpers. Watermelon juice is accepted at appended visual index 44; old 0–43 mappings and saved item IDs are unchanged. The compiler uses a locked display order, so adding a host bottle cannot silently shift the addon wines. Existing guide content, recipes, effects, models and textures are preserved. Static checks compare both cabinet families and four facings against the pinned Java slot matrices; no new BDS or client validation is claimed.
 
 ## Survival path
 
@@ -56,6 +60,7 @@ Place the pinned Tavern source beside this repository as `tavern-src`; the
 release request and CI workflow identify the exact dependency commit.
 
 ```sh
+python3 tools/build_storage_visuals.py
 python3 tools/rebuild_guide.py
 python3 tools/check_release.py
 python3 tools/build_release.py
@@ -70,7 +75,7 @@ instruction rows because that host drops mechanicsByLocale region-code keys.
 Its files are not modified.
 
 The guide rebuild synchronizes its protocol version with the pack manifest.
-The build creates `dist/Kaleidoscope_World_Liquor_Unofficial_0.1.4_preview1.mcaddon`
+The build creates `dist/Kaleidoscope_World_Liquor_Unofficial_0.1.5_preview1.mcaddon`
 and SHA256SUMS. Publication verifies every archive entry against committed
 runtime, downloads every uploaded asset, and checks byte equality before
 changing the draft to a public prerelease. Existing releases are not overwritten.
