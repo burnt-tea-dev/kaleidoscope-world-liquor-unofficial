@@ -163,3 +163,19 @@ pack.name=Kaleidoscope World Liquor (Unofficial) RP
 pack.description=Unofficial Bedrock port. Requires Kaleidoscope Tavern (Unofficial). Public test build.
 kaleidoscope_world_liquor:itemGroup.drinks=Kaleidoscope World Liquor (Unofficial)
 kaleidoscope_world_liquor:itemGroup.furniture=Kaleidoscope World Liquor (Unofficial) — Furniture
+
+## Shared Tavern effect bar names
+effect.kaleidoscope_world_liquor.beheading=Decapitation
+effect.kaleidoscope_world_liquor.boating_master=Boating Mastery
+effect.kaleidoscope_world_liquor.captain_gift=Captain's Grace
+effect.kaleidoscope_world_liquor.continuous_heal=Instant Restoration
+effect.kaleidoscope_world_liquor.double_damage=Heavy Cleave
+effect.kaleidoscope_world_liquor.elbow_strike=Elbow Strike
+effect.kaleidoscope_world_liquor.frost_walker=Frost Walker
+effect.kaleidoscope_world_liquor.ground_crit=Strike Break
+effect.kaleidoscope_world_liquor.hostile_detection=Wraith Sight
+effect.kaleidoscope_world_liquor.multi_jump=Multi‑Jump
+effect.kaleidoscope_world_liquor.reverse_gravity=Anti‑Gravity
+effect.kaleidoscope_world_liquor.tequila=Tequila Fortitude
+effect.kaleidoscope_world_liquor.treasure_guide=Gold Rush
+effect.kaleidoscope_world_liquor.treasure_sense=Treasure Intuition
