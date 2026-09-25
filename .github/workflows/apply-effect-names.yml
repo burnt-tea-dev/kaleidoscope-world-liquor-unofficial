@@ -1,0 +1,32 @@
+name: Materialize verified effect names
+on:
+  push:
+    branches: [refactor/shared-foundation-20260925]
+    paths: ['.github/workflows/apply-effect-names.yml']
+permissions:
+  contents: write
+jobs:
+  names:
+    if: github.repository == 'casama233/kaleidoscope-world-liquor-unofficial' && github.ref == 'refs/heads/refactor/shared-foundation-20260925'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Generate only the reviewed language additions
+        run: |
+          test "$(git rev-parse HEAD^)" = 2ab4b950360dec63ac4034d0e739c754938c0bb3
+          python tools/build_effect_names.py
+          python tools/build_effect_names.py --check
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          expected={'en_US':'6ea9efbec177941ccaf11c63beef9d842fd052d2fbe4fe16cd5bc14369d89889','zh_CN':'ce00c4ba5ab608efc2ef3f5d578fc3ef0c09432b565f7a78fe3a149f658556a8','zh_TW':'661e296aee95bf84d3d5e48ab49b475d204d6b7758db705abc104f4547e32d11'}
+          for locale,digest in expected.items():
+              assert hashlib.sha256(Path('runtime/RP/texts/'+locale+'.lang').read_bytes()).hexdigest()==digest,locale
+          PY
+          git add runtime/RP/texts/en_US.lang runtime/RP/texts/zh_CN.lang runtime/RP/texts/zh_TW.lang
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'fix: expose localized timed-effect names to Tavern actionbar'
+          git push origin HEAD:refs/heads/refactor/shared-foundation-20260925
