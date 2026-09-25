@@ -50,7 +50,8 @@
         "kind_40": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count1",
         "kind_41": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__sour_plum__count1",
         "kind_42": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count1",
-        "kind_43": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__strongbow__count1"
+        "kind_43": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__strongbow__count1",
+        "kind_44": "textures/kaleidoscope_tavern/block/brew/watermelon_juice"
       },
       "geometry": {
         "kind_0": "geometry.kt_assets_a3.empty_bottle_faces",
@@ -78,7 +79,7 @@
         "kind_22": "geometry.kt_assets_a7.sweet_berry_wine_1",
         "kind_23": "geometry.kt_assets_a6.vodka_1",
         "kind_24": "geometry.kt_assets_a7.rum_1",
-        "kind_25": "geometry.kt_assets_a17.molotov",
+        "kind_25": "geometry.kt_runtime.storage_molotov",
         "kind_26": "geometry.kwl.g_dd882dd2e642f60f",
         "kind_27": "geometry.kwl.g_3b68817938690854",
         "kind_28": "geometry.kwl.g_cf0e198621ddb72d",
@@ -96,7 +97,8 @@
         "kind_40": "geometry.kwl.g_3b68817938690854",
         "kind_41": "geometry.kwl.g_0eaa2cac76f6618c",
         "kind_42": "geometry.kwl.g_3b68817938690854",
-        "kind_43": "geometry.kwl.g_39906ca3642f0231"
+        "kind_43": "geometry.kwl.g_39906ca3642f0231",
+        "kind_44": "geometry.kt_assets_a9.watermelon_juice_1"
       },
       "scripts": {
         "scale": "0.9"

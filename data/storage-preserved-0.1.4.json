@@ -1,0 +1,38 @@
+{
+  "baselineCommit": "950dc1de414bd18ccdd5329629900acd662bbcc2",
+  "visualItemsSha256": "340f9efd1a7d1ed40497380e5e2e669c48b4e60eec564e4b6dec6944a426ade6",
+  "compactItemsSha256": "ad86b2ab949c0204d2d6e8f3f8dcba60ba82d6e339fd7955616c0dd505c02fe6",
+  "files": {
+    "runtime/BP/scripts/content.js": "e76f487cbf61681a52d81920260e5e682e56b48be4d4532692bf9bf26bbaf1e0",
+    "runtime/BP/scripts/effects.js": "46ead4f6613393196ccdc36796f5bfaef2c7ddc19db7ac1fabd731f36d1dffd3",
+    "runtime/BP/scripts/freezer-recipes.js": "e4ec4e1bc1d7154ae26df4f5d4a7acb27688b5ae39a143b3245a073f6413fd35",
+    "runtime/BP/scripts/wall-record-models.js": "33ac89cd2edeeb83eac7dd4541ec2f926694f639417b12e4d7c6477a4b8678c8"
+  },
+  "trees": {
+    "runtime/RP/models/": {
+      "files": 79,
+      "sha256": "b99e557e44015022e3265d34a9ddc5914ee48092ea1223fb930e5dadf393aa4c"
+    },
+    "runtime/RP/textures/": {
+      "files": 327,
+      "sha256": "a74e39f98baa20c57f69cee298b05067e36636e29498f7c29b6b1993b99a245d"
+    },
+    "runtime/RP/animations/": {
+      "files": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runtime/BP/items/": {
+      "files": 156,
+      "sha256": "2e82de965f3d5b3ba901a9a9df17e17780cd631d9142a159014707f75dc6af6d"
+    },
+    "runtime/BP/blocks/": {
+      "files": 60,
+      "sha256": "bfe8b1a8132d970417bf44292a5b942506c1d9e592d926c28b73d838a13bdc46"
+    },
+    "runtime/BP/recipes/": {
+      "files": 39,
+      "sha256": "9a1af526a22bacf3eefef118caa4a914c6753060b350672a02f35492a6bc7247"
+    }
+  },
+  "payloadExceptVersionSha256": "721aadbbcd35689173dd785a46eefa785aa948dae8e8d22bc0b47a854e5a4f68"
+}

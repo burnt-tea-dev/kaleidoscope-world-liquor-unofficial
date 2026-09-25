@@ -1,3 +1,4 @@
+import {cabinetVisualPose} from './cabinet-visual-pose.js';
 import {world,system,ItemStack,BlockPermutation} from '@minecraft/server';
 import {FREEZER_RECIPES} from './freezer-recipes.js';
 import {VISUAL_ITEMS} from './visual-items.js';
@@ -75,10 +76,10 @@ function syncVisuals(b,s){const anchor=key(b),cellar=b.typeId.includes('cellar_c
  for(let slot=0;slot<s.slots.length;slot++){
   const item=s.slots[slot],all=existing.filter(e=>e.getDynamicProperty(NS+':slot')===slot);let e=all.shift();for(const dup of all)dup.remove();
   if(!item){e?.remove();continue;}
-  const row=Math.floor(slot/3),col=slot%3,dx=cellar?.325-col*.325:s.single?0:(slot===0?1:-1)*((f===0||f===2)?.25:-.25),r=rotate(dx,cellar?.375:0,f),at=plus(b.location,{x:.5+r.x,y:cellar?.78-row*.29:.0625,z:.5+r.z});
+  const pose=cabinetVisualPose(f,slot,cellar,!!s.single),at=plus(b.location,pose.offset);
   if(!e){e=b.dimension.spawnEntity(NS+':cabinet_'+(cellar?'cellar':'bar'),at);e.setDynamicProperty(NS+':anchor',anchor);e.setDynamicProperty(NS+':position',JSON.stringify(b.location));e.setDynamicProperty(NS+':block',b.typeId);e.setDynamicProperty(NS+':slot',slot);}
   if(e.getProperty(NS+':kind')!==VISUAL_ITEMS[item])e.setProperty(NS+':kind',VISUAL_ITEMS[item]);
-  const rotation={x:cellar?-90:0,y:[0,90,180,-90][f]};
+  const rotation=pose.rotation; // RP owns model pitch; the helper owns yaw only.
   if(Math.abs(e.location.x-at.x)+Math.abs(e.location.y-at.y)+Math.abs(e.location.z-at.z)>.01)e.teleport(at,{rotation});
   else if(Math.abs(e.getRotation().x-rotation.x)+Math.abs(e.getRotation().y-rotation.y)>.1)e.setRotation(rotation);
  }

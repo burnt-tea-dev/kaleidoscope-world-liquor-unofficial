@@ -252,5 +252,6 @@ export const VISUAL_ITEMS = {
   "kaleidoscope_world_liquor:strongbow_q3": 43,
   "kaleidoscope_world_liquor:strongbow_q4": 43,
   "kaleidoscope_world_liquor:strongbow_q5": 43,
-  "kaleidoscope_world_liquor:strongbow_q6": 43
+  "kaleidoscope_world_liquor:strongbow_q6": 43,
+  "kaleidoscope_tavern:watermelon_juice": 44
 };

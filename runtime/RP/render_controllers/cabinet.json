@@ -48,7 +48,8 @@
             "Geometry.kind_40",
             "Geometry.kind_41",
             "Geometry.kind_42",
-            "Geometry.kind_43"
+            "Geometry.kind_43",
+            "Geometry.kind_44"
           ]
         },
         "textures": {
@@ -96,7 +97,8 @@
             "Texture.kind_40",
             "Texture.kind_41",
             "Texture.kind_42",
-            "Texture.kind_43"
+            "Texture.kind_43",
+            "Texture.kind_44"
           ]
         }
       },
