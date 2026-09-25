@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: casama233/kaleidoscope-tavern-unofficial
-          ref: 581ac091758ba40ce3a46a280467517ce0016c9f
+          ref: 908d1c7012a0dbfb3c8a8240ff03cc86b1ca43fb
           path: tavern-src
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: '22'
       - run: python -m pip install Pillow==11.3.0
-      - name: Apply checksum-locked source delta
+      - name: Apply checksum-locked source delta and sync generated guide version
         working-directory: world-liquor-src
         run: |
           python - <<'PY'
@@ -47,6 +47,11 @@ jobs:
           assert not delta['guideNamesDelta']
           subprocess.run(['git','apply','--check','-'],input=delta['patch'].encode(),check=True)
           subprocess.run(['git','apply','-'],input=delta['patch'].encode(),check=True)
+          p=Path('tools/rebuild_guide.py');text=p.read_text()
+          old=" payload=loadjs(ROOT/'runtime/BP/scripts/payload.js')\n"
+          assert text.count(old)==1
+          new=old+" payload['version']='.'.join(str(v) for v in json.loads((ROOT/'runtime/BP/manifest.json').read_text())['header']['version'])\n"
+          p.write_text(text.replace(old,new,1))
           PY
       - name: Rebuild guide and validate exact package (no player simulation)
         working-directory: world-liquor-src
@@ -76,6 +81,7 @@ jobs:
           git rev-parse HEAD > dist/INTEGRATED_SOURCE_COMMIT
           git archive --format=zip HEAD > dist/integrated-source.zip
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: World-Liquor-integrated-repairs
           path: world-liquor-src/dist/
