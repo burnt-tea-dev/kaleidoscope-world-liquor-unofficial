@@ -1,0 +1,85 @@
+name: Verify and deliver paired 0.1.7 integration
+on:
+  push:
+    branches: [delivery/all-pr-20260925]
+permissions:
+  contents: read
+jobs:
+  delivery:
+    if: github.repository == 'casama233/kaleidoscope-world-liquor-unofficial'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: casama233/kaleidoscope-tavern-unofficial
+          ref: fc62883164ccac02e48452c6657a78ad87465ea4
+          path: delivery
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: casama233/kaleidoscope-tavern-unofficial
+          ref: cedfaedf6140bae61b24afb658869b1d0e6ea1a9
+          path: tavern
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: 89511c3da4f49463e6ba9e3eb920b18904b51e20
+          path: liquor
+      - uses: actions/checkout@v4
+        with:
+          repository: casama233/kaleidoscope-tavern-unofficial
+          ref: e96184327426d61244fac7c6331a041d38976e2a
+          path: pr88
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install Pillow==11.3.0
+      - name: Apply exact reviewed trees
+        run: |
+          mkdir baseline evidence
+          git -C tavern archive HEAD | tar -x -C baseline
+          ln -s tavern tavern-src
+          ln -s liquor world-liquor-src
+          python delivery/.github/apply-integration.py
+      - name: Paired regression and package checks (no client or BDS)
+        env:
+          LIQUOR_SOURCE: ${{ github.workspace }}/liquor
+        run: |
+          set -euo pipefail
+          cd tavern
+          node --experimental-loader ./tools/foundation/mock-loader.mjs --test tools/foundation/foundation.test.mjs tools/creative-pick.test.mjs tools/pr-integration.test.mjs 2>&1 | tee ../evidence/runtime-tests.tap
+          node --test tools/effect-bar.test.mjs 2>&1 | tee ../evidence/effect-bar.tap
+          python tools/creative/test_catalog.py 2>&1 | tee ../evidence/creative.log
+          python tools/test_pick_block.py 2>&1 | tee ../evidence/native-pick.log
+          python tools/check_release.py > ../evidence/tavern-static.log
+          cd ../liquor
+          python tools/build_effect_names.py --check
+          python tools/build_storage_visuals.py
+          python tools/rebuild_guide.py
+          git diff --exit-code -- runtime/
+          python tools/check_release.py > ../evidence/liquor-static.log
+          python tools/build_release.py
+          cp dist/*.mcaddon ../evidence/
+      - name: Deliver only reviewed source branch
+        run: |
+          set -euo pipefail
+          test "$(git -C liquor ls-remote origin refs/heads/main | cut -f1)" = 89511c3da4f49463e6ba9e3eb920b18904b51e20
+          test -z "$(git -C liquor ls-remote origin refs/heads/integration/reviewed-0.6.44)"
+          git -C liquor config user.name 'github-actions[bot]'
+          git -C liquor config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          tree=$(git -C liquor write-tree)
+          commit=$(git -C liquor commit-tree "$tree" -p 89511c3da4f49463e6ba9e3eb920b18904b51e20 -m 'Integrate paired preview 0.1.7 with dynamic versioned validation and unchanged gameplay')
+          git -C liquor push origin "$commit:refs/heads/integration/reviewed-0.6.44"
+          printf '%s\n' "$commit" > evidence/DELIVERED_COMMIT
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reviewed-integration-evidence
+          path: evidence/
+          retention-days: 14
