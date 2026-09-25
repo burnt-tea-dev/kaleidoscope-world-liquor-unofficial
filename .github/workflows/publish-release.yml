@@ -58,8 +58,6 @@ jobs:
           source=request.get('source_commit',os.environ['GITHUB_SHA'])
           assert re.fullmatch(r'[0-9a-f]{40}',source)
           subprocess.run(['git','merge-base','--is-ancestor',source,'HEAD'],check=True)
-          # A publisher-only follow-up may resume the original draft, but its
-          # runtime, build tools, documentation and release metadata must match.
           subprocess.run(['git','diff','--exit-code',source,'HEAD','--','runtime/','tools/','docs/'],check=True)
           original=json.loads(subprocess.check_output(['git','show',source+':.github/release-request.json']))
           for data in (original,request):data.pop('source_commit',None)
@@ -77,7 +75,7 @@ jobs:
       - name: Include source and static validation evidence
         run: |
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
-          cp docs/GUIDE-AUDIT-0.1.6.json docs/GUIDE-VALIDATION-0.1.6.json docs/STORAGE-VALIDATION-0.1.6.json dist/
+          cp docs/GUIDE-AUDIT-0.1.7.json docs/GUIDE-VALIDATION-0.1.7.json docs/STORAGE-VALIDATION-0.1.7.json dist/
       - name: Stage or resume identical draft, verify assets, then publish
         env:
           GH_TOKEN: ${{ github.token }}
@@ -113,8 +111,6 @@ jobs:
               return {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in Path(root).iterdir() if p.is_file()}
           local=hashes('dist');remote=hashes(os.environ['VERIFY_DIR'])
           assert local==remote,'Existing draft asset bytes differ; refusing to replace them'
-          # A draft created for a new tag does not materialize that Git ref.
-          # Reject an existing conflicting tag now; verify the new tag after publication.
           refs=json.loads(subprocess.check_output(['gh','api','repos/'+os.environ['GH_REPO']+'/git/matching-refs/tags/'+os.environ['TAG']]))
           exact=[r for r in refs if r['ref']=='refs/tags/'+os.environ['TAG']]
           assert len(exact)<=1
@@ -122,7 +118,6 @@ jobs:
           Path(os.environ['RUNNER_TEMP'],'asset-readback.json').write_text(json.dumps({'sourceCommit':os.environ['SOURCE_SHA'],'assets':remote,'archiveContentMatchesRuntime':True},indent=2)+'\n')
           print('Every uploaded asset matches the source build; no assets replaced.')
           PY
-          # Recheck draft identity immediately before its one publication mutation.
           view_draft > "$RUNNER_TEMP/draft-recheck.json"
           python - <<'PY'
           import json,os
