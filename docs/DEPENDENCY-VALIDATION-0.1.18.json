@@ -1,0 +1,28 @@
+{
+  "version": "0.1.18",
+  "tavernVersion": "0.6.55",
+  "ownResourceDependency": "0.1.18",
+  "guideRegeneration": "BYTE_IDENTICAL",
+  "nativeGuideReceipt": {
+    "version": "0.6.55",
+    "roots": [
+      "equipment",
+      "barrel",
+      "cocktail",
+      "cultivation",
+      "storage",
+      "decor",
+      "food"
+    ],
+    "categories": 31,
+    "entries": 222,
+    "leavesRetained": true,
+    "coreFirst": true,
+    "freezer": "equipment_cooling",
+    "grape": "plants",
+    "simPlayers": false,
+    "clientUI": false,
+    "pass": true
+  },
+  "clientAcceptance": "PENDING"
+}
