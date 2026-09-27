@@ -1,9 +1,9 @@
 {
-  "version": "0.1.13",
-  "tag": "v0.1.13-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.13 — 飲品重疊面、家具碰撞與指南顏色條件",
+  "version": "0.1.14",
+  "tag": "v0.1.14-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.14 — 修正破壞飲品掉落展示模型",
   "prerelease": true,
-  "tavern_commit": "0c2160dc859ca7393746e97c43d59aa37e519f1f",
-  "expected_archive_sha256": "e375d66c53382319471381ccf1ff3d0f9813b281b2f043a4789b0afa2ebddb62",
-  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.13.json"
+  "tavern_commit": "1efdced062fbf51714a6e7ee93518b8cc52cd59a",
+  "expected_archive_sha256": "e26b47c380d8ea678a16918650970e8fe0755bbeedcc550ced1f051047263bfe",
+  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.14.json"
 }
