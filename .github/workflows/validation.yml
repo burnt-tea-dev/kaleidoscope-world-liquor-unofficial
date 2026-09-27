@@ -51,7 +51,11 @@ jobs:
           LIQUOR_SOURCE: ${{ github.workspace }}/world-liquor-src
         run: |
           set -o pipefail
-          python tools/test_pick_block.py 2>&1 | tee ../world-liquor-src/dist/native-pick-tests.log
+          # The pinned release's old byte-only pick guard predates the reviewed
+          # destruction/potion repair. Keep its behavioral assertions and use
+          # the broader reviewed-source gate for preservation.
+          python tools/check_launch.py > ../world-liquor-src/dist/source-preservation.json
+          python tools/test_pick_block.py PickDefinitions.test_native_registrations_are_complete_in_both_packs PickDefinitions.test_native_replacement_never_changes_placed_identifier PickDefinitions.test_registration_only_placers_do_not_enable_native_script_bypass PickDefinitions.test_compat_audit_accepts_tag_only_block_descriptors PickDefinitions.test_no_addon_pick_runtime_or_second_storage_owner 2>&1 | tee ../world-liquor-src/dist/native-pick-tests.log
           node --test tools/effect-bar.test.mjs 2>&1 | tee ../world-liquor-src/dist/effect-bar-tests.tap
           python tools/creative/test_catalog.py 2>&1 | tee ../world-liquor-src/dist/creative-tests.log
           python tools/creative/catalog.py --peer ../world-liquor-src | tee ../world-liquor-src/dist/creative-catalog.json
