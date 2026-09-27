@@ -1,9 +1,9 @@
 {
-  "version": "0.1.14",
-  "tag": "v0.1.14-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.14 — 修正破壞飲品掉落展示模型",
+  "version": "0.1.15",
+  "tag": "v0.1.15-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.15 — 啟用共用酒架原生命中座標",
   "prerelease": true,
-  "tavern_commit": "1efdced062fbf51714a6e7ee93518b8cc52cd59a",
-  "expected_archive_sha256": "e26b47c380d8ea678a16918650970e8fe0755bbeedcc550ced1f051047263bfe",
-  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.14.json"
+  "tavern_commit": "7eea296e198b45fcaf3ff63cc74cde61d46682ad",
+  "expected_archive_sha256": "373cf49bf16bafd78d6ed3e4ff1f6a739f285bb72cf1d27944fa560cf97027ab",
+  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.15.json"
 }
