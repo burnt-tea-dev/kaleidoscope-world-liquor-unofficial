@@ -26,7 +26,7 @@ for(const e of payload.entries){
 }
 for(const p of addon.pages){
  const entry=byId.get(p.item);assert(entry,p.item+' not projected');
- assert.equal(entry.category,p.category);
+ assert.equal(entry.category,({art:'decor',incense:'decor',boards:'decor'})[p.category]??p.category);
  assert.equal(entry.recipes?.length??0,p.crafting?.length??0);
  assert.equal(entry.icon,p.icon);
  for(const lc of ['en_US','zh_CN','zh_TW']){
@@ -45,7 +45,9 @@ assert(!around.mechanicsByLocale.zh_TW.filter(x=>x.startsWith('原料槽')).some
 const extras=addon.recipes.filter(r=>r.output.item?.startsWith('kaleidoscope_tavern:'));
 for(const r of extras){assert(byId.has(r.output.item));assert(!byId.has(r.id),'Extra core recipe left as duplicate page');}
 const wire=cookery106WirePayload(payload);
-assert(wire.entries.every(e=>!Object.hasOwn(e,'mechanicsByLocale')));
+assert(wire.entries.every(e=>e.mechanics.length<=8&&e.mechanics.every(row=>row.length<=512)));
+for(const e of payload.entries)for(const lc of ['en_US','zh_CN','zh_TW']){const w=wire.entries.find(w=>w.id===e.id);assert(w.mechanicsByLocale[lc].length<=8);for(const line of e.mechanicsByLocale[lc])assert(w.mechanicsByLocale[lc].join('\n').includes(line),e.id+' lost '+lc+' instruction');}
+assert.deepEqual(buildCookeryGuidePayload(registry),payload,'Wire conversion mutated the original locale map');
 for(const e of payload.entries){const text=wire.entries.find(w=>w.id===e.id).mechanics.join('\n');for(const lc of ['zh_TW','en_US'])for(const line of e.mechanicsByLocale[lc])assert(text.includes(line),'Wire removed instructions: '+e.id);}
 const messages=encodeCookeryGuideMessages(payload);
 assert.deepEqual(buildCookeryGuidePayload(registry),payload,'Guide projection mutates between reads');
@@ -56,7 +58,7 @@ assert(wine['minecraft:item'].components['minecraft:tags'].tags.includes('kaleid
 const report={entries:payload.entries.length,addonProducts:addon.pages.length,categories:payload.categories.length,
  barrelRecipes:addon.recipes.filter(r=>r.kind==='barrel').length,shakerRecipes:addon.recipes.filter(r=>r.kind==='shaker').length,
  extraCoreRecipes:extras.length,craftingRecipes:addon.pages.reduce((n,p)=>n+(p.crafting?.length??0),0),
- guidePackets:messages.length,guidePacketLimit:514,rawIdsInInstructions:false,cookery106BilingualFallback:true,playerSimulation:false};
+ guidePackets:messages.length,guidePacketLimit:514,rawIdsInInstructions:false,cookery106BilingualFallback:true,modernHostLocalized:true,hostStepLimitsChecked:true,playerSimulation:false};
 const version=JSON.parse(fs.readFileSync(new URL('../runtime/BP/manifest.json',import.meta.url))).header.version;
 assert(Array.isArray(version)&&version.length===3&&version.every(n=>Number.isSafeInteger(n)&&n>=0),'Invalid pack version');
 fs.writeFileSync(new URL(`../docs/GUIDE-VALIDATION-${version.join('.')}.json`,import.meta.url),JSON.stringify(report,null,2)+'\n');

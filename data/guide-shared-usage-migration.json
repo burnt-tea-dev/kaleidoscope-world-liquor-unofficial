@@ -1,0 +1,341 @@
+{
+  "reason": "0.1.9 delegates barrel/shaker usage to Tavern; fixes reviewed Simplified words in Traditional effect labels. Recipe and effect values remain unchanged.",
+  "pages": {
+    "kaleidoscope_world_liquor:guide/absolut_vodka": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Anti‑Gravity 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Anti‑Gravity 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Anti‑Gravity 1（600s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Anti‑Gravity 1（1920s，100%）",
+        "afterSha256": "aa3a2ddc402768689228f61212d429b02fde275d4d1a0c9d9f3f951f3368444c"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；反重力 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；反重力 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；反重力 1（600秒，100%）\n品质 6：微醺 1（10秒，100%）；反重力 1（1920秒，100%）",
+        "afterSha256": "2568338d938413f161e36b9151363c0666b64382b84acf64ccadecf65937097a"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；反重力 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；反重力 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；反重力 1（600秒，100%）\n品質 6：微醺 1（10秒，100%）；反重力 1（1920秒，100%）",
+        "afterSha256": "c51bf9448f620ec2c4492f2a8832d910a16fcf5298ec6486c9101372581edf3c"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/bacardi_carta_blanca": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Treasure Intuition 1（80s，100%） [outline unavailable in this port]\nQuality 4：Slightly Tipsy 1（30s，100%）；Treasure Intuition 1（240s，100%） [outline unavailable in this port]\nQuality 5：Slightly Tipsy 1（20s，100%）；Treasure Intuition 1（600s，100%） [outline unavailable in this port]\nQuality 6：Slightly Tipsy 1（10s，100%）；Treasure Intuition 1（1920s，100%） [outline unavailable in this port]",
+        "afterSha256": "489773de69a71230f3795806508fa692b36d68673dc2313c647d55bbbef29751"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；宝藏感知 1（80秒，100%）【本移植未实现透视描边】\n品质 4：微醺 1（30秒，100%）；宝藏感知 1（240秒，100%）【本移植未实现透视描边】\n品质 5：微醺 1（20秒，100%）；宝藏感知 1（600秒，100%）【本移植未实现透视描边】\n品质 6：微醺 1（10秒，100%）；宝藏感知 1（1920秒，100%）【本移植未实现透视描边】",
+        "afterSha256": "0d3c56dc75f0e0e0867409d185a0ac38a22f7f6b19954bd35accf69005d9f81b"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；宝藏感知 1（80秒，100%）【本移植未實作透視描邊】\n品質 4：微醺 1（30秒，100%）；宝藏感知 1（240秒，100%）【本移植未實作透視描邊】\n品質 5：微醺 1（20秒，100%）；宝藏感知 1（600秒，100%）【本移植未實作透視描邊】\n品質 6：微醺 1（10秒，100%）；宝藏感知 1（1920秒，100%）【本移植未實作透視描邊】",
+        "afterSha256": "77584a4069b09aa2f8c2e7c1664b99c73deb31fc90c38fe184a6e90c14f7ddd6"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/bamboo_leaf_green_liquor": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Invisibility 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Invisibility 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Invisibility 1（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Invisibility 1（2160s，100%）",
+        "afterSha256": "4c014f0b3e9e187bb447325d8c468a6f184ea76dad84151d5e07a8544a270723"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；隐身 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；隐身 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；隐身 1（720秒，100%）\n品质 6：微醺 1（10秒，100%）；隐身 1（2160秒，100%）",
+        "afterSha256": "dc2b6396ca19b3ce76082302e94be4a6ea14dd792d59157be837e43afc3884ee"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；隱形 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；隱形 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；隱形 1（720秒，100%）\n品質 6：微醺 1（10秒，100%）；隱形 1（2160秒，100%）",
+        "afterSha256": "425f5378f9bbc00276d1a0b7242cf15497b24821e1c4a095f595de7510ff8c9a"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/bombay_sapphire_gin": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Multi‑Jump 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Multi‑Jump 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Multi‑Jump 2（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Multi‑Jump 3（2160s，100%）",
+        "afterSha256": "6f056fb380884dbb402f9fd84e3149b50b451dcc8862273a06e0a67482986cc3"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；多段跳 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；多段跳 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；多段跳 2（720秒，100%）\n品质 6：微醺 1（10秒，100%）；多段跳 3（2160秒，100%）",
+        "afterSha256": "5043ccb6920944c1636d7a49abc0459783839c60a2dd4e82e43a0005a2212ad9"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；多段跳 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；多段跳 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；多段跳 2（720秒，100%）\n品質 6：微醺 1（10秒，100%）；多段跳 3（2160秒，100%）",
+        "afterSha256": "324a0f7c900f4015c0b45bfc40abb6319283701d31f0c54541daf10188b3f4bb"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/cool_tea": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Slow Falling 1（60s，100%）；Frost Walker 1（60s，100%）\nQuality 4：Weakness 1（30s，100%）；Slow Falling 1（90s，100%）；Frost Walker 1（90s，100%）；Fire Resistance 1（45s，100%）\nQuality 5：Weakness 1（20s，100%）；Slow Falling 1（240s，100%）；Frost Walker 1（240s，100%）；Fire Resistance 1（150s，100%）；Resistance 1（70s，100%）\nQuality 6：Weakness 1（10s，100%）；Slow Falling 1（600s，100%）；Frost Walker 1（600s，100%）；Fire Resistance 1（240s，100%）；Resistance 1（150s，100%）",
+        "afterSha256": "534d87428bfac3b617d4a58373fd2c1b5d4eea2d2e7c91029e8d6e279374134d"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；缓降 1（60秒，100%）；冰霜行者 1（60秒，100%）\n品质 4：虚弱 1（30秒，100%）；缓降 1（90秒，100%）；冰霜行者 1（90秒，100%）；抗火 1（45秒，100%）\n品质 5：虚弱 1（20秒，100%）；缓降 1（240秒，100%）；冰霜行者 1（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品质 6：虚弱 1（10秒，100%）；缓降 1（600秒，100%）；冰霜行者 1（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）",
+        "afterSha256": "40343919ce8acc6647a76ca4c54de42819fc2d03ab2924f8bb70fb712b47e9cf"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；緩降 1（60秒，100%）；冰霜行者 1（60秒，100%）\n品質 4：虛弱 1（30秒，100%）；緩降 1（90秒，100%）；冰霜行者 1（90秒，100%）；抗火 1（45秒，100%）\n品質 5：虛弱 1（20秒，100%）；緩降 1（240秒，100%）；冰霜行者 1（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品質 6：虛弱 1（10秒，100%）；緩降 1（600秒，100%）；冰霜行者 1（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）",
+        "afterSha256": "8d9d8c901d047105918f45fd54274cca5998af226fd607e322dc9b81752e29c8"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/dassai": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 2（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Luck (Java-only; unavailable here) 3（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Luck (Java-only; unavailable here) 4（2160s，100%）",
+        "afterSha256": "0040772ee1ab186c1a368a8bbf925c1e989ab97289a347c0dacd597a22ed6845"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 2（240秒，100%）\n品质 5：微醺 1（20秒，100%）；幸运（Java 专属，本移植未提供） 3（720秒，100%）\n品质 6：微醺 1（10秒，100%）；幸运（Java 专属，本移植未提供） 4（2160秒，100%）",
+        "afterSha256": "33c237e65466442eda2a1d8d59c51979261d1b3484410938be334c2412d1ef8c"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 2（240秒，100%）\n品質 5：微醺 1（20秒，100%）；幸運（Java 專屬，本移植未提供） 3（720秒，100%）\n品質 6：微醺 1（10秒，100%）；幸運（Java 專屬，本移植未提供） 4（2160秒，100%）",
+        "afterSha256": "d7b49c78563d78203c71281cddf3d12b2557ca32650d118e86d726efba4e4540"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/ice_tea": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Slow Falling 1（60s，100%）；Elbow Strike 1（60s，100%）\nQuality 4：Weakness 1（30s，100%）；Slow Falling 1（90s，100%）；Elbow Strike 1（90s，100%）；Fire Resistance 1（45s，100%）\nQuality 5：Weakness 1（20s，100%）；Slow Falling 1（240s，100%）；Elbow Strike 2（240s，100%）；Fire Resistance 1（150s，100%）；Resistance 1（70s，100%）\nQuality 6：Weakness 1（10s，100%）；Slow Falling 1（600s，100%）；Elbow Strike 3（600s，100%）；Fire Resistance 1（240s，100%）；Resistance 1（150s，100%）",
+        "afterSha256": "7b9d7586234799bbabe19ce507b8d42546c39677bcc4c94b12a06a5171d315dc"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；缓降 1（60秒，100%）；肘击 1（60秒，100%）\n品质 4：虚弱 1（30秒，100%）；缓降 1（90秒，100%）；肘击 1（90秒，100%）；抗火 1（45秒，100%）\n品质 5：虚弱 1（20秒，100%）；缓降 1（240秒，100%）；肘击 2（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品质 6：虚弱 1（10秒，100%）；缓降 1（600秒，100%）；肘击 3（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）",
+        "afterSha256": "e45d7f4c01416ab6ee12a192a0ba3e9b9a12422aa01f3cee9cc66ef9319db387"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；緩降 1（60秒，100%）；肘击 1（60秒，100%）\n品質 4：虛弱 1（30秒，100%）；緩降 1（90秒，100%）；肘击 1（90秒，100%）；抗火 1（45秒，100%）\n品質 5：虛弱 1（20秒，100%）；緩降 1（240秒，100%）；肘击 2（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品質 6：虛弱 1（10秒，100%）；緩降 1（600秒，100%）；肘击 3（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）",
+        "afterSha256": "ce0ea773721b7c5585811d0f237a932f0430dacb7b295ba556a63673ef293db6"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/jack_daniel": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Decapitation 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Decapitation 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Decapitation 2（600s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Decapitation 3（1920s，100%）",
+        "afterSha256": "2d2ad6536be2aed7db14d814c57d07ccb4671960debf0ca0d47023fba7699008"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；斩首 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；斩首 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；斩首 2（600秒，100%）\n品质 6：微醺 1（10秒，100%）；斩首 3（1920秒，100%）",
+        "afterSha256": "3142a1544fc8f560b1787691339728aad63d705cef0e2d66f2a06bb68677e912"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；斩首 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；斩首 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；斩首 2（600秒，100%）\n品質 6：微醺 1（10秒，100%）；斩首 3（1920秒，100%）",
+        "afterSha256": "0b7fad93ffb30e040449dc8388276d2d12c8e73b0a432c14e905e38811b6c906"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/johnnie_walker": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Gold Rush 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Gold Rush 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Gold Rush 2（600s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Gold Rush 3（1920s，100%）",
+        "afterSha256": "d3bddb66fd42cdafb0f8cd3e4501130c385fe5887d2ae2f60b2305ebb04a24aa"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；淘金热 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；淘金热 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；淘金热 2（600秒，100%）\n品质 6：微醺 1（10秒，100%）；淘金热 3（1920秒，100%）",
+        "afterSha256": "04087eba312eda2ddb1e0ea6855aac0cbab1df6a20fbe718d8da567ae47e188e"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；淘金热 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；淘金热 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；淘金热 2（600秒，100%）\n品質 6：微醺 1（10秒，100%）；淘金热 3（1920秒，100%）",
+        "afterSha256": "1e67e1a18cf147d41383ca24a129f7a04ca504b44087ac8f3ffad48f2a7ebab6"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/kwas_chlebowy": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Strike Break 1（80s，100%）\nQuality 4：Weakness 1（30s，100%）；Strike Break 1（240s，100%）\nQuality 5：Weakness 1（20s，100%）；Strike Break 2（600s，100%）\nQuality 6：Weakness 1（10s，100%）；Strike Break 3（1920s，100%）",
+        "afterSha256": "8d4d92aa94dc377f3dcd9a68292b342b76cab08e439ba00ba58424596a0555e2"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；破势 1（80秒，100%）\n品质 4：虚弱 1（30秒，100%）；破势 1（240秒，100%）\n品质 5：虚弱 1（20秒，100%）；破势 2（600秒，100%）\n品质 6：虚弱 1（10秒，100%）；破势 3（1920秒，100%）",
+        "afterSha256": "70aefd96644c8f7b45b436c618a4b20d5640887f6e5a5290ad25eaa98d161fc3"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；破势 1（80秒，100%）\n品質 4：虛弱 1（30秒，100%）；破势 1（240秒，100%）\n品質 5：虛弱 1（20秒，100%）；破势 2（600秒，100%）\n品質 6：虛弱 1（10秒，100%）；破势 3（1920秒，100%）",
+        "afterSha256": "0543a0b55bbeb66ea72d77840c035c915d14130c1ae8f1aa6200361655a332e3"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/lafite_1982": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Health Boost 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Health Boost 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Health Boost 2（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Health Boost 3（2160s，100%）",
+        "afterSha256": "f7bb1c1b32b6c23ad3c7731970a4c71d202efd6a2b865a1d3ce5792688fe6ccd"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；生命提升 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；生命提升 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；生命提升 2（720秒，100%）\n品质 6：微醺 1（10秒，100%）；生命提升 3（2160秒，100%）",
+        "afterSha256": "7e74f8fe7dda2b992d8e9c9d1a3626b99b54613ddac20e953437c4a01c9858e6"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；生命提升 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；生命提升 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；生命提升 2（720秒，100%）\n品質 6：微醺 1（10秒，100%）；生命提升 3（2160秒，100%）",
+        "afterSha256": "1ec580e554e9e8aed312da2629b531cc7e0b12dd60e511a0b579bf40ac9b27d8"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/maotai": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Levitation 1（15s，100%）；Slow Falling 1（35s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Levitation 2（20s，100%）；Slow Falling 1（40s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Levitation 3（25s，100%）；Slow Falling 1（45s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Levitation 4（30s，100%）；Slow Falling 1（50s，100%）",
+        "afterSha256": "d4652b7a8cf582d34df4556da2e4f0668c768494ed732a03d9747716b67797c1"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；飘浮 1（15秒，100%）；缓降 1（35秒，100%）\n品质 4：微醺 1（30秒，100%）；飘浮 2（20秒，100%）；缓降 1（40秒，100%）\n品质 5：微醺 1（20秒，100%）；飘浮 3（25秒，100%）；缓降 1（45秒，100%）\n品质 6：微醺 1（10秒，100%）；飘浮 4（30秒，100%）；缓降 1（50秒，100%）",
+        "afterSha256": "41619065b029f4603455366817ddfd9862ce3a0cd6400f9e553dc508c3d2ae46"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；懸浮 1（15秒，100%）；緩降 1（35秒，100%）\n品質 4：微醺 1（30秒，100%）；懸浮 2（20秒，100%）；緩降 1（40秒，100%）\n品質 5：微醺 1（20秒，100%）；懸浮 3（25秒，100%）；緩降 1（45秒，100%）\n品質 6：微醺 1（10秒，100%）；懸浮 4（30秒，100%）；緩降 1（50秒，100%）",
+        "afterSha256": "02e8996745aba852f1b04d1c7931474a982fc27e3f6116254991d10f5f96a75c"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/pina_colada": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Boating Mastery 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Boating Mastery 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Boating Mastery 1（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Boating Mastery 1（2160s，100%）",
+        "afterSha256": "8b848f09825309ed06606b86a76fd2cd2900f94d2b1e94a494b8e5a0ee45aa82"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；船长的祝福 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；船长的祝福 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；船长的祝福 1（720秒，100%）\n品质 6：微醺 1（10秒，100%）；船长的祝福 1（2160秒，100%）",
+        "afterSha256": "253835821a4cda096e8a7e99b48574b6d7b750032f39cbca485b2424bd50a634"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；船长的祝福 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；船长的祝福 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；船长的祝福 1（720秒，100%）\n品質 6：微醺 1（10秒，100%）；船长的祝福 1（2160秒，100%）",
+        "afterSha256": "c43e213f7c453acccbb4f1e9238cd9af650421e9865c1ad01770c3809d79f52a"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/skyy_vodka": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Wraith Sight 1（80s，100%） [outline unavailable in this port]\nQuality 4：Slightly Tipsy 1（30s，100%）；Wraith Sight 1（240s，100%） [outline unavailable in this port]\nQuality 5：Slightly Tipsy 1（20s，100%）；Wraith Sight 1（600s，100%） [outline unavailable in this port]\nQuality 6：Slightly Tipsy 1（10s，100%）；Wraith Sight 1（1920s，100%） [outline unavailable in this port]",
+        "afterSha256": "3d17c23607e0ee96d31a145b9ffb0845adaf11b412ce80c92fba4cd55cfe289d"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；冥视 1（80秒，100%）【本移植未实现透视描边】\n品质 4：微醺 1（30秒，100%）；冥视 1（240秒，100%）【本移植未实现透视描边】\n品质 5：微醺 1（20秒，100%）；冥视 1（600秒，100%）【本移植未实现透视描边】\n品质 6：微醺 1（10秒，100%）；冥视 1（1920秒，100%）【本移植未实现透视描边】",
+        "afterSha256": "4bcc700c222c5c52745c93a735cf9543aba628dcf99d73ad06063da5a3503ce9"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；冥视 1（80秒，100%）【本移植未實作透視描邊】\n品質 4：微醺 1（30秒，100%）；冥视 1（240秒，100%）【本移植未實作透視描邊】\n品質 5：微醺 1（20秒，100%）；冥视 1（600秒，100%）【本移植未實作透視描邊】\n品質 6：微醺 1（10秒，100%）；冥视 1（1920秒，100%）【本移植未實作透視描邊】",
+        "afterSha256": "f5b9cae1655eb6e547b7271dcfa5385b7d33dfe7f6ea6d562d0dfea77288da6b"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/smirnoff_red_vodka": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Hero of the Village 1（60s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Hero of the Village 1（120s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Hero of the Village 2（200s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Hero of the Village 3（300s，100%）",
+        "afterSha256": "a197af431f6f255b03b14227686fbfbab3159a1252cd21b22e4715af6b39d9e1"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；村庄英雄 1（60秒，100%）\n品质 4：微醺 1（30秒，100%）；村庄英雄 1（120秒，100%）\n品质 5：微醺 1（20秒，100%）；村庄英雄 2（200秒，100%）\n品质 6：微醺 1（10秒，100%）；村庄英雄 3（300秒，100%）",
+        "afterSha256": "8e9fcf8ecf501bc690c1bf24fadadc625c52b2a4a5275a431cf1c48448c72f14"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；村莊英雄 1（60秒，100%）\n品質 4：微醺 1（30秒，100%）；村莊英雄 1（120秒，100%）\n品質 5：微醺 1（20秒，100%）；村莊英雄 2（200秒，100%）\n品質 6：微醺 1（10秒，100%）；村莊英雄 3（300秒，100%）",
+        "afterSha256": "5adb089c25f40f4944a2926c79fae94d418d3f079e721aa36a25792a0e5f1781"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/sour_plum": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Tequila Fortitude 1（80s，100%）\nQuality 4：Weakness 1（30s，100%）；Tequila Fortitude 1（240s，100%）\nQuality 5：Weakness 1（20s，100%）；Tequila Fortitude 2（720s，100%）\nQuality 6：Weakness 1（10s，100%）；Tequila Fortitude 3（2160s，100%）",
+        "afterSha256": "dba23839f1f472c9ba5fe774c62b57816c917f8304450bb7666ed409ed925e66"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；龙舌兰 1（80秒，100%）\n品质 4：虚弱 1（30秒，100%）；龙舌兰 1（240秒，100%）\n品质 5：虚弱 1（20秒，100%）；龙舌兰 2（720秒，100%）\n品质 6：虚弱 1（10秒，100%）；龙舌兰 3（2160秒，100%）",
+        "afterSha256": "0e76e598b0701cd3f48289fdd5cbdba10e259036a20dd555e47ae8635c6eea91"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；龙舌兰 1（80秒，100%）\n品質 4：虛弱 1（30秒，100%）；龙舌兰 1（240秒，100%）\n品質 5：虛弱 1（20秒，100%）；龙舌兰 2（720秒，100%）\n品質 6：虛弱 1（10秒，100%）；龙舌兰 3（2160秒，100%）",
+        "afterSha256": "05edae0d3ce62d1baf6acc05c543a84c04b29a9f8038c4ad7d725992ee3fcc36"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/spiryt_vodka": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Captain's Grace 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Captain's Grace 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Captain's Grace 1（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Captain's Grace 1（2160s，100%）",
+        "afterSha256": "772c1d9e816c1eb6be4ce96bd8aea02f7433b07744b8b206905abe2191a8addf"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；水上行走 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；水上行走 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；水上行走 1（720秒，100%）\n品质 6：微醺 1（10秒，100%）；水上行走 1（2160秒，100%）",
+        "afterSha256": "867aea530c0032532f715a669bebf5c099a0ebc32124a60fdfd3bedd42e008d4"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；水上行走 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；水上行走 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；水上行走 1（720秒，100%）\n品質 6：微醺 1（10秒，100%）；水上行走 1（2160秒，100%）",
+        "afterSha256": "0725059f881972ec79bbec53922a2405440a587a5dc0766626a7fd50cae44c5a"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/strongbow": {
+      "en_US": {
+        "before": "Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.\nAging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Absorption 1（70s，100%）；Regeneration 2（10s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Absorption 2（150s，100%）；Regeneration 2（15s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Absorption 3（230s，100%）；Regeneration 2（20s，100%）；Fire Resistance 1（150s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Absorption 4（310s，100%）；Regeneration 2（25s，100%）；Fire Resistance 1（300s，100%）；Resistance 1（150s，100%）",
+        "afterSha256": "8be36b091260135ebab9ba08257ad714aea0010d967548d7b8c0318ae69b1e1c"
+      },
+      "zh_CN": {
+        "before": "潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。\n熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；伤害吸收 1（70秒，100%）；生命恢复 2（10秒，100%）\n品质 4：微醺 1（30秒，100%）；伤害吸收 2（150秒，100%）；生命恢复 2（15秒，100%）\n品质 5：微醺 1（20秒，100%）；伤害吸收 3（230秒，100%）；生命恢复 2（20秒，100%）；抗火 1（150秒，100%）\n品质 6：微醺 1（10秒，100%）；伤害吸收 4（310秒，100%）；生命恢复 2（25秒，100%）；抗火 1（300秒，100%）；抗性提升 1（150秒，100%）",
+        "afterSha256": "0dc3a884fb3f913576004a9cbd4253fda163a6dd1ed46f36ec2a4cfeea4df79a"
+      },
+      "zh_TW": {
+        "before": "潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。\n熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；吸收 1（70秒，100%）；生命恢復 2（10秒，100%）\n品質 4：微醺 1（30秒，100%）；吸收 2（150秒，100%）；生命恢復 2（15秒，100%）\n品質 5：微醺 1（20秒，100%）；吸收 3（230秒，100%）；生命恢復 2（20秒，100%）；抗火 1（150秒，100%）\n品質 6：微醺 1（10秒，100%）；吸收 4（310秒，100%）；生命恢復 2（25秒，100%）；抗火 1（300秒，100%）；抗性提升 1（150秒，100%）",
+        "afterSha256": "b994bdc0eed44689874eae6e082c21a6cdbf808b2fa3898b5482280efd54ebb8"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/around_the_world": {
+      "en_US": {
+        "before": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nFrenzy!!! 1（instant，100%）",
+        "afterSha256": "1430673ca93c02faf6c0196b6ba59e7d2e0b57140876c9ac38e3db5821db7be9"
+      },
+      "zh_CN": {
+        "before": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n疯狂！！！ 1（即时触发，100%）",
+        "afterSha256": "a0994b845196825c1f393ee1792ac5bcb022a5e1999f7b1fb93a3cdeecbfa29e"
+      },
+      "zh_TW": {
+        "before": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n疯狂！！！ 1（即時觸發，100%）",
+        "afterSha256": "4bf7ff2eb35a6f2255e3656238ff8b1cdb0fcf081d1a8550650195b20897baad"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/gin_tonic": {
+      "en_US": {
+        "before": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nInstant Restoration 1（60s，100%）",
+        "afterSha256": "871152c35eefc60817e8bbbc90f76bae0187c97c0c7ef5a8832dba8656148ede"
+      },
+      "zh_CN": {
+        "before": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n瞬间恢复 1（60秒，100%）",
+        "afterSha256": "dc9af03fed808f1c1e63eb1e99712356bcbf1eff0a8041cdfdc636b6d6dade0c"
+      },
+      "zh_TW": {
+        "before": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n瞬间恢复 1（60秒，100%）",
+        "afterSha256": "07c459acdd60fe0e45694d887e1398d4235d9e2378bb5e2ff2d6819a500ab71f"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/jerk": {
+      "en_US": {
+        "before": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nDetonation 1（instant，100%）",
+        "afterSha256": "9b5d924c7e69b4dcbd5ae927f1a4344d25de1e08a1b0d37d203a45844857e0b8"
+      },
+      "zh_CN": {
+        "before": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n爆炸 1（即时触发，100%）",
+        "afterSha256": "239cdbaa7f767de7576a6f8d893d78aa6baf06d00374a9a6458fb14298f792db"
+      },
+      "zh_TW": {
+        "before": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n爆炸 1（即時觸發，100%）",
+        "afterSha256": "fbdea9a3c79ff6e373d91cf8e72242f8e4745c36846c17d46d2b7ce80eb3a081"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/long_island_iced_tea": {
+      "en_US": {
+        "before": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nFamiliar Hearth 1（instant，100%）",
+        "afterSha256": "3dbb674865e29a3dd9be9bff82f2c40e0d01e77808cd67bdf549f54333fe88d5"
+      },
+      "zh_CN": {
+        "before": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n睁眼便身处熟悉居所 1（即时触发，100%）",
+        "afterSha256": "9f2ab80a80f7800271c5934d287736e57e824b286727e938b47e977ca29ac64b"
+      },
+      "zh_TW": {
+        "before": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n睁眼便身处熟悉居所 1（即時觸發，100%）",
+        "afterSha256": "d95add3ca0b42667ec96e2138d823c2d32bdc4f896d54f5f9815cb80f1eb9066"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/pine_colada": {
+      "en_US": {
+        "before": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nHeavy Cleave 1（1800s，100%）",
+        "afterSha256": "b4a0a69240123470d00ad7657491922289f8f7f45c8acc57d58a9bf0b0a9350d"
+      },
+      "zh_CN": {
+        "before": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n重斩 1（1800秒，100%）",
+        "afterSha256": "8fcc958c8de0146873989c85630bcb18b86dbdd48291b5a34e611fce11ee6e4b"
+      },
+      "zh_TW": {
+        "before": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n重斩 1（1800秒，100%）",
+        "afterSha256": "9812154bdc2204eb6b3561027584cbf58c0ab186cd4508c1b2e8640d35b54990"
+      }
+    },
+    "kaleidoscope_world_liquor:guide/shrimp_cocktail": {
+      "en_US": {
+        "before": "Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.\nDrink effects (independent probability per effect)\nTainted Lake Essence 1（instant，100%）",
+        "afterSha256": "65d50dee76937e7c439d225b576ea890d53d0ec58a11411851c1b0d62ddc38af"
+      },
+      "zh_CN": {
+        "before": "与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。\n饮用效果（各效果独立判定）\n取自泛红湖水，泛着诡异虾腥甜香 1（即时触发，100%）",
+        "afterSha256": "21512a506d2e157a0c220b9cdf1b6188f417527d620eec660e2f484ac2253878"
+      },
+      "zh_TW": {
+        "before": "與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。\n飲用效果（各效果獨立判定）\n取自泛红湖水，泛着诡异虾腥甜香 1（即時觸發，100%）",
+        "afterSha256": "b1bc0ca36fcf5774ae966cc5c88ee8b662c798726d4e4a671858023a3edf3c53"
+      }
+    }
+  }
+}

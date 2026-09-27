@@ -155,7 +155,8 @@ def main():
     if any(x.startswith('#') for x in ingredients):rows.append(triple('The native ingredient diagram uses wine as an example; all nine slots accept the alcohol tag stated above.','下方配方图以葡萄酒举例；九格实际均接受上述 alcohol 标签酒品。','下方配方圖以葡萄酒舉例；九格實際均接受上述 alcohol 標籤酒品。')[lc])
   body={}
   for lc in LOCALES:
-   rows=[usages[kind][lc]]+craftrows[lc]
+   # Standard barrel/shaker steps are owned by the Tavern guide API.
+   rows=([] if kind in ('bottle','cocktail') else [usages[kind][lc]])+craftrows[lc]
    if kind=='bottle':
     r=linked[0]
     unit=r.get('unitTime',2400)/20

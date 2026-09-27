@@ -47,6 +47,38 @@
     ],
     "music": [
       "custom_record"
+    ],
+    "wines": [
+      "absolut_vodka_q6",
+      "bacardi_carta_blanca_q6",
+      "bamboo_leaf_green_liquor_q6",
+      "bombay_sapphire_gin_q6",
+      "cool_tea_q6",
+      "dassai_q6",
+      "ice_tea_q6",
+      "jack_daniel_q6",
+      "johnnie_walker_q6",
+      "kwas_chlebowy_q6",
+      "lafite_1982_q6",
+      "maotai_q6",
+      "pina_colada_q6",
+      "skyy_vodka_q6",
+      "smirnoff_red_vodka_q6",
+      "sour_plum_q6",
+      "spiryt_vodka_q6",
+      "strongbow_q6"
+    ],
+    "cocktails": [
+      "around_the_world",
+      "gin_tonic",
+      "jerk",
+      "long_island_iced_tea",
+      "pine_colada",
+      "shrimp_cocktail"
+    ],
+    "ingredients": [
+      "cola",
+      "tonic_water"
     ]
   }
 }

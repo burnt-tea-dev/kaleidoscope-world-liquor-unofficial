@@ -7,7 +7,18 @@
         "groups": [
           {
             "group_identifier": {
-              "name": "kaleidoscope_tavern:itemGroup.name.tavern_brewing"
+              "name": "kaleidoscope_tavern:itemGroup.name.ingredients",
+              "icon": "kaleidoscope_tavern:grape_bucket"
+            },
+            "items": [
+              "kaleidoscope_world_liquor:cola",
+              "kaleidoscope_world_liquor:tonic_water"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "kaleidoscope_tavern:itemGroup.name.tavern_brewing",
+              "icon": "kaleidoscope_tavern:barrel"
             },
             "items": [
               "kaleidoscope_world_liquor:freezer"
@@ -16,14 +27,13 @@
           {
             "group_identifier": {
               "name": "kaleidoscope_tavern:itemGroup.name.wines",
-              "icon": "kaleidoscope_world_liquor:absolut_vodka_q6"
+              "icon": "kaleidoscope_tavern:wine_q6"
             },
             "items": [
               "kaleidoscope_world_liquor:absolut_vodka_q6",
               "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
               "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
               "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
-              "kaleidoscope_world_liquor:cola",
               "kaleidoscope_world_liquor:cool_tea_q6",
               "kaleidoscope_world_liquor:dassai_q6",
               "kaleidoscope_world_liquor:ice_tea_q6",
@@ -37,14 +47,13 @@
               "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
               "kaleidoscope_world_liquor:sour_plum_q6",
               "kaleidoscope_world_liquor:spiryt_vodka_q6",
-              "kaleidoscope_world_liquor:strongbow_q6",
-              "kaleidoscope_world_liquor:tonic_water"
+              "kaleidoscope_world_liquor:strongbow_q6"
             ]
           },
           {
             "group_identifier": {
               "name": "kaleidoscope_tavern:itemGroup.name.cocktails",
-              "icon": "kaleidoscope_world_liquor:around_the_world"
+              "icon": "kaleidoscope_tavern:white_lady"
             },
             "items": [
               "kaleidoscope_world_liquor:around_the_world",
@@ -57,7 +66,8 @@
           },
           {
             "group_identifier": {
-              "name": "kaleidoscope_tavern:itemGroup.name.tavern_cabinets"
+              "name": "kaleidoscope_tavern:itemGroup.name.storage",
+              "icon": "kaleidoscope_tavern:bar_cabinet"
             },
             "items": [
               "kaleidoscope_world_liquor:oak_bar_cabinet",
@@ -74,7 +84,8 @@
           },
           {
             "group_identifier": {
-              "name": "kaleidoscope_tavern:itemGroup.name.tavern_stools"
+              "name": "kaleidoscope_tavern:itemGroup.name.furniture",
+              "icon": "kaleidoscope_tavern:white_bar_stool"
             },
             "items": [
               "kaleidoscope_world_liquor:bar_stool_white",
@@ -97,7 +108,8 @@
           },
           {
             "group_identifier": {
-              "name": "kaleidoscope_tavern:itemGroup.name.tavern_paintings"
+              "name": "kaleidoscope_tavern:itemGroup.name.decoration",
+              "icon": "kaleidoscope_tavern:ysbb_painting"
             },
             "items": [
               "kaleidoscope_world_liquor:bfxm_painting",
@@ -107,15 +119,7 @@
               "kaleidoscope_world_liquor:chen_painting",
               "kaleidoscope_world_liquor:rabbit_painting",
               "kaleidoscope_world_liquor:ch_painting",
-              "kaleidoscope_world_liquor:qxxy_painting"
-            ]
-          },
-          {
-            "group_identifier": {
-              "name": "kaleidoscope_tavern:itemGroup.name.tavern_music",
-              "icon": "kaleidoscope_world_liquor:custom_record"
-            },
-            "items": [
+              "kaleidoscope_world_liquor:qxxy_painting",
               "kaleidoscope_world_liquor:custom_record"
             ]
           },

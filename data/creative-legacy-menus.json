@@ -46,6 +46,48 @@
         "runtime/BP/items/spruce_bar_cabinet.json",
         "runtime/BP/items/spruce_cellar_cabinet.json"
       ]
+    },
+    {
+      "menu_category": {
+        "category": "equipment",
+        "group": "kaleidoscope_tavern:itemGroup.name.wines"
+      },
+      "paths": [
+        "runtime/BP/items/absolut_vodka_q6.json",
+        "runtime/BP/items/bacardi_carta_blanca_q6.json",
+        "runtime/BP/items/bamboo_leaf_green_liquor_q6.json",
+        "runtime/BP/items/bombay_sapphire_gin_q6.json",
+        "runtime/BP/items/cola.json",
+        "runtime/BP/items/cool_tea_q6.json",
+        "runtime/BP/items/dassai_q6.json",
+        "runtime/BP/items/ice_tea_q6.json",
+        "runtime/BP/items/jack_daniel_q6.json",
+        "runtime/BP/items/johnnie_walker_q6.json",
+        "runtime/BP/items/kwas_chlebowy_q6.json",
+        "runtime/BP/items/lafite_1982_q6.json",
+        "runtime/BP/items/maotai_q6.json",
+        "runtime/BP/items/pina_colada_q6.json",
+        "runtime/BP/items/skyy_vodka_q6.json",
+        "runtime/BP/items/smirnoff_red_vodka_q6.json",
+        "runtime/BP/items/sour_plum_q6.json",
+        "runtime/BP/items/spiryt_vodka_q6.json",
+        "runtime/BP/items/strongbow_q6.json",
+        "runtime/BP/items/tonic_water.json"
+      ]
+    },
+    {
+      "menu_category": {
+        "category": "equipment",
+        "group": "kaleidoscope_tavern:itemGroup.name.cocktails"
+      },
+      "paths": [
+        "runtime/BP/items/around_the_world.json",
+        "runtime/BP/items/gin_tonic.json",
+        "runtime/BP/items/jerk.json",
+        "runtime/BP/items/long_island_iced_tea.json",
+        "runtime/BP/items/pine_colada.json",
+        "runtime/BP/items/shrimp_cocktail.json"
+      ]
     }
   ]
 }

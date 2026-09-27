@@ -42,6 +42,12 @@ def main():
   assert len(entries)==expected['files'] and actual==expected['sha256'],prefix
   preserved+=len(entries)
  payload=readjs(ROOT/'runtime/BP/scripts/payload.js');payload.pop('version')
+ # Reconstruct the historical view only for explicitly reviewed guide paragraphs.
+ migration=read(ROOT/'data/guide-shared-usage-migration.json')['pages']
+ for page in payload['pages']:
+  for locale,change in migration.get(page['id'],{}).items():
+   assert hashlib.sha256(page['body'][locale].encode()).hexdigest()==change['afterSha256'],('Unreviewed guide change',page['id'],locale)
+   page['body'][locale]=change['before']
  assert object_digest(payload)==baseline['payloadExceptVersionSha256'],'Guide and content changed beyond version'
 
  # Pure exported slot math, not the module which subscribes to engine events.

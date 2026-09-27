@@ -1,16 +1,14 @@
 ## BEGIN shared creative decoration groups
-kaleidoscope_tavern:itemGroup.name.tavern_cabinets=Tavern: Cabinets
-kaleidoscope_tavern:itemGroup.name.tavern_racks=Tavern: Bottle & Glass Racks
-kaleidoscope_tavern:itemGroup.name.tavern_tables=Tavern: Tables & Counters
-kaleidoscope_tavern:itemGroup.name.tavern_sofas=Tavern: Sofas
-kaleidoscope_tavern:itemGroup.name.tavern_stools=Tavern: Bar Stools
-kaleidoscope_tavern:itemGroup.name.tavern_string_lights=Tavern: String Lights
-kaleidoscope_tavern:itemGroup.name.tavern_pendant_lamps=Tavern: Pendant Lamps
-kaleidoscope_tavern:itemGroup.name.tavern_boards=Tavern: Signs & Boards
-kaleidoscope_tavern:itemGroup.name.tavern_paintings=Tavern: Paintings
-kaleidoscope_tavern:itemGroup.name.tavern_incense=Tavern: Incense
-kaleidoscope_tavern:itemGroup.name.tavern_utilities=Tavern: Stepladders
-kaleidoscope_tavern:itemGroup.name.tavern_music=Tavern: Records
+kaleidoscope_tavern:itemGroup.name.tavern_cultivation=Kaleidoscope Tavern: Crops
+kaleidoscope_tavern:itemGroup.name.tavern_brewing=Kaleidoscope Tavern: Brewing & Mixing Equipment
+kaleidoscope_tavern:itemGroup.name.wines=Kaleidoscope Tavern: Drinks
+kaleidoscope_tavern:itemGroup.name.cocktails=Kaleidoscope Tavern: Cocktails
+kaleidoscope_tavern:itemGroup.name.storage=Kaleidoscope Tavern: Storage
+kaleidoscope_tavern:itemGroup.name.furniture=Kaleidoscope Tavern: Furniture
+kaleidoscope_tavern:itemGroup.name.lighting=Kaleidoscope Tavern: Lighting
+kaleidoscope_tavern:itemGroup.name.decoration=Kaleidoscope Tavern: Decorations
+kaleidoscope_tavern:itemGroup.name.tools=Kaleidoscope Tavern: Tools
+kaleidoscope_tavern:itemGroup.name.ingredients=Kaleidoscope Tavern: Ingredients & Mixers
 ## END shared creative decoration groups
 item.kaleidoscope_world_liquor:absolut_vodka_q1.name=Absolut Vodka
 item.kaleidoscope_world_liquor:absolut_vodka_q2.name=Absolut Vodka

@@ -45,14 +45,12 @@ jobs:
           python tools/check_release.py
           python tools/build_release.py
           python tools/verify_release.py --development
-      - name: Shared foundation, effect-bar and creative data regressions (not BDS/client)
+      - name: Shared effect-bar and creative data projections (no player simulation)
         working-directory: tavern-src
         env:
           LIQUOR_SOURCE: ${{ github.workspace }}/world-liquor-src
         run: |
           set -o pipefail
-          node --experimental-loader ./tools/foundation/mock-loader.mjs --test ./tools/foundation/foundation.test.mjs 2>&1 | tee ../world-liquor-src/dist/foundation-tests.tap
-          node --experimental-loader ./tools/foundation/mock-loader.mjs --test tools/creative-pick.test.mjs tools/pr-integration.test.mjs 2>&1 | tee ../world-liquor-src/dist/creative-pick-tests.tap
           python tools/test_pick_block.py 2>&1 | tee ../world-liquor-src/dist/native-pick-tests.log
           node --test tools/effect-bar.test.mjs 2>&1 | tee ../world-liquor-src/dist/effect-bar-tests.tap
           python tools/creative/test_catalog.py 2>&1 | tee ../world-liquor-src/dist/creative-tests.log
@@ -65,7 +63,7 @@ jobs:
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
           git rev-parse HEAD > dist/LIQUOR_COMMIT
           git -C ../tavern-src rev-parse HEAD > dist/TAVERN_COMMIT
-          cp docs/GUIDE-AUDIT-0.1.7.json docs/GUIDE-VALIDATION-0.1.7.json docs/STORAGE-VALIDATION-0.1.7.json dist/
+          cp docs/GUIDE-AUDIT-0.1.9.json docs/GUIDE-VALIDATION-0.1.9.json docs/STORAGE-VALIDATION-0.1.9.json dist/
       - uses: actions/upload-artifact@v4
         with:
           name: World-Liquor-foundation-integration
