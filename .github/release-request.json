@@ -1,9 +1,10 @@
 {
-  "version": "0.1.21",
-  "tag": "v0.1.21-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.21 — 配合本體整合搖杯修正",
+  "version": "0.1.22",
+  "tag": "v0.1.22-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.22 — 飲品重疊表面修正",
   "prerelease": true,
-  "expected_archive_sha256": "f5f3ac684ffa01f75ccb56a550461f2c3873e66d6e5275d547653cc0d655fbc2",
-  "tavern_commit": "37bdbd913c7d56458976f1b81811d4780136acea",
-  "validation_evidence": "docs/CONSOLIDATION-0.1.21.json"
+  "expected_archive_sha256": "167b39947c1aa33146836584a48ac0d0917a225f1257524a5e98ce02e6530967",
+  "tavern_commit": "d6b2674034ce71a19c3da55e33d53ce837962e7b",
+  "validation_evidence": "docs/DRINK-SURFACES-0.1.22.json",
+  "client_acceptance": "pending"
 }

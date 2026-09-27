@@ -1,0 +1,261 @@
+{
+  "scope": "Drink block, entity and attachable geometry bindings",
+  "video": "20260927-0636-28.9067741.mp4",
+  "thinSheetModelUnits": 0.125,
+  "faceGapModelUnits": 0.0625,
+  "clientTest": false,
+  "files": {
+    "runtime/RP/models/entity/kwl_g_c2d80d876c810f01.geo.json": {
+      "before": "88e7e08937388cceb10555253398cda958c57e57689e7603e986cf81163d4fdc",
+      "after": "694dd354e9dcf9852130f65ddae84ce4333f11b41584acc2a68ded2ae77f25a8",
+      "uvInventory": "aab76c1eef7c3dd4e0346878f8d91272897fc0c49cc03704b70750797639e5fe",
+      "repairs": 6
+    },
+    "runtime/RP/models/entity/kwl_g_55d1f4143d811e02.geo.json": {
+      "before": "a0cafa4554790796b3cdab9b30c86af0d88ad84102eb6f190f3061481cfda9ea",
+      "after": "da8188772955586bc24a66ef5715da64c7f150f33ef415ed8a9c12bf7fe2fd75",
+      "uvInventory": "1418e3f773780e372f3ea562f55d0d1bf2203002c15385712e5723f624df39e6",
+      "repairs": 3
+    },
+    "runtime/RP/models/entity/kwl_g_a21c149365149f85.geo.json": {
+      "before": "8cbc678fab699ddaa0445b3ea2f51b75a221235492503fd5e1c5580897fbd58a",
+      "after": "54fdab31331a5307327d2109d2a0b2855596dffb27b6612607240be6b9b6ef90",
+      "uvInventory": "9d2cb76a004b1f683110bb7dfc80fad29296e72c69700b5eeac52183f45bd915",
+      "repairs": 4
+    },
+    "runtime/RP/models/entity/kwl_g_088ce8ce7ef94a90.geo.json": {
+      "before": "2b0979eecf1f2d19d98f16efa899425a2cdfc1892f5ffecd114d5805db204014",
+      "after": "2df2b6c966670f47e0df6fbb280aebf2e78eb0eaaa3eb2b6887e3b0fa8d5b01c",
+      "uvInventory": "eb7e9c86627e34c6c026b9d81225bc5d8c96f6c59330186adf716f36911608ec",
+      "repairs": 6
+    },
+    "runtime/RP/models/entity/kwl_g_5f317f0af7de6211.geo.json": {
+      "before": "e1f45a96fcb48630e8ab9bf56a5058e50109e57ca8b81718c176ee1c079e86f9",
+      "after": "e09fea9db487b57fabfdc75934b5c3813ca130e316168e46c20eefe24197cacb",
+      "uvInventory": "c1161025dfe989fcab0a78baa85d18b982747309eeabcbb6d562b7fa98cd1f71",
+      "repairs": 5
+    },
+    "runtime/RP/models/entity/kwl_g_2439d66f4d78571d.geo.json": {
+      "before": "38359b523f40b278c66b96ab748bb5f45c53870b2c3cebba7c1d6468375abae2",
+      "after": "0dd2b3b24892dc8b5ca0d3f7930b9b6b70ab6f2b10eadd0bad8391a3aa13006b",
+      "uvInventory": "a7d11f77d63f05ff20a9699e9ca656ca97a9a843de388bc17676b5a129c4f87e",
+      "repairs": 9
+    },
+    "runtime/RP/models/entity/kwl_g_cf0e198621ddb72d.geo.json": {
+      "before": "5001d028a2a3b037d029209918659d6a4ff75e64674dec14248da6231bdf48ce",
+      "after": "d8cf2fff24083c44a6f47e33f070488a92b4f10db2cc117712be290f44c551c3",
+      "uvInventory": "ec4bcae8f23dce084a69fbe811b1afb6722126f82721f372390698edc9c0787c",
+      "repairs": 3
+    },
+    "runtime/RP/models/entity/kwl_g_d17bbb0c984a1424.geo.json": {
+      "before": "0a364fea2779aa3f64bbca43e99da59171ae87a16db8847f4a6dc0c6ecc4e730",
+      "after": "5fff2f7f0bb7a5407fefe577fddc7653b3885303377024af2029a396820f137e",
+      "uvInventory": "25aae21ef3040591dfdb32cf627034e30d5674850e4dc051178dfdeecb1c1e93",
+      "repairs": 5
+    },
+    "runtime/RP/models/entity/kwl_g_c95b474969a48785.geo.json": {
+      "before": "e77b4c743c0e95a5b600e23b325e30f98828fddb88905a0906fc2884da060274",
+      "after": "47bfb9cc37482947e9e0a658df61d4acc7a7e6f585c0365b4e43b3fecf9eb254",
+      "uvInventory": "0222164ed8e1b6c4134d39beb94d989aee0c4f1535d0454852a03ec0d16f75e4",
+      "repairs": 12
+    },
+    "runtime/RP/models/entity/kwl_g_b9dead9920359fd1.geo.json": {
+      "before": "bb4a25ec5384f90b8faf890ea11000efb8771087d366601335c16d9446e71784",
+      "after": "c508179a8f490fcf492b43a704c480e71e948536b650eebcfb2af5aa8089ab2d",
+      "uvInventory": "fd6fd29a9b95707797a12c3786c101b9720ec4b5ecd3223f6a50d8a0e74781a7",
+      "repairs": 12
+    },
+    "runtime/RP/models/entity/kwl_g_d46cc6545ec13ac4.geo.json": {
+      "before": "b4b567f9a3fa73c0cd9586d7405999eda917d7fa766ee55d0043856236fc7ff2",
+      "after": "54fb06f578e44b14e13370ba96f09fc2a1e5fcab07f28aedac004410205acda5",
+      "uvInventory": "1db010d7aa1e6558de1c019ae7816f78a3355dd719b0f14515fdd8b19a3be9c4",
+      "repairs": 2
+    },
+    "runtime/RP/models/entity/kwl_g_2a624035225efb2a.geo.json": {
+      "before": "c7f83fa9da4e6b5bf5cee61ff059bce0a601243f5ff112f2eea3544be80f8059",
+      "after": "cfdc1ccb258e78be4d97dacee36635fe6e980367d4953679dd9e1361ba706750",
+      "uvInventory": "e20b43da3212b37946ddcf2617efebe9192729ed6f5f5029334847ab4844888f",
+      "repairs": 3
+    },
+    "runtime/RP/models/entity/kwl_g_ca6348dcb1aa0765.geo.json": {
+      "before": "cbfb189726a50f77cf5975b16daa1e61533bedc928b553e974e8bd3f0b40acbb",
+      "after": "036d2bf9dfaaa93f8580f02d21b779307386b8a604e120568336e20e0d55dc5f",
+      "uvInventory": "bf4b408a54901a99d1626f898384b00598fc2b479259d92843279d6402057ed7",
+      "repairs": 2
+    },
+    "runtime/RP/models/entity/kwl_g_a4ee7f81b9ec6d56.geo.json": {
+      "before": "aa463aacb8196766cd86b1657ed73b870e3e188b6601481ab461675de9a14e3a",
+      "after": "f24b7e91c62cc88db62c471defae2348d99f5f97dbf6a5e96a94c83e86104c36",
+      "uvInventory": "4db9881bf1807b9305a12ff917d564cd5111f3260a01c4ff8534e2d2e7d8a916",
+      "repairs": 6
+    },
+    "runtime/RP/models/entity/kwl_g_f38e665f0987bac0.geo.json": {
+      "before": "92d3c677d90e9612549340d907e43d5b2fad688bebd519fc2d0e130aa9ec508c",
+      "after": "af723d5c461952c488386b9497022da2240ddf85b57cc38fafd2c650c3edc6f4",
+      "uvInventory": "068c62422b6a628c014072b565756b721a2927688b99dfe00363f14745c47aac",
+      "repairs": 6
+    },
+    "runtime/RP/models/entity/kwl_g_ee1f956bacf3f60c.geo.json": {
+      "before": "188ae1865ed9e8b79ff454250c4156924f7738812a2e96519422ed13ffe47771",
+      "after": "d52c48df726bfb80349e0063440299ecb267af7c6da7d9c2bce360dd782ded29",
+      "uvInventory": "0854c412c0163eca2191f2a34216c8fd4271e59c2d1d7599989a1aee70acd002",
+      "repairs": 12
+    },
+    "runtime/RP/models/entity/kwl_g_0eaa2cac76f6618c.geo.json": {
+      "before": "ba1144ec68d553ea506e6bdd5e8d6fab62e4b1e687b527afa89064917e778b3d",
+      "after": "22533d85ab98d36a07134054f802b5f42ea14d6b4bdda8c8aac5527f7e2fcea8",
+      "uvInventory": "917eb125f39b97035d292626a390c2ff8bc70b59cbb6b5ef90b2a1eed2e9b226",
+      "repairs": 4
+    },
+    "runtime/RP/models/entity/kwl_g_7c9f5c302e968f71.geo.json": {
+      "before": "801d4c1bb53083d4f170b5ea1f4c2bbaa5675913ad3268c18633dbe0bbe88cc6",
+      "after": "9627b9853d8add94b9aee20f1ddff748976ced9c74033db4ce36067f421a7acd",
+      "uvInventory": "3093a67ab0f9c2da79de3ffc39cee1d8c842877e30c6a3dbe3986708e0ead490",
+      "repairs": 2
+    },
+    "runtime/RP/models/entity/kwl_g_13843eba24d8c829.geo.json": {
+      "before": "18a032689823f6495f94ded49dd1716178e8d1e5f5b7e625f3179edb8312fa79",
+      "after": "81f859389fce6cdc47f1af8c5b97e1fb062b37215c06af60e5eb6d89d221fdfc",
+      "uvInventory": "4c479df914e6ee50acb927fafe1096e6aa4fcb86ea3cec9595fffe5bb7b9a953",
+      "repairs": 4
+    },
+    "runtime/RP/models/entity/kwl_g_b44b46e4ed1b5592.geo.json": {
+      "before": "f3665aa2f39c6e48eaf769aff79742ff17f7481707142bcdff673256e7f1a189",
+      "after": "da2be821410f9a977e205a9681ef882921736e8c988182fd7de7819ee7bf9c32",
+      "uvInventory": "4733d4c504dd7735f84671e1ce89774e3292880747a626cdb835e3af7e623263",
+      "repairs": 2
+    },
+    "runtime/RP/models/entity/kwl_g_106eaabfdd755956.geo.json": {
+      "before": "7ab45e1f2fa9ffb3e2be1d073a83f26956442d506cc33ccf7013838ab6dccf3f",
+      "after": "eebad9281a42d860b0288245e9c5037e9e77389d7c83f342e90e9e92ff3a175b",
+      "uvInventory": "d5d476ae2585eb3aa44ac49bc6791bf1c2b688f2d741ee0df3227c08abe27f07",
+      "repairs": 16
+    },
+    "runtime/RP/models/entity/kwl_g_bf54b74cd369210a.geo.json": {
+      "before": "990b51a6a0e484a8912cef9c26f7fbffe75ab08c9194299629d2ee544624df90",
+      "after": "6ef8e7e22d0002a041788470f4188f67e6a9965cb42c21bee262966cc29ea932",
+      "uvInventory": "b075add34554a01fb94f8cfc91e0478ee63aad298d7c80d746ccbff492ac7896",
+      "repairs": 4
+    },
+    "runtime/RP/models/entity/kwl_g_e6aa60154803f768.geo.json": {
+      "before": "ba37c89d5a7aa08cde089742f57e2aa33ccad674227b1cefafe38a537b688886",
+      "after": "01057cac8a5883b885edb5c5f43b47edab94602dadcf464b1466932ed99bfc86",
+      "uvInventory": "9c6ad5cc49a34549e7ea6ecee8e09f57b33848c41ba689a0a56159c930e8e02b",
+      "repairs": 6
+    },
+    "runtime/RP/models/entity/kwl_g_ef808015813f7f6f.geo.json": {
+      "before": "45c73e69e9357f13dae830304aabc54621c991f71fda14ff479872bc9c649d81",
+      "after": "b994a447b33a140e17ed14dafaeed9ceca3613ca358dbd6c53c44d51bc07d44a",
+      "uvInventory": "8c3263bb7ce389f32770d5d601240f5e5f2b956b1ae685bc827cda7f741c7b7f",
+      "repairs": 8
+    },
+    "runtime/RP/models/entity/kwl_g_3790699d01b991f1.geo.json": {
+      "before": "20752ad7cd687ea1264bc1613c1c5cf7f9adb039a9ece1bb5befac321a687f3c",
+      "after": "a81e80fca059f78ea513d57f6440ae46d032dd53b1913215b3af487c6848b646",
+      "uvInventory": "a194cc6f381ab64971c03d9be4d128e07cd1bf2543f7c453afb3359b258d1826",
+      "repairs": 6
+    },
+    "runtime/RP/models/entity/kwl_g_42813126567a759f.geo.json": {
+      "before": "79ce9b607fef76059e04a4033d21b7b2cf98d34b82caca0701cb4740a4aa13aa",
+      "after": "052bf50a1783581038967699272bddbf1bca2b52983717f2a802dc46dc54acde",
+      "uvInventory": "a47fb061986a9f0a2eba950e1794edbe9f57169d59efcea346f4bf57c421ed0c",
+      "repairs": 9
+    },
+    "runtime/RP/models/entity/kwl_g_5ea58d93bbf7d744.geo.json": {
+      "before": "cd860b0cb721b78d3586a8b9baff2ef4407edb2d0a9331f1b93786a4b9772009",
+      "after": "cb273b4f4bd64e2b562c61bc1f76872bce5c06e01dc4c68bbb5d4b7ee89138d0",
+      "uvInventory": "2509e5e3d8ceeb90e90a8f2396c7852d3fd76fed064fccf6102592cf3269d0c2",
+      "repairs": 18
+    },
+    "runtime/RP/models/entity/kwl_g_f4e8802aeefbe745.geo.json": {
+      "before": "66a9ad57b401c99c0f7d9f3479c442a0b1ff2e3355c376b77b20e0db9e7120e7",
+      "after": "52658b61ee8222ada7e70049dd0b2d46a0910928f2e4dbc4bb597b10512673ec",
+      "uvInventory": "d0aa6962ad66ce14997e3b8431adad97babb4243827d483ace5a1fd500c3580f",
+      "repairs": 12
+    },
+    "runtime/RP/models/entity/kwl_g_63c6c989bb9185d9.geo.json": {
+      "before": "7598d8582406ebb79e65157c6a05b842c7ee625d57f3e29970e7d1a043395750",
+      "after": "551861eb2d300e3dfe5df52da07e7ec62c941b32276a5fc845a75e48f1ffa838",
+      "uvInventory": "7482f0596cee42da46c06cc94f28f5eae4b13bfc90672e3fb23123b26143cf61",
+      "repairs": 8
+    },
+    "runtime/RP/models/entity/kwl_g_4ac5de89f41d3f5f.geo.json": {
+      "before": "0856c57e2117d1375ed07bc027450321a307673fc3089efab8657061453ddc5f",
+      "after": "1b7e93dfc40c94d488c2b948d8b6a0169c1a908b3e83d7b1d8c6c7c57da28baa",
+      "uvInventory": "84bb255f548f4d5edfb6b6c2d4392f8cc13276169e1a7b0856546d60f42eb82e",
+      "repairs": 8
+    },
+    "runtime/RP/models/entity/kwl_g_39906ca3642f0231.geo.json": {
+      "before": "559356bb42b436baf5406df474de00b90e7f0e037ee6ec5fc914a64aa62b85ac",
+      "after": "be12d7aa7bf0c59a69e37f0c0942a6bfde6584a4c488ba18a1729d93b8173b22",
+      "uvInventory": "db398b343a744b1e3c255a92b62038cdb2b3249ccce7cdb96a2be1e8e20ad362",
+      "repairs": 3
+    },
+    "runtime/RP/models/entity/kwl_g_b368e83514cfebcc.geo.json": {
+      "before": "8b76c201d5f0a2acf5881b6de9555fbe8a95762d644bdf9cbf7fc0739043f25a",
+      "after": "d319e39f53b6d7772b0f6a86d39b200fc038e1c1db2df3dc160178ece1a46eea",
+      "uvInventory": "ad9f15a46e56f54cbb65a8db0d6a95125960d46e44d2c6a0aa82a8d9dfaf4fbf",
+      "repairs": 8
+    },
+    "runtime/RP/models/entity/kwl_g_33d63e30edb0052d.geo.json": {
+      "before": "d1c7c80e7c6e230775eb9d8723a09c489e1957b9016858faecadda1b64d41715",
+      "after": "4339012ddeba7e9aa535b6f7c0b87dcde3805056ff727724d817704cf7df83f0",
+      "uvInventory": "45dbd3fe256b689ea600e66be26f8ee8456b33b642e49a6f5e340e19b21f5eca",
+      "repairs": 4
+    },
+    "runtime/RP/models/entity/kwl_g_786a423a6bad5e4e.geo.json": {
+      "before": "2c5778a06fd21b8322e48d084f29df7ea787cc71bdc14980ad798a86ff23cfa9",
+      "after": "887914c84646fea84c34f9284b7f7b6e02a319b48ba03189b9ce4bc63aa598c9",
+      "uvInventory": "1c724713f0a4617d5a1a7dc9df228beaa93496292bd2119a0055844b66891a3b",
+      "repairs": 9
+    },
+    "runtime/RP/models/entity/kwl_g_83f8f8824eba9010.geo.json": {
+      "before": "d778012b3d2c60ab0e8cc5cfcd82d8e9b522790d382e246a80752c2915f0aae0",
+      "after": "5f12273948c0c104cc71bb1f76442f766b592e42cec28fcd687fc6e8353cd450",
+      "uvInventory": "caf81f7a8b34a4243b180d498f1bb8557f42f50faa56dade613593d58e01f238",
+      "repairs": 4
+    },
+    "runtime/RP/models/entity/kwl_g_0d0609a1c48d59e9.geo.json": {
+      "before": "c619bebb0009185aadd0daa97969e920cfcadbb1157d8bacc3be13d1e77262f9",
+      "after": "5c590ea5b97ded05649075e336bab547df5f3cb7d3dc767f8e73ce8ee81dbfa8",
+      "uvInventory": "f38da9d0977e5277d91e870588b29229cbb07dcf596c6c389264b0ab843e63c7",
+      "repairs": 8
+    },
+    "runtime/RP/models/entity/kwl_g_58a89086740fadab.geo.json": {
+      "before": "aa609da21af691f7127e61897017876fb153e4b9c3450f9403cb6301fbb9f007",
+      "after": "79182828aeda2e8207ce8463b62286a1bdb87efa00f8e63c78b3259e9698ef17",
+      "uvInventory": "34b0b4103898b4f0b11bde5c6b29b115b3752df1772de32ce9f7551d1f32dc93",
+      "repairs": 2
+    },
+    "runtime/RP/models/entity/kwl_g_de80d082d6c1f194.geo.json": {
+      "before": "3f56ca3fc5048513dda419a17511d59d1ad2ea2d1acd8d804bd5de2b77590f00",
+      "after": "11ca5666cf60fe81e6fd9f2fa275fbe87618fc4a19a4f0f586fa30263e9b962e",
+      "uvInventory": "8454b3d303880c4124de094b6540f31255299fdb0080fab1de3d1a846bc28926",
+      "repairs": 2
+    },
+    "runtime/RP/models/entity/kwl_g_fffa1dd16b639b11.geo.json": {
+      "before": "fe7da9bb422332323e5051ec0c1a5217d42daa04cc718483c2c7890ed08af212",
+      "after": "e446c265955d01bc4ff50cd2f10bd9e9896d93098f3b1263601adc582210337f",
+      "uvInventory": "654b0190c7141568dbec3db839fd32d520e5a19899fc5a46aef5778790cfd029",
+      "repairs": 6
+    },
+    "runtime/RP/models/entity/kwl_g_8a8498cbbc161be4.geo.json": {
+      "before": "c51660ba82ccba1b4d4f37342e2ef26cea5e23da747f7dd0a2b881ef8e236096",
+      "after": "ff459e37928e68465c9eacd37fc130482d219a26c756615563ffca63d0ea1b25",
+      "uvInventory": "5d823ed7cfad78a90b279c9158caf79104376c05b06d582dd29febe2ef37dcac",
+      "repairs": 1
+    },
+    "runtime/RP/models/entity/kwl_g_987bf61b8661fdfa.geo.json": {
+      "before": "c445d6806786f344d63258fe0110e2dbd95c9328bd2ca6ecb24c1c886aa0b566",
+      "after": "58e6a4307270599709d0d49232dfcc602cb538526e54f6561751f69c772eab5f",
+      "uvInventory": "41e917890c4e58353727b50cfc218c77f4274ce1fc1d4eab400f5f83dcb8af0c",
+      "repairs": 2
+    },
+    "runtime/RP/models/entity/kwl_g_dd63bdba358cf06b.geo.json": {
+      "before": "9c86efb8fcb3bd1178c20dffe65893c1ea61e5fb2400832b798bd609b1f5978f",
+      "after": "dd68ec33ec9a9ed36053a544ce949b0685e4eb6a25508fd9f12b4939c286bef3",
+      "uvInventory": "7c4d9f9cf40cf490c7069f3bec87107fd07ab490dade416eb99a69b1ab86c52e",
+      "repairs": 4
+    }
+  }
+}

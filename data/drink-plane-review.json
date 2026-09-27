@@ -1,94 +1,174 @@
 {
   "baseline": "e9dd865776a1172fa3dffb096a3a29eb3bc907d7",
-  "reason": "Separate coincident front/back faces by 0.02 model units on the zero-thickness axis, preserving both original UVs and all other axes.",
+  "reason": "Reviewed thin-sheet and same-facing depth separation; every source face UV preserved.",
   "files": {
     "runtime/RP/models/entity/kwl_g_55d1f4143d811e02.geo.json": {
       "before": "acb0d14cf80341ebd092047f4cb1c33cf2126af598145eb3010541782ff2c938",
-      "after": "a0cafa4554790796b3cdab9b30c86af0d88ad84102eb6f190f3061481cfda9ea"
+      "after": "da8188772955586bc24a66ef5715da64c7f150f33ef415ed8a9c12bf7fe2fd75"
     },
     "runtime/RP/models/entity/kwl_g_a21c149365149f85.geo.json": {
       "before": "27a5b3c695089eda130ba071465190e78cb457686d494919355ab256e3988b03",
-      "after": "8cbc678fab699ddaa0445b3ea2f51b75a221235492503fd5e1c5580897fbd58a"
+      "after": "54fdab31331a5307327d2109d2a0b2855596dffb27b6612607240be6b9b6ef90"
     },
     "runtime/RP/models/entity/kwl_g_5f317f0af7de6211.geo.json": {
       "before": "2931d50cfb440b5934a644c70b8e19e71a9aca0980e6bac8fa970405d186f03c",
-      "after": "e1f45a96fcb48630e8ab9bf56a5058e50109e57ca8b81718c176ee1c079e86f9"
+      "after": "e09fea9db487b57fabfdc75934b5c3813ca130e316168e46c20eefe24197cacb"
     },
     "runtime/RP/models/entity/kwl_g_2439d66f4d78571d.geo.json": {
       "before": "9ae04af225619c626574879bd8f613f1897497bacd6b98ac5e42e387ef163a5a",
-      "after": "38359b523f40b278c66b96ab748bb5f45c53870b2c3cebba7c1d6468375abae2"
+      "after": "0dd2b3b24892dc8b5ca0d3f7930b9b6b70ab6f2b10eadd0bad8391a3aa13006b"
     },
     "runtime/RP/models/entity/kwl_g_cf0e198621ddb72d.geo.json": {
       "before": "a150a3d145681c80d25725ce9a00787cabd2d2c033e1d64dd3f125db2b5a26d1",
-      "after": "5001d028a2a3b037d029209918659d6a4ff75e64674dec14248da6231bdf48ce"
+      "after": "d8cf2fff24083c44a6f47e33f070488a92b4f10db2cc117712be290f44c551c3"
     },
     "runtime/RP/models/entity/kwl_g_d17bbb0c984a1424.geo.json": {
       "before": "2971957f9850f4d2c3b04af23b82ddf35e02f090c4e6dc75ede0bfed48aae961",
-      "after": "0a364fea2779aa3f64bbca43e99da59171ae87a16db8847f4a6dc0c6ecc4e730"
+      "after": "5fff2f7f0bb7a5407fefe577fddc7653b3885303377024af2029a396820f137e"
     },
     "runtime/RP/models/entity/kwl_g_c95b474969a48785.geo.json": {
       "before": "7544e3689271197b11e96a06517c5e57e92b51a0656a4cf2578d5c486489950b",
-      "after": "e77b4c743c0e95a5b600e23b325e30f98828fddb88905a0906fc2884da060274"
+      "after": "47bfb9cc37482947e9e0a658df61d4acc7a7e6f585c0365b4e43b3fecf9eb254"
     },
     "runtime/RP/models/entity/kwl_g_b9dead9920359fd1.geo.json": {
       "before": "a70e1d83224dbfcd0bf2b7c30f2e64931df531285ebe6bd2e4de4c9922ab2205",
-      "after": "bb4a25ec5384f90b8faf890ea11000efb8771087d366601335c16d9446e71784"
+      "after": "c508179a8f490fcf492b43a704c480e71e948536b650eebcfb2af5aa8089ab2d"
     },
     "runtime/RP/models/entity/kwl_g_d46cc6545ec13ac4.geo.json": {
       "before": "15d5bd9715e20d3cbf8dbeecfcd6eceaa745c339af0b540ea5006f0b3b9cffe0",
-      "after": "b4b567f9a3fa73c0cd9586d7405999eda917d7fa766ee55d0043856236fc7ff2"
+      "after": "54fb06f578e44b14e13370ba96f09fc2a1e5fcab07f28aedac004410205acda5"
     },
     "runtime/RP/models/entity/kwl_g_2a624035225efb2a.geo.json": {
       "before": "8885f43adaf83498449f68c65f1f62eabdaeb244289ca686bc29339afd9dc27c",
-      "after": "c7f83fa9da4e6b5bf5cee61ff059bce0a601243f5ff112f2eea3544be80f8059"
+      "after": "cfdc1ccb258e78be4d97dacee36635fe6e980367d4953679dd9e1361ba706750"
     },
     "runtime/RP/models/entity/kwl_g_ca6348dcb1aa0765.geo.json": {
       "before": "a47d97ee5edec93bc9600c45fe8f276458da4d64ebb7f0eac608ba77e7520e8f",
-      "after": "cbfb189726a50f77cf5975b16daa1e61533bedc928b553e974e8bd3f0b40acbb"
+      "after": "036d2bf9dfaaa93f8580f02d21b779307386b8a604e120568336e20e0d55dc5f"
     },
     "runtime/RP/models/entity/kwl_g_a4ee7f81b9ec6d56.geo.json": {
       "before": "bd2b6fd09a244b86947716309f26687ffab04a6c6ce3b0cfa9d57dbde1f6ed78",
-      "after": "aa463aacb8196766cd86b1657ed73b870e3e188b6601481ab461675de9a14e3a"
+      "after": "f24b7e91c62cc88db62c471defae2348d99f5f97dbf6a5e96a94c83e86104c36"
     },
     "runtime/RP/models/entity/kwl_g_f38e665f0987bac0.geo.json": {
       "before": "d78a55c10b6fc906d7a2397b70ac8e210456f91be4cd857fa009a71185386fe8",
-      "after": "92d3c677d90e9612549340d907e43d5b2fad688bebd519fc2d0e130aa9ec508c"
+      "after": "af723d5c461952c488386b9497022da2240ddf85b57cc38fafd2c650c3edc6f4"
     },
     "runtime/RP/models/entity/kwl_g_ee1f956bacf3f60c.geo.json": {
       "before": "92916d1dc6ec3435815ee33cace110305a85d407a1951143dc27733bd1126546",
-      "after": "188ae1865ed9e8b79ff454250c4156924f7738812a2e96519422ed13ffe47771"
+      "after": "d52c48df726bfb80349e0063440299ecb267af7c6da7d9c2bce360dd782ded29"
     },
     "runtime/RP/models/entity/kwl_g_3790699d01b991f1.geo.json": {
       "before": "91ca4b9fb280a59cc9a9cce89ef74d23eef41e28ec5f8ccdac0338fce0461c68",
-      "after": "20752ad7cd687ea1264bc1613c1c5cf7f9adb039a9ece1bb5befac321a687f3c"
+      "after": "a81e80fca059f78ea513d57f6440ae46d032dd53b1913215b3af487c6848b646"
     },
     "runtime/RP/models/entity/kwl_g_42813126567a759f.geo.json": {
       "before": "0b4ac4a183d59a1f0016d578b0121185523e5b43edd0d0bc6522dc5a3758cb09",
-      "after": "79ce9b607fef76059e04a4033d21b7b2cf98d34b82caca0701cb4740a4aa13aa"
+      "after": "052bf50a1783581038967699272bddbf1bca2b52983717f2a802dc46dc54acde"
     },
     "runtime/RP/models/entity/kwl_g_5ea58d93bbf7d744.geo.json": {
       "before": "5ef070e2e31eff7dfe038226f00bc024bb75de35e3f06a9176747c68ecf08290",
-      "after": "cd860b0cb721b78d3586a8b9baff2ef4407edb2d0a9331f1b93786a4b9772009"
+      "after": "cb273b4f4bd64e2b562c61bc1f76872bce5c06e01dc4c68bbb5d4b7ee89138d0"
     },
     "runtime/RP/models/entity/kwl_g_39906ca3642f0231.geo.json": {
       "before": "f4dba8f0cccc6aa253a5211159241e99c1591c062ac16dcb1d3a3c621b814c79",
-      "after": "559356bb42b436baf5406df474de00b90e7f0e037ee6ec5fc914a64aa62b85ac"
+      "after": "be12d7aa7bf0c59a69e37f0c0942a6bfde6584a4c488ba18a1729d93b8173b22"
     },
     "runtime/RP/models/entity/kwl_g_786a423a6bad5e4e.geo.json": {
       "before": "0e26c0d7b6b89d8305fe372c17064480d5fd4abd0b5d60a94a7e08dd67580b30",
-      "after": "2c5778a06fd21b8322e48d084f29df7ea787cc71bdc14980ad798a86ff23cfa9"
+      "after": "887914c84646fea84c34f9284b7f7b6e02a319b48ba03189b9ce4bc63aa598c9"
     },
     "runtime/RP/models/entity/kwl_g_8a8498cbbc161be4.geo.json": {
       "before": "d5cfe8c5e6784ad95865434e11da1c71e12b8167ba1c221d256090101b39be51",
-      "after": "c51660ba82ccba1b4d4f37342e2ef26cea5e23da747f7dd0a2b881ef8e236096"
+      "after": "ff459e37928e68465c9eacd37fc130482d219a26c756615563ffca63d0ea1b25"
     },
     "runtime/RP/models/entity/kwl_g_987bf61b8661fdfa.geo.json": {
       "before": "f09f6dba297fe91c9dd08e486219bd8290f960964988e50a5d3a12039fdbdc08",
-      "after": "c445d6806786f344d63258fe0110e2dbd95c9328bd2ca6ecb24c1c886aa0b566"
+      "after": "58e6a4307270599709d0d49232dfcc602cb538526e54f6561751f69c772eab5f"
     },
     "runtime/RP/models/entity/kwl_g_dd63bdba358cf06b.geo.json": {
       "before": "de4efe1ebff2d196c9661411dce7ba14b7ae3180a41f1154ea4482addd77f5f8",
-      "after": "9c86efb8fcb3bd1178c20dffe65893c1ea61e5fb2400832b798bd609b1f5978f"
+      "after": "dd68ec33ec9a9ed36053a544ce949b0685e4eb6a25508fd9f12b4939c286bef3"
+    },
+    "runtime/RP/models/entity/kwl_g_c2d80d876c810f01.geo.json": {
+      "before": "88e7e08937388cceb10555253398cda958c57e57689e7603e986cf81163d4fdc",
+      "after": "694dd354e9dcf9852130f65ddae84ce4333f11b41584acc2a68ded2ae77f25a8"
+    },
+    "runtime/RP/models/entity/kwl_g_088ce8ce7ef94a90.geo.json": {
+      "before": "2b0979eecf1f2d19d98f16efa899425a2cdfc1892f5ffecd114d5805db204014",
+      "after": "2df2b6c966670f47e0df6fbb280aebf2e78eb0eaaa3eb2b6887e3b0fa8d5b01c"
+    },
+    "runtime/RP/models/entity/kwl_g_0eaa2cac76f6618c.geo.json": {
+      "before": "ba1144ec68d553ea506e6bdd5e8d6fab62e4b1e687b527afa89064917e778b3d",
+      "after": "22533d85ab98d36a07134054f802b5f42ea14d6b4bdda8c8aac5527f7e2fcea8"
+    },
+    "runtime/RP/models/entity/kwl_g_7c9f5c302e968f71.geo.json": {
+      "before": "801d4c1bb53083d4f170b5ea1f4c2bbaa5675913ad3268c18633dbe0bbe88cc6",
+      "after": "9627b9853d8add94b9aee20f1ddff748976ced9c74033db4ce36067f421a7acd"
+    },
+    "runtime/RP/models/entity/kwl_g_13843eba24d8c829.geo.json": {
+      "before": "18a032689823f6495f94ded49dd1716178e8d1e5f5b7e625f3179edb8312fa79",
+      "after": "81f859389fce6cdc47f1af8c5b97e1fb062b37215c06af60e5eb6d89d221fdfc"
+    },
+    "runtime/RP/models/entity/kwl_g_b44b46e4ed1b5592.geo.json": {
+      "before": "f3665aa2f39c6e48eaf769aff79742ff17f7481707142bcdff673256e7f1a189",
+      "after": "da2be821410f9a977e205a9681ef882921736e8c988182fd7de7819ee7bf9c32"
+    },
+    "runtime/RP/models/entity/kwl_g_106eaabfdd755956.geo.json": {
+      "before": "7ab45e1f2fa9ffb3e2be1d073a83f26956442d506cc33ccf7013838ab6dccf3f",
+      "after": "eebad9281a42d860b0288245e9c5037e9e77389d7c83f342e90e9e92ff3a175b"
+    },
+    "runtime/RP/models/entity/kwl_g_bf54b74cd369210a.geo.json": {
+      "before": "990b51a6a0e484a8912cef9c26f7fbffe75ab08c9194299629d2ee544624df90",
+      "after": "6ef8e7e22d0002a041788470f4188f67e6a9965cb42c21bee262966cc29ea932"
+    },
+    "runtime/RP/models/entity/kwl_g_e6aa60154803f768.geo.json": {
+      "before": "ba37c89d5a7aa08cde089742f57e2aa33ccad674227b1cefafe38a537b688886",
+      "after": "01057cac8a5883b885edb5c5f43b47edab94602dadcf464b1466932ed99bfc86"
+    },
+    "runtime/RP/models/entity/kwl_g_ef808015813f7f6f.geo.json": {
+      "before": "45c73e69e9357f13dae830304aabc54621c991f71fda14ff479872bc9c649d81",
+      "after": "b994a447b33a140e17ed14dafaeed9ceca3613ca358dbd6c53c44d51bc07d44a"
+    },
+    "runtime/RP/models/entity/kwl_g_f4e8802aeefbe745.geo.json": {
+      "before": "66a9ad57b401c99c0f7d9f3479c442a0b1ff2e3355c376b77b20e0db9e7120e7",
+      "after": "52658b61ee8222ada7e70049dd0b2d46a0910928f2e4dbc4bb597b10512673ec"
+    },
+    "runtime/RP/models/entity/kwl_g_63c6c989bb9185d9.geo.json": {
+      "before": "7598d8582406ebb79e65157c6a05b842c7ee625d57f3e29970e7d1a043395750",
+      "after": "551861eb2d300e3dfe5df52da07e7ec62c941b32276a5fc845a75e48f1ffa838"
+    },
+    "runtime/RP/models/entity/kwl_g_4ac5de89f41d3f5f.geo.json": {
+      "before": "0856c57e2117d1375ed07bc027450321a307673fc3089efab8657061453ddc5f",
+      "after": "1b7e93dfc40c94d488c2b948d8b6a0169c1a908b3e83d7b1d8c6c7c57da28baa"
+    },
+    "runtime/RP/models/entity/kwl_g_b368e83514cfebcc.geo.json": {
+      "before": "8b76c201d5f0a2acf5881b6de9555fbe8a95762d644bdf9cbf7fc0739043f25a",
+      "after": "d319e39f53b6d7772b0f6a86d39b200fc038e1c1db2df3dc160178ece1a46eea"
+    },
+    "runtime/RP/models/entity/kwl_g_33d63e30edb0052d.geo.json": {
+      "before": "d1c7c80e7c6e230775eb9d8723a09c489e1957b9016858faecadda1b64d41715",
+      "after": "4339012ddeba7e9aa535b6f7c0b87dcde3805056ff727724d817704cf7df83f0"
+    },
+    "runtime/RP/models/entity/kwl_g_83f8f8824eba9010.geo.json": {
+      "before": "d778012b3d2c60ab0e8cc5cfcd82d8e9b522790d382e246a80752c2915f0aae0",
+      "after": "5f12273948c0c104cc71bb1f76442f766b592e42cec28fcd687fc6e8353cd450"
+    },
+    "runtime/RP/models/entity/kwl_g_0d0609a1c48d59e9.geo.json": {
+      "before": "c619bebb0009185aadd0daa97969e920cfcadbb1157d8bacc3be13d1e77262f9",
+      "after": "5c590ea5b97ded05649075e336bab547df5f3cb7d3dc767f8e73ce8ee81dbfa8"
+    },
+    "runtime/RP/models/entity/kwl_g_58a89086740fadab.geo.json": {
+      "before": "aa609da21af691f7127e61897017876fb153e4b9c3450f9403cb6301fbb9f007",
+      "after": "79182828aeda2e8207ce8463b62286a1bdb87efa00f8e63c78b3259e9698ef17"
+    },
+    "runtime/RP/models/entity/kwl_g_de80d082d6c1f194.geo.json": {
+      "before": "3f56ca3fc5048513dda419a17511d59d1ad2ea2d1acd8d804bd5de2b77590f00",
+      "after": "11ca5666cf60fe81e6fd9f2fa275fbe87618fc4a19a4f0f586fa30263e9b962e"
+    },
+    "runtime/RP/models/entity/kwl_g_fffa1dd16b639b11.geo.json": {
+      "before": "fe7da9bb422332323e5051ec0c1a5217d42daa04cc718483c2c7890ed08af212",
+      "after": "e446c265955d01bc4ff50cd2f10bd9e9896d93098f3b1263601adc582210337f"
     }
   }
 }

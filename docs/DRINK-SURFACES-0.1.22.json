@@ -1,0 +1,15 @@
+{
+  "modifiedModels": 42,
+  "maximumFaceVertexShiftModelUnits": 0.11500000000000021,
+  "maximumFaceVertexShiftBlocks": 0.007187500000000013,
+  "texturesAndAnimationFilesChanged": false,
+  "clientTest": false,
+  "geometriesChecked": 66,
+  "renderedFacesChecked": 4372,
+  "sameFacingDepthConflictsRemaining": 0,
+  "depthToleranceModelUnits": 0.025,
+  "originalFaceUVsPreserved": true,
+  "regenerationIdempotent": true,
+  "nativeBdsTest": "pending",
+  "clientVisualTest": "pending"
+}
