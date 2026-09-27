@@ -1,9 +1,9 @@
 {
-  "version": "0.1.18",
-  "tag": "v0.1.18-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.18 — 固定七大指南分類與獨立條目",
+  "version": "0.1.19",
+  "tag": "v0.1.19-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.19 — 移除多餘提示並修復酒櫃實體清理",
   "prerelease": true,
-  "tavern_commit": "51ab96db3ef10f1b9d23067348a32204953f4379",
-  "expected_archive_sha256": "89f2227463c17df9e33c4d4f24694a520c81094c1af7b2ec3a31f7e0315c6ed5",
-  "validation_evidence": "docs/GUIDE-REPAIR-0.1.18.json"
+  "tavern_commit": "8cbce528f153977c8790ad8592f1753e681d4f43",
+  "expected_archive_sha256": "716ed94a3721ca339dfe0e1d5d6113938c766eeeb14f54df00d8bd43ddc4091d",
+  "validation_evidence": "docs/STORAGE-LIFECYCLE-0.1.19.json"
 }

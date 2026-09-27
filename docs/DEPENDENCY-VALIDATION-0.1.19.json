@@ -1,0 +1,8 @@
+{
+  "version": "0.1.19",
+  "tavernVersion": "0.6.56",
+  "ownResourceDependency": "0.1.19",
+  "guideRegeneration": "BYTE_IDENTICAL",
+  "nativeStorageCases": 8,
+  "clientAcceptance": "PENDING"
+}
