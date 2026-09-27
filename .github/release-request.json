@@ -1,9 +1,9 @@
 {
-  "version": "0.1.16",
-  "tag": "v0.1.16-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.16 — 修復冰櫃放置及告示牌原版手持",
+  "version": "0.1.17",
+  "tag": "v0.1.17-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.17 — 修正資源包及酒館依賴",
   "prerelease": true,
   "tavern_commit": "08900748b27ba70d7413e6d801b839c0ea2058c8",
-  "expected_archive_sha256": "6ec31e62ede437ffcf8b0d5df7b72e37ab41ae49fc8a5d462395a9677e850147",
-  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.16.json"
+  "expected_archive_sha256": "051c4d905d7cf35872535399a34d8846ebed775c5dd829b7c2eb095948c93281",
+  "validation_evidence": "docs/DEPENDENCY-VALIDATION-0.1.17.json"
 }

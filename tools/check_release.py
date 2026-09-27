@@ -41,6 +41,8 @@ for key,obj in read(rp/'textures/item_texture.json')['texture_data'].items():
  path=obj['textures'];check((rp/(path+'.png')).exists(),key+': missing item texture '+path)
 for key,obj in read(rp/'textures/terrain_texture.json')['texture_data'].items():
  path=obj['textures'];check((rp/(path+'.png')).exists(),key+': missing block texture '+path)
+owned_rp=read(rp/'manifest.json')['header']
+check(any(d.get('uuid')==owned_rp['uuid'] and d.get('version')==owned_rp['version'] for d in read(bp/'manifest.json').get('dependencies',[])), 'BP: stale own resource-pack dependency')
 for pack in [bp,rp]:
  m=read(pack/'manifest.json');check(m['header']['name']=='pack.name' and m['header']['description']=='pack.description',pack.name+': manifest strings')
  check(m['header']['version']==[int(n) for n in read(root/'package.json')['version'].split('.') ],pack.name+': stale package version')

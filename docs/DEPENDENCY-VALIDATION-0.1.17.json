@@ -1,0 +1,16 @@
+{
+  "version": "0.1.17",
+  "tavernVersion": "0.6.54",
+  "sourceCheck": "PASS",
+  "ownResourceDependency": "0.1.17",
+  "guideRegeneration": "BYTE_IDENTICAL",
+  "productionStack": {
+    "ok": true,
+    "packs_checked": 36,
+    "resource_packs": 18,
+    "declared_resource_packs": 18,
+    "scope_complete": true,
+    "errors": []
+  },
+  "clientVibrantAcceptance": "PENDING"
+}
