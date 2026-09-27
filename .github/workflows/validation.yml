@@ -22,6 +22,7 @@ jobs:
           # 0.6.55 audit-only follow-up: identical runtime, recognizes the already
           # reviewed freezer placement trait. Published source pins stay immutable.
           if commit == '51ab96db3ef10f1b9d23067348a32204953f4379': commit = '03a5259a0a6aae249d7f2357fb9f7b755fa5ad45'
+          if commit == '8cbce528f153977c8790ad8592f1753e681d4f43': commit = '54f44a441842eb8b4b4f8e721c3bc841a5fa01c7'
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('commit='+commit+'\n')
           PY
       - uses: actions/checkout@v4
