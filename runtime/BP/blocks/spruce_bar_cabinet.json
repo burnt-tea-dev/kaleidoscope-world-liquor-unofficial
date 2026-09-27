@@ -66,7 +66,9 @@
       "minecraft:destructible_by_mining": {
         "seconds_to_destroy": 0.6
       },
-      "minecraft:destructible_by_explosion": false,
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 2.5
+      },
       "minecraft:loot": "loot_tables/empty.json",
       "minecraft:movable": {
         "movement_type": "immovable"
@@ -78,6 +80,10 @@
           80
         ],
         "looping": true
+      },
+      "kaleidoscope_tavern:natural_break": {
+        "drop": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+        "storage": true
       }
     },
     "permutations": [

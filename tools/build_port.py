@@ -118,7 +118,8 @@ def item(item,kind='plain',javaitem=None,modelinfo=None):
 
 def block(identifier,mi,kind,states=None,perms=None):
  materials={'*':{'texture':mi['texture'],'render_method':'alpha_test_single_sided','face_dimming':True,'ambient_occlusion':0},'default':{'texture':mi['texture'],'render_method':'alpha_test_single_sided','face_dimming':False,'ambient_occlusion':0}}
- c={'minecraft:geometry':{'identifier':mi['geometry']},'minecraft:material_instances':materials,'minecraft:collision_box':False if kind in ['bottle','cocktail'] else {'origin':[-8,0,-8],'size':[16,16,16]},'minecraft:selection_box':{'origin':[-7,0,-7],'size':[14,16,14]},'minecraft:destructible_by_mining':{'seconds_to_destroy':.6},'minecraft:destructible_by_explosion':False,'minecraft:loot':'loot_tables/empty.json','minecraft:movable':{'movement_type':'immovable'}}
+ c={'minecraft:geometry':{'identifier':mi['geometry']},'minecraft:material_instances':materials,'minecraft:collision_box':False if kind in ['bottle','cocktail'] else {'origin':[-8,0,-8],'size':[16,16,16]},'minecraft:selection_box':{'origin':[-7,0,-7],'size':[14,16,14]},'minecraft:destructible_by_mining':{'seconds_to_destroy':.6},'minecraft:destructible_by_explosion':{'explosion_resistance':2.5 if 'cabinet' in identifier else 1200 if identifier.endswith(':freezer') else 1 if ':bar_stool_' in identifier else .8 if identifier.endswith('_painting') else 0},'minecraft:loot':'loot_tables/empty.json','minecraft:movable':{'movement_type':'immovable'}}
+ if kind in ('bottle','cocktail') or 'cabinet' in identifier:c['kaleidoscope_tavern:natural_break']={'drop':identifier,**({'storage':True} if 'cabinet' in identifier else {})}
  if kind=='bottle':c[KT+':bottle_display']={}
  elif kind=='cocktail':c[KT+':cocktail_cup']={};c['minecraft:tick']={'interval_range':[20,20],'looping':True}
  else:c[NS+':furniture']={};c['minecraft:tick']={'interval_range':[80,80],'looping':True}

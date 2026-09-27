@@ -55,12 +55,17 @@
       "minecraft:destructible_by_mining": {
         "seconds_to_destroy": 0.6
       },
-      "minecraft:destructible_by_explosion": false,
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 0
+      },
       "minecraft:loot": "loot_tables/empty.json",
       "minecraft:movable": {
         "movement_type": "immovable"
       },
-      "kaleidoscope_tavern:bottle_display": {}
+      "kaleidoscope_tavern:bottle_display": {},
+      "kaleidoscope_tavern:natural_break": {
+        "drop": "kaleidoscope_world_liquor:bottle_bacardi_carta_blanca"
+      }
     },
     "permutations": [
       {

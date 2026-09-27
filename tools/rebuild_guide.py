@@ -118,10 +118,10 @@ def main():
  'freezer':triple('Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid.','潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。','潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。'),
  'cabinet':triple('Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.','手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。','手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。'),
  'stool':triple('Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.','摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。','擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。'),
- 'painting':triple('Craft it using the recipe below and place it on a supporting surface.','按下方工作台配方合成，再放在支撑表面。','按下方工作台配方合成，再放在支撐表面。'),
+ 'painting':triple('Place it on a supporting surface.','放在支撑表面。','放在支撐表面。'),
  'mixer':triple('Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.','这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。','這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。'),
  'record':triple('Use it on an empty jukebox to choose randomly between the two included Java tracks. Use the jukebox with an empty hand to retrieve it. It can also be hung on a wall and retrieved with an empty hand.','对空唱片机使用，随机播放附带的两首 Java 曲目之一；空手操作唱片机可取回。也可悬挂于墙面，空手取回。','對空唱片機使用，隨機播放附帶的兩首 Java 曲目之一；空手操作唱片機可取回。也可懸掛於牆面，空手取回。'),
- 'food':triple('Make this food using the workstation and recipe shown below, then hold use to eat it.','按下方指定的工作站与配方制作，再按住使用食用。','按下方指定的工作站與配方製作，再按住使用食用。')}
+ 'food':triple('Make this food using its Preparation entry, then hold use to eat it.','从制作入口查看工作站与材料，再按住使用食用。','從製作入口查看工作站與材料，再按住使用食用。')}
  out=[];audits=[]
  for old in payload['pages']:
   short=old['id'].split('/')[-1];base=NS+':'+short;content=content_by_base.get(base)
@@ -129,7 +129,7 @@ def main():
   item=base+'_q1' if kind=='bottle' else base
   category={'bottle':'barrel','cocktail':'cocktail','freezer':'equipment','cabinet':'storage','stool':'furniture','painting':'art','record':'art','mixer':'cocktail','food':'food'}[kind]
   linked=[r for r in payload['recipes'] if r.get('output',{}).get('item')==item or item in r.get('output',{}).get('byQuality',[])]
-  freezing=freezers if kind=='freezer' else [r for r in freezers if r['result']['id']==item]
+  freezing=[r for r in freezers if r['result']['id']==item]
   crafting=[];craftrows={lc:[] for lc in LOCALES}
   for shape,c in item_crafts.get(item,[]):
    def part(v):return v.get('item') or '#'+v['tag']
@@ -152,22 +152,13 @@ def main():
   body={}
   for lc in LOCALES:
    # Standard barrel/shaker steps are owned by the Tavern guide API.
-   rows=([] if kind in ('bottle','cocktail') else [usages[kind][lc]])+craftrows[lc]
+   rows=([] if kind in ('bottle','cocktail') else [usages[kind][lc]])
    if kind=='bottle':
     r=linked[0]
     unit=r.get('unitTime',2400)/20
     rows.append(triple(f'Aging base time: {unit:g}s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.',f'熟成基础时间：{unit:g} 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。',f'熟成基礎時間：{unit:g} 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。')[lc])
     mixable=any(x['item']==base+'_q4' for x in payload['shakerInputs'])
     rows.append(triple('Only Q4–Q6 bottles accepted by the shaker input table may be used for mixology.','只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。','只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。')[lc] if mixable else triple('This bottled drink is not registered as a shaker input.','此瓶装饮品未注册为雪克杯原料。','此瓶裝飲品未註冊為雪克杯原料。')[lc])
-   for r in freezing:
-    rows.append(triple('Freezer recipe','冷冻柜配方','冷凍櫃配方')[lc]+'：'+label(r['result']['id'],lc))
-    rows.append(triple('Fluid','液体','液體')[lc]+'：'+label(r['fluid'],lc)+' '+str(r.get('fluid_amount',1000))+' mB')
-    for j,slot in enumerate(r['ingredients'],1):rows.append(triple('Input slot','原料槽','原料槽')[lc]+f' {j}：'+' / '.join(label(i,lc) for i in slot)+' × 1')
-    if not r['ingredients']:rows.append(triple('No ingredient items.','无需固体原料。','無需固體原料。')[lc])
-    rows.append(triple('Output','成品','成品')[lc]+'：'+label(r['result']['id'],lc)+' × '+str(r['result'].get('count',1)))
-    rows.append(triple('Time','时间','時間')[lc]+f"：{r['craft_time']/20:g}"+triple('s nominal; completion is rounded by the 80-tick loaded-block update cadence.','秒（标称；完成时刻受 80 tick 方块更新节奏影响）。','秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。')[lc])
-    carrier=r.get('extract_condition',{}).get('item')
-    rows.append((triple('Extraction carrier (not an ingredient)','取出容器（不是原料）','取出容器（不是原料）')[lc]+'：'+label(carrier,lc)+' × 1') if carrier else triple('Extract after opening; no carrier item required.','完成后开盖取出，无需额外容器。','完成後開蓋取出，無需額外容器。')[lc])
    if content:
     groups=content['effects'] if kind=='bottle' else [content['effects']]
     rows.append(triple('Drink effects (independent probability per effect)','饮用效果（各效果独立判定）','飲用效果（各效果獨立判定）')[lc])
@@ -176,7 +167,8 @@ def main():
      rows.append(prefix+('；'.join(effect_text(e,lc) for e in group) or triple('No listed effects.','无额外效果。','無額外效果。')[lc]))
    body[lc]='\n'.join(rows)
    if len(body[lc])>8192:raise ValueError('Page too long '+old['id'])
-  out.append({**old,'item':item,'category':category,'title':{lc:label(item,lc) for lc in LOCALES},'body':body,'recipeIds':[r['id'] for r in linked],**({'crafting':crafting} if crafting else {})})
+  preparations=[{'method':'Freezer','ingredients':[next((i for i,fluid in {'minecraft:water_bucket':'minecraft:water','minecraft:milk_bucket':NS+':milk_still',KT+':grape_bucket':KT+':grape_juice',KT+':sweet_berries_bucket':KT+':sweet_berries_juice'}.items() if fluid==r['fluid']),r['fluid']),*row],'result':item,'count':r['result'].get('count',1),'time':r['craft_time']} for r in freezing for row in __import__('itertools').product(*r['ingredients'])]
+  out.append({**{k:v for k,v in old.items() if k not in ('crafting','preparations')},'item':item,'category':category,'title':{lc:label(item,lc) for lc in LOCALES},'body':body,'recipeIds':[r['id'] for r in linked],**({'preparations':preparations or crafting} if kind in ('food','mixer') and (preparations or crafting) else {})})
   audits.append({'id':old['id'],'item':item,'category':category,'recipeIds':[r['id']for r in linked],'crafting':len(crafting),'freezerRecipes':[r['id']for r in freezing]})
  payload['pages']=out;writejs(ROOT/'runtime/BP/scripts/payload.js','payload',payload)
  audit={'guideVersion':2,'pageCount':len(out),'categories':dict(collections.Counter(p['category']for p in out)),'registeredRecipes':dict(collections.Counter(r['kind']for r in payload['recipes'])),'recipeSource':'canonical runtime registry','freezerRecipes':len(freezers),'nativeCraftingRecipes':sum(len(p.get('crafting',[]))for p in out),'pages':audits}

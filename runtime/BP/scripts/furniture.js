@@ -66,7 +66,7 @@ function interact(p,b,face,point){
  const s=read(b),h=hand(p);if(b.typeId.endsWith(':freezer'))freezer(p,b,s,h);else if(b.typeId.endsWith(':wall_record'))record(p,b,s,h);else if(b.typeId.includes(':bar_stool_')&&!h&&!p.isSneaking)sit(p,b);
 }
 function tick(b){if(b.typeId.endsWith(':freezer')){const s=read(b);if(s.remaining>0){s.remaining=Math.max(0,s.remaining-80);if(!s.remaining){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);s.output=r?.result.count??1;}save(b,s);}}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){const item=b.typeId.endsWith(':wall_record')?read(b).record:b.typeId;save(b,undefined);b.setType('minecraft:air');if(item)b.dimension.spawnItem(new ItemStack(item),center(b));}}}
-function drops(b,oldType,p){const s=read(b);save(b,undefined);if(p&&!creative(p)){const out=[[oldType.endsWith(':wall_record')?s.record:oldType,1],...(s.slots??[]).filter(Boolean).map(id=>[id,1]),...(s.input??[]).map(id=>[id,1])];if(s.output){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);if(r)out.push([r.result.id,s.output]);}for(const [id,n] of out)if(id)b.dimension.spawnItem(new ItemStack(id,n),center(b));}
+function drops(b,oldType,p){const s=read(b);save(b,undefined);if((!p||!creative(p))&&world.gameRules.doTileDrops!==false){const out=[[oldType.endsWith(':wall_record')?s.record:oldType,1],...(s.slots??[]).filter(Boolean).map(id=>[id,1]),...(s.input??[]).map(id=>[id,1])];if(s.output){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);if(r)out.push([r.result.id,s.output]);}for(const [id,n] of out)if(id)b.dimension.spawnItem(new ItemStack(id,n),center(b));}
  for(const e of b.dimension.getEntities({families:['kwl_visual'],location:center(b),maxDistance:2}))if(e.getDynamicProperty(NS+':anchor')===key(b))e.remove();
 }
 export function registerFurniture(e){e.blockComponentRegistry.registerCustomComponent(NS+':furniture',{
@@ -74,7 +74,7 @@ export function registerFurniture(e){e.blockComponentRegistry.registerCustomComp
  onPlace:e=>{if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}save(e.block,undefined);},
  onPlayerInteract:e=>{try{if(isManagedCabinet(e.block.typeId)){forwardNativeUse(e);return;}interact(e.player,e.block,e.face,e.faceLocation);}catch(err){console.warn('[World Liquor] '+err);}},
  onTick:e=>{try{if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}tick(e.block);}catch(err){console.warn('[World Liquor] '+err);}},
- onPlayerBreak:e=>{try{if(isManagedCabinet(e.brokenBlockPermutation.type.id))return;drops(e.block,e.brokenBlockPermutation.type.id,e.player);}catch(err){console.warn('[World Liquor] '+err);}}
+ onBreak:e=>{try{if(isManagedCabinet(e.brokenBlockPermutation.type.id))return;drops(e.block,e.brokenBlockPermutation.type.id,e.entitySource?.typeId==='minecraft:player'?e.entitySource:undefined);}catch(err){console.warn('[World Liquor] '+err);}}
  });}
 export function installFurniture(){
  // Missing/old host: preserve legacy contents rather than falling back to a

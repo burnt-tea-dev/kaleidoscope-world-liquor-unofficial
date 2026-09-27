@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -5022,27 +5022,14 @@ export const payload = {
         "zh_TW": "白色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = White Carpet\n· = empty slot; keep the shown arrangement.\nOutput：White Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 白色地毯\n· 表示空格，按图中相对位置摆放。\n成品：白色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 白色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：白色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_white",
       "item": "kaleidoscope_world_liquor:bar_stool_white",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:white_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_white"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_orange",
@@ -5052,27 +5039,14 @@ export const payload = {
         "zh_TW": "橙色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Orange Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Orange Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 橙色地毯\n· 表示空格，按图中相对位置摆放。\n成品：橙色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 橙色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：橙色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_orange",
       "item": "kaleidoscope_world_liquor:bar_stool_orange",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:orange_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_orange"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_magenta",
@@ -5082,27 +5056,14 @@ export const payload = {
         "zh_TW": "品紅色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Magenta Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Magenta Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 品红色地毯\n· 表示空格，按图中相对位置摆放。\n成品：品红色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 洋紅色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：品紅色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_magenta",
       "item": "kaleidoscope_world_liquor:bar_stool_magenta",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:magenta_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_magenta"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_light_blue",
@@ -5112,27 +5073,14 @@ export const payload = {
         "zh_TW": "淺藍色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Light Blue Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Light Blue Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 淡蓝色地毯\n· 表示空格，按图中相对位置摆放。\n成品：浅蓝色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 淺藍色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：淺藍色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_light_blue",
       "item": "kaleidoscope_world_liquor:bar_stool_light_blue",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:light_blue_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_light_blue"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_yellow",
@@ -5142,27 +5090,14 @@ export const payload = {
         "zh_TW": "黃色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Yellow Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Yellow Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 黄色地毯\n· 表示空格，按图中相对位置摆放。\n成品：黄色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 黃色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：黃色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_yellow",
       "item": "kaleidoscope_world_liquor:bar_stool_yellow",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:yellow_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_yellow"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_lime",
@@ -5172,27 +5107,14 @@ export const payload = {
         "zh_TW": "黃綠色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Lime Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Lime Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 黄绿色地毯\n· 表示空格，按图中相对位置摆放。\n成品：黄绿色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 淺綠色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：黃綠色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_lime",
       "item": "kaleidoscope_world_liquor:bar_stool_lime",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:lime_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_lime"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_pink",
@@ -5202,27 +5124,14 @@ export const payload = {
         "zh_TW": "粉色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Pink Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Pink Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 粉红色地毯\n· 表示空格，按图中相对位置摆放。\n成品：粉色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 粉紅色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：粉色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_pink",
       "item": "kaleidoscope_world_liquor:bar_stool_pink",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:pink_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_pink"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_gray",
@@ -5232,27 +5141,14 @@ export const payload = {
         "zh_TW": "灰色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Gray Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Gray Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 灰色地毯\n· 表示空格，按图中相对位置摆放。\n成品：灰色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 灰色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：灰色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_gray",
       "item": "kaleidoscope_world_liquor:bar_stool_gray",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:gray_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_gray"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_light_gray",
@@ -5262,27 +5158,14 @@ export const payload = {
         "zh_TW": "淺灰色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Light Gray Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Light Gray Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 淡灰色地毯\n· 表示空格，按图中相对位置摆放。\n成品：浅灰色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 淺灰色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：淺灰色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_light_gray",
       "item": "kaleidoscope_world_liquor:bar_stool_light_gray",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:light_gray_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_light_gray"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_cyan",
@@ -5292,27 +5175,14 @@ export const payload = {
         "zh_TW": "青色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Cyan Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Cyan Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 青色地毯\n· 表示空格，按图中相对位置摆放。\n成品：青色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 青色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：青色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_cyan",
       "item": "kaleidoscope_world_liquor:bar_stool_cyan",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:cyan_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_cyan"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_purple",
@@ -5322,27 +5192,14 @@ export const payload = {
         "zh_TW": "紫色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Purple Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Purple Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 紫色地毯\n· 表示空格，按图中相对位置摆放。\n成品：紫色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 紫色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：紫色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_purple",
       "item": "kaleidoscope_world_liquor:bar_stool_purple",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:purple_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_purple"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_blue",
@@ -5352,27 +5209,14 @@ export const payload = {
         "zh_TW": "藍色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Blue Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Blue Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 蓝色地毯\n· 表示空格，按图中相对位置摆放。\n成品：蓝色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 藍色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：藍色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_blue",
       "item": "kaleidoscope_world_liquor:bar_stool_blue",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:blue_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_blue"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_brown",
@@ -5382,27 +5226,14 @@ export const payload = {
         "zh_TW": "棕色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Brown Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Brown Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 棕色地毯\n· 表示空格，按图中相对位置摆放。\n成品：棕色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 棕色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：棕色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_brown",
       "item": "kaleidoscope_world_liquor:bar_stool_brown",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:brown_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_brown"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_green",
@@ -5412,27 +5243,14 @@ export const payload = {
         "zh_TW": "綠色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Green Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Green Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 绿色地毯\n· 表示空格，按图中相对位置摆放。\n成品：绿色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 綠色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：綠色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_green",
       "item": "kaleidoscope_world_liquor:bar_stool_green",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:green_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_green"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_red",
@@ -5442,27 +5260,14 @@ export const payload = {
         "zh_TW": "紅色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Red Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Red Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 红色地毯\n· 表示空格，按图中相对位置摆放。\n成品：红色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 紅色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：紅色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_red",
       "item": "kaleidoscope_world_liquor:bar_stool_red",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:red_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_red"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bar_stool_black",
@@ -5472,27 +5277,14 @@ export const payload = {
         "zh_TW": "黑色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.\nCrafting Table • Shaped\nW / C / L\nC = Chain\nL = Iron Ingot\nW = Black Carpet\n· = empty slot; keep the shown arrangement.\nOutput：Black Square Bar Stool × 1",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。\n工作台｜有序合成\nW / C / L\nC = 锁链\nL = 铁锭\nW = 黑色地毯\n· 表示空格，按图中相对位置摆放。\n成品：黑色高脚方凳 × 1",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。\n工作台｜有序合成\nW / C / L\nC = 鎖鏈\nL = 鐵錠\nW = 黑色地毯\n· 表示空格，按圖中相對位置擺放。\n成品：黑色高腳方凳 × 1"
+        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
+        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
+        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_black",
       "item": "kaleidoscope_world_liquor:bar_stool_black",
-      "category": "furniture",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:black_carpet",
-            "minecraft:chain",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bar_stool_black"
-        }
-      ]
+      "category": "furniture"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/oak_bar_cabinet",
@@ -5502,32 +5294,14 @@ export const payload = {
         "zh_TW": "橡木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Oak Slab\n· = empty slot; keep the shown arrangement.\nOutput：Oak Bar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 橡木台阶\n· 表示空格，按图中相对位置摆放。\n成品：橡木酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 橡木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：橡木酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/oak_bar_cabinet",
       "item": "kaleidoscope_world_liquor:oak_bar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:oak_bar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/oak_cellar_cabinet",
@@ -5537,33 +5311,14 @@ export const payload = {
         "zh_TW": "橡木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Oak Slab\n· = empty slot; keep the shown arrangement.\nOutput：Oak Cellar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 橡木台阶\n· 表示空格，按图中相对位置摆放。\n成品：橡木窖藏酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 橡木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：橡木窖藏酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/oak_cellar_cabinet",
       "item": "kaleidoscope_world_liquor:oak_cellar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab",
-            "minecraft:oak_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:oak_cellar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/birch_bar_cabinet",
@@ -5573,32 +5328,14 @@ export const payload = {
         "zh_TW": "白樺木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Birch Slab\n· = empty slot; keep the shown arrangement.\nOutput：Birch Bar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 白桦木台阶\n· 表示空格，按图中相对位置摆放。\n成品：白桦木酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 樺木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：白樺木酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/birch_bar_cabinet",
       "item": "kaleidoscope_world_liquor:birch_bar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:birch_bar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/birch_cellar_cabinet",
@@ -5608,33 +5345,14 @@ export const payload = {
         "zh_TW": "白樺木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Birch Slab\n· = empty slot; keep the shown arrangement.\nOutput：Birch Cellar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 白桦木台阶\n· 表示空格，按图中相对位置摆放。\n成品：白桦木窖藏酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 樺木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：白樺木窖藏酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/birch_cellar_cabinet",
       "item": "kaleidoscope_world_liquor:birch_cellar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab",
-            "minecraft:birch_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:birch_cellar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/spruce_bar_cabinet",
@@ -5644,32 +5362,14 @@ export const payload = {
         "zh_TW": "雲杉木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Dark Oak Slab\n· = empty slot; keep the shown arrangement.\nOutput：Spruce Bar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 深色橡木台阶\n· 表示空格，按图中相对位置摆放。\n成品：云杉木酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 黑橡木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：雲杉木酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/spruce_bar_cabinet",
       "item": "kaleidoscope_world_liquor:spruce_bar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:spruce_bar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/spruce_cellar_cabinet",
@@ -5679,33 +5379,14 @@ export const payload = {
         "zh_TW": "雲杉木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Dark Oak Slab\n· = empty slot; keep the shown arrangement.\nOutput：Spruce Cellar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 深色橡木台阶\n· 表示空格，按图中相对位置摆放。\n成品：云杉木窖藏酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 黑橡木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：雲杉木窖藏酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/spruce_cellar_cabinet",
       "item": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab",
-            "minecraft:dark_oak_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:spruce_cellar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/dark_oak_bar_cabinet",
@@ -5715,32 +5396,14 @@ export const payload = {
         "zh_TW": "深色橡木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Spruce Slab\n· = empty slot; keep the shown arrangement.\nOutput：Dark Oak Bar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 云杉木台阶\n· 表示空格，按图中相对位置摆放。\n成品：深色橡木酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 杉木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：深色橡木酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/dark_oak_bar_cabinet",
       "item": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:dark_oak_bar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/dark_oak_cellar_cabinet",
@@ -5750,33 +5413,14 @@ export const payload = {
         "zh_TW": "深色橡木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Spruce Slab\n· = empty slot; keep the shown arrangement.\nOutput：Dark Oak Cellar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 云杉木台阶\n· 表示空格，按图中相对位置摆放。\n成品：深色橡木窖藏酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 杉木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：深色橡木窖藏酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/dark_oak_cellar_cabinet",
       "item": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab",
-            "minecraft:spruce_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/cherry_bar_cabinet",
@@ -5786,32 +5430,14 @@ export const payload = {
         "zh_TW": "櫻花木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / X·X / XXX\nX = Cherry Slab\n· = empty slot; keep the shown arrangement.\nOutput：Cherry Bar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 樱花木台阶\n· 表示空格，按图中相对位置摆放。\n成品：樱花木酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / X·X / XXX\nX = 櫻花木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：櫻花木酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/cherry_bar_cabinet",
       "item": "kaleidoscope_world_liquor:cherry_bar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:cherry_bar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/cherry_cellar_cabinet",
@@ -5821,33 +5447,14 @@ export const payload = {
         "zh_TW": "櫻花木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.\nCrafting Table • Shaped\nXXX / XXX / XXX\nX = Cherry Slab\n· = empty slot; keep the shown arrangement.\nOutput：Cherry Cellar Cabinet × 1",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 樱花木台阶\n· 表示空格，按图中相对位置摆放。\n成品：樱花木窖藏酒柜 × 1",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。\n工作台｜有序合成\nXXX / XXX / XXX\nX = 櫻花木半磚\n· 表示空格，按圖中相對位置擺放。\n成品：櫻花木窖藏酒櫃 × 1"
+        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
+        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
+        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/cherry_cellar_cabinet",
       "item": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
-      "category": "storage",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab",
-            "minecraft:cherry_slab"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:cherry_cellar_cabinet"
-        }
-      ]
+      "category": "storage"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/freezer",
@@ -5857,32 +5464,14 @@ export const payload = {
         "zh_TW": "冰櫃"
       },
       "body": {
-        "en_US": "Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid.\nCrafting Table • Shaped\nILI / I·I / III\nI = Iron Ingot\nL = Iron Trapdoor\n· = empty slot; keep the shown arrangement.\nOutput：Freezer × 1\nFreezer recipe：Ice\nFluid：Water 1000 mB\nNo ingredient items.\nOutput：Ice × 3\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.\nFreezer recipe：Kita Stuffed Crisps\nFluid：Sweet Berries Juice 1000 mB\nInput slot 1：Snowball × 1\nOutput：Kita Stuffed Crisps × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.\nFreezer recipe：Liangshan Ice Cone\nFluid：Milk 1000 mB\nInput slot 1：Blue Dye × 1\nOutput：Liangshan Ice Cone × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.\nFreezer recipe：Magma Block\nFluid：Lava 1000 mB\nNo ingredient items.\nOutput：Magma Block × 3\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.\nFreezer recipe：Pochi Pudding\nFluid：Grape Juice 1000 mB\nInput slot 1：Slimeball × 1\nOutput：Pochi Pudding × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtraction carrier (not an ingredient)：Bowl × 1",
-        "zh_CN": "潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。\n工作台｜有序合成\nILI / I·I / III\nI = 铁锭\nL = 铁活板门\n· 表示空格，按图中相对位置摆放。\n成品：冰柜 × 1\n冷冻柜配方：冰\n液体：水 1000 mB\n无需固体原料。\n成品：冰 × 3\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。\n冷冻柜配方：喜多夹心脆\n液体：甜浆果汁 1000 mB\n原料槽 1：雪球 × 1\n成品：喜多夹心脆 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。\n冷冻柜配方：凉山田筒\n液体：牛奶 1000 mB\n原料槽 1：蓝色染料 × 1\n成品：凉山田筒 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。\n冷冻柜配方：岩浆块\n液体：熔岩 1000 mB\n无需固体原料。\n成品：岩浆块 × 3\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。\n冷冻柜配方：波奇布丁\n液体：葡萄汁 1000 mB\n原料槽 1：黏液球 × 1\n成品：波奇布丁 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n取出容器（不是原料）：碗 × 1",
-        "zh_TW": "潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。\n工作台｜有序合成\nILI / I·I / III\nI = 鐵錠\nL = 鐵製地板門\n· 表示空格，按圖中相對位置擺放。\n成品：冰櫃 × 1\n冷凍櫃配方：冰\n液體：水 1000 mB\n無需固體原料。\n成品：冰 × 3\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。\n冷凍櫃配方：喜多夾心脆\n液體：甜莓汁 1000 mB\n原料槽 1：雪球 × 1\n成品：喜多夾心脆 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。\n冷凍櫃配方：涼山田筒\n液體：牛奶 1000 mB\n原料槽 1：藍色染料 × 1\n成品：涼山田筒 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。\n冷凍櫃配方：岩漿塊\n液體：熔岩 1000 mB\n無需固體原料。\n成品：岩漿塊 × 3\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。\n冷凍櫃配方：波奇布丁\n液體：葡萄汁 1000 mB\n原料槽 1：史萊姆球 × 1\n成品：波奇布丁 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n取出容器（不是原料）：碗 × 1"
+        "en_US": "Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid.",
+        "zh_CN": "潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。",
+        "zh_TW": "潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/freezer",
       "item": "kaleidoscope_world_liquor:freezer",
-      "category": "equipment",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:iron_ingot",
-            "minecraft:iron_trapdoor",
-            "minecraft:iron_ingot",
-            "minecraft:iron_ingot",
-            "minecraft:iron_ingot",
-            "minecraft:iron_ingot",
-            "minecraft:iron_ingot",
-            "minecraft:iron_ingot"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:freezer"
-        }
-      ]
+      "category": "equipment"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/cola",
@@ -5892,15 +5481,15 @@ export const payload = {
         "zh_TW": "可樂"
       },
       "body": {
-        "en_US": "Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.\nCrafting Table • Shapeless\nPotion item (any potion; water recommended) × 1\nSugar × 1\nInk Sac × 1\nOutput：Cola × 1",
-        "zh_CN": "这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。\n工作台｜无序合成\n药水物品（任意药水；建议用水瓶） × 1\n糖 × 1\n墨囊 × 1\n成品：可乐 × 1",
-        "zh_TW": "這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。\n工作台｜無序合成\n藥水物品（任意藥水；建議用水瓶） × 1\n糖 × 1\n墨囊 × 1\n成品：可樂 × 1"
+        "en_US": "Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.",
+        "zh_CN": "这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。",
+        "zh_TW": "這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/cola",
       "item": "kaleidoscope_world_liquor:cola",
       "category": "cocktail",
-      "crafting": [
+      "preparations": [
         {
           "method": "Crafting Table",
           "ingredients": [
@@ -5922,15 +5511,15 @@ export const payload = {
         "zh_TW": "湯力水"
       },
       "body": {
-        "en_US": "Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.\nCrafting Table • Shapeless\nPotion item (any potion; water recommended) × 1\nSugar × 1\nVines × 1\nOutput：Tonic Water × 1",
-        "zh_CN": "这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。\n工作台｜无序合成\n药水物品（任意药水；建议用水瓶） × 1\n糖 × 1\n藤蔓 × 1\n成品：汤力水 × 1",
-        "zh_TW": "這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。\n工作台｜無序合成\n藥水物品（任意藥水；建議用水瓶） × 1\n糖 × 1\n藤蔓 × 1\n成品：湯力水 × 1"
+        "en_US": "Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.",
+        "zh_CN": "这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。",
+        "zh_TW": "這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/tonic_water",
       "item": "kaleidoscope_world_liquor:tonic_water",
       "category": "cocktail",
-      "crafting": [
+      "preparations": [
         {
           "method": "Crafting Table",
           "ingredients": [
@@ -5952,14 +5541,26 @@ export const payload = {
         "zh_TW": "涼山田筒"
       },
       "body": {
-        "en_US": "Make this food using the workstation and recipe shown below, then hold use to eat it.\nFreezer recipe：Liangshan Ice Cone\nFluid：Milk 1000 mB\nInput slot 1：Blue Dye × 1\nOutput：Liangshan Ice Cone × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.",
-        "zh_CN": "按下方指定的工作站与配方制作，再按住使用食用。\n冷冻柜配方：凉山田筒\n液体：牛奶 1000 mB\n原料槽 1：蓝色染料 × 1\n成品：凉山田筒 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。",
-        "zh_TW": "按下方指定的工作站與配方製作，再按住使用食用。\n冷凍櫃配方：涼山田筒\n液體：牛奶 1000 mB\n原料槽 1：藍色染料 × 1\n成品：涼山田筒 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。"
+        "en_US": "Make this food using its Preparation entry, then hold use to eat it.",
+        "zh_CN": "从制作入口查看工作站与材料，再按住使用食用。",
+        "zh_TW": "從製作入口查看工作站與材料，再按住使用食用。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/liangshan_ice_cone",
       "item": "kaleidoscope_world_liquor:liangshan_ice_cone",
-      "category": "food"
+      "category": "food",
+      "preparations": [
+        {
+          "method": "Freezer",
+          "ingredients": [
+            "minecraft:milk_bucket",
+            "minecraft:blue_dye"
+          ],
+          "result": "kaleidoscope_world_liquor:liangshan_ice_cone",
+          "count": 1,
+          "time": 1800
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/kita_stuffed_crisp",
@@ -5969,14 +5570,26 @@ export const payload = {
         "zh_TW": "喜多夾心脆"
       },
       "body": {
-        "en_US": "Make this food using the workstation and recipe shown below, then hold use to eat it.\nFreezer recipe：Kita Stuffed Crisps\nFluid：Sweet Berries Juice 1000 mB\nInput slot 1：Snowball × 1\nOutput：Kita Stuffed Crisps × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtract after opening; no carrier item required.",
-        "zh_CN": "按下方指定的工作站与配方制作，再按住使用食用。\n冷冻柜配方：喜多夹心脆\n液体：甜浆果汁 1000 mB\n原料槽 1：雪球 × 1\n成品：喜多夹心脆 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n完成后开盖取出，无需额外容器。",
-        "zh_TW": "按下方指定的工作站與配方製作，再按住使用食用。\n冷凍櫃配方：喜多夾心脆\n液體：甜莓汁 1000 mB\n原料槽 1：雪球 × 1\n成品：喜多夾心脆 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n完成後開蓋取出，無需額外容器。"
+        "en_US": "Make this food using its Preparation entry, then hold use to eat it.",
+        "zh_CN": "从制作入口查看工作站与材料，再按住使用食用。",
+        "zh_TW": "從製作入口查看工作站與材料，再按住使用食用。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/kita_stuffed_crisp",
       "item": "kaleidoscope_world_liquor:kita_stuffed_crisp",
-      "category": "food"
+      "category": "food",
+      "preparations": [
+        {
+          "method": "Freezer",
+          "ingredients": [
+            "kaleidoscope_tavern:sweet_berries_bucket",
+            "minecraft:snowball"
+          ],
+          "result": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+          "count": 1,
+          "time": 1800
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/pochi_pudding",
@@ -5986,14 +5599,26 @@ export const payload = {
         "zh_TW": "波奇布丁"
       },
       "body": {
-        "en_US": "Make this food using the workstation and recipe shown below, then hold use to eat it.\nFreezer recipe：Pochi Pudding\nFluid：Grape Juice 1000 mB\nInput slot 1：Slimeball × 1\nOutput：Pochi Pudding × 1\nTime：90s nominal; completion is rounded by the 80-tick loaded-block update cadence.\nExtraction carrier (not an ingredient)：Bowl × 1",
-        "zh_CN": "按下方指定的工作站与配方制作，再按住使用食用。\n冷冻柜配方：波奇布丁\n液体：葡萄汁 1000 mB\n原料槽 1：黏液球 × 1\n成品：波奇布丁 × 1\n时间：90秒（标称；完成时刻受 80 tick 方块更新节奏影响）。\n取出容器（不是原料）：碗 × 1",
-        "zh_TW": "按下方指定的工作站與配方製作，再按住使用食用。\n冷凍櫃配方：波奇布丁\n液體：葡萄汁 1000 mB\n原料槽 1：史萊姆球 × 1\n成品：波奇布丁 × 1\n時間：90秒（標稱；完成時刻受 80 tick 方塊更新節奏影響）。\n取出容器（不是原料）：碗 × 1"
+        "en_US": "Make this food using its Preparation entry, then hold use to eat it.",
+        "zh_CN": "从制作入口查看工作站与材料，再按住使用食用。",
+        "zh_TW": "從製作入口查看工作站與材料，再按住使用食用。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/pochi_pudding",
       "item": "kaleidoscope_world_liquor:pochi_pudding",
-      "category": "food"
+      "category": "food",
+      "preparations": [
+        {
+          "method": "Freezer",
+          "ingredients": [
+            "kaleidoscope_tavern:grape_bucket",
+            "minecraft:slime_ball"
+          ],
+          "result": "kaleidoscope_world_liquor:pochi_pudding",
+          "count": 1,
+          "time": 1800
+        }
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:guide/magic_crispy_corner",
@@ -6003,15 +5628,15 @@ export const payload = {
         "zh_TW": "妙脆角"
       },
       "body": {
-        "en_US": "Make this food using the workstation and recipe shown below, then hold use to eat it.\nCrafting Table • Shaped\nIII / ILI / III\nI = Gold Nugget\nL = Cookie\n· = empty slot; keep the shown arrangement.\nOutput：Magic Crispy Corners × 1",
-        "zh_CN": "按下方指定的工作站与配方制作，再按住使用食用。\n工作台｜有序合成\nIII / ILI / III\nI = 金粒\nL = 曲奇\n· 表示空格，按图中相对位置摆放。\n成品：妙脆角 × 1",
-        "zh_TW": "按下方指定的工作站與配方製作，再按住使用食用。\n工作台｜有序合成\nIII / ILI / III\nI = 金粒\nL = 餅乾\n· 表示空格，按圖中相對位置擺放。\n成品：妙脆角 × 1"
+        "en_US": "Make this food using its Preparation entry, then hold use to eat it.",
+        "zh_CN": "从制作入口查看工作站与材料，再按住使用食用。",
+        "zh_TW": "從製作入口查看工作站與材料，再按住使用食用。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/magic_crispy_corner",
       "item": "kaleidoscope_world_liquor:magic_crispy_corner",
       "category": "food",
-      "crafting": [
+      "preparations": [
         {
           "method": "Crafting Table",
           "ingredients": [
@@ -6039,26 +5664,14 @@ export const payload = {
         "zh_TW": "掛畫 · 白帆小喵L"
       },
       "body": {
-        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nCyan Wool × 1\nOutput：Painting · Artist: White Sail Kitty L × 1",
-        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n青色羊毛 × 1\n成品：挂画 · 白帆小喵L × 1",
-        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n青色羊毛 × 1\n成品：掛畫 · 白帆小喵L × 1"
+        "en_US": "Place it on a supporting surface.",
+        "zh_CN": "放在支撑表面。",
+        "zh_TW": "放在支撐表面。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bfxm_painting",
       "item": "kaleidoscope_world_liquor:bfxm_painting",
-      "category": "art",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:frame",
-            "minecraft:cyan_wool"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bfxm_painting"
-        }
-      ]
+      "category": "art"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/bmt_painting",
@@ -6068,26 +5681,14 @@ export const payload = {
         "zh_TW": "掛畫 · 白饅頭"
       },
       "body": {
-        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nBread × 1\nOutput：Painting · Artist: White Bun × 1",
-        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n面包 × 1\n成品：挂画 · 白馒头 × 1",
-        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n麵包 × 1\n成品：掛畫 · 白饅頭 × 1"
+        "en_US": "Place it on a supporting surface.",
+        "zh_CN": "放在支撑表面。",
+        "zh_TW": "放在支撐表面。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bmt_painting",
       "item": "kaleidoscope_world_liquor:bmt_painting",
-      "category": "art",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:frame",
-            "minecraft:bread"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:bmt_painting"
-        }
-      ]
+      "category": "art"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/dream_painting",
@@ -6097,26 +5698,14 @@ export const payload = {
         "zh_TW": "掛畫 · 舊夢"
       },
       "body": {
-        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nLime Wool × 1\nOutput：Painting · Artist: Old Dream × 1",
-        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n黄绿色羊毛 × 1\n成品：挂画 · 旧梦 × 1",
-        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n淺綠色羊毛 × 1\n成品：掛畫 · 舊夢 × 1"
+        "en_US": "Place it on a supporting surface.",
+        "zh_CN": "放在支撑表面。",
+        "zh_TW": "放在支撐表面。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/dream_painting",
       "item": "kaleidoscope_world_liquor:dream_painting",
-      "category": "art",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:frame",
-            "minecraft:lime_wool"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:dream_painting"
-        }
-      ]
+      "category": "art"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/cha_painting",
@@ -6126,26 +5715,14 @@ export const payload = {
         "zh_TW": "掛畫 · 茶棗子"
       },
       "body": {
-        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nMagenta Wool × 1\nOutput：Painting · Artist: Tea Jujube × 1",
-        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n品红色羊毛 × 1\n成品：挂画 · 茶枣子 × 1",
-        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n洋紅色羊毛 × 1\n成品：掛畫 · 茶棗子 × 1"
+        "en_US": "Place it on a supporting surface.",
+        "zh_CN": "放在支撑表面。",
+        "zh_TW": "放在支撐表面。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/cha_painting",
       "item": "kaleidoscope_world_liquor:cha_painting",
-      "category": "art",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:frame",
-            "minecraft:magenta_wool"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:cha_painting"
-        }
-      ]
+      "category": "art"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/chen_painting",
@@ -6155,26 +5732,14 @@ export const payload = {
         "zh_TW": "掛畫 · 辰"
       },
       "body": {
-        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nLight Blue Wool × 1\nOutput：Painting · Artist: Chen × 1",
-        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n淡蓝色羊毛 × 1\n成品：挂画 · 辰 × 1",
-        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n淺藍色羊毛 × 1\n成品：掛畫 · 辰 × 1"
+        "en_US": "Place it on a supporting surface.",
+        "zh_CN": "放在支撑表面。",
+        "zh_TW": "放在支撐表面。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/chen_painting",
       "item": "kaleidoscope_world_liquor:chen_painting",
-      "category": "art",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:frame",
-            "minecraft:light_blue_wool"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:chen_painting"
-        }
-      ]
+      "category": "art"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/rabbit_painting",
@@ -6184,26 +5749,14 @@ export const payload = {
         "zh_TW": "掛畫 · 小兔子要聽話哦"
       },
       "body": {
-        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nRaw Rabbit × 1\nOutput：Painting · Artist: Be Good Little Bunny × 1",
-        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n生兔肉 × 1\n成品：挂画 · 小兔子要听话哦 × 1",
-        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n生兔肉 × 1\n成品：掛畫 · 小兔子要聽話哦 × 1"
+        "en_US": "Place it on a supporting surface.",
+        "zh_CN": "放在支撑表面。",
+        "zh_TW": "放在支撐表面。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/rabbit_painting",
       "item": "kaleidoscope_world_liquor:rabbit_painting",
-      "category": "art",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:frame",
-            "minecraft:rabbit"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:rabbit_painting"
-        }
-      ]
+      "category": "art"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/ch_painting",
@@ -6213,26 +5766,14 @@ export const payload = {
         "zh_TW": "掛畫 · 阡雪星躍F"
       },
       "body": {
-        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nOrange Wool × 1\nOutput：Painting · Artist: Star Leap Qianxue F × 1",
-        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n橙色羊毛 × 1\n成品：挂画 · 阡雪星跃F × 1",
-        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n橙色羊毛 × 1\n成品：掛畫 · 阡雪星躍F × 1"
+        "en_US": "Place it on a supporting surface.",
+        "zh_CN": "放在支撑表面。",
+        "zh_TW": "放在支撐表面。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/ch_painting",
       "item": "kaleidoscope_world_liquor:ch_painting",
-      "category": "art",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:frame",
-            "minecraft:orange_wool"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:ch_painting"
-        }
-      ]
+      "category": "art"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/qxxy_painting",
@@ -6242,26 +5783,14 @@ export const payload = {
         "zh_TW": "掛畫 · 花菜"
       },
       "body": {
-        "en_US": "Craft it using the recipe below and place it on a supporting surface.\nCrafting Table • Shapeless\nItem Frame × 1\nBirch Sapling × 1\nOutput：Painting · Artist: Cauliflower × 1",
-        "zh_CN": "按下方工作台配方合成，再放在支撑表面。\n工作台｜无序合成\n物品展示框 × 1\n白桦树苗 × 1\n成品：挂画 · 花菜 × 1",
-        "zh_TW": "按下方工作台配方合成，再放在支撐表面。\n工作台｜無序合成\n物品展示框 × 1\n樺木樹苗 × 1\n成品：掛畫 · 花菜 × 1"
+        "en_US": "Place it on a supporting surface.",
+        "zh_CN": "放在支撑表面。",
+        "zh_TW": "放在支撐表面。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/qxxy_painting",
       "item": "kaleidoscope_world_liquor:qxxy_painting",
-      "category": "art",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "minecraft:frame",
-            "minecraft:birch_sapling"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:qxxy_painting"
-        }
-      ]
+      "category": "art"
     },
     {
       "id": "kaleidoscope_world_liquor:guide/custom_record",
@@ -6271,33 +5800,14 @@ export const payload = {
         "zh_TW": "酒館唱片"
       },
       "body": {
-        "en_US": "Use it on an empty jukebox to choose randomly between the two included Java tracks. Use the jukebox with an empty hand to retrieve it. It can also be hung on a wall and retrieved with an empty hand.\nCrafting Table • Shapeless\nAny item with the Tavern alcohol tag × 9\nOutput：Bar Music Disc × 1\nThe native ingredient diagram uses wine as an example; all nine slots accept the alcohol tag stated above.",
-        "zh_CN": "对空唱片机使用，随机播放附带的两首 Java 曲目之一；空手操作唱片机可取回。也可悬挂于墙面，空手取回。\n工作台｜无序合成\n带酒馆 alcohol 标签的任意酒品 × 9\n成品：酒馆唱片 × 1\n下方配方图以葡萄酒举例；九格实际均接受上述 alcohol 标签酒品。",
-        "zh_TW": "對空唱片機使用，隨機播放附帶的兩首 Java 曲目之一；空手操作唱片機可取回。也可懸掛於牆面，空手取回。\n工作台｜無序合成\n帶酒館 alcohol 標籤的任意酒品 × 9\n成品：酒館唱片 × 1\n下方配方圖以葡萄酒舉例；九格實際均接受上述 alcohol 標籤酒品。"
+        "en_US": "Use it on an empty jukebox to choose randomly between the two included Java tracks. Use the jukebox with an empty hand to retrieve it. It can also be hung on a wall and retrieved with an empty hand.",
+        "zh_CN": "对空唱片机使用，随机播放附带的两首 Java 曲目之一；空手操作唱片机可取回。也可悬挂于墙面，空手取回。",
+        "zh_TW": "對空唱片機使用，隨機播放附帶的兩首 Java 曲目之一；空手操作唱片機可取回。也可懸掛於牆面，空手取回。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/custom_record",
       "item": "kaleidoscope_world_liquor:custom_record",
-      "category": "art",
-      "crafting": [
-        {
-          "method": "Crafting Table",
-          "ingredients": [
-            "kaleidoscope_tavern:wine_q1",
-            "kaleidoscope_tavern:wine_q1",
-            "kaleidoscope_tavern:wine_q1",
-            "kaleidoscope_tavern:wine_q1",
-            "kaleidoscope_tavern:wine_q1",
-            "kaleidoscope_tavern:wine_q1",
-            "kaleidoscope_tavern:wine_q1",
-            "kaleidoscope_tavern:wine_q1",
-            "kaleidoscope_tavern:wine_q1"
-          ],
-          "count": 1,
-          "time": 0,
-          "result": "kaleidoscope_world_liquor:custom_record"
-        }
-      ]
+      "category": "art"
     }
   ]
 };

@@ -7,7 +7,8 @@ import {BUILTIN_RECIPES} from '../../tavern-src/runtime/BP/scripts/data/recipes.
 import {FLUIDS} from '../../tavern-src/runtime/BP/scripts/data/fluids.js';
 import {buildCookeryGuidePayload} from '../../tavern-src/runtime/BP/scripts/data/cookery-guide-payload.js';
 import {encodeCookeryGuideMessages,cookery106WirePayload} from '../../tavern-src/runtime/BP/scripts/core/cookery-guide-publisher.js';
-const registry=new ExtensionRegistry({recipes:BUILTIN_RECIPES,fluids:FLUIDS});
+import {SHAKER_RECIPES} from '../../tavern-src/runtime/BP/scripts/data/mixology.js';
+const registry=new ExtensionRegistry({recipes:[...BUILTIN_RECIPES,...SHAKER_RECIPES],fluids:FLUIDS});
 registry.install(addon);
 const payload=buildCookeryGuidePayload(registry);
 const byId=new Map(payload.entries.map(e=>[e.id,e]));
@@ -17,7 +18,7 @@ for(const e of payload.entries){
  assert(categories.has(e.category),e.id+' missing category');
  for(const lc of ['en_US','zh_CN','zh_TW']){
   assert(payload.names[lc][e.id],e.id+' missing name '+lc);
-  assert(e.mechanicsByLocale[lc]?.length,e.id+' missing instructions '+lc);
+  assert(e.mechanicsByLocale[lc]?.length||e.recipes?.length,e.id+' missing instructions '+lc);
   for(const row of e.mechanicsByLocale[lc]){
    if(lc==='en_US')assert(!/[\u4e00-\u9fff]/u.test(row),e.id+' Chinese leaked into English: '+row);
    assert(!/(?:kaleidoscope_(?:tavern|world_liquor|cookery)|minecraft):[a-z]/.test(row),e.id+' raw ID in guide: '+row);
@@ -27,21 +28,26 @@ for(const e of payload.entries){
 for(const p of addon.pages){
  const entry=byId.get(p.item);assert(entry,p.item+' not projected');
  assert.equal(entry.category,({art:'decor',incense:'decor',boards:'decor'})[p.category]??p.category);
- assert.equal(entry.recipes?.length??0,p.crafting?.length??0);
+ assert.equal(entry.recipes?.length??0,p.preparations?.length??p.recipeIds.length);
  assert.equal(entry.icon,p.icon);
- for(const lc of ['en_US','zh_CN','zh_TW']){
-  const rows=entry.mechanicsByLocale[lc];
-  for(const rid of p.recipeIds){
-   const r=addon.recipes.find(r=>r.id===rid);
-   for(let i=0;i<r.ingredients.length;i++)assert(rows.some(x=>x.startsWith((lc==='en_US'?'Slot':'原料槽')+' '+(i+1)+'：')),p.item+' missing slot');
-  }
+ if(p.preparations?.length)assert.deepEqual(entry.recipes,p.preparations,'SDK discarded native preparation');
+ for(const rid of p.recipeIds){
+  const recipe=addon.recipes.find(r=>r.id===rid);
+  const preparation=entry.recipes.find(r=>r.method===({barrel:'Barrel',shaker:'Shaker'})[recipe.kind]);
+  assert(preparation,rid+' preparation missing');
  }
+
 }
 assert(!payload.entries.some(e=>e.category==='extensions'),'World Liquor dumped into Extensions');
 const around=byId.get('kaleidoscope_world_liquor:around_the_world');
-for(const lc of ['zh_CN','zh_TW'])assert(around.mechanicsByLocale[lc].some(x=>x.includes('4–6')));
-assert(around.mechanicsByLocale.zh_TW.some(x=>x.startsWith('原料槽 1')&&x.includes('孟買')));
-assert(!around.mechanicsByLocale.zh_TW.filter(x=>x.startsWith('原料槽')).some(x=>x.includes('環遊世界')),'Output appears as input');
+for(const lc of ['zh_CN','zh_TW']){
+ const labels=around.recipes[0].ingredients.map(id=>payload.names[lc][id]);
+ assert(labels.every(x=>x.includes('4–6')));assert(labels[0].includes('孟買')||labels[0].includes('孟买'));
+ assert(!labels.some(x=>x.includes('環遊世界')||x.includes('环游世界')));
+}
+for(const lc of ['en_US','zh_CN','zh_TW'])for(const [id,label]of Object.entries(payload.names[lc]))if(id.includes('/ingredient_'))assert(!/\b(?:minecraft|kaleidoscope_\w+):/.test(label),id+' unresolved '+lc+': '+label);
+assert(!byId.get('kaleidoscope_world_liquor:freezer').recipes?.length,'Freezer should explain operation, recipes belong to foods');
+assert.equal(payload.entries.filter(e=>e.recipes?.some(r=>r.method==='Freezer')).length,3);
 const extras=addon.recipes.filter(r=>r.output.item?.startsWith('kaleidoscope_tavern:'));
 for(const r of extras){assert(byId.has(r.output.item));assert(!byId.has(r.id),'Extra core recipe left as duplicate page');}
 const wire=cookery106WirePayload(payload);
@@ -57,7 +63,7 @@ const wine=JSON.parse(fs.readFileSync(new URL('../../tavern-src/runtime/BP/items
 assert(wine['minecraft:item'].components['minecraft:tags'].tags.includes('kaleidoscope_tavern:alcohol'),'Record diagram example not in actual alcohol tag');
 const report={entries:payload.entries.length,addonProducts:addon.pages.length,categories:payload.categories.length,
  barrelRecipes:addon.recipes.filter(r=>r.kind==='barrel').length,shakerRecipes:addon.recipes.filter(r=>r.kind==='shaker').length,
- extraCoreRecipes:extras.length,craftingRecipes:addon.pages.reduce((n,p)=>n+(p.crafting?.length??0),0),
+ extraCoreRecipes:extras.length,preparationRecipes:addon.pages.reduce((n,p)=>n+(p.preparations?.length??p.recipeIds.length),0),
  guidePackets:messages.length,guidePacketLimit:514,rawIdsInInstructions:false,cookery106BilingualFallback:true,modernHostLocalized:true,hostStepLimitsChecked:true,playerSimulation:false};
 const version=JSON.parse(fs.readFileSync(new URL('../runtime/BP/manifest.json',import.meta.url))).header.version;
 assert(Array.isArray(version)&&version.length===3&&version.every(n=>Number.isSafeInteger(n)&&n>=0),'Invalid pack version');

@@ -21,6 +21,13 @@ def main():
  history=importlib.util.module_from_spec(spec);spec.loader.exec_module(history)
  projection=history.LegacyMenuProjection(ROOT)
  baseline=read(ROOT/'data/storage-preserved-0.1.4.json')
+ reviewed=read(ROOT/'data/guide-destruction-review.json')
+ def historical_block_bytes(p):
+  raw=projection.read_bytes(p);change=reviewed['blocks'].get(p.relative_to(ROOT).as_posix())
+  if not change:return raw
+  assert digest(p)==change['afterSha256'],('Unreviewed block mutation',p)
+  block=json.loads(raw);c=block['minecraft:block']['components'];c['minecraft:destructible_by_explosion']=change['beforeExplosion'];c.pop('kaleidoscope_tavern:natural_break',None)
+  return (json.dumps(block,ensure_ascii=False,indent=2)+'\n').encode()
  items=readjs(ROOT/'runtime/BP/scripts/visual-items.js')
  compact=readjs(ROOT/'runtime/BP/scripts/compact-items.js')
  assert items[KT+':watermelon_juice']==44
@@ -37,11 +44,13 @@ def main():
  assert 'readTavernEffects' in effects and 'setDynamicProperty' not in effects and 'world.getAbsoluteTime' not in effects
  preserved=len(baseline['files'])-len(changed)
  for prefix,expected in baseline['trees'].items():
-  entries={p.relative_to(ROOT).as_posix():hashlib.sha256(projection.read_bytes(p)).hexdigest() for p in (ROOT/prefix).rglob('*') if p.is_file()}
+  entries={p.relative_to(ROOT).as_posix():hashlib.sha256(historical_block_bytes(p)).hexdigest() for p in (ROOT/prefix).rglob('*') if p.is_file()}
   actual=hashlib.sha256(''.join(k+'\0'+v+'\n' for k,v in sorted(entries.items())).encode()).hexdigest()
   assert len(entries)==expected['files'] and actual==expected['sha256'],prefix
   preserved+=len(entries)
  payload=readjs(ROOT/'runtime/BP/scripts/payload.js');payload.pop('version')
+ assert object_digest(payload['pages'])==reviewed['pages']['afterSha256'],'Unreviewed preparation change'
+ payload['pages']=reviewed['pages']['before']
  # Reconstruct the historical view only for explicitly reviewed guide paragraphs.
  migration=read(ROOT/'data/guide-shared-usage-migration.json')['pages']
  for page in payload['pages']:

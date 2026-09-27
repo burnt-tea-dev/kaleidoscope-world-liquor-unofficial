@@ -63,7 +63,7 @@ jobs:
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
           git rev-parse HEAD > dist/LIQUOR_COMMIT
           git -C ../tavern-src rev-parse HEAD > dist/TAVERN_COMMIT
-          cp docs/GUIDE-AUDIT-0.1.10.json docs/GUIDE-VALIDATION-0.1.10.json docs/STORAGE-VALIDATION-0.1.10.json dist/
+          cp docs/GUIDE-AUDIT-0.1.11.json docs/GUIDE-VALIDATION-0.1.11.json docs/STORAGE-VALIDATION-0.1.11.json dist/
       - uses: actions/upload-artifact@v4
         with:
           name: World-Liquor-foundation-integration
