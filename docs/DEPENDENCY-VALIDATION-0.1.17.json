@@ -12,5 +12,5 @@
     "scope_complete": true,
     "errors": []
   },
-  "clientVibrantAcceptance": "PENDING"
+  "clientVibrantAcceptance": "USER_CONFIRMED_JOIN_WITH_VIBRANT_ENABLED"
 }
