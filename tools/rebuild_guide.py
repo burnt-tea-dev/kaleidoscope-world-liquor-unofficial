@@ -73,11 +73,7 @@ def main():
   item_crafts[recipe['result']['item']].append((kind,recipe))
  # Reuse source effect names; duration=0 instant actions are not "0 second buffs".
  effects={lc:{} for lc in LOCALES}
- try:
-  from opencc import OpenCC
-  cc=OpenCC('s2t')
- except ImportError:
-  cc=None
+ traditional_effects=json.loads((ROOT/'data/guide-effect-names.zh_TW.json').read_text())
  for lc in LOCALES:
   for space in (NS,KT,'smc','kaleidoscope_twilight'):
    file=ROOT/f'upstream/assets/{space}/lang/{"zh_cn" if lc=="zh_TW" else lc.lower()}.json'
@@ -85,7 +81,7 @@ def main():
    for key,value in json.loads(file.read_text()).items():
     if key.startswith('effect.'):
      key=key.replace('effect.smc.','effect.'+NS+'.').replace('effect.kaleidoscope_twilight.','effect.'+NS+'.')
-     effects[lc][key]=cc.convert(value) if lc=='zh_TW' and cc else value
+     effects[lc][key]=traditional_effects[key] if lc=='zh_TW' else value
  effect_terms={
   'minecraft:hunger':('Hunger', '饥饿', '飢餓'),
   'minecraft:weakness':('Weakness', '虚弱', '虛弱'),
