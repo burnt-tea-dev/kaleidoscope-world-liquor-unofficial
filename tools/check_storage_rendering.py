@@ -6,9 +6,10 @@ import itertools
 import json
 import subprocess
 import sys
+import os
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-TAV=ROOT.parent/'tavern-src'
+TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
 sys.path.insert(0,str(TAV/'tools'))
 NS='kaleidoscope_world_liquor'
 KT='kaleidoscope_tavern'
@@ -23,6 +24,8 @@ def main():
  baseline=read(ROOT/'data/storage-preserved-0.1.4.json')
  reviewed=read(ROOT/'data/guide-destruction-review.json')
  plane_review=read(ROOT/'data/drink-plane-review.json')['files']
+ additions=read(ROOT/'data/freezer-visual-additions.json')['files']
+ for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed freezer addition',path)
  def historical_digest(p,raw=None):
   change=plane_review.get(p.relative_to(ROOT).as_posix())
   if change:
@@ -55,7 +58,7 @@ def main():
  assert 'readTavernEffects' in effects and 'setDynamicProperty' not in effects and 'world.getAbsoluteTime' not in effects
  preserved=len(baseline['files'])-len(changed)
  for prefix,expected in baseline['trees'].items():
-  entries={p.relative_to(ROOT).as_posix():historical_digest(p,historical_block_bytes(p)) for p in (ROOT/prefix).rglob('*') if p.is_file()}
+  entries={p.relative_to(ROOT).as_posix():historical_digest(p,historical_block_bytes(p)) for p in (ROOT/prefix).rglob('*') if p.is_file() and p.relative_to(ROOT).as_posix() not in additions}
   actual=hashlib.sha256(''.join(k+'\0'+v+'\n' for k,v in sorted(entries.items())).encode()).hexdigest()
   assert len(entries)==expected['files'] and actual==expected['sha256'],prefix
   preserved+=len(entries)

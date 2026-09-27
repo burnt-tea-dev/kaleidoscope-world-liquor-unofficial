@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:freezer_milk_still_visual",
+      "materials": {
+        "default": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/repair/freezer_milk_still"
+      },
+      "geometry": {
+        "default": "geometry.kwl.freezer_milk_still"
+      },
+      "render_controllers": [
+        "controller.render.kwl.freezer_milk_still"
+      ]
+    }
+  }
+}

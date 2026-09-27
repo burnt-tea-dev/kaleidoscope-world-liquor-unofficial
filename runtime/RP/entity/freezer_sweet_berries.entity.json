@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:freezer_sweet_berries_visual",
+      "materials": {
+        "default": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/repair/freezer_sweet_berries"
+      },
+      "geometry": {
+        "default": "geometry.kwl.freezer_sweet_berries"
+      },
+      "render_controllers": [
+        "controller.render.kwl.freezer_sweet_berries"
+      ]
+    }
+  }
+}

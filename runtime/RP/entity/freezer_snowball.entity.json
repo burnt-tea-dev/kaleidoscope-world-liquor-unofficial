@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:freezer_snowball_visual",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/repair/freezer_snowball"
+      },
+      "geometry": {
+        "default": "geometry.kwl.freezer_snowball"
+      },
+      "render_controllers": [
+        "controller.render.kwl.freezer_snowball"
+      ]
+    }
+  }
+}

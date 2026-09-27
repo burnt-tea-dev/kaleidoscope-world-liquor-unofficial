@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:freezer_blue_dye_visual",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/repair/freezer_blue_dye"
+      },
+      "geometry": {
+        "default": "geometry.kwl.freezer_blue_dye"
+      },
+      "render_controllers": [
+        "controller.render.kwl.freezer_blue_dye"
+      ]
+    }
+  }
+}

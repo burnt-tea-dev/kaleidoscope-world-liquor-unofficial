@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Asset and progression audit; no interaction emulation."""
 from pathlib import Path
-import json,re,subprocess
+import json,re,subprocess,os
 from PIL import Image
-root=Path(__file__).resolve().parents[1];tav=root.parent/'tavern-src';bp=root/'runtime/BP';rp=root/'runtime/RP'
+root=Path(__file__).resolve().parents[1];tav=Path(os.environ.get('TAVERN_ROOT',str(root.parent/'tavern-src')));bp=root/'runtime/BP';rp=root/'runtime/RP'
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 errors=[]
 def check(ok,message):

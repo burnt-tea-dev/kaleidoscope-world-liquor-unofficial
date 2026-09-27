@@ -44,7 +44,9 @@
           "stream": true,
           "weight": 1
         }
-      ]
+      ],
+      "max_distance": 64,
+      "min_distance": 16
     },
     "kaleidoscope_world_liquor.pochi_pudding_feed": {
       "category": "player",
@@ -55,6 +57,550 @@
           "weight": 1
         }
       ]
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_0": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_1": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_2": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_3": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_4": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_5": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_6": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_7": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_8": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_9": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_10": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_11": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_12": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_13": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_14": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_15": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_16": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_17": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_18": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_19": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_20": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_21": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_22": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_23": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_24": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_25": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_26": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_27": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_28": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_29": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_30": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.music_disc.random_disc.station_31": {
+      "category": "record",
+      "sounds": [
+        {
+          "name": "sounds/kwl/custom_music_1",
+          "stream": true,
+          "weight": 1
+        },
+        {
+          "name": "sounds/kwl/custom_music_2",
+          "stream": true,
+          "weight": 1
+        }
+      ],
+      "max_distance": 64,
+      "min_distance": 16
     }
   }
 }
