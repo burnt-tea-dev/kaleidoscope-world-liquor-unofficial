@@ -22,6 +22,14 @@ def main():
  projection=history.LegacyMenuProjection(ROOT)
  baseline=read(ROOT/'data/storage-preserved-0.1.4.json')
  reviewed=read(ROOT/'data/guide-destruction-review.json')
+ plane_review=read(ROOT/'data/drink-plane-review.json')['files']
+ def historical_digest(p,raw=None):
+  change=plane_review.get(p.relative_to(ROOT).as_posix())
+  if change:
+   assert digest(p)==change['after'],('Unreviewed drink plane mutation',p)
+   return change['before']
+  return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)
+
  def historical_block_bytes(p):
   raw=projection.read_bytes(p);change=reviewed['blocks'].get(p.relative_to(ROOT).as_posix())
   if not change:return raw
@@ -39,18 +47,23 @@ def main():
  # Keep the historical baseline unchanged and explicitly test its replacement.
  changed={'runtime/BP/scripts/effects.js'}
  for path,h in baseline['files'].items():
-  if path not in changed:assert digest(ROOT/path)==h,path
+  if path not in changed:assert historical_digest(ROOT/path)==h,path
  effects=(ROOT/'runtime/BP/scripts/effects.js').read_text()
  assert 'readTavernEffects' in effects and 'setDynamicProperty' not in effects and 'world.getAbsoluteTime' not in effects
  preserved=len(baseline['files'])-len(changed)
  for prefix,expected in baseline['trees'].items():
-  entries={p.relative_to(ROOT).as_posix():hashlib.sha256(historical_block_bytes(p)).hexdigest() for p in (ROOT/prefix).rglob('*') if p.is_file()}
+  entries={p.relative_to(ROOT).as_posix():historical_digest(p,historical_block_bytes(p)) for p in (ROOT/prefix).rglob('*') if p.is_file()}
   actual=hashlib.sha256(''.join(k+'\0'+v+'\n' for k,v in sorted(entries.items())).encode()).hexdigest()
   assert len(entries)==expected['files'] and actual==expected['sha256'],prefix
   preserved+=len(entries)
  payload=readjs(ROOT/'runtime/BP/scripts/payload.js');payload.pop('version')
  assert object_digest(payload['pages'])==reviewed['pages']['afterSha256'],'Unreviewed preparation change'
  payload['pages']=reviewed['pages']['before']
+ for recipe in payload['recipes']:
+  if recipe['kind']=='shaker':
+   source=read(ROOT/'upstream/data'/NS/'recipe'/(recipe['id'].split(':',1)[1]+'.json'))
+   assert recipe.pop('ingredientTags')==[slot.get('tag') for slot in source['ingredients']]
+
  # Reconstruct the historical view only for explicitly reviewed guide paragraphs.
  migration=read(ROOT/'data/guide-shared-usage-migration.json')['pages']
  for page in payload['pages']:

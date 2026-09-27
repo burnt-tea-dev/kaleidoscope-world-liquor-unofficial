@@ -423,3 +423,8 @@ subprocess.run([sys.executable,str(TAV/'tools/creative/catalog.py'),'--root',str
 
 # Native pick registrations and held icons are verified by the shared host tool.
 subprocess.run([sys.executable,str(TAV/'tools/pick_block.py'),'--root',str(ROOT),'--write'],check=True)
+
+# Separate coincident drink faces while retaining both UVs for single-sided consumers.
+sys.path.insert(0,str(TAV/'tools'))
+from repair_drink_planes import repair as repair_drink_planes
+repair_drink_planes(ROOT)

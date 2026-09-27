@@ -42,7 +42,10 @@ assert(!payload.entries.some(e=>e.category==='extensions'),'World Liquor dumped 
 const around=byId.get('kaleidoscope_world_liquor:around_the_world');
 for(const lc of ['zh_CN','zh_TW']){
  const labels=around.recipes[0].ingredients.map(id=>payload.names[lc][id]);
- assert(labels.every(x=>x.includes('4–6')));assert(labels[0].includes('孟買')||labels[0].includes('孟买'));
+ assert(labels.every(x=>x.includes('≥4')));assert(labels[0].includes('蓝')||labels[0].includes('藍'));
+ assert(labels[1].includes('黄')||labels[1].includes('黃'));assert(labels[2].includes('红')||labels[2].includes('紅'));
+ assert.equal(byId.get('kaleidoscope_world_liquor:cola').category,'ingredients');
+ assert.equal(byId.get('kaleidoscope_world_liquor:tonic_water').category,'ingredients');
  assert(!labels.some(x=>x.includes('環遊世界')||x.includes('环游世界')));
 }
 for(const lc of ['en_US','zh_CN','zh_TW'])for(const [id,label]of Object.entries(payload.names[lc]))if(id.includes('/ingredient_'))assert(!/\b(?:minecraft|kaleidoscope_\w+):/.test(label),id+' unresolved '+lc+': '+label);

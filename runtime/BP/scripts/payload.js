@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -612,7 +612,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_tavern:allium_garden"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue",
+        "kaleidoscope_tavern:cocktail_ingredient_red",
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/allium_garden2",
@@ -666,7 +671,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_tavern:allium_garden"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple",
+        "kaleidoscope_tavern:cocktail_ingredient_white",
+        "kaleidoscope_tavern:cocktail_ingredient_light_purple"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/around_the_world",
@@ -722,7 +732,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_world_liquor:around_the_world"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue",
+        "kaleidoscope_tavern:cocktail_ingredient_yellow",
+        "kaleidoscope_tavern:cocktail_ingredient_red"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/bloody_mary1",
@@ -783,7 +798,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_tavern:bloody_mary"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red",
+        "kaleidoscope_tavern:cocktail_ingredient_red",
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/depth_charge1",
@@ -837,7 +857,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_tavern:depth_charge"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue",
+        "kaleidoscope_tavern:cocktail_ingredient_blue",
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/gin_tonic",
@@ -890,7 +915,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_world_liquor:gin_tonic"
-      }
+      },
+      "ingredientTags": [
+        null,
+        "kaleidoscope_tavern:cocktail_ingredient_white",
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/godfather1",
@@ -957,7 +987,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_tavern:godfather"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red",
+        "kaleidoscope_tavern:cocktail_ingredient_white",
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/jerk",
@@ -1007,7 +1042,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_world_liquor:jerk"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green",
+        "kaleidoscope_tavern:cocktail_ingredient_aqua",
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/jerk1",
@@ -1058,7 +1098,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_world_liquor:jerk"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua",
+        "kaleidoscope_tavern:cocktail_ingredient_green",
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/long_island_iced_tea",
@@ -1104,7 +1149,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_world_liquor:long_island_iced_tea"
-      }
+      },
+      "ingredientTags": [
+        null,
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red",
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/pine_colada",
@@ -1165,7 +1215,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_world_liquor:pine_colada"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white",
+        "kaleidoscope_tavern:cocktail_ingredient_white",
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/screwdriver1",
@@ -1237,7 +1292,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_tavern:screwdriver"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold",
+        "kaleidoscope_tavern:cocktail_ingredient_white",
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/sculk_special1",
@@ -1278,7 +1338,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_tavern:sculk_special"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue",
+        "kaleidoscope_tavern:cocktail_ingredient_aqua",
+        "kaleidoscope_tavern:cocktail_ingredient_red"
+      ]
     },
     {
       "id": "kaleidoscope_world_liquor:shaker/shrimp_cocktail",
@@ -1331,7 +1396,12 @@ export const payload = {
       ],
       "output": {
         "item": "kaleidoscope_world_liquor:shrimp_cocktail"
-      }
+      },
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red",
+        "kaleidoscope_tavern:cocktail_ingredient_red",
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
+      ]
     }
   ],
   "shakerInputs": [
@@ -5488,7 +5558,7 @@ export const payload = {
       "recipeIds": [],
       "icon": "textures/kwl/items/cola",
       "item": "kaleidoscope_world_liquor:cola",
-      "category": "cocktail",
+      "category": "ingredients",
       "preparations": [
         {
           "method": "Crafting Table",
@@ -5518,7 +5588,7 @@ export const payload = {
       "recipeIds": [],
       "icon": "textures/kwl/items/tonic_water",
       "item": "kaleidoscope_world_liquor:tonic_water",
-      "category": "cocktail",
+      "category": "ingredients",
       "preparations": [
         {
           "method": "Crafting Table",

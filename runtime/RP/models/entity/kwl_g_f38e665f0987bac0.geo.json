@@ -738,36 +738,14 @@
               "origin": [
                 -6,
                 11.05,
-                -1
+                -1.01
               ],
               "size": [
                 5,
                 5.0,
-                0
+                0.02
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    5.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    5.0,
-                    5.0
-                  ],
-                  "material_instance": "default"
-                },
-                "east": {
-                  "uv": [
-                    10.0,
-                    17.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    5.0
-                  ],
-                  "material_instance": "default"
-                },
                 "south": {
                   "uv": [
                     10.0,
@@ -779,39 +757,15 @@
                   ],
                   "material_instance": "default"
                 },
-                "west": {
+                "north": {
                   "uv": [
-                    11.0,
-                    17.0
+                    5.0,
+                    0.0
                   ],
                   "uv_size": [
-                    0.0,
+                    5.0,
                     5.0
                   ],
-                  "material_instance": "default"
-                },
-                "up": {
-                  "uv": [
-                    12.0,
-                    17.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    5.0
-                  ],
-                  "uv_rotation": 90,
-                  "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    12.0,
-                    17.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    5.0
-                  ],
-                  "uv_rotation": 270,
                   "material_instance": "default"
                 }
               },
@@ -1543,36 +1497,14 @@
               "origin": [
                 2,
                 11.05,
-                -1
+                -1.01
               ],
               "size": [
                 5,
                 5.0,
-                0
+                0.02
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    5.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    5.0,
-                    5.0
-                  ],
-                  "material_instance": "default"
-                },
-                "east": {
-                  "uv": [
-                    10.0,
-                    17.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    5.0
-                  ],
-                  "material_instance": "default"
-                },
                 "south": {
                   "uv": [
                     10.0,
@@ -1584,39 +1516,15 @@
                   ],
                   "material_instance": "default"
                 },
-                "west": {
+                "north": {
                   "uv": [
-                    11.0,
-                    17.0
+                    5.0,
+                    0.0
                   ],
                   "uv_size": [
-                    0.0,
+                    5.0,
                     5.0
                   ],
-                  "material_instance": "default"
-                },
-                "up": {
-                  "uv": [
-                    12.0,
-                    17.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    5.0
-                  ],
-                  "uv_rotation": 90,
-                  "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    12.0,
-                    17.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    5.0
-                  ],
-                  "uv_rotation": 270,
                   "material_instance": "default"
                 }
               },

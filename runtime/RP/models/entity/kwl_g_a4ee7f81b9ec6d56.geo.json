@@ -736,27 +736,16 @@
           "cubes": [
             {
               "origin": [
-                -2.5864899999999995,
+                -2.5964899999999993,
                 15.05,
                 -0.5850799999999996
               ],
               "size": [
-                0.0,
+                0.02,
                 2.0,
                 3.0
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    0.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    2.0
-                  ],
-                  "material_instance": "default"
-                },
                 "east": {
                   "uv": [
                     21.0,
@@ -764,17 +753,6 @@
                   ],
                   "uv_size": [
                     -3.0,
-                    2.0
-                  ],
-                  "material_instance": "default"
-                },
-                "south": {
-                  "uv": [
-                    2.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
                     2.0
                   ],
                   "material_instance": "default"
@@ -787,28 +765,6 @@
                   "uv_size": [
                     3.0,
                     2.0
-                  ],
-                  "material_instance": "default"
-                },
-                "up": {
-                  "uv": [
-                    0.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    3.0
-                  ],
-                  "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    0.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    3.0
                   ],
                   "material_instance": "default"
                 }
@@ -1539,27 +1495,16 @@
           "cubes": [
             {
               "origin": [
-                5.4135100000000005,
+                5.403510000000001,
                 15.05,
                 -0.5850799999999996
               ],
               "size": [
-                0.0,
+                0.02,
                 2.0,
                 3.0
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    0.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    2.0
-                  ],
-                  "material_instance": "default"
-                },
                 "east": {
                   "uv": [
                     21.0,
@@ -1567,17 +1512,6 @@
                   ],
                   "uv_size": [
                     -3.0,
-                    2.0
-                  ],
-                  "material_instance": "default"
-                },
-                "south": {
-                  "uv": [
-                    2.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
                     2.0
                   ],
                   "material_instance": "default"
@@ -1590,28 +1524,6 @@
                   "uv_size": [
                     3.0,
                     2.0
-                  ],
-                  "material_instance": "default"
-                },
-                "up": {
-                  "uv": [
-                    0.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    3.0
-                  ],
-                  "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    0.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    3.0
                   ],
                   "material_instance": "default"
                 }

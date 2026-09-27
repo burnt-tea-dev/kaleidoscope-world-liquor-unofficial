@@ -63,6 +63,12 @@ def label(item,lc):
 
 def main():
  payload=loadjs(ROOT/'runtime/BP/scripts/payload.js')
+ for recipe in payload['recipes']:
+  if recipe['kind']!='shaker':continue
+  src=ROOT/'upstream/data'/NS/'recipe'/(recipe['id'].split(':',1)[1]+'.json')
+  if not src.exists():raise ValueError('Missing Java shaker source: '+str(src))
+  recipe['ingredientTags']=[slot.get('tag') for slot in json.loads(src.read_text())['ingredients']]
+
  payload['version']='.'.join(str(v) for v in json.loads((ROOT/'runtime/BP/manifest.json').read_text())['header']['version'])
  freezers=loadjs(ROOT/'runtime/BP/scripts/freezer-recipes.js')
  recipe_by_id={r['id']:r for r in payload['recipes']}
@@ -127,7 +133,7 @@ def main():
   short=old['id'].split('/')[-1];base=NS+':'+short;content=content_by_base.get(base)
   kind='bottle' if content and content['kind']=='bottle' else 'cocktail' if content else 'freezer' if short=='freezer' else 'cabinet' if 'cabinet' in short else 'stool' if short.startswith('bar_stool_') else 'painting' if short.endswith('_painting') else 'mixer' if short in ('cola','tonic_water') else 'record' if short=='custom_record' else 'food'
   item=base+'_q1' if kind=='bottle' else base
-  category={'bottle':'barrel','cocktail':'cocktail','freezer':'equipment','cabinet':'storage','stool':'furniture','painting':'art','record':'art','mixer':'cocktail','food':'food'}[kind]
+  category={'bottle':'barrel','cocktail':'cocktail','freezer':'equipment','cabinet':'storage','stool':'furniture','painting':'art','record':'art','mixer':'ingredients','food':'food'}[kind]
   linked=[r for r in payload['recipes'] if r.get('output',{}).get('item')==item or item in r.get('output',{}).get('byQuality',[])]
   freezing=[r for r in freezers if r['result']['id']==item]
   crafting=[];craftrows={lc:[] for lc in LOCALES}

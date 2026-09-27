@@ -307,27 +307,16 @@
           "cubes": [
             {
               "origin": [
-                3.26661,
+                3.2566100000000002,
                 4.45464,
                 -1
               ],
               "size": [
-                0.0,
+                0.02,
                 5.999999999999999,
                 2
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    13.0,
-                    18.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    6.0
-                  ],
-                  "material_instance": "default"
-                },
                 "east": {
                   "uv": [
                     14.0,
@@ -339,17 +328,6 @@
                   ],
                   "material_instance": "default"
                 },
-                "south": {
-                  "uv": [
-                    6.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    -6.0,
-                    10.0
-                  ],
-                  "material_instance": "default"
-                },
                 "west": {
                   "uv": [
                     16.0,
@@ -358,28 +336,6 @@
                   "uv_size": [
                     -2.0,
                     6.0
-                  ],
-                  "material_instance": "default"
-                },
-                "up": {
-                  "uv": [
-                    7.0,
-                    10.0
-                  ],
-                  "uv_size": [
-                    6.0,
-                    -10.0
-                  ],
-                  "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    13.0,
-                    24.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    -6.0
                   ],
                   "material_instance": "default"
                 }

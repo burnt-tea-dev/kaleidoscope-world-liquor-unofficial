@@ -1,6 +1,6 @@
 {
   "baseline": "e6001888f51ac0807cc29d11f1f6a3235a45e0bd",
-  "reason": "Native Cookery preparation pages and Java explosion resistance; preserve unrelated block properties, all registered gameplay recipes and drink definitions.",
+  "reason": "Native Cookery preparation pages and Java explosion resistance; preserve unrelated block properties, all registered gameplay recipes and drink definitions. 0.1.13: cola and tonic move to mixer ingredients; shader recipes keep Java ingredient tags for shared color labels.",
   "blocks": {
     "runtime/BP/blocks/bar_stool_green.json": {
       "beforeExplosion": false,
@@ -1956,6 +1956,6 @@
         ]
       }
     ],
-    "afterSha256": "9f3b4920f48f62241dbe9080ab881dd8ef61d1b156f6c2451e3ade18f6249b08"
+    "afterSha256": "c6d87f95af75c65fe6174a4194c2b890a0f565c13d8e08abb1657b080089ca18"
   }
 }

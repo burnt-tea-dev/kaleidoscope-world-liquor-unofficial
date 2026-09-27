@@ -1,9 +1,9 @@
 {
-  "version": "0.1.12",
-  "tag": "v0.1.12-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.12 — 原生手持與酒桶提示修復",
+  "version": "0.1.13",
+  "tag": "v0.1.13-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.13 — 飲品重疊面、家具碰撞與指南顏色條件",
   "prerelease": true,
-  "tavern_commit": "9510a9fbd287fc42d48872b50634a47a344e925c",
-  "expected_archive_sha256": "ca3011814c75d4649a566a2ea6a3030445658dba344e5ff5035f73b334f201ad",
-  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.12.json"
+  "tavern_commit": "0c2160dc859ca7393746e97c43d59aa37e519f1f",
+  "expected_archive_sha256": "e375d66c53382319471381ccf1ff3d0f9813b281b2f043a4789b0afa2ebddb62",
+  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.13.json"
 }

@@ -1,0 +1,94 @@
+{
+  "baseline": "e9dd865776a1172fa3dffb096a3a29eb3bc907d7",
+  "reason": "Separate coincident front/back faces by 0.02 model units on the zero-thickness axis, preserving both original UVs and all other axes.",
+  "files": {
+    "runtime/RP/models/entity/kwl_g_55d1f4143d811e02.geo.json": {
+      "before": "acb0d14cf80341ebd092047f4cb1c33cf2126af598145eb3010541782ff2c938",
+      "after": "a0cafa4554790796b3cdab9b30c86af0d88ad84102eb6f190f3061481cfda9ea"
+    },
+    "runtime/RP/models/entity/kwl_g_a21c149365149f85.geo.json": {
+      "before": "27a5b3c695089eda130ba071465190e78cb457686d494919355ab256e3988b03",
+      "after": "8cbc678fab699ddaa0445b3ea2f51b75a221235492503fd5e1c5580897fbd58a"
+    },
+    "runtime/RP/models/entity/kwl_g_5f317f0af7de6211.geo.json": {
+      "before": "2931d50cfb440b5934a644c70b8e19e71a9aca0980e6bac8fa970405d186f03c",
+      "after": "e1f45a96fcb48630e8ab9bf56a5058e50109e57ca8b81718c176ee1c079e86f9"
+    },
+    "runtime/RP/models/entity/kwl_g_2439d66f4d78571d.geo.json": {
+      "before": "9ae04af225619c626574879bd8f613f1897497bacd6b98ac5e42e387ef163a5a",
+      "after": "38359b523f40b278c66b96ab748bb5f45c53870b2c3cebba7c1d6468375abae2"
+    },
+    "runtime/RP/models/entity/kwl_g_cf0e198621ddb72d.geo.json": {
+      "before": "a150a3d145681c80d25725ce9a00787cabd2d2c033e1d64dd3f125db2b5a26d1",
+      "after": "5001d028a2a3b037d029209918659d6a4ff75e64674dec14248da6231bdf48ce"
+    },
+    "runtime/RP/models/entity/kwl_g_d17bbb0c984a1424.geo.json": {
+      "before": "2971957f9850f4d2c3b04af23b82ddf35e02f090c4e6dc75ede0bfed48aae961",
+      "after": "0a364fea2779aa3f64bbca43e99da59171ae87a16db8847f4a6dc0c6ecc4e730"
+    },
+    "runtime/RP/models/entity/kwl_g_c95b474969a48785.geo.json": {
+      "before": "7544e3689271197b11e96a06517c5e57e92b51a0656a4cf2578d5c486489950b",
+      "after": "e77b4c743c0e95a5b600e23b325e30f98828fddb88905a0906fc2884da060274"
+    },
+    "runtime/RP/models/entity/kwl_g_b9dead9920359fd1.geo.json": {
+      "before": "a70e1d83224dbfcd0bf2b7c30f2e64931df531285ebe6bd2e4de4c9922ab2205",
+      "after": "bb4a25ec5384f90b8faf890ea11000efb8771087d366601335c16d9446e71784"
+    },
+    "runtime/RP/models/entity/kwl_g_d46cc6545ec13ac4.geo.json": {
+      "before": "15d5bd9715e20d3cbf8dbeecfcd6eceaa745c339af0b540ea5006f0b3b9cffe0",
+      "after": "b4b567f9a3fa73c0cd9586d7405999eda917d7fa766ee55d0043856236fc7ff2"
+    },
+    "runtime/RP/models/entity/kwl_g_2a624035225efb2a.geo.json": {
+      "before": "8885f43adaf83498449f68c65f1f62eabdaeb244289ca686bc29339afd9dc27c",
+      "after": "c7f83fa9da4e6b5bf5cee61ff059bce0a601243f5ff112f2eea3544be80f8059"
+    },
+    "runtime/RP/models/entity/kwl_g_ca6348dcb1aa0765.geo.json": {
+      "before": "a47d97ee5edec93bc9600c45fe8f276458da4d64ebb7f0eac608ba77e7520e8f",
+      "after": "cbfb189726a50f77cf5975b16daa1e61533bedc928b553e974e8bd3f0b40acbb"
+    },
+    "runtime/RP/models/entity/kwl_g_a4ee7f81b9ec6d56.geo.json": {
+      "before": "bd2b6fd09a244b86947716309f26687ffab04a6c6ce3b0cfa9d57dbde1f6ed78",
+      "after": "aa463aacb8196766cd86b1657ed73b870e3e188b6601481ab461675de9a14e3a"
+    },
+    "runtime/RP/models/entity/kwl_g_f38e665f0987bac0.geo.json": {
+      "before": "d78a55c10b6fc906d7a2397b70ac8e210456f91be4cd857fa009a71185386fe8",
+      "after": "92d3c677d90e9612549340d907e43d5b2fad688bebd519fc2d0e130aa9ec508c"
+    },
+    "runtime/RP/models/entity/kwl_g_ee1f956bacf3f60c.geo.json": {
+      "before": "92916d1dc6ec3435815ee33cace110305a85d407a1951143dc27733bd1126546",
+      "after": "188ae1865ed9e8b79ff454250c4156924f7738812a2e96519422ed13ffe47771"
+    },
+    "runtime/RP/models/entity/kwl_g_3790699d01b991f1.geo.json": {
+      "before": "91ca4b9fb280a59cc9a9cce89ef74d23eef41e28ec5f8ccdac0338fce0461c68",
+      "after": "20752ad7cd687ea1264bc1613c1c5cf7f9adb039a9ece1bb5befac321a687f3c"
+    },
+    "runtime/RP/models/entity/kwl_g_42813126567a759f.geo.json": {
+      "before": "0b4ac4a183d59a1f0016d578b0121185523e5b43edd0d0bc6522dc5a3758cb09",
+      "after": "79ce9b607fef76059e04a4033d21b7b2cf98d34b82caca0701cb4740a4aa13aa"
+    },
+    "runtime/RP/models/entity/kwl_g_5ea58d93bbf7d744.geo.json": {
+      "before": "5ef070e2e31eff7dfe038226f00bc024bb75de35e3f06a9176747c68ecf08290",
+      "after": "cd860b0cb721b78d3586a8b9baff2ef4407edb2d0a9331f1b93786a4b9772009"
+    },
+    "runtime/RP/models/entity/kwl_g_39906ca3642f0231.geo.json": {
+      "before": "f4dba8f0cccc6aa253a5211159241e99c1591c062ac16dcb1d3a3c621b814c79",
+      "after": "559356bb42b436baf5406df474de00b90e7f0e037ee6ec5fc914a64aa62b85ac"
+    },
+    "runtime/RP/models/entity/kwl_g_786a423a6bad5e4e.geo.json": {
+      "before": "0e26c0d7b6b89d8305fe372c17064480d5fd4abd0b5d60a94a7e08dd67580b30",
+      "after": "2c5778a06fd21b8322e48d084f29df7ea787cc71bdc14980ad798a86ff23cfa9"
+    },
+    "runtime/RP/models/entity/kwl_g_8a8498cbbc161be4.geo.json": {
+      "before": "d5cfe8c5e6784ad95865434e11da1c71e12b8167ba1c221d256090101b39be51",
+      "after": "c51660ba82ccba1b4d4f37342e2ef26cea5e23da747f7dd0a2b881ef8e236096"
+    },
+    "runtime/RP/models/entity/kwl_g_987bf61b8661fdfa.geo.json": {
+      "before": "f09f6dba297fe91c9dd08e486219bd8290f960964988e50a5d3a12039fdbdc08",
+      "after": "c445d6806786f344d63258fe0110e2dbd95c9328bd2ca6ecb24c1c886aa0b566"
+    },
+    "runtime/RP/models/entity/kwl_g_dd63bdba358cf06b.geo.json": {
+      "before": "de4efe1ebff2d196c9661411dce7ba14b7ae3180a41f1154ea4482addd77f5f8",
+      "after": "9c86efb8fcb3bd1178c20dffe65893c1ea61e5fb2400832b798bd609b1f5978f"
+    }
+  }
+}
