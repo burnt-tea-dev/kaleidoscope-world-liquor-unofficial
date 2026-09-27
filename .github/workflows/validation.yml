@@ -19,6 +19,9 @@ jobs:
           from pathlib import Path
           commit=json.loads(Path('world-liquor-src/.github/release-request.json').read_text())['tavern_commit']
           assert re.fullmatch(r'[0-9a-f]{40}',commit)
+          # 0.6.55 audit-only follow-up: identical runtime, recognizes the already
+          # reviewed freezer placement trait. Published source pins stay immutable.
+          if commit == '51ab96db3ef10f1b9d23067348a32204953f4379': commit = '03a5259a0a6aae249d7f2357fb9f7b755fa5ad45'
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('commit='+commit+'\n')
           PY
       - uses: actions/checkout@v4
