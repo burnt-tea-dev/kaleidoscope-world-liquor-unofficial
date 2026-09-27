@@ -1,9 +1,9 @@
 {
-  "version": "0.1.20",
-  "tag": "v0.1.20-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.20 — 配合本體內建 HUD 去重",
+  "version": "0.1.21",
+  "tag": "v0.1.21-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.21 — 配合本體整合搖杯修正",
   "prerelease": true,
-  "tavern_commit": "244fc4fdba42e48e8231112b836801b7f161ac16",
-  "expected_archive_sha256": "ef908c219e6c917fa5c8b35732ce710b3165526e12bfe70ed297b3d8e323ef01",
-  "validation_evidence": "docs/HUD-INTEGRATION-0.1.20.json"
+  "expected_archive_sha256": "f5f3ac684ffa01f75ccb56a550461f2c3873e66d6e5275d547653cc0d655fbc2",
+  "tavern_commit": "37bdbd913c7d56458976f1b81811d4780136acea",
+  "validation_evidence": "docs/CONSOLIDATION-0.1.21.json"
 }
