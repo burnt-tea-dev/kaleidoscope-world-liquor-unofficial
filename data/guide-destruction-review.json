@@ -96,7 +96,18 @@
     },
     "runtime/BP/blocks/freezer.json": {
       "beforeExplosion": false,
-      "afterSha256": "50ea356250d23cb8a50e855426253905d4668360c9b24a0ef3d58021a035148d"
+      "afterSha256": "554594326e3a498a27b92688e81559313b859d89205c131fe70d6ae3383b2597",
+      "placementReview": {
+        "reason": "Java FreezerBlock.getStateForPlacement uses player horizontal direction without getOpposite; preserve existing facing indexes and saved contents.",
+        "addedTraits": {
+          "minecraft:placement_direction": {
+            "enabled_states": [
+              "minecraft:cardinal_direction"
+            ],
+            "y_rotation_offset": 0
+          }
+        }
+      }
     },
     "runtime/BP/blocks/bottle_maotai.json": {
       "beforeExplosion": false,

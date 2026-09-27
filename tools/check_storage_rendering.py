@@ -35,6 +35,9 @@ def main():
   if not change:return raw
   assert digest(p)==change['afterSha256'],('Unreviewed block mutation',p)
   block=json.loads(raw);c=block['minecraft:block']['components'];c['minecraft:destructible_by_explosion']=change['beforeExplosion'];c.pop('kaleidoscope_tavern:natural_break',None)
+  if 'placementReview' in change:
+   assert block['minecraft:block']['description'].get('traits')==change['placementReview']['addedTraits']
+   block['minecraft:block']['description'].pop('traits')
   return (json.dumps(block,ensure_ascii=False,indent=2)+'\n').encode()
  items=readjs(ROOT/'runtime/BP/scripts/visual-items.js')
  compact=readjs(ROOT/'runtime/BP/scripts/compact-items.js')

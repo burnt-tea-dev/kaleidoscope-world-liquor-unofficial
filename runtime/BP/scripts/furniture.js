@@ -70,7 +70,7 @@ function drops(b,oldType,p){const s=read(b);save(b,undefined);if((!p||!creative(
  for(const e of b.dimension.getEntities({families:['kwl_visual'],location:center(b),maxDistance:2}))if(e.getDynamicProperty(NS+':anchor')===key(b))e.remove();
 }
 export function registerFurniture(e){e.blockComponentRegistry.registerCustomComponent(NS+':furniture',{
- beforeOnPlayerPlace:e=>{let perm=e.permutationToPlace;if(e.player)perm=perm.withState(FACING,rotation(e.player));e.permutationToPlace=perm;},
+ beforeOnPlayerPlace:e=>{let perm=e.permutationToPlace;if(perm.type.id===NS+':freezer')perm=perm.withState(FACING,['north','east','south','west'].indexOf(perm.getState('minecraft:cardinal_direction')));else if(e.player)perm=perm.withState(FACING,rotation(e.player));e.permutationToPlace=perm;},
  onPlace:e=>{if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}save(e.block,undefined);},
  onPlayerInteract:e=>{try{if(isManagedCabinet(e.block.typeId)){forwardNativeUse(e);return;}interact(e.player,e.block,e.face,e.faceLocation);}catch(err){console.warn('[World Liquor] '+err);}},
  onTick:e=>{try{if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}tick(e.block);}catch(err){console.warn('[World Liquor] '+err);}},

@@ -1,9 +1,9 @@
 {
-  "version": "0.1.15",
-  "tag": "v0.1.15-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.15 — 啟用共用酒架原生命中座標",
+  "version": "0.1.16",
+  "tag": "v0.1.16-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.16 — 修復冰櫃放置及告示牌原版手持",
   "prerelease": true,
-  "tavern_commit": "7eea296e198b45fcaf3ff63cc74cde61d46682ad",
-  "expected_archive_sha256": "373cf49bf16bafd78d6ed3e4ff1f6a739f285bb72cf1d27944fa560cf97027ab",
-  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.15.json"
+  "tavern_commit": "08900748b27ba70d7413e6d801b839c0ea2058c8",
+  "expected_archive_sha256": "6ec31e62ede437ffcf8b0d5df7b72e37ab41ae49fc8a5d462395a9677e850147",
+  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.16.json"
 }

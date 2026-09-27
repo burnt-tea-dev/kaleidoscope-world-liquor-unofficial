@@ -188,6 +188,7 @@ for i,mi in modelspec.items():
 # Model selection on the furniture follows source open/connected states.
 for short in furniture:
  p=BP/f'blocks/{short}.json';d=read(p)['minecraft:block'];st=read(UP/f'assets/{NS}/blockstates/{short}.json')['variants']
+ if short=='freezer':d['description']['traits']={'minecraft:placement_direction':{'enabled_states':['minecraft:cardinal_direction'],'y_rotation_offset':0}}
  d['description']['states'].update({NS+':open':[False,True]} if short=='freezer' else {NS+':position':['single','left','middle','right']} if 'cabinet' in short else {})
  seen=set()
  for props,v in st.items():
