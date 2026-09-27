@@ -1,9 +1,9 @@
 {
-  "version": "0.1.19",
-  "tag": "v0.1.19-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.19 — 移除多餘提示並修復酒櫃實體清理",
+  "version": "0.1.20",
+  "tag": "v0.1.20-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.20 — 配合本體內建 HUD 去重",
   "prerelease": true,
-  "tavern_commit": "8cbce528f153977c8790ad8592f1753e681d4f43",
-  "expected_archive_sha256": "716ed94a3721ca339dfe0e1d5d6113938c766eeeb14f54df00d8bd43ddc4091d",
-  "validation_evidence": "docs/STORAGE-LIFECYCLE-0.1.19.json"
+  "tavern_commit": "244fc4fdba42e48e8231112b836801b7f161ac16",
+  "expected_archive_sha256": "ef908c219e6c917fa5c8b35732ce710b3165526e12bfe70ed297b3d8e323ef01",
+  "validation_evidence": "docs/HUD-INTEGRATION-0.1.20.json"
 }

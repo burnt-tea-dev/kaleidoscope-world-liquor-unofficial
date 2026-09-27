@@ -1,0 +1,6 @@
+{
+  "version": "0.1.20",
+  "tavern": "0.6.57",
+  "change": "dependency and guide version only",
+  "clientTest": false
+}

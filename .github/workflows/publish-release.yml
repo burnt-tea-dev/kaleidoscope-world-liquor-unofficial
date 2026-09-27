@@ -75,7 +75,7 @@ jobs:
       - name: Include source and static validation evidence
         run: |
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
-          cp docs/GUIDE-AUDIT-0.1.19.json docs/GUIDE-VALIDATION-0.1.19.json docs/STORAGE-VALIDATION-0.1.19.json docs/DEPENDENCY-VALIDATION-0.1.19.json docs/STORAGE-LIFECYCLE-0.1.19.json dist/
+          cp docs/HUD-INTEGRATION-0.1.20.json dist/
       - name: Stage or resume identical draft, verify assets, then publish
         env:
           GH_TOKEN: ${{ github.token }}
