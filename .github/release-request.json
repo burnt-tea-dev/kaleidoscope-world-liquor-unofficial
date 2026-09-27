@@ -1,8 +1,9 @@
 {
-  "version": "0.1.11",
-  "tag": "v0.1.11-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.11 — 原生圖鑑製作入口、酒架選取與爆炸處理",
+  "version": "0.1.12",
+  "tag": "v0.1.12-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.12 — 原生手持與酒桶提示修復",
   "prerelease": true,
-  "tavern_commit": "df9d1dc40a489307fbfd9b99e648d5b03573cd1a",
-  "expected_archive_sha256": "83c3122cb4b0932b76a2643c03f5e26800f28bf5a98c354cbc13eff6ed743b23"
+  "tavern_commit": "9510a9fbd287fc42d48872b50634a47a344e925c",
+  "expected_archive_sha256": "ca3011814c75d4649a566a2ea6a3030445658dba344e5ff5035f73b334f201ad",
+  "validation_evidence": "docs/PAIRED-VALIDATION-0.1.12.json"
 }

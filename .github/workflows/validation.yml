@@ -51,16 +51,10 @@ jobs:
           LIQUOR_SOURCE: ${{ github.workspace }}/world-liquor-src
         run: |
           set -o pipefail
-          # The pinned release's old byte-only pick guard predates the reviewed
-          # destruction/potion repair. Keep its behavioral assertions and use
-          # the broader reviewed-source gate for preservation.
           python tools/check_launch.py > ../world-liquor-src/dist/source-preservation.json
-          python tools/test_pick_block.py PickDefinitions.test_native_registrations_are_complete_in_both_packs PickDefinitions.test_native_replacement_never_changes_placed_identifier PickDefinitions.test_registration_only_placers_do_not_enable_native_script_bypass PickDefinitions.test_compat_audit_accepts_tag_only_block_descriptors PickDefinitions.test_no_addon_pick_runtime_or_second_storage_owner 2>&1 | tee ../world-liquor-src/dist/native-pick-tests.log
+          python tools/test_pick_block.py 2>&1 | tee ../world-liquor-src/dist/native-pick-tests.log
           node --test tools/effect-bar.test.mjs 2>&1 | tee ../world-liquor-src/dist/effect-bar-tests.tap
-          # World Liquor's check_storage_rendering already reconstructs and
-          # verifies the complete historical block tree including reviewed blast
-          # changes. The older pinned creative-only tree assertion is superseded.
-          python tools/creative/test_catalog.py FixtureTests RealPackTests HistoricalProjectionTests.test_projection_changes_only_reviewed_menu_and_native_registration HistoricalProjectionTests.test_unaffected_asset_keeps_exact_bytes HistoricalProjectionTests.test_unreviewed_menu_change_is_not_masked HistoricalProjectionTests.test_gameplay_changes_still_change_historical_hash 2>&1 | tee ../world-liquor-src/dist/creative-tests.log
+          python tools/creative/test_catalog.py 2>&1 | tee ../world-liquor-src/dist/creative-tests.log
           python tools/creative/catalog.py --peer ../world-liquor-src | tee ../world-liquor-src/dist/creative-catalog.json
       - name: Include matching validation evidence
         working-directory: world-liquor-src
@@ -70,7 +64,7 @@ jobs:
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
           git rev-parse HEAD > dist/LIQUOR_COMMIT
           git -C ../tavern-src rev-parse HEAD > dist/TAVERN_COMMIT
-          cp docs/GUIDE-AUDIT-0.1.11.json docs/GUIDE-VALIDATION-0.1.11.json docs/STORAGE-VALIDATION-0.1.11.json dist/
+          cp docs/GUIDE-AUDIT-0.1.12.json docs/GUIDE-VALIDATION-0.1.12.json docs/STORAGE-VALIDATION-0.1.12.json dist/
       - uses: actions/upload-artifact@v4
         with:
           name: World-Liquor-foundation-integration
