@@ -6,7 +6,7 @@ export function syncFreezerVisuals(block,state,recipes){
  const facing=block.permutation.getState('kaleidoscope_tavern:facing')??0,yaw=[180,-90,0,90][facing],rows=[];
  if(block.permutation.getState(N+':open')){
   const fluid=fluidKinds[state.fluid];if(fluid)rows.push({slot:'fluid',kind:fluid,x:0,z:0,y:.625});
-  (state.input??[]).forEach((id,i)=>{if(items[id])rows.push({slot:'input'+i,kind:items[id],x:(i%2?1:-1)*.19,z:(i<2?-1:1)*.14,y:fluid ? .65 : .3});});
+  (state.input??[]).forEach((id,i)=>{if(items[id])rows.push({slot:'input'+i,kind:items[id],x:(i%2?1:-1)*.20,z:-.0625+(i<2?-1:1)*.16,y:fluid ? .65 : .3});});
   if(state.output>0){const recipe=recipes.find(r=>r.id===state.recipe),kind=recipe?.texture?.split('/').at(-1);if(['ice','snow','magma'].includes(kind))rows.push({slot:'result',kind,x:0,z:0,y:.75-(5-state.output)*.08});}
  }
  const existing=block.dimension.getEntities({families:['kwl_visual'],location:{x:p.x+.5,y:p.y+.5,z:p.z+.5},maxDistance:2}).filter(e=>e.getDynamicProperty(N+':anchor')===anchor&&e.typeId.startsWith(N+':freezer_'));

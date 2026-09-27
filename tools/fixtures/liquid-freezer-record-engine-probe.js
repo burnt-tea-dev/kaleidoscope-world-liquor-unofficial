@@ -9,6 +9,10 @@ system.runTimeout(async()=>{try{
  const count=()=>d.getEntities({families:['kwl_visual'],location:p,maxDistance:3}).filter(e=>e.typeId.startsWith(N+':freezer_')).length;
  for(let facing=0;facing<4;facing++){
   b.setPermutation(BlockPermutation.resolve(N+':freezer',{[N+':open']:true,'kaleidoscope_tavern:facing':facing}));
+  const repeated={fluid:N+':milk_still',input:Array(4).fill('minecraft:blue_dye')};
+  syncFreezerVisuals(b,repeated,FREEZER_RECIPES);syncFreezerVisuals(b,repeated,FREEZER_RECIPES);
+  const dyes=d.getEntities({type:N+':freezer_blue_dye_visual',location:p,maxDistance:3});check(dyes.length===4,'duplicate or missing dye');
+  for(let i=0;i<4;i++)for(let j=i+1;j<4;j++){const a=dyes[i].location,c=dyes[j].location;check(Math.abs(a.x-c.x)>.25||Math.abs(a.z-c.z)>.25,'ingredient footprints overlap');}
   for(const fluid of ['minecraft:water','minecraft:lava',N+':milk_still','kaleidoscope_tavern:grape_juice','kaleidoscope_tavern:sweet_berries_juice']){syncFreezerVisuals(b,{fluid,input:['minecraft:blue_dye','minecraft:snowball','minecraft:slime_ball']},FREEZER_RECIPES);check(count()===4,'fluid/input count');cases++;}
   for(const recipe of FREEZER_RECIPES){syncFreezerVisuals(b,{recipe:recipe.id,output:recipe.result.count},FREEZER_RECIPES);check(count()===1,'result surface');cases++;}
   syncFreezerVisuals(b,{input:[]},FREEZER_RECIPES);check(count()===0,'empty cleanup');
