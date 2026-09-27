@@ -1,8 +1,8 @@
 {
-  "version": "0.1.9",
-  "tag": "v0.1.9-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.9 — 香薰與共用指南回歸修復",
+  "version": "0.1.10",
+  "tag": "v0.1.10-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.10 — 香薰密度、手持模型與酒桶提示修復",
   "prerelease": true,
-  "tavern_commit": "cec72905980b04491c68dfe8c083e8e2bf1494c0",
-  "expected_archive_sha256": "7a95afe2f51dd2a90b12be700c1759598c6350dedd9caf2eb5142923588c310c"
+  "tavern_commit": "ab92cf94c4e90252f939a1e9ac4a71f2c31da1a5",
+  "expected_archive_sha256": "08e14620ac68f147a97cf72b4eac76898d8ff8808c5fea099f8c4c9d1ddf69ef"
 }
