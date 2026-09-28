@@ -75,7 +75,7 @@ jobs:
       - name: Include source and static validation evidence
         run: |
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
-          cp docs/DRINK-SURFACES-0.1.22.json dist/
+          cp docs/BDS-FREEZER-SPACING-0.1.27.log dist/
       - name: Stage or resume identical draft, verify assets, then publish
         env:
           GH_TOKEN: ${{ github.token }}

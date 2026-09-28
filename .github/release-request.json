@@ -1,10 +1,10 @@
 {
-  "version": "0.1.22",
-  "tag": "v0.1.22-preview.1",
-  "title": "森羅酒館：世界名酒（非官方） 0.1.22 — 飲品重疊表面修正",
+  "version": "0.1.27",
+  "tag": "v0.1.27-preview.1",
+  "title": "森羅酒館：世界名酒（非官方） 0.1.27 — 冰櫃間距與重疊表面修正",
   "prerelease": true,
-  "expected_archive_sha256": "167b39947c1aa33146836584a48ac0d0917a225f1257524a5e98ce02e6530967",
-  "tavern_commit": "d6b2674034ce71a19c3da55e33d53ce837962e7b",
-  "validation_evidence": "docs/DRINK-SURFACES-0.1.22.json",
+  "expected_archive_sha256": "7dfd1471a8e581dfc378dcf309e337152e596bc4548696cec99a5807682ebd48",
+  "tavern_commit": "28c73a87f53685299fc26b5a9d34fa201b2eb648",
+  "validation_evidence": "docs/BDS-FREEZER-SPACING-0.1.27.log",
   "client_acceptance": "pending"
 }
