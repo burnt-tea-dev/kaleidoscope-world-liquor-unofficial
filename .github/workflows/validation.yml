@@ -73,3 +73,82 @@ jobs:
         with:
           name: World-Liquor-foundation-integration
           path: world-liquor-src/dist/
+
+  deliver-break-feedback-audit-ledger:
+    if: github.ref == 'refs/heads/fix/break-feedback-full-20260929'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: world-liquor-src
+      - uses: actions/checkout@v4
+        with:
+          repository: casama233/kaleidoscope-tavern-unofficial
+          ref: 6683bffcec3e528a41df68ed4a412dc8dd339939
+          path: tavern-src
+          persist-credentials: false
+      - name: Extend preserved-tree audit for reviewed destruction feedback
+        working-directory: world-liquor-src
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          ROOT=Path('.');BASE='ce8c41e48c731985221945479650de121e4d477c'
+          def sha(b):return hashlib.sha256(b).hexdigest()
+          def base_bytes(path):return subprocess.check_output(['git','show',BASE+':'+path])
+          names=subprocess.check_output(['git','diff','--name-status',BASE+'...HEAD','--','runtime/'],text=True).splitlines()
+          changes={};additions={}
+          for line in names:
+              status,path=line.split('\t',1);current=Path(path).read_bytes()
+              if status=='A':
+                  try:base_bytes(path);raise AssertionError(('Addition existed in base',path))
+                  except subprocess.CalledProcessError:pass
+                  additions[path]=sha(current);continue
+              assert status=='M',('Unexpected runtime mutation',status,path)
+              changes[path]={'before':sha(base_bytes(path)),'after':sha(current),'reason':'2026-09-29 reviewed destruction-feedback registration/support-loss repair.'}
+          review={'baseCommit':BASE,'changes':dict(sorted(changes.items())),'additions':dict(sorted(additions.items()))}
+          Path('data/break-feedback-review.json').write_text(json.dumps(review,indent=2)+'\n')
+          p=Path('tools/check_storage_rendering.py');s=p.read_text()
+          old=""" additions=read(ROOT/'data/freezer-visual-additions.json')['files']
+ for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed freezer addition',path)
+ def historical_digest(p,raw=None):
+  change=plane_review.get(p.relative_to(ROOT).as_posix())
+  if change:
+   assert digest(p)==change['after'],('Unreviewed drink plane mutation',p)
+   return change['before']
+  return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)
+"""
+          new=""" additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
+ break_review=read(ROOT/'data/break-feedback-review.json')
+ for path,h in break_review['additions'].items():
+  assert path not in additions,('Duplicate reviewed addition',path);additions[path]=h
+ for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed runtime addition',path)
+ def historical_digest(p,raw=None):
+  name=p.relative_to(ROOT).as_posix()
+  change=plane_review.get(name)
+  if change:
+   assert digest(p)==change['after'],('Unreviewed drink plane mutation',p)
+   return change['before']
+  change=break_review['changes'].get(name)
+  if change:
+   assert digest(p)==change['after'],('Unreviewed break-feedback mutation',p)
+   return change['before']
+  return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)
+"""
+          assert old in s
+          p.write_text(s.replace(old,new,1))
+          print(json.dumps({'changes':len(changes),'additions':len(additions)}))
+          PY
+          TAVERN_ROOT=../tavern-src python tools/check_storage_rendering.py
+          git show ce8c41e48c731985221945479650de121e4d477c:.github/workflows/validation.yml > .github/workflows/validation.yml
+          git add data/break-feedback-review.json tools/check_storage_rendering.py .github/workflows/validation.yml
+          git diff --cached --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'audit: preserve historical tree while reviewing destruction feedback'
+          git push origin HEAD:fix/break-feedback-full-20260929
+
