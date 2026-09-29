@@ -17,12 +17,14 @@ jobs:
           python - <<'PY'
           import json,os,re
           from pathlib import Path
-          commit=json.loads(Path('world-liquor-src/.github/release-request.json').read_text())['tavern_commit']
+          root=Path('world-liquor-src')
+          if (root/'compat/family/candidate.json').exists():
+              commit='3229cdb3a3c764f64549d42aa756c0a885b829bc'
+          else:
+              commit=json.loads((root/'.github/release-request.json').read_text())['tavern_commit']
+              if commit == '51ab96db3ef10f1b9d23067348a32204953f4379': commit = '03a5259a0a6aae249d7f2357fb9f7b755fa5ad45'
+              if commit == '8cbce528f153977c8790ad8592f1753e681d4f43': commit = '1538af475adbd69f7f0d7c3ae7fd10047e7ad215'
           assert re.fullmatch(r'[0-9a-f]{40}',commit)
-          # 0.6.55 audit-only follow-up: identical runtime, recognizes the already
-          # reviewed freezer placement trait. Published source pins stay immutable.
-          if commit == '51ab96db3ef10f1b9d23067348a32204953f4379': commit = '03a5259a0a6aae249d7f2357fb9f7b755fa5ad45'
-          if commit == '8cbce528f153977c8790ad8592f1753e681d4f43': commit = '1538af475adbd69f7f0d7c3ae7fd10047e7ad215'
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('commit='+commit+'\n')
           PY
       - uses: actions/checkout@v4
@@ -47,29 +49,38 @@ jobs:
           python tools/rebuild_guide.py
           git diff --exit-code -- runtime/
           python tools/check_release.py
-          python tools/build_release.py
-          python tools/verify_release.py --development
+          if test -f compat/family/candidate.json; then
+            python tools/family_candidate.py --build
+            python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          p=Path('dist/family/Kaleidoscope_World_Liquor_Unofficial_0.1.28_compat1.mcaddon')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='419c73afa6309df8d8e6307ff240bb05592f6d7f6ec727867aac305c20ad8cac'
+          PY
+          else
+            python tools/build_release.py
+            python tools/verify_release.py --development
+          fi
       - name: Shared effect-bar and creative data projections (no player simulation)
         working-directory: tavern-src
         env:
           LIQUOR_SOURCE: ${{ github.workspace }}/world-liquor-src
         run: |
           set -o pipefail
+          mkdir -p ../world-liquor-src/dist
           python tools/check_launch.py > ../world-liquor-src/dist/source-preservation.json
           python tools/test_pick_block.py 2>&1 | tee ../world-liquor-src/dist/native-pick-tests.log
           node --test tools/effect-bar.test.mjs 2>&1 | tee ../world-liquor-src/dist/effect-bar-tests.tap
           python tools/creative/test_catalog.py 2>&1 | tee ../world-liquor-src/dist/creative-tests.log
           python tools/creative/catalog.py --peer ../world-liquor-src | tee ../world-liquor-src/dist/creative-catalog.json
-      - name: Include matching validation evidence
+      - name: Include matching source revisions
         working-directory: world-liquor-src
-        env:
-          SOURCE_SHA: ${{ github.sha }}
         run: |
-          printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
+          git rev-parse HEAD > dist/SOURCE_COMMIT
           git rev-parse HEAD > dist/LIQUOR_COMMIT
           git -C ../tavern-src rev-parse HEAD > dist/TAVERN_COMMIT
-          cp docs/GUIDE-AUDIT-0.1.19.json docs/GUIDE-VALIDATION-0.1.19.json docs/STORAGE-VALIDATION-0.1.19.json dist/
       - uses: actions/upload-artifact@v4
         with:
-          name: World-Liquor-foundation-integration
+          name: World-Liquor-family-integration-candidate
           path: world-liquor-src/dist/
+          retention-days: 14
