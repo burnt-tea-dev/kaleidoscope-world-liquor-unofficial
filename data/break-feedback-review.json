@@ -1,0 +1,22 @@
+{
+  "baseCommit": "ce8c41e48c731985221945479650de121e4d477c",
+  "changes": {
+    "runtime/BP/scripts/foundation.js": {
+      "before": "38a3ba11d7cd9054fef99d06cac18efcf1ee2660fffce893b7e0dc15e13f364a",
+      "after": "851bf0504d504ef67559a526f39efd2c905f93f4c29f67c3bee724c8db311097",
+      "reason": "2026-09-29 reviewed destruction-feedback registration/support-loss repair."
+    },
+    "runtime/BP/scripts/furniture.js": {
+      "before": "5bf66709339848e84f26e73390fd3ca2f67625d84a5c0c8c18eb25098744cc59",
+      "after": "3218602d5c87497abe2f0b0961aa1428d0c811befb869f6842c155724f0df822",
+      "reason": "2026-09-29 reviewed destruction-feedback registration/support-loss repair."
+    }
+  },
+  "additions": {
+    "runtime/BP/scripts/data/break-feedback.js": "3c17f85ff7cc02809caae0e1061235338b7b8f591f8a986de79712c372cc25d1",
+    "runtime/BP/scripts/sdk/tavern-break-feedback.js": "85fc1cacd7fa71fe8136db0210657e9ad160471ff7ffdfc66bdd0edf0bf3931f",
+    "runtime/RP/blocks.json": "824e6fd2ea8b63ce987ede682a79f635ed7ac5080dde699ded85cbdcc752157a",
+    "runtime/RP/particles/block_fragments.json": "e17ed3281e770f1ef2c3c4103285afaa7dd3e4d0137f2ae1dafea85dcf05c345",
+    "runtime/RP/textures/kaleidoscope_world_liquor/break_fragments.png": "659d61a3a5fb01d44f17c7bd037ee8509473cd0da3575d275c45e52d0bcbfd3a"
+  }
+}

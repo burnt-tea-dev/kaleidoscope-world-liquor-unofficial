@@ -24,12 +24,20 @@ def main():
  baseline=read(ROOT/'data/storage-preserved-0.1.4.json')
  reviewed=read(ROOT/'data/guide-destruction-review.json')
  plane_review=read(ROOT/'data/drink-plane-review.json')['files']
- additions=read(ROOT/'data/freezer-visual-additions.json')['files']
- for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed freezer addition',path)
+ additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
+ break_review=read(ROOT/'data/break-feedback-review.json')
+ for path,h in break_review['additions'].items():
+  assert path not in additions,('Duplicate reviewed addition',path);additions[path]=h
+ for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed runtime addition',path)
  def historical_digest(p,raw=None):
-  change=plane_review.get(p.relative_to(ROOT).as_posix())
+  name=p.relative_to(ROOT).as_posix()
+  change=plane_review.get(name)
   if change:
    assert digest(p)==change['after'],('Unreviewed drink plane mutation',p)
+   return change['before']
+  change=break_review['changes'].get(name)
+  if change:
+   assert digest(p)==change['after'],('Unreviewed break-feedback mutation',p)
    return change['before']
   return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)
 
