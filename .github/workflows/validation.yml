@@ -73,30 +73,3 @@ jobs:
         with:
           name: World-Liquor-foundation-integration
           path: world-liquor-src/dist/
-
-  deliver-break-feedback:
-    if: github.ref == 'refs/heads/fix/break-feedback-full-20260929'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Apply exact reviewed break-feedback patch
-        run: |
-          set -euo pipefail
-          test "$(sha256sum .github/break-feedback.patch.xz | awk '{print $1}')" = "79417da5901e8234a6179309984f482768b5686a649c120aa524181759d913f7"
-          xz -dc .github/break-feedback.patch.xz > "$RUNNER_TEMP/break-feedback.patch"
-          test "$(sha256sum "$RUNNER_TEMP/break-feedback.patch" | awk '{print $1}')" = "a2dafa82632ed4313721680b41dcd51683d08ec3b8596b1b9646d8219f661b10"
-          git apply --check "$RUNNER_TEMP/break-feedback.patch"
-          git apply "$RUNNER_TEMP/break-feedback.patch"
-          git show ce8c41e48c731985221945479650de121e4d477c:.github/workflows/validation.yml > .github/workflows/validation.yml
-          rm .github/break-feedback.patch.xz
-          git add -A
-          git diff --cached --check
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'fix: register complete destruction feedback with Tavern host'
-          git push origin HEAD:fix/break-feedback-full-20260929
-
