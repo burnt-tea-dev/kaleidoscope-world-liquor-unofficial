@@ -1,3 +1,5 @@
+> **相容修復第一批／待驗收候選**：此分支面向公開 Cookery 1.0.8，不可直接取代使用舊 Cookery UUID 的正式世界。見 `docs/FAMILY-COMPAT-BATCH1.md`。下方既有發布記錄是歷史資料。
+
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
 Bedrock port of the [Java addon](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor).
