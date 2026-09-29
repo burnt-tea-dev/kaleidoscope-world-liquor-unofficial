@@ -19,7 +19,7 @@ jobs:
           from pathlib import Path
           root=Path('world-liquor-src')
           if (root/'compat/family/candidate.json').exists():
-              commit='3229cdb3a3c764f64549d42aa756c0a885b829bc'
+              commit='cd3c9ecc0aa60c60f05cc1274c44181abba7a147'
           else:
               commit=json.loads((root/'.github/release-request.json').read_text())['tavern_commit']
               if commit == '51ab96db3ef10f1b9d23067348a32204953f4379': commit = '03a5259a0a6aae249d7f2357fb9f7b755fa5ad45'
