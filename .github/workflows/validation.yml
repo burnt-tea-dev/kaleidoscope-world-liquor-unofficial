@@ -113,32 +113,8 @@ jobs:
           review={'baseCommit':BASE,'changes':dict(sorted(changes.items())),'additions':dict(sorted(additions.items()))}
           Path('data/break-feedback-review.json').write_text(json.dumps(review,indent=2)+'\n')
           p=Path('tools/check_storage_rendering.py');s=p.read_text()
-          old=""" additions=read(ROOT/'data/freezer-visual-additions.json')['files']
- for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed freezer addition',path)
- def historical_digest(p,raw=None):
-  change=plane_review.get(p.relative_to(ROOT).as_posix())
-  if change:
-   assert digest(p)==change['after'],('Unreviewed drink plane mutation',p)
-   return change['before']
-  return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)
-"""
-          new=""" additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
- break_review=read(ROOT/'data/break-feedback-review.json')
- for path,h in break_review['additions'].items():
-  assert path not in additions,('Duplicate reviewed addition',path);additions[path]=h
- for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed runtime addition',path)
- def historical_digest(p,raw=None):
-  name=p.relative_to(ROOT).as_posix()
-  change=plane_review.get(name)
-  if change:
-   assert digest(p)==change['after'],('Unreviewed drink plane mutation',p)
-   return change['before']
-  change=break_review['changes'].get(name)
-  if change:
-   assert digest(p)==change['after'],('Unreviewed break-feedback mutation',p)
-   return change['before']
-  return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)
-"""
+          old=" additions=read(ROOT/'data/freezer-visual-additions.json')['files']\n for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed freezer addition',path)\n def historical_digest(p,raw=None):\n  change=plane_review.get(p.relative_to(ROOT).as_posix())\n  if change:\n   assert digest(p)==change['after'],('Unreviewed drink plane mutation',p)\n   return change['before']\n  return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)\n"
+          new=" additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])\n break_review=read(ROOT/'data/break-feedback-review.json')\n for path,h in break_review['additions'].items():\n  assert path not in additions,('Duplicate reviewed addition',path);additions[path]=h\n for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed runtime addition',path)\n def historical_digest(p,raw=None):\n  name=p.relative_to(ROOT).as_posix()\n  change=plane_review.get(name)\n  if change:\n   assert digest(p)==change['after'],('Unreviewed drink plane mutation',p)\n   return change['before']\n  change=break_review['changes'].get(name)\n  if change:\n   assert digest(p)==change['after'],('Unreviewed break-feedback mutation',p)\n   return change['before']\n  return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)\n"
           assert old in s
           p.write_text(s.replace(old,new,1))
           print(json.dumps({'changes':len(changes),'additions':len(additions)}))
