@@ -8,6 +8,7 @@ import subprocess
 import sys
 import os
 from pathlib import Path
+from wall_record_definition import historical_view as wall_record_historical_view
 ROOT=Path(__file__).resolve().parents[1]
 TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
 sys.path.insert(0,str(TAV/'tools'))
@@ -35,8 +36,11 @@ def main():
 
  def historical_block_bytes(p):
   raw=projection.read_bytes(p);change=reviewed['blocks'].get(p.relative_to(ROOT).as_posix())
+  actual=digest(p)
+  if p.relative_to(ROOT).as_posix()=='runtime/BP/blocks/wall_record.json':
+   actual,raw=wall_record_historical_view(p.read_bytes(),raw)
   if not change:return raw
-  assert digest(p)==change['afterSha256'],('Unreviewed block mutation',p)
+  assert actual==change['afterSha256'],('Unreviewed block mutation',p)
   block=json.loads(raw);c=block['minecraft:block']['components'];c['minecraft:destructible_by_explosion']=change['beforeExplosion'];c.pop('kaleidoscope_tavern:natural_break',None)
   if 'placementReview' in change:
    assert block['minecraft:block']['description'].get('traits')==change['placementReview']['addedTraits']
