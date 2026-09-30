@@ -66,6 +66,9 @@
       },
       "kaleidoscope_tavern:natural_break": {
         "drop": "kaleidoscope_world_liquor:cup_around_the_world"
+      },
+      "minecraft:connection_rule": {
+        "accepts_connections_from": "none"
       }
     },
     "permutations": [

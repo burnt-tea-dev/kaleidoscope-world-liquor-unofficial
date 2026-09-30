@@ -1,3 +1,7 @@
+## Current maintained baseline: 0.1.29
+
+Canonical runtime and dependencies: [baseline.json](baseline.json). Build from this source; no private gameplay patch layer is required. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md) before importing historical artifacts or deploying.
+
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
 Bedrock port of the [Java addon](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor).

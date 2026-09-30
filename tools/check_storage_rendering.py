@@ -11,11 +11,12 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
 sys.path.insert(0,str(TAV/'tools'))
+from baseline_reference import previous_bytes
 NS='kaleidoscope_world_liquor'
 KT='kaleidoscope_tavern'
 def read(p):return json.loads(p.read_text())
 def readjs(p):return json.loads(p.read_text().split('=',1)[1].strip().rstrip(';'))
-def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def digest(p):return hashlib.sha256(previous_bytes(ROOT,p)).hexdigest()
 def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def main():
  spec=importlib.util.spec_from_file_location('creative_history',TAV/'tools/creative/historical.py')
@@ -90,6 +91,7 @@ def main():
  }
  console.log(JSON.stringify(cases));
  """
+ node=node.replace('../tavern-src/',TAV.as_uri()+'/')
  cases=json.loads(subprocess.check_output(['node','--input-type=module','-e',node],cwd=ROOT,text=True))
  spec=importlib.util.spec_from_file_location('tavern_reference',TAV/'tools/check_storage_rendering.py')
  reference=importlib.util.module_from_spec(spec);spec.loader.exec_module(reference)
@@ -118,7 +120,10 @@ def main():
  furniture=(ROOT/'runtime/BP/scripts/furniture.js').read_text()
  assert 'forwardFurnitureTick' in furniture and 'VISUAL_ITEMS' not in furniture and 'function cabinet(' not in furniture
  assert 'createExtensionFurniture' in (TAV/'runtime/BP/scripts/bedrock/extension-furniture.js').read_text()
- assert 'entity.setRotation({x:0,y:pose.rotation.y})' in (TAV/'runtime/BP/scripts/bedrock/extension-furniture.js').read_text()
+ adapter=(TAV/'runtime/BP/scripts/bedrock/extension-furniture.js').read_text()
+ maintenance=(TAV/'runtime/BP/scripts/bedrock/storage-visual-maintenance.js').read_text()
+ assert "syncStorageVisualPose(entity,NS+':storage_kind',bottle.kind,at,pose.rotation.y)" in adapter
+ assert 'entity.setRotation({x:0,y:yaw})' in maintenance,'RP must exclusively own model pitch'
  checks=0;maximum=0
  for case in cases:
   client=clients['cellar' if case['family']=='cellar_cabinet' else 'bar']

@@ -18,6 +18,11 @@ def main() -> None:
     args = parser.parse_args()
     assert not (args.development and args.export_env), 'Development builds cannot export publication metadata'
     request = json.loads((ROOT / '.github/release-request.json').read_text())
+    if args.development:
+        baseline=json.loads((ROOT/'baseline.json').read_text())
+        pin=json.loads((ROOT/'.github/baseline-integration.json').read_text())
+        version='.'.join(map(str,baseline['version']))
+        request={'version':version,'tag':f'v{version}-preview.1','prerelease':True,'title':'Integration candidate','expected_archive_sha256':'0'*64,'tavern_commit':pin['tavern_commit']}
     version = request['version']
     assert re.fullmatch(r'\d+\.\d+\.\d+', version)
     assert request['tag'] == f'v{version}-preview.1'
@@ -25,7 +30,7 @@ def main() -> None:
     assert request['title'] and '\n' not in request['title'] and '\r' not in request['title']
     assert re.fullmatch(r'[0-9a-f]{64}', request['expected_archive_sha256'])
     assert re.fullmatch(r'[0-9a-f]{40}', request['tavern_commit'])
-    dependency = ROOT.parent / 'tavern-src'
+    dependency = Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
     actual_commit = subprocess.check_output(['git', '-C', str(dependency), 'rev-parse', 'HEAD'], text=True).strip()
     if not args.development:
         assert actual_commit == request['tavern_commit'], 'Wrong pinned Tavern source'

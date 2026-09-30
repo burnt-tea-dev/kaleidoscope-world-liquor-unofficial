@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "repository": "casama233/kaleidoscope-world-liquor-unofficial",
+  "repository_id": 1385218112,
+  "version": [
+    0,
+    1,
+    29
+  ],
+  "runtime": {
+    "BP": "runtime/BP",
+    "RP": "runtime/RP"
+  },
+  "packs": {
+    "BP": {
+      "uuid": "355ffdfc-50e6-5a33-a126-4d78ab955b2b",
+      "dependencies": [
+        {
+          "uuid": "f54f37f9-485a-55bf-8f89-6558aca988c5",
+          "version": [
+            0,
+            6,
+            68
+          ]
+        },
+        {
+          "uuid": "a610b357-ba70-5a2f-bca5-5a7a8a0fb2a8",
+          "version": [
+            0,
+            1,
+            29
+          ]
+        },
+        {
+          "module_name": "@minecraft/server",
+          "version": "2.7.0"
+        }
+      ]
+    },
+    "RP": {
+      "uuid": "a610b357-ba70-5a2f-bca5-5a7a8a0fb2a8",
+      "dependencies": [
+        {
+          "uuid": "c2990d50-2cf7-59f7-886a-0f2d0240d156",
+          "version": [
+            0,
+            6,
+            68
+          ]
+        }
+      ]
+    }
+  },
+  "source_trees": {
+    "BP": {
+      "sha256": "97fa3cb0dd72d8c6975f3bde26db5b7b1fd99b9e8901d31a45f089052ac07aba",
+      "files": 300
+    },
+    "RP": {
+      "sha256": "7aacd8cd083cc7cc5ec37b5f37bbf63ab2d6d468fc2204e9a644b0c6ef39c23b",
+      "files": 490
+    }
+  },
+  "policy": {
+    "runtime_patches_at_install": false,
+    "canonical_source_required": true,
+    "same_version_different_content": false,
+    "client_acceptance_required_before_production": true
+  }
+}

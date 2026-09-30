@@ -1,13 +1,16 @@
 /** Canonical data projection audit. No mocked game, world, inventory, or player. */
 import fs from 'node:fs';
+import {pathToFileURL} from 'node:url';
+import path from 'node:path';
+const hostRoot=process.env.TAVERN_ROOT?pathToFileURL(path.resolve(process.env.TAVERN_ROOT)+path.sep):new URL('../../tavern-src/',import.meta.url);
 import assert from 'node:assert/strict';
 import {payload as addon} from '../runtime/BP/scripts/payload.js';
-import {ExtensionRegistry} from '../../tavern-src/runtime/BP/scripts/core/registry.js';
-import {BUILTIN_RECIPES} from '../../tavern-src/runtime/BP/scripts/data/recipes.js';
-import {FLUIDS} from '../../tavern-src/runtime/BP/scripts/data/fluids.js';
-import {buildCookeryGuidePayload} from '../../tavern-src/runtime/BP/scripts/data/cookery-guide-payload.js';
-import {encodeCookeryGuideMessages,cookery106WirePayload} from '../../tavern-src/runtime/BP/scripts/core/cookery-guide-publisher.js';
-import {SHAKER_RECIPES} from '../../tavern-src/runtime/BP/scripts/data/mixology.js';
+const {ExtensionRegistry}=await import(new URL('runtime/BP/scripts/core/registry.js',hostRoot));
+const {BUILTIN_RECIPES}=await import(new URL('runtime/BP/scripts/data/recipes.js',hostRoot));
+const {FLUIDS}=await import(new URL('runtime/BP/scripts/data/fluids.js',hostRoot));
+const {buildCookeryGuidePayload}=await import(new URL('runtime/BP/scripts/data/cookery-guide-payload.js',hostRoot));
+const {encodeCookeryGuideMessages,cookery106WirePayload}=await import(new URL('runtime/BP/scripts/core/cookery-guide-publisher.js',hostRoot));
+const {SHAKER_RECIPES}=await import(new URL('runtime/BP/scripts/data/mixology.js',hostRoot));
 const registry=new ExtensionRegistry({recipes:[...BUILTIN_RECIPES,...SHAKER_RECIPES],fluids:FLUIDS});
 registry.install(addon);
 const payload=buildCookeryGuidePayload(registry);
@@ -62,7 +65,7 @@ const messages=encodeCookeryGuideMessages(payload);
 assert.deepEqual(buildCookeryGuidePayload(registry),payload,'Guide projection mutates between reads');
 const chunkText=messages.slice(1,-1).map(m=>m.message.split('\n').slice(4).join('\n')).join('');
 assert.deepEqual(JSON.parse(chunkText),wire,'Guide packet round-trip lost text');
-const wine=JSON.parse(fs.readFileSync(new URL('../../tavern-src/runtime/BP/items/wine_q1.json',import.meta.url)));
+const wine=JSON.parse(fs.readFileSync(new URL('runtime/BP/items/wine_q1.json',hostRoot)));
 assert(wine['minecraft:item'].components['minecraft:tags'].tags.includes('kaleidoscope_tavern:alcohol'),'Record diagram example not in actual alcohol tag');
 const report={entries:payload.entries.length,addonProducts:addon.pages.length,categories:payload.categories.length,
  barrelRecipes:addon.recipes.filter(r=>r.kind==='barrel').length,shakerRecipes:addon.recipes.filter(r=>r.kind==='shaker').length,
@@ -75,7 +78,7 @@ fs.mkdirSync(new URL('../dist/',import.meta.url),{recursive:true});
 fs.writeFileSync(new URL('../dist/combined-guide-review.json',import.meta.url),JSON.stringify(payload,null,2)+'\n');
 console.log(JSON.stringify(report));
 
-const {checkGuideContract}=await import('../../tavern-src/tools/guide_contract.mjs');
+const {checkGuideContract}=await import(new URL('tools/guide_contract.mjs',hostRoot));
 const navigation=checkGuideContract(payload);
 fs.writeFileSync(new URL('../dist/guide-navigation-review.json',import.meta.url),JSON.stringify(navigation,null,2)+'\n');
 console.log(JSON.stringify(navigation));
