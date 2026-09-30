@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Repair cabinet-only bindings, preserving all existing addon display indices."""
-import json
+import json,os
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-TAV=ROOT.parent/'tavern-src'
+TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
 NS='kaleidoscope_world_liquor'
 KT='kaleidoscope_tavern'
 def read(path):return json.loads(path.read_text())

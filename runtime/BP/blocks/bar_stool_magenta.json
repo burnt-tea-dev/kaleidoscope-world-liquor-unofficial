@@ -74,6 +74,9 @@
           80
         ],
         "looping": true
+      },
+      "minecraft:connection_rule": {
+        "accepts_connections_from": "none"
       }
     },
     "permutations": [

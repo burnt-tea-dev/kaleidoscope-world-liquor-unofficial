@@ -3,9 +3,9 @@
 Does not regenerate models, change recipes, or simulate Minecraft interactions.
 """
 from pathlib import Path
-import collections, json, re
+import collections, json, re, os
 ROOT=Path(__file__).resolve().parents[1]
-TAV=ROOT.parent/'tavern-src'
+TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
 NS='kaleidoscope_world_liquor'; KT='kaleidoscope_tavern'
 LOCALES=('en_US','zh_CN','zh_TW')
 def loadjs(path):

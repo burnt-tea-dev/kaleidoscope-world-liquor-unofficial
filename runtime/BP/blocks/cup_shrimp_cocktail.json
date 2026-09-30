@@ -66,6 +66,9 @@
       },
       "kaleidoscope_tavern:natural_break": {
         "drop": "kaleidoscope_world_liquor:cup_shrimp_cocktail"
+      },
+      "minecraft:connection_rule": {
+        "accepts_connections_from": "none"
       }
     },
     "permutations": [

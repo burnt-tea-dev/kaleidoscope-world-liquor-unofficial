@@ -1,0 +1,22 @@
+{
+  "0.1.27": {
+    "BP": {
+      "sha256": "5025c81c19a5e66a438050102747684d4c6f3b8313391c36061192eaec63e6e8",
+      "files": 300
+    },
+    "RP": {
+      "sha256": "a13063fce0999518a80a0d2ef7b87b325ac480faaf7b74aec77f4f7d459ddc0e",
+      "files": 490
+    }
+  },
+  "0.1.29": {
+    "BP": {
+      "sha256": "97fa3cb0dd72d8c6975f3bde26db5b7b1fd99b9e8901d31a45f089052ac07aba",
+      "files": 300
+    },
+    "RP": {
+      "sha256": "7aacd8cd083cc7cc5ec37b5f37bbf63ab2d6d468fc2204e9a644b0c6ef39c23b",
+      "files": 490
+    }
+  }
+}
