@@ -1,14 +1,14 @@
-## Current maintained baseline: 0.1.29
+## Current maintained baseline: 0.1.31
 
-Canonical runtime and dependencies: [baseline.json](baseline.json). Build from this source; no private gameplay patch layer is required. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md) before importing historical artifacts or deploying.
+Canonical runtime and dependencies: [baseline.json](baseline.json). Pair with Tavern **0.6.69** and unmodified official Cookery **1.0.8**. The 16-pack family candidate passed static and isolated BDS checks; client and saved-world UUID migration gates remain pending. The legacy managed-server installation is not an approved production baseline. Build from this source; no private gameplay patch layer is required. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md) before importing historical artifacts or deploying.
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
 Bedrock port of the [Java addon](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor).
 Requires the public beta of [Kaleidoscope Tavern (Unofficial)](https://github.com/casama233/kaleidoscope-tavern-unofficial)
-version **0.6.53** and its Cookery dependency. Enable both behavior and resource packs alongside Tavern and Cookery. Target: Bedrock/BDS 1.26.50+.
+version **0.6.69** and official Cookery **1.0.8** for the maintained source. Enable both behavior and resource packs alongside Tavern and Cookery. Target: Bedrock/BDS 1.26.50+.
 
-Current **0.1.16 preview** contains 18 six-quality bottled drinks, six new
+Historical **0.1.16 preview** contains 18 six-quality bottled drinks, six new
 cocktails and their Java barrel/shaker recipes, 16 colored stools, 10 connected
 cabinet blocks, the freezer and five freezer recipes, eight paintings, two
 bottled mixers, four fallback foods, the random record and wall-hung records.
@@ -16,11 +16,11 @@ Original Java models, textures, sprites and sounds are converted from the
 pinned JAR; three languages are included. The Cookery guidebook receives
 combined brewing/usage entries through Tavern's extension API.
 
-## Download / 下載
+## Historical release / 歷史發佈
 
 [0.1.16-preview.1 release](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.16-preview.1) · [Full BP/RP .mcaddon](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/download/v0.1.16-preview.1/Kaleidoscope_World_Liquor_Unofficial_0.1.16_preview1.mcaddon)
 
-Back up your world before upgrading. Install together with Tavern **0.6.53-beta.1** and Cookery **1.0.6**; update both BP and RP. UUIDs and content IDs remain unchanged. The release includes SHA256SUMS, exact source revision and static validation evidence.
+The following installation description belongs to the historical release, not the maintained 0.1.31 candidate. Back up your world before upgrading. Install together with Tavern **0.6.53-beta.1** and Cookery **1.0.6**; update both BP and RP. UUIDs and content IDs remain unchanged. The release includes SHA256SUMS, exact source revision and static validation evidence.
 
 ## 0.1.16 drink surfaces and guide ingredients
 
