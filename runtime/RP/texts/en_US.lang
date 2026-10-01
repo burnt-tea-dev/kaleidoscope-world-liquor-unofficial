@@ -191,3 +191,5 @@ effect.kaleidoscope_world_liquor.reverse_gravity=Anti‑Gravity
 effect.kaleidoscope_world_liquor.tequila=Tequila Fortitude
 effect.kaleidoscope_world_liquor.treasure_guide=Gold Rush
 effect.kaleidoscope_world_liquor.treasure_sense=Treasure Intuition
+
+item.kaleidoscope_world_liquor.mod_name=Kaleidoscope World Liquor
