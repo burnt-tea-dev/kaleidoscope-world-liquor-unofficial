@@ -1,10 +1,10 @@
 {
-  "version": "0.1.41",
-  "tag": "v0.1.41-preview.1",
-  "title": "森羅物語：世界名酒 0.1.41 — Java 冷凍配方與酒館 0.6.76 配對",
+  "version": "0.1.42",
+  "tag": "v0.1.42-preview.1",
+  "title": "森羅物語：世界名酒 0.1.42 — 配套酒桶材料顯示修復",
   "prerelease": true,
-  "expected_archive_sha256": "16b8bb26e204b8c3ca0177dcb2b1b3f55001815cfb5bf686721ace350490fbf9",
-  "tavern_commit": "92778c05407bc9d0094c1da0c98abd4f00fd6069",
-  "validation_evidence": "docs/BDS-JAVA-PARITY-20261001.json",
+  "expected_archive_sha256": "914dae7f68959eb20b37987d1ef839ba2456a4950395e48b60b55112741d4a4d",
+  "tavern_commit": "a077ec82f3128707a5860629766e06966c4afb08",
+  "validation_evidence": "docs/BDS-BARREL-MATERIALS-20261001.json",
   "client_acceptance": "pending"
 }
