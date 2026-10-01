@@ -37,6 +37,7 @@ jobs:
       - name: Check reproducible guide, resources and dependencies (no player simulation)
         working-directory: world-liquor-src
         run: |
+          python tools/test_effect_names.py
           python tools/build_effect_names.py --check
           python ../tavern-src/tools/creative/catalog.py --root . --peer ../tavern-src
           python tools/build_storage_visuals.py
