@@ -89,3 +89,7 @@ The build creates `dist/Kaleidoscope_World_Liquor_Unofficial_0.1.16_preview1.mca
 and SHA256SUMS. Publication verifies every archive entry against committed
 runtime, downloads every uploaded asset, and checks byte equality before
 changing the draft to a public prerelease. Existing releases are not overwritten.
+
+## bridge. canonical authoring
+
+Open the repository-root `config.json`, which points to the current locked BP and RP. See [the bridge. workflow](docs/BRIDGE-WORKFLOW.md) for editor settings, portable `.brproject` export, schema limitations and exact runtime comparison.
