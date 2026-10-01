@@ -1,10 +1,10 @@
 {
-  "version": "0.1.43",
-  "tag": "v0.1.43-preview.1",
-  "title": "森羅物語：世界名酒 0.1.43 — 顏色分類提示與統一調酒配方",
+  "version": "0.1.44",
+  "tag": "v0.1.44-preview.1",
+  "title": "森羅物語：世界名酒 0.1.44 — 接入附加包來源標籤",
   "prerelease": true,
-  "expected_archive_sha256": "415facb3d5b37ef4cf6a9e2aafaf8296fbf824c3a929649f27463277477027c5",
-  "tavern_commit": "d80038f42836a95e64fd1d2d6fd354615e6dcf3e",
-  "validation_evidence": "docs/BDS-MIXOLOGY-20261001.json",
+  "expected_archive_sha256": "b3dff1ee5c0ee856abea148f34de4ac360df1f0a91d39199c1f9691ac5899dea",
+  "tavern_commit": "05195a896af2112a46d5c360b88bdf3728cb3b3a",
+  "validation_evidence": "docs/BDS-FRIEND-MERGE-20261001.json",
   "client_acceptance": "pending"
 }

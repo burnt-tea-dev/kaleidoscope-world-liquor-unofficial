@@ -19,6 +19,22 @@ TRADITIONAL = {
     'treasure_guide': '淘金熱', 'treasure_sense': '寶藏感知',
 }
 
+def render_names(old, rows):
+    """Replace our keys only; later independent locale sections are not ours."""
+    before, marker, tail = old.partition(MARKER)
+    base = before.rstrip() + '\n'
+    for key in rows:
+        if any(line.startswith(key + '=') for line in base.splitlines()):
+            raise ValueError(f'Duplicate name outside generated section: {key}')
+    # The marker's own newline is emitted below. Preserve every unrelated line,
+    # including the friend's addon source label appended after this section.
+    if marker and tail.startswith('\n'):
+        tail = tail[1:]
+    suffix = ''.join(line for line in tail.splitlines(keepends=True)
+                     if line.split('=', 1)[0] not in rows)
+    return base + '\n' + MARKER + '\n' + ''.join(
+        f'{key}={value}\n' for key, value in rows.items()) + suffix
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
@@ -37,11 +53,7 @@ def main():
             rows[key] = value
         target = ROOT / 'runtime/RP/texts' / (locale + '.lang')
         old = target.read_text(encoding='utf-8')
-        base = old.split(MARKER, 1)[0].rstrip() + '\n'
-        for key in rows:
-            if any(line.startswith(key + '=') for line in base.splitlines()):
-                raise ValueError(f'Duplicate name outside generated section: {locale} {key}')
-        result = base + '\n' + MARKER + '\n' + ''.join(f'{key}={value}\n' for key, value in rows.items())
+        result = render_names(old, rows)
         if args.check:
             if old != result:
                 raise SystemExit(f'Effect names are stale: {target}')
