@@ -1,10 +1,10 @@
 {
-  "version": "0.1.37",
-  "tag": "v0.1.37-preview.1",
-  "title": "森羅酒館：世界名酒 0.1.37 — 全 PR 整合與酒館 0.6.72 配對",
+  "version": "0.1.38",
+  "tag": "v0.1.38-preview.1",
+  "title": "森羅酒館：世界名酒 0.1.38 — 配對夜光新娘修復版酒館 0.6.73",
   "prerelease": true,
-  "expected_archive_sha256": "2dbf3549d4da21bf4768a69034f21692b6d201e91a25593fbb30c4c171fe775d",
-  "tavern_commit": "3cdc0f270fca8481ffed8755dd4700e894d1d239",
-  "validation_evidence": "docs/BDS-FAMILY-20261001.json",
+  "expected_archive_sha256": "c39fa8991f98d1480f655374425a69df852e9d6c2a40c21e5cba33a4ec39e81c",
+  "tavern_commit": "5acae328689e5f66a3e695c906d7619ed3a4767e",
+  "validation_evidence": "docs/BDS-LUMINOUS-20261001.json",
   "client_acceptance": "pending"
 }
