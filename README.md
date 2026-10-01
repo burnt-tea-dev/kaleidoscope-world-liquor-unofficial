@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.42
+## Current maintained baseline: 0.1.43
 
-Canonical runtime and dependencies: [baseline.json](baseline.json). Pair with Tavern **0.6.77** and unmodified official Cookery **1.0.8**; Grilling family version is **2.8.19**. Static checks, isolated BDS loading, client rendering and saved-world UUID migration are separate acceptance stages. The source/release identity does not certify a live installation. Build from canonical source without private gameplay patches. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md).
+Canonical runtime and dependencies: [baseline.json](baseline.json). Pair with Tavern **0.6.78** and unmodified official Cookery **1.0.8**; Grilling family version is **2.8.20**. Static checks, isolated BDS loading, client rendering and saved-world UUID migration are separate acceptance stages. The source/release identity does not certify a live installation. Build from canonical source without private gameplay patches. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 

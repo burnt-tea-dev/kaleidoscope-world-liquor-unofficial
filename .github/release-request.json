@@ -1,10 +1,10 @@
 {
-  "version": "0.1.42",
-  "tag": "v0.1.42-preview.1",
-  "title": "森羅物語：世界名酒 0.1.42 — 配套酒桶材料顯示修復",
+  "version": "0.1.43",
+  "tag": "v0.1.43-preview.1",
+  "title": "森羅物語：世界名酒 0.1.43 — 顏色分類提示與統一調酒配方",
   "prerelease": true,
-  "expected_archive_sha256": "914dae7f68959eb20b37987d1ef839ba2456a4950395e48b60b55112741d4a4d",
-  "tavern_commit": "a077ec82f3128707a5860629766e06966c4afb08",
-  "validation_evidence": "docs/BDS-BARREL-MATERIALS-20261001.json",
+  "expected_archive_sha256": "415facb3d5b37ef4cf6a9e2aafaf8296fbf824c3a929649f27463277477027c5",
+  "tavern_commit": "d80038f42836a95e64fd1d2d6fd354615e6dcf3e",
+  "validation_evidence": "docs/BDS-MIXOLOGY-20261001.json",
   "client_acceptance": "pending"
 }

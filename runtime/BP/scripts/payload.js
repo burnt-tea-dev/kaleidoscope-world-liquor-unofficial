@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.42",
+  "version": "0.1.43",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -1422,6 +1422,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red"
       ]
     },
     {
@@ -1441,6 +1444,9 @@ export const payload = {
           "amplifier": 1,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red"
       ]
     },
     {
@@ -1460,6 +1466,9 @@ export const payload = {
           "amplifier": 2,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red"
       ]
     },
     {
@@ -1479,6 +1488,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
       ]
     },
     {
@@ -1498,6 +1510,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
       ]
     },
     {
@@ -1517,6 +1532,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
       ]
     },
     {
@@ -1536,6 +1554,9 @@ export const payload = {
           "amplifier": 1,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
       ]
     },
     {
@@ -1555,6 +1576,9 @@ export const payload = {
           "amplifier": 2,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
       ]
     },
     {
@@ -1574,6 +1598,9 @@ export const payload = {
           "amplifier": 3,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
       ]
     },
     {
@@ -1599,6 +1626,9 @@ export const payload = {
           "amplifier": 1,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
       ]
     },
     {
@@ -1630,6 +1660,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
       ]
     },
     {
@@ -1667,6 +1700,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
       ]
     },
     {
@@ -1686,6 +1722,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
       ]
     },
     {
@@ -1705,6 +1744,9 @@ export const payload = {
           "amplifier": 1,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
       ]
     },
     {
@@ -1724,6 +1766,9 @@ export const payload = {
           "amplifier": 2,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
       ]
     },
     {
@@ -1743,6 +1788,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
       ]
     },
     {
@@ -1762,6 +1810,9 @@ export const payload = {
           "amplifier": 1,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
       ]
     },
     {
@@ -1781,6 +1832,9 @@ export const payload = {
           "amplifier": 2,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
       ]
     },
     {
@@ -1800,6 +1854,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
       ]
     },
     {
@@ -1819,6 +1876,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
       ]
     },
     {
@@ -1838,6 +1898,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
       ]
     },
     {
@@ -1857,6 +1920,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
       ]
     },
     {
@@ -1876,6 +1942,9 @@ export const payload = {
           "amplifier": 1,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
       ]
     },
     {
@@ -1895,6 +1964,9 @@ export const payload = {
           "amplifier": 2,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
       ]
     },
     {
@@ -1914,6 +1986,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ]
     },
     {
@@ -1933,6 +2008,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ]
     },
     {
@@ -1952,6 +2030,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ]
     },
     {
@@ -1971,6 +2052,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ]
     },
     {
@@ -1990,6 +2074,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ]
     },
     {
@@ -2009,6 +2096,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ]
     },
     {
@@ -2028,6 +2118,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue"
       ]
     },
     {
@@ -2047,6 +2140,9 @@ export const payload = {
           "amplifier": 1,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue"
       ]
     },
     {
@@ -2066,6 +2162,9 @@ export const payload = {
           "amplifier": 2,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue"
       ]
     },
     {
@@ -2085,6 +2184,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
       ]
     },
     {
@@ -2104,6 +2206,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
       ]
     },
     {
@@ -2123,6 +2228,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
       ]
     },
     {
@@ -2148,6 +2256,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
       ]
     },
     {
@@ -2173,6 +2284,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
       ]
     },
     {
@@ -2198,6 +2312,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
       ]
     },
     {
@@ -2211,6 +2328,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
       ]
     },
     {
@@ -2224,6 +2344,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2255,6 +2378,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2292,6 +2418,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2329,6 +2458,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2348,6 +2480,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2367,6 +2502,9 @@ export const payload = {
           "amplifier": 1,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2386,6 +2524,9 @@ export const payload = {
           "amplifier": 2,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2405,6 +2546,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2424,6 +2568,9 @@ export const payload = {
           "amplifier": 1,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2443,6 +2590,9 @@ export const payload = {
           "amplifier": 2,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2474,6 +2624,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2511,6 +2664,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2548,6 +2704,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
       ]
     },
     {
@@ -2567,6 +2726,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua"
       ]
     },
     {
@@ -2586,6 +2748,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua"
       ]
     },
     {
@@ -2605,6 +2770,9 @@ export const payload = {
           "amplifier": 0,
           "probability": 1.0
         }
+      ],
+      "ingredientTags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua"
       ]
     }
   ],
@@ -2705,7 +2873,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "aqua"
     },
     {
       "kind": "bottle",
@@ -2803,7 +2972,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "dark_aqua"
     },
     {
       "kind": "bottle",
@@ -2901,7 +3071,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "green"
     },
     {
       "kind": "bottle",
@@ -2999,7 +3170,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "blue"
     },
     {
       "kind": "bottle",
@@ -3151,7 +3323,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "dark_red"
     },
     {
       "kind": "bottle",
@@ -3249,7 +3422,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "green"
     },
     {
       "kind": "bottle",
@@ -3401,7 +3575,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "dark_red"
     },
     {
       "kind": "bottle",
@@ -3499,7 +3674,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "gold"
     },
     {
       "kind": "bottle",
@@ -3597,7 +3773,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "gold"
     },
     {
       "kind": "bottle",
@@ -3695,7 +3872,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "dark_red"
     },
     {
       "kind": "bottle",
@@ -3793,7 +3971,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "dark_purple"
     },
     {
       "kind": "bottle",
@@ -3915,7 +4094,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "white"
     },
     {
       "kind": "bottle",
@@ -4013,7 +4193,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "white"
     },
     {
       "kind": "bottle",
@@ -4111,7 +4292,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "dark_blue"
     },
     {
       "kind": "bottle",
@@ -4209,7 +4391,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "red"
     },
     {
       "kind": "bottle",
@@ -4307,7 +4490,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "dark_red"
     },
     {
       "kind": "bottle",
@@ -4405,7 +4589,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "aqua"
     },
     {
       "kind": "bottle",
@@ -4545,7 +4730,8 @@ export const payload = {
         "circular_rack_bottle_visual": "kaleidoscope_world_liquor:circular_rack_bottle_visual",
         "bar_cabinet_bottle_visual": "kaleidoscope_world_liquor:bar_cabinet_bottle_visual",
         "thrown_drink": "kaleidoscope_world_liquor:thrown_drink"
-      }
+      },
+      "color": "yellow"
     },
     {
       "kind": "cocktail",
@@ -5879,5 +6065,8 @@ export const payload = {
       "item": "kaleidoscope_world_liquor:custom_record",
       "category": "art"
     }
+  ],
+  "requires": [
+    "shaker_ingredient_tags"
   ]
 };

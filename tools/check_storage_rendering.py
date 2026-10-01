@@ -72,7 +72,14 @@ def main():
   actual=hashlib.sha256(''.join(k+'\0'+v+'\n' for k,v in sorted(entries.items())).encode()).hexdigest()
   assert len(entries)==expected['files'] and actual==expected['sha256'],prefix
   preserved+=len(entries)
+ subprocess.run([sys.executable,str(ROOT/'tools/build_drink_colors.py'),'--check'],check=True)
  payload=readjs(ROOT/'runtime/BP/scripts/payload.js');payload.pop('version')
+ # Reviewed additive Java tag/tooltip contract; the generator above verifies every value.
+ for row in payload['shakerInputs']:row.pop('ingredientTags')
+ for row in payload['content']:
+  if row['kind']=='bottle':row.pop('color')
+ payload['requires'].remove('shaker_ingredient_tags')
+ if not payload['requires']:payload.pop('requires')
  assert object_digest(payload['pages'])==reviewed['pages']['afterSha256'],'Unreviewed preparation change'
  payload['pages']=reviewed['pages']['before']
  for recipe in payload['recipes']:
