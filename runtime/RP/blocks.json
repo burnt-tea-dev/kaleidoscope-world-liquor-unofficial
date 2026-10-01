@@ -1,0 +1,183 @@
+{
+  "format_version": "1.19.30",
+  "kaleidoscope_world_liquor:bar_stool_black": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_blue": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_brown": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_cyan": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_gray": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_green": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_light_blue": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_light_gray": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_lime": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_magenta": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_orange": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_pink": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_purple": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_red": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_white": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bar_stool_yellow": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bfxm_painting": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:birch_bar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:birch_cellar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bmt_painting": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:bottle_absolut_vodka": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_bacardi_carta_blanca": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_bamboo_leaf_green_liquor": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_bombay_sapphire_gin": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_cool_tea": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_dassai": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_ice_tea": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_jack_daniel": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_johnnie_walker": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_kwas_chlebowy": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_lafite_1982": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_maotai": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_pina_colada": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_skyy_vodka": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_smirnoff_red_vodka": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_sour_plum": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_spiryt_vodka": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:bottle_strongbow": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:ch_painting": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:cha_painting": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:chen_painting": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:cherry_bar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:cherry_cellar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:cup_around_the_world": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:cup_gin_tonic": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:cup_jerk": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:cup_long_island_iced_tea": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:cup_pine_colada": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:cup_shrimp_cocktail": {
+    "sound": "glass"
+  },
+  "kaleidoscope_world_liquor:dark_oak_bar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:dark_oak_cellar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:dream_painting": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:freezer": {
+    "sound": "iron"
+  },
+  "kaleidoscope_world_liquor:oak_bar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:oak_cellar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:qxxy_painting": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:rabbit_painting": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:spruce_bar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:spruce_cellar_cabinet": {
+    "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:wall_record": {
+    "sound": "stone"
+  }
+}

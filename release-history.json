@@ -28,5 +28,65 @@
       "sha256": "57e967257c1ec0e803e029824860e0b3dc29a6c366f848e36d59572aad829e17",
       "files": 490
     }
+  },
+  "0.1.32": {
+    "BP": {
+      "sha256": "9f91b4b2521a31e59a6760ae61c48d0fa7c2a2899bfc61b1c244160b763a20e1",
+      "files": 301
+    },
+    "RP": {
+      "sha256": "6660a6cd2eac86660deca2ebda3a46972633cd2bbbf50b8bced32933a687ffd5",
+      "files": 490
+    }
+  },
+  "0.1.33": {
+    "BP": {
+      "sha256": "44b687b78554738b33060c34e377d159e6aca7e68d8c291394b7945f2aa4415e",
+      "files": 302
+    },
+    "RP": {
+      "sha256": "b83a94b6b01922ce3c3898be070842a8105b9eb6e2c120e0f9f4bb0f3a3f0ab6",
+      "files": 490
+    }
+  },
+  "0.1.34": {
+    "BP": {
+      "sha256": "1a7a91bada9c1ac76a94386f6c8373d0851744e3cfa8bbf785d7f2bf27fa8391",
+      "files": 302
+    },
+    "RP": {
+      "sha256": "e334974a8076035d8093b234ee87f78dda25226978483d6d77e9820ee1aad98d",
+      "files": 490
+    }
+  },
+  "0.1.35": {
+    "BP": {
+      "sha256": "e74a22fcb8dd00bac893990f56689fb9916447907ecb00f1bd8238a67d5178ea",
+      "files": 304
+    },
+    "RP": {
+      "sha256": "bc65cf5cfc0a204d130f87ff0e3d8b6e27f180a0735d9eaca16a909c95ed6f9b",
+      "files": 493
+    }
+  },
+  "0.1.36": {
+    "BP": {
+      "sha256": "72d4bf96e823d4d4462a781fc19bef711aa8b1ac4167fb981607d3d1ae425bcf",
+      "files": 304
+    },
+    "RP": {
+      "sha256": "5874d23bc34e0a11907f50ecc08bedbed8c7f5311578643df609036ee1851e95",
+      "files": 493
+    }
+  },
+  "0.1.37": {
+    "BP": {
+      "sha256": "4598a9a787db7e5b5e8434fab3374b8ebd19e8afa7bcd23d19c0383d298cec6a",
+      "files": 304
+    },
+    "RP": {
+      "sha256": "924270232707291dae0a2d4875e3fcfd92c13e5841c96e8f5312b9e68f1ac443",
+      "files": 493
+    }
   }
 }

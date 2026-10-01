@@ -42,6 +42,8 @@ jobs:
           python tools/build_storage_visuals.py
           python tools/rebuild_guide.py
           git diff --exit-code -- runtime/
+          node --experimental-loader ./tests/wall-record-loader.mjs --test tests/wall-record.test.mjs tests/freezer-callback.test.mjs
+          node --test tests/record-audio.test.mjs tests/multi-jump.test.mjs tests/freezer-state.test.mjs
           python tools/check_release.py
           python tools/build_release.py
           python tools/verify_release.py --development
@@ -64,7 +66,8 @@ jobs:
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
           git rev-parse HEAD > dist/LIQUOR_COMMIT
           git -C ../tavern-src rev-parse HEAD > dist/TAVERN_COMMIT
-          cp docs/GUIDE-AUDIT-0.1.19.json docs/GUIDE-VALIDATION-0.1.19.json docs/STORAGE-VALIDATION-0.1.19.json dist/
+          version="$(python -c 'import json; print(".".join(map(str,json.load(open("baseline.json"))["version"])))')"
+          cp "docs/GUIDE-VALIDATION-${version}.json" "docs/STORAGE-VALIDATION-${version}.json" docs/BDS-FAMILY-20261001.json dist/
       - uses: actions/upload-artifact@v4
         with:
           name: World-Liquor-foundation-integration

@@ -22,7 +22,7 @@ export function applyEffect(p,effect,duration,amplifier=0){
  system.sendScriptEvent('kaleidoscope_tavern:effect_apply',JSON.stringify({entity:p.id,effect,duration,amplifier}));
 }
 function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntity,melee=e.damageSource.cause==='entityAttack';
- if(e.damageSource.cause==='fall'&&active(target,'reverse_gravity')){e.cancel=true;return;}
+ if(e.damageSource.cause==='fall'&&(active(target,'reverse_gravity')||active(target,'multi_jump'))){e.cancel=true;return;}
  if(attacker){
   const double=active(attacker,'double_damage');if(double&&Math.random()<.2+.2*double.amplifier)e.damage*=2;
   const crit=active(attacker,'ground_crit');if(melee&&crit&&(attacker.isOnGround||attacker.isInWater||attacker.getVelocity().y>=0)&&Math.random()<.2+.1*crit.amplifier)e.damage*=1.5;
@@ -44,7 +44,7 @@ function motion(p,state){
  const v=p.getVelocity();
  if(state.reverse_gravity&&!p.isFlying&&!p.isInWater&&!p.isInLava)p.applyImpulse({x:0,y:.16,z:0});
  if(state.captain_gift&&!p.isSneaking&&v.y<=0){const y=Math.floor(p.location.y),b=p.dimension.getBlock({x:Math.floor(p.location.x),y:y-1,z:Math.floor(p.location.z)});if(b?.typeId==='minecraft:water'&&(b.permutation.getState('liquid_depth')??0)===0&&p.location.y-y<.3)p.applyImpulse({x:0,y:-v.y+.08,z:0});}
- if(p.isOnGround)jumps.delete(p.id);
+ if(state.multi_jump&&(p.isOnGround||p.isClimbing))jumps.set(p.id,state.multi_jump.amplifier+1);
  if(state.boating_master){const riding=p.getComponent('minecraft:riding')?.entityRidingOn;if(riding?.typeId.includes('boat')){const v=riding.getVelocity(),b=p.dimension.getBlock({...riding.location,y:riding.location.y-.2}),water=b?.typeId.includes('water'),ice=b?.typeId.includes('ice'),base=water?.12:ice?.05:.3,max=water?.9:ice?.7:1.2,brake=water?.9:ice?.95:.85,forward=p.inputInfo.getMovementVector().y>0,scale=forward?1+base+.15*state.boating_master.amplifier:brake,speed=Math.hypot(v.x,v.z),factor=speed?Math.min(max,speed*scale)/speed:1;riding.applyImpulse({x:v.x*(factor-1),y:0,z:v.z*(factor-1)});}}
 }
 export function tick(){for(const p of world.getAllPlayers())try{
@@ -54,12 +54,18 @@ export function tick(){for(const p of world.getAllPlayers())try{
  motion(p,state);if(state.frost_walker&&system.currentTick%5===0)freeze(p,state.frost_walker.amplifier);
  }catch(e){console.warn('[World Liquor effect behaviour] '+e);}
 }
+function wearingUsableElytra(p){
+ const chest=p.getComponent('minecraft:equippable')?.getEquipment('Chest');
+ if(chest?.typeId!=='minecraft:elytra')return false;
+ const durability=chest.getComponent('minecraft:durability');
+ return !durability||durability.damage<durability.maxDurability-1;
+}
 export function installEffects(){
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(p?.typeId==='minecraft:player'&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
  world.afterEvents.playerSpawn.subscribe(({player})=>jumps.delete(player.id));
  world.afterEvents.playerLeave.subscribe(e=>{jumps.delete(e.playerId);});
- world.afterEvents.playerButtonInput.subscribe(e=>{if(e.button!=='Jump'||e.newButtonState!=='Pressed')return;const p=e.player,reverse=active(p,'reverse_gravity');if(reverse){const v=p.getVelocity();p.applyImpulse({x:0,y:-.42-v.y,z:0});return;}const row=active(p,'multi_jump'),v=p.getVelocity();if(!row||p.isOnGround||p.isFlying||p.isGliding||p.isInWater||p.isClimbing||p.getEffect('levitation')||p.getComponent('minecraft:riding')||v.y>=0)return;const count=jumps.get(p.id)??0;if(count>=row.amplifier+1)return;jumps.set(p.id,count+1);p.applyImpulse({x:0,y:.42-v.y,z:0});});
+ world.afterEvents.playerButtonInput.subscribe(e=>{if(e.button!=='Jump'||e.newButtonState!=='Pressed')return;const p=e.player,reverse=active(p,'reverse_gravity');if(reverse){const v=p.getVelocity();p.applyImpulse({x:0,y:-.42-v.y,z:0});return;}const row=active(p,'multi_jump'),v=p.getVelocity();if(!row||p.isOnGround||p.isFlying||p.isGliding||p.isInWater||wearingUsableElytra(p)||p.getEffect('levitation')||p.getComponent('minecraft:riding')||v.y>=0)return;const remaining=jumps.get(p.id)??0;if(remaining<=0)return;jumps.set(p.id,remaining-1);p.applyImpulse({x:0,y:.42-v.y,z:0});});
  world.afterEvents.entityDie.subscribe(e=>{if(headDrops.delete(e.deadEntity.id)){const id={'minecraft:zombie':'minecraft:zombie_head','minecraft:skeleton':'minecraft:skeleton_skull','minecraft:creeper':'minecraft:creeper_head','minecraft:wither_skeleton':'minecraft:wither_skeleton_skull','minecraft:piglin':'minecraft:piglin_head','minecraft:player':'minecraft:player_head'}[e.deadEntity.typeId];if(id)try{e.deadEntity.dimension.spawnItem(new ItemStack(id),e.deadEntity.location);}catch{}}
   const attacker=e.damageSource?.damagingEntity,row=attacker&&active(attacker,'treasure_guide');if(row)doubleFreshDrops(e.deadEntity.dimension,e.deadEntity.location,.15+.05*row.amplifier);
  });

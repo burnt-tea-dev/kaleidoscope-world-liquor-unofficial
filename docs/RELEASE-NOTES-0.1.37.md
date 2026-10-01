@@ -1,0 +1,12 @@
+# 0.1.37 — 配對完整破壞回饋宿主
+
+包含 0.1.35 的全部 PR #7、#8、#9 整合與回歸修復。
+
+本版精確配對 Tavern 0.6.72。原 0.6.70 缺少先前合併時遺失的 destruction_feedback 實作，不能完成本附屬註冊；以完整宿主修復解決，而非移除能力檢查、謊報能力或放寬協定。
+
+沒有借用舊版本身份換包，保留 0.1.35 失敗配對紀錄。仍為測試版，正式服部署前需備份、依賴核對及存檔資料演練。
+
+
+## Final integration regression
+
+Restored the Java 4×4×4 glass fragment effect for projectile-broken displayed bottles. The generic furniture destruction-feedback restoration must not replace this specific bottle effect. Retain commit/rollback safeguards and all furniture material profiles. Client visual acceptance remains pending.
