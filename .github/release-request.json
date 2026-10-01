@@ -1,10 +1,10 @@
 {
-  "version": "0.1.36",
-  "tag": "v0.1.36-preview.1",
-  "title": "森羅酒館：世界名酒 0.1.36 — 全 PR 整合、唱片與冰櫃／酒櫃原生修復",
+  "version": "0.1.37",
+  "tag": "v0.1.37-preview.1",
+  "title": "森羅酒館：世界名酒 0.1.37 — 全 PR 整合與酒館 0.6.72 配對",
   "prerelease": true,
-  "expected_archive_sha256": "1cfc01834787424caccaeedb26c9c0a357be2e76a892e31ec00f917f640d676d",
-  "tavern_commit": "bb42030c6fe8b40ec116413b6a410b410327dc5b",
+  "expected_archive_sha256": "2dbf3549d4da21bf4768a69034f21692b6d201e91a25593fbb30c4c171fe775d",
+  "tavern_commit": "3cdc0f270fca8481ffed8755dd4700e894d1d239",
   "validation_evidence": "docs/BDS-FAMILY-20261001.json",
   "client_acceptance": "pending"
 }
