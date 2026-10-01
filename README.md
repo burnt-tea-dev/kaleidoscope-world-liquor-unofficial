@@ -1,4 +1,4 @@
-## Current maintained baseline: 0.1.38
+## Current maintained baseline: 0.1.39
 
 Canonical runtime and dependencies: [baseline.json](baseline.json). Pair with Tavern **0.6.72** and unmodified official Cookery **1.0.8**. The 16-pack family candidate passed static and isolated BDS checks; client and saved-world UUID migration gates remain pending. The legacy managed-server installation is not an approved production baseline. Build from this source; no private gameplay patch layer is required. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md) before importing historical artifacts or deploying.
 

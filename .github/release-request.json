@@ -1,10 +1,10 @@
 {
-  "version": "0.1.38",
-  "tag": "v0.1.38-preview.1",
-  "title": "森羅酒館：世界名酒 0.1.38 — 配對夜光新娘修復版酒館 0.6.73",
+  "version": "0.1.39",
+  "tag": "v0.1.39-preview.1",
+  "title": "森羅酒館：世界名酒 0.1.39 — 配對 Blockbench 規範化酒館 0.6.74",
   "prerelease": true,
-  "expected_archive_sha256": "c39fa8991f98d1480f655374425a69df852e9d6c2a40c21e5cba33a4ec39e81c",
-  "tavern_commit": "5acae328689e5f66a3e695c906d7619ed3a4767e",
-  "validation_evidence": "docs/BDS-LUMINOUS-20261001.json",
+  "expected_archive_sha256": "81fd3cec749f24eead03040a667440ef0d9ded6bb7e278301fd76b3604d4a797",
+  "tavern_commit": "6f58f5065078bf999f2df37e694e823d7f5d8cf1",
+  "validation_evidence": "docs/BDS-LUMINOUS-NORMALIZED-20261001.json",
   "client_acceptance": "pending"
 }
