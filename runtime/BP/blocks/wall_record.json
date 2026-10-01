@@ -92,7 +92,7 @@
       "minecraft:transformation": {
         "rotation": [
           0,
-          180,
+          0,
           0
         ]
       },
@@ -107,7 +107,7 @@
           "minecraft:transformation": {
             "rotation": [
               0,
-              90,
+              270,
               0
             ]
           }
@@ -119,7 +119,7 @@
           "minecraft:transformation": {
             "rotation": [
               0,
-              0,
+              180,
               0
             ]
           }
@@ -131,7 +131,7 @@
           "minecraft:transformation": {
             "rotation": [
               0,
-              270,
+              90,
               0
             ]
           }
