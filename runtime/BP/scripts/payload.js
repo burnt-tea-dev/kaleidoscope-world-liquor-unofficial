@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.39",
+  "version": "0.1.41",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -5628,7 +5628,7 @@ export const payload = {
           ],
           "result": "kaleidoscope_world_liquor:liangshan_ice_cone",
           "count": 1,
-          "time": 1800
+          "time": 1200
         }
       ]
     },
@@ -5657,7 +5657,7 @@ export const payload = {
           ],
           "result": "kaleidoscope_world_liquor:kita_stuffed_crisp",
           "count": 1,
-          "time": 1800
+          "time": 1200
         }
       ]
     },
@@ -5686,7 +5686,7 @@ export const payload = {
           ],
           "result": "kaleidoscope_world_liquor:pochi_pudding",
           "count": 1,
-          "time": 1800
+          "time": 1200
         }
       ]
     },
