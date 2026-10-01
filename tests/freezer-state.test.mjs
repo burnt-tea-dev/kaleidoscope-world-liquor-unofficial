@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import {startFreezerRecipe,freezerPowerTransition as transition} from '../runtime/BP/scripts/freezer-state.js';
 import {FREEZER_RECIPES as recipes} from '../runtime/BP/scripts/freezer-recipes.js';
 const state=()=>({input:[],fluid:'minecraft:water',remaining:0,output:0,redstonePowered:false});
@@ -14,4 +15,20 @@ test('redstone callbacks use dedicated components only on consumer blocks',async
  const fs=await import('node:fs');const root=new URL('../runtime/BP/blocks/',import.meta.url);
  for(const file of fs.readdirSync(root))if(file.endsWith('.json')){const b=JSON.parse(fs.readFileSync(new URL(file,root)))['minecraft:block'];for(const id of ['kaleidoscope_world_liquor:freezer_redstone','kaleidoscope_tavern:external_cellar_redstone'])if(id in b.components)assert.ok(b.components['minecraft:redstone_consumer'],file);}
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/furniture.js',import.meta.url),'utf8');assert.ok(!source.split("registerCustomComponent(NS+':furniture',{")[1].split('});}')[0].includes('onRedstoneUpdate'));
+});
+
+// Current NeoForge 1.1.9 fixture values, independently preserved from its JAR.
+for(const name of ['kita_stuffed_crisp','liangshan_ice_cone','pochi_pudding'])test(name+' starts with the exact current Java dessert timer',()=>{
+ const source=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.1.9/freezer/'+name+'.json',import.meta.url)));
+ const recipe=recipes.find(r=>r.id.endsWith('/'+name));assert.equal(source.craft_time,1200);assert.equal(recipe.craft_time,source.craft_time);
+ const before={input:recipe.ingredients.map(options=>options[0]),fluid:recipe.fluid,remaining:0,output:0};
+ const after=startFreezerRecipe(before,recipes);assert.equal(after.remaining,source.craft_time);assert.equal(after.recipe,recipe.id);
+ assert.deepEqual(after.input,[]);assert.equal(after.fluid,null);assert.equal(before.fluid,recipe.fluid);
+});
+test('ice and magma retain their original 1800-tick recipe duration',()=>{
+ for(const name of ['ice','magma_block'])assert.equal(recipes.find(r=>r.id.endsWith('/'+name)).craft_time,1800);
+});
+test('updating recipes does not restart an already active saved-world batch',()=>{
+ const oldBatch={recipe:'kaleidoscope_world_liquor:freezer/pochi_pudding',input:[],fluid:null,remaining:1500,output:0};
+ assert.equal(startFreezerRecipe(oldBatch,recipes),oldBatch);
 });

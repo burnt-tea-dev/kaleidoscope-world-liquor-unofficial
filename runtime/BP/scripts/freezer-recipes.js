@@ -25,7 +25,7 @@ export const FREEZER_RECIPES = [
       "id": "kaleidoscope_world_liquor:kita_stuffed_crisp",
       "count": 1
     },
-    "craft_time": 1800,
+    "craft_time": 1200,
     "texture": "kaleidoscope_world_liquor:block/snow",
     "id": "kaleidoscope_world_liquor:freezer/kita_stuffed_crisp"
   },
@@ -42,7 +42,7 @@ export const FREEZER_RECIPES = [
       "id": "kaleidoscope_world_liquor:liangshan_ice_cone",
       "count": 1
     },
-    "craft_time": 1800,
+    "craft_time": 1200,
     "texture": "kaleidoscope_world_liquor:block/snow",
     "id": "kaleidoscope_world_liquor:freezer/liangshan_ice_cone"
   },
@@ -72,7 +72,7 @@ export const FREEZER_RECIPES = [
       "id": "kaleidoscope_world_liquor:pochi_pudding",
       "count": 1
     },
-    "craft_time": 1800,
+    "craft_time": 1200,
     "texture": "kaleidoscope_world_liquor:block/snow",
     "extract_condition": {
       "item": "minecraft:bowl"
