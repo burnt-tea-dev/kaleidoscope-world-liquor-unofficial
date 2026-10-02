@@ -3,7 +3,7 @@
   "tag": "v0.1.52-preview.1",
   "title": "世界名酒 0.1.52 — 修復 UI 命名空間覆蓋",
   "prerelease": true,
-  "expected_archive_sha256": "pending-exact-build",
+  "expected_archive_sha256": "99a7876ff187b09fd69e43dad943b849f0e8facaeaff00cda7f1ee1199b91d4a",
   "tavern_commit": "a23484a252e8b60ce27c31f8528919c501b19ab9",
   "validation_evidence": "docs/BDS-HUD-ROOT-RECOVERY-0.1.52.json",
   "client_acceptance": "pending"
