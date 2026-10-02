@@ -1,10 +1,10 @@
 {
-  "version": "0.1.44",
-  "tag": "v0.1.44-preview.1",
-  "title": "森羅物語：世界名酒 0.1.44 — 接入附加包來源標籤",
+  "version": "0.1.45",
+  "tag": "v0.1.45-preview.1",
+  "title": "世界名酒 0.1.45 — 獨立酒館相容與可選米類配方",
   "prerelease": true,
-  "expected_archive_sha256": "b3dff1ee5c0ee856abea148f34de4ac360df1f0a91d39199c1f9691ac5899dea",
-  "tavern_commit": "05195a896af2112a46d5c360b88bdf3728cb3b3a",
-  "validation_evidence": "docs/BDS-FRIEND-MERGE-20261001.json",
+  "expected_archive_sha256": "357de5ec72dea60c22d9130239dd1a39552b8d9fd193e3133032994bcd7691d1",
+  "tavern_commit": "a276df88d134001dc37da4ac95acf15c36235ec6",
+  "validation_evidence": "docs/BDS-STANDALONE-GUIDE-20261002.json",
   "client_acceptance": "pending"
 }
