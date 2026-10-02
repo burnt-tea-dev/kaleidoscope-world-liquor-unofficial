@@ -146,29 +146,7 @@
                   ],
                   "material_instance": "default"
                 },
-                "east": {
-                  "uv": [
-                    10.0,
-                    3.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    5.0
-                  ],
-                  "material_instance": "default"
-                },
                 "south": {
-                  "uv": [
-                    10.0,
-                    3.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    5.0
-                  ],
-                  "material_instance": "default"
-                },
-                "west": {
                   "uv": [
                     10.0,
                     3.0
@@ -510,17 +488,6 @@
                   ],
                   "material_instance": "default"
                 },
-                "east": {
-                  "uv": [
-                    11.0,
-                    11.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    4.0
-                  ],
-                  "material_instance": "default"
-                },
                 "south": {
                   "uv": [
                     11.0,
@@ -591,17 +558,6 @@
               ],
               "uv": {
                 "north": {
-                  "uv": [
-                    12.0,
-                    12.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    3.0
-                  ],
-                  "material_instance": "default"
-                },
-                "east": {
                   "uv": [
                     12.0,
                     12.0
@@ -688,17 +644,6 @@
                   ],
                   "uv_size": [
                     -1.0,
-                    6.0
-                  ],
-                  "material_instance": "default"
-                },
-                "east": {
-                  "uv": [
-                    14.0,
-                    5.0
-                  ],
-                  "uv_size": [
-                    1.0,
                     6.0
                   ],
                   "material_instance": "default"
@@ -896,17 +841,6 @@
                   ],
                   "material_instance": "default"
                 },
-                "west": {
-                  "uv": [
-                    2.0,
-                    3.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    5.0
-                  ],
-                  "material_instance": "default"
-                },
                 "up": {
                   "uv": [
                     3.0,
@@ -977,17 +911,6 @@
                   "material_instance": "default"
                 },
                 "south": {
-                  "uv": [
-                    1.0,
-                    5.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    3.0
-                  ],
-                  "material_instance": "default"
-                },
-                "west": {
                   "uv": [
                     1.0,
                     5.0
@@ -1078,17 +1001,6 @@
                   ],
                   "material_instance": "default"
                 },
-                "west": {
-                  "uv": [
-                    1.0,
-                    9.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    2.0
-                  ],
-                  "material_instance": "default"
-                },
                 "up": {
                   "uv": [
                     2.0,
@@ -1169,17 +1081,6 @@
                   ],
                   "material_instance": "default"
                 },
-                "west": {
-                  "uv": [
-                    2.0,
-                    9.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    4.0
-                  ],
-                  "material_instance": "default"
-                },
                 "up": {
                   "uv": [
                     3.0,
@@ -1228,17 +1129,6 @@
               ],
               "uv": {
                 "north": {
-                  "uv": [
-                    9.0,
-                    1.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    8.0
-                  ],
-                  "material_instance": "default"
-                },
-                "east": {
                   "uv": [
                     9.0,
                     1.0
@@ -1319,17 +1209,6 @@
               ],
               "uv": {
                 "north": {
-                  "uv": [
-                    8.0,
-                    1.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    9.0
-                  ],
-                  "material_instance": "default"
-                },
-                "east": {
                   "uv": [
                     8.0,
                     1.0
@@ -1438,17 +1317,6 @@
                   ],
                   "uv_size": [
                     -2.0,
-                    12.0
-                  ],
-                  "material_instance": "default"
-                },
-                "west": {
-                  "uv": [
-                    3.0,
-                    2.0
-                  ],
-                  "uv_size": [
-                    1.0,
                     12.0
                   ],
                   "material_instance": "default"

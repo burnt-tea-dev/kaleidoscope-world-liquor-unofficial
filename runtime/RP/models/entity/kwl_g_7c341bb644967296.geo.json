@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:geometry": [
     {
       "description": {
@@ -189,17 +189,6 @@
                     2.0
                   ],
                   "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    128.0,
-                    112.0
-                  ],
-                  "uv_size": [
-                    -128.0,
-                    -8.0
-                  ],
-                  "material_instance": "default"
                 }
               }
             }
@@ -226,17 +215,6 @@
                 11
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    0.0,
-                    40.0
-                  ],
-                  "uv_size": [
-                    8.0,
-                    88.0
-                  ],
-                  "material_instance": "default"
-                },
                 "east": {
                   "uv": [
                     41.0,
@@ -245,17 +223,6 @@
                   "uv_size": [
                     22.0,
                     22.0
-                  ],
-                  "material_instance": "default"
-                },
-                "south": {
-                  "uv": [
-                    120.0,
-                    40.0
-                  ],
-                  "uv_size": [
-                    8.0,
-                    88.0
                   ],
                   "material_instance": "default"
                 },
@@ -278,17 +245,6 @@
                   "uv_size": [
                     2.0,
                     26.0
-                  ],
-                  "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    128.0,
-                    128.0
-                  ],
-                  "uv_size": [
-                    -8.0,
-                    -96.0
                   ],
                   "material_instance": "default"
                 }
@@ -317,17 +273,6 @@
                 11
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    0.0,
-                    40.0
-                  ],
-                  "uv_size": [
-                    8.0,
-                    88.0
-                  ],
-                  "material_instance": "default"
-                },
                 "east": {
                   "uv": [
                     77.0,
@@ -336,17 +281,6 @@
                   "uv_size": [
                     22.0,
                     22.0
-                  ],
-                  "material_instance": "default"
-                },
-                "south": {
-                  "uv": [
-                    120.0,
-                    40.0
-                  ],
-                  "uv_size": [
-                    8.0,
-                    88.0
                   ],
                   "material_instance": "default"
                 },
@@ -369,17 +303,6 @@
                   "uv_size": [
                     -2.0,
                     26.0
-                  ],
-                  "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    128.0,
-                    128.0
-                  ],
-                  "uv_size": [
-                    -8.0,
-                    -96.0
                   ],
                   "material_instance": "default"
                 }
@@ -462,17 +385,6 @@
                     -2.0
                   ],
                   "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    128.0,
-                    112.0
-                  ],
-                  "uv_size": [
-                    -128.0,
-                    -8.0
-                  ],
-                  "material_instance": "default"
                 }
               }
             }
@@ -546,22 +458,22 @@
                 "up": {
                   "uv": [
                     109.0,
-                    33.0
+                    37.0
                   ],
                   "uv_size": [
                     -32.0,
-                    4.0
+                    -4.0
                   ],
                   "material_instance": "default"
                 },
                 "down": {
                   "uv": [
                     109.0,
-                    37.0
+                    33.0
                   ],
                   "uv_size": [
                     -32.0,
-                    -4.0
+                    4.0
                   ],
                   "material_instance": "default"
                 }
@@ -590,17 +502,6 @@
                 0.5
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    46.0,
-                    19.0
-                  ],
-                  "uv_size": [
-                    7.0,
-                    1.0
-                  ],
-                  "material_instance": "default"
-                },
                 "east": {
                   "uv": [
                     46.0,
@@ -681,17 +582,6 @@
                 0.5
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    46.0,
-                    19.0
-                  ],
-                  "uv_size": [
-                    7.0,
-                    1.0
-                  ],
-                  "material_instance": "default"
-                },
                 "east": {
                   "uv": [
                     46.0,
@@ -772,17 +662,6 @@
                 0.5
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    8.0,
-                    44.0
-                  ],
-                  "uv_size": [
-                    8.0,
-                    4.0
-                  ],
-                  "material_instance": "default"
-                },
                 "east": {
                   "uv": [
                     47.0,
@@ -790,7 +669,7 @@
                   ],
                   "uv_size": [
                     7.0,
-                    0.0
+                    -1.0
                   ],
                   "material_instance": "default"
                 },
@@ -812,28 +691,6 @@
                   ],
                   "uv_size": [
                     2.0,
-                    0.0
-                  ],
-                  "material_instance": "default"
-                },
-                "up": {
-                  "uv": [
-                    120.0,
-                    80.0
-                  ],
-                  "uv_size": [
-                    -8.0,
-                    -80.0
-                  ],
-                  "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    55.0,
-                    20.0
-                  ],
-                  "uv_size": [
-                    -8.0,
                     -1.0
                   ],
                   "material_instance": "default"
@@ -863,25 +720,14 @@
                 0.5
               ],
               "uv": {
-                "north": {
-                  "uv": [
-                    8.0,
-                    44.0
-                  ],
-                  "uv_size": [
-                    8.0,
-                    4.0
-                  ],
-                  "material_instance": "default"
-                },
                 "east": {
                   "uv": [
                     47.0,
-                    20.0
+                    19.0
                   ],
                   "uv_size": [
                     7.0,
-                    0.0
+                    1.0
                   ],
                   "material_instance": "default"
                 },
@@ -903,28 +749,6 @@
                   ],
                   "uv_size": [
                     2.0,
-                    0.0
-                  ],
-                  "material_instance": "default"
-                },
-                "up": {
-                  "uv": [
-                    55.0,
-                    20.0
-                  ],
-                  "uv_size": [
-                    -8.0,
-                    -1.0
-                  ],
-                  "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    55.0,
-                    20.0
-                  ],
-                  "uv_size": [
-                    -8.0,
                     -1.0
                   ],
                   "material_instance": "default"

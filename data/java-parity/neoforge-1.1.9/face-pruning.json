@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "entries": [
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_1559f531fcdb7ed3.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/bar/stool/base.json",
+      "before_faces": 42,
+      "after_faces": 38,
+      "non_face_sha256": "3d7fea99ee9437854255dd4923a1df4608962c43905fd1317298ce41063b83a4"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_bf5e1b33950f0930.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/left.json",
+      "before_faces": 24,
+      "after_faces": 16,
+      "non_face_sha256": "868a3ce5f89903528d40c1faa1ac2e41be82a9b81b983239a1f686a1380d8cc2"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_e58e1d36a18fe571.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/middle.json",
+      "before_faces": 18,
+      "after_faces": 10,
+      "non_face_sha256": "cc3ddadc5ef37fe08e16bd6285e40950a9795252f5eae6874996ee21f790c6e6"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_ad5da8558c3bd3ea.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/right.json",
+      "before_faces": 24,
+      "after_faces": 16,
+      "non_face_sha256": "9d24e5742d6fbcc50408e31259efca35ca4a864c80dba9632665e321a17724be"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_3c908a89764781f8.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/single.json",
+      "before_faces": 30,
+      "after_faces": 22,
+      "non_face_sha256": "cef86ad72d913686e10e2939baf1580cce2a38ef2a63824f3c40c7905c14fb7b"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_682fa9a149814d9a.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/left.json",
+      "before_faces": 54,
+      "after_faces": 30,
+      "non_face_sha256": "34c169249abb6e72af73167b582dffd0d00b2d5a1836563e6fa5b6794bf95c2b"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_749eae98236d676e.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/middle.json",
+      "before_faces": 54,
+      "after_faces": 26,
+      "non_face_sha256": "f1be39d1212c54421d4edca7beaa24f03f9185731524002761659486db35d604"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_1e3ca522ce764b79.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/right.json",
+      "before_faces": 54,
+      "after_faces": 30,
+      "non_face_sha256": "67bfaf7018b33af8141bf925f99c6af69247660944d5a641ccc788868ef3421a"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_e1663e2f1535b9c4.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/single.json",
+      "before_faces": 54,
+      "after_faces": 34,
+      "non_face_sha256": "c443bb522e130196255cb3519d27a68daaba271c4f863f720735b3b5f1bdf6c1"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_8c596a0f0cbd0f27.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/wall_record/base.json",
+      "before_faces": 42,
+      "after_faces": 36,
+      "non_face_sha256": "d051c3cdc91001368227b07821436941c3b90d8bd941bfc43ddab9025501fe3f"
+    },
+    {
+      "runtime": "runtime/RP/models/entity/kwl_g_e87148eb46475ffa.geo.json",
+      "source": "assets/kaleidoscope_world_liquor/models/block/wall_record/minecraft/10.json",
+      "before_faces": 96,
+      "after_faces": 84,
+      "non_face_sha256": "51c6ba4f749c82e52ed4d269ac6f07f95cb078c1dba373a42e54991b4bb64e4e"
+    }
+  ]
+}

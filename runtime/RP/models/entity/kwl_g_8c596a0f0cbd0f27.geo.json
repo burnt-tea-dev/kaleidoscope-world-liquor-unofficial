@@ -98,17 +98,6 @@
                     -1.0
                   ],
                   "material_instance": "default"
-                },
-                "down": {
-                  "uv": [
-                    11.0,
-                    1.0
-                  ],
-                  "uv_size": [
-                    -6.0,
-                    1.0
-                  ],
-                  "material_instance": "default"
                 }
               }
             }
@@ -179,17 +168,6 @@
                   ],
                   "material_instance": "default"
                 },
-                "up": {
-                  "uv": [
-                    11.0,
-                    2.0
-                  ],
-                  "uv_size": [
-                    -6.0,
-                    -1.0
-                  ],
-                  "material_instance": "default"
-                },
                 "down": {
                   "uv": [
                     11.0,
@@ -229,17 +207,6 @@
                 "north": {
                   "uv": [
                     14.0,
-                    5.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    6.0
-                  ],
-                  "material_instance": "default"
-                },
-                "east": {
-                  "uv": [
-                    1.0,
                     5.0
                   ],
                   "uv_size": [
@@ -350,17 +317,6 @@
                   ],
                   "material_instance": "default"
                 },
-                "west": {
-                  "uv": [
-                    1.0,
-                    5.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    6.0
-                  ],
-                  "material_instance": "default"
-                },
                 "up": {
                   "uv": [
                     15.0,
@@ -411,17 +367,6 @@
                 "north": {
                   "uv": [
                     13.0,
-                    3.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    10.0
-                  ],
-                  "material_instance": "default"
-                },
-                "east": {
-                  "uv": [
-                    2.0,
                     3.0
                   ],
                   "uv_size": [
@@ -522,17 +467,6 @@
                   "material_instance": "default"
                 },
                 "south": {
-                  "uv": [
-                    2.0,
-                    3.0
-                  ],
-                  "uv_size": [
-                    1.0,
-                    10.0
-                  ],
-                  "material_instance": "default"
-                },
-                "west": {
                   "uv": [
                     2.0,
                     3.0
