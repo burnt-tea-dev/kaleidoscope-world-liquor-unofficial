@@ -89,7 +89,26 @@
         "min_power": 0,
         "propagates_power": false
       },
-      "kaleidoscope_tavern:external_cellar_redstone": {}
+      "kaleidoscope_tavern:external_cellar_redstone": {},
+      "minecraft:item_visual": {
+        "geometry": {
+          "identifier": "geometry.kwl.g_e1663e2f1535b9c4"
+        },
+        "material_instances": {
+          "*": {
+            "texture": "kwl_kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__single",
+            "render_method": "alpha_test_single_sided",
+            "face_dimming": true,
+            "ambient_occlusion": 0
+          },
+          "default": {
+            "texture": "kwl_kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__single",
+            "render_method": "alpha_test_single_sided",
+            "face_dimming": true,
+            "ambient_occlusion": 0
+          }
+        }
+      }
     },
     "permutations": [
       {
