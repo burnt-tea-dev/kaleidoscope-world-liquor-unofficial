@@ -1,10 +1,10 @@
 {
-  "version": "0.1.51",
-  "tag": "v0.1.51-preview.1",
-  "title": "世界名酒0.1.51 — 可選酒效圖示與酒館配對",
+  "version": "0.1.52",
+  "tag": "v0.1.52-preview.1",
+  "title": "世界名酒 0.1.52 — 修復 UI 命名空間覆蓋",
   "prerelease": true,
-  "expected_archive_sha256": "fe27a55c5d7447b0734dcb2d7b913bc83fd73eae3748203cc4518c7d2c06a9a7",
-  "tavern_commit": "26b1d403b3a297e935a87bce5c5ca9f9c9abb2a0",
-  "validation_evidence": "docs/BDS-STANDALONE-ICONS-0.1.51.json",
+  "expected_archive_sha256": "99a7876ff187b09fd69e43dad943b849f0e8facaeaff00cda7f1ee1199b91d4a",
+  "tavern_commit": "a23484a252e8b60ce27c31f8528919c501b19ab9",
+  "validation_evidence": "docs/BDS-HUD-ROOT-RECOVERY-0.1.52.json",
   "client_acceptance": "pending"
 }
