@@ -1,10 +1,10 @@
 {
-  "version": "0.1.49",
-  "tag": "v0.1.49-preview.1",
-  "title": "世界名酒0.1.49 — 酒館沉浸式回饋配對",
+  "version": "0.1.50",
+  "tag": "v0.1.50-preview.1",
+  "title": "世界名酒0.1.50 — 原作酒效圖示與酒館配對",
   "prerelease": true,
-  "expected_archive_sha256": "51246149f12d2f76bee4725772afa63e73f317bce1d2f7d9473a3fceb96b042c",
-  "tavern_commit": "499ec14f5b7cf4535111be1e10183907c045d2c9",
-  "validation_evidence": "docs/BDS-IMMERSIVE-PAIR-0.1.49.json",
+  "expected_archive_sha256": "8b573196898332fb980805ec4be4343667c809b85d9a498de8ead27dcb13b575",
+  "tavern_commit": "83fd22b9e4a9c4c72574e60980cd8cc1336ac8c7",
+  "validation_evidence": "docs/BDS-EFFECT-ICONS-0.1.50.json",
   "client_acceptance": "pending"
 }

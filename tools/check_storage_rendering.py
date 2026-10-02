@@ -26,6 +26,10 @@ def main():
  reviewed=read(ROOT/'data/guide-destruction-review.json')
  plane_review=read(ROOT/'data/drink-plane-review.json')['files']
  additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
+ # Reviewed original effect sprites are additive. Preserve the historical texture
+ # tree assertion and separately verify exact source PNG hashes before exclusion.
+ for row in read(ROOT/'data/effect-icon-source.json')['unchanged_pngs']:
+  name='runtime/RP/'+row['runtime'];assert name not in additions;additions[name]=row['sha256']
  break_review=read(ROOT/'data/break-feedback-review.json')
  for path,h in break_review['additions'].items():
   assert path not in additions,('Duplicate reviewed addition',path);additions[path]=h
