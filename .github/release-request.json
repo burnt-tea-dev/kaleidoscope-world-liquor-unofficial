@@ -1,10 +1,10 @@
 {
-  "version": "0.1.50",
-  "tag": "v0.1.50-preview.1",
-  "title": "世界名酒0.1.50 — 原作酒效圖示與酒館配對",
+  "version": "0.1.51",
+  "tag": "v0.1.51-preview.1",
+  "title": "世界名酒0.1.51 — 可選酒效圖示與酒館配對",
   "prerelease": true,
-  "expected_archive_sha256": "8b573196898332fb980805ec4be4343667c809b85d9a498de8ead27dcb13b575",
-  "tavern_commit": "83fd22b9e4a9c4c72574e60980cd8cc1336ac8c7",
-  "validation_evidence": "docs/BDS-EFFECT-ICONS-0.1.50.json",
+  "expected_archive_sha256": "pending-exact-build",
+  "tavern_commit": "26b1d403b3a297e935a87bce5c5ca9f9c9abb2a0",
+  "validation_evidence": "docs/BDS-STANDALONE-ICONS-0.1.51.json",
   "client_acceptance": "pending"
 }
