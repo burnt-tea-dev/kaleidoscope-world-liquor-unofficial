@@ -1,0 +1,18 @@
+{
+  "tool": "Official Blockbench5.2.1 desktop",
+  "source": "data/java-parity/neoforge-1.1.9/assets/kaleidoscope_world_liquor/models/block/fridge_close.json",
+  "canonical_geometry": "runtime/RP/models/entity/kwl_g_5b611b0754ffa64d.geo.json",
+  "canonical_geometry_sha256": "50ffdfcc9da7b56d0666f009a38dd3778ba95e66cacf0a648118e7f7c005f2d5",
+  "texture_sha256": "d748ad292210d515e570b272703316f4c823bad5e786b13ca7824a12215c58dc",
+  "preview": "Byte-identical canonical geometry copy; identical source texture manually imported in editor",
+  "observed": [
+    "textured shape",
+    "first-person right",
+    "third-person right",
+    "GUI"
+  ],
+  "result": "Source and converted editor views visually match geometry, texture and pose",
+  "native_client_tested": false,
+  "all_views_individually_observed": false,
+  "runtime_modified_by_editor": false
+}

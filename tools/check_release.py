@@ -6,6 +6,8 @@ from PIL import Image
 root=Path(__file__).resolve().parents[1];tav=Path(os.environ.get('TAVERN_ROOT',str(root.parent/'tavern-src')));bp=root/'runtime/BP';rp=root/'runtime/RP'
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 subprocess.run(['python',str(root/'tools/item_render_contract.py')],check=True)
+subprocess.run(['python',str(root/'tools/test_freezer_java_art.py')],check=True)
+subprocess.run(['python',str(root/'tools/test_java_face_topology.py')],check=True)
 subprocess.run(['python',str(root/'tools/build_drink_colors.py'),'--check'],check=True)
 subprocess.run(['node','--test',str(root/'tools/optional-cookery.test.mjs')],check=True)
 errors=[]

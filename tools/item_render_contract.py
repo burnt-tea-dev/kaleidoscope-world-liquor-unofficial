@@ -6,17 +6,17 @@ import argparse,copy,json,hashlib
 ROOT=Path(__file__).resolve().parents[1]
 CONTEXTS=('gui','ground','fixed','head','firstperson_righthand','firstperson_lefthand','thirdperson_righthand','thirdperson_lefthand')
 def read(p):return json.loads(p.read_text())
-def resolve(name,seen=()):
+def resolve(name,seen=(),assets=None):
  assert name not in seen,('model parent cycle',name)
- ns,path=name.split(':');p=ROOT/f'upstream/assets/{ns}/models/{path}.json';j=read(p)
- parent=resolve(j['parent'],(*seen,name)) if 'parent' in j else {}
+ ns,path=name.split(':');p=(assets or ROOT/'upstream/assets')/ns/'models'/(path+'.json');j=read(p)
+ parent=resolve(j['parent'],(*seen,name),assets) if 'parent' in j else {}
  return {**parent,**j,'display':{**parent.get('display',{}),**j.get('display',{})}}
 def planned():
  bp=ROOT/'runtime/BP';rp=ROOT/'runtime/RP';files={}
  geos={g['description']['identifier']:p for p in (rp/'models').rglob('*.json') for g in read(p).get('minecraft:geometry',[])}
  ids=['kaleidoscope_world_liquor:'+x for x in read(ROOT/'docs/item-inventory.json')['furniture']];assert len(ids)==27
  for ident in ids:
-  short=ident.split(':')[1];model=resolve('kaleidoscope_world_liquor:item/'+short)
+  short=ident.split(':')[1];model=resolve('kaleidoscope_world_liquor:item/'+short,assets=ROOT/'data/java-parity/neoforge-1.1.9/assets' if short=='freezer' else None)
   assert model.get('elements'),(ident,'expected geometric Java item')
   bpfile=bp/'blocks'/f'{short}.json';b=read(bpfile);c=b['minecraft:block']['components']
   visual=c
@@ -37,7 +37,13 @@ def planned():
 
 def run(write=False):
  files=planned();drift=[]
+ from update_freezer_java_art import check as freezer_art_check, SOURCE
+ from update_java_face_topology import check as topology_check
+ freezer_art_check();topology_check()
+ reviewed={x['runtime'] for x in read(SOURCE/'face-pruning.json')['entries']}
+ reviewed.add('runtime/RP/models/entity/kwl_g_5b611b0754ffa64d.geo.json')
  for name,digest in read(ROOT/'data/item-display-original-bones.json').items():
+  if name in reviewed:continue # Historical hashes retained; latest pinned source checked above
   assert hashlib.sha256(json.dumps(read(ROOT/name)['minecraft:geometry'][0]['bones'],sort_keys=True).encode()).hexdigest()==digest,('Unrelated source geometry changed',name)
  for p,j in files.items():
   if read(p)!=j:

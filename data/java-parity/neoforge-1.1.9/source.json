@@ -1,0 +1,27 @@
+{
+  "jar_sha256": "3c3779945687be248d91ea919b1f72b40a66aeed40249a6049f55b0158b149ae",
+  "version": "NeoForge1.1.9",
+  "also_verified": {
+    "version": "Forge1.1.11",
+    "jar_sha256": "db43db9490f898f83e8814350accd12828884a668ec7ccb84baba3e034df5018",
+    "scope": "All selected source entries byte-identical"
+  },
+  "files": {
+    "assets/kaleidoscope_world_liquor/models/block/fridge_close.json": "18dcb49c782fc6f49f5538058f9ebe275eca83b1bac71dd09b916a3bfd557554",
+    "assets/kaleidoscope_world_liquor/models/block/fridge_open.json": "281839ce3280f39ad091ee7022001dd10da1fec46a21cf0c1c5244ebdf421da0",
+    "assets/kaleidoscope_world_liquor/models/item/freezer.json": "48f3e1d0e8be4c265ff929b49d9f7b1349c23219b99d1fb931f3a9dbe26cb6b5",
+    "assets/kaleidoscope_world_liquor/textures/block/fridge.png": "d748ad292210d515e570b272703316f4c823bad5e786b13ca7824a12215c58dc",
+    "assets/kaleidoscope_world_liquor/models/block/bar/stool/base.json": "3dd7fdb06d8eea4600597ba5f1f22503108e242ee0810bce65ac98b81b97a614",
+    "assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/left.json": "67da0a92b1c4807d4483de5a4dee570018e0cac4332a77306b08c97fb6cfd977",
+    "assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/middle.json": "0723a656d6ae187e26d176d07f9b6b629b54cc594136158e62a17010dbb9e790",
+    "assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/right.json": "14f342eeb760474fe4c64c4ad66f06071b2274f647e8227ffc2c095f8687cee6",
+    "assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/single.json": "003097ed7744d8587ddc645f29544bde51f38579fe159f269a1d1c66b487ab8c",
+    "assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/left.json": "fbfe21454df9f3d9d7fc083355054b0f9a57683152d6ab4770458b91a87e6d4d",
+    "assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/middle.json": "3d9f848acd8dd46b3af7a5cfd67b1e4aa5483b58bf62d4079cd3687f661e9004",
+    "assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/right.json": "8394abc0cd9ce5634048ae39a75b54fe0ec8fe1613b3488da40529f6a050a1e0",
+    "assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/single.json": "8c96d4addbec36e77b9a609f22874163943a42e008964cbce55d6766335d9def",
+    "assets/kaleidoscope_world_liquor/models/block/wall_record/base.json": "f756a6bf19b8ee3f266c328ab2de3ecc90420c872a17db665c13d37142bfc875",
+    "assets/kaleidoscope_world_liquor/models/block/wall_record/minecraft/10.json": "0dfd81eec1d0a823ea58c38fd8249a299ebaba968411b34d8c5830fbcfef7960"
+  },
+  "scope": "Existing freezer/stool/cabinet/record art only; historical upstream lock remains1.1.8"
+}
