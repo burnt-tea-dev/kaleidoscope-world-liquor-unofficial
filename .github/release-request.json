@@ -1,10 +1,10 @@
 {
-  "version": "0.1.46",
-  "tag": "v0.1.46-preview.1",
-  "title": "世界名酒 0.1.46 — 配對酒館 Java 握持修復",
+  "version": "0.1.47",
+  "tag": "v0.1.47-preview.1",
+  "title": "世界名酒0.1.47 — Java家具物品視角與完整酒櫃模型",
   "prerelease": true,
-  "expected_archive_sha256": "83d9eb99eff3d85376022d8827c33308c07d68b630c83ac48626442ba13ce734",
-  "tavern_commit": "8686b4d39e311025263e4539f57ef875ded8e8ac",
-  "validation_evidence": "docs/BDS-JAVA-HELD-20261002.json",
+  "expected_archive_sha256": "d7d31b4cd0aeceff458951b7b131400a1aa22f6b8cbd88700283b57afb770daf",
+  "tavern_commit": "e701f64d3ac51acee6edf257bd14a89fd9061824",
+  "validation_evidence": "docs/BDS-ITEM-VIEWS-FAMILY-20261002.json",
   "client_acceptance": "pending"
 }

@@ -84,6 +84,25 @@
       "kaleidoscope_tavern:natural_break": {
         "drop": "kaleidoscope_world_liquor:spruce_bar_cabinet",
         "storage": true
+      },
+      "minecraft:item_visual": {
+        "geometry": {
+          "identifier": "geometry.kwl.g_3c908a89764781f8"
+        },
+        "material_instances": {
+          "*": {
+            "texture": "kwl_kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__single",
+            "render_method": "alpha_test_single_sided",
+            "face_dimming": true,
+            "ambient_occlusion": 0
+          },
+          "default": {
+            "texture": "kwl_kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__single",
+            "render_method": "alpha_test_single_sided",
+            "face_dimming": true,
+            "ambient_occlusion": 0
+          }
+        }
       }
     },
     "permutations": [
