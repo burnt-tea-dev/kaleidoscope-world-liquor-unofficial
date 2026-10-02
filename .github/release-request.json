@@ -1,10 +1,10 @@
 {
-  "version": "0.1.45",
-  "tag": "v0.1.45-preview.1",
-  "title": "世界名酒 0.1.45 — 獨立酒館相容與可選米類配方",
+  "version": "0.1.46",
+  "tag": "v0.1.46-preview.1",
+  "title": "世界名酒 0.1.46 — 配對酒館 Java 握持修復",
   "prerelease": true,
-  "expected_archive_sha256": "357de5ec72dea60c22d9130239dd1a39552b8d9fd193e3133032994bcd7691d1",
-  "tavern_commit": "a276df88d134001dc37da4ac95acf15c36235ec6",
-  "validation_evidence": "docs/BDS-STANDALONE-GUIDE-20261002.json",
+  "expected_archive_sha256": "83d9eb99eff3d85376022d8827c33308c07d68b630c83ac48626442ba13ce734",
+  "tavern_commit": "8686b4d39e311025263e4539f57ef875ded8e8ac",
+  "validation_evidence": "docs/BDS-JAVA-HELD-20261002.json",
   "client_acceptance": "pending"
 }
