@@ -1,5 +1,6 @@
+import {buildRegistrationPayload} from './optional-cookery.js';
 import {withFoundation,setFoundationClient} from './foundation.js';
-import {world,system,ItemStack} from '@minecraft/server';
+import {world,system,ItemStack,ItemTypes} from '@minecraft/server';
 import {payload} from './payload.js';
 import {registerTavernExtension} from './sdk/tavern-extension-client.js';
 import {registerFurniture,installFurniture,hand,NS} from './furniture.js';
@@ -15,7 +16,7 @@ system.beforeEvents.startup.subscribe(e=>{
  e.itemComponentRegistry.registerCustomComponent(NS+':food',{onCompleteUse:e=>{const short=e.itemStack.typeId.split(':')[1];for(const effect of foods[short]??[])e.source.addEffect(effect,9600,{amplifier:0});if(short==='pochi_pudding')returnItem(e.source,'minecraft:bowl');}});
 });
 world.afterEvents.worldLoad.subscribe(()=>{
- installFurniture();installEffects();const foundationPayload=withFoundation(payload);
+ installFurniture();installEffects();const foundationPayload=withFoundation(buildRegistrationPayload(payload,id=>!!ItemTypes.get(id)));
 setFoundationClient(registerTavernExtension(system,foundationPayload),system,world,foundationPayload);
- console.log('[World Liquor] '+payload.version+' preview: '+payload.content.length+' drink descriptors, '+payload.recipes.length+' recipes. Client visuals require device review.');
+ console.log('[World Liquor] '+payload.version+' preview: '+payload.content.length+' drink descriptors, '+foundationPayload.recipes.length+' active recipes ('+(payload.recipes.length-foundationPayload.recipes.length)+' optional Cookery recipes unavailable). Client visuals require device review.');
 });
