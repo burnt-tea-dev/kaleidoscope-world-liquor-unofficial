@@ -15,12 +15,14 @@ tavern=Path(os.environ.get('TAVERN_ROOT',str(root.parent/'tavern-src')))
 subprocess.run(['node',str(tavern/'tools/build_effect_icon_hud.mjs'),'--world-liquor',str(root),'--check'],check=True)
 hud=json.loads((root/'runtime/RP/ui/kt_world_liquor_effects.json').read_text())
 assert not (root/'runtime/RP/ui/hud_screen.json').exists()
-assert set(hud)=={'namespace','kwl_effect_icons','root_panel'}
+assert hud['namespace']=='kaleidoscope_world_liquor_effects'
+assert set(hud)=={'namespace','effect_panel'}
 assert json.loads((root/'runtime/RP/ui/_ui_defs.json').read_text())=={'ui_defs':['ui/kt_world_liquor_effects.json']}
-mods=hud['root_panel']['modifications'];assert len(mods)==1 and mods[0]['operation']=='insert_back'
-controls=hud['kwl_effect_icons']['controls'];assert len(controls)==1+32*15
+assert json.loads((root/'runtime/RP/ui/_global_variables.json').read_text())=={'$kt_world_liquor_effect_panel':'kaleidoscope_world_liquor_effects.effect_panel'}
+controls=hud['effect_panel']['controls'];assert len(controls)==1+32*15
 for control in controls[1:]:
  image=next(iter(control.values()))
  assert (root/'runtime/RP'/(image['texture']+'.png')).is_file()
  assert image['bindings'][0]['source_control_name']=='kwl_effect_data'
-print('World Liquor owns its sprite controls and cache in a unique definition file; no native controls replaced')
+print('World Liquor owns a fully typed panel in its own namespace; never defines hud.root_panel')
+subprocess.run(['python3',str(tavern/'tools/check_effect_ui_contract.py'),'--liquor',str(root)],check=True)
