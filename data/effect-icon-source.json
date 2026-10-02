@@ -1,0 +1,141 @@
+{
+  "source": "Kaleidoscope World Liquor Java 1.1.8 (existing pinned source JAR)",
+  "jar_sha256": "d29a7507b3cfc90f9ff620d75e69102c0d25b3de8dbd0d89c73331e4c9e12205",
+  "unchanged_pngs": [
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/beheading.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/beheading.png",
+      "sha256": "fe72fc2750b4913cf1717066207a3e5acb935ed323b0ba8bfa73567b92f06d50",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/boating_master.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/boating_master.png",
+      "sha256": "f1fecdfe56ebbd39eab9d31ccd7fb0446581b6e740bc28e87d7168d60e99b390",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/bonemeal_spreader.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/bonemeal_spreader.png",
+      "sha256": "626e769ef77326fca09557cfb1644fed9a81b20495c132be7c9e966cea80150b",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/captain_gift.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/captain_gift.png",
+      "sha256": "4bc84611e866019918d773439c2447b8849a89e617c34c0e7cec1988dd8750fd",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/continuous_heal.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/continuous_heal.png",
+      "sha256": "b5eae45e29df37b7439f2aebfe9c70c157b73a4d10e4cbd56dec0e2e6fb21c55",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/double_damage.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/double_damage.png",
+      "sha256": "c2562f48aeb17b852f19e683e4fa430f8d67e9377297139cf0b898525f315acd",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/frost_walker.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/frost_walker.png",
+      "sha256": "a4b3d5c6878f8d0ab08c2230a38151cb0b79cf489a3a79be20f5ab7dbc8f34a8",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/ground_crit.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/ground_crit.png",
+      "sha256": "5878e30e97df409d1a316551bcbfd48d36b30ae84d78ec3d463ea3e960c87b96",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/hostile_detection.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/hostile_detection.png",
+      "sha256": "9d667920e3afa33f8f48fbae1ba68a4b1907ff5904a7dda1ecf40c1f5d550bab",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/multi_jump.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/multi_jump.png",
+      "sha256": "0d561cc700ded9ac1aaa52d2b4be62be4505b9c112efe5388c33584ecfbfc9f9",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/reverse_gravity.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/reverse_gravity.png",
+      "sha256": "0ccd71404d6a6b41340677ec23431f86ad7586e3401119651b3036610220cead",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/tequila.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/tequila.png",
+      "sha256": "6e5612a4dfbcc6edd1848982f69ffb30e0f0cc7d2ffa3704ad998032280035dd",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/treasure_guide.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/treasure_guide.png",
+      "sha256": "50d3916da08b896b1eb704539c138f64de488473cd032387ea480b625d508eb8",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/kaleidoscope_world_liquor/textures/mob_effect/treasure_sense.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/treasure_sense.png",
+      "sha256": "d3a769e4efa4a1abf01205753a7ebc3987f92437878926cf98fbe2cea6c8d4e0",
+      "size": [
+        18,
+        18
+      ]
+    },
+    {
+      "source_entry": "assets/smc/textures/mob_effect/elbow_strike.png",
+      "runtime": "textures/kaleidoscope_world_liquor/mob_effect/elbow_strike.png",
+      "sha256": "44c81308fd83db897f182e8408e3d76a68ffc07bf29af1aaaa3d89063e60c48a",
+      "size": [
+        18,
+        18
+      ]
+    }
+  ]
+}
