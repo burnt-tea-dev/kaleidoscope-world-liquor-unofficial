@@ -11,6 +11,7 @@ const {FLUIDS}=await import(new URL('runtime/BP/scripts/data/fluids.js',hostRoot
 const {buildCookeryGuidePayload}=await import(new URL('runtime/BP/scripts/data/cookery-guide-payload.js',hostRoot));
 const {encodeCookeryGuideMessages,cookery106WirePayload}=await import(new URL('runtime/BP/scripts/core/cookery-guide-publisher.js',hostRoot));
 const {SHAKER_RECIPES}=await import(new URL('runtime/BP/scripts/data/mixology.js',hostRoot));
+const {standaloneGuideView,GUIDE_LANGUAGES}=await import(new URL('runtime/BP/scripts/core/standalone-guide-model.js',hostRoot));
 const registry=new ExtensionRegistry({recipes:[...BUILTIN_RECIPES,...SHAKER_RECIPES],fluids:FLUIDS});
 registry.install(addon);
 const payload=buildCookeryGuidePayload(registry);
@@ -62,6 +63,17 @@ for(const e of payload.entries)for(const lc of ['en_US','zh_CN','zh_TW']){const 
 assert.deepEqual(buildCookeryGuidePayload(registry),payload,'Wire conversion mutated the original locale map');
 for(const e of payload.entries){const text=wire.entries.find(w=>w.id===e.id).mechanics.join('\n');for(const lc of ['zh_TW','en_US'])for(const line of e.mechanicsByLocale[lc])assert(text.includes(line),'Wire removed instructions: '+e.id);}
 const messages=encodeCookeryGuideMessages(payload);
+// Regress the actual reported product through both shared guide entrances.
+for(const lc of GUIDE_LANGUAGES){
+ const ice=byId.get('kaleidoscope_world_liquor:ice_tea_q1');
+ const view=standaloneGuideView(payload,lc,{type:'recipe',id:ice.id,index:0});
+ assert(view.body.includes('4000 mB (4 '),'Ice tea must explain the full barrel volume');
+ assert.equal(view.body.split(payload.names[lc]['minecraft:water_bucket']).length-1,1,'Four repeated water IDs returned');
+ assert(view.body.includes(payload.names[lc]['kaleidoscope_tavern:empty_bottle']),'Bottling instructions missing');
+ assert(view.body.includes('120 '),'Source aging time missing');
+ assert(!/\b(?:minecraft|kaleidoscope_\w+):/.test(view.body),'Unresolved recipe labels');
+ assert(wire.entries.find(e=>e.id===ice.id).mechanicsByLocale[lc].join('\n').includes('4000 mB'),'Optional guide lost fluid instructions');
+}
 assert.deepEqual(buildCookeryGuidePayload(registry),payload,'Guide projection mutates between reads');
 const chunkText=messages.slice(1,-1).map(m=>m.message.split('\n').slice(4).join('\n')).join('');
 assert.deepEqual(JSON.parse(chunkText),wire,'Guide packet round-trip lost text');
