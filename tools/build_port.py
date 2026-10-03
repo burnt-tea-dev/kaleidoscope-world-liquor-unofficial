@@ -8,12 +8,14 @@ preserves every model, UV, loot table, persistent state and non-record block.
 from pathlib import Path
 import runpy
 from wall_record_definition import normalize
+from texture_paths import normalize as normalize_texture_paths
 
 
 def main():
     tools = Path(__file__).resolve().parent
     runpy.run_path(str(tools/'_build_port_source.py'), run_name='__main__')
     normalize(tools.parent/'runtime/BP/blocks/wall_record.json')
+    normalize_texture_paths(tools.parent/'runtime/RP')
 
 
 if __name__ == '__main__':

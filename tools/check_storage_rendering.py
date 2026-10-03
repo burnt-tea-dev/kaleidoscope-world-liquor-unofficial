@@ -14,15 +14,28 @@ sys.path.insert(0,str(TAV/'tools'))
 from baseline_reference import previous_bytes
 NS='kaleidoscope_world_liquor'
 KT='kaleidoscope_tavern'
+COMPACT_REVIEW=json.loads((ROOT/'data/compact-texture-review.json').read_text())
 def read(p):return json.loads(p.read_text())
 def readjs(p):return json.loads(p.read_text().split('=',1)[1].strip().rstrip(';'))
-def digest(p):return hashlib.sha256(previous_bytes(ROOT,p)).hexdigest()
+def digest(p):
+ actual=hashlib.sha256(previous_bytes(ROOT,p)).hexdigest()
+ change=COMPACT_REVIEW['changes'].get(p.relative_to(ROOT).as_posix())
+ if change:
+  assert actual==change['after'],('Unreviewed compact texture reference mutation',p)
+  return change['before']
+ return actual
 def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def main():
  spec=importlib.util.spec_from_file_location('creative_history',TAV/'tools/creative/historical.py')
  history=importlib.util.module_from_spec(spec);spec.loader.exec_module(history)
  projection=history.LegacyMenuProjection(ROOT)
  baseline=read(ROOT/'data/storage-preserved-0.1.4.json')
+ # Verify exact renamed PNG bytes before reconstructing only their old path keys.
+ from texture_paths import check as check_compact_paths, PATHS as compact_paths
+ assert COMPACT_REVIEW['renames']=={'runtime/RP/'+new+'.png':'runtime/RP/'+old+'.png' for old,new in compact_paths.items()}
+ # Entity files are outside the old preserved tree inventory: pin all rows eagerly.
+ for reviewed_path in COMPACT_REVIEW['changes']:digest(ROOT/reviewed_path)
+ check_compact_paths(ROOT/'runtime/RP',read(ROOT/'data/compact-texture-paths.json'))
  reviewed=read(ROOT/'data/guide-destruction-review.json')
  plane_review=read(ROOT/'data/drink-plane-review.json')['files']
  additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
@@ -44,6 +57,7 @@ def main():
   if change:
    assert digest(p) in (change['before'],change['after']),('Unreviewed break-feedback mutation',p)
    return change['before']
+  if name in COMPACT_REVIEW['changes']:return digest(p)
   return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)
 
  def historical_block_bytes(p):
@@ -72,7 +86,7 @@ def main():
  assert 'readTavernEffects' in effects and 'setDynamicProperty' not in effects and 'world.getAbsoluteTime' not in effects
  preserved=len(baseline['files'])-len(changed)
  for prefix,expected in baseline['trees'].items():
-  entries={p.relative_to(ROOT).as_posix():historical_digest(p,historical_block_bytes(p)) for p in (ROOT/prefix).rglob('*') if p.is_file() and p.relative_to(ROOT).as_posix() not in additions}
+  entries={COMPACT_REVIEW['renames'].get(p.relative_to(ROOT).as_posix(),p.relative_to(ROOT).as_posix()):historical_digest(p,historical_block_bytes(p)) for p in (ROOT/prefix).rglob('*') if p.is_file() and p.relative_to(ROOT).as_posix() not in additions}
   actual=hashlib.sha256(''.join(k+'\0'+v+'\n' for k,v in sorted(entries.items())).encode()).hexdigest()
   assert len(entries)==expected['files'] and actual==expected['sha256'],prefix
   preserved+=len(entries)
