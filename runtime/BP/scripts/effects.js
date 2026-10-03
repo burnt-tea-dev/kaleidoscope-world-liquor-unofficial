@@ -1,5 +1,5 @@
 import {readTavernEffects} from './sdk/tavern-effects.js';
-/** World Liquor effect rules transcribed from pinned Java 1.1.8.
+/** World Liquor effect rules checked against pinned Java 1.1.9.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
 import {world,system,EffectTypes,ItemStack} from '@minecraft/server';
@@ -7,9 +7,38 @@ export const NS='kaleidoscope_world_liquor';
 const jumps=new Map(),headDrops=new Map();
 const read=p=>readTavernEffects(p,NS);
 const active=(p,name)=>read(p)[name];
-function play(p,s){try{p.dimension.playSound(s,p.location);}catch{}}
-function safeRespawn(p){const spawn=p.getSpawnPoint()??{...world.getDefaultSpawnLocation(),dimension:world.getDimension('overworld')},d=spawn.dimension;
- for(let radius=0;radius<=3;radius++)for(let dy=0;dy<=6;dy++)for(let x=-radius;x<=radius;x++)for(let z=-radius;z<=radius;z++)try{const at={x:Math.floor(spawn.x)+x+.5,y:Math.floor(spawn.y)+dy,z:Math.floor(spawn.z)+z+.5},b=d.getBlock(at),up=d.getBlock({...at,y:at.y+1}),floor=d.getBlock({...at,y:at.y-1});if(b?.isAir&&up?.isAir&&floor?.isSolid){p.teleport(at,{dimension:d});p.addEffect('hunger',300);play(p,'mob.endermen.portal');return;}}catch{}
+function play(p,s,volume=1,pitch=1){try{p.dimension.playSound(s,p.location,{volume,pitch});}catch{}}
+// Java RespawnEffect: center first, then perimeter rings at each height.
+// Keep selection independent from the Bedrock collision adapter for regression tests.
+export function findRespawnPosition(center,isSafe){
+ if(isSafe(center))return center;
+ for(const dy of [0,-1,-2,-3,1,2,3])for(let r=1;r<=3;r++){
+  const at=(x,z)=>({x:center.x+x,y:center.y+dy,z:center.z+z});
+  for(let x=-r;x<=r;x++){const p=at(x,-r);if(isSafe(p))return p;}
+  for(let z=-r+1;z<=r;z++){const p=at(r,z);if(isSafe(p))return p;}
+  for(let x=r-1;x>=-r;x--){const p=at(x,r);if(isSafe(p))return p;}
+  for(let z=r-1;z>=-r+1;z--){const p=at(-r,z);if(isSafe(p))return p;}
+ }
+ return center;
+}
+function safeRespawn(p){
+ const spawn=p.getSpawnPoint()??{...world.getDefaultSpawnLocation(),dimension:world.getDimension('overworld')},d=spawn.dimension;
+ const center={x:Math.floor(spawn.x),y:Math.floor(spawn.y),z:Math.floor(spawn.z)};
+ const selected=findRespawnPosition(center,at=>{try{
+  const feet=d.getBlock(at),head=d.getBlock({...at,y:at.y+1}),floor=d.getBlock({...at,y:at.y-1});
+  // Stable Block API has no collision-shape getter. Air/liquid are known empty
+  // shapes; other non-solid blocks (e.g. fences) must not be assumed passable.
+  return !!((feet?.isAir||feet?.isLiquid)&&(head?.isAir||head?.isLiquid)&&(floor?.isSolid||floor?.isLiquid));
+ }catch{return false;}});
+ const at={x:selected.x+.5,y:selected.y,z:selected.z+.5};
+ play(p,'entity.player.teleport');
+ p.teleport(at,{dimension:d,rotation:p.getRotation(),keepVelocity:p.dimension.id===d.id});
+ play(p,'entity.player.teleport');
+ p.addEffect('hunger',300,{amplifier:0});
+ // Java explicitly clears fallDistance; stable Bedrock has no corresponding setter.
+}
+function canRollGroundCrit(p){
+ return p.isOnGround||p.isClimbing||p.isInWater||!!p.getEffect('blindness')||!!p.getComponent('minecraft:riding')?.entityRidingOn||p.getVelocity().y>=0;
 }
 export function applyEffect(p,effect,duration,amplifier=0){
  const name=effect.split(':')[1];if(!Number.isFinite(duration)||duration<0||duration>1e6||!Number.isInteger(amplifier)||amplifier<0||amplifier>255)return;
@@ -17,7 +46,7 @@ export function applyEffect(p,effect,duration,amplifier=0){
  case 'explosion':p.dimension.createExplosion(p.location,3+amplifier,{breaksBlocks:world.gameRules.tntExplodes!==false,causesFire:false,source:p});return;
  case 'level_boost':p.addLevels(3+amplifier*3);return;
  case 'respawn':safeRespawn(p);return;
- case 'crazy':for(const type of EffectTypes.getAll())try{p.addEffect(type,200,{amplifier,showParticles:false});}catch{}play(p,'beacon.activate');return;
+ case 'crazy':for(const type of EffectTypes.getAll())try{p.addEffect(type,200,{amplifier,showParticles:false});}catch{}play(p,'beacon.activate',1,1.5);return;
  }
  system.sendScriptEvent('kaleidoscope_tavern:effect_apply',JSON.stringify({entity:p.id,effect,duration,amplifier}));
 }
@@ -25,9 +54,9 @@ function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntit
  if(e.damageSource.cause==='fall'&&(active(target,'reverse_gravity')||active(target,'multi_jump'))){e.cancel=true;return;}
  if(attacker){
   const double=active(attacker,'double_damage');if(double&&Math.random()<.2+.2*double.amplifier)e.damage*=2;
-  const crit=active(attacker,'ground_crit');if(melee&&crit&&(attacker.isOnGround||attacker.isInWater||attacker.getVelocity().y>=0)&&Math.random()<.2+.1*crit.amplifier)e.damage*=1.5;
+  const crit=active(attacker,'ground_crit');if(melee&&crit&&canRollGroundCrit(attacker)&&Math.random()<.2+.1*crit.amplifier)e.damage*=1.5;
   const behead=active(attacker,'beheading');if(melee&&behead&&!['minecraft:ender_dragon','minecraft:wither','minecraft:warden'].includes(target.typeId)&&Math.random()<.04+.03*behead.amplifier){e.damage=10000;headDrops.set(target.id,true);}
-  if(melee&&active(attacker,'elbow_strike'))system.run(()=>play(attacker,NS+'.ice_tea_eat'));
+  if(melee&&active(attacker,'elbow_strike'))system.run(()=>play(attacker,NS+'.ice_tea_eat',.6,1));
  }
  const tequila=active(target,'tequila');if(tequila)e.damage=Math.min(e.damage,(target.getComponent('minecraft:health')?.effectiveMax??20)*Math.max(.05,.4-.05*tequila.amplifier));
 }
