@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.55",
+  "version": "0.1.56",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",

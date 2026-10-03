@@ -1,0 +1,16 @@
+{
+  "entries": 222,
+  "addonProducts": 66,
+  "categories": 31,
+  "barrelRecipes": 18,
+  "shakerRecipes": 14,
+  "extraCoreRecipes": 7,
+  "preparationRecipes": 31,
+  "guidePackets": 355,
+  "guidePacketLimit": 514,
+  "rawIdsInInstructions": false,
+  "cookery106BilingualFallback": true,
+  "modernHostLocalized": true,
+  "hostStepLimitsChecked": true,
+  "playerSimulation": false
+}
