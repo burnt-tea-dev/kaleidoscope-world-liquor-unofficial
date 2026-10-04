@@ -2,7 +2,7 @@
   "schema": 1,
   "version": "0.1.59",
   "base_commit": "5ef51d75f8f477a40f3b6d7db4fb678566967574",
-  "validated_runtime_commit": "8ecb08a20a6142dd251fc6da5ac6242eb87dd41b",
+  "validated_runtime_commit": "79822f7394725f7d22094187d9b02105fec08d62",
   "retained_source_ancestors": {
     "java_held": "970556ed61167a3292c07dbbc4c953625b860991",
     "java_item_views": "ed61cad460801e0be46a4b548881152f49f2eeae",
@@ -209,7 +209,7 @@
     "publicationVerified": false,
     "version": "0.1.59",
     "archive": "Kaleidoscope_World_Liquor_Unofficial_0.1.59_preview1.mcaddon",
-    "sha256": "6c6abc8dbe74c7cacf2a27a6f6807c57fe6f2d4437a5a3e073e8ed3e90b6e0d5",
+    "sha256": "33128744064517d8f484a443238d7346892f7b1235ee79336caf5e51d68fe3c8",
     "bytes": 6774818,
     "entries": 816,
     "tavernCommit": "8d00a9c0399ab3812fa161a39c9254aed21876f2",
@@ -218,7 +218,7 @@
     "clientTest": false,
     "playerSimulation": false
   },
-  "second_build_sha256": "6c6abc8dbe74c7cacf2a27a6f6807c57fe6f2d4437a5a3e073e8ed3e90b6e0d5",
+  "second_build_sha256": "33128744064517d8f484a443238d7346892f7b1235ee79336caf5e51d68fe3c8",
   "publication_gate": {
     "exit_code": 1,
     "reason": "Unchanged 0.1.52 request pins a different Tavern source; candidate is not authorized for publication.",
