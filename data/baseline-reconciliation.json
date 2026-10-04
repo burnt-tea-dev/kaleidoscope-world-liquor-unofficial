@@ -786,8 +786,8 @@
     },
     "runtime/RP/ui/kt_world_liquor_effects.json": {
       "before": null,
-      "after": "c2f848356ebfc001f49da7c225efacf2db8e7435a96835e9a20cb8a870878549",
-      "reason": "Reviewed canonical HUD root recovery and synchronized release identity; see docs/HUD-ROOT-RECOVERY-20261002.md in Tavern."
+      "after": "829f9708bc6647eda6dad1a9b21e09fbec60c745003d5814a9796ebdebe4dc86",
+      "reason": "Reviewed canonical HUD root recovery and synchronized release identity; see docs/HUD-ROOT-RECOVERY-20261002.md in Tavern. L.60 synchronizes the exact T.95 title-cache generator; see data/effect-ui-pair-review-0.1.60.json. Historical before metadata is unchanged."
     },
     "runtime/RP/ui/_global_variables.json": {
       "before": null,

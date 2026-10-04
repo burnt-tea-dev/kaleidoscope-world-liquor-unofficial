@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "before_commit": "b30a5b04c85631a5a30dbf91b68dde22ee7c666f",
+  "tavern_commit": "be273b3224a423df198591f0e71e05e9b38521cb",
+  "file": "runtime/RP/ui/kt_world_liquor_effects.json",
+  "before_sha256": "c2f848356ebfc001f49da7c225efacf2db8e7435a96835e9a20cb8a870878549",
+  "after_sha256": "829f9708bc6647eda6dad1a9b21e09fbec60c745003d5814a9796ebdebe4dc86",
+  "generator_sha256": "790d865f74dff36e30029cbfa5c875b0d06af98d61a8ab49dfd3b67f73771ba9",
+  "transport": "title",
+  "subtitle_imported": false,
+  "historical_before_unchanged": true,
+  "sdk_exact_host_matches": {
+    "protocol.js": "8d69d2bbd0a65fd3d619e83eb26ccdafcadccedfddf8cae1abdb692bb7abfb72",
+    "tavern-break-feedback.js": "85fc1cacd7fa71fe8136db0210657e9ad160471ff7ffdfc66bdd0edf0bf3931f",
+    "tavern-effects.js": "2c952110e533544e83035b9644c9dcafc425c60235a6c337dcb6460ce0be4402",
+    "tavern-extension-client.js": "1daaa26e249d55bcc0727eed502fc0ac29343a55c2479b9e93c8b20cd9bbff85",
+    "tavern-foundation-client.js": "a7ba6aa62231e693520a3a8ef6d4e175f2bb922e85ffead216d231d4a1e867f2",
+    "util.js": "d4c46c90e1dc0562f40e35ba1b20a8f4824a4f23b874b812ed4f9c9ee4f7f4a0"
+  },
+  "client_rendering_verified": false
+}
