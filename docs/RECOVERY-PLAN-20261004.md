@@ -39,6 +39,13 @@ UTF-8 with explicit LF, preserving byte-level tests across platforms. Python
 child checks now use `sys.executable` so a broken Store `python3` alias cannot
 select another environment. No assertions or source-converter bytes are changed.
 
+Cross-platform CI confirmed identical exported entry bytes but different ZIP
+hashes: Python's default `ZipInfo.create_system` is 0 on Windows and 3 on Linux.
+The canonical packager now explicitly sets 3, matching its existing Unix file
+permissions. Rebuilding with this sole metadata correction reproduces the Linux
+archive SHA256 on Windows. Runtime fingerprints and the frozen 0.1.59 identity
+remain unchanged; the candidate has never been published.
+
 The existing 0.1.52 publication request remains unchanged and must continue to
 fail for this different candidate. No release hash assertion is relaxed.
 No native BDS, saved-world migration, or rendered client acceptance is claimed.
