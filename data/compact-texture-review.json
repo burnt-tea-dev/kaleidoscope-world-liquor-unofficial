@@ -1,0 +1,54 @@
+{
+  "changes": {
+    "runtime/RP/entity/thrown_drink.entity.json": {
+      "before": "ea966d031e58fb1f1e83d0127ae0a72d1cd14b97908d4849847152534f7c97f6",
+      "after": "a8b85a0051820f0c291b89010c276b59d973c11d63bfc3fe96ec01624b42e066"
+    },
+    "runtime/RP/entity/tilted_rack_bottle_visual.entity.json": {
+      "before": "00703ebc80eb0f986ac491f89dea7f10b878e4bfaf4c98a98e9436a6b81aac1d",
+      "after": "f6f09dcc6cf7626ede58e452118df15188c01d60d8257b5c8653edae18d623cd"
+    },
+    "runtime/RP/entity/bar_cabinet_bottle_visual.entity.json": {
+      "before": "a929ff049e00121437f069362e0e4b65da8b1a6666b823627d44a8c08489ffb6",
+      "after": "adac10241adda62da8c4a3c183a8c9b834f1ab6fd1ac8cfd2ad70bc4ceee896f"
+    },
+    "runtime/RP/entity/cabinet_bar.json": {
+      "before": "4070836be6d05fccc52841aef1177cc4f030d92694726bae4d4dcc4e04f79b39",
+      "after": "925435a1be2d8f4f7c9cf28e4b84bb5015b9029f98884d913947956988ade6f4"
+    },
+    "runtime/RP/entity/cabinet_cellar.json": {
+      "before": "46ad25057879189086480efb440953d5b831d69452c3a2f28c5050828a001824",
+      "after": "259473543c6921ff083629ae27049f9a2dc1ce882b95ee11dfa8a46fa5c96332"
+    },
+    "runtime/RP/entity/holder_bottle_visual.entity.json": {
+      "before": "6922d0353ca58d5b14ab12deebca335a58587cc1eda75e07a906a408f4804005",
+      "after": "59f88f5d08b3ba286338774912d3daef2fd80a13dbcdda2bb1d65c99d7986ae4"
+    },
+    "runtime/RP/entity/cellar_cabinet_bottle_visual.entity.json": {
+      "before": "ca75ee9043dfde4ea3be8891b059e9c370cfdfe8be65472a208e37cea5a6cafc",
+      "after": "524c14d2472caa80865cfe6840131a2f32b6a57b70966d06fc4702a3df478560"
+    },
+    "runtime/RP/entity/circular_rack_bottle_visual.entity.json": {
+      "before": "8e9ec1c5987dda180a9523e874b22a7f22cf1d6d98fdff5529d0849d60623f2b",
+      "after": "14f699397fbd969d4acab6bc33ae87931f91b559d65380c70ecb7223fc257d46"
+    },
+    "runtime/RP/textures/terrain_texture.json": {
+      "before": "9813808c15efb8c479e88b72d667726d812a246e296515a8cdfc67ea55bd7be7",
+      "after": "988bf7356cb40490313b7016217f3e09611146a530e0b8598e44855b860efd87"
+    }
+  },
+  "renames": {
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bacardi_carta_blanca__count1.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count1.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bacardi_carta_blanca__count2.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count2.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bacardi_carta_blanca__count3.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count3.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bacardi_carta_blanca__count4.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count4.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bamboo_leaf_green_liquor__count1.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count1.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bamboo_leaf_green_liquor__count2.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count2.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bamboo_leaf_green_liquor__count3.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count3.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bamboo_leaf_green_liquor__count4.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count4.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bombay_sapphire_gin__count1.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count1.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bombay_sapphire_gin__count2.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count2.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bombay_sapphire_gin__count3.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count3.png",
+    "runtime/RP/textures/kwl/generated/kwl__block__brew__drink__bombay_sapphire_gin__count4.png": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count4.png"
+  }
+}

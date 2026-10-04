@@ -7,9 +7,9 @@ TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
 NS='kaleidoscope_world_liquor'
 KT='kaleidoscope_tavern'
 def read(path):return json.loads(path.read_text())
-def write(path,data):path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+def write(path,data):path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 def readjs(path):return json.loads(path.read_text().split('=',1)[1].strip().rstrip(';'))
-def writejs(path,name,data):path.write_text('export const '+name+' = '+json.dumps(data,ensure_ascii=False,indent=2)+';\n')
+def writejs(path,name,data):path.write_text('export const '+name+' = '+json.dumps(data,ensure_ascii=False,indent=2)+';\n',encoding='utf-8',newline='\n')
 def main():
  order=read(ROOT/'data/storage-kind-order.json')
  assert order[25]==KT+':molotov' and order[-1]==KT+':watermelon_juice'

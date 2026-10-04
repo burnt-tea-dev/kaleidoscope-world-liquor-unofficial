@@ -91,7 +91,7 @@ def main():
   try:claim_release(ROOT,config['version'],trees,config['repository'])
   except ReleaseClaimError as error:fail(str(error))
   history[version]=trees;config['source_trees']=trees
-  history_path.write_text(json.dumps(history,indent=2)+'\n');(ROOT/'baseline.json').write_text(json.dumps(config,indent=2)+'\n')
+  history_path.write_text(json.dumps(history,indent=2)+'\n',encoding='utf-8',newline='\n');(ROOT/'baseline.json').write_text(json.dumps(config,indent=2)+'\n',encoding='utf-8',newline='\n')
   print('Frozen '+version);return
  trees,files=check(config,args.release,args.archive,args.history_base)
  if args.receipt:

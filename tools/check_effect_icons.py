@@ -1,6 +1,6 @@
 """Unchanged original sprite audit; no client rendering claim."""
 from pathlib import Path
-import hashlib,json,os,subprocess
+import hashlib,json,os,subprocess,sys
 from PIL import Image
 root=Path(__file__).resolve().parents[1]
 source=json.loads((root/'data/effect-icon-source.json').read_text())
@@ -25,4 +25,4 @@ for control in controls[1:]:
  assert (root/'runtime/RP'/(image['texture']+'.png')).is_file()
  assert image['bindings'][0]['source_control_name']=='kwl_effect_data'
 print('World Liquor owns a fully typed panel in its own namespace; never defines hud.root_panel')
-subprocess.run(['python3',str(tavern/'tools/check_effect_ui_contract.py'),'--liquor',str(root)],check=True)
+subprocess.run([sys.executable,str(tavern/'tools/check_effect_ui_contract.py'),'--liquor',str(root)],check=True)

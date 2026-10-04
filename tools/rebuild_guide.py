@@ -11,7 +11,7 @@ LOCALES=('en_US','zh_CN','zh_TW')
 def loadjs(path):
  return json.loads(path.read_text(encoding='utf-8').split('=',1)[1].strip().rstrip(';'))
 def writejs(path,name,value):
- path.write_text('export const '+name+' = '+json.dumps(value,ensure_ascii=False,indent=2)+';\n',encoding='utf-8')
+ path.write_text('export const '+name+' = '+json.dumps(value,ensure_ascii=False,indent=2)+';\n',encoding='utf-8',newline='\n')
 def triple(en,cn,tw):return dict(zip(LOCALES,(en,cn,tw)))
 source=(TAV/'runtime/BP/scripts/data/cookery-guide-payload.js').read_text()
 names=json.loads(re.search(r'const GUIDE_ITEM_NAMES=(.*);',source).group(1))
@@ -178,6 +178,6 @@ def main():
   audits.append({'id':old['id'],'item':item,'category':category,'recipeIds':[r['id']for r in linked],'crafting':len(crafting),'freezerRecipes':[r['id']for r in freezing]})
  payload['pages']=out;writejs(ROOT/'runtime/BP/scripts/payload.js','payload',payload)
  audit={'guideVersion':2,'pageCount':len(out),'categories':dict(collections.Counter(p['category']for p in out)),'registeredRecipes':dict(collections.Counter(r['kind']for r in payload['recipes'])),'recipeSource':'canonical runtime registry','freezerRecipes':len(freezers),'nativeCraftingRecipes':sum(len(p.get('crafting',[]))for p in out),'pages':audits}
- (ROOT/f"docs/GUIDE-AUDIT-{payload['version']}.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
+ (ROOT/f"docs/GUIDE-AUDIT-{payload['version']}.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
  print(json.dumps({k:v for k,v in audit.items()if k!='pages'},ensure_ascii=False))
 if __name__=='__main__':main()

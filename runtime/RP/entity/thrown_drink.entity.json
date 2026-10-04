@@ -8,9 +8,9 @@
       },
       "textures": {
         "kind_0": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count1",
-        "kind_1": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bacardi_carta_blanca__count1",
-        "kind_2": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bamboo_leaf_green_liquor__count1",
-        "kind_3": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__bombay_sapphire_gin__count1",
+        "kind_1": "textures/kwl/generated/kwl__block__brew__drink__bacardi_carta_blanca__count1",
+        "kind_2": "textures/kwl/generated/kwl__block__brew__drink__bamboo_leaf_green_liquor__count1",
+        "kind_3": "textures/kwl/generated/kwl__block__brew__drink__bombay_sapphire_gin__count1",
         "kind_4": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count1",
         "kind_5": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__dassai__count1",
         "kind_6": "textures/kwl/generated/smc__block__brew__drink__ice_tea__count1",
