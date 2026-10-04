@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "version": "0.1.60",
+  "validated_runtime_commit": "fb2d780d68ede068c2b4f51b070052a074c82577",
+  "base": "0.1.59",
+  "base_commit": "b30a5b04c85631a5a30dbf91b68dde22ee7c666f",
+  "tavern": {
+    "version": "0.6.95",
+    "commit": "be273b3224a423df198591f0e71e05e9b38521cb",
+    "frozen": false,
+    "native_accepted": false,
+    "measured_runtime": {
+      "BP": {
+        "sha256": "0ad786b89be8213968af49a07ea65fd3f182ab6722a8d750df3d4dc8f19f5f7a",
+        "files": 802
+      },
+      "RP": {
+        "sha256": "2a22edf9ab18ddf876067e86d9489bd1d969489b82ecb2ed26e5f9a04faa0602",
+        "files": 3126
+      }
+    }
+  },
+  "preservation": {
+    "historical_release_rows_unchanged": 28,
+    "historical_docs_byte_preserved": 218,
+    "all_historical_before_fields_unchanged": true,
+    "L_0_1_59_identity_unchanged": true,
+    "publication_request_unchanged": true
+  },
+  "source_checks": [
+    {
+      "command": [
+        "python",
+        "tools/test_baseline_gate.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "tools/test_release_claim.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "tools/test_bridge_project.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "tools/test_workflow_contracts.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "tools/test_effect_names.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "tools/build_effect_names.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "..\\tavern-src\\tools\\creative\\catalog.py",
+        "--root",
+        ".",
+        "--peer",
+        "..\\tavern-src"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "node",
+        "--experimental-loader",
+        "./tests/wall-record-loader.mjs",
+        "--test",
+        "tests/freezer-callback.test.mjs",
+        "tests/wall-record.test.mjs"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/record-audio.test.mjs",
+        "tests/multi-jump.test.mjs",
+        "tests/freezer-state.test.mjs",
+        "tests/effect-boundaries.test.mjs"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "tests/test_wall_record_generation.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "tools/check_release.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "..\\tavern-src\\tools\\check_launch.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "..\\tavern-src\\tools\\test_pick_block.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "..\\tavern-src\\tools\\effect-bar.test.mjs"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "..\\tavern-src\\tools\\creative\\test_catalog.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    }
+  ],
+  "host_checks": [
+    {
+      "command": [
+        "python",
+        "tools/check_integration_preservation.py"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "node",
+        "--loader",
+        "./tools/efficiency/mock-loader.mjs",
+        "--test",
+        "tools/effect-icon-ui-prefix.test.mjs",
+        "tools/effect-icon-startup.test.mjs",
+        "tools/effect-icon-dimension.test.mjs",
+        "tools/effect-icon-title-reservation.test.mjs",
+        "tools/effect-icons.test.mjs",
+        "tools/tipsy-client.test.mjs",
+        "tools/standalone-guide.test.mjs"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "node",
+        "tools/check_guide.mjs"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "tools/check_effect_ui_contract.py",
+        "--liquor",
+        "..\\world-liquor"
+      ],
+      "exit_code": 0,
+      "expected_blocker": false
+    },
+    {
+      "command": [
+        "python",
+        "tools/check_release.py"
+      ],
+      "exit_code": 1,
+      "expected_blocker": true
+    },
+    {
+      "command": [
+        "python",
+        "tools/baseline_gate.py",
+        "check",
+        "--release"
+      ],
+      "exit_code": 1,
+      "expected_blocker": true
+    }
+  ],
+  "title_cache_review": "data/effect-ui-pair-review-0.1.60.json",
+  "title_transport": true,
+  "subtitle_imported": false,
+  "own_freeze": {
+    "passed": true,
+    "version": "0.1.60"
+  },
+  "dash": {
+    "version": "1.2.0",
+    "export": {
+      "BP": {
+        "files": 305,
+        "json_formatting_only": [],
+        "content_matches": true
+      },
+      "RP": {
+        "files": 511,
+        "json_formatting_only": [],
+        "content_matches": true
+      }
+    }
+  },
+  "development_archive": {
+    "publicationVerified": false,
+    "version": "0.1.60",
+    "archive": "Kaleidoscope_World_Liquor_Unofficial_0.1.60_preview1.mcaddon",
+    "sha256": "1f9624788041710e05d00d043692f0102429f250e3ac7b4bb9b2eb404433575a",
+    "bytes": 6774821,
+    "entries": 816,
+    "tavernCommit": "be273b3224a423df198591f0e71e05e9b38521cb",
+    "fullRuntimeMatch": true,
+    "newBdsTest": false,
+    "clientTest": false,
+    "playerSimulation": false
+  },
+  "second_build_sha256": "1f9624788041710e05d00d043692f0102429f250e3ac7b4bb9b2eb404433575a",
+  "acceptance": {
+    "liquor_static": true,
+    "host_source_checks": true,
+    "host_release_gate": false,
+    "host_baseline_gate": false,
+    "family_release": false,
+    "bds": false,
+    "saved_world": false,
+    "client": false,
+    "production_ready": false
+  },
+  "blockers": [
+    "T.95 has not frozen reviewed runtime hashes.",
+    "T.95 release check rejects missing calibrated native held projection context.",
+    "Full-family BDS, saved-world and actual client acceptance remain root responsibilities.",
+    "Unchanged publication source/version/archive hash assertions remain blocking."
+  ]
+}

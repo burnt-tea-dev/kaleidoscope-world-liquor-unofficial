@@ -5,7 +5,7 @@ Canonical runtime and dependencies: [baseline.json](baseline.json). This develop
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
 Bedrock port of the [Java addon](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor).
-Requires the public beta of [Kaleidoscope Tavern (Unofficial)](https://github.com/casama233/kaleidoscope-tavern-unofficial)
+Requires the matching development source of [Kaleidoscope Tavern (Unofficial)](https://github.com/casama233/kaleidoscope-tavern-unofficial)
 development source **0.6.95** at the exact commit above for this candidate; this does not claim a published or release-admitted host. Enable both behavior and resource packs alongside Tavern. Cookery 1.0.8 is optional; its rice-dependent Dassai/Maotai preparation requires that host. Target: Bedrock/BDS 1.26.50+.
 
 Historical **0.1.16 preview** contains 18 six-quality bottled drinks, six new
