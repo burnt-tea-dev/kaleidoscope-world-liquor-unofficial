@@ -1,10 +1,13 @@
 {
-  "version": "0.1.52",
-  "tag": "v0.1.52-preview.1",
-  "title": "世界名酒 0.1.52 — 修復 UI 命名空間覆蓋",
+  "version": "0.1.66",
+  "tag": "v0.1.66-preview.1",
+  "title": "世界名酒 0.1.66 測試版 — 配套酒館 0.6.105",
   "prerelease": true,
-  "expected_archive_sha256": "99a7876ff187b09fd69e43dad943b849f0e8facaeaff00cda7f1ee1199b91d4a",
-  "tavern_commit": "a23484a252e8b60ce27c31f8528919c501b19ab9",
-  "validation_evidence": "docs/BDS-HUD-ROOT-RECOVERY-0.1.52.json",
-  "client_acceptance": "pending"
+  "expected_archive_sha256": "ec5bd4c2a971c934b170e6fbbdb89c12d00e22133b0590b4d86096903458862d",
+  "tavern_commit": "d0f6f480691a024994d76f60d286aef15439d4bc",
+  "validation_evidence": "docs/PUBLIC-TEST-VALIDATION-0.1.66.json",
+  "client_acceptance": "bounded_pass_with_known_issues",
+  "full_client_acceptance": "pending",
+  "production_ready": false,
+  "live_deployment": false
 }
