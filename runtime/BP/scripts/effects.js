@@ -1,11 +1,13 @@
 import {readTavernEffects} from './sdk/tavern-effects.js';
 import {isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource} from './combat-source.js';
+import {JavaKillCredit,damageCreditMutation} from './kill-credit.js';
 /** World Liquor effect rules, with current Java 1.1.11 repairs.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
 import {world,system,EffectTypes,ItemStack} from '@minecraft/server';
 export const NS='kaleidoscope_world_liquor';
 const jumps=new Map(),headDrops=new Map();
+const killCredit=new JavaKillCredit({now:()=>system.currentTick,resolve:id=>{try{return world.getEntity(id);}catch{return undefined;}}});
 const read=p=>readTavernEffects(p,NS);
 const active=(p,name)=>read(p)[name];
 function play(p,s,options={volume:1,pitch:1}){try{p.dimension.playSound(s,p.location,options);}catch{}}
@@ -28,14 +30,18 @@ export function applyEffect(p,effect,duration,amplifier=0){
  system.sendScriptEvent('kaleidoscope_tavern:effect_apply',JSON.stringify({entity:p.id,effect,duration,amplifier}));
 }
 function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntity,melee=isMeleeSource(e.damageSource);
+ if(e.cancel===true)return;
  if(e.damageSource.cause==='fall'&&(active(target,'reverse_gravity')||active(target,'multi_jump'))){e.cancel=true;return;}
+ const credited=killCredit.previous(target.id),double=credited&&active(credited,'double_damage');
+ if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(credited,NS+'.java.critical',{volume:1,pitch:1.5});}
  if(attacker){
-  const double=active(attacker,'double_damage');if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(attacker,NS+'.java.critical',{volume:1,pitch:1.5});}
   const crit=active(attacker,'ground_crit');if(melee&&attacker.typeId==='minecraft:player'&&crit&&!isVanillaCrit(attacker)&&Math.random()<.2+.1*crit.amplifier)e.damage=javaDamageProduct(e.damage,1.5);
   const behead=active(attacker,'beheading');if(melee&&behead&&!['minecraft:ender_dragon','minecraft:wither','minecraft:warden'].includes(target.typeId)&&Math.random()<.04+.03*behead.amplifier){e.damage=10000;headDrops.set(target.id,true);}
   if(!e.damageSource.damagingProjectile&&e.damageSource.cause!=='projectile'&&active(attacker,'elbow_strike'))combatSound(attacker,NS+'.ice_tea_eat',{volume:.6,pitch:1});
  }
  const tequila=active(target,'tequila');if(tequila)e.damage=Math.min(e.damage,tequilaDamageCap(target.getComponent('minecraft:health')?.effectiveMax??20,tequila.amplifier));
+ const pending=killCredit.begin(target.id,e,damageCreditMutation(e.damageSource));
+ if(pending)system.run(()=>killCredit.complete(pending));
 }
 function freeze(p,amp){if(!p.isOnGround)return;const r=Math.min(7,3+amp),at={x:Math.floor(p.location.x),y:Math.floor(p.location.y)-1,z:Math.floor(p.location.z)};for(let x=-r;x<=r;x++)for(let z=-r;z<=r;z++){if(x*x+z*z>r*r)continue;try{const b=p.dimension.getBlock({x:at.x+x,y:at.y,z:at.z+z}),up=p.dimension.getBlock({x:at.x+x,y:at.y+1,z:at.z+z});if(b?.typeId==='minecraft:water'&&(b.permutation.getState('liquid_depth')??0)===0&&up?.isAir)b.setType('minecraft:frosted_ice');}catch{}}}
 function doubleFreshDrops(dimension,position,chance){
@@ -53,7 +59,7 @@ function motion(p,state){
  if(state.multi_jump&&(p.isOnGround||p.isClimbing))jumps.set(p.id,state.multi_jump.amplifier+1);
  if(state.boating_master){const riding=p.getComponent('minecraft:riding')?.entityRidingOn;if(riding?.typeId.includes('boat')){const v=riding.getVelocity(),b=p.dimension.getBlock({...riding.location,y:riding.location.y-.2}),water=b?.typeId.includes('water'),ice=b?.typeId.includes('ice'),base=water?.12:ice?.05:.3,max=water?.9:ice?.7:1.2,brake=water?.9:ice?.95:.85,forward=p.inputInfo.getMovementVector().y>0,scale=forward?1+base+.15*state.boating_master.amplifier:brake,speed=Math.hypot(v.x,v.z),factor=speed?Math.min(max,speed*scale)/speed:1;riding.applyImpulse({x:v.x*(factor-1),y:0,z:v.z*(factor-1)});}}
 }
-export function tick(){for(const p of world.getAllPlayers())try{
+export function tick(){if(system.currentTick%20===0)killCredit.prune();for(const p of world.getAllPlayers())try{
  const state=read(p);if(!state.multi_jump)jumps.delete(p.id);
  if(!Object.keys(state).length)continue;
  const heal=state.continuous_heal;if(heal){const h=p.getComponent('minecraft:health');if(h&&h.currentValue<h.effectiveMax)h.setCurrentValue(Math.min(h.effectiveMax,h.currentValue+heal.amplifier+1));}
@@ -69,6 +75,8 @@ function wearingUsableElytra(p){
 export function installEffects(){
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(p?.typeId==='minecraft:player'&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
+ world.afterEvents.entityHurt.subscribe(e=>killCredit.applied(e));
+ world.afterEvents.entityRemove.subscribe(e=>killCredit.forget(e.removedEntityId));
  world.afterEvents.playerSpawn.subscribe(({player})=>jumps.delete(player.id));
  world.afterEvents.playerLeave.subscribe(e=>{jumps.delete(e.playerId);});
  world.afterEvents.playerButtonInput.subscribe(e=>{if(e.button!=='Jump'||e.newButtonState!=='Pressed')return;const p=e.player,reverse=active(p,'reverse_gravity');if(reverse){const v=p.getVelocity();p.applyImpulse({x:0,y:-.42-v.y,z:0});return;}const row=active(p,'multi_jump'),v=p.getVelocity();if(!row||p.isOnGround||p.isFlying||p.isGliding||p.isInWater||wearingUsableElytra(p)||p.getEffect('levitation')||p.getComponent('minecraft:riding')?.entityRidingOn||v.y>=0)return;const remaining=jumps.get(p.id)??0;if(remaining<=0)return;jumps.set(p.id,remaining-1);p.applyImpulse({x:0,y:.42-v.y,z:0});});

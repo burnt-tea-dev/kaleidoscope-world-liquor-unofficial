@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "engine_version": "1.26.51.1",
+  "api": "@minecraft/server 2.7.0",
+  "test_only": true,
+  "simulated_players": false,
+  "real_player_connections": 0,
+  "client": false,
+  "production_ready": false,
+  "source_world_liquor": "NeoForge 1.1.11 / CF9066406",
+  "source_minecraft": "1.21.1 official client mappings and bytecode",
+  "source_neoforge_revision": "a2d6402a3c1eec093aef7e7d10ac5145906c199e",
+  "after_armor_before_absorption_proven_for_samples": true,
+  "knockback_resistance_component_exposed": false,
+  "impulse_bypasses_resistance_in_samples": true,
+  "knockback_respects_resistance_in_samples": true,
+  "velocity_samples": [
+    {
+      "kind": "velocity",
+      "suffix": "r0",
+      "mode": "knockback",
+      "before": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "sameTick": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "after": {
+        "z": -0.10920000076293945,
+        "y": 0.40000152587890625,
+        "x": 0.4546000361442566
+      }
+    },
+    {
+      "kind": "velocity",
+      "suffix": "r0",
+      "mode": "impulse",
+      "before": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "sameTick": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "after": {
+        "z": -0.2184000015258789,
+        "y": 0.6999969482421875,
+        "x": 1.1092000007629395
+      }
+    },
+    {
+      "kind": "velocity",
+      "suffix": "r0",
+      "mode": "control",
+      "before": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "sameTick": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "after": {
+        "z": -0.2184000015258789,
+        "y": 0.3000030517578125,
+        "x": 0.10920000076293945
+      }
+    },
+    {
+      "kind": "velocity",
+      "suffix": "r05",
+      "mode": "knockback",
+      "before": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "sameTick": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "after": {
+        "z": -0.10920000076293945,
+        "y": 0.3899993896484375,
+        "x": 0.25460004806518555
+      }
+    },
+    {
+      "kind": "velocity",
+      "suffix": "r05",
+      "mode": "impulse",
+      "before": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "sameTick": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "after": {
+        "z": -0.2184000015258789,
+        "y": 0.6999969482421875,
+        "x": 1.1092000007629395
+      }
+    },
+    {
+      "kind": "velocity",
+      "suffix": "r05",
+      "mode": "control",
+      "before": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "sameTick": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "after": {
+        "z": -0.2184000015258789,
+        "y": 0.3000030517578125,
+        "x": 0.10920000076293945
+      }
+    },
+    {
+      "kind": "velocity",
+      "suffix": "r1",
+      "mode": "knockback",
+      "before": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "sameTick": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "after": {
+        "z": -0.2184000015258789,
+        "y": 0.3000030517578125,
+        "x": 0.10920000076293945
+      }
+    },
+    {
+      "kind": "velocity",
+      "suffix": "r1",
+      "mode": "impulse",
+      "before": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "sameTick": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "after": {
+        "z": -0.2184000015258789,
+        "y": 0.6999969482421875,
+        "x": 1.1092000007629395
+      }
+    },
+    {
+      "kind": "velocity",
+      "suffix": "r1",
+      "mode": "control",
+      "before": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "sameTick": {
+        "z": -0.40000003576278687,
+        "y": 0.3000030517578125,
+        "x": 0.19999998807907104
+      },
+      "after": {
+        "z": -0.2184000015258789,
+        "y": 0.3000030517578125,
+        "x": 0.10920000076293945
+      }
+    }
+  ],
+  "armor_absorption_health_samples": [
+    {
+      "kind": "healthDelta",
+      "armored": false,
+      "absorption": false,
+      "mode": "normal",
+      "before": 20,
+      "after": 10.15999984741211
+    },
+    {
+      "kind": "healthDelta",
+      "armored": false,
+      "absorption": false,
+      "mode": "double",
+      "before": 20,
+      "after": 0.31999969482421875
+    },
+    {
+      "kind": "healthDelta",
+      "armored": false,
+      "absorption": false,
+      "mode": "cap",
+      "before": 20,
+      "after": 12
+    },
+    {
+      "kind": "healthDelta",
+      "armored": false,
+      "absorption": false,
+      "mode": "cancel",
+      "before": 20,
+      "after": 20
+    },
+    {
+      "kind": "healthDelta",
+      "armored": false,
+      "absorption": true,
+      "mode": "normal",
+      "before": 20,
+      "after": 14.15999984741211
+    },
+    {
+      "kind": "healthDelta",
+      "armored": false,
+      "absorption": true,
+      "mode": "double",
+      "before": 20,
+      "after": 4.319999694824219
+    },
+    {
+      "kind": "healthDelta",
+      "armored": false,
+      "absorption": true,
+      "mode": "cap",
+      "before": 20,
+      "after": 16
+    },
+    {
+      "kind": "healthDelta",
+      "armored": false,
+      "absorption": true,
+      "mode": "cancel",
+      "before": 20,
+      "after": 20
+    },
+    {
+      "kind": "healthDelta",
+      "armored": true,
+      "absorption": false,
+      "mode": "normal",
+      "before": 20,
+      "after": 17
+    },
+    {
+      "kind": "healthDelta",
+      "armored": true,
+      "absorption": false,
+      "mode": "double",
+      "before": 20,
+      "after": 14
+    },
+    {
+      "kind": "healthDelta",
+      "armored": true,
+      "absorption": false,
+      "mode": "cap",
+      "before": 20,
+      "after": 17
+    },
+    {
+      "kind": "healthDelta",
+      "armored": true,
+      "absorption": false,
+      "mode": "cancel",
+      "before": 20,
+      "after": 20
+    },
+    {
+      "kind": "healthDelta",
+      "armored": true,
+      "absorption": true,
+      "mode": "normal",
+      "before": 20,
+      "after": 20
+    },
+    {
+      "kind": "healthDelta",
+      "armored": true,
+      "absorption": true,
+      "mode": "double",
+      "before": 20,
+      "after": 18
+    },
+    {
+      "kind": "healthDelta",
+      "armored": true,
+      "absorption": true,
+      "mode": "cap",
+      "before": 20,
+      "after": 20
+    },
+    {
+      "kind": "healthDelta",
+      "armored": true,
+      "absorption": true,
+      "mode": "cancel",
+      "before": 20,
+      "after": 20
+    }
+  ],
+  "native_production_damage_samples": [
+    {
+      "kind": "productionDamage",
+      "label": "fresh-A",
+      "ok": true,
+      "damage": 4
+    },
+    {
+      "kind": "productionDamage",
+      "label": "environment-after-A",
+      "ok": true,
+      "damage": 8
+    },
+    {
+      "kind": "productionDamage",
+      "label": "B-after-A",
+      "ok": true,
+      "damage": 0
+    },
+    {
+      "kind": "productionDamage",
+      "label": "environment-after-B",
+      "ok": true,
+      "damage": 4
+    },
+    {
+      "kind": "productionDamage",
+      "label": "environment-after-rejected-B-settled",
+      "ok": true,
+      "damage": 0
+    },
+    {
+      "kind": "productionDamage",
+      "label": "canceled-A",
+      "ok": true,
+      "damage": 0
+    },
+    {
+      "kind": "productionDamage",
+      "label": "B-after-canceled-A",
+      "ok": true,
+      "damage": 4
+    },
+    {
+      "kind": "productionDamage",
+      "label": "environment-after-canceled-A-and-B",
+      "ok": true,
+      "damage": 4
+    },
+    {
+      "kind": "productionDamage",
+      "label": "spaced-fresh-A",
+      "ok": true,
+      "damage": 4
+    },
+    {
+      "kind": "productionDamage",
+      "label": "spaced-environment-after-A",
+      "ok": true,
+      "damage": 8
+    },
+    {
+      "kind": "productionDamage",
+      "label": "spaced-B-after-A",
+      "ok": true,
+      "damage": 8
+    },
+    {
+      "kind": "productionDamage",
+      "label": "spaced-environment-after-B",
+      "ok": true,
+      "damage": 4
+    },
+    {
+      "kind": "productionDamage",
+      "label": "fresh-A-expiry",
+      "ok": true,
+      "damage": 4
+    },
+    {
+      "kind": "productionDamage",
+      "label": "environment-after-expiry",
+      "ok": true,
+      "damage": 4
+    }
+  ],
+  "callback_damage_samples": [
+    {
+      "cause": "override",
+      "damage": 4,
+      "cancel": false,
+      "has_owner": true
+    },
+    {
+      "cause": "override",
+      "damage": 8,
+      "cancel": false,
+      "has_owner": false
+    },
+    {
+      "cause": "override",
+      "damage": 8,
+      "cancel": false,
+      "has_owner": true
+    },
+    {
+      "cause": "override",
+      "damage": 4,
+      "cancel": false,
+      "has_owner": false
+    },
+    {
+      "cause": "override",
+      "damage": 8,
+      "cancel": false,
+      "has_owner": false
+    },
+    {
+      "cause": "override",
+      "damage": 4,
+      "cancel": true,
+      "has_owner": true
+    },
+    {
+      "cause": "override",
+      "damage": 4,
+      "cancel": false,
+      "has_owner": true
+    },
+    {
+      "cause": "override",
+      "damage": 4,
+      "cancel": false,
+      "has_owner": false
+    },
+    {
+      "cause": "override",
+      "damage": 4,
+      "cancel": false,
+      "has_owner": true
+    },
+    {
+      "cause": "override",
+      "damage": 8,
+      "cancel": false,
+      "has_owner": false
+    },
+    {
+      "cause": "override",
+      "damage": 8,
+      "cancel": false,
+      "has_owner": true
+    },
+    {
+      "cause": "override",
+      "damage": 4,
+      "cancel": false,
+      "has_owner": false
+    },
+    {
+      "cause": "override",
+      "damage": 4,
+      "cancel": false,
+      "has_owner": true
+    },
+    {
+      "cause": "override",
+      "damage": 4,
+      "cancel": false,
+      "has_owner": false
+    }
+  ],
+  "scope": "Real native mobs with a controlled test-only host effect_snapshot provision through the existing SDK; proves callback/state behavior, not actual player drinking, Java clients, visual particles, native sound rendering or full mob effect support.",
+  "remaining_edges": [
+    "Native hurt cooldown can invoke beforeHurt then suppress afterHurt. Same-tick provisional read before that rejection is known remains a source timing gap, even though rejected credit is not committed.",
+    "Exact entity baseTick/death/disconnect ordering and unloaded-player effect access still need source/native/client work.",
+    "Java damage tags NO_ANGER and NO_ANGER_FROM_WIND_CHARGE have no generic Bedrock source-tag getter; unknown addon actor classes require explicit review.",
+    "Exact elbow force, yaw, ground/air velocity and cumulative native knockback remain unimplemented; no fixed impulse was substituted."
+  ]
+}

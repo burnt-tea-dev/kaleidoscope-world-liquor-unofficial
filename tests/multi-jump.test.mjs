@@ -1,3 +1,4 @@
+import {JavaKillCredit,damageCreditMutation} from '../runtime/BP/scripts/kill-credit.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -9,8 +10,8 @@ function fixture(){
  const events={},impulses=[],state={multi_jump:{amplifier:0}},subscriptions=()=>({subscribe:f=>{}});
  let chest;
  const actor={id:'fixture',isOnGround:false,isClimbing:false,getVelocity:()=>({x:0,y:-.2,z:0}),getEffect:()=>undefined,getComponent:id=>id==='minecraft:equippable'?{getEquipment:()=>chest}:undefined,applyImpulse:i=>impulses.push(i)};
- const world={getAllPlayers:()=>[actor],beforeEvents:{entityHurt:{subscribe:f=>events.hurt=f}},afterEvents:{playerSpawn:subscriptions(),playerLeave:subscriptions(),playerButtonInput:{subscribe:f=>events.jump=f},entityDie:subscriptions(),playerBreakBlock:subscriptions()}};
- const ctx=vm.createContext({world,readTavernEffects:e=>e===actor?state:{},isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource,system:{afterEvents:{scriptEventReceive:subscriptions()},runInterval(){},currentTick:1},EffectTypes:{},ItemStack:class{}});vm.runInContext(source+'\ninstallEffects();',ctx);
+ const world={getAllPlayers:()=>[actor],beforeEvents:{entityHurt:{subscribe:f=>events.hurt=f}},afterEvents:{entityHurt:subscriptions(),entityRemove:subscriptions(),playerSpawn:subscriptions(),playerLeave:subscriptions(),playerButtonInput:{subscribe:f=>events.jump=f},entityDie:subscriptions(),playerBreakBlock:subscriptions()}};
+ const ctx=vm.createContext({JavaKillCredit,damageCreditMutation,world,readTavernEffects:e=>e===actor?state:{},isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource,system:{afterEvents:{scriptEventReceive:subscriptions()},runInterval(){},currentTick:1},EffectTypes:{},ItemStack:class{}});vm.runInContext(source+'\ninstallEffects();',ctx);
  const tick=()=>vm.runInContext('tick()',ctx),jump=()=>events.jump({button:'Jump',newButtonState:'Pressed',player:actor});
  return {actor,state,impulses,events,tick,jump,equip:(damage=0)=>chest={typeId:'minecraft:elytra',getComponent:()=>({damage,maxDurability:432})}};
 }
