@@ -1,4 +1,4 @@
-import {readTavernEffects} from './sdk/tavern-effects.js';
+import {readTavernEffects,getTavernEffectEntities} from './sdk/tavern-effects.js';
 import {isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource} from './combat-source.js';
 import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from './kill-credit.js';
 import {boatingVelocity,reverseGravityImpulse,multiJumpStep,sourceJumpVelocity,nativeJumpImpulse} from './motion-source.js';
@@ -31,8 +31,8 @@ export function applyEffect(p,effect,duration,amplifier=0){
  const name=effect.split(':')[1];if(!Number.isFinite(duration)||duration<0||duration>1e6||!Number.isInteger(amplifier)||amplifier<0||amplifier>255)return;
  switch(name){
  case 'explosion':p.dimension.createExplosion(p.location,3+amplifier,{breaksBlocks:world.gameRules.tntExplodes!==false,causesFire:false,source:p});return;
- case 'level_boost':p.addLevels(3+amplifier*3);return;
- case 'respawn':safeRespawn(p);return;
+ case 'level_boost':if(p.typeId==='minecraft:player')p.addLevels(3+amplifier*3);return;
+ case 'respawn':if(p.typeId==='minecraft:player')safeRespawn(p);return;
  case 'crazy':for(const type of EffectTypes.getAll())try{p.addEffect(type,200,{amplifier,showParticles:false});}catch{}play(p,NS+'.java.crazy',{volume:1,pitch:1.5});return;
  }
  system.sendScriptEvent('kaleidoscope_tavern:effect_apply',JSON.stringify({entity:p.id,effect,duration,amplifier}));
@@ -71,11 +71,11 @@ function jump(p,reverse,lava=lavaContact(p)){
  const at={x:Math.floor(p.location.x),y:Math.floor(p.location.y),z:Math.floor(p.location.z)},factor=b=>b?.typeId==='minecraft:honey_block'?.5:1,foot=factor(p.dimension.getBlock(at)),other=factor(p.dimension.getBlock({...at,y:reverse?at.y+1:Math.floor(p.location.y-.2)}));
  const target=sourceJumpVelocity({reverse,jumpFactor:foot===1?other:foot,jumpBoost:p.getEffect('jump_boost')?.amplifier,sprinting:p.isSprinting,yaw:p.getRotation().y}),velocity=p.getVelocity();p.applyImpulse(nativeJumpImpulse(velocity,target,{slowFalling:!!p.getEffect('slow_falling'),lava}));
 }
-export function tick(){if(system.currentTick%20===0)killCredit.prune();for(const p of world.getAllPlayers())try{
+export function tick(){if(system.currentTick%20===0)killCredit.prune();const entities=new Map(world.getAllPlayers().map(p=>[p.id,p]));for(const entity of getTavernEffectEntities(world,NS))entities.set(entity.id,entity);for(const p of entities.values())try{
  const state=read(p);if(!state.multi_jump)jumps.delete(p.id);
  if(!Object.keys(state).length)continue;
- const heal=state.continuous_heal;if(heal){const h=p.getComponent('minecraft:health');if(h&&h.currentValue<h.effectiveMax)h.setCurrentValue(Math.min(h.effectiveMax,h.currentValue+heal.amplifier+1));}
- motion(p,state);if(state.frost_walker)freezeWater(p,state.frost_walker.amplifier);
+ const heal=state.continuous_heal;if(heal){const h=p.getComponent('minecraft:health');if(h&&h.currentValue>0&&h.currentValue<h.effectiveMax)h.setCurrentValue(Math.min(h.effectiveMax,Math.fround(Math.fround(h.currentValue)+Math.fround(heal.amplifier+1))));}
+ if(p.typeId==='minecraft:player'){motion(p,state);if(state.frost_walker)freezeWater(p,state.frost_walker.amplifier);}
  }catch(e){console.warn('[World Liquor effect behaviour] '+e);}
 }
 function wearingUsableElytra(p){
@@ -85,7 +85,7 @@ function wearingUsableElytra(p){
  return !durability||durability.damage<durability.maxDurability-1;
 }
 export function installEffects(){
- system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(p?.typeId==='minecraft:player'&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
+ system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(isLivingCombatEntity(p)&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
  world.afterEvents.entityHurt.subscribe(e=>{killCredit.applied(e);acceptedFeedback.applied(e);});
  world.afterEvents.entityRemove.subscribe(e=>killCredit.forget(e.removedEntityId));
