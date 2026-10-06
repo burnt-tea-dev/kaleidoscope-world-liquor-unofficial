@@ -1,0 +1,531 @@
+{
+  "selection": {
+    "test_only": true,
+    "ok": true,
+    "scenario": "selection",
+    "simulated_players": false,
+    "client": false,
+    "cases": {
+      "airborne": 1,
+      "radius-three": 1,
+      "radius-eight": 1,
+      "source-filters": 1
+    },
+    "samples": [
+      {
+        "kind": "case",
+        "site": "radius-three",
+        "frozen": 28,
+        "expected": 28,
+        "ground": true,
+        "at": {
+          "z": 0.5,
+          "y": 81,
+          "x": 0.5
+        },
+        "boundary": "minecraft:water",
+        "outside": "minecraft:water"
+      },
+      {
+        "kind": "case",
+        "site": "radius-eight",
+        "frozen": 196,
+        "expected": 196,
+        "ground": true,
+        "at": {
+          "z": 0.5,
+          "y": 81,
+          "x": 0.5
+        },
+        "boundary": "minecraft:frosted_ice",
+        "outside": "minecraft:water"
+      },
+      {
+        "kind": "case",
+        "site": "source-filters",
+        "frozen": 24,
+        "expected": 24,
+        "ground": true,
+        "at": {
+          "z": 0.5,
+          "y": 81,
+          "x": 0.5
+        },
+        "boundary": "minecraft:water",
+        "outside": "minecraft:water"
+      },
+      {
+        "kind": "case",
+        "site": "airborne",
+        "frozen": 0,
+        "expected": 0,
+        "ground": false
+      }
+    ],
+    "exit_code": 0,
+    "log": "/root/senluo-baseline-20260930/java-water-20261007/native-freeze-selection-r3/native.log",
+    "scope": "Production freezeWater with real grounded/airborne mobs and native blocks; not player/client or complete melting parity."
+  },
+  "melting_capability": {
+    "test_only": true,
+    "ok": true,
+    "simulated_players": false,
+    "client": false,
+    "cases": {
+      "cluster": 25,
+      "single-lit": 1,
+      "single": 1
+    },
+    "samples": [
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "single",
+        "at": {
+          "x": 0,
+          "y": 80,
+          "z": 0
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "single-lit",
+        "at": {
+          "x": 8,
+          "y": 80,
+          "z": 0
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 18,
+          "y": 80,
+          "z": -2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 18,
+          "y": 80,
+          "z": -1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 18,
+          "y": 80,
+          "z": 0
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 18,
+          "y": 80,
+          "z": 1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 18,
+          "y": 80,
+          "z": 2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 19,
+          "y": 80,
+          "z": -2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 19,
+          "y": 80,
+          "z": -1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 19,
+          "y": 80,
+          "z": 0
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 19,
+          "y": 80,
+          "z": 1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 19,
+          "y": 80,
+          "z": 2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 20,
+          "y": 80,
+          "z": -2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 20,
+          "y": 80,
+          "z": -1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 20,
+          "y": 80,
+          "z": 0
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 20,
+          "y": 80,
+          "z": 1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 20,
+          "y": 80,
+          "z": 2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 21,
+          "y": 80,
+          "z": -2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 21,
+          "y": 80,
+          "z": -1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 21,
+          "y": 80,
+          "z": 0
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 21,
+          "y": 80,
+          "z": 1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 21,
+          "y": 80,
+          "z": 2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 22,
+          "y": 80,
+          "z": -2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 22,
+          "y": 80,
+          "z": -1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 22,
+          "y": 80,
+          "z": 0
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 22,
+          "y": 80,
+          "z": 1
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      },
+      {
+        "kind": "transition",
+        "elapsed": 0,
+        "site": "cluster",
+        "at": {
+          "x": 22,
+          "y": 80,
+          "z": 2
+        },
+        "type": "minecraft:frosted_ice",
+        "states": {
+          "age": 0
+        },
+        "light": 15,
+        "sky": 15
+      }
+    ],
+    "exit_code": 0,
+    "log": "/root/senluo-baseline-20260930/java-water-20261007/native-frost-capability/native.log",
+    "scope": "Native vanilla frosted-ice state transitions with randomTickSpeed=0; capability evidence only, not Java parity or human-client acceptance."
+  },
+  "source": {
+    "java": "World Liquor NeoForge1.21.1 1.1.11 CF9066406",
+    "event": "EventHandlers.onPlayerTick(PlayerTickEvent.Post) / freezeWater",
+    "owned_release": "0.1.79",
+    "native_engine": "1.26.51.1",
+    "client": false,
+    "full_java_parity": false
+  },
+  "limits": [
+    "No Java scheduled FrostedIce aging/melting equivalence",
+    "Native chunk-unavailable queries do not force-load source chunks",
+    "Native player tick/ground collision phase and rendered client acceptance unverified",
+    "CaptainGift water walking remains unported source logic"
+  ]
+}

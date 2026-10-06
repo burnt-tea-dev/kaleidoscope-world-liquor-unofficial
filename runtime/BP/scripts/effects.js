@@ -5,6 +5,7 @@ import {boatingVelocity,reverseGravityImpulse,multiJumpStep,sourceJumpVelocity,n
 import {lavaContact} from './liquid-contact.js';
 import {CriticalFeedback} from './critical-feedback.js';
 import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
+import {freezeWater} from './frost-water.js';
 /** World Liquor effect rules, with current Java 1.1.11 repairs.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
@@ -49,7 +50,6 @@ function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntit
  const pending=killCredit.begin(target.id,e,damageCreditMutation(e.damageSource));
  if(pending)system.run(()=>killCredit.complete(pending));
 }
-function freeze(p,amp){if(!p.isOnGround)return;const r=Math.min(7,3+amp),at={x:Math.floor(p.location.x),y:Math.floor(p.location.y)-1,z:Math.floor(p.location.z)};for(let x=-r;x<=r;x++)for(let z=-r;z<=r;z++){if(x*x+z*z>r*r)continue;try{const b=p.dimension.getBlock({x:at.x+x,y:at.y,z:at.z+z}),up=p.dimension.getBlock({x:at.x+x,y:at.y+1,z:at.z+z});if(b?.typeId==='minecraft:water'&&(b.permutation.getState('liquid_depth')??0)===0&&up?.isAir)b.setType('minecraft:frosted_ice');}catch{}}}
 function doubleFreshDrops(dimension,position,chance){
  if(Math.random()>=chance)return;
  const options={type:'minecraft:item',location:position,maxDistance:1.5},before=new Set(dimension.getEntities(options).map(e=>e.id));
@@ -74,7 +74,7 @@ export function tick(){if(system.currentTick%20===0)killCredit.prune();for(const
  const state=read(p);if(!state.multi_jump)jumps.delete(p.id);
  if(!Object.keys(state).length)continue;
  const heal=state.continuous_heal;if(heal){const h=p.getComponent('minecraft:health');if(h&&h.currentValue<h.effectiveMax)h.setCurrentValue(Math.min(h.effectiveMax,h.currentValue+heal.amplifier+1));}
- motion(p,state);if(state.frost_walker&&system.currentTick%5===0)freeze(p,state.frost_walker.amplifier);
+ motion(p,state);if(state.frost_walker)freezeWater(p,state.frost_walker.amplifier);
  }catch(e){console.warn('[World Liquor effect behaviour] '+e);}
 }
 function wearingUsableElytra(p){
