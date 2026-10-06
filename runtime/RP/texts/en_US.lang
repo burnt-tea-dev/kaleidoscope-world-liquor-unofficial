@@ -193,3 +193,9 @@ effect.kaleidoscope_world_liquor.treasure_guide=Gold Rush
 effect.kaleidoscope_world_liquor.treasure_sense=Treasure Intuition
 
 item.kaleidoscope_world_liquor.mod_name=Kaleidoscope World Liquor
+item.kaleidoscope_world_liquor:highball.name=Highball
+tile.kaleidoscope_world_liquor:cup_highball.name=Highball
+color.kaleidoscope_tavern.brown=Brown
+color.kaleidoscope_tavern.orange=Orange
+color.kaleidoscope_tavern.light_blue=Light Blue
+color.kaleidoscope_tavern.pink=Pink

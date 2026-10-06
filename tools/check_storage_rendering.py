@@ -11,11 +11,17 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
 sys.path.insert(0,str(TAV/'tools'))
-from baseline_reference import previous_bytes
+from baseline_reference import previous_bytes,additions as baseline_additions
 NS='kaleidoscope_world_liquor'
 KT='kaleidoscope_tavern'
 def read(p):return json.loads(p.read_text())
-def readjs(p):return json.loads(p.read_text().split('=',1)[1].strip().rstrip(';'))
+def readjs(p):
+ if p.name=='payload.js':
+  review=read(ROOT/'data/current-mixology-review.json');assert review['test_only']
+  assert hashlib.sha256(p.read_bytes()).hexdigest()==review['after']
+  original=(ROOT/review['previous_payload']).read_bytes();assert hashlib.sha256(original).hexdigest()==review['before']
+  return json.loads(original.decode().split('=',1)[1].strip().rstrip(';'))
+ return json.loads(previous_bytes(ROOT,p).decode().split('=',1)[1].strip().rstrip(';'))
 def digest(p):return hashlib.sha256(previous_bytes(ROOT,p)).hexdigest()
 def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def main():
@@ -26,6 +32,9 @@ def main():
  reviewed=read(ROOT/'data/guide-destruction-review.json')
  plane_review=read(ROOT/'data/drink-plane-review.json')['files']
  additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
+ highball=['runtime/RP/models/entity/kwl_highball_111.geo.json','runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__highball.png','runtime/RP/textures/kwl/items/highball.png','runtime/BP/items/highball.json','runtime/BP/blocks/cup_highball.json']
+ for name in highball:
+  assert name in baseline_additions(ROOT);additions[name]=digest(ROOT/name)
  # Reviewed original effect sprites are additive. Preserve the historical texture
  # tree assertion and separately verify exact source PNG hashes before exclusion.
  for row in read(ROOT/'data/effect-icon-source.json')['unchanged_pngs']:
@@ -88,7 +97,7 @@ def main():
  payload['pages']=reviewed['pages']['before']
  for recipe in payload['recipes']:
   if recipe['kind']=='shaker':
-   source=read(ROOT/'upstream/data'/NS/'recipe'/(recipe['id'].split(':',1)[1]+'.json'))
+   source=read(ROOT/'data/java-parity/neoforge-1.1.9/shaker'/(recipe['id'].split('/')[-1]+'.json'))
    assert recipe.pop('ingredientTags')==[slot.get('tag') for slot in source['ingredients']]
 
  # Reconstruct the historical view only for explicitly reviewed guide paragraphs.

@@ -469,6 +469,9 @@
     },
     "kwl_custom_record": {
       "textures": "textures/kwl/items/custom_record"
+    },
+    "kwl_highball": {
+      "textures": "textures/kwl/items/highball"
     }
   }
 }

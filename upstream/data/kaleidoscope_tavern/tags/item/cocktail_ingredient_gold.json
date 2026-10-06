@@ -1,6 +1,8 @@
 {
   "values": [
-    "kaleidoscope_world_liquor:jack_daniel",
     "kaleidoscope_world_liquor:johnnie_walker"
+  ],
+  "remove": [
+    "kaleidoscope_tavern:sunset_glow"
   ]
 }

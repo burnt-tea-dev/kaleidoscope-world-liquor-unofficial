@@ -193,3 +193,9 @@ effect.kaleidoscope_world_liquor.treasure_guide=淘金热
 effect.kaleidoscope_world_liquor.treasure_sense=宝藏感知
 
 item.kaleidoscope_world_liquor.mod_name=森罗酒馆：世界名酒
+item.kaleidoscope_world_liquor:highball.name=嗨棒
+tile.kaleidoscope_world_liquor:cup_highball.name=嗨棒
+color.kaleidoscope_tavern.brown=棕色
+color.kaleidoscope_tavern.orange=橙色
+color.kaleidoscope_tavern.light_blue=浅蓝色
+color.kaleidoscope_tavern.pink=粉色

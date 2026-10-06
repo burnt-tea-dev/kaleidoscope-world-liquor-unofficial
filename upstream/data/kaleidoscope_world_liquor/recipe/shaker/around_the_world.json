@@ -2,7 +2,7 @@
   "type": "kaleidoscope_tavern:shaker",
   "ingredients": [
     {
-      "tag": "kaleidoscope_tavern:cocktail_ingredient_blue"
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_light_blue"
     },
     {
       "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"

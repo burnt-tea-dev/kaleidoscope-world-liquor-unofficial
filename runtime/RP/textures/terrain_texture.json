@@ -508,6 +508,9 @@
     },
     "kwl_kaleidoscope_world_liquor__block__wall_record__6": {
       "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__wall_record__6"
+    },
+    "kwl_kaleidoscope_world_liquor__block__mixology__highball": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__highball"
     }
   }
 }
