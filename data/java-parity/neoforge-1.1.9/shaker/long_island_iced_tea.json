@@ -1,0 +1,17 @@
+{
+  "type": "kaleidoscope_tavern:shaker",
+  "ingredients": [
+    {
+      "item": "kaleidoscope_world_liquor:cola"
+    },
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+    },
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_green"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_world_liquor:long_island_iced_tea"
+  }
+}

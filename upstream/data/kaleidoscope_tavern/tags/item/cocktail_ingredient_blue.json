@@ -1,5 +1,8 @@
 {
   "values": [
     "kaleidoscope_world_liquor:bombay_sapphire_gin"
+  ],
+  "remove": [
+    "kaleidoscope_tavern:mother_snow"
   ]
 }

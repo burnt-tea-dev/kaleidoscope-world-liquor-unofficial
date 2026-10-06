@@ -1,0 +1,468 @@
+{
+  "project_id": 1502365,
+  "file_id": 9066406,
+  "version": "1.1.11",
+  "loader": "NeoForge",
+  "minecraft": "1.21.1",
+  "archive_sha256": "e1f51736138bfe65ac1ce2aae2f2f3bd292dce71e2b8d2f18580a68bdea807cc",
+  "color_source": "ModCocktailColors.EXTRA_COLORS bytecode; exact source ordering",
+  "colors": [
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_brown",
+      "color": 8606770,
+      "priority": 104,
+      "translationKey": "color.kaleidoscope_tavern.brown",
+      "labels": {
+        "en_US": "Brown",
+        "zh_CN": "棕色",
+        "zh_TW": "棕色"
+      }
+    },
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_orange",
+      "color": 16351261,
+      "priority": 103,
+      "translationKey": "color.kaleidoscope_tavern.orange",
+      "labels": {
+        "en_US": "Orange",
+        "zh_CN": "橙色",
+        "zh_TW": "橙色"
+      }
+    },
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_light_blue",
+      "color": 3847130,
+      "priority": 102,
+      "translationKey": "color.kaleidoscope_tavern.light_blue",
+      "labels": {
+        "en_US": "Light Blue",
+        "zh_CN": "浅蓝色",
+        "zh_TW": "淺藍色"
+      }
+    },
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_pink",
+      "color": 15961002,
+      "priority": 101,
+      "translationKey": "color.kaleidoscope_tavern.pink",
+      "labels": {
+        "en_US": "Pink",
+        "zh_CN": "粉色",
+        "zh_TW": "粉色"
+      }
+    }
+  ],
+  "source_aliases": {
+    "smc:ice_tea": "kaleidoscope_world_liquor:ice_tea"
+  },
+  "shaker_recipes": {
+    "allium_garden1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_light_purple"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_tavern:allium_garden"
+      }
+    },
+    "around_the_world": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_red"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:around_the_world"
+      }
+    },
+    "brass_heart1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_orange"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_orange"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_tavern:brass_heart"
+      }
+    },
+    "depth_charge1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_tavern:depth_charge"
+      }
+    },
+    "gin_tonic": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "item": "kaleidoscope_world_liquor:tonic_water"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:gin_tonic"
+      }
+    },
+    "godfather1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_red"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_orange"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_brown"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_tavern:godfather"
+      }
+    },
+    "grasshopper1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_green"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_aqua"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_tavern:grasshopper"
+      }
+    },
+    "highball": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:highball"
+      }
+    },
+    "highball1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_orange"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_gold"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:highball"
+      }
+    },
+    "jerk": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_green"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_green"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:jerk"
+      }
+    },
+    "long_island_iced_tea": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "item": "kaleidoscope_world_liquor:cola"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_brown"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_brown"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:long_island_iced_tea"
+      }
+    },
+    "long_island_iced_tea1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "item": "kaleidoscope_world_liquor:cola"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_red"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:long_island_iced_tea"
+      }
+    },
+    "pine_colada": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:pine_colada"
+      }
+    },
+    "screwdriver1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_gold"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_gold"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_tavern:screwdriver"
+      }
+    },
+    "sculk_special1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_aqua"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_light_purple"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_tavern:sculk_special"
+      }
+    },
+    "shrimp_cocktail": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_red"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_red"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:shrimp_cocktail"
+      }
+    },
+    "shrimp_cocktail1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_red"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_red"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_pink"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_world_liquor:shrimp_cocktail"
+      }
+    },
+    "white_lady1": {
+      "type": "kaleidoscope_tavern:shaker",
+      "ingredients": [
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_aqua"
+        },
+        {
+          "tag": "kaleidoscope_tavern:cocktail_ingredient_yellow"
+        }
+      ],
+      "result": {
+        "id": "kaleidoscope_tavern:white_lady"
+      }
+    }
+  },
+  "item_tags": {
+    "cocktail_ingredient_aqua": {
+      "values": [
+        "kaleidoscope_world_liquor:bacardi_carta_blanca"
+      ]
+    },
+    "cocktail_ingredient_blue": {
+      "values": [
+        "kaleidoscope_world_liquor:bombay_sapphire_gin"
+      ],
+      "remove": [
+        "kaleidoscope_tavern:mother_snow"
+      ]
+    },
+    "cocktail_ingredient_brown": {
+      "values": [
+        "kaleidoscope_world_liquor:cool_tea",
+        "kaleidoscope_world_liquor:cola",
+        "kaleidoscope_world_liquor:sour_plum",
+        "kaleidoscope_world_liquor:kwas_chlebowy",
+        "smc:ice_tea"
+      ]
+    },
+    "cocktail_ingredient_dark_blue": {
+      "values": [
+        "kaleidoscope_world_liquor:skyy_vodka"
+      ]
+    },
+    "cocktail_ingredient_dark_purple": {
+      "values": [
+        "kaleidoscope_world_liquor:lafite_1982"
+      ]
+    },
+    "cocktail_ingredient_gold": {
+      "values": [
+        "kaleidoscope_world_liquor:johnnie_walker"
+      ],
+      "remove": [
+        "kaleidoscope_tavern:sunset_glow"
+      ]
+    },
+    "cocktail_ingredient_green": {
+      "values": [
+        "kaleidoscope_world_liquor:bamboo_leaf_green_liquor",
+        "kaleidoscope_world_liquor:dassai"
+      ]
+    },
+    "cocktail_ingredient_light_blue": {
+      "values": [
+        "kaleidoscope_world_liquor:absolut_vodka",
+        "kaleidoscope_world_liquor:spiryt_vodka",
+        "kaleidoscope_tavern:mother_snow"
+      ]
+    },
+    "cocktail_ingredient_light_purple": {
+      "values": [],
+      "remove": [
+        "kaleidoscope_tavern:sakura_wine"
+      ]
+    },
+    "cocktail_ingredient_orange": {
+      "values": [
+        "kaleidoscope_world_liquor:jack_daniel",
+        "kaleidoscope_tavern:sunset_glow"
+      ]
+    },
+    "cocktail_ingredient_pink": {
+      "values": [
+        "kaleidoscope_tavern:sakura_wine"
+      ]
+    },
+    "cocktail_ingredient_red": {
+      "values": [
+        "kaleidoscope_world_liquor:smirnoff_red_vodka"
+      ]
+    },
+    "cocktail_ingredient_white": {
+      "values": [
+        "kaleidoscope_world_liquor:pina_colada",
+        "kaleidoscope_world_liquor:maotai",
+        "kaleidoscope_world_liquor:tonic_water"
+      ]
+    },
+    "cocktail_ingredient_yellow": {
+      "values": [
+        "kaleidoscope_world_liquor:strongbow"
+      ]
+    }
+  },
+  "highball_effects": {
+    "item": "kaleidoscope_world_liquor:highball",
+    "effects": [
+      [
+        {
+          "effect": "kaleidoscope_world_liquor:creative_flight",
+          "duration": 600,
+          "amplifier": 0,
+          "probability": 1.0
+        }
+      ]
+    ]
+  }
+}

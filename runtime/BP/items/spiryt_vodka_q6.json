@@ -16,7 +16,7 @@
       "minecraft:max_stack_size": 16,
       "minecraft:tags": {
         "tags": [
-          "kaleidoscope_tavern:alcohol"
+          "kaleidoscope_tavern:cocktail_ingredient_light_blue"
         ]
       },
       "minecraft:use_animation": "drink",

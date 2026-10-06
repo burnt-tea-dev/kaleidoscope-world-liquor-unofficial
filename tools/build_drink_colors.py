@@ -4,8 +4,10 @@ from pathlib import Path
 import argparse,json,re
 ROOT=Path(__file__).resolve().parents[1]
 def expected(payload):
+    current=bool(payload.get('shakerColors'))
+    source='neoforge-1.1.11' if current else 'neoforge-1.1.9'
     tags={}
-    for path in sorted((ROOT/'data/java-parity/neoforge-1.1.9/cocktail-tags').glob('*.json')):
+    for path in sorted((ROOT/('data/java-parity/'+source+'/cocktail-tags')).glob('*.json')):
         tag='kaleidoscope_tavern:'+path.stem
         for original in json.loads(path.read_text())['values']:
             item=original.replace('smc:','kaleidoscope_world_liquor:')
@@ -18,7 +20,7 @@ def expected(payload):
         if row['kind']!='bottle':continue
         source=tags[row['base']]
         assert len(source)==1, 'Multiple colors require Java ColorUtils precedence review'
-        row['color']=source[0].split('cocktail_ingredient_',1)[1]
+        row['color']=source[0] if current else source[0].split('cocktail_ingredient_',1)[1]
     payload['requires']=sorted(set(payload.get('requires',[])+['shaker_ingredient_tags']))
     return payload
 def main():

@@ -85,10 +85,12 @@ def main():
    file=ROOT/f'upstream/assets/{space}/lang/{"zh_cn" if lc=="zh_TW" else lc.lower()}.json'
    if not file.exists():continue
    for key,value in json.loads(file.read_text()).items():
-    if key.startswith('effect.'):
+    if key.startswith('effect.') and not key.endswith('.description'):
      key=key.replace('effect.smc.','effect.'+NS+'.').replace('effect.kaleidoscope_twilight.','effect.'+NS+'.')
+     if lc=='zh_TW' and key not in traditional_effects:continue
      effects[lc][key]=traditional_effects[key] if lc=='zh_TW' else value
  effect_terms={
+  NS+':creative_flight':('Creative Flight','创造飞行','創造飛行'),
   'minecraft:hunger':('Hunger', '饥饿', '飢餓'),
   'minecraft:weakness':('Weakness', '虚弱', '虛弱'),
   'minecraft:absorption':('Absorption', '伤害吸收', '吸收'),
@@ -171,6 +173,7 @@ def main():
     for quality,group in enumerate(groups,1):
      prefix=(triple('Quality','品质','品質')[lc]+f' {quality}：') if kind=='bottle' else ''
      rows.append(prefix+('；'.join(effect_text(e,lc) for e in group) or triple('No listed effects.','无额外效果。','無額外效果。')[lc]))
+    if item==NS+':highball':rows.append(triple('The Java Creative Flight ability is not implemented on stable Bedrock.','Java 创造飞行能力目前未在基岩稳定版实现。','Java 創造飛行能力目前未在基岩穩定版實現。')[lc])
    body[lc]='\n'.join(rows)
    if len(body[lc])>8192:raise ValueError('Page too long '+old['id'])
   preparations=[{'method':'Freezer','ingredients':[next((i for i,fluid in {'minecraft:water_bucket':'minecraft:water','minecraft:milk_bucket':NS+':milk_still',KT+':grape_bucket':KT+':grape_juice',KT+':sweet_berries_bucket':KT+':sweet_berries_juice'}.items() if fluid==r['fluid']),r['fluid']),*row],'result':item,'count':r['result'].get('count',1),'time':r['craft_time']} for r in freezing for row in __import__('itertools').product(*r['ingredients'])]

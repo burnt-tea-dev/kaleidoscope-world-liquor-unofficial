@@ -55,7 +55,7 @@ def run(write=False):
  for p in (ROOT/'runtime/BP/items').glob('*.json'):
   i=read(p)['minecraft:item']
   if i['description']['identifier'] not in ids:assert 'minecraft:icon' in i['components'];sprites+=1
- assert sprites==129,sprites
- print('27 geometric furniture routes;129 sprite routes; client acceptance pending')
+ expected=129+int((ROOT/'runtime/BP/items/highball.json').exists());assert sprites==expected,sprites
+ print(f'27 geometric furniture routes;{expected} sprite routes; client acceptance pending')
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--write',action='store_true');a=p.parse_args();run(a.write)

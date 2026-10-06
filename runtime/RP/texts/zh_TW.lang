@@ -181,6 +181,7 @@ effect.kaleidoscope_world_liquor.beheading=斬首
 effect.kaleidoscope_world_liquor.boating_master=船長的祝福
 effect.kaleidoscope_world_liquor.captain_gift=水上行走
 effect.kaleidoscope_world_liquor.continuous_heal=瞬間恢復
+effect.kaleidoscope_world_liquor.creative_flight=創造飛行
 effect.kaleidoscope_world_liquor.double_damage=重斬
 effect.kaleidoscope_world_liquor.elbow_strike=肘擊
 effect.kaleidoscope_world_liquor.frost_walker=冰霜行者
@@ -193,3 +194,9 @@ effect.kaleidoscope_world_liquor.treasure_guide=淘金熱
 effect.kaleidoscope_world_liquor.treasure_sense=寶藏感知
 
 item.kaleidoscope_world_liquor.mod_name=森羅酒館：世界名酒
+item.kaleidoscope_world_liquor:highball.name=嗨棒
+tile.kaleidoscope_world_liquor:cup_highball.name=嗨棒
+color.kaleidoscope_tavern.brown=棕色
+color.kaleidoscope_tavern.orange=橙色
+color.kaleidoscope_tavern.light_blue=淺蓝色
+color.kaleidoscope_tavern.pink=粉色

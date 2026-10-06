@@ -83,3 +83,5 @@ subprocess.run(['python3',str(tav/'tools/creative/catalog.py'),'--root',str(root
 subprocess.run(['python3',str(tav/'tools/pick_block.py'),'--root',str(root)],check=True)
 
 subprocess.run(['python3',str(tav/'tools/check_drink_surfaces.py'),str(root)],check=True,cwd=root)
+
+subprocess.run(['node',str(root/'tools/check_current_mixology.mjs')],check=True,cwd=root)

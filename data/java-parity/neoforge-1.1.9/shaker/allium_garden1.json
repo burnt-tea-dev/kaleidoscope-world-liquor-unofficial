@@ -1,0 +1,17 @@
+{
+  "type": "kaleidoscope_tavern:shaker",
+  "ingredients": [
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
+    },
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_red"
+    },
+    {
+      "tag": "kaleidoscope_tavern:cocktail_ingredient_white"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:allium_garden"
+  }
+}

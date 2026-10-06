@@ -20,7 +20,12 @@
         "movement_modifier": 0.35,
         "start_using": "if_first"
       },
-      "kaleidoscope_world_liquor:consume": {}
+      "kaleidoscope_world_liquor:consume": {},
+      "minecraft:tags": {
+        "tags": [
+          "kaleidoscope_tavern:cocktail_ingredient_white"
+        ]
+      }
     }
   }
 }
