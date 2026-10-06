@@ -14,3 +14,5 @@ Historical artifacts and branches are evidence, not release input. A PR being cl
 Family operations and integration tooling: `casama233/kaleidoscope-tavern-unofficial/family/MAINTENANCE.md`.
 
 Release freeze now claims the version and exact runtime trees in Git’s shared common directory before changing locks. All local worktrees and known remote-tracking histories are checked for collisions. A conflicting or incomplete claim must be preserved for review; choose a new release version instead of deleting or rewriting it. This coordination guard does not replace PR checks or fresh family deployment evidence.
+
+Latest Java author releases per maintained branch drive adaptation. Repairs must reach canonical remote Git before deployment; shared adapters and data migrations follow the current author package. Reuse unchanged validated evidence and retain integrity checks at source/release and deployment state boundaries. Version/hash equality does not prove complete Java parity.
