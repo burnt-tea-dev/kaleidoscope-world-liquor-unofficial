@@ -14,3 +14,5 @@ Java-side source files are not included. The conversion process reads the
 original resource JAR and selected implementation behavior was checked against
 its decompiled classes. `runtime/` contains generated Bedrock assets and
 new Script API code, while `upstream/` preserves the pinned resource input.
+
+Minecraft1.21.1 critical_hit particle sprite is an unmodified Mojang game asset, retained under its original publisher terms; it is not relicensed as World Liquor art. The port claims no Mojang affiliation. Source and scope: data/java-critical-source.json.

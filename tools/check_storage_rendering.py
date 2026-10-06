@@ -35,6 +35,10 @@ def main():
  highball=['runtime/RP/models/entity/kwl_highball_111.geo.json','runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__highball.png','runtime/RP/textures/kwl/items/highball.png','runtime/BP/items/highball.json','runtime/BP/blocks/cup_highball.json']
  for name in highball:
   assert name in baseline_additions(ROOT);additions[name]=digest(ROOT/name)
+ # Source-backed critical sprite is additive; never rewrite the old texture tree.
+ critical=read(ROOT/'data/java-critical-source.json')['texture'];name=critical['output']
+ assert name in baseline_additions(ROOT) and name not in additions
+ assert digest(ROOT/name)==critical['source_sha256'];additions[name]=critical['source_sha256']
  # Reviewed original effect sprites are additive. Preserve the historical texture
  # tree assertion and separately verify exact source PNG hashes before exclusion.
  for row in read(ROOT/'data/effect-icon-source.json')['unchanged_pngs']:

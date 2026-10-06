@@ -1,4 +1,4 @@
-import {JavaKillCredit,damageCreditMutation} from '../runtime/BP/scripts/kill-credit.js';
+import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from '../runtime/BP/scripts/kill-credit.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -32,8 +32,8 @@ test('production callback applies source conditions and the 0.6-volume elbow sou
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
  const states=new Map(),sounds=[],pending=[];
  const actor={id:'numeric API fixture',typeId:'minecraft:player',isOnGround:false,isClimbing:true,isInWater:false,getEffect:()=>undefined,getComponent:()=>undefined,getVelocity:()=>({y:-.2}),location:{x:1,y:2,z:3},dimension:{playSound:(...args)=>sounds.push(args)}};
- const target={id:'damage API fixture',getComponent:()=>({effectiveMax:20})};states.set(actor,{ground_crit:{amplifier:0},elbow_strike:{amplifier:0}});
- const ctx=vm.createContext({JavaKillCredit,damageCreditMutation,...rules,readTavernEffects:e=>states.get(e)??{},world:{},system:{run:fn=>pending.push(fn)},EffectTypes:{},ItemStack:class{},Math:Object.assign(Object.create(Math),{random:()=>0})});
+ const target={id:'damage API fixture',typeId:'minecraft:player',getComponent:()=>({effectiveMax:20})};states.set(actor,{ground_crit:{amplifier:0},elbow_strike:{amplifier:0}});
+ const ctx=vm.createContext({CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:e=>states.get(e)??{},world:{},system:{run:fn=>pending.push(fn)},EffectTypes:{},ItemStack:class{},Math:Object.assign(Object.create(Math),{random:()=>0})});
  vm.runInContext(source,ctx);const event={hurtEntity:target,damage:4,damageSource:{cause:'entityAttack',damagingEntity:actor}};
  ctx.event=event;vm.runInContext('hurt(event)',ctx);assert.equal(event.damage,6);pending.splice(0).forEach(fn=>fn());assert.equal(sounds.length,1);assert.equal(sounds[0][2].volume,.6);assert.equal(sounds[0][2].pitch,1);
  actor.isClimbing=false;event.damage=4;vm.runInContext('hurt(event)',ctx);assert.equal(event.damage,4);
@@ -44,7 +44,7 @@ test('respawn emits its source sound once before searching, including an unavail
  const calls=[];let available=false;
  const dimension={playSound:(id,at)=>calls.push(['sound',id,{...at}]),getBlock:at=>{calls.push(['search']);return available?{isAir:at.y>=10,isSolid:at.y<10}:undefined;}};
  const actor={id:'respawn API fixture',location:{x:30,y:40,z:50},dimension,getSpawnPoint:()=>({x:1,y:10,z:2,dimension}),teleport:at=>{calls.push(['teleport']);actor.location={...at};},addEffect:(...args)=>calls.push(['effect',...args])};
- const ctx=vm.createContext({JavaKillCredit,damageCreditMutation,...rules,readTavernEffects:()=>({}),world:{},system:{},EffectTypes:{},ItemStack:class{}});vm.runInContext(source,ctx);ctx.actor=actor;
+ const ctx=vm.createContext({CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:()=>({}),world:{},system:{},EffectTypes:{},ItemStack:class{}});vm.runInContext(source,ctx);ctx.actor=actor;
  vm.runInContext("applyEffect(actor,'kaleidoscope_world_liquor:respawn',1)",ctx);
  assert.equal(calls[0][0],'sound');assert.equal(calls.filter(c=>c[0]==='sound').length,1);assert.equal(calls.some(c=>c[0]==='teleport'),false);
  calls.length=0;available=true;vm.runInContext("applyEffect(actor,'kaleidoscope_world_liquor:respawn',1)",ctx);

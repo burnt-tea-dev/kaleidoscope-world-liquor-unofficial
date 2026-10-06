@@ -2,12 +2,14 @@
  * NeoForge LivingDamage.Pre runs inside actuallyHurt; hurt updates credit later.
  * Nothing here is persisted or written to another pack's dynamic properties.
  */
+export function isLivingCombatEntity(actor){
+ try{return !!actor?.getComponent?.('minecraft:health')&&(actor.typeId==='minecraft:player'||actor.typeId==='minecraft:armor_stand'||actor.getComponent('minecraft:type_family')?.hasTypeFamily('mob')===true);}catch{return false;}
+}
 export function damageCreditMutation(source){
  try{
   const actor=source.damagingEntity,player=actor?.typeId==='minecraft:player';
-  if(!actor?.getComponent?.('minecraft:health'))return undefined;
-  // Boats/minecarts have health but are not Java LivingEntity attackers.
-  if(!player&&actor.typeId!=='minecraft:armor_stand'&&!actor.getComponent('minecraft:type_family')?.hasTypeFamily('mob'))return undefined;
+  // Native hurt also fires for health-bearing vehicles; Java's hook is LivingEntity.
+  if(!isLivingCombatEntity(actor))return undefined;
   const tame=actor.getComponent('minecraft:tameable');
   return {mob:actor.id,playerChanged:player||tame?.isTamed===true,
    player:player?actor.id:tame?.isTamed?(tame.tamedToPlayerId??tame.tamedToPlayer?.id):undefined};

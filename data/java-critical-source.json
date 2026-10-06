@@ -1,0 +1,28 @@
+{
+  "minecraft": "1.21.1",
+  "author_effect": "World Liquor NeoForge1.1.11/CF9066406",
+  "classes": [
+    "TrackingEmitter",
+    "CritParticle",
+    "Particle",
+    "SingleQuadParticle"
+  ],
+  "texture": {
+    "source": "assets/minecraft/textures/particle/critical_hit.png",
+    "output": "runtime/RP/textures/kwl/java21/particle/critical_hit.png",
+    "source_sha256": "a7c036fd1b4c73856e3a7d638b56c1cbd047a2b18c504923ad7d5ae07046d908"
+  },
+  "player_branch": {
+    "ticks": 3,
+    "attempts_per_tick": 16,
+    "sphere_rejection": true,
+    "tracks_target_size_and_position": true
+  },
+  "nonplayer_branch": "Server Level.addParticle no-op; no invented remote particles.",
+  "client": false,
+  "full_visual_parity": false,
+  "pending": [
+    "Client render/tick phase and network event timing",
+    "Camera/distance/density/lighting/blend and floating precision"
+  ]
+}
