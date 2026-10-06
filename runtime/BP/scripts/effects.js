@@ -1,5 +1,6 @@
 import {readTavernEffects} from './sdk/tavern-effects.js';
-/** World Liquor effect rules transcribed from pinned Java 1.1.8.
+import {isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource} from './combat-source.js';
+/** World Liquor effect rules, with current Java 1.1.11 repairs.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
 import {world,system,EffectTypes,ItemStack} from '@minecraft/server';
@@ -7,9 +8,14 @@ export const NS='kaleidoscope_world_liquor';
 const jumps=new Map(),headDrops=new Map();
 const read=p=>readTavernEffects(p,NS);
 const active=(p,name)=>read(p)[name];
-function play(p,s){try{p.dimension.playSound(s,p.location);}catch{}}
+function play(p,s,options={volume:1,pitch:1}){try{p.dimension.playSound(s,p.location,options);}catch{}}
+function combatSound(p,id,options){
+ const dimension=p.dimension,at={...p.location};
+ // Before-event mutations are deferred, but use the original source position.
+ system.run(()=>{try{dimension.playSound(id,at,options);}catch{}});
+}
 function safeRespawn(p){const spawn=p.getSpawnPoint()??{...world.getDefaultSpawnLocation(),dimension:world.getDimension('overworld')},d=spawn.dimension;
- for(let radius=0;radius<=3;radius++)for(let dy=0;dy<=6;dy++)for(let x=-radius;x<=radius;x++)for(let z=-radius;z<=radius;z++)try{const at={x:Math.floor(spawn.x)+x+.5,y:Math.floor(spawn.y)+dy,z:Math.floor(spawn.z)+z+.5},b=d.getBlock(at),up=d.getBlock({...at,y:at.y+1}),floor=d.getBlock({...at,y:at.y-1});if(b?.isAir&&up?.isAir&&floor?.isSolid){p.teleport(at,{dimension:d});p.addEffect('hunger',300);play(p,'mob.endermen.portal');return;}}catch{}
+ for(let radius=0;radius<=3;radius++)for(let dy=0;dy<=6;dy++)for(let x=-radius;x<=radius;x++)for(let z=-radius;z<=radius;z++)try{const at={x:Math.floor(spawn.x)+x+.5,y:Math.floor(spawn.y)+dy,z:Math.floor(spawn.z)+z+.5},b=d.getBlock(at),up=d.getBlock({...at,y:at.y+1}),floor=d.getBlock({...at,y:at.y-1});if(b?.isAir&&up?.isAir&&floor?.isSolid){play(p,NS+'.java.respawn');p.teleport(at,{dimension:d});p.addEffect('hunger',300);play(p,NS+'.java.respawn');return;}}catch{}
 }
 export function applyEffect(p,effect,duration,amplifier=0){
  const name=effect.split(':')[1];if(!Number.isFinite(duration)||duration<0||duration>1e6||!Number.isInteger(amplifier)||amplifier<0||amplifier>255)return;
@@ -17,19 +23,19 @@ export function applyEffect(p,effect,duration,amplifier=0){
  case 'explosion':p.dimension.createExplosion(p.location,3+amplifier,{breaksBlocks:world.gameRules.tntExplodes!==false,causesFire:false,source:p});return;
  case 'level_boost':p.addLevels(3+amplifier*3);return;
  case 'respawn':safeRespawn(p);return;
- case 'crazy':for(const type of EffectTypes.getAll())try{p.addEffect(type,200,{amplifier,showParticles:false});}catch{}play(p,'beacon.activate');return;
+ case 'crazy':for(const type of EffectTypes.getAll())try{p.addEffect(type,200,{amplifier,showParticles:false});}catch{}play(p,NS+'.java.crazy',{volume:1,pitch:1.5});return;
  }
  system.sendScriptEvent('kaleidoscope_tavern:effect_apply',JSON.stringify({entity:p.id,effect,duration,amplifier}));
 }
-function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntity,melee=e.damageSource.cause==='entityAttack';
+function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntity,melee=isMeleeSource(e.damageSource);
  if(e.damageSource.cause==='fall'&&(active(target,'reverse_gravity')||active(target,'multi_jump'))){e.cancel=true;return;}
  if(attacker){
-  const double=active(attacker,'double_damage');if(double&&Math.random()<.2+.2*double.amplifier)e.damage*=2;
-  const crit=active(attacker,'ground_crit');if(melee&&crit&&(attacker.isOnGround||attacker.isInWater||attacker.getVelocity().y>=0)&&Math.random()<.2+.1*crit.amplifier)e.damage*=1.5;
+  const double=active(attacker,'double_damage');if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(attacker,NS+'.java.critical',{volume:1,pitch:1.5});}
+  const crit=active(attacker,'ground_crit');if(melee&&attacker.typeId==='minecraft:player'&&crit&&!isVanillaCrit(attacker)&&Math.random()<.2+.1*crit.amplifier)e.damage=javaDamageProduct(e.damage,1.5);
   const behead=active(attacker,'beheading');if(melee&&behead&&!['minecraft:ender_dragon','minecraft:wither','minecraft:warden'].includes(target.typeId)&&Math.random()<.04+.03*behead.amplifier){e.damage=10000;headDrops.set(target.id,true);}
-  if(melee&&active(attacker,'elbow_strike'))system.run(()=>play(attacker,NS+'.ice_tea_eat'));
+  if(!e.damageSource.damagingProjectile&&e.damageSource.cause!=='projectile'&&active(attacker,'elbow_strike'))combatSound(attacker,NS+'.ice_tea_eat',{volume:.6,pitch:1});
  }
- const tequila=active(target,'tequila');if(tequila)e.damage=Math.min(e.damage,(target.getComponent('minecraft:health')?.effectiveMax??20)*Math.max(.05,.4-.05*tequila.amplifier));
+ const tequila=active(target,'tequila');if(tequila)e.damage=Math.min(e.damage,tequilaDamageCap(target.getComponent('minecraft:health')?.effectiveMax??20,tequila.amplifier));
 }
 function freeze(p,amp){if(!p.isOnGround)return;const r=Math.min(7,3+amp),at={x:Math.floor(p.location.x),y:Math.floor(p.location.y)-1,z:Math.floor(p.location.z)};for(let x=-r;x<=r;x++)for(let z=-r;z<=r;z++){if(x*x+z*z>r*r)continue;try{const b=p.dimension.getBlock({x:at.x+x,y:at.y,z:at.z+z}),up=p.dimension.getBlock({x:at.x+x,y:at.y+1,z:at.z+z});if(b?.typeId==='minecraft:water'&&(b.permutation.getState('liquid_depth')??0)===0&&up?.isAir)b.setType('minecraft:frosted_ice');}catch{}}}
 function doubleFreshDrops(dimension,position,chance){

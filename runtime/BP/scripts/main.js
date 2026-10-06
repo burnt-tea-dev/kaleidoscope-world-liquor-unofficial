@@ -5,6 +5,7 @@ import {payload} from './payload.js';
 import {registerTavernExtension} from './sdk/tavern-extension-client.js';
 import {registerFurniture,installFurniture,hand,NS} from './furniture.js';
 import {installEffects} from './effects.js';
+import {installDrinkAudio} from './drink-audio.js';
 function returnItem(p,id){const inv=p.getComponent('minecraft:inventory').container,left=inv.addItem(new ItemStack(id));if(left)p.dimension.spawnItem(left,p.location);}
 function consume(e){const p=e.source,h=hand(p);if(!p||h?.typeId!==e.itemStack?.typeId)return;const cola=h.typeId.endsWith(':cola');if(p.getGameMode()!=='Creative'){if(h.amount===1)p.getComponent('minecraft:inventory').container.setItem(p.selectedSlotIndex,new ItemStack('minecraft:glass_bottle'));else{h.amount--;p.getComponent('minecraft:inventory').container.setItem(p.selectedSlotIndex,h);returnItem(p,'minecraft:glass_bottle');}}
  for(const effect of cola?['haste','speed']:['regeneration'])p.addEffect(effect,300,{amplifier:0});
@@ -16,7 +17,7 @@ system.beforeEvents.startup.subscribe(e=>{
  e.itemComponentRegistry.registerCustomComponent(NS+':food',{onCompleteUse:e=>{const short=e.itemStack.typeId.split(':')[1];for(const effect of foods[short]??[])e.source.addEffect(effect,9600,{amplifier:0});if(short==='pochi_pudding')returnItem(e.source,'minecraft:bowl');}});
 });
 world.afterEvents.worldLoad.subscribe(()=>{
- installFurniture();installEffects();const foundationPayload=withFoundation(buildRegistrationPayload(payload,id=>!!ItemTypes.get(id)));
+ installFurniture();installEffects();installDrinkAudio(world,system,payload.content);const foundationPayload=withFoundation(buildRegistrationPayload(payload,id=>!!ItemTypes.get(id)));
 setFoundationClient(registerTavernExtension(system,foundationPayload),system,world,foundationPayload);
  console.log('[World Liquor] '+payload.version+' preview: '+payload.content.length+' drink descriptors, '+foundationPayload.recipes.length+' active recipes ('+(payload.recipes.length-foundationPayload.recipes.length)+' optional Cookery recipes unavailable). Client visuals require device review.');
 });
