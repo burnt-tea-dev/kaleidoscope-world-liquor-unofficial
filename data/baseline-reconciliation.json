@@ -786,8 +786,8 @@
     },
     "runtime/RP/ui/kt_world_liquor_effects.json": {
       "before": null,
-      "after": "4ffdbcd00ab179eb2d9a84b2a98e5644fd9f3cfaa7db8668897eb5ab04d5d53b",
-      "reason": "Reviewed canonical HUD root recovery and synchronized release identity; see docs/HUD-ROOT-RECOVERY-20261002.md in Tavern. In 0.1.68, only 480 explicit sibling-scope flags are added; title packet, timing, cache, textures, positions and native HUD roots are unchanged."
+      "after": "eebf2022db3115cf7d2c4f731ce6ab42c2b217adc92fe1d598cc8b44d6f5afdd",
+      "reason": "Reviewed canonical HUD root recovery and synchronized release identity; see docs/HUD-ROOT-RECOVERY-20261002.md in Tavern. In 0.1.68, only 480 explicit sibling-scope flags are added; title packet, timing, cache, textures, positions and native HUD roots are unchanged. In 0.1.69, the only additional functional change is the title-cache prefix slice precision 12 to 18 UTF-8 bytes; packet contents, zero-duration transport and other bindings stay unchanged."
     },
     "runtime/RP/ui/_global_variables.json": {
       "before": null,
