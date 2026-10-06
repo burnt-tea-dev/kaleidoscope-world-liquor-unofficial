@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import {isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource} from '../runtime/BP/scripts/combat-source.js';
 // Runs production callbacks against deterministic API fixtures; no simulated players.
 const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
 function fixture(){
@@ -9,7 +10,7 @@ function fixture(){
  let chest;
  const actor={id:'fixture',isOnGround:false,isClimbing:false,getVelocity:()=>({x:0,y:-.2,z:0}),getEffect:()=>undefined,getComponent:id=>id==='minecraft:equippable'?{getEquipment:()=>chest}:undefined,applyImpulse:i=>impulses.push(i)};
  const world={getAllPlayers:()=>[actor],beforeEvents:{entityHurt:{subscribe:f=>events.hurt=f}},afterEvents:{playerSpawn:subscriptions(),playerLeave:subscriptions(),playerButtonInput:{subscribe:f=>events.jump=f},entityDie:subscriptions(),playerBreakBlock:subscriptions()}};
- const ctx=vm.createContext({world,readTavernEffects:e=>e===actor?state:{},system:{afterEvents:{scriptEventReceive:subscriptions()},runInterval(){},currentTick:1},EffectTypes:{},ItemStack:class{}});vm.runInContext(source+'\ninstallEffects();',ctx);
+ const ctx=vm.createContext({world,readTavernEffects:e=>e===actor?state:{},isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource,system:{afterEvents:{scriptEventReceive:subscriptions()},runInterval(){},currentTick:1},EffectTypes:{},ItemStack:class{}});vm.runInContext(source+'\ninstallEffects();',ctx);
  const tick=()=>vm.runInContext('tick()',ctx),jump=()=>events.jump({button:'Jump',newButtonState:'Pressed',player:actor});
  return {actor,state,impulses,events,tick,jump,equip:(damage=0)=>chest={typeId:'minecraft:elytra',getComponent:()=>({damage,maxDurability:432})}};
 }
@@ -19,3 +20,4 @@ test('airborne acquisition does not grant jumps until ground or climb contact',(
 test('climbing replenishes the Java jump allowance',()=>{const f=fixture();f.actor.isClimbing=true;f.tick();f.actor.isClimbing=false;f.jump();f.jump();assert.equal(f.impulses.length,1);f.actor.isClimbing=true;f.tick();f.actor.isClimbing=false;f.jump();assert.equal(f.impulses.length,2);});
 test('amplifier controls allowance and expiration discards old allowance',()=>{const f=fixture();f.state.multi_jump.amplifier=2;f.actor.isOnGround=true;f.tick();f.actor.isOnGround=false;for(let i=0;i<4;i++)f.jump();assert.equal(f.impulses.length,3);delete f.state.multi_jump;f.tick();f.state.multi_jump={amplifier:2};f.jump();assert.equal(f.impulses.length,3);});
 test('usable worn elytra suppresses multi-jump even before gliding; broken does not',()=>{const f=fixture();f.actor.isOnGround=true;f.tick();f.actor.isOnGround=false;f.equip(430);f.jump();assert.equal(f.impulses.length,0);f.equip(431);f.jump();assert.equal(f.impulses.length,1);});
+test('unmounted riding component permits multi-jump; an actual passenger cannot jump',()=>{const f=fixture();f.actor.getComponent=id=>id==='minecraft:riding'?{entityRidingOn:undefined}:undefined;f.actor.isOnGround=true;f.tick();f.actor.isOnGround=false;f.jump();assert.equal(f.impulses.length,1);f.actor.isOnGround=true;f.tick();f.actor.isOnGround=false;f.actor.getComponent=id=>id==='minecraft:riding'?{entityRidingOn:{typeId:'minecraft:boat'}}:undefined;f.jump();assert.equal(f.impulses.length,1);});

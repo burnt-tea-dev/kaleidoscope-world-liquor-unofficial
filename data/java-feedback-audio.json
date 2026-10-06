@@ -1,0 +1,95 @@
+{
+  "minecraft": "1.21.1",
+  "metadata_origin": "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json",
+  "asset_index": {
+    "id": "17",
+    "sha1": "9b16298b1dc0697878cec88bb2d96168f5239e4f",
+    "size": 449557,
+    "totalSize": 825003775,
+    "url": "https://piston-meta.mojang.com/v1/packages/9b16298b1dc0697878cec88bb2d96168f5239e4f/17.json"
+  },
+  "events": {
+    "critical": {
+      "event": "entity.player.attack.crit",
+      "original": {
+        "sounds": [
+          {
+            "name": "entity/player/attack/crit1",
+            "volume": 0.7
+          },
+          {
+            "name": "entity/player/attack/crit2",
+            "volume": 0.7
+          },
+          {
+            "name": "entity/player/attack/crit3",
+            "volume": 0.7
+          }
+        ],
+        "subtitle": "subtitles.entity.player.attack.crit"
+      },
+      "files": [
+        {
+          "author_asset": "minecraft/sounds/entity/player/attack/crit1.ogg",
+          "publisher_sha1": "509656b6d02a4491f46c686e66b615950c6c1408",
+          "url": "https://resources.download.minecraft.net/50/509656b6d02a4491f46c686e66b615950c6c1408",
+          "output": "sounds/kwl/java21/entity/player/attack/crit1.ogg"
+        },
+        {
+          "author_asset": "minecraft/sounds/entity/player/attack/crit2.ogg",
+          "publisher_sha1": "1b172129daf7cd9a36d2b0f7820baf2e479e381a",
+          "url": "https://resources.download.minecraft.net/1b/1b172129daf7cd9a36d2b0f7820baf2e479e381a",
+          "output": "sounds/kwl/java21/entity/player/attack/crit2.ogg"
+        },
+        {
+          "author_asset": "minecraft/sounds/entity/player/attack/crit3.ogg",
+          "publisher_sha1": "15bbaf7901d7abff12bb872ff88a6ad541f5227a",
+          "url": "https://resources.download.minecraft.net/15/15bbaf7901d7abff12bb872ff88a6ad541f5227a",
+          "output": "sounds/kwl/java21/entity/player/attack/crit3.ogg"
+        }
+      ]
+    },
+    "respawn": {
+      "event": "item.chorus_fruit.teleport",
+      "original": {
+        "sounds": [
+          "mob/endermen/portal",
+          "mob/endermen/portal2"
+        ],
+        "subtitle": "subtitles.item.chorus_fruit.teleport"
+      },
+      "files": [
+        {
+          "author_asset": "minecraft/sounds/mob/endermen/portal.ogg",
+          "publisher_sha1": "7b4b5323ef066caa1ae43cbe66fffd9dfce4ed32",
+          "url": "https://resources.download.minecraft.net/7b/7b4b5323ef066caa1ae43cbe66fffd9dfce4ed32",
+          "output": "sounds/kwl/java21/mob/endermen/portal.ogg"
+        },
+        {
+          "author_asset": "minecraft/sounds/mob/endermen/portal2.ogg",
+          "publisher_sha1": "35461b6a4253db40973549e82d91f267c686be85",
+          "url": "https://resources.download.minecraft.net/35/35461b6a4253db40973549e82d91f267c686be85",
+          "output": "sounds/kwl/java21/mob/endermen/portal2.ogg"
+        }
+      ]
+    },
+    "crazy": {
+      "event": "block.beacon.activate",
+      "original": {
+        "sounds": [
+          "block/beacon/activate"
+        ],
+        "subtitle": "subtitles.block.beacon.activate"
+      },
+      "files": [
+        {
+          "author_asset": "minecraft/sounds/block/beacon/activate.ogg",
+          "publisher_sha1": "191510085f615e2d44136f45c41dd19aecf601e5",
+          "url": "https://resources.download.minecraft.net/19/191510085f615e2d44136f45c41dd19aecf601e5",
+          "output": "sounds/kwl/java21/block/beacon/activate.ogg"
+        }
+      ]
+    }
+  },
+  "scope": "Selected original feedback samples and event entries; client mixing/attenuation remains separate evidence."
+}

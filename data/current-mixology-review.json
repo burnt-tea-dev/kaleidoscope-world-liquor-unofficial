@@ -3,7 +3,7 @@
   "test_only": true,
   "against_commit": "f25cdf4b96a01287e4fd1c2f6c80f2d6e58bcba5",
   "before": "d050b1185a40b46a65e9a5142d13c23f2bc80fbf13e3a784d79e1a082670b75c",
-  "after": "8ba42e07ce4d24ed6ffc840acf24298134b3218b10bac40ab687f2ce5a6638ad",
+  "after": "26c136ad0363db57cb2bcecc4f56c9299c323fb126753aa611d12342cce02446",
   "previous_payload": "data/java-parity/neoforge-1.1.11/previous-payload.js",
   "reason": "Historical storage-only assertions use the unchanged canonical 0.1.67 view. Current Java 1.1.11 recipes/category mutations and output data are exercised by check_current_mixology.mjs and current shared registry/guide tests. No projection is used in runtime or packaging."
 }

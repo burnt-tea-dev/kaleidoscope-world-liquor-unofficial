@@ -601,6 +601,51 @@
       ],
       "max_distance": 64,
       "min_distance": 16
+    },
+    "kaleidoscope_world_liquor.java.critical": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/kwl/java21/entity/player/attack/crit1",
+          "volume": 0.7,
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/entity/player/attack/crit2",
+          "volume": 0.7,
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/entity/player/attack/crit3",
+          "volume": 0.7,
+          "stream": false
+        }
+      ],
+      "max_distance": 16
+    },
+    "kaleidoscope_world_liquor.java.respawn": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/kwl/java21/mob/endermen/portal",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/mob/endermen/portal2",
+          "stream": false
+        }
+      ],
+      "max_distance": 16
+    },
+    "kaleidoscope_world_liquor.java.crazy": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/kwl/java21/block/beacon/activate",
+          "stream": false
+        }
+      ],
+      "max_distance": 16
     }
   }
 }
