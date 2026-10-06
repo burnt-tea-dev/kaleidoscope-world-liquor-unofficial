@@ -1,0 +1,157 @@
+{
+  "native_script_behavior": true,
+  "client": false,
+  "test_only_host_overlay": true,
+  "reports": [
+    {
+      "phase": "first",
+      "ok": true,
+      "normal_stop": true,
+      "player_connections": 0,
+      "errors": [],
+      "observations": [
+        {
+          "kind": "case",
+          "mode": "continuous-heal",
+          "samples": [
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            }
+          ]
+        },
+        {
+          "kind": "case",
+          "mode": "cleared",
+          "health": 50
+        },
+        {
+          "kind": "case",
+          "mode": "vehicle-rejected"
+        },
+        {
+          "kind": "case",
+          "mode": "player-only-noops",
+          "at": {
+            "z": 0,
+            "y": 80,
+            "x": 0
+          }
+        },
+        {
+          "kind": "case",
+          "mode": "external-zero-duration-projectile",
+          "targets": 1
+        },
+        {
+          "kind": "case",
+          "mode": "living-explosion",
+          "events": 1
+        },
+        {
+          "kind": "case",
+          "mode": "persist-for-restart",
+          "ticks": 11988
+        },
+        {
+          "kind": "done",
+          "phase": "first",
+          "players": 0
+        }
+      ]
+    },
+    {
+      "phase": "restart",
+      "ok": true,
+      "normal_stop": true,
+      "player_connections": 0,
+      "errors": [],
+      "observations": [
+        {
+          "kind": "case",
+          "mode": "restart-restored",
+          "ticks": 11905,
+          "beforeTicks": 11988,
+          "samples": [
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            },
+            {
+              "elapsed": 1,
+              "delta": 2
+            }
+          ]
+        },
+        {
+          "kind": "done",
+          "phase": "restart",
+          "players": 0
+        }
+      ]
+    }
+  ],
+  "bds": "1.26.51.1",
+  "reference": "World Liquor NeoForge MC1.21.1 1.1.11 file9066406",
+  "scope": "Disposable copies of current host/addon runtime with explicit observer overlay; before release identity bump. Full exact final family validation follows after Git merge."
+}

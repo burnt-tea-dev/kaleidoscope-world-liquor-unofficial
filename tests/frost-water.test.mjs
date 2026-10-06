@@ -40,8 +40,8 @@ test('an unavailable native block does not suppress reachable source water',()=>
 });
 test('production player tick executes frost every tick and stops immediately on effect expiry',()=>{
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
- const actor={id:'source tick API snapshot',getVelocity:()=>({x:0,y:0,z:0})},state={frost_walker:{amplifier:5}},calls=[];
- const ctx=vm.createContext({AcceptedHurtFeedback:class{},CriticalFeedback:class{},JavaKillCredit:class{prune(){}},MolangVariableMap:class{},world:{getAllPlayers:()=>[actor]},system:{currentTick:1},readTavernEffects:()=>state,freezeWater:(entity,amp)=>calls.push({entity,amp,tick:ctx.system.currentTick})});
+ const actor={id:'source tick API snapshot',typeId:'minecraft:player',getVelocity:()=>({x:0,y:0,z:0})},state={frost_walker:{amplifier:5}},calls=[];
+ const ctx=vm.createContext({getTavernEffectEntities:()=>[],AcceptedHurtFeedback:class{},CriticalFeedback:class{},JavaKillCredit:class{prune(){}},MolangVariableMap:class{},world:{getAllPlayers:()=>[actor]},system:{currentTick:1},readTavernEffects:()=>state,freezeWater:(entity,amp)=>calls.push({entity,amp,tick:ctx.system.currentTick})});
  vm.runInContext(source,ctx);
  for(let tick=1;tick<=6;tick++){ctx.system.currentTick=tick;vm.runInContext('tick()',ctx);}
  assert.deepEqual(calls.map(row=>row.tick),[1,2,3,4,5,6]);assert.ok(calls.every(row=>row.entity===actor&&row.amp===5));
