@@ -1,6 +1,6 @@
-# Selective World Liquor HUD repair: unfrozen 0.1.73 draft
+# Selective World Liquor HUD repair: 0.1.73 source draft
 
-Base: current canonical main af629a089d8d1fe3e210187b211e2f533f3ae4d3, including the reviewed Java mixology/color/Highball work merged in PR45. This is an unfrozen source draft, not a package, release or complete adaptation claim.
+Base: current canonical main af629a089d8d1fe3e210187b211e2f533f3ae4d3, including the reviewed Java mixology/color/Highball work merged in PR45. This is a frozen development-source draft, not a release or complete adaptation claim.
 
 ## Narrow functional change
 
@@ -18,10 +18,10 @@ Existing unimplemented or unverified flight behavior stays explicit; this HUD pa
 
 ## Unfinished identity and approval gates
 
-Own identity 73 is new and unfrozen. No release-history fingerprint or version claim is created yet. The reviewed current host 109 dependency and source pin remain unchanged until the exact public T113 integration candidate is established. That host integration must retain the current Java adaptation and exclude rejected T111/T112 motion changes.
+Own identity 73 is new and uniquely frozen after focused identity checks. Both host dependencies require T113. Exact public source is pinned to 3a25d23a9643bad4883892ca0cf7221261b535f2, whose tested tree is 8773a17b4cf247bb52fa0fda13ab3b5b964ad476. This host integration retains the current Java adaptation and excludes rejected T111/T112 motion changes.
 
 The owner explicitly approved local repairs and Git drafts before the missing BSM upstream-status report is obtained. Reading and refreshing BSM addon_quality/senluo-java-upstream-status.json remains mandatory before merge, release or deployment. It is not available in this draft verification evidence.
 
 The current family Java tracker records distinct Forge, NeoForge and newest-Minecraft branches, with partial source coverage and outstanding adaptation gaps. This patch makes no latest-author or full Java-parity claim.
 
-Baseline/package CI is expected to remain blocked while the source is unfrozen and the exact corrected host pin is pending. Only necessary preservation/HUD checks are appropriate at this stage. No archive, native client acceptance, release, live installation or production readiness is claimed.
+Necessary preservation/HUD checks and exact-source CI follow this checkpoint. BSM verification, native client acceptance, release, live installation and production readiness remain unapproved.
