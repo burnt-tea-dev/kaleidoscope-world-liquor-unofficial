@@ -1,0 +1,15 @@
+# Current Java kill credit and native damage evidence
+
+Current author World Liquor NeoForge1.1.11/CF9066406 `DoubleDamageEffect` reads `victim.getKillCredit()`. Official Minecraft1.21.1 `LivingEntity.hurt` calls `actuallyHurt` before updating the last player/mob fields. [NeoForge’s current1.21.1 patch](https://github.com/neoforged/NeoForge/blob/a2d6402a3c1eec093aef7e7d10ac5145906c199e/patches/net/minecraft/world/entity/LivingEntity.java.patch) puts LivingDamage.Pre inside actuallyHurt after armor/magic mitigation and before absorption. Therefore the proc reads prior credit, including on ownerless damage; replacing it with the current owner changes gameplay.
+
+The adapter keeps ephemeral, per-victim player/mob credit. Player credit wins while recent; tame-owner changes follow the inspected NeoForge branch. The100/101-tick boundary is evaluated by the Java source-state oracle. Native unload events clear victim rows. A bounded pending queue handles callbacks before the next tick, checks later addon cancellation, and commits only matched native afterHurt acknowledgements. No foreign dynamic properties, native effects, health rewrite, global UI, or fake damage source is introduced.
+
+`docs/NATIVE-COMBAT-CAPABILITIES-20261006.json` records actual mobs, not simulated players. Controlled host snapshots provision one test effect through the existing SDK. The spaced production sequence is4,8,8,4: fresh A hit, ownerless damage after A, B hit after A, ownerless damage after B. The actual same-tick native sample also exposes a cooldown rejection that skips afterHurt; the rejected owner is not committed. Immediate speculative selection before native rejection is known is still a source timing gap and is not counted as complete parity.
+
+Armor/absorption tests use actual zombies and real equipped diamond armor. The callback receives3 after armor; doubling yields6, then absorption consumes4 and health loses2. This supports the selected NeoForge event stage without rewriting health. Base vanilla combat differences, every damage cause/mitigation combination, human players and other addon handlers are not certified by these samples.
+
+The engine does not expose knockback resistance in its Script component list. Its knockback API respects resistance in the measured0/0.5/1 cases; ordinary impulse does not. Exact elbow strength/yaw and ground/air damping still require repair. A guessed fixed impulse would move further from the requested result and was not installed.
+
+Other open edges: source NO_ANGER/wind-charge tag mappings, arbitrary addon LivingEntity classification, death/baseTick ordering, unloaded recent players and full nonplayer drink-effect application. Original critical particles and human sound/visual comparison also remain open. Full goal remains intact except the user’s slightly-tipsy exclusion.
+
+Run the isolated native probe with `tools/run_native_credit_probe.py --bds-root <existing-engine-root> --output <new-isolated-directory> --port 26760 --execute`. It never uses a live world or modifies the BDS root. The required full-family and fresh stopped-world gates remain separate; this probe cannot substitute for them.
