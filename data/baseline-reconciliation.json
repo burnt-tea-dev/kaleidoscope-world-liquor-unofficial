@@ -786,8 +786,8 @@
     },
     "runtime/RP/ui/kt_world_liquor_effects.json": {
       "before": null,
-      "after": "c2f848356ebfc001f49da7c225efacf2db8e7435a96835e9a20cb8a870878549",
-      "reason": "Reviewed canonical HUD root recovery and synchronized release identity; see docs/HUD-ROOT-RECOVERY-20261002.md in Tavern."
+      "after": "eebf2022db3115cf7d2c4f731ce6ab42c2b217adc92fe1d598cc8b44d6f5afdd",
+      "reason": "Reviewed canonical HUD root recovery and synchronized release identity; see docs/HUD-ROOT-RECOVERY-20261002.md in Tavern. The selective L73 draft adds only 480 explicit sibling-scope flags and the 18-byte UTF-8 capture gate; all current recipe/color/Highball registrations remain preserved."
     },
     "runtime/RP/ui/_global_variables.json": {
       "before": null,
