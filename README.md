@@ -1,12 +1,12 @@
-## Current maintained baseline: 0.1.75
+## Current maintained baseline: 0.1.76
 
-Canonical runtime and dependencies: [baseline.json](baseline.json). Pair with Tavern **0.6.109**; Cookery **1.0.8** is optional and Grilling family version is **2.8.55**. Static checks, isolated BDS loading, client rendering and saved-world UUID migration are separate acceptance stages. The source/release identity does not certify a live installation. Build from canonical source without private gameplay patches. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md).
+Canonical runtime and dependencies: [baseline.json](baseline.json). Pair with Tavern **0.6.114**; Cookery **1.6.0** is optional and Grilling family version is **2.8.72**. Static checks, isolated BDS loading, client rendering and saved-world UUID migration are separate acceptance stages. The source/release identity does not certify a live installation. Build from canonical source without private gameplay patches. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
 Bedrock port of the [Java addon](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor).
 Requires the public beta of [Kaleidoscope Tavern (Unofficial)](https://github.com/casama233/kaleidoscope-tavern-unofficial)
-version **0.6.109** for the maintained source. Enable both behavior and resource packs alongside Tavern. Cookery 1.0.8 is optional; its rice-dependent Dassai/Maotai preparation requires that host. Target: Bedrock/BDS 1.26.50+.
+version **0.6.114** for the maintained source. Enable both behavior and resource packs alongside Tavern. Cookery 1.6.0 is optional; its rice-dependent Dassai/Maotai preparation requires that host. Target: Bedrock/BDS 1.26.50+.
 
 Historical **0.1.16 preview** contains 18 six-quality bottled drinks, six new
 cocktails and their Java barrel/shaker recipes, 16 colored stools, 10 connected
