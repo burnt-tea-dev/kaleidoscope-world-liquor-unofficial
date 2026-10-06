@@ -14,8 +14,8 @@ function combatSound(p,id,options){
  // Before-event mutations are deferred, but use the original source position.
  system.run(()=>{try{dimension.playSound(id,at,options);}catch{}});
 }
-function safeRespawn(p){const spawn=p.getSpawnPoint()??{...world.getDefaultSpawnLocation(),dimension:world.getDimension('overworld')},d=spawn.dimension;
- for(let radius=0;radius<=3;radius++)for(let dy=0;dy<=6;dy++)for(let x=-radius;x<=radius;x++)for(let z=-radius;z<=radius;z++)try{const at={x:Math.floor(spawn.x)+x+.5,y:Math.floor(spawn.y)+dy,z:Math.floor(spawn.z)+z+.5},b=d.getBlock(at),up=d.getBlock({...at,y:at.y+1}),floor=d.getBlock({...at,y:at.y-1});if(b?.isAir&&up?.isAir&&floor?.isSolid){play(p,NS+'.java.respawn');p.teleport(at,{dimension:d});p.addEffect('hunger',300);play(p,NS+'.java.respawn');return;}}catch{}
+function safeRespawn(p){play(p,NS+'.java.respawn');const spawn=p.getSpawnPoint()??{...world.getDefaultSpawnLocation(),dimension:world.getDimension('overworld')},d=spawn.dimension;
+ for(let radius=0;radius<=3;radius++)for(let dy=0;dy<=6;dy++)for(let x=-radius;x<=radius;x++)for(let z=-radius;z<=radius;z++)try{const at={x:Math.floor(spawn.x)+x+.5,y:Math.floor(spawn.y)+dy,z:Math.floor(spawn.z)+z+.5},b=d.getBlock(at),up=d.getBlock({...at,y:at.y+1}),floor=d.getBlock({...at,y:at.y-1});if(b?.isAir&&up?.isAir&&floor?.isSolid){p.teleport(at,{dimension:d});p.addEffect('hunger',300);play(p,NS+'.java.respawn');return;}}catch{}
 }
 export function applyEffect(p,effect,duration,amplifier=0){
  const name=effect.split(':')[1];if(!Number.isFinite(duration)||duration<0||duration>1e6||!Number.isInteger(amplifier)||amplifier<0||amplifier>255)return;
@@ -71,7 +71,7 @@ export function installEffects(){
  world.beforeEvents.entityHurt.subscribe(hurt);
  world.afterEvents.playerSpawn.subscribe(({player})=>jumps.delete(player.id));
  world.afterEvents.playerLeave.subscribe(e=>{jumps.delete(e.playerId);});
- world.afterEvents.playerButtonInput.subscribe(e=>{if(e.button!=='Jump'||e.newButtonState!=='Pressed')return;const p=e.player,reverse=active(p,'reverse_gravity');if(reverse){const v=p.getVelocity();p.applyImpulse({x:0,y:-.42-v.y,z:0});return;}const row=active(p,'multi_jump'),v=p.getVelocity();if(!row||p.isOnGround||p.isFlying||p.isGliding||p.isInWater||wearingUsableElytra(p)||p.getEffect('levitation')||p.getComponent('minecraft:riding')||v.y>=0)return;const remaining=jumps.get(p.id)??0;if(remaining<=0)return;jumps.set(p.id,remaining-1);p.applyImpulse({x:0,y:.42-v.y,z:0});});
+ world.afterEvents.playerButtonInput.subscribe(e=>{if(e.button!=='Jump'||e.newButtonState!=='Pressed')return;const p=e.player,reverse=active(p,'reverse_gravity');if(reverse){const v=p.getVelocity();p.applyImpulse({x:0,y:-.42-v.y,z:0});return;}const row=active(p,'multi_jump'),v=p.getVelocity();if(!row||p.isOnGround||p.isFlying||p.isGliding||p.isInWater||wearingUsableElytra(p)||p.getEffect('levitation')||p.getComponent('minecraft:riding')?.entityRidingOn||v.y>=0)return;const remaining=jumps.get(p.id)??0;if(remaining<=0)return;jumps.set(p.id,remaining-1);p.applyImpulse({x:0,y:.42-v.y,z:0});});
  world.afterEvents.entityDie.subscribe(e=>{if(headDrops.delete(e.deadEntity.id)){const id={'minecraft:zombie':'minecraft:zombie_head','minecraft:skeleton':'minecraft:skeleton_skull','minecraft:creeper':'minecraft:creeper_head','minecraft:wither_skeleton':'minecraft:wither_skeleton_skull','minecraft:piglin':'minecraft:piglin_head','minecraft:player':'minecraft:player_head'}[e.deadEntity.typeId];if(id)try{e.deadEntity.dimension.spawnItem(new ItemStack(id),e.deadEntity.location);}catch{}}
   const attacker=e.damageSource?.damagingEntity,row=attacker&&active(attacker,'treasure_guide');if(row)doubleFreshDrops(e.deadEntity.dimension,e.deadEntity.location,.15+.05*row.amplifier);
  });

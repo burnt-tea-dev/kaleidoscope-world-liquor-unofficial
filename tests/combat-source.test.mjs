@@ -38,3 +38,14 @@ test('production callback applies source conditions and the 0.6-volume elbow sou
  actor.isClimbing=false;event.damage=4;vm.runInContext('hurt(event)',ctx);assert.equal(event.damage,4);
  actor.isClimbing=true;event.damage=4;event.damageSource.damagingProjectile={};vm.runInContext('hurt(event)',ctx);assert.equal(event.damage,4);
 });
+test('respawn emits its source sound once before searching, including an unavailable destination',()=>{
+ const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
+ const calls=[];let available=false;
+ const dimension={playSound:(id,at)=>calls.push(['sound',id,{...at}]),getBlock:at=>{calls.push(['search']);return available?{isAir:at.y>=10,isSolid:at.y<10}:undefined;}};
+ const actor={id:'respawn API fixture',location:{x:30,y:40,z:50},dimension,getSpawnPoint:()=>({x:1,y:10,z:2,dimension}),teleport:at=>{calls.push(['teleport']);actor.location={...at};},addEffect:(...args)=>calls.push(['effect',...args])};
+ const ctx=vm.createContext({...rules,readTavernEffects:()=>({}),world:{},system:{},EffectTypes:{},ItemStack:class{}});vm.runInContext(source,ctx);ctx.actor=actor;
+ vm.runInContext("applyEffect(actor,'kaleidoscope_world_liquor:respawn',1)",ctx);
+ assert.equal(calls[0][0],'sound');assert.equal(calls.filter(c=>c[0]==='sound').length,1);assert.equal(calls.some(c=>c[0]==='teleport'),false);
+ calls.length=0;available=true;vm.runInContext("applyEffect(actor,'kaleidoscope_world_liquor:respawn',1)",ctx);
+ const sounds=calls.filter(c=>c[0]==='sound');assert.equal(sounds.length,2);assert.deepEqual(sounds[0][2],{x:30,y:40,z:50});assert.deepEqual(sounds[1][2],{x:1.5,y:10,z:2.5});assert.deepEqual(calls.find(c=>c[0]==='effect'),['effect','hunger',300]);
+});
