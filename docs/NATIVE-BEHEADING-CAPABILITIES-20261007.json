@@ -1,0 +1,400 @@
+{
+  "test_only": true,
+  "ok": true,
+  "simulated_players": false,
+  "client": false,
+  "cases": [
+    "accepted-kill",
+    "cancel-kill",
+    "cancel-retry-kill",
+    "cancel-set-zero",
+    "mutate-source",
+    "restricted-reentry"
+  ],
+  "items": [
+    {
+      "kind": "item",
+      "id": "minecraft:zombie_head",
+      "registered": true
+    },
+    {
+      "kind": "item",
+      "id": "minecraft:skeleton_skull",
+      "registered": true
+    },
+    {
+      "kind": "item",
+      "id": "minecraft:creeper_head",
+      "registered": true
+    },
+    {
+      "kind": "item",
+      "id": "minecraft:wither_skeleton_skull",
+      "registered": true
+    },
+    {
+      "kind": "item",
+      "id": "minecraft:piglin_head",
+      "registered": true
+    },
+    {
+      "kind": "item",
+      "id": "minecraft:player_head",
+      "registered": true
+    },
+    {
+      "kind": "item",
+      "id": "minecraft:skull",
+      "registered": true
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "block",
+      "id": "minecraft:wheat",
+      "tags": [
+        "minecraft:crop"
+      ],
+      "states": {
+        "growth": 0
+      },
+      "loot": [
+        {
+          "id": "minecraft:wheat_seeds",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:carrots",
+      "tags": [
+        "minecraft:crop"
+      ],
+      "states": {
+        "growth": 0
+      },
+      "loot": [
+        {
+          "id": "minecraft:carrot",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:potatoes",
+      "tags": [
+        "minecraft:crop"
+      ],
+      "states": {
+        "growth": 0
+      },
+      "loot": [
+        {
+          "id": "minecraft:potato",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:beetroot",
+      "tags": [
+        "minecraft:crop"
+      ],
+      "states": {
+        "growth": 0
+      },
+      "loot": [
+        {
+          "id": "minecraft:beetroot_seeds",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:nether_wart",
+      "tags": [],
+      "states": {
+        "age": 0
+      },
+      "loot": [
+        {
+          "id": "minecraft:nether_wart",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:cocoa",
+      "tags": [
+        "minecraft:is_axe_item_destructible"
+      ],
+      "states": {
+        "direction": 0,
+        "age": 0
+      },
+      "loot": [
+        {
+          "id": "minecraft:cocoa_beans",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:melon_stem",
+      "tags": [],
+      "states": {
+        "growth": 0,
+        "facing_direction": 0
+      },
+      "loot": []
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:pumpkin_stem",
+      "tags": [],
+      "states": {
+        "growth": 0,
+        "facing_direction": 0
+      },
+      "loot": []
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:diamond_ore",
+      "tags": [
+        "minecraft:is_pickaxe_item_destructible",
+        "minecraft:iron_tier_destructible",
+        "diamond_pick_diggable",
+        "iron_pick_diggable"
+      ],
+      "states": {},
+      "loot": [
+        {
+          "id": "minecraft:diamond",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:deepslate_diamond_ore",
+      "tags": [
+        "minecraft:is_pickaxe_item_destructible",
+        "minecraft:iron_tier_destructible",
+        "diamond_pick_diggable",
+        "iron_pick_diggable"
+      ],
+      "states": {},
+      "loot": [
+        {
+          "id": "minecraft:diamond",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "id": "minecraft:stone",
+      "tags": [
+        "minecraft:is_pickaxe_item_destructible",
+        "stone"
+      ],
+      "states": {
+        "stone_type": "stone"
+      },
+      "loot": [
+        {
+          "id": "minecraft:cobblestone",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "kind": "case",
+      "mode": "mutate-source",
+      "trace": [
+        {
+          "mode": "mutate-source",
+          "event": "before",
+          "damage": 4,
+          "cause": "fire",
+          "owner": "-4294967295"
+        },
+        {
+          "mode": "mutate-source",
+          "event": "returned"
+        },
+        {
+          "mode": "mutate-source",
+          "event": "after",
+          "damage": 4,
+          "cause": "fire",
+          "owner": "-4294967295"
+        }
+      ],
+      "health": 96
+    },
+    {
+      "kind": "case",
+      "mode": "restricted-reentry",
+      "trace": [
+        {
+          "mode": "restricted-reentry",
+          "event": "before",
+          "damage": 4,
+          "cause": "fire",
+          "owner": "-4294967295"
+        },
+        {
+          "mode": "restricted-reentry",
+          "event": "restricted-rejected",
+          "error": "ReferenceError: Native function [Entity::applyDamage] cannot be used in restricted execution."
+        },
+        {
+          "mode": "restricted-reentry",
+          "event": "returned"
+        }
+      ],
+      "health": 100
+    },
+    {
+      "kind": "case",
+      "mode": "accepted-kill",
+      "trace": [
+        {
+          "mode": "accepted-kill",
+          "event": "before",
+          "damage": 10000,
+          "cause": "fire",
+          "owner": "-4294967295"
+        },
+        {
+          "mode": "accepted-kill",
+          "event": "returned"
+        },
+        {
+          "mode": "accepted-kill",
+          "event": "after",
+          "damage": 10000,
+          "cause": "fire",
+          "owner": "-4294967295"
+        },
+        {
+          "mode": "accepted-kill",
+          "event": "die",
+          "cause": "fire",
+          "owner": "-4294967295",
+          "items": []
+        },
+        {
+          "event": "item-spawn",
+          "item": "minecraft:stone"
+        }
+      ],
+      "health": 0
+    },
+    {
+      "kind": "case",
+      "mode": "cancel-set-zero",
+      "trace": [
+        {
+          "mode": "cancel-set-zero",
+          "event": "before",
+          "damage": 4,
+          "cause": "fire",
+          "owner": "-4294967295"
+        },
+        {
+          "mode": "cancel-set-zero",
+          "event": "returned"
+        },
+        {
+          "event": "item-spawn",
+          "item": "minecraft:stone"
+        },
+        {
+          "mode": "cancel-set-zero",
+          "event": "die",
+          "cause": "override",
+          "items": [
+            "minecraft:stone"
+          ]
+        }
+      ],
+      "health": 0
+    },
+    {
+      "kind": "case",
+      "mode": "cancel-kill",
+      "trace": [
+        {
+          "mode": "cancel-kill",
+          "event": "before",
+          "damage": 4,
+          "cause": "fire",
+          "owner": "-4294967295"
+        },
+        {
+          "mode": "cancel-kill",
+          "event": "returned"
+        },
+        {
+          "mode": "cancel-kill",
+          "event": "before",
+          "damage": 100,
+          "cause": "selfDestruct"
+        }
+      ],
+      "health": 100
+    },
+    {
+      "kind": "case",
+      "mode": "cancel-retry-kill",
+      "trace": [
+        {
+          "mode": "cancel-retry-kill",
+          "event": "before",
+          "damage": 4,
+          "cause": "fire",
+          "owner": "-4294967295"
+        },
+        {
+          "mode": "cancel-retry-kill",
+          "event": "returned"
+        },
+        {
+          "mode": "cancel-retry-kill",
+          "event": "before",
+          "damage": 2,
+          "cause": "entityAttack",
+          "owner": "-4294967295"
+        },
+        {
+          "mode": "cancel-retry-kill",
+          "event": "before",
+          "damage": 1,
+          "cause": "selfDestruct"
+        }
+      ],
+      "health": 1
+    }
+  ],
+  "exit_code": 0,
+  "log": "/root/senluo-baseline-20260930/java-beheading-20261007/native-capability-loot/native.log",
+  "scope": "Native entity damage-source/kill/drop capabilities only; no source-parity claim.",
+  "release_scope": {
+    "owned_release": "0.1.80",
+    "java_source": "NeoForge1.21.1 WorldLiquor1.1.11 CF9066406",
+    "native_engine": "1.26.51.1",
+    "client": false,
+    "full_fidelity": false
+  }
+}

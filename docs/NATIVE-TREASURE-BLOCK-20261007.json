@@ -1,0 +1,165 @@
+{
+  "test_only": true,
+  "ok": true,
+  "simulated_players": false,
+  "client": false,
+  "cases": [
+    "external-crop-class",
+    "external-tagged-ore",
+    "immature-crop",
+    "netherite-source-tag",
+    "ore-below-threshold",
+    "ore-between-old-and-source-threshold",
+    "silk-touch-original-tool",
+    "source-noncrop"
+  ],
+  "items": [
+    {
+      "kind": "items",
+      "items": [
+        {
+          "id": "minecraft:emerald",
+          "amount": 7,
+          "at": {
+            "z": 0.5,
+            "y": 80.5,
+            "x": 4.5
+          }
+        },
+        {
+          "id": "minecraft:diamond",
+          "amount": 1,
+          "at": {
+            "z": 0.5,
+            "y": 80.5,
+            "x": 4.5
+          }
+        },
+        {
+          "id": "minecraft:wheat_seeds",
+          "amount": 1,
+          "at": {
+            "z": 0.5,
+            "y": 80.5,
+            "x": 4.5
+          }
+        },
+        {
+          "id": "minecraft:ancient_debris",
+          "amount": 1,
+          "at": {
+            "z": 0.5,
+            "y": 80.5,
+            "x": 4.5
+          }
+        },
+        {
+          "id": "minecraft:iron_ingot",
+          "amount": 1,
+          "at": {
+            "z": 0.5,
+            "y": 80.5,
+            "x": 4.5
+          }
+        },
+        {
+          "id": "minecraft:iron_ingot",
+          "amount": 1,
+          "at": {
+            "z": 0.5,
+            "y": 80.5,
+            "x": 4.5
+          }
+        },
+        {
+          "id": "minecraft:diamond_ore",
+          "amount": 1,
+          "at": {
+            "z": 0.5,
+            "y": 80.5,
+            "x": 4.5
+          }
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "kind": "case",
+      "mode": "ore-below-threshold",
+      "count": 1,
+      "expected": 1,
+      "id": "minecraft:diamond_ore",
+      "eligible": true
+    },
+    {
+      "kind": "case",
+      "mode": "ore-between-old-and-source-threshold",
+      "count": 0,
+      "expected": 0,
+      "id": "minecraft:diamond_ore",
+      "eligible": true
+    },
+    {
+      "kind": "case",
+      "mode": "immature-crop",
+      "count": 1,
+      "expected": 1,
+      "id": "minecraft:wheat",
+      "eligible": true
+    },
+    {
+      "kind": "case",
+      "mode": "source-noncrop",
+      "count": 0,
+      "expected": 0,
+      "id": "minecraft:nether_wart",
+      "eligible": false
+    },
+    {
+      "kind": "case",
+      "mode": "netherite-source-tag",
+      "count": 1,
+      "expected": 1,
+      "id": "minecraft:ancient_debris",
+      "eligible": true
+    },
+    {
+      "kind": "case",
+      "mode": "external-tagged-ore",
+      "count": 1,
+      "expected": 1,
+      "id": "treasure_fixture:plain",
+      "tags": [
+        "c:ores"
+      ]
+    },
+    {
+      "kind": "case",
+      "mode": "external-crop-class",
+      "count": 1,
+      "expected": 1,
+      "id": "treasure_fixture:plant",
+      "tags": [
+        "kaleidoscope_world_liquor:crop_block"
+      ]
+    },
+    {
+      "kind": "case",
+      "mode": "silk-touch-original-tool",
+      "count": 1,
+      "expected": 1,
+      "id": "minecraft:diamond_ore"
+    }
+  ],
+  "exit_code": 0,
+  "log": "/root/senluo-baseline-20260930/java-beheading-20261007/native-treasure-tagged-r2/native.log",
+  "scope": "Production block-extra loot helper with real native permutations/tools/item emission. No simulated players or actual player-break/client acceptance.",
+  "release_scope": {
+    "owned_release": "0.1.80",
+    "java_source": "NeoForge1.21.1 WorldLiquor1.1.11 CF9066406",
+    "native_engine": "1.26.51.1",
+    "client": false,
+    "full_fidelity": false
+  }
+}
