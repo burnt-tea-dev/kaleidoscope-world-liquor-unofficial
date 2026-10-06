@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "java_author": "World Liquor NeoForge1.21.1 1.1.11 CF9066406",
+  "java_handlers": "EventHandlers.onBlockBreak lines330–347",
+  "minecraft": "1.21.1",
+  "vanilla_crop_tag": {
+    "values": [
+      "minecraft:beetroots",
+      "minecraft:carrots",
+      "minecraft:potatoes",
+      "minecraft:wheat",
+      "minecraft:melon_stem",
+      "minecraft:pumpkin_stem",
+      "minecraft:torchflower_crop",
+      "minecraft:pitcher_crop"
+    ]
+  },
+  "neoforge_commit": "a2d6402a3c1eec093aef7e7d10ac5145906c199e",
+  "ore_tag": "c:ores",
+  "ore_subtags": {
+    "coal": {
+      "values": [
+        "#minecraft:coal_ores",
+        {
+          "id": "#forge:ores/coal",
+          "required": false
+        }
+      ]
+    },
+    "copper": {
+      "values": [
+        "#minecraft:copper_ores",
+        {
+          "id": "#forge:ores/copper",
+          "required": false
+        }
+      ]
+    },
+    "diamond": {
+      "values": [
+        "#minecraft:diamond_ores",
+        {
+          "id": "#forge:ores/diamond",
+          "required": false
+        }
+      ]
+    },
+    "emerald": {
+      "values": [
+        "#minecraft:emerald_ores",
+        {
+          "id": "#forge:ores/emerald",
+          "required": false
+        }
+      ]
+    },
+    "gold": {
+      "values": [
+        "#minecraft:gold_ores",
+        {
+          "id": "#forge:ores/gold",
+          "required": false
+        }
+      ]
+    },
+    "iron": {
+      "values": [
+        "#minecraft:iron_ores",
+        {
+          "id": "#forge:ores/iron",
+          "required": false
+        }
+      ]
+    },
+    "lapis": {
+      "values": [
+        "#minecraft:lapis_ores",
+        {
+          "id": "#forge:ores/lapis",
+          "required": false
+        }
+      ]
+    },
+    "netherite_scrap": {
+      "values": [
+        "minecraft:ancient_debris",
+        {
+          "id": "#forge:ores/netherite_scrap",
+          "required": false
+        }
+      ]
+    },
+    "redstone": {
+      "values": [
+        "#minecraft:redstone_ores",
+        {
+          "id": "#forge:ores/redstone",
+          "required": false
+        }
+      ]
+    },
+    "quartz": {
+      "values": [
+        "minecraft:nether_quartz_ore",
+        {
+          "id": "#forge:ores/quartz",
+          "required": false
+        }
+      ]
+    }
+  },
+  "vanilla_ore_ids": [
+    "minecraft:ancient_debris",
+    "minecraft:coal_ore",
+    "minecraft:copper_ore",
+    "minecraft:deepslate_coal_ore",
+    "minecraft:deepslate_copper_ore",
+    "minecraft:deepslate_diamond_ore",
+    "minecraft:deepslate_emerald_ore",
+    "minecraft:deepslate_gold_ore",
+    "minecraft:deepslate_iron_ore",
+    "minecraft:deepslate_lapis_ore",
+    "minecraft:deepslate_redstone_ore",
+    "minecraft:diamond_ore",
+    "minecraft:emerald_ore",
+    "minecraft:gold_ore",
+    "minecraft:iron_ore",
+    "minecraft:lapis_ore",
+    "minecraft:nether_gold_ore",
+    "minecraft:nether_quartz_ore",
+    "minecraft:redstone_ore"
+  ],
+  "native_aliases": {
+    "minecraft:beetroots": "minecraft:beetroot",
+    "minecraft:redstone_ore": [
+      "minecraft:redstone_ore",
+      "minecraft:lit_redstone_ore"
+    ],
+    "minecraft:deepslate_redstone_ore": [
+      "minecraft:deepslate_redstone_ore",
+      "minecraft:lit_deepslate_redstone_ore"
+    ]
+  },
+  "chance": "min(0.15 + amplifier * 0.05, 1.0)",
+  "preparation": "Fresh source loot evaluation with current main-hand item; not cloning nearby items",
+  "gaps": [
+    "Native wrong-tool/empty-hand harvest gating differs from Java Block.getDrops",
+    "Native player/luck/block-entity/global-loot-modifier context is not exposed by permutation generation",
+    "Mod CropBlock subclass requires declared equivalent Native tag",
+    "Before/after break RNG/event stage and client comparison incomplete"
+  ]
+}

@@ -6,6 +6,7 @@ import {lavaContact} from './liquid-contact.js';
 import {CriticalFeedback} from './critical-feedback.js';
 import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
 import {freezeWater} from './frost-water.js';
+import {addTreasureBlockDrops} from './treasure-block.js';
 /** World Liquor effect rules, with current Java 1.1.11 repairs.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
@@ -94,6 +95,6 @@ export function installEffects(){
  world.afterEvents.entityDie.subscribe(e=>{if(headDrops.delete(e.deadEntity.id)){const id={'minecraft:zombie':'minecraft:zombie_head','minecraft:skeleton':'minecraft:skeleton_skull','minecraft:creeper':'minecraft:creeper_head','minecraft:wither_skeleton':'minecraft:wither_skeleton_skull','minecraft:piglin':'minecraft:piglin_head','minecraft:player':'minecraft:player_head'}[e.deadEntity.typeId];if(id)try{e.deadEntity.dimension.spawnItem(new ItemStack(id),e.deadEntity.location);}catch{}}
   const attacker=e.damageSource?.damagingEntity,row=attacker&&active(attacker,'treasure_guide');if(row)doubleFreshDrops(e.deadEntity.dimension,e.deadEntity.location,.15+.05*row.amplifier);
  });
- world.afterEvents.playerBreakBlock.subscribe(e=>{const row=active(e.player,'treasure_guide');if(!row)return;const id=e.brokenBlockPermutation.type.id,crop=/(_crop|wheat|beetroot|carrots|potatoes|nether_wart|cocoa)/.test(id),ore=/_ore$/.test(id);if(crop||ore)doubleFreshDrops(e.dimension,e.block.location,(crop?.15:.2)+.05*row.amplifier);});
+ world.afterEvents.playerBreakBlock.subscribe(e=>{const row=active(e.player,'treasure_guide');if(!row)return;try{addTreasureBlockDrops(e,row.amplifier,world.getLootTableManager());}catch(error){console.warn('[World Liquor treasure block] '+error);}});
  system.runInterval(tick,1);
 }
