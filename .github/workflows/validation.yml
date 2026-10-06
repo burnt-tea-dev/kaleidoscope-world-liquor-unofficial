@@ -92,7 +92,7 @@ jobs:
           python tools/rebuild_guide.py
           git diff --exit-code -- runtime/
           node --experimental-loader ./tests/wall-record-loader.mjs --test tests/freezer-callback.test.mjs
-          node --test tests/record-audio.test.mjs tests/multi-jump.test.mjs tests/freezer-state.test.mjs tests/drink-audio.test.mjs tests/combat-source.test.mjs tests/kill-credit.test.mjs tests/motion-source.test.mjs tests/critical-feedback.test.mjs tests/accepted-hurt-feedback.test.mjs
+          node --test tests/record-audio.test.mjs tests/multi-jump.test.mjs tests/freezer-state.test.mjs tests/drink-audio.test.mjs tests/combat-source.test.mjs tests/kill-credit.test.mjs tests/motion-source.test.mjs tests/critical-feedback.test.mjs tests/accepted-hurt-feedback.test.mjs tests/frost-water.test.mjs
           python tools/check_release.py
           python tools/build_release.py
           python tools/verify_release.py --development

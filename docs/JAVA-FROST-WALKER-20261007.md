@@ -1,0 +1,15 @@
+# World Liquor 0.1.79 frost-walker repair
+
+Author source: **World Liquor NeoForge MC1.21.1 1.1.11 / CurseForge9066406**, `EventHandlers.onPlayerTick(PlayerTickEvent.Post)` and `freezeWater`, lines349–360 and418–432 of the reviewed author decompilation. The event supplies effect amplifier+1 to a helper using radius2+argument: the resulting radius is **3+effect amplifier**, without a7 cap, on **every server player tick**.
+
+The old port checked only every fifth tick, capped radius at7 and treated a missing native `liquid_depth` state as source water. The canonical repair uses every tick, the uncapped integer circle, grounded-only operation, exact source depth0, the block directly below the floored player position, and air above each candidate. It checks above only after the source-water predicate, preserving Java short-circuit behavior. Effects, drink definitions, storage, observer feedback and recipes are preserved.
+
+Five program regressions cover radius3/8 boundaries, negative block coordinates, airborne suppression, flowing/falling/unknown water states, covered water, unavailable blocks and the production tick/expiry trigger. A real grounded native QA mob executes the production helper against native water blocks:28/196 converted cells at radius3/8 after excluding its center stone;24 after source filters; an actual airborne mob converts0. These fixtures are not simulated players or rendered/player acceptance. See `NATIVE-FROST-20261007.json`.
+
+## Melting remains a source gap
+
+The author sets the native Java frosted-ice block and then requests a60-tick update. Official MC1.21.1 `FrostedIceBlock.onPlace` first schedules an inclusive random60–120-tick update. `LevelChunkTicks.schedule` and `ScheduledTick.UNIQUE_TICK_HASH` deduplicate by block type and position, preserving the first queued update. The author's second60 request does not establish a guaranteed60-tick melt or age increment. Subsequent scheduled ticks use20–40 delays and source brightness, age and neighbor conditions. Melting is not a fixed lifetime.
+
+In the actual BDS1.26.51.1 capability world, randomTickSpeed0 left all27 native frosted-ice cells at age0 throughout400 observed tick waits, including illuminated singleton and cluster cases. Native `getLightLevel`/`getSkyLightLevel` returned15. That disproves equivalence of this native placement path to Java's scheduled aging; it does not prove every Bedrock frosted-ice path or random-tick condition. Stable2.7.0 has brightness queries but no public native block-tick invocation. Experimental named ticks deliver custom-component callbacks, not Java's or vanilla Bedrock's built-in tick, and are not introduced here.
+
+0.1.79 repairs the concrete selection/cadence defects. Complete melting, native player movement/ground phase, unavailable-chunk loading, and CaptainGift's fluid-shape movement hook remain **unfinished** requirements of the full goal. No platform exception has been granted for these Tavern/Liquor requirements. Do not label this release full frost-walker or full Java parity.
