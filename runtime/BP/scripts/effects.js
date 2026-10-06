@@ -4,6 +4,7 @@ import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from './kill-c
 import {boatingVelocity,reverseGravityImpulse,multiJumpStep,sourceJumpVelocity,nativeJumpImpulse} from './motion-source.js';
 import {lavaContact} from './liquid-contact.js';
 import {CriticalFeedback} from './critical-feedback.js';
+import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
 /** World Liquor effect rules, with current Java 1.1.11 repairs.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
@@ -11,14 +12,15 @@ import {world,system,EffectTypes,ItemStack,MolangVariableMap} from '@minecraft/s
 export const NS='kaleidoscope_world_liquor';
 const jumps=new Map(),headDrops=new Map();
 const killCredit=new JavaKillCredit({now:()=>system.currentTick,resolve:id=>{try{return world.getEntity(id);}catch{return undefined;}}});
-const criticalFeedback=new CriticalFeedback(system,{variables:()=>new MolangVariableMap()});
+const acceptedFeedback=new AcceptedHurtFeedback(system);
+const criticalFeedback=new CriticalFeedback(system,{delivery:acceptedFeedback,variables:()=>new MolangVariableMap()});
 const read=p=>readTavernEffects(p,NS);
 const active=(p,name)=>read(p)[name];
 function play(p,s,options={volume:1,pitch:1}){try{p.dimension.playSound(s,p.location,options);}catch{}}
-function combatSound(p,id,options){
+function combatSound(event,p,id,options){
  const dimension=p.dimension,at={...p.location};
  // Before-event mutations are deferred, but use the original source position.
- system.run(()=>{try{dimension.playSound(id,at,options);}catch{}});
+ acceptedFeedback.queue(event,accepted=>{if(accepted)dimension.playSound(id,at,options);});
 }
 function safeRespawn(p){play(p,NS+'.java.respawn');const spawn=p.getSpawnPoint()??{...world.getDefaultSpawnLocation(),dimension:world.getDimension('overworld')},d=spawn.dimension;
  for(let radius=0;radius<=3;radius++)for(let dy=0;dy<=6;dy++)for(let x=-radius;x<=radius;x++)for(let z=-radius;z<=radius;z++)try{const at={x:Math.floor(spawn.x)+x+.5,y:Math.floor(spawn.y)+dy,z:Math.floor(spawn.z)+z+.5},b=d.getBlock(at),up=d.getBlock({...at,y:at.y+1}),floor=d.getBlock({...at,y:at.y-1});if(b?.isAir&&up?.isAir&&floor?.isSolid){p.teleport(at,{dimension:d});p.addEffect('hunger',300);play(p,NS+'.java.respawn');return;}}catch{}
@@ -37,11 +39,11 @@ function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntit
  if(e.cancel===true||!isLivingCombatEntity(target))return;
  if(e.damageSource.cause==='fall'&&(active(target,'reverse_gravity')||active(target,'multi_jump'))){e.cancel=true;return;}
  const credited=killCredit.previous(target.id),double=credited&&active(credited,'double_damage');
- if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(credited,NS+'.java.critical',{volume:1,pitch:1.5});if(credited.typeId==='minecraft:player')criticalFeedback.queue(e);}
+ if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(e,credited,NS+'.java.critical',{volume:1,pitch:1.5});if(credited.typeId==='minecraft:player')criticalFeedback.queue(e,credited);}
  if(attacker){
-  const crit=active(attacker,'ground_crit');if(melee&&attacker.typeId==='minecraft:player'&&crit&&!isVanillaCrit(attacker)&&Math.random()<.2+.1*crit.amplifier){e.damage=javaDamageProduct(e.damage,1.5);criticalFeedback.queue(e);}
+  const crit=active(attacker,'ground_crit');if(melee&&attacker.typeId==='minecraft:player'&&crit&&!isVanillaCrit(attacker)&&Math.random()<.2+.1*crit.amplifier){e.damage=javaDamageProduct(e.damage,1.5);criticalFeedback.queue(e,attacker);}
   const behead=active(attacker,'beheading');if(melee&&behead&&!['minecraft:ender_dragon','minecraft:wither','minecraft:warden'].includes(target.typeId)&&Math.random()<.04+.03*behead.amplifier){e.damage=10000;headDrops.set(target.id,true);}
-  if(!e.damageSource.damagingProjectile&&e.damageSource.cause!=='projectile'&&active(attacker,'elbow_strike'))combatSound(attacker,NS+'.ice_tea_eat',{volume:.6,pitch:1});
+  if(!e.damageSource.damagingProjectile&&e.damageSource.cause!=='projectile'&&active(attacker,'elbow_strike'))combatSound(e,attacker,NS+'.ice_tea_eat',{volume:.6,pitch:1});
  }
  const tequila=active(target,'tequila');if(tequila)e.damage=Math.min(e.damage,tequilaDamageCap(target.getComponent('minecraft:health')?.effectiveMax??20,tequila.amplifier));
  const pending=killCredit.begin(target.id,e,damageCreditMutation(e.damageSource));
@@ -84,7 +86,7 @@ function wearingUsableElytra(p){
 export function installEffects(){
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(p?.typeId==='minecraft:player'&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
- world.afterEvents.entityHurt.subscribe(e=>{killCredit.applied(e);criticalFeedback.applied(e);});
+ world.afterEvents.entityHurt.subscribe(e=>{killCredit.applied(e);acceptedFeedback.applied(e);});
  world.afterEvents.entityRemove.subscribe(e=>killCredit.forget(e.removedEntityId));
  world.afterEvents.playerSpawn.subscribe(({player})=>{jumps.delete(player.id);killCredit.forget(player.id);});
  world.afterEvents.playerLeave.subscribe(e=>{jumps.delete(e.playerId);killCredit.forget(e.playerId);});
