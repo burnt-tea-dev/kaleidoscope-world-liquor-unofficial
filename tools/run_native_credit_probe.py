@@ -20,7 +20,7 @@ def main():
  manifest={'format_version':2,'header':{'name':'Native credit QA only','description':'No simulated players or live writes; not a release.','uuid':uid,'version':[0,0,1],'min_engine_version':[1,26,20]},'modules':[{'type':'data','uuid':str(uuid.uuid4()),'version':[0,0,1]},{'type':'script','language':'javascript','entry':'scripts/main.js','uuid':str(uuid.uuid4()),'version':[0,0,1]}],'dependencies':[{'module_name':'@minecraft/server','version':'2.7.0'}]}
  (pack/'manifest.json').write_text(json.dumps(manifest,indent=2));(world/'world_behavior_packs.json').write_text(json.dumps([{'pack_id':uid,'version':[0,0,1]}]));(world/'world_resource_packs.json').write_text('[]')
  shutil.copy2(ROOT/'tests/native/credit-probe-entity.json',pack/'entities/probe.json');shutil.copy2(ROOT/'tests/native/kill-credit-probe.js',pack/'scripts/main.js')
- for name in ['effects.js','combat-source.js','kill-credit.js','motion-source.js','liquid-contact.js','critical-feedback.js','critical-source.js','sdk/tavern-effects.js','sdk/tavern-foundation-client.js','sdk/protocol.js','sdk/util.js']:
+ for name in ['effects.js','combat-source.js','kill-credit.js','motion-source.js','liquid-contact.js','critical-feedback.js','critical-source.js','accepted-hurt-feedback.js','sdk/tavern-effects.js','sdk/tavern-foundation-client.js','sdk/protocol.js','sdk/util.js']:
   target=pack/'scripts'/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/'runtime/BP/scripts'/name,target)
  log=out/'native.log'
  with log.open('w') as output:

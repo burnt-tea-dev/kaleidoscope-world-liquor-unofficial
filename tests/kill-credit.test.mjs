@@ -1,3 +1,4 @@
+import {AcceptedHurtFeedback} from '../runtime/BP/scripts/accepted-hurt-feedback.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -38,8 +39,8 @@ test('production hurt callback uses previous credit for environmental damage and
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
  const a=actor('A'),b=actor('B'),target=actor('target'),entities=new Map([a,b,target].map(e=>[e.id,e])),states=new Map([[a,{double_damage:{amplifier:4}}]]),sounds=[],pending=[];
  for(const e of entities.values()){e.location={x:0,y:0,z:0};e.dimension={playSound:(...args)=>sounds.push(args)};}
- const system={currentTick:0,run:fn=>pending.push(fn)},ctx=vm.createContext({CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},...rules,JavaKillCredit,damageCreditMutation,isLivingCombatEntity,world:{getEntity:id=>entities.get(id)},system,readTavernEffects:e=>states.get(e)??{},EffectTypes:{},ItemStack:class{},Math:Object.assign(Object.create(Math),{random:()=>0})});vm.runInContext(source,ctx);
- const hit=(owner,cause='entityAttack',cancel=false)=>{const event={hurtEntity:target,damage:4,cancel,damageSource:{damagingEntity:owner,cause}};ctx.event=event;vm.runInContext('hurt(event)',ctx);return event;};
+ const system={currentTick:0,run:fn=>pending.push(fn)},ctx=vm.createContext({AcceptedHurtFeedback,CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},...rules,JavaKillCredit,damageCreditMutation,isLivingCombatEntity,world:{getEntity:id=>entities.get(id)},system,readTavernEffects:e=>states.get(e)??{},EffectTypes:{},ItemStack:class{},Math:Object.assign(Object.create(Math),{random:()=>0})});vm.runInContext(source,ctx);
+ const hit=(owner,cause='entityAttack',cancel=false)=>{const event={hurtEntity:target,damage:4,cancel,damageSource:{damagingEntity:owner,cause}};ctx.event=event;vm.runInContext('hurt(event);acceptedFeedback.applied(event)',ctx);return event;};
  assert.equal(hit(a).damage,4);assert.equal(hit(undefined,'fire').damage,8);assert.equal(hit(b).damage,8);assert.equal(hit(undefined,'fire').damage,4);vm.runInContext('for (const rows of killCredit.pending.values()) for (const row of rows) row.accepted=true;',ctx);pending.splice(0).forEach(fn=>fn());assert.equal(sounds.length,2);
  system.currentTick=101;assert.equal(hit(a).damage,4);vm.runInContext('for (const rows of killCredit.pending.values()) for (const row of rows) row.accepted=true;',ctx);pending.splice(0).forEach(fn=>fn());
  const canceled=hit(b);canceled.cancel=true;pending.splice(0).forEach(fn=>fn());assert.equal(hit(undefined,'fire').damage,8);
@@ -64,6 +65,6 @@ test('accepted native hurt acknowledgement selects the matching owner and ignore
 test('production LivingDamage adapter does not run critical effects or credit on a health-bearing boat',()=>{
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
  const a=actor('A','minecraft:player'),boat={id:'boat',typeId:'minecraft:boat',getComponent:key=>key==='minecraft:health'?{currentValue:20}:undefined},queued=[];
- const ctx=vm.createContext({...rules,JavaKillCredit,damageCreditMutation,isLivingCombatEntity,CriticalFeedback:class{queue(){queued.push(1);} applied(){}},MolangVariableMap:class{},world:{getEntity:()=>a},system:{currentTick:0,run(){}},readTavernEffects:()=>({ground_crit:{amplifier:4},double_damage:{amplifier:4}}),EffectTypes:{},ItemStack:class{},Math:Object.assign(Object.create(Math),{random:()=>0})});
+ const ctx=vm.createContext({AcceptedHurtFeedback,...rules,JavaKillCredit,damageCreditMutation,isLivingCombatEntity,CriticalFeedback:class{queue(){queued.push(1);} applied(){}},MolangVariableMap:class{},world:{getEntity:()=>a},system:{currentTick:0,run(){}},readTavernEffects:()=>({ground_crit:{amplifier:4},double_damage:{amplifier:4}}),EffectTypes:{},ItemStack:class{},Math:Object.assign(Object.create(Math),{random:()=>0})});
  vm.runInContext(source,ctx);ctx.event={hurtEntity:boat,damage:4,damageSource:{cause:'entityAttack',damagingEntity:a}};vm.runInContext('hurt(event)',ctx);assert.equal(ctx.event.damage,4);assert.equal(queued.length,0);assert.equal(vm.runInContext('killCredit.pending.size',ctx),0);
 });

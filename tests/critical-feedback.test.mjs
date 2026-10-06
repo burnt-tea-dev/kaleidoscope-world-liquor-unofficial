@@ -28,3 +28,8 @@ test('source ground crit plus double damage retain two emitter calls, and remova
 test('sphere rejection is not a fixed sixteen-particle burst',()=>{
  const box={x:0,y:0,z:0,width:2,height:4};assert.equal(trackingAttempt(box,()=>0),undefined);assert.deepEqual(trackingAttempt(box,()=>.5),{at:{x:0,y:2,z:0},velocity:{x:0,y:.2,z:0}});
 });
+
+test('cross-dimension credited players cannot broadcast a critical for an unresolved target ID',()=>{
+ const f=fixture();f.feedback.queue(f.event,{dimension:{id:'nether'}});f.feedback.applied(f.event);f.advance();assert.equal(f.particles.length,0);assert.equal(f.feedback.pending.size,0);
+ f.feedback.queue(f.event,{dimension:{id:'overworld'}});f.feedback.applied(f.event);f.advance();f.advance();f.advance();assert.equal(f.particles.length,48);
+});

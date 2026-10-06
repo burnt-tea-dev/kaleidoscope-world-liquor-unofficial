@@ -1,0 +1,63 @@
+{
+  "test_only": true,
+  "ok": true,
+  "simulated_players": false,
+  "client": false,
+  "cases": {
+    "accepted-elbow": 1,
+    "canceled-elbow": 0,
+    "rejected-elbow": 0,
+    "accepted-double": 1,
+    "canceled-double": 0
+  },
+  "expected": {
+    "accepted-elbow": 1,
+    "canceled-elbow": 0,
+    "rejected-elbow": 0,
+    "accepted-double": 1,
+    "canceled-double": 0
+  },
+  "samples": [
+    {
+      "kind": "case",
+      "mode": "accepted-elbow",
+      "acceptedFeedback": 1,
+      "rejectedFeedback": 0,
+      "damage": 4
+    },
+    {
+      "kind": "case",
+      "mode": "canceled-elbow",
+      "acceptedFeedback": 0,
+      "rejectedFeedback": 1,
+      "damage": 0
+    },
+    {
+      "kind": "case",
+      "mode": "rejected-elbow",
+      "acceptedFeedback": 0,
+      "rejectedFeedback": 0,
+      "damage": 0
+    },
+    {
+      "kind": "case",
+      "mode": "accepted-double",
+      "acceptedFeedback": 1,
+      "rejectedFeedback": 0,
+      "damage": 8
+    },
+    {
+      "kind": "case",
+      "mode": "canceled-double",
+      "acceptedFeedback": 0,
+      "rejectedFeedback": 1,
+      "damage": 0
+    }
+  ],
+  "exit_code": 0,
+  "log": "/root/senluo-baseline-20260930/java-hurt-feedback-20261007/native-production/native.log",
+  "scope": "Actual native hurt handlers/controlled SDK effects/production feedback callbacks; not audible client acceptance or full parity.",
+  "source_release": "0.1.78",
+  "java": "NeoForge1.1.11/MC1.21.1",
+  "audible_client_verified": false
+}
