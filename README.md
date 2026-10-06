@@ -1,4 +1,4 @@
-## Current maintained baseline: 0.1.81
+## Current maintained baseline: 0.1.82
 
 Canonical runtime and dependencies: [baseline.json](baseline.json). Pair with Tavern **0.6.114**; Cookery **1.6.0** is optional and Grilling family version is **2.8.78**. Static checks, isolated BDS loading, client rendering and saved-world UUID migration are separate acceptance stages. The source/release identity does not certify a live installation. Build from canonical source without private gameplay patches. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md).
 
