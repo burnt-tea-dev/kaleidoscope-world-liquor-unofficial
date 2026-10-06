@@ -8,7 +8,7 @@ const rows=fs.readFileSync(new URL('./fixtures/java-use-combat.jsonl',import.met
 test('ground crit eligibility, damage caps and use pulses agree with Java source evaluation',()=>{
  for(const r of rows){
   if(r.kind==='crit'){
-   const p={isOnGround:!!(r.flags&1),isClimbing:!!(r.flags&2),isInWater:!!(r.flags&4),getEffect:()=>r.flags&8,getComponent:()=>r.flags&16,getVelocity:()=>({y:r.y})};
+   const p={isOnGround:!!(r.flags&1),isClimbing:!!(r.flags&2),isInWater:!!(r.flags&4),getEffect:()=>r.flags&8,getComponent:()=>({entityRidingOn:r.flags&16?{}:undefined}),getVelocity:()=>({y:r.y})};
    assert.equal(rules.isVanillaCrit(p),r.expected,JSON.stringify(r));
   }else if(r.kind==='damage'){
    assert.equal(rules.tequilaDamageCap(Math.fround(r.health),r.amplifier),Math.fround(r.cap));
@@ -16,6 +16,10 @@ test('ground crit eligibility, damage caps and use pulses agree with Java source
   }else assert.equal(useSoundPulse(r.duration,r.remaining),r.expected);
  }
  assert.equal(rows.filter(r=>r.kind==='crit').length,96);
+});
+test('an exposed unmounted riding component is not a Java passenger',()=>{
+ const p={isOnGround:false,isClimbing:false,isInWater:false,getEffect:()=>undefined,getComponent:()=>({entityRidingOn:undefined}),getVelocity:()=>({y:-.1})};
+ assert.equal(rules.isVanillaCrit(p),true);p.getComponent=()=>({entityRidingOn:{}});assert.equal(rules.isVanillaCrit(p),false);
 });
 test('projectile owners and explosions are excluded from the original melee predicate',()=>{
  const actor={};assert.equal(rules.isMeleeSource({damagingEntity:actor,cause:'entityAttack'}),true);

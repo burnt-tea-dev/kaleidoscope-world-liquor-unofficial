@@ -1,7 +1,7 @@
 /** Current NeoForge 1.1.11 EventHandlers.isVanillaCrit, not an air/ground shortcut. */
 export function isVanillaCrit(player){
  return player.isOnGround!==true&&player.isClimbing!==true&&player.isInWater!==true
-  &&!player.getEffect?.('blindness')&&!player.getComponent?.('minecraft:riding')
+  &&!player.getEffect?.('blindness')&&!player.getComponent?.('minecraft:riding')?.entityRidingOn
   &&player.getVelocity().y<0;
 }
 
