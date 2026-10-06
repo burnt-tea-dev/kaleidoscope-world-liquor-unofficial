@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.69",
+  "version": "0.1.70",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -5732,42 +5732,54 @@ export const payload = {
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q2",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q3",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q4",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q5",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_aqua"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:bombay_sapphire_gin_q1",
@@ -5870,42 +5882,54 @@ export const payload = {
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:cool_tea_q2",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:cool_tea_q3",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:cool_tea_q4",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:cool_tea_q5",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:cool_tea_q6",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:cola",
@@ -5919,126 +5943,162 @@ export const payload = {
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:sour_plum_q2",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:sour_plum_q3",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:sour_plum_q4",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:sour_plum_q5",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:sour_plum_q6",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:kwas_chlebowy_q1",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:kwas_chlebowy_q2",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:kwas_chlebowy_q3",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:kwas_chlebowy_q4",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:kwas_chlebowy_q5",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:kwas_chlebowy_q6",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:ice_tea_q1",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:ice_tea_q2",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:ice_tea_q3",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:ice_tea_q4",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:ice_tea_q5",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:ice_tea_q6",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_brown"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_red"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:skyy_vodka_q1",
@@ -6309,84 +6369,108 @@ export const payload = {
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:absolut_vodka_q2",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:absolut_vodka_q3",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:absolut_vodka_q4",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:absolut_vodka_q5",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:absolut_vodka_q6",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:spiryt_vodka_q1",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:spiryt_vodka_q2",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:spiryt_vodka_q3",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:spiryt_vodka_q4",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:spiryt_vodka_q5",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:spiryt_vodka_q6",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_light_blue"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ]
     },
     {
       "item": "kaleidoscope_tavern:sakura_wine_q1",
@@ -6447,42 +6531,54 @@ export const payload = {
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_orange"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:jack_daniel_q2",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_orange"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:jack_daniel_q3",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_orange"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:jack_daniel_q4",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_orange"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:jack_daniel_q5",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_orange"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:jack_daniel_q6",
       "add": [
         "kaleidoscope_tavern:cocktail_ingredient_orange"
       ],
-      "remove": []
+      "remove": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ]
     },
     {
       "item": "kaleidoscope_world_liquor:smirnoff_red_vodka_q1",

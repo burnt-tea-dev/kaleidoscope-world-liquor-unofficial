@@ -52,6 +52,15 @@ def main():
             for value in values:
                 for item in ids(value if isinstance(value,str) else value['id']):
                     change=changes.setdefault(item,{'item':item,'add':[],'remove':[]});change[operation].append(tag)
+    previous=ROOT/'data/java-parity/neoforge-1.1.11/previous-payload.js'
+    if previous.exists():
+        old=json.loads(previous.read_text().split('=',1)[1].strip().rstrip(';'))
+        for bottle in old['content']:
+            if bottle['kind']!='bottle' or not bottle.get('color'):continue
+            tag=KT+':cocktail_ingredient_'+bottle['color'].split('cocktail_ingredient_')[-1]
+            for item in bottle['items']:
+                change=changes.get(item)
+                if change and tag not in change['add'] and tag not in change['remove']:change['remove'].append(tag)
     payload['itemTagChanges']=list(changes.values())
     core_colors={'black':0,'dark_blue':170,'dark_green':43520,'dark_aqua':43690,'dark_red':11141120,'dark_purple':11141290,'gold':16755200,'gray':11184810,'dark_gray':5592405,'blue':5592575,'green':5635925,'aqua':5636095,'red':16733525,'light_purple':16733695,'yellow':16777045,'white':16777215}
     all_colors={**{KT+':cocktail_ingredient_'+name:rgb for name,rgb in core_colors.items()},**{row['tag']:row['color'] for row in colors}}

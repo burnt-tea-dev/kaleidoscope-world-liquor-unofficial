@@ -10,6 +10,7 @@ MARKER = '## Shared Tavern effect bar names'
 PREFIX = 'effect.kaleidoscope_world_liquor.'
 # Java has no zh_tw file here; these are translations of its zh_cn names.
 TRADITIONAL = {
+    'creative_flight': '創造飛行',
     'beheading': '斬首', 'boating_master': '船長的祝福',
     'captain_gift': '水上行走', 'continuous_heal': '瞬間恢復',
     'double_damage': '重斬', 'elbow_strike': '肘擊',
@@ -43,7 +44,7 @@ def main():
         source = 'en_us' if locale == 'en_US' else 'zh_cn'
         path = ROOT / 'upstream/assets/kaleidoscope_world_liquor/lang' / (source + '.json')
         java = json.loads(path.read_text(encoding='utf-8'))
-        fallback = {'elbow_strike': 'Elbow Strike' if locale == 'en_US' else '肘击'}
+        fallback = {'creative_flight':'Creative Flight' if locale=='en_US' else '创造飞行','elbow_strike': 'Elbow Strike' if locale == 'en_US' else '肘击'}
         rows = {}
         for name in sorted(TRADITIONAL):
             key = PREFIX + name
