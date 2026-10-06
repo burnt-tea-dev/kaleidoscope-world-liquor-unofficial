@@ -1,0 +1,77 @@
+{
+  "format_version": "1.10.0",
+  "particle_effect": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:java_critical",
+      "basic_render_parameters": {
+        "material": "particles_alpha",
+        "texture": "textures/kwl/java21/particle/critical_hit"
+      }
+    },
+    "components": {
+      "minecraft:emitter_lifetime_once": {
+        "active_time": 0.01
+      },
+      "minecraft:emitter_rate_instant": {
+        "num_particles": 1
+      },
+      "minecraft:emitter_shape_point": {
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "minecraft:particle_initial_speed": 0,
+      "minecraft:particle_lifetime_expression": {
+        "max_lifetime": "variable.kwlc_life/20"
+      },
+      "minecraft:particle_appearance_billboard": {
+        "size": [
+          "variable.kwlc_size*math.clamp((variable.kwlc_tick+math.mod(variable.particle_age*20,1))/variable.kwlc_life*32,0,1)",
+          "variable.kwlc_size*math.clamp((variable.kwlc_tick+math.mod(variable.particle_age*20,1))/variable.kwlc_life*32,0,1)"
+        ],
+        "facing_camera_mode": "rotate_xyz",
+        "uv": {
+          "texture_width": 8,
+          "texture_height": 8,
+          "uv": [
+            0,
+            0
+          ],
+          "uv_size": [
+            8,
+            8
+          ]
+        }
+      },
+      "minecraft:particle_appearance_tinting": {
+        "color": [
+          "variable.kwlc_gray",
+          "variable.kwlc_g",
+          "variable.kwlc_b",
+          1
+        ]
+      },
+      "minecraft:particle_appearance_lighting": {},
+      "minecraft:particle_lifetime_events": {
+        "creation_event": "kwlc_init"
+      },
+      "minecraft:particle_initialization": {
+        "per_render_expression": "loop(math.max(0,math.min(math.floor(variable.particle_age*20)+1,variable.kwlc_life)-variable.kwlc_tick), {variable.kwlc_oldx=variable.kwlc_x;variable.kwlc_oldy=variable.kwlc_y;variable.kwlc_oldz=variable.kwlc_z;variable.kwlc_dy=variable.kwlc_dy-0.02;variable.kwlc_x=variable.kwlc_x+variable.kwlc_dx;variable.kwlc_dx=variable.kwlc_dx*0.699999988079071;variable.kwlc_y=variable.kwlc_y+variable.kwlc_dy;variable.kwlc_dy=variable.kwlc_dy*0.699999988079071;variable.kwlc_z=variable.kwlc_z+variable.kwlc_dz;variable.kwlc_dz=variable.kwlc_dz*0.699999988079071;variable.kwlc_g=variable.kwlc_g*0.9599999785423279;variable.kwlc_b=variable.kwlc_b*0.8999999761581421;variable.kwlc_tick=variable.kwlc_tick+1;});"
+      },
+      "minecraft:particle_motion_parametric": {
+        "relative_position": [
+          "variable.kwlc_oldx+(variable.kwlc_x-variable.kwlc_oldx)*math.mod(variable.particle_age*20,1)",
+          "variable.kwlc_oldy+(variable.kwlc_y-variable.kwlc_oldy)*math.mod(variable.particle_age*20,1)",
+          "variable.kwlc_oldz+(variable.kwlc_z-variable.kwlc_oldz)*math.mod(variable.particle_age*20,1)"
+        ]
+      }
+    },
+    "events": {
+      "kwlc_init": {
+        "expression": "variable.kwlc_tick=0;variable.kwlc_g=variable.kwlc_gray;variable.kwlc_b=variable.kwlc_gray;variable.kwlc_x=0;variable.kwlc_oldx=0;variable.kwlc_dx=variable.kwlc_vx;variable.kwlc_y=0;variable.kwlc_oldy=0;variable.kwlc_dy=variable.kwlc_vy;variable.kwlc_z=0;variable.kwlc_oldz=0;variable.kwlc_dz=variable.kwlc_vz;"
+      }
+    }
+  }
+}

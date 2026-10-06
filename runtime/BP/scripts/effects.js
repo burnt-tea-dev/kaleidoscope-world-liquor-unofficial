@@ -1,15 +1,17 @@
 import {readTavernEffects} from './sdk/tavern-effects.js';
 import {isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource} from './combat-source.js';
-import {JavaKillCredit,damageCreditMutation} from './kill-credit.js';
+import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from './kill-credit.js';
 import {boatingVelocity,reverseGravityImpulse,multiJumpStep,sourceJumpVelocity,nativeJumpImpulse} from './motion-source.js';
 import {lavaContact} from './liquid-contact.js';
+import {CriticalFeedback} from './critical-feedback.js';
 /** World Liquor effect rules, with current Java 1.1.11 repairs.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
-import {world,system,EffectTypes,ItemStack} from '@minecraft/server';
+import {world,system,EffectTypes,ItemStack,MolangVariableMap} from '@minecraft/server';
 export const NS='kaleidoscope_world_liquor';
 const jumps=new Map(),headDrops=new Map();
 const killCredit=new JavaKillCredit({now:()=>system.currentTick,resolve:id=>{try{return world.getEntity(id);}catch{return undefined;}}});
+const criticalFeedback=new CriticalFeedback(system,{variables:()=>new MolangVariableMap()});
 const read=p=>readTavernEffects(p,NS);
 const active=(p,name)=>read(p)[name];
 function play(p,s,options={volume:1,pitch:1}){try{p.dimension.playSound(s,p.location,options);}catch{}}
@@ -32,12 +34,12 @@ export function applyEffect(p,effect,duration,amplifier=0){
  system.sendScriptEvent('kaleidoscope_tavern:effect_apply',JSON.stringify({entity:p.id,effect,duration,amplifier}));
 }
 function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntity,melee=isMeleeSource(e.damageSource);
- if(e.cancel===true)return;
+ if(e.cancel===true||!isLivingCombatEntity(target))return;
  if(e.damageSource.cause==='fall'&&(active(target,'reverse_gravity')||active(target,'multi_jump'))){e.cancel=true;return;}
  const credited=killCredit.previous(target.id),double=credited&&active(credited,'double_damage');
- if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(credited,NS+'.java.critical',{volume:1,pitch:1.5});}
+ if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(credited,NS+'.java.critical',{volume:1,pitch:1.5});if(credited.typeId==='minecraft:player')criticalFeedback.queue(e);}
  if(attacker){
-  const crit=active(attacker,'ground_crit');if(melee&&attacker.typeId==='minecraft:player'&&crit&&!isVanillaCrit(attacker)&&Math.random()<.2+.1*crit.amplifier)e.damage=javaDamageProduct(e.damage,1.5);
+  const crit=active(attacker,'ground_crit');if(melee&&attacker.typeId==='minecraft:player'&&crit&&!isVanillaCrit(attacker)&&Math.random()<.2+.1*crit.amplifier){e.damage=javaDamageProduct(e.damage,1.5);criticalFeedback.queue(e);}
   const behead=active(attacker,'beheading');if(melee&&behead&&!['minecraft:ender_dragon','minecraft:wither','minecraft:warden'].includes(target.typeId)&&Math.random()<.04+.03*behead.amplifier){e.damage=10000;headDrops.set(target.id,true);}
   if(!e.damageSource.damagingProjectile&&e.damageSource.cause!=='projectile'&&active(attacker,'elbow_strike'))combatSound(attacker,NS+'.ice_tea_eat',{volume:.6,pitch:1});
  }
@@ -82,7 +84,7 @@ function wearingUsableElytra(p){
 export function installEffects(){
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(p?.typeId==='minecraft:player'&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
- world.afterEvents.entityHurt.subscribe(e=>killCredit.applied(e));
+ world.afterEvents.entityHurt.subscribe(e=>{killCredit.applied(e);criticalFeedback.applied(e);});
  world.afterEvents.entityRemove.subscribe(e=>killCredit.forget(e.removedEntityId));
  world.afterEvents.playerSpawn.subscribe(({player})=>{jumps.delete(player.id);killCredit.forget(player.id);});
  world.afterEvents.playerLeave.subscribe(e=>{jumps.delete(e.playerId);killCredit.forget(e.playerId);});
