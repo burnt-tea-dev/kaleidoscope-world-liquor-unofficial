@@ -1,0 +1,13 @@
+{
+  "format_version": "1.26.20",
+  "minecraft:entity": {
+    "description": {"identifier": "senluo_elbow_qa:r0", "is_spawnable": false, "is_summonable": true},
+    "components": {
+      "minecraft:type_family": {"family": ["mob", "elbow_qa", "elbow_qa_target"]},
+      "minecraft:health": {"value": 200, "max": 200},
+      "minecraft:collision_box": {"width": 0.6, "height": 1.8},
+      "minecraft:physics": {"has_gravity": false, "has_collision": true},
+      "minecraft:knockback_resistance": {"value": 0}
+    }
+  }
+}

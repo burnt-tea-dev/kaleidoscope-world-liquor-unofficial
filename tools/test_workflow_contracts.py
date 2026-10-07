@@ -41,6 +41,7 @@ def validate_ci(workflow):
                    'rebuild_guide.py', 'check_release.py', 'build_release.py', 'verify_release.py --development',
                    'tests/freezer-callback.test.mjs', 'tests/record-audio.test.mjs',
                    'tests/multi-jump.test.mjs', 'tests/freezer-state.test.mjs',
+                   'tests/elbow-source.test.mjs', 'tests/elbow-native-evidence.test.mjs',
                    'tools/test_pick_block.py', 'tools/effect-bar.test.mjs', 'tools/creative/test_catalog.py']:
         assert script in package, script
     assert 'steps.pin.outputs.commit' in str(jobs['package']['steps'])

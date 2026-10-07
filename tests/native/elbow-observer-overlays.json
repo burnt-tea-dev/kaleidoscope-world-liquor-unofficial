@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "test_only": true,
+  "production_adapter_installed": false,
+  "client": false,
+  "simulated_players": false,
+  "runner": "Existing canonical family_update.native_common setup_engine/native_run in a new isolated empty world; require matching captured engine inputs and zero players. This file only declares an additional observation BP; it is not a deployment script or production receipt.",
+  "script": "tests/native/elbow-probe.js",
+  "api": "@minecraft/server 2.7.0",
+  "log_prefix": "[ELBOW_QA] ",
+  "done_marker": "\"kind\":\"done\"",
+  "failure_marker": "\"kind\":\"failure\"",
+  "timeout_seconds": 110,
+  "entity_templates": [
+    {"source": "tests/native/elbow-probe-actor.json", "identifier": "senluo_elbow_qa:actor"},
+    {"source": "tests/native/elbow-probe-target.json", "identifier": "senluo_elbow_qa:r0", "knockback_resistance": 0},
+    {"source": "tests/native/elbow-probe-target.json", "identifier": "senluo_elbow_qa:r05", "knockback_resistance": 0.5},
+    {"source": "tests/native/elbow-probe-target.json", "identifier": "senluo_elbow_qa:r1", "knockback_resistance": 1}
+  ],
+  "expected_cases": 6,
+  "scenario_subset": "air_only",
+  "required_native_air_state": "Target must have isValid=true/isOnGround=false after a test-only positive Y setup impulse, before spawning its AI attacker. Every beforeHurt must still observe ground=false; a failure/invalidAir row cannot pass.",
+  "supersedes": "Only the six missing air observations from native-elbow-ai-r3; its eight successful ground/cancel/death observations remain separate valid evidence. Never rerun or replace that terminal world.",
+  "requested_observations": ["actual AI melee", "beforeHurt/afterHurt/entityHitEntity order", "same tick and run/timeout1/timeout2 velocities", "native ground versus airborne", "resistance 0/0.5/1", "later cancellation", "fatal hit/entityDie", "controlled API knockback after real AI hit"]
+}

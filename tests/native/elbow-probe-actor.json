@@ -1,0 +1,24 @@
+{
+  "format_version": "1.26.20",
+  "minecraft:entity": {
+    "description": {"identifier": "senluo_elbow_qa:actor", "is_spawnable": false, "is_summonable": true},
+    "components": {
+      "minecraft:type_family": {"family": ["mob", "elbow_qa", "elbow_qa_actor"]},
+      "minecraft:health": {"value": 200, "max": 200},
+      "minecraft:collision_box": {"width": 0.6, "height": 1.8},
+      "minecraft:physics": {"has_gravity": false, "has_collision": true},
+      "minecraft:movement": {"value": 0},
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {},
+      "minecraft:attack": {"damage": 4},
+      "minecraft:follow_range": {"value": 8},
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "must_see": false,
+        "scan_interval": 10,
+        "entity_types": [{"filters": {"test": "is_family", "subject": "other", "value": "elbow_qa_target"}, "max_dist": 8}]
+      },
+      "minecraft:behavior.melee_attack": {"priority": 2, "speed_multiplier": 0, "reach_multiplier": 1.5}
+    }
+  }
+}

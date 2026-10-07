@@ -1,0 +1,2580 @@
+{
+  "schema": 1,
+  "scope": "Native real-mob AI melee/controlled API capability numeric facts; no production elbow adapter or client validation",
+  "engine_version": "1.26.51.1",
+  "script_api": "@minecraft/server 2.7.0",
+  "test_only": true,
+  "simulated_players": false,
+  "client": false,
+  "production_adapter_installed": false,
+  "source": {
+    "world_liquor": {
+      "minecraft": "1.21.1",
+      "loader": "NeoForge",
+      "version": "1.1.11",
+      "file_id": 9066406,
+      "classes": [
+        "SMCEffect",
+        "EventHandlers"
+      ]
+    },
+    "minecraft": {
+      "version": "1.21.1",
+      "methods": [
+        "Attributes.ATTACK_KNOCKBACK",
+        "LivingEntity.getKnockback",
+        "LivingEntity.knockback",
+        "Player.attack",
+        "Mob.doHurtTarget"
+      ]
+    }
+  },
+  "collection": {
+    "ground_cases": 8,
+    "actual_air_cases": 6,
+    "ground_run_overall_ok": false,
+    "ground_run_source_unchanged": true,
+    "ground_subset_incomplete_reason": "Its six original floating-actor air prototypes did not attack; only the eight observed ground/cancel/death cases are retained.",
+    "air_run_overall_ok": true,
+    "air_run_source_unchanged": true,
+    "air_run_errors": 0,
+    "rejected_label_only_air_cases": 6
+  },
+  "cases": [
+    {
+      "case": "r0/ground/AI",
+      "source_run": "r3",
+      "configured_ground": true,
+      "resistance": 0,
+      "controlled_api": null,
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": false
+      },
+      "actual_air_samples": 0,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -22,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.3999999761581421,
+            "y": 0.40000152587890625,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.2184000015258789,
+            "y": 0.40000152587890625,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.18085718154907227,
+            "y": 0.40000152587890625,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r05/ground/AI",
+      "source_run": "r3",
+      "configured_ground": true,
+      "resistance": 0.5,
+      "controlled_api": null,
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": false
+      },
+      "actual_air_samples": 0,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -28,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.20000004768371582,
+            "y": 0.23999786376953125,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.10920000076293945,
+            "y": 0.23999786376953125,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.09042859077453613,
+            "y": 0.23999786376953125,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r1/ground/AI",
+      "source_run": "r3",
+      "configured_ground": true,
+      "resistance": 1,
+      "controlled_api": null,
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": false
+      },
+      "actual_air_samples": 0,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -28,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r0/ground/cancel",
+      "source_run": "r3",
+      "configured_ground": true,
+      "resistance": 0,
+      "controlled_api": null,
+      "counts": {
+        "before": 1,
+        "after": 0,
+        "hit": 1,
+        "died": 0,
+        "forceSent": false
+      },
+      "actual_air_samples": 0,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -28,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r0/ground/death",
+      "source_run": "r3",
+      "configured_ground": true,
+      "resistance": 0,
+      "controlled_api": null,
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 1,
+        "forceSent": false
+      },
+      "actual_air_samples": 0,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -24,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityDie",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r0/ground/API",
+      "source_run": "r3",
+      "configured_ground": true,
+      "resistance": 0,
+      "controlled_api": {
+        "horizontal": {
+          "x": 0,
+          "z": 1
+        },
+        "vertical": 0.2
+      },
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": true
+      },
+      "actual_air_samples": 0,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -24,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "controlledApiKnockback/sameTick",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.5999999046325684,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.3276001214981079,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.2712855339050293,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r05/ground/API",
+      "source_run": "r3",
+      "configured_ground": true,
+      "resistance": 0.5,
+      "controlled_api": {
+        "horizontal": {
+          "x": 0,
+          "z": 1
+        },
+        "vertical": 0.2
+      },
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": true
+      },
+      "actual_air_samples": 0,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -28,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "controlledApiKnockback/sameTick",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.2999999523162842,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.16380000114440918,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.1356428861618042,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r1/ground/API",
+      "source_run": "r3",
+      "configured_ground": true,
+      "resistance": 1,
+      "controlled_api": {
+        "horizontal": {
+          "x": 0,
+          "z": 1
+        },
+        "vertical": 0.2
+      },
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": true
+      },
+      "actual_air_samples": 0,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -28,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "controlledApiKnockback/sameTick",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": true,
+          "target_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r0/air/AI",
+      "source_run": "r5",
+      "configured_ground": false,
+      "resistance": 0,
+      "controlled_api": null,
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": false
+      },
+      "actual_air_samples": 14,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -20,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.3999999761581421,
+            "y": 0.40000152587890625,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.36399996280670166,
+            "y": 0.40000152587890625,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.30142855644226074,
+            "y": 0.40000152587890625,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r05/air/AI",
+      "source_run": "r5",
+      "configured_ground": false,
+      "resistance": 0.5,
+      "controlled_api": null,
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": false
+      },
+      "actual_air_samples": 14,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -23,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.20000004768371582,
+            "y": 0.24500274658203125,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.18199992179870605,
+            "y": 0.24500274658203125,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.15071415901184082,
+            "y": 0.24500274658203125,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r1/air/AI",
+      "source_run": "r5",
+      "configured_ground": false,
+      "resistance": 1,
+      "controlled_api": null,
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": false
+      },
+      "actual_air_samples": 14,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -23,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r0/air/API",
+      "source_run": "r5",
+      "configured_ground": false,
+      "resistance": 0,
+      "controlled_api": {
+        "horizontal": {
+          "x": 0,
+          "z": 1
+        },
+        "vertical": 0.2
+      },
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": true
+      },
+      "actual_air_samples": 15,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -23,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "controlledApiKnockback/sameTick",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.5999999046325684,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.5460000038146973,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.45214271545410156,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r05/air/API",
+      "source_run": "r5",
+      "configured_ground": false,
+      "resistance": 0.5,
+      "controlled_api": {
+        "horizontal": {
+          "x": 0,
+          "z": 1
+        },
+        "vertical": 0.2
+      },
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": true
+      },
+      "actual_air_samples": 15,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -23,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "controlledApiKnockback/sameTick",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.2999999523162842,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.27300000190734863,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0.22607135772705078,
+            "y": 0.1999969482421875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "r1/air/API",
+      "source_run": "r5",
+      "configured_ground": false,
+      "resistance": 1,
+      "controlled_api": {
+        "horizontal": {
+          "x": 0,
+          "z": 1
+        },
+        "vertical": 0.2
+      },
+      "counts": {
+        "before": 1,
+        "after": 1,
+        "hit": 1,
+        "died": 0,
+        "forceSent": true
+      },
+      "actual_air_samples": 15,
+      "invalid_air": false,
+      "samples": [
+        {
+          "phase": "spawn",
+          "relative_tick": -23,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "beforeHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "controlledApiKnockback/sameTick",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "afterHurt/run",
+          "relative_tick": 0,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout1",
+          "relative_tick": 1,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "entityHitEntity/timeout2",
+          "relative_tick": 2,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        },
+        {
+          "phase": "settled",
+          "relative_tick": 4,
+          "observed_ground": false,
+          "target_velocity": {
+            "z": 0,
+            "y": 0.01000213623046875,
+            "x": 0
+          },
+          "actor_velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          }
+        }
+      ]
+    }
+  ],
+  "label_only_air_counterexamples": [
+    {
+      "case": "r0/air/AI",
+      "configured_ground": false,
+      "observed_ground_at_before_hurt": true,
+      "before": 1,
+      "after": 1,
+      "hit": 1,
+      "actual_air_proven": false
+    },
+    {
+      "case": "r05/air/AI",
+      "configured_ground": false,
+      "observed_ground_at_before_hurt": true,
+      "before": 1,
+      "after": 1,
+      "hit": 1,
+      "actual_air_proven": false
+    },
+    {
+      "case": "r1/air/AI",
+      "configured_ground": false,
+      "observed_ground_at_before_hurt": true,
+      "before": 1,
+      "after": 1,
+      "hit": 1,
+      "actual_air_proven": false
+    },
+    {
+      "case": "r0/air/API",
+      "configured_ground": false,
+      "observed_ground_at_before_hurt": true,
+      "before": 1,
+      "after": 1,
+      "hit": 1,
+      "actual_air_proven": false
+    },
+    {
+      "case": "r05/air/API",
+      "configured_ground": false,
+      "observed_ground_at_before_hurt": true,
+      "before": 1,
+      "after": 1,
+      "hit": 1,
+      "actual_air_proven": false
+    },
+    {
+      "case": "r1/air/API",
+      "configured_ground": false,
+      "observed_ground_at_before_hurt": true,
+      "before": 1,
+      "after": 1,
+      "hit": 1,
+      "actual_air_proven": false
+    }
+  ],
+  "conclusions": [
+    "Native callbacks and same-tick system.run do not expose buffered base knockback; next-tick observation is required in these samples.",
+    "Canceled native melee still emits entityHitEntity; this event alone is not accepted-hurt proof.",
+    "True airborne targets receive a native vertical base kick; the original Java air branch keeps its pre-knockback Y velocity.",
+    "Controlled API vertical0.2 yields about0.2 at resistance0 and0.5, changing rather than restoring the source air branch.",
+    "Full resistance leaves velocity unchanged in observed cases.",
+    "A fixed extra impulse/knockback or guessed resistance/attack attribute cannot establish source equivalence."
+  ],
+  "unimplemented": [
+    "Exact native force operation order and general composition for arbitrary pre-existing velocity",
+    "Readable source attack attributes, enchantment hooks, Player attack charge and target resistance",
+    "Production elbow attribute/force subscriber",
+    "Special Mob.attack overrides and foreign addon classes",
+    "Native player/client motion, damage-stage and render acceptance"
+  ],
+  "sanitization": "Only synthetic test numeric/name facts; no machine paths, absolute ticks, entity IDs, worlds, private scripts, raw logs or engine file inventories."
+}
