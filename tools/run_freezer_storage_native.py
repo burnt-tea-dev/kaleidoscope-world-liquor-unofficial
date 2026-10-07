@@ -11,9 +11,11 @@ def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--family-config',type=Path,required=True);p.add_argument('--source',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--port',type=int,required=True);a=p.parse_args()
  config=read(a.family_config);context=Path(config['output_dir']);source=a.source.resolve();out=a.output.resolve();assert not out.exists() and not out.is_relative_to(source)
  sys.path.insert(0,str(Path(config['sources']['tavern'])/'tools'))
- from family_update import common,native_common
+ from family_update import common
  from family_update.storage import require_space,allocated
- common.configure(a.family_config);candidate=context/'release-candidate';receipt=read(candidate/'family-receipt.json');native_common.audit_candidate(candidate,receipt)
+ common.configure(a.family_config)
+ from family_update import native_common
+ candidate=context/'release-candidate';receipt=read(candidate/'family-receipt.json');native_common.audit_candidate(candidate,receipt)
  inputs=common.engine_inputs();prior=read(context/'exact-engine/native-report.json');assert prior['bds'] and prior['engine_inputs']==inputs
  require_space(context,'Native freezer input persistence',allocated(candidate));native_common.setup_engine(out,'Freezer Input QA',a.port,expected_inputs=inputs)
  world=out/'worlds/Freezer Input QA';world.parent.mkdir();shutil.copytree(candidate,world);native_common.blank_level(world,'Freezer Input QA');native_common.audit_candidate(world,receipt)
