@@ -228,7 +228,7 @@ for i,color in inputcolor.items():
  ids=[i+f'_q{q}' for q in range(4,7)] if i in bottleids else [i]
  for itemid in ids:
   q=int(itemid[-1]) if i in bottleids else 1
-  rows=effects[i][q-1] if i in effects else [{'effect':effect,'duration':15,'amplifier':0,'probability':1} for effect in (['minecraft:regeneration'] if i.endswith('tonic_water') else ['minecraft:haste','minecraft:speed'])]
+  rows=effects[i][q-1] if i in effects else [{'effect':'minecraft:regeneration' if i.endswith('tonic_water') else 'minecraft:haste','duration':15,'amplifier':0,'probability':1}]
   inputs.append({'item':itemid,'container':KT+':empty_bottle' if i in bottleids else 'minecraft:glass_bottle','color':color,'effects':rows})
 flowers=['dandelion','poppy','blue_orchid','allium','azure_bluet','red_tulip','orange_tulip','white_tulip','pink_tulip','oxeye_daisy','cornflower','lily_of_the_valley','wither_rose','sunflower','lilac','rose_bush','peony','torchflower','pitcher_plant']
 def ingredient(d):
