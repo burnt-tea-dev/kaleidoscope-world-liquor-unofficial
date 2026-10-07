@@ -2161,6 +2161,23 @@
           ]
         }
       }
+    },
+    {
+      "release": "0.1.98",
+      "files": {
+        "runtime/BP/scripts/freezer-native-storage.js": {
+          "before": "b3139acf519b1bc1c02ee74c40149cc0b4cbe42fa907edae0588a57908bedb3e",
+          "after": "1aa8e2cf2e3820747954f20b2d1dedb4f0f8f59249144bb76d30016abea5eea4",
+          "reason": "Native97 experiment exposed API vector/JSON representation mismatch; validate exact integer coordinates instead of serialization/enumeration. Frozen97 output/history preserved.",
+          "reverseOps": [
+            [
+              27,
+              30,
+              "  check(required===1&&record?.schema===1&&record.key===key&&record.dimension===dimension.id&&same(record.position,position)&&same(record.ids,ids),'NATIVE_STORAGE_MISMATCH');\n"
+            ]
+          ]
+        }
+      }
     }
   ]
 }

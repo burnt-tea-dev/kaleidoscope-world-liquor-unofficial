@@ -25,7 +25,9 @@ export class NativeItemStorage {
   }
   check(typeof raw==='string','NATIVE_STORAGE_CORRUPT');let record;
   try{record=JSON.parse(raw);}catch{check(false,'NATIVE_STORAGE_CORRUPT');}
-  check(required===1&&record?.schema===1&&record.key===key&&record.dimension===dimension.id&&same(record.position,position)&&same(record.ids,ids),'NATIVE_STORAGE_MISMATCH');
+  // Native Block.location is an API vector, not a JSON representation contract.
+  // Match integer coordinates numerically, independent of property enumeration.
+  check(required===1&&record?.schema===1&&record.key===key&&record.dimension===dimension.id&&['x','y','z'].every(axis=>Number.isInteger(record.position?.[axis])&&record.position[axis]===position?.[axis])&&same(record.ids,ids),'NATIVE_STORAGE_MISMATCH');
   check(typeof record.entity==='string'&&typeof record.token==='string'&&record.token.length>0,'NATIVE_STORAGE_CORRUPT');
   const entity=this.findEntity(record.entity);
   check(entity?.isValid&&entity.typeId===NATIVE_ITEM_ENTITY&&entity.dimension.id===dimension.id,'NATIVE_STORAGE_UNAVAILABLE');
