@@ -4,7 +4,17 @@ const EFFECTS=Object.freeze({
  'kaleidoscope_world_liquor:cola':['haste','speed'],
  'kaleidoscope_world_liquor:tonic_water':['regeneration'],
 });
-export const bottledDrinkDiagnostics={completed:0,dropped:0,unresolved:0,errors:[]};
+export const bottledDrinkDiagnostics={completed:0,dropped:0,unresolved:0,errors:[],audioErrors:[]};
+export function burpPitch(roll){return Math.fround(Math.fround(javaFloatRoll(roll)*Math.fround(.1))+Math.fround(.9));}
+export function eatingPitch(first,second){return Math.fround(Math.fround(1)+Math.fround(Math.fround(javaFloatRoll(first)-javaFloatRoll(second))*Math.fround(.4)));}
+function sound(dimension,player,id,volume,pitch){
+ try{dimension.playSound(id,{...player.location},{volume,pitch});}
+ catch(error){bottledDrinkDiagnostics.audioErrors.push({id,error:String(error)});if(bottledDrinkDiagnostics.audioErrors.length>16)bottledDrinkDiagnostics.audioErrors.shift();}
+}
+export function bottledCompletionAudio(player,dimension,worldRng=Math.random){
+ sound(dimension,player,'kaleidoscope_world_liquor.java.burp',.5,burpPitch(worldRng()));
+ sound(dimension,player,'kaleidoscope_world_liquor.java.eating',1,eatingPitch(worldRng(),worldRng()));
+}
 function unresolved(status,error){
  bottledDrinkDiagnostics.unresolved++;
  bottledDrinkDiagnostics.errors.push({status,...(error?{error:String(error)}:{})});
@@ -38,7 +48,7 @@ export function giveGlassBottle(player,createStack){
  * to the fresh Player inventory iff its current abilities are not Creative.
  * These items have no native food component, so Native does not debit them.
  */
-export function completeBottledDrink(event,{createStack,rng=Math.random}){
+export function completeBottledDrink(event,{createStack,rng=Math.random,worldRng=Math.random}){
  const player=event.source,expected=event.itemStack?.clone(),effects=EFFECTS[expected?.typeId];
  if(!effects||player?.typeId!=='minecraft:player')return {status:'NOT_OWNED_PLAYER_DRINK'};
  let slot,entry;
@@ -46,6 +56,10 @@ export function completeBottledDrink(event,{createStack,rng=Math.random}){
  catch(error){return unresolved('UNRESOLVED_ENTRY',error);}
  if(!sameUse(entry,expected))return unresolved('UNRESOLVED_ENTRY');
  try{
+  // The finishUsingItem level remains the original world, but each sound reads
+  // the current entity coordinates at its own call. Java uses world RNG here,
+  // before its separate entity RNG draws for food-effect probability.
+  bottledCompletionAudio(player,player.dimension,worldRng);
   for(const effect of effects)if(javaFloatRoll(rng())<1)player.addEffect(effect,300,{amplifier:0,showParticles:true});
   // Sample abilities after the effect calls; never cache pre-effect Creative.
   if(String(player.getGameMode()).toLowerCase()!=='creative'){

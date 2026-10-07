@@ -89,6 +89,54 @@
           "output": "sounds/kwl/java21/block/beacon/activate.ogg"
         }
       ]
+    },
+    "burp": {
+      "event": "entity.player.burp",
+      "original": {
+        "sounds": [
+          "random/burp"
+        ],
+        "subtitle": "subtitles.entity.player.burp"
+      },
+      "files": [
+        {
+          "author_asset": "minecraft/sounds/random/burp.ogg",
+          "publisher_sha1": "bdc648e04933df8ddcccc84b375d6556776d4331",
+          "url": "https://resources.download.minecraft.net/bd/bdc648e04933df8ddcccc84b375d6556776d4331",
+          "output": "sounds/kwl/java21/random/burp.ogg"
+        }
+      ]
+    },
+    "eating": {
+      "event": "entity.generic.eat",
+      "original": {
+        "sounds": [
+          "random/eat1",
+          "random/eat2",
+          "random/eat3"
+        ],
+        "subtitle": "subtitles.entity.generic.eat"
+      },
+      "files": [
+        {
+          "author_asset": "minecraft/sounds/random/eat1.ogg",
+          "publisher_sha1": "dfee39084c771182f6b9e7cfb8c8bc4e255747bc",
+          "url": "https://resources.download.minecraft.net/df/dfee39084c771182f6b9e7cfb8c8bc4e255747bc",
+          "output": "sounds/kwl/java21/random/eat1.ogg"
+        },
+        {
+          "author_asset": "minecraft/sounds/random/eat2.ogg",
+          "publisher_sha1": "d26bde554d88f0ca156baf471c44ce2c0e68176c",
+          "url": "https://resources.download.minecraft.net/d2/d26bde554d88f0ca156baf471c44ce2c0e68176c",
+          "output": "sounds/kwl/java21/random/eat2.ogg"
+        },
+        {
+          "author_asset": "minecraft/sounds/random/eat3.ogg",
+          "publisher_sha1": "9f2c4bab5ed55f1714fffa223985c81babc8f6c0",
+          "url": "https://resources.download.minecraft.net/9f/9f2c4bab5ed55f1714fffa223985c81babc8f6c0",
+          "output": "sounds/kwl/java21/random/eat3.ogg"
+        }
+      ]
     }
   },
   "scope": "Selected original feedback samples and event entries; client mixing/attenuation remains separate evidence."

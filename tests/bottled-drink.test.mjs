@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
-import {completeBottledDrink,giveGlassBottle} from '../runtime/BP/scripts/bottled-drink.js';
+import {completeBottledDrink,giveGlassBottle,burpPitch,eatingPitch,bottledCompletionAudio} from '../runtime/BP/scripts/bottled-drink.js';
 import {payload} from '../runtime/BP/scripts/payload.js';
 class Stack{
  constructor(typeId,amount=1,nameTag=''){this.typeId=typeId;this.amount=amount;this.nameTag=nameTag;this.maxAmount=typeId==='minecraft:glass_bottle'?64:16;}
@@ -10,14 +10,30 @@ class Stack{
  isStackableWith(other){return other?.typeId===this.typeId&&other.nameTag===this.nameTag;}
 }
 const createStack=(id,count)=>new Stack(id,count);
+test('completion pitch matches independently executed JVM float expressions',()=>{
+ const rows=fs.readFileSync(new URL('./fixtures/java-bottled-audio.jsonl',import.meta.url),'utf8').trim().split('\n').map(JSON.parse);assert.equal(rows.length,42);
+ for(const row of rows){const first=Math.fround(row.first),expected=Math.fround(row.expected);assert.equal(row.kind==='burp'?burpPitch(first):eatingPitch(first,Math.fround(row.second)),expected,JSON.stringify(row));}
+});
 function fixture(id='cola',amount=1){
  const calls=[],slots=Array(9),inventory={size:9,getItem:slot=>slots[slot]?.clone(),setItem(slot,stack){calls.push(['write',slot,stack?.typeId,stack?.amount]);slots[slot]=stack?.clone();}};
  const equipment={offhand:undefined,getEquipment(){return this.offhand?.clone();},setEquipment(slot,item){calls.push(['offhand',slot]);this.offhand=item.clone();return true;}};
- const player={typeId:'minecraft:player',selectedSlotIndex:4,mode:'Survival',location:{x:1,y:80,z:2},getGameMode(){calls.push(['mode']);return this.mode;},getComponent:id=>id==='minecraft:inventory'?{container:inventory}:id==='minecraft:equippable'?equipment:undefined,addEffect(...args){calls.push(['effect',...args]);},dimension:{spawnItem(item,at){calls.push(['drop',item.typeId,item.amount,{...at}]);return {};}}};
+ const player={typeId:'minecraft:player',selectedSlotIndex:4,mode:'Survival',location:{x:1,y:80,z:2},getGameMode(){calls.push(['mode']);return this.mode;},getComponent:id=>id==='minecraft:inventory'?{container:inventory}:id==='minecraft:equippable'?equipment:undefined,addEffect(...args){calls.push(['effect',...args]);},dimension:{playSound(...args){calls.push(['sound',...args]);},spawnItem(item,at){calls.push(['drop',item.typeId,item.amount,{...at}]);return {};}}};
  slots[4]=new Stack('kaleidoscope_world_liquor:'+id,amount,'retained source name');
  const event={source:player,itemStack:slots[4].clone()};let draws=0;
- return {player,slots,inventory,equipment,event,calls,options:{createStack,rng:()=>{draws++;return .5;}},get draws(){return draws;}};
+ return {player,slots,inventory,equipment,event,calls,options:{createStack,rng:()=>{draws++;return .5;},worldRng:()=>.5},get draws(){return draws;}};
 }
+test('completion emits the source two sounds before effects, with three world draws separate from entity draws',()=>{
+ const f=fixture(),trace=[],rolls=[0,.75,.25];f.options.worldRng=()=>{trace.push('world');return rolls.shift();};f.options.rng=()=>{trace.push('entity');return .5;};completeBottledDrink(f.event,f.options);
+ assert.deepEqual(trace,['world','world','world','entity','entity']);assert.deepEqual(f.calls.slice(0,2),[
+  ['sound','kaleidoscope_world_liquor.java.burp',{x:1,y:80,z:2},{volume:.5,pitch:Math.fround(.9)}],
+  ['sound','kaleidoscope_world_liquor.java.eating',{x:1,y:80,z:2},{volume:1,pitch:Math.fround(1.2)}],
+ ]);assert.equal(f.calls[2][0],'effect');
+});
+test('second sound keeps the original world but observes fresh coordinates; cosmetic errors do not cancel consumption',()=>{
+ const f=fixture(),original=f.player.dimension;original.playSound=(id,at)=>{f.calls.push([id,{...at}]);f.player.location={x:2,y:90,z:3};f.player.dimension={playSound(){throw Error('wrong world');}};};bottledCompletionAudio(f.player,original,()=>.5);assert.deepEqual(f.calls[1][1],{x:2,y:90,z:3});
+ const rejected=fixture();rejected.player.dimension.playSound=()=>{throw Error('sound transport rejected');};assert.equal(completeBottledDrink(rejected.event,rejected.options).status,'COMPLETED');assert.equal(rejected.slots[0].typeId,'minecraft:glass_bottle');
+ assert.equal(burpPitch(0),Math.fround(.9));assert.equal(eatingPitch(0,0),1);assert.throws(()=>eatingPitch(1,0),/INVALID_RNG/);
+});
 test('registered completed-use callback dispatches original effects before all inventory writes',()=>{
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/main.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
  let startup;const registered=new Map(),context=vm.createContext({completeBottledDrink,ItemStack:Stack,NS:'kaleidoscope_world_liquor',registerFurniture(){},system:{beforeEvents:{startup:{subscribe:fn=>startup=fn}}},world:{afterEvents:{worldLoad:{subscribe(){}}}}});vm.runInContext(source,context);
