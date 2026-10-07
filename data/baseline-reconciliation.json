@@ -1733,6 +1733,41 @@
       "before": null,
       "after": "b81d00daa43880eff6cf939c7eb892f90172ced89ba61f9229059cf4ab0f7966",
       "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
+    },
+    "runtime/BP/scripts/captured-item.js": {
+      "before": null,
+      "after": "a6b91d3223e9697decbdafd9604cb70d2c7dc0d390140890879cb042e6bcf135",
+      "reason": "W0.1.97 owned native four-slot freezer input addition; complete native ItemStacks, no hidden serializer or private integration."
+    },
+    "runtime/BP/scripts/freezer-native-storage.js": {
+      "before": null,
+      "after": "b3139acf519b1bc1c02ee74c40149cc0b4cbe42fa907edae0588a57908bedb3e",
+      "reason": "W0.1.97 owned native four-slot freezer input addition; complete native ItemStacks, no hidden serializer or private integration."
+    },
+    "runtime/BP/scripts/freezer-storage.js": {
+      "before": null,
+      "after": "ef88598a199b6e7134c008d9894ae6f0810a6c31a2211936b41979cb24af7b66",
+      "reason": "W0.1.97 owned native four-slot freezer input addition; complete native ItemStacks, no hidden serializer or private integration."
+    },
+    "runtime/BP/entities/freezer_inputs.json": {
+      "before": null,
+      "after": "07f1024f3f9ba17999a343302c81ed0d6dbf7fcd1167572091cd46c416b28dd9",
+      "reason": "W0.1.97 owned native four-slot freezer input addition; complete native ItemStacks, no hidden serializer or private integration."
+    },
+    "runtime/RP/entity/freezer_inputs.json": {
+      "before": null,
+      "after": "078b9651b19aa47458e694777b1c5e8dc91a0b8f556a0cb0fe5456577b1d1621",
+      "reason": "W0.1.97 owned native four-slot freezer input addition; complete native ItemStacks, no hidden serializer or private integration."
+    },
+    "runtime/RP/models/entity/freezer_inputs.geo.json": {
+      "before": null,
+      "after": "1a03bc970fb48b8cc952df4c8a6733ffe14535f1724e3a1262c516c8cd779911",
+      "reason": "W0.1.97 owned native four-slot freezer input addition; complete native ItemStacks, no hidden serializer or private integration."
+    },
+    "runtime/RP/render_controllers/freezer_inputs.json": {
+      "before": null,
+      "after": "bdc691bebffe0ece344a75366bde9407068be098d1f521bae8b1eb08d9b004e4",
+      "reason": "W0.1.97 owned native four-slot freezer input addition; complete native ItemStacks, no hidden serializer or private integration."
     }
   },
   "reviewedFunctionalDeltaLayers": [
@@ -1964,6 +1999,164 @@
               111,
               119,
               " if(h){if(!plain(h)||s.input.length>=4)return;s.input.push(h.typeId);transaction(p,b,s,{take:1});}\n else if(s.input.length){const id=s.input.pop();transaction(p,b,s,{give:[[id,1]]});}\n"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "release": "0.1.97",
+      "files": {
+        "runtime/BP/scripts/furniture.js": {
+          "before": "ac544bd0e6e1f95313278b0bfd40b4e6535732a4d2f991771d3732875f412f7a",
+          "after": "6137ea457f780b04b511690ff5ac71e402e7ec26fdd2d76af24321a605a88df9",
+          "reason": "W0.1.97 complete native freezer inputs, source removal/rollback and intrinsic unstackable captured guard; explicit API limits.",
+          "reverseOps": [
+            [
+              14,
+              15,
+              ""
+            ],
+            [
+              30,
+              31,
+              "const read=(b,permutation=b.permutation)=>{\n"
+            ],
+            [
+              34,
+              37,
+              " return JSON.parse(world.getDynamicProperty(key(b))??'null')??{type:b.typeId,slots:Array(b.typeId.includes('cellar_cabinet')?9:2).fill(null),input:[],fluid:null,recipe:null,remaining:0,output:0};\n"
+            ],
+            [
+              38,
+              49,
+              "const save=(b,s)=>world.setDynamicProperty(key(b),s?JSON.stringify(s):undefined);\n"
+            ],
+            [
+              70,
+              70,
+              "function managedQualityLore(item){\n if(!/^(kaleidoscope_tavern|kaleidoscope_world_liquor):[a-z_]+_q[1-6]$/.test(item?.typeId??''))return false;\n const raw=item.getRawLore?.();if(!Array.isArray(raw)||!raw.length)return false;\n const rows=raw.map(row=>JSON.stringify(row));\n return rows.some(row=>row.includes('tooltip.kaleidoscope_tavern.bottle_block.brew_level'))\n  &&rows.at(-1).includes('item.kaleidoscope_tavern.mod_name');\n}\nfunction plain(item){return !item||!item.nameTag&&(!item.getLore().length||managedQualityLore(item))&&!item.getDynamicPropertyIds().length&&!item.getComponent('minecraft:enchantable')?.getEnchantments().length;}\n"
+            ],
+            [
+              80,
+              83,
+              " const old=world.getDynamicProperty(key(b)),perm=b.permutation;\n try{save(b,next);if(permutation)scriptedReplace(b,permutation);for(let i=0;i<after.length;i++)inv.setItem(i,after[i]);if(b.typeId===NS+':freezer')try{syncFreezerVisuals(b,next??{},savedFreezerRecipes);}catch(err){console.warn('[World Liquor visuals] '+err);}return true;}\n catch(e){pendingBreaks.delete(breakKey(b,perm.type.id));world.setDynamicProperty(key(b),old);b.setPermutation(perm);for(let i=0;i<snapshot.length;i++)inv.setItem(i,snapshot[i]);throw e;}\n"
+            ],
+            [
+              94,
+              96,
+              "  const raw=world.getDynamicProperty(key(b));\n  const result=extractFreezerOutput(p,s,savedFreezerRecipes.find(r=>r.id===s.recipe),{createStack:(id,n)=>new ItemStack(id,n),commit:next=>save(b,next),restore:()=>world.setDynamicProperty(key(b),raw)});\n"
+            ],
+            [
+              106,
+              108,
+              "  const raw=world.getDynamicProperty(key(b));\n  const result=fillFreezerMilk(p,s,{createStack:(id,n)=>new ItemStack(id,n),commit:next=>save(b,next),restore:()=>world.setDynamicProperty(key(b),raw)});\n"
+            ],
+            [
+              116,
+              118,
+              " if(h&&!plain(h))return;\n const raw=world.getDynamicProperty(key(b)),options={createStack:(id,n)=>new ItemStack(id,n),commit:next=>save(b,next),restore:()=>world.setDynamicProperty(key(b),raw)};\n const result=h?insertFreezerInput(p,s,options):extractFreezerInput(p,s,options);\n"
+            ],
+            [
+              129,
+              130,
+              "  const previous=block.permutation,oldRaw=world.getDynamicProperty(key(block));\n"
+            ],
+            [
+              132,
+              135,
+              "  try{save(block,plan.state);if(plan.open!==open)block.setPermutation(previous.withState(NS+':open',plan.open));}\n  catch(error){world.setDynamicProperty(key(block),oldRaw);block.setPermutation(previous);throw error;}\n"
+            ],
+            [
+              180,
+              192,
+              "function tick(b){if(b.typeId.endsWith(':freezer')){const plan=advanceFreezerTick(read(b),savedFreezerRecipes);if(plan.changed)save(b,plan.state);if(plan.refresh||!plan.changed&&system.currentTick%80===0)syncFreezerVisuals(b,plan.state,savedFreezerRecipes);}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){if(b.typeId===WALL_RECORD){breakFeedback.transaction(b,()=>removeWallRecord(b));return;}removeUnsupported(b,b.typeId);}}}\nfunction drops(b,oldType,p){const s=read(b);save(b,undefined);if((!p||!creative(p))&&world.gameRules.doTileDrops!==false){const out=[[oldType.endsWith(':wall_record')?s.record:oldType,1],...(s.slots??[]).filter(Boolean).map(id=>[id,1]),...(s.input??[]).map(id=>[id,1])];if(s.output){const r=savedFreezerRecipes.find(r=>r.id===s.recipe);if(r)out.push([r.result.id,s.output]);}for(const [id,n] of out)if(id)b.dimension.spawnItem(new ItemStack(id,n),center(b));}\n"
+            ],
+            [
+              196,
+              197,
+              " onPlace:e=>{pendingBreaks.delete(breakKey(e.block,e.block.typeId));if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}if(e.block.typeId===WALL_RECORD){wallRemovalTicks.delete(key(e.block));save(e.block,read(e.block));return;}save(e.block,undefined);},\n"
+            ],
+            [
+              203,
+              204,
+              ""
+            ],
+            [
+              207,
+              208,
+              " world.beforeEvents.playerBreakBlock.subscribe(e=>{if(isManagedCabinet(e.block.typeId)&&!foundationReady()){e.cancel=true;unavailable(e.player);}});\n"
+            ]
+          ]
+        },
+        "runtime/BP/scripts/freezer-input.js": {
+          "before": "7457afc823aa0585ef88e646ca269c043e234246302d1b3da96783cc30282139",
+          "after": "cbd7a578d29eae49b974a699eac3aab24f14ccc9ac2c6838ee35b3f4c688d939",
+          "reason": "W0.1.97 complete native freezer inputs, source removal/rollback and intrinsic unstackable captured guard; explicit API limits.",
+          "reverseOps": [
+            [
+              1,
+              2,
+              ""
+            ],
+            [
+              3,
+              5,
+              "/** Current source input settlement for the existing compact ID layout. The\n * caller still rejects unrepresentable metadata; this is not native storage.\n"
+            ],
+            [
+              14,
+              15,
+              "  commit(next);\n"
+            ],
+            [
+              16,
+              17,
+              "  if(!current||current.typeId!==held.typeId||current.amount!==held.amount||!current.isStackableWith(held))throw Error('FREEZER_INPUT_ORIGIN_CHANGED');\n"
+            ],
+            [
+              29,
+              30,
+              "export function extractFreezerInput(player,state,{createStack,commit,restore}={}){\n"
+            ],
+            [
+              31,
+              33,
+              " const next={...state,input:state.input.slice(0,-1)},item=createStack(state.input.at(-1),1),undo=[];\n"
+            ]
+          ]
+        },
+        "runtime/BP/scripts/freezer-milk.js": {
+          "before": "15e3ffdd5c7f51ef8d5256a8a61e69c639187683c8da2bbb4c48200e84cf739e",
+          "after": "057a8c5f8bd60c928c33824a4da3b2ffc161c633d049dc852806a6a8649c6ed5",
+          "reason": "W0.1.97 complete native freezer inputs, source removal/rollback and intrinsic unstackable captured guard; explicit API limits.",
+          "reverseOps": [
+            [
+              1,
+              2,
+              ""
+            ],
+            [
+              18,
+              19,
+              "   if(!current||current.typeId!==held.typeId||current.amount!==held.amount||!current.isStackableWith(held))throw Error('MILK_ORIGINAL_STACK_CHANGED');\n"
+            ]
+          ]
+        },
+        "runtime/BP/scripts/bottled-drink.js": {
+          "before": "46928db9bfb3804149b284730867e92d9006c959828dde1837fc31b87551299f",
+          "after": "6f66a6d8ab488e71b2b68ecc159bf753002fefe955101f6febf6810122006d64",
+          "reason": "W0.1.97 complete native freezer inputs, source removal/rollback and intrinsic unstackable captured guard; explicit API limits.",
+          "reverseOps": [
+            [
+              2,
+              3,
+              ""
+            ],
+            [
+              26,
+              27,
+              " return !!actual&&!!expected&&actual.typeId===expected.typeId&&actual.amount===expected.amount&&actual.isStackableWith(expected);\n"
             ]
           ]
         }

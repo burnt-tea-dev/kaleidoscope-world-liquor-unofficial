@@ -58,6 +58,10 @@ def main():
   assert name in baseline_additions(ROOT),('Unregistered current freezer addition',name)
   if name.startswith('runtime/RP/') or '/entities/' in name:
    assert name not in additions;additions[name]=digest(ROOT/name)
+ for name in read(ROOT/'data/freezer-native-input-review.json')['additions']:
+  assert name in baseline_additions(ROOT),('Unregistered native input addition',name)
+  if name.startswith('runtime/RP/') or '/entities/' in name:
+   assert name not in additions;additions[name]=digest(ROOT/name)
  highball=['runtime/RP/models/entity/kwl_highball_111.geo.json','runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__highball.png','runtime/RP/textures/kwl/items/highball.png','runtime/BP/items/highball.json','runtime/BP/blocks/cup_highball.json']
  for name in highball:
   assert name in baseline_additions(ROOT);additions[name]=digest(ROOT/name)

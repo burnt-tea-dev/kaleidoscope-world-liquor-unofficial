@@ -1,5 +1,6 @@
 import {javaFloatRoll} from './combat-source.js';
 import {giveJavaInventoryItem} from './java-player-inventory.js';
+import {sameCapturedItem} from './captured-item.js';
 
 const EFFECTS=Object.freeze({
  'kaleidoscope_world_liquor:cola':['haste','speed'],
@@ -23,7 +24,7 @@ function unresolved(status,error){
  return {status};
 }
 function sameUse(actual,expected){
- return !!actual&&!!expected&&actual.typeId===expected.typeId&&actual.amount===expected.amount&&actual.isStackableWith(expected);
+ return sameCapturedItem(actual,expected);
 }
 
 /** Java Player Inventory.add: selected merge, offhand merge, first main merge,

@@ -1,4 +1,5 @@
 import {giveJavaInventoryItem} from './java-player-inventory.js';
+import {sameCapturedItem} from './captured-item.js';
 
 /** The original FreezerBlock.useItemOn milk-only path fills its tank before
  * sampling Creative and settling the captured milk stack. No food use occurs.
@@ -15,7 +16,7 @@ export function fillFreezerMilk(player,state,{createStack,commit,restore}={}){
   commit(next);let delivery='CREATIVE';
   if(String(player.getGameMode()).toLowerCase()!=='creative'){
    const current=inventory.getItem(slot);
-   if(!current||current.typeId!==held.typeId||current.amount!==held.amount||!current.isStackableWith(held))throw Error('MILK_ORIGINAL_STACK_CHANGED');
+   if(!sameCapturedItem(current,held))throw Error('MILK_ORIGINAL_STACK_CHANGED');
    const bucket=createStack('minecraft:bucket',1);
    if(held.amount===1){writeInventory(inventory,slot,held,bucket);delivery='HAND';}
    else{

@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.96",
+  "version": "0.1.97",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -5314,9 +5314,9 @@ export const payload = {
         "zh_TW": "冰櫃"
       },
       "body": {
-        "en_US": "Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid. Water and lava are supported: water freezes into ice, and lava into obsidian in the current author version.",
-        "zh_CN": "潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。支持水与岩浆：当前作者版本中，水冷冻成冰，岩浆冷冻成黑曜石。",
-        "zh_TW": "潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。支援水與岩漿：目前作者版本中，水冷凍成冰，岩漿冷凍成黑曜石。"
+        "en_US": "Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid. \nStored ingredients retain their names and enchantments. In Creative, adding an ordinary ingredient still consumes one.\nWater and lava are supported: water freezes into ice, and lava into obsidian in the current author version.",
+        "zh_CN": "潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。\n原料的名称与附魔会保留；创造模式投入普通原料也会消耗一份。\n支持水与岩浆：当前作者版本中，水冷冻成冰，岩浆冷冻成黑曜石。",
+        "zh_TW": "潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。\n原料的名稱與附魔會保留；創造模式投入普通原料也會消耗一份。\n支援水與岩漿：目前作者版本中，水冷凍成冰，岩漿冷凍成黑曜石。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/freezer",

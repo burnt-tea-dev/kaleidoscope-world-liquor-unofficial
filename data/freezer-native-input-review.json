@@ -1,0 +1,23 @@
+{
+  "test_only": true,
+  "java_source": "NeoForge1.21.1 author1.1.11 CF9066406",
+  "native_storage_source": "Public Tavern d6b4bf0daedddaaa05282e85d08c1b04f5d7b61a",
+  "adaptations": [
+    "World Liquor owned UUID and dynamic properties",
+    "four slots",
+    "bounded controlled pinning",
+    "skip empty-marker writes",
+    "complete source input removal and intrinsic-item guard"
+  ],
+  "additions": [
+    "runtime/BP/scripts/captured-item.js",
+    "runtime/BP/scripts/freezer-native-storage.js",
+    "runtime/BP/scripts/freezer-storage.js",
+    "runtime/BP/entities/freezer_inputs.json",
+    "runtime/RP/entity/freezer_inputs.json",
+    "runtime/RP/models/entity/freezer_inputs.geo.json",
+    "runtime/RP/render_controllers/freezer_inputs.json"
+  ],
+  "client": false,
+  "full_java_parity": false
+}
