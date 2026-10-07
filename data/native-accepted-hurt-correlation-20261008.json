@@ -1,0 +1,896 @@
+{
+  "schema": 1,
+  "native_engine": "1.26.51.1",
+  "api": "@minecraft/server2.7.0",
+  "base_family": {
+    "tavern": "0.6.121",
+    "grilling": "2.8.101",
+    "world_liquor": "0.1.88",
+    "private_integration": "1.0.20"
+  },
+  "adapter_from_commit": "2d33dc944c4ff2eb5093e51ac0cd70c25c4edf17",
+  "adapter_sha256": "9ef921000898170d38d2131b2bee5cd7ffc6e99f552303f16ea086d2b4b98263",
+  "real_players": 0,
+  "simulated_players": false,
+  "client": false,
+  "runtime_changed": false,
+  "full_java_parity_verified": false,
+  "scope": "Seven real Native same-tick applyDamage scenes with the current accepted-feedback adapter in a test-only overlay. Mob callback correlation only; not actual Player attacks, absorption timing parity or final physics.",
+  "runs": [
+    {
+      "name": "native-correlation-r1",
+      "observer_sha256": "0c2374a05436553c352f4ada96f6d7d93143b3c092c7597d96cc48cfb151bdf1",
+      "scenes": [
+        {
+          "name": "sequence0",
+          "cause": "entityAttack",
+          "amounts": [
+            4,
+            4,
+            8
+          ],
+          "events": [
+            {
+              "kind": "before",
+              "case": "sequence0",
+              "call": "call0",
+              "damage": 4,
+              "health": 96,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "sequence0",
+              "call": "call0",
+              "amount": 4,
+              "accepted": true,
+              "health": 96
+            },
+            {
+              "kind": "returned",
+              "case": "sequence0",
+              "call": "call1",
+              "amount": 4,
+              "accepted": true,
+              "health": 96
+            },
+            {
+              "kind": "before",
+              "case": "sequence0",
+              "call": "call2",
+              "damage": 4,
+              "health": 92,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "sequence0",
+              "call": "call2",
+              "amount": 8,
+              "accepted": true,
+              "health": 92
+            },
+            {
+              "kind": "after",
+              "case": "sequence0",
+              "damage": 4,
+              "health": 92,
+              "sameEvent": [
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "sequence0",
+              "damage": 4,
+              "health": 92,
+              "sameEvent": [
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false
+              ]
+            }
+          ],
+          "callbacks": [
+            {
+              "call": "call0",
+              "accepted": true
+            },
+            {
+              "call": "call2",
+              "accepted": true
+            }
+          ]
+        },
+        {
+          "name": "sequence1",
+          "cause": "entityAttack",
+          "amounts": [
+            6,
+            6,
+            12
+          ],
+          "events": [
+            {
+              "kind": "before",
+              "case": "sequence1",
+              "call": "call0",
+              "damage": 6,
+              "health": 94,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "sequence1",
+              "call": "call0",
+              "amount": 6,
+              "accepted": true,
+              "health": 94
+            },
+            {
+              "kind": "returned",
+              "case": "sequence1",
+              "call": "call1",
+              "amount": 6,
+              "accepted": true,
+              "health": 94
+            },
+            {
+              "kind": "before",
+              "case": "sequence1",
+              "call": "call2",
+              "damage": 6,
+              "health": 88,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "sequence1",
+              "call": "call2",
+              "amount": 12,
+              "accepted": true,
+              "health": 88
+            },
+            {
+              "kind": "after",
+              "case": "sequence1",
+              "damage": 6,
+              "health": 88,
+              "sameEvent": [
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "sequence1",
+              "damage": 6,
+              "health": 88,
+              "sameEvent": [
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false
+              ]
+            }
+          ],
+          "callbacks": [
+            {
+              "call": "call0",
+              "accepted": true
+            },
+            {
+              "call": "call2",
+              "accepted": true
+            }
+          ]
+        },
+        {
+          "name": "sequence2",
+          "cause": "entityAttack",
+          "amounts": [
+            4,
+            8,
+            8,
+            12
+          ],
+          "events": [
+            {
+              "kind": "before",
+              "case": "sequence2",
+              "call": "call0",
+              "damage": 4,
+              "health": 96,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "sequence2",
+              "call": "call0",
+              "amount": 4,
+              "accepted": true,
+              "health": 96
+            },
+            {
+              "kind": "before",
+              "case": "sequence2",
+              "call": "call1",
+              "damage": 4,
+              "health": 92,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "sequence2",
+              "call": "call1",
+              "amount": 8,
+              "accepted": true,
+              "health": 92
+            },
+            {
+              "kind": "returned",
+              "case": "sequence2",
+              "call": "call2",
+              "amount": 8,
+              "accepted": true,
+              "health": 92
+            },
+            {
+              "kind": "before",
+              "case": "sequence2",
+              "call": "call3",
+              "damage": 4,
+              "health": 88,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "sequence2",
+              "call": "call3",
+              "amount": 12,
+              "accepted": true,
+              "health": 88
+            },
+            {
+              "kind": "after",
+              "case": "sequence2",
+              "damage": 4,
+              "health": 88,
+              "sameEvent": [
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "sequence2",
+              "damage": 4,
+              "health": 88,
+              "sameEvent": [
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "sequence2",
+              "damage": 4,
+              "health": 88,
+              "sameEvent": [
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false
+              ]
+            }
+          ],
+          "callbacks": [
+            {
+              "call": "call0",
+              "accepted": true
+            },
+            {
+              "call": "call1",
+              "accepted": true
+            },
+            {
+              "call": "call3",
+              "accepted": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "native-correlation-r2",
+      "observer_sha256": "c5f0284442303ac51024553e3d4e0fd4c8b80401ee0f3e3c416f134c0e6bde02",
+      "scenes": [
+        {
+          "name": "override/0",
+          "cause": "override",
+          "amounts": [
+            4,
+            4,
+            8
+          ],
+          "events": [
+            {
+              "kind": "before",
+              "case": "override/0",
+              "call": "call0",
+              "damage": 4,
+              "health": 96,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "override/0",
+              "call": "call0",
+              "amount": 4,
+              "accepted": true,
+              "health": 96
+            },
+            {
+              "kind": "before",
+              "case": "override/0",
+              "call": "call1",
+              "damage": 4,
+              "health": 92,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "override/0",
+              "call": "call1",
+              "amount": 4,
+              "accepted": true,
+              "health": 92
+            },
+            {
+              "kind": "before",
+              "case": "override/0",
+              "call": "call2",
+              "damage": 8,
+              "health": 84,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "override/0",
+              "call": "call2",
+              "amount": 8,
+              "accepted": true,
+              "health": 84
+            },
+            {
+              "kind": "after",
+              "case": "override/0",
+              "damage": 4,
+              "health": 84,
+              "sameEvent": [
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "override/0",
+              "damage": 4,
+              "health": 84,
+              "sameEvent": [
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "override/0",
+              "damage": 8,
+              "health": 84,
+              "sameEvent": [
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false
+              ]
+            }
+          ],
+          "callbacks": [
+            {
+              "call": "call0",
+              "accepted": true
+            },
+            {
+              "call": "call1",
+              "accepted": true
+            },
+            {
+              "call": "call2",
+              "accepted": true
+            }
+          ]
+        },
+        {
+          "name": "override/1",
+          "cause": "override",
+          "amounts": [
+            4,
+            8,
+            8,
+            12
+          ],
+          "events": [
+            {
+              "kind": "before",
+              "case": "override/1",
+              "call": "call0",
+              "damage": 4,
+              "health": 96,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "override/1",
+              "call": "call0",
+              "amount": 4,
+              "accepted": true,
+              "health": 96
+            },
+            {
+              "kind": "before",
+              "case": "override/1",
+              "call": "call1",
+              "damage": 8,
+              "health": 88,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "override/1",
+              "call": "call1",
+              "amount": 8,
+              "accepted": true,
+              "health": 88
+            },
+            {
+              "kind": "before",
+              "case": "override/1",
+              "call": "call2",
+              "damage": 8,
+              "health": 80,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "override/1",
+              "call": "call2",
+              "amount": 8,
+              "accepted": true,
+              "health": 80
+            },
+            {
+              "kind": "before",
+              "case": "override/1",
+              "call": "call3",
+              "damage": 12,
+              "health": 68,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "override/1",
+              "call": "call3",
+              "amount": 12,
+              "accepted": true,
+              "health": 68
+            },
+            {
+              "kind": "after",
+              "case": "override/1",
+              "damage": 4,
+              "health": 68,
+              "sameEvent": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "override/1",
+              "damage": 8,
+              "health": 68,
+              "sameEvent": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "override/1",
+              "damage": 8,
+              "health": 68,
+              "sameEvent": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "override/1",
+              "damage": 12,
+              "health": 68,
+              "sameEvent": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false,
+                false,
+                false
+              ]
+            }
+          ],
+          "callbacks": [
+            {
+              "call": "call0",
+              "accepted": true
+            },
+            {
+              "call": "call1",
+              "accepted": true
+            },
+            {
+              "call": "call2",
+              "accepted": true
+            },
+            {
+              "call": "call3",
+              "accepted": true
+            }
+          ]
+        },
+        {
+          "name": "magic/2",
+          "cause": "magic",
+          "amounts": [
+            4,
+            4,
+            8
+          ],
+          "events": [
+            {
+              "kind": "before",
+              "case": "magic/2",
+              "call": "call0",
+              "damage": 4,
+              "health": 96,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "magic/2",
+              "call": "call0",
+              "amount": 4,
+              "accepted": true,
+              "health": 96
+            },
+            {
+              "kind": "returned",
+              "case": "magic/2",
+              "call": "call1",
+              "amount": 4,
+              "accepted": true,
+              "health": 96
+            },
+            {
+              "kind": "before",
+              "case": "magic/2",
+              "call": "call2",
+              "damage": 4,
+              "health": 92,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "magic/2",
+              "call": "call2",
+              "amount": 8,
+              "accepted": true,
+              "health": 92
+            },
+            {
+              "kind": "after",
+              "case": "magic/2",
+              "damage": 4,
+              "health": 92,
+              "sameEvent": [
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "magic/2",
+              "damage": 4,
+              "health": 92,
+              "sameEvent": [
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false
+              ]
+            }
+          ],
+          "callbacks": [
+            {
+              "call": "call0",
+              "accepted": true
+            },
+            {
+              "call": "call2",
+              "accepted": true
+            }
+          ]
+        },
+        {
+          "name": "entityAttack/absorption/3",
+          "cause": "entityAttack",
+          "amounts": [
+            4,
+            4,
+            8
+          ],
+          "events": [
+            {
+              "kind": "before",
+              "case": "entityAttack/absorption/3",
+              "call": "call0",
+              "damage": 4,
+              "health": 96,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "entityAttack/absorption/3",
+              "call": "call0",
+              "amount": 4,
+              "accepted": true,
+              "health": 100
+            },
+            {
+              "kind": "returned",
+              "case": "entityAttack/absorption/3",
+              "call": "call1",
+              "amount": 4,
+              "accepted": true,
+              "health": 100
+            },
+            {
+              "kind": "before",
+              "case": "entityAttack/absorption/3",
+              "call": "call2",
+              "damage": 4,
+              "health": 96,
+              "sourceStable": false,
+              "eventKeys": [],
+              "sourceKeys": [
+                "damagingEntity",
+                "cause"
+              ]
+            },
+            {
+              "kind": "returned",
+              "case": "entityAttack/absorption/3",
+              "call": "call2",
+              "amount": 8,
+              "accepted": true,
+              "health": 100
+            },
+            {
+              "kind": "after",
+              "case": "entityAttack/absorption/3",
+              "damage": 4,
+              "health": 100,
+              "sameEvent": [
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false
+              ]
+            },
+            {
+              "kind": "after",
+              "case": "entityAttack/absorption/3",
+              "damage": 4,
+              "health": 100,
+              "sameEvent": [
+                false,
+                false
+              ],
+              "sameSource": [
+                false,
+                false
+              ]
+            }
+          ],
+          "callbacks": [
+            {
+              "call": "call0",
+              "accepted": true
+            },
+            {
+              "call": "call2",
+              "accepted": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
