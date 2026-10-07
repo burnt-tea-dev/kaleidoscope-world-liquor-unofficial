@@ -31,7 +31,10 @@ world.afterEvents.worldLoad.subscribe(()=>system.runTimeout(async()=>{
    // Recovery moves only the carrier. Its original container and DP survive.
    e.teleport({x:2.5,y:64.5,z:.5});let rejected=false;try{readFreezerItems(b,read(b));}catch(error){rejected=String(error).includes('NATIVE_STORAGE_MOVED');}check(rejected,'MOVED_NOT_REJECTED');
    system.runTimeout(()=>{try{
-    check(JSON.stringify(readFreezerItems(b,read(b)).map(snapshot))===JSON.stringify(expected),'REANCHOR_CHANGED');const consume=planFreezerStorage(b,{...read(b),input:[],remaining:1200});consume.apply();consume.finish();check(!e.isValid&&read(b).input.length===0,'CRAFT_NOT_RETIRED');check(world.getDynamicProperty(nativeItemKey(freezerStorageKey(b)))===undefined,'STALE_NATIVE_ROW');
+    check(JSON.stringify(readFreezerItems(b,read(b)).map(snapshot))===JSON.stringify(expected),'REANCHOR_CHANGED');
+    // Keep the original inventory intact for the stopped full-NBT comparison;
+    // retire a separate actual native carrier through the same implementation.
+    const scratch=d.getBlock({x:5,y:64,z:0});scratch.setPermutation(BlockPermutation.resolve(N+':freezer'));world.setDynamicProperty(freezerStorageKey(scratch),JSON.stringify({type:N+':freezer',input:[],fluid:null,remaining:0,output:0}));insert(scratch,new ItemStack('minecraft:sugar'));const scratchRecord=JSON.parse(world.getDynamicProperty(nativeItemKey(freezerStorageKey(scratch)))),scratchEntity=world.getEntity(scratchRecord.entity);const consume=planFreezerStorage(scratch,{...read(scratch),input:[],remaining:1200});consume.apply();consume.finish();check(!scratchEntity.isValid&&read(scratch).input.length===0,'CRAFT_NOT_RETIRED');check(world.getDynamicProperty(nativeItemKey(freezerStorageKey(scratch)))===undefined,'STALE_NATIVE_ROW');
     emit({kind:'done',phase:'restart',players:0,cases:['same entity after restart','full metadata preserved','exact extraction','rollback','moved carrier recovery','craft retirement'],items});
    }catch(error){emit({kind:'failure',phase:'restart',error:String(error)});}},5);
   }
