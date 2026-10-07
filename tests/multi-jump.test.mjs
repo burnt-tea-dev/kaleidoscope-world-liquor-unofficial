@@ -1,6 +1,7 @@
 import {AcceptedHurtFeedback} from '../runtime/BP/scripts/accepted-hurt-feedback.js';
 import * as motionRules from '../runtime/BP/scripts/motion-source.js';
 import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from '../runtime/BP/scripts/kill-credit.js';
+import {installJavaRespawn} from '../runtime/BP/scripts/respawn-adapter.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -12,8 +13,8 @@ function fixture(){
  const events={},impulses=[],state={multi_jump:{amplifier:0}},subscriptions=()=>({subscribe:f=>{}});
  let chest,pressed=false;
  const actor={location:{x:0,y:70,z:0},getRotation:()=>({y:0}),dimension:{getBlock:()=>({typeId:'minecraft:air'})},inputInfo:{getButtonState:()=>pressed?'Pressed':'Released'},id:'fixture',typeId:'minecraft:player',isOnGround:false,isClimbing:false,getVelocity:()=>({x:0,y:-.2,z:0}),getEffect:()=>undefined,getComponent:id=>id==='minecraft:health'?{currentValue:20}:id==='minecraft:equippable'?{getEquipment:()=>chest}:undefined,applyImpulse:i=>impulses.push(i)};
- const world={getAllPlayers:()=>[actor],beforeEvents:{entityHurt:{subscribe:f=>events.hurt=f}},afterEvents:{entityHurt:subscriptions(),entityRemove:subscriptions(),playerSpawn:subscriptions(),playerLeave:subscriptions(),playerButtonInput:{subscribe:f=>events.jump=f},entityDie:subscriptions(),playerBreakBlock:subscriptions()}};
- const ctx=vm.createContext({getTavernEffectEntities:()=>[],AcceptedHurtFeedback,CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},...motionRules,lavaContact:()=>false,JavaKillCredit,damageCreditMutation,isLivingCombatEntity,world,readTavernEffects:e=>e===actor?state:{},isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource,system:{afterEvents:{scriptEventReceive:subscriptions()},runInterval(){},currentTick:1},EffectTypes:{},ItemStack:class{}});vm.runInContext(source+'\ninstallEffects();',ctx);
+ const world={getAllPlayers:()=>[actor],beforeEvents:{playerInteractWithBlock:subscriptions(),entityHurt:{subscribe:f=>events.hurt=f}},afterEvents:{entityHurt:subscriptions(),entityRemove:subscriptions(),playerSpawn:subscriptions(),playerLeave:subscriptions(),playerButtonInput:{subscribe:f=>events.jump=f},entityDie:subscriptions(),playerBreakBlock:subscriptions()}};
+ const ctx=vm.createContext({installJavaRespawn,getTavernEffectEntities:()=>[],AcceptedHurtFeedback,CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},...motionRules,lavaContact:()=>false,JavaKillCredit,damageCreditMutation,isLivingCombatEntity,world,readTavernEffects:e=>e===actor?state:{},isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource,system:{afterEvents:{scriptEventReceive:subscriptions()},runInterval(){},currentTick:1},EffectTypes:{},ItemStack:class{}});vm.runInContext(source+'\ninstallEffects();',ctx);
  const tick=()=>vm.runInContext('tick()',ctx),jump=()=>{pressed=true;tick();pressed=false;tick();};
  return {actor,state,impulses,events,tick,jump,world,press:value=>pressed=value,equip:(damage=0)=>chest={typeId:'minecraft:elytra',getComponent:()=>({damage,maxDurability:432})}};
 }
