@@ -11,7 +11,7 @@ from pathlib import Path
 import urllib.request
 
 ROOT=Path(__file__).resolve().parents[1]
-EVENTS={'critical':'entity.player.attack.crit','respawn':'item.chorus_fruit.teleport','crazy':'block.beacon.activate','burp':'entity.player.burp','eating':'entity.generic.eat','freezer_pickup':'entity.item.pickup'}
+EVENTS={'critical':'entity.player.attack.crit','respawn':'item.chorus_fruit.teleport','crazy':'block.beacon.activate','burp':'entity.player.burp','eating':'entity.generic.eat','freezer_pickup':'entity.item.pickup','freezer_bucket_empty':'item.bucket.empty'}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--reference',type=Path,required=True);p.add_argument('--events',nargs='+',choices=EVENTS,default=list(EVENTS));args=p.parse_args()
@@ -26,18 +26,20 @@ def main():
         previous=json.loads(existing.read_text());assert previous['minecraft']=='1.21.1' and previous['asset_index']==metadata['assetIndex'];source['events']=previous['events']
     for alias in args.events:
         event=EVENTS[alias]
-        entries=[];files=[]
+        entries=[];files=[];downloaded={}
         for entry in sounds[event]['sounds']:
             row={'name':entry} if isinstance(entry,str) else entry
             assert row.get('type','file')=='file', 'Review nested sound events explicitly'
             name=row['name'];asset='minecraft/sounds/'+name+'.ogg';ref=index[asset]
             url='https://resources.download.minecraft.net/'+ref['hash'][:2]+'/'+ref['hash']
-            raw=urllib.request.urlopen(url,timeout=30).read();assert hashlib.sha1(raw).hexdigest()==ref['hash']
+            if asset not in downloaded:
+                raw=urllib.request.urlopen(url,timeout=30).read();assert hashlib.sha1(raw).hexdigest()==ref['hash'];downloaded[asset]=raw
+            raw=downloaded[asset]
             relative='sounds/kwl/java21/'+name
             path=target/(relative+'.ogg');path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
             entries.append({**row,'name':relative,'stream':False})
             files.append({'author_asset':asset,'publisher_sha1':ref['hash'],'url':url,'output':relative+'.ogg'})
-        category='neutral' if alias=='eating' else 'block' if alias=='freezer_pickup' else 'player'
+        category='neutral' if alias=='eating' else 'block' if alias in {'freezer_pickup','freezer_bucket_empty'} else 'player'
         definitions['sound_definitions']['kaleidoscope_world_liquor.java.'+alias]={'category':category,'sounds':entries,'max_distance':16}
         source['events'][alias]={'event':event,'original':sounds[event],'files':files}
     (target/'sounds/sound_definitions.json').write_text(json.dumps(definitions,indent=2)+'\n')

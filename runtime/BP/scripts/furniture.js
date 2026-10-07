@@ -10,6 +10,7 @@ import {world,system,ItemStack,BlockPermutation} from '@minecraft/server';
 import {FREEZER_RECIPES} from './freezer-recipes.js';
 import {LEGACY_FREEZER_RECIPES} from './legacy-freezer-recipes.js';
 import {extractFreezerOutput} from './freezer-output.js';
+import {fillFreezerMilk} from './freezer-milk.js';
 const savedFreezerRecipes=[...FREEZER_RECIPES,...LEGACY_FREEZER_RECIPES];
 import {RECORD_MODELS} from './wall-record-models.js';
 export const NS='kaleidoscope_world_liquor',KT='kaleidoscope_tavern',FACING=KT+':facing';
@@ -96,7 +97,16 @@ function freezer(p,b,s,h){
   if(result.status==='EXTRACTED')try{syncFreezerVisuals(b,result.state,savedFreezerRecipes);}catch(error){console.warn('[World Liquor visuals] '+error);}
   return;
  }
- if(h?.typeId in liquids){if(s.fluid)return;s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,give:creative(p)?[]:[['minecraft:bucket',1]]});return;}
+ if(h?.typeId==='minecraft:milk_bucket'&&!s.fluid){
+  const raw=world.getDynamicProperty(key(b));
+  const result=fillFreezerMilk(p,s,{createStack:(id,n)=>new ItemStack(id,n),commit:next=>save(b,next),restore:()=>world.setDynamicProperty(key(b),raw)});
+  if(result.status==='FILLED'){
+   try{b.dimension.playSound('kaleidoscope_world_liquor.java.freezer_bucket_empty',center(b),{volume:1,pitch:1});}catch(error){console.warn('[World Liquor freezer audio] '+error);}
+   try{syncFreezerVisuals(b,result.state,savedFreezerRecipes);}catch(error){console.warn('[World Liquor visuals] '+error);}
+  }
+  return;
+ }
+ if(h?.typeId in liquids&&h.typeId!=='minecraft:milk_bucket'){if(s.fluid)return;s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,give:creative(p)?[]:[['minecraft:bucket',1]]});return;}
  if(h?.typeId==='minecraft:bucket'&&s.fluid){const filled=Object.keys(liquids).find(x=>liquids[x]===s.fluid);if(filled){s.fluid=null;transaction(p,b,s,{take:1,give:[[filled,1]]});}return;}
  if(h){if(!plain(h)||s.input.length>=4)return;s.input.push(h.typeId);transaction(p,b,s,{take:1});}
  else if(s.input.length){const id=s.input.pop();transaction(p,b,s,{give:[[id,1]]});}
