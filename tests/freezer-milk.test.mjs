@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import {fillFreezerMilk} from '../runtime/BP/scripts/freezer-milk.js';
 class Stack{
  constructor(typeId,amount=1,nameTag=''){this.typeId=typeId;this.amount=amount;this.nameTag=nameTag;this.maxAmount=64;}
- clone(){return new Stack(this.typeId,this.amount,this.nameTag);}
- isStackableWith(other){return this.typeId===other?.typeId&&this.nameTag===other.nameTag;}
+ clone(){const result=new Stack(this.typeId,this.amount,this.nameTag);result.maxAmount=this.maxAmount;return result;}
+ isStackableWith(other){return this.maxAmount>1&&this.typeId===other?.typeId&&this.nameTag===other.nameTag;}
 }
 function fixture(amount=1,mode='Survival'){
  const slots=Array(9),calls=[];slots[4]=new Stack('minecraft:milk_bucket',amount,'source milk name');let state={input:[],fluid:null,remaining:0,output:0};const original={...state};
@@ -17,6 +17,7 @@ function fixture(amount=1,mode='Survival'){
 test('one milk bucket fills before mode/debit and leaves the empty bucket in its original hand',()=>{
  const f=fixture();assert.equal(f.fill().delivery,'HAND');assert.equal(f.state.fluid,'kaleidoscope_world_liquor:milk_still');assert.equal(f.slots[4].typeId,'minecraft:bucket');assert.equal(f.slots[4].nameTag,'');assert.equal(f.slots[0],undefined);assert.deepEqual(f.calls.map(r=>r[0]),['fill','mode','write']);
 });
+test('real milk maxAmount1 semantics do not confuse stack compatibility with identity',()=>{const f=fixture();f.slots[4].maxAmount=1;assert.equal(f.slots[4].isStackableWith(f.slots[4].clone()),false);assert.equal(f.fill().delivery,'HAND');assert.equal(f.slots[4].typeId,'minecraft:bucket');});
 test('Creative fills without consuming milk or producing an empty bucket',()=>{
  const f=fixture(1,'Creative');assert.equal(f.fill().delivery,'CREATIVE');assert.equal(f.slots[4].typeId,'minecraft:milk_bucket');assert.equal(f.slots[4].nameTag,'source milk name');assert.equal(f.slots[0],undefined);assert.deepEqual(f.calls.map(r=>r[0]),['fill','mode']);
 });

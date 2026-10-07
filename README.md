@@ -1,4 +1,4 @@
-## Current maintained baseline: 0.1.96
+## Current maintained baseline: 0.1.97
 
 **0.1.90 調酒材料修復**：可樂與通寧水先施加效果，再消耗原瓶並按原作順序交還玻璃瓶；可樂的調酒資料補回速度效果。真人飲用／滿背包場景與剩餘差距見[本版範圍](docs/RELEASE-NOTES-0.1.90.md)。
 
