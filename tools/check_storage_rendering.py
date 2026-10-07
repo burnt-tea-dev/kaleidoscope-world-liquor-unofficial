@@ -19,6 +19,14 @@ def readjs(p):
  if p.name=='payload.js':
   review=read(ROOT/'data/current-mixology-review.json');assert review['test_only']
   data=p.read_bytes()
+  if review.get('functional_layers'):
+   payload=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))
+   for layer in reversed(review['functional_layers']):
+    assert layer['field']=='shakerInput.effects','Unknown functional payload layer'
+    rows=[row for row in payload['shakerInputs'] if row['item']==layer['item']]
+    assert len(rows)==1 and rows[0]['effects']==layer['after'],'Unreviewed mixer-effect change'
+    rows[0]['effects']=layer['before']
+   data=('export const payload = '+json.dumps(payload,ensure_ascii=False,indent=2)+';\n').encode()
   if 'after_payload_version' in review:
    current=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))['version']
    assert current==read(ROOT/'package.json')['version']

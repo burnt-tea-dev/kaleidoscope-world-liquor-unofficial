@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.89
+## Current maintained baseline: 0.1.90
 
-**0.1.87 Respawn 修復**：床／重生錨／世界出生點接回 Java 1.21.1 resolver，移除錯誤地板與任意範圍搜尋；來源 context、可運作路徑與待真人測試部分見[本版範圍](docs/RELEASE-NOTES-0.1.87.md)。
+**0.1.90 調酒材料修復**：可樂與通寧水先施加效果，再消耗原瓶並按原作順序交還玻璃瓶；可樂的調酒資料補回速度效果。真人飲用／滿背包場景與剩餘差距見[本版範圍](docs/RELEASE-NOTES-0.1.90.md)。
 
 Canonical runtime and dependencies: [baseline.json](baseline.json). Pair with Tavern **0.6.122**; Cookery **1.6.0** is optional and Grilling family version is **2.8.101**. Static checks, isolated BDS loading, client rendering and saved-world UUID migration are separate acceptance stages. The source/release identity does not certify a live installation. Build from canonical source without private gameplay patches. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md).
 

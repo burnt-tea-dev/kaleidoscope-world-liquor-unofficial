@@ -6,5 +6,36 @@
   "after": "49d28be60cec4882728b2ec8a02120ad4ae29ea3c2bd3a52826ece415d4d5cd4",
   "previous_payload": "data/java-parity/neoforge-1.1.11/previous-payload.js",
   "reason": "Historical storage-only assertions use the unchanged canonical 0.1.67 view. Current Java 1.1.11 recipes/category mutations and output data are exercised by check_current_mixology.mjs and current shared registry/guide tests. No projection is used in runtime or packaging. 0.1.76 changes only the exported payload version in this batch; original stored preimage remains unchanged. 0.1.77 payload version only; existing storage preimage retained. 0.1.78 payload version only; stored source/storage preimage unchanged. 0.1.79 payload version only; current source recipe/effect/category data equals 0.1.78 and original storage preimage remains unchanged. 0.1.80 changes payload version only; current recipes/effects/content and stored preimages unchanged. 0.1.81 payload version only; source recipe/effect/category data and stored original preimage unchanged. 0.1.82 payload version only after correcting both host pack dependencies; original content/preimage retained. 0.1.83 payload version only; source recipe/effect/category content and original preimage unchanged. Version-only historical projection verifies the current release version separately and normalizes only that field back to the fixed reviewed payload version; any other byte remains protected by the original after hash.",
-  "after_payload_version": "0.1.83"
+  "after_payload_version": "0.1.83",
+  "functional_layers": [
+    {
+      "introduced_version": "0.1.90",
+      "source": "NeoForge1.21.1 World Liquor1.1.11 CF9066406 ModItems.COLA food properties",
+      "field": "shakerInput.effects",
+      "item": "kaleidoscope_world_liquor:cola",
+      "before": [
+        {
+          "effect": "minecraft:haste",
+          "duration": 15,
+          "amplifier": 0,
+          "probability": 1
+        }
+      ],
+      "after": [
+        {
+          "effect": "minecraft:haste",
+          "duration": 15,
+          "amplifier": 0,
+          "probability": 1
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 15,
+          "amplifier": 0,
+          "probability": 1
+        }
+      ],
+      "reason": "Restore missing Speed food effect in signature cocktails; retain original current-mixology before/after hashes and verify the exact inverse layer."
+    }
+  ]
 }

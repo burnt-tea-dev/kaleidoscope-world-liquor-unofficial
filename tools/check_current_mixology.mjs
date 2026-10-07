@@ -8,7 +8,7 @@ const host=pathToFileURL(path.resolve(process.env.TAVERN_ROOT??'../tavern-src')+
 const {ExtensionRegistry}=await import(new URL('runtime/BP/scripts/core/registry.js',host));
 const {SHAKER_RECIPES}=await import(new URL('runtime/BP/scripts/data/mixology.js',host));
 const {FLUIDS}=await import(new URL('runtime/BP/scripts/data/fluids.js',host));
-const {inputSnapshot}=await import(new URL('runtime/BP/scripts/core/mixology.js',host));
+const {inputSnapshot,signaturePayload}=await import(new URL('runtime/BP/scripts/core/mixology.js',host));
 const {matchShakerRecipe}=await import(new URL('runtime/BP/scripts/core/mixology-categories.js',host));
 const source=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.1.11/reference.json',import.meta.url)));
 assert.equal(source.file_id,9066406);
@@ -30,4 +30,9 @@ for(const recipe of recipes){
 for(const [item,color] of [['kaleidoscope_tavern:mother_snow_q4',3847130],['kaleidoscope_tavern:sunset_glow_q4',16351261],['kaleidoscope_tavern:sakura_wine_q4',15961002],['kaleidoscope_world_liquor:ice_tea_q4',8606770]])assert.equal(inputSnapshot(item,r).color,color,item);
 for(const q of [1,2,3])assert.throws(()=>inputSnapshot('kaleidoscope_world_liquor:jack_daniel_q'+q,r),/QUALITY_TOO_LOW/);
 assert.equal(payload.content.find(row=>row.item==='kaleidoscope_world_liquor:highball').effects[0].duration,600);
+const cola=inputSnapshot('kaleidoscope_world_liquor:cola',r),signature=signaturePayload([cola,cola,cola]);
+assert.deepEqual(signature.effects,[
+ {effect:'minecraft:haste',duration:54,amplifier:0,probability:1},
+ {effect:'minecraft:speed',duration:54,amplifier:0,probability:1},
+]);
 console.log(JSON.stringify({currentJavaVersion:'NeoForge 1.1.11',recipes:18,recipeOrderCases:cases,extraColors:4,coreReclassification:true,highballSourceEffectData:true,actualFlightImplemented:false,simulatedPlayers:false}));

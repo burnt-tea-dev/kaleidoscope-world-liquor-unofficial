@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.89",
+  "version": "0.1.90",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -1914,6 +1914,12 @@ export const payload = {
       "effects": [
         {
           "effect": "minecraft:haste",
+          "duration": 15,
+          "amplifier": 0,
+          "probability": 1
+        },
+        {
+          "effect": "minecraft:speed",
           "duration": 15,
           "amplifier": 0,
           "probability": 1
