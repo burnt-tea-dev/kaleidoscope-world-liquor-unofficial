@@ -13,6 +13,12 @@ test('legacy IDs are readable without entities and adopted alongside complete in
  const f=fixture(['minecraft:ice','minecraft:apple']);assert.equal(world.getDynamicProperty(nativeItemKey(f.key)),undefined);assert.deepEqual(readFreezerItems(f.b,f.state).filter(Boolean).map(x=>x.typeId),f.state.input);
  const incoming=append(f);const state=JSON.parse(world.getDynamicProperty(f.key)),items=readFreezerItems(f.b,state);assert.equal(items[0].typeId,'minecraft:ice');assert.equal(items[1].typeId,'minecraft:apple');incoming.amount=1;assert.deepEqual(items[2],incoming);assert.equal(items[3],undefined);
 });
+test('API vector enumeration/order is not mistaken for different block coordinates',()=>{
+ const f=fixture();append(f);const state=JSON.parse(world.getDynamicProperty(f.key)),position=f.b.location;
+ f.b.location={z:position.z,y:position.y,x:position.x};assert.equal(readFreezerItems(f.b,state)[0].nameTag,'first');
+ f.b.location=Object.defineProperties({},{x:{get:()=>position.x},y:{get:()=>position.y},z:{get:()=>position.z}});assert.equal(JSON.stringify(f.b.location),'{}');assert.equal(readFreezerItems(f.b,state)[0].nameTag,'first');
+ f.b.location={...position,x:position.x+1};assert.throws(()=>freezerNativeItems.read({key:f.key,dimension:f.d,position:f.b.location,ids:state.input}),/NATIVE_STORAGE_MISMATCH/);
+});
 test('same-ID stacks retain distinct native metadata and exact last-slot removal',()=>{
  const f=fixture();append(f,'first');append(f,'second');const old=JSON.parse(world.getDynamicProperty(f.key));assert.deepEqual(readFreezerItems(f.b,old).filter(Boolean).map(x=>x.nameTag),['first','second']);
  const m=planFreezerStorage(f.b,{...old,input:old.input.slice(0,-1)});assert.equal(m.removed[0].stack.nameTag,'second');m.apply();m.finish();assert.equal(readFreezerItems(f.b,JSON.parse(world.getDynamicProperty(f.key)))[0].nameTag,'first');

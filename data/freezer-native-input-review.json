@@ -7,7 +7,8 @@
     "four slots",
     "bounded controlled pinning",
     "skip empty-marker writes",
-    "complete source input removal and intrinsic-item guard"
+    "complete source input removal and intrinsic-item guard",
+    "W98 numeric block-coordinate equality replaces API vector JSON equality; native97 failure retained, never deployed"
   ],
   "additions": [
     "runtime/BP/scripts/captured-item.js",
