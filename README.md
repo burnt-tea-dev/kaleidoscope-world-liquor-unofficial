@@ -1,4 +1,6 @@
-## Current maintained baseline: 0.1.85
+## Current maintained baseline: 0.1.86
+
+**0.1.86 相依配對**：配對已檢查的酒館0.6.120，保留世界名酒既有玩法、存檔、模型與聲音；[本版範圍](docs/RELEASE-NOTES-0.1.86.md)分列相依更新與待真人驗收部分。
 
 Canonical runtime and dependencies: [baseline.json](baseline.json). Pair with Tavern **0.6.119**; Cookery **1.6.0** is optional and Grilling family version is **2.8.86**. Static checks, isolated BDS loading, client rendering and saved-world UUID migration are separate acceptance stages. The source/release identity does not certify a live installation. Build from canonical source without private gameplay patches. Read [baseline maintenance](docs/BASELINE-MAINTENANCE.md).
 
