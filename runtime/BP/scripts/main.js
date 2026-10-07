@@ -3,13 +3,12 @@ import {withFoundation,setFoundationClient} from './foundation.js';
 import {world,system,ItemStack,ItemTypes} from '@minecraft/server';
 import {payload} from './payload.js';
 import {registerTavernExtension} from './sdk/tavern-extension-client.js';
-import {registerFurniture,installFurniture,hand,NS} from './furniture.js';
+import {registerFurniture,installFurniture,NS} from './furniture.js';
+import {completeBottledDrink} from './bottled-drink.js';
 import {installEffects} from './effects.js';
 import {installDrinkAudio} from './drink-audio.js';
 function returnItem(p,id){const inv=p.getComponent('minecraft:inventory').container,left=inv.addItem(new ItemStack(id));if(left)p.dimension.spawnItem(left,p.location);}
-function consume(e){const p=e.source,h=hand(p);if(!p||h?.typeId!==e.itemStack?.typeId)return;const cola=h.typeId.endsWith(':cola');if(p.getGameMode()!=='Creative'){if(h.amount===1)p.getComponent('minecraft:inventory').container.setItem(p.selectedSlotIndex,new ItemStack('minecraft:glass_bottle'));else{h.amount--;p.getComponent('minecraft:inventory').container.setItem(p.selectedSlotIndex,h);returnItem(p,'minecraft:glass_bottle');}}
- for(const effect of cola?['haste','speed']:['regeneration'])p.addEffect(effect,300,{amplifier:0});
-}
+function consume(e){return completeBottledDrink(e,{createStack:(id,amount)=>new ItemStack(id,amount)});}
 const foods={liangshan_ice_cone:['fire_resistance','speed'],kita_stuffed_crisp:['saturation'],pochi_pudding:['regeneration'],magic_crispy_corner:['haste']};
 system.beforeEvents.startup.subscribe(e=>{
  registerFurniture(e);
