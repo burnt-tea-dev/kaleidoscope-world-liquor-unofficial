@@ -23,7 +23,8 @@ class Block{
 let serial=0;
 export function player(d,mode='survival'){
  const slots=Array(9),inv={size:slots.length,getItem:i=>slots[i]?.clone(),setItem(i,item){if(inv.failWrite){inv.failWrite=false;throw Error('injected inventory failure');}slots[i]=item?.clone();}};
- return {id:'player'+(++serial),typeId:'minecraft:player',dimension:d,location:{x:0,y:0,z:0},selectedSlotIndex:0,isSneaking:true,getGameMode:()=>mode,getRotation:()=>({x:0,y:0}),getComponent:()=>({container:inv}),onScreenDisplay:{setActionBar(){}},inv};
+ const equipment={getEquipment:()=>undefined,setEquipment:()=>true};
+ return {id:'player'+(++serial),typeId:'minecraft:player',dimension:d,location:{x:0,y:0,z:0},selectedSlotIndex:0,isSneaking:true,getGameMode:()=>mode,getRotation:()=>({x:0,y:0}),getComponent:id=>id==='minecraft:equippable'?equipment:{container:inv},onScreenDisplay:{setActionBar(){}},inv};
 }
 export function reset(){dynamic.clear();queue.length=0;world.failSave=false;world.gameRules.doTileDrops=true;system.currentTick+=10;placeMode='none';}
 

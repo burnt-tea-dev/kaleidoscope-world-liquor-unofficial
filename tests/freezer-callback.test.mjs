@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {world,system,BlockPermutation,Dimension,reset} from './wall-record-mock.mjs';
+import {world,system,BlockPermutation,Dimension,reset,player,ItemStack} from './wall-record-mock.mjs';
 import {registerFurniture} from '../runtime/BP/scripts/furniture.js';
 const N='kaleidoscope_world_liquor',key=N+':storage/overworld/0_0_0';let c,furniture;
 registerFurniture({blockComponentRegistry:{registerCustomComponent:(id,callbacks)=>{if(id===N+':freezer_redstone')c=callbacks;if(id===N+':furniture')furniture=callbacks;}}});
@@ -18,4 +18,12 @@ test('registered block tick retains the saved countdown and finishes once at its
 });
 test('removed saved recipe stops instead of inventing an output item',()=>{
  const {b}=fixture();world.setDynamicProperty(key,JSON.stringify({input:[],fluid:null,remaining:1,output:0,recipe:'removed:recipe'}));furniture.onTick({block:b});const row=JSON.parse(world.getDynamicProperty(key));assert.equal(row.remaining,0);assert.equal(row.output,0);assert.equal(row.recipe,null);
+});
+for(const mode of ['survival','adventure','creative'])test(mode+' real furniture callback follows source output hand rules',()=>{
+ const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));const p=player(d,mode);p.isSneaking=false;p.inv.setItem(0,new ItemStack('minecraft:bowl'));world.setDynamicProperty(key,JSON.stringify({input:[],fluid:null,remaining:0,output:1,recipe:N+':freezer/pochi_pudding'}));
+ furniture.onPlayerInteract({block:b,player:p});assert.equal(JSON.parse(world.getDynamicProperty(key)).output,0);assert.equal(p.inv.getItem(mode==='creative'?1:0).typeId,N+':pochi_pudding');if(mode==='creative')assert.equal(p.inv.getItem(0).typeId,'minecraft:bowl');assert.equal(d.sounds.at(-1),'kaleidoscope_world_liquor.java.freezer_pickup');
+});
+test('wrong bowl shows a localized item before the original pickup event and retains output',()=>{
+ const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));const p=player(d),calls=[];p.isSneaking=false;p.onScreenDisplay.setActionBar=row=>calls.push(['message',row]);d.playSound=(...args)=>calls.push(['sound',...args]);world.setDynamicProperty(key,JSON.stringify({input:[],fluid:null,remaining:0,output:1,recipe:N+':freezer/pochi_pudding'}));
+ furniture.onPlayerInteract({block:b,player:p});assert.equal(JSON.parse(world.getDynamicProperty(key)).output,1);assert.equal(calls[0][0],'message');assert.equal(calls[0][1].with.rawtext[0].translate,'item.bowl.name');assert.deepEqual(calls[1],['sound','kaleidoscope_world_liquor.java.freezer_pickup',{x:.5,y:.5,z:.5},{volume:1,pitch:1}]);
 });

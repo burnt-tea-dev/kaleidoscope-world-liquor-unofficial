@@ -1533,8 +1533,8 @@
     },
     "runtime/RP/sounds/sound_definitions.json": {
       "before": "76aa7ecbb815840e0cb1f304a80f97b14b6f2bcf165d34bfeb4bb6a91d17fd3c",
-      "after": "09e5c112eee36511c853ac27cf712979404fae5f6a8ae13be777c64351d58e65",
-      "reason": "Current Java use/combat source repair: cadence, cancellation, predicates, float operations and original feedback audio; full visual/physics goal remains open; reviewed original MC1.21.1 Player burp and LivingEntity eating completion events with selected publisher samples, original categories and16-block ranges.",
+      "after": "e1f1697a926b6045bf798549c32071d4222229cbc080f4ae912534c678d655ad",
+      "reason": "Current Java use/combat source repair: cadence, cancellation, predicates, float operations and original feedback audio; full visual/physics goal remains open; reviewed original MC1.21.1 Player burp and LivingEntity eating completion events with selected publisher samples, original categories and16-block ranges. 0.1.94 adds original BLOCKS item pickup event for freezer extraction; existing events retained.",
       "beforeGzipBase64": "H4sIAAAAAAACA+2a326CMBSH730K4jXB4Zz78yrL0jTtQRuhZW2ZM8Z3X4vK3KJxmUHPxbkwEE7rj9OvMeGT9SBJhoWxFffsA6xTRg9fkmGe5ZPsbpjGqjONlkxCobTyoe7CgHUohNKCl6CkccLUwJbGlpKV6r0xNlMCmAfOgPtueJgguIeZsauYUZd8BbbNaGttTvzy192VpJvX1jWvIM7bjhstluXoMCU9HOu8BV6F0QUvHfwoLUHN5vGm8u7qZnf21h436bnmhDEl22dLq/Sixx6PhF2x1XAjltVlU/Xe5++kKzZZNU4JJpUTmeVamqo9P9WrBWGsvIxp43xI2ebmJ1r1tjnfafq/zPElmfvV7Vag4p9xxTzXIqZOJ98VpQ8r+fSPRGoj5orVjZRKz1gBIHvceUfCbr75srBm8ceW3dE2vN02PMMmJzZo2YyJDVo298QGLZsJsUHL5oHYoGUzJTZo2TwSG7RsnogNWjbPxAbvsyeJAcRwyAwghkNqADEccgOI4ZAcQAyH7ABiOKQHEMMhP4AYDgkCxHDIECD+B5QMAWI4ZAgQwyFDgBgOGQLEcMgQIIZDhgAxHDIEiOGQIUAMhwwBYjhkCBC/h0uGADEcMgT9wRnEz2bwBVLj/zj+OAAA"
     },
     "runtime/BP/scripts/kill-credit.js": {
@@ -1653,6 +1653,21 @@
       "before": null,
       "after": "a726739605a874118760d3af0bf95e4b6caaa277ab8f95126fe86dbc592d7e2e",
       "reason": "0.1.93 current author lava -> obsidian output/selected original Minecraft1.21.1 obsidian PNG, or saved-only canonical0.1.92 magma recipe retention. No historical artifact is installed."
+    },
+    "runtime/BP/scripts/freezer-output.js": {
+      "before": null,
+      "after": "2566a102edf6ee5fc8f7893646409cb1f952937250db320ad02ba6bdb132d3e0",
+      "reason": "Source-backed0.1.94 freezer output/inventory settlement, or selected original publisher sound asset. No private builder or installation transform."
+    },
+    "runtime/BP/scripts/java-player-inventory.js": {
+      "before": null,
+      "after": "bcfc2a21ffba69a347e500479387f1c5215ca9264f4de0eee4895c2e8bf2fe55",
+      "reason": "Source-backed0.1.94 freezer output/inventory settlement, or selected original publisher sound asset. No private builder or installation transform."
+    },
+    "runtime/RP/sounds/kwl/java21/random/pop.ogg": {
+      "before": null,
+      "after": "5e3baf518a0104760dc06a2e0088b377433997b46511c1730db0e3ba6f2b0ca7",
+      "reason": "Source-backed0.1.94 freezer output/inventory settlement, or selected original publisher sound asset. No private builder or installation transform."
     }
   },
   "reviewedFunctionalDeltaLayers": [
@@ -1776,6 +1791,55 @@
             ]
           ],
           "reason": "Current NeoForge1.1.11 CF9066406 freezer recipes and loaded-tick/float rendering repair; preserve legacy saved lava output only. See current-freezer-review and native timing scenes."
+        }
+      }
+    },
+    {
+      "release": "0.1.94",
+      "files": {
+        "runtime/BP/scripts/furniture.js": {
+          "before": "8ff3f9e226c826eab5684c8bdbffec4c1cb90df853622a52e987fbdd46463a97",
+          "after": "eb7697a1248f19fb5929bcf2a01aca514e3d3b366582e6f9c32f7a826114648c",
+          "reverseOps": [
+            [
+              11,
+              12,
+              ""
+            ],
+            [
+              86,
+              98,
+              " if(s.output){const r=savedFreezerRecipes.find(r=>r.id===s.recipe),required=r?.extract_condition?.item;if(!r)return;if(required&&h?.typeId!==required){say(p,'need_item',[required]);return;}s.output--;transaction(p,b,s,{take:required?1:0,give:[[r.result.id,1]]});return;}\n"
+            ],
+            [
+              155,
+              156,
+              " if(!mutable(p)||!furniture(b.typeId))return;const stamp=p.id+'/'+key(b);if(system.currentTick-(cooldown.get(stamp)??-100)<5)return;cooldown.set(stamp,system.currentTick);\n"
+            ]
+          ],
+          "reason": "Current NeoForge1.1.11 FreezerBlockEntity.extractOutput hand/Creative/inventory/source order; original one-shot block pickup audio; Adventure use; shared existing bottled Inventory.add ordering. See0.1.94 release notes and actual callback regressions."
+        },
+        "runtime/BP/scripts/bottled-drink.js": {
+          "before": "4d30bc18c7c5307c2d934814f5e8cf9546a09de3a42b89f5887f8c36bf60ad70",
+          "after": "46928db9bfb3804149b284730867e92d9006c959828dde1837fc31b87551299f",
+          "reverseOps": [
+            [
+              1,
+              2,
+              ""
+            ],
+            [
+              27,
+              27,
+              "function room(stack,bottle){return !!stack&&stack.amount<stack.maxAmount&&stack.isStackableWith(bottle);}\n"
+            ],
+            [
+              32,
+              33,
+              " const inventory=player.getComponent('minecraft:inventory').container;\n const bottle=createStack('minecraft:glass_bottle',1),selected=player.selectedSlotIndex;\n const merge=slot=>{const stack=inventory.getItem(slot);if(!room(stack,bottle))return false;stack.amount++;inventory.setItem(slot,stack);return true;};\n if(merge(selected))return 'INVENTORY';\n const equipment=player.getComponent('minecraft:equippable'),offhand=equipment?.getEquipment('Offhand');\n if(room(offhand,bottle)){offhand.amount++;if(equipment.setEquipment('Offhand',offhand)!==true)throw Error('OFFHAND_BOTTLE_WRITE_REJECTED');return 'OFFHAND';}\n for(let slot=0;slot<inventory.size;slot++)if(merge(slot))return 'INVENTORY';\n for(let slot=0;slot<inventory.size;slot++)if(!inventory.getItem(slot)){inventory.setItem(slot,bottle);return 'INVENTORY';}\n // Bedrock has no Player.drop(false) packet/physics hook. Count is preserved;\n // exact Java throw velocity, eye offset and pickup delay remain tracked gaps.\n player.dimension.spawnItem(bottle,player.location);return 'DROP';\n"
+            ]
+          ],
+          "reason": "Current NeoForge1.1.11 FreezerBlockEntity.extractOutput hand/Creative/inventory/source order; original one-shot block pickup audio; Adventure use; shared existing bottled Inventory.add ordering. See0.1.94 release notes and actual callback regressions."
         }
       }
     }

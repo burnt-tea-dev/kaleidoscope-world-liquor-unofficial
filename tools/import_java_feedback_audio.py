@@ -11,7 +11,7 @@ from pathlib import Path
 import urllib.request
 
 ROOT=Path(__file__).resolve().parents[1]
-EVENTS={'critical':'entity.player.attack.crit','respawn':'item.chorus_fruit.teleport','crazy':'block.beacon.activate','burp':'entity.player.burp','eating':'entity.generic.eat'}
+EVENTS={'critical':'entity.player.attack.crit','respawn':'item.chorus_fruit.teleport','crazy':'block.beacon.activate','burp':'entity.player.burp','eating':'entity.generic.eat','freezer_pickup':'entity.item.pickup'}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--reference',type=Path,required=True);p.add_argument('--events',nargs='+',choices=EVENTS,default=list(EVENTS));args=p.parse_args()
@@ -37,7 +37,8 @@ def main():
             path=target/(relative+'.ogg');path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
             entries.append({**row,'name':relative,'stream':False})
             files.append({'author_asset':asset,'publisher_sha1':ref['hash'],'url':url,'output':relative+'.ogg'})
-        definitions['sound_definitions']['kaleidoscope_world_liquor.java.'+alias]={'category':'neutral' if alias=='eating' else 'player','sounds':entries,'max_distance':16}
+        category='neutral' if alias=='eating' else 'block' if alias=='freezer_pickup' else 'player'
+        definitions['sound_definitions']['kaleidoscope_world_liquor.java.'+alias]={'category':category,'sounds':entries,'max_distance':16}
         source['events'][alias]={'event':event,'original':sounds[event],'files':files}
     (target/'sounds/sound_definitions.json').write_text(json.dumps(definitions,indent=2)+'\n')
     (ROOT/'data/java-feedback-audio.json').write_text(json.dumps(source,indent=2)+'\n')

@@ -137,6 +137,23 @@
           "output": "sounds/kwl/java21/random/eat3.ogg"
         }
       ]
+    },
+    "freezer_pickup": {
+      "event": "entity.item.pickup",
+      "original": {
+        "sounds": [
+          "random/pop"
+        ],
+        "subtitle": "subtitles.entity.item.pickup"
+      },
+      "files": [
+        {
+          "author_asset": "minecraft/sounds/random/pop.ogg",
+          "publisher_sha1": "8f45b5faf6dfae2065846d26612f7552b73640dd",
+          "url": "https://resources.download.minecraft.net/8f/8f45b5faf6dfae2065846d26612f7552b73640dd",
+          "output": "sounds/kwl/java21/random/pop.ogg"
+        }
+      ]
     }
   },
   "scope": "Selected original feedback samples and event entries; client mixing/attenuation remains separate evidence."

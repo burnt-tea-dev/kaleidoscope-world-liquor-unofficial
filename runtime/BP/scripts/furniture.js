@@ -9,6 +9,7 @@ import {isManagedCabinet,foundationReady,forwardFurnitureTick,forwardNativeUse} 
 import {world,system,ItemStack,BlockPermutation} from '@minecraft/server';
 import {FREEZER_RECIPES} from './freezer-recipes.js';
 import {LEGACY_FREEZER_RECIPES} from './legacy-freezer-recipes.js';
+import {extractFreezerOutput} from './freezer-output.js';
 const savedFreezerRecipes=[...FREEZER_RECIPES,...LEGACY_FREEZER_RECIPES];
 import {RECORD_MODELS} from './wall-record-models.js';
 export const NS='kaleidoscope_world_liquor',KT='kaleidoscope_tavern',FACING=KT+':facing';
@@ -83,7 +84,18 @@ function freezer(p,b,s,h){
   transaction(p,b,s,{permutation:b.permutation.withState(NS+':open',!open)});b.dimension.playSound(open?'block.barrel.close':'block.barrel.open',center(b));return;
  }
  if(!open)return;
- if(s.output){const r=savedFreezerRecipes.find(r=>r.id===s.recipe),required=r?.extract_condition?.item;if(!r)return;if(required&&h?.typeId!==required){say(p,'need_item',[required]);return;}s.output--;transaction(p,b,s,{take:required?1:0,give:[[r.result.id,1]]});return;}
+ if(s.output){
+  const raw=world.getDynamicProperty(key(b));
+  const result=extractFreezerOutput(p,s,savedFreezerRecipes.find(r=>r.id===s.recipe),{createStack:(id,n)=>new ItemStack(id,n),commit:next=>save(b,next),restore:()=>world.setDynamicProperty(key(b),raw)});
+  if(result.status==='NEED_ITEM')say(p,'need_item',{rawtext:[{translate:result.required==='minecraft:bowl'?'item.bowl.name':result.required}]});
+  // The original Block.useItemOn/useWithoutItem plays pickup after the BE
+  // extraction attempt, including a rejected ingredient. Sound failure is
+  // cosmetic and must not undo the settled item/output count.
+  try{b.dimension.playSound('kaleidoscope_world_liquor.java.freezer_pickup',center(b),{volume:1,pitch:1});}catch(error){console.warn('[World Liquor freezer audio] '+error);}
+  if(result.status==='NEED_ITEM')return;
+  if(result.status==='EXTRACTED')try{syncFreezerVisuals(b,result.state,savedFreezerRecipes);}catch(error){console.warn('[World Liquor visuals] '+error);}
+  return;
+ }
  if(h?.typeId in liquids){if(s.fluid)return;s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,give:creative(p)?[]:[['minecraft:bucket',1]]});return;}
  if(h?.typeId==='minecraft:bucket'&&s.fluid){const filled=Object.keys(liquids).find(x=>liquids[x]===s.fluid);if(filled){s.fluid=null;transaction(p,b,s,{take:1,give:[[filled,1]]});}return;}
  if(h){if(!plain(h)||s.input.length>=4)return;s.input.push(h.typeId);transaction(p,b,s,{take:1});}
@@ -141,7 +153,7 @@ function removeWallRecord(b,{permutation=b.permutation,player,native=false}={}){
 }
 function record(p,b,s,h){if(h)return;if(!s.record)return;const k=key(b);wallRemovalTicks.set(k,system.currentTick);try{if(transaction(p,b,undefined,{give:[[s.record,1]],permutation:BlockPermutation.resolve('minecraft:air')}))b.dimension.playSound('itemframe.remove_item',center(b));else wallRemovalTicks.delete(k);}catch(err){wallRemovalTicks.delete(k);throw err;}}
 function interact(p,b,face,point){
- if(!mutable(p)||!furniture(b.typeId))return;const stamp=p.id+'/'+key(b);if(system.currentTick-(cooldown.get(stamp)??-100)<5)return;cooldown.set(stamp,system.currentTick);
+ if(!furniture(b.typeId)||!mutable(p)&&!(b.typeId===NS+':freezer'&&String(p.getGameMode()).toLowerCase()==='adventure'))return;const stamp=p.id+'/'+key(b);if(system.currentTick-(cooldown.get(stamp)??-100)<5)return;cooldown.set(stamp,system.currentTick);
  const s=read(b),h=hand(p);if(b.typeId.endsWith(':freezer'))freezer(p,b,s,h);else if(b.typeId.endsWith(':wall_record'))record(p,b,s,h);else if(b.typeId.includes(':bar_stool_')&&!h&&!p.isSneaking)sit(p,b);
 }
 function tick(b){if(b.typeId.endsWith(':freezer')){const plan=advanceFreezerTick(read(b),savedFreezerRecipes);if(plan.changed)save(b,plan.state);if(plan.refresh||!plan.changed&&system.currentTick%80===0)syncFreezerVisuals(b,plan.state,savedFreezerRecipes);}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){if(b.typeId===WALL_RECORD){breakFeedback.transaction(b,()=>removeWallRecord(b));return;}removeUnsupported(b,b.typeId);}}}

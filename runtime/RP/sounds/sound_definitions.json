@@ -674,6 +674,16 @@
         }
       ],
       "max_distance": 16
+    },
+    "kaleidoscope_world_liquor.java.freezer_pickup": {
+      "category": "block",
+      "sounds": [
+        {
+          "name": "sounds/kwl/java21/random/pop",
+          "stream": false
+        }
+      ],
+      "max_distance": 16
     }
   }
 }
