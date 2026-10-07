@@ -40,6 +40,7 @@ terms={
  'minecraft:ice':('Ice','冰','冰'),
  'minecraft:packed_ice':('Packed Ice','浮冰','冰磚'),
  'minecraft:magma':('Magma Block','岩浆块','岩漿塊'),
+ 'minecraft:obsidian':('Obsidian','黑曜石','黑曜石'),
  'minecraft:snowball':('Snowball','雪球','雪球'),
  'minecraft:slime_ball':('Slimeball','黏液球','史萊姆球'),
  'minecraft:blue_dye':('Blue Dye','蓝色染料','藍色染料'),
@@ -123,7 +124,7 @@ def main():
  usages={
  'bottle':triple('Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.','潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。','潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。'),
  'cocktail':triple('Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.','与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。','與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。'),
- 'freezer':triple('Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid.','潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。','潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。'),
+ 'freezer':triple('Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid. Water and lava are supported: water freezes into ice, and lava into obsidian in the current author version.','潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。支持水与岩浆：当前作者版本中，水冷冻成冰，岩浆冷冻成黑曜石。','潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。支援水與岩漿：目前作者版本中，水冷凍成冰，岩漿冷凍成黑曜石。'),
  'cabinet':triple('Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.','手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。','手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。'),
  'stool':triple('Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.','摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。','擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。'),
  'painting':triple('Place it on a supporting surface.','放在支撑表面。','放在支撐表面。'),

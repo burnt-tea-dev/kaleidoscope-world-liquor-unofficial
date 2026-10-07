@@ -1,0 +1,15 @@
+export const LEGACY_FREEZER_RECIPES = [
+  {
+    "type": "kaleidoscope_world_liquor:freezer",
+    "fluid": "minecraft:lava",
+    "fluid_amount": 1000,
+    "ingredients": [],
+    "result": {
+      "id": "minecraft:magma",
+      "count": 3
+    },
+    "craft_time": 1800,
+    "texture": "kaleidoscope_world_liquor:block/magma",
+    "id": "kaleidoscope_world_liquor:freezer/magma_block"
+  }
+];

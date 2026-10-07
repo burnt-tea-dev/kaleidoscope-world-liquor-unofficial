@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {startFreezerRecipe,freezerPowerTransition as transition} from '../runtime/BP/scripts/freezer-state.js';
 import {FREEZER_RECIPES as recipes} from '../runtime/BP/scripts/freezer-recipes.js';
+import {LEGACY_FREEZER_RECIPES} from '../runtime/BP/scripts/legacy-freezer-recipes.js';
+import {advanceFreezerTick} from '../runtime/BP/scripts/freezer-state.js';
 const state=()=>({input:[],fluid:'minecraft:water',remaining:0,output:0,redstonePowered:false});
 test('rising power opens, falling power closes and starts the exact recipe once',()=>{const s=state(),a=transition(s,false,true,false,recipes);assert.equal(a.open,true);assert.equal(a.state.remaining,0);const b=transition(a.state,true,false,false,recipes);assert.equal(b.open,false);assert.equal(b.state.recipe,'kaleidoscope_world_liquor:freezer/ice');assert.equal(b.state.remaining,1800);assert.equal(b.state.fluid,null);assert.equal(transition(b.state,false,false,false,recipes).changed,false);assert.equal(s.fluid,'minecraft:water');});
 test('repeated power keeps manual overrides and survives serialized reload',()=>{const s={...state(),redstonePowered:true};assert.equal(transition(JSON.parse(JSON.stringify(s)),false,true,false,recipes).changed,false);});
@@ -17,16 +19,22 @@ test('redstone callbacks use dedicated components only on consumer blocks',async
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/furniture.js',import.meta.url),'utf8');assert.ok(!source.split("registerCustomComponent(NS+':furniture',{")[1].split('});}')[0].includes('onRedstoneUpdate'));
 });
 
-// Current NeoForge 1.1.9 fixture values, independently preserved from its JAR.
+// Current NeoForge 1.1.11 fixture values, independently preserved from its JAR.
 for(const name of ['kita_stuffed_crisp','liangshan_ice_cone','pochi_pudding'])test(name+' starts with the exact current Java dessert timer',()=>{
- const source=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.1.9/freezer/'+name+'.json',import.meta.url)));
+ const source=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.1.11/freezer/'+name+'.json',import.meta.url)));
  const recipe=recipes.find(r=>r.id.endsWith('/'+name));assert.equal(source.craft_time,1200);assert.equal(recipe.craft_time,source.craft_time);
  const before={input:recipe.ingredients.map(options=>options[0]),fluid:recipe.fluid,remaining:0,output:0};
  const after=startFreezerRecipe(before,recipes);assert.equal(after.remaining,source.craft_time);assert.equal(after.recipe,recipe.id);
  assert.deepEqual(after.input,[]);assert.equal(after.fluid,null);assert.equal(before.fluid,recipe.fluid);
 });
-test('ice and magma retain their original 1800-tick recipe duration',()=>{
- for(const name of ['ice','magma_block'])assert.equal(recipes.find(r=>r.id.endsWith('/'+name)).craft_time,1800);
+test('current source lava recipe produces one obsidian and preserves the exact duration',()=>{
+ const source=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.1.11/freezer/obsidian.json',import.meta.url)));
+ const recipe=recipes.find(r=>r.id.endsWith('/obsidian'));assert.deepEqual(recipe.result,source.result);assert.equal(recipe.craft_time,1800);assert.equal(recipe.texture,source.texture);
+ assert.equal(recipes.some(r=>r.id.endsWith('/magma_block')),false);assert.equal(startFreezerRecipe({input:[],fluid:'minecraft:lava',remaining:0,output:0},recipes).recipe,recipe.id);
+});
+test('legacy saved lava batch retains its countdown and three magma outputs, but cannot be selected for new work',()=>{
+ const old={recipe:'kaleidoscope_world_liquor:freezer/magma_block',input:[],fluid:null,remaining:1,output:0};const next=advanceFreezerTick(old,[...recipes,...LEGACY_FREEZER_RECIPES]);assert.equal(next.state.remaining,0);assert.equal(next.state.output,3);assert.equal(next.state.recipe,old.recipe);
+ assert.deepEqual(old,{recipe:'kaleidoscope_world_liquor:freezer/magma_block',input:[],fluid:null,remaining:1,output:0});
 });
 test('updating recipes does not restart an already active saved-world batch',()=>{
  const oldBatch={recipe:'kaleidoscope_world_liquor:freezer/pochi_pudding',input:[],fluid:null,remaining:1500,output:0};

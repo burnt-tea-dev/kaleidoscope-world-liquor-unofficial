@@ -22,10 +22,13 @@ def readjs(p):
   if review.get('functional_layers'):
    payload=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))
    for layer in reversed(review['functional_layers']):
-    assert layer['field']=='shakerInput.effects','Unknown functional payload layer'
-    rows=[row for row in payload['shakerInputs'] if row['item']==layer['item']]
-    assert len(rows)==1 and rows[0]['effects']==layer['after'],'Unreviewed mixer-effect change'
-    rows[0]['effects']=layer['before']
+    if layer['field']=='shakerInput.effects':
+     rows=[row for row in payload['shakerInputs'] if row['item']==layer['item']];field='effects'
+    else:
+     assert layer['field']=='page.body' and layer['id']=='kaleidoscope_world_liquor:guide/freezer','Unknown functional payload layer'
+     rows=[row for row in payload['pages'] if row['id']==layer['id']];field='body'
+    assert len(rows)==1 and rows[0][field]==layer['after'],'Unreviewed functional payload change'
+    rows[0][field]=layer['before']
    data=('export const payload = '+json.dumps(payload,ensure_ascii=False,indent=2)+';\n').encode()
   if 'after_payload_version' in review:
    current=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))['version']
@@ -50,6 +53,11 @@ def main():
  reviewed=read(ROOT/'data/guide-destruction-review.json')
  plane_review=read(ROOT/'data/drink-plane-review.json')['files']
  additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
+ # Current-source result is additive; keep all older art/tree assertions.
+ for name in read(ROOT/'data/current-freezer-review.json')['additions']:
+  assert name in baseline_additions(ROOT),('Unregistered current freezer addition',name)
+  if name.startswith('runtime/RP/') or '/entities/' in name:
+   assert name not in additions;additions[name]=digest(ROOT/name)
  highball=['runtime/RP/models/entity/kwl_highball_111.geo.json','runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__highball.png','runtime/RP/textures/kwl/items/highball.png','runtime/BP/items/highball.json','runtime/BP/blocks/cup_highball.json']
  for name in highball:
   assert name in baseline_additions(ROOT);additions[name]=digest(ROOT/name)
