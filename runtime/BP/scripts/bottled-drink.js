@@ -1,4 +1,5 @@
 import {javaFloatRoll} from './combat-source.js';
+import {giveJavaInventoryItem} from './java-player-inventory.js';
 
 const EFFECTS=Object.freeze({
  'kaleidoscope_world_liquor:cola':['haste','speed'],
@@ -24,23 +25,12 @@ function unresolved(status,error){
 function sameUse(actual,expected){
  return !!actual&&!!expected&&actual.typeId===expected.typeId&&actual.amount===expected.amount&&actual.isStackableWith(expected);
 }
-function room(stack,bottle){return !!stack&&stack.amount<stack.maxAmount&&stack.isStackableWith(bottle);}
 
 /** Java Player Inventory.add: selected merge, offhand merge, first main merge,
  * then first free main slot. Do not replace the selected hand with a remainder.
  */
 export function giveGlassBottle(player,createStack){
- const inventory=player.getComponent('minecraft:inventory').container;
- const bottle=createStack('minecraft:glass_bottle',1),selected=player.selectedSlotIndex;
- const merge=slot=>{const stack=inventory.getItem(slot);if(!room(stack,bottle))return false;stack.amount++;inventory.setItem(slot,stack);return true;};
- if(merge(selected))return 'INVENTORY';
- const equipment=player.getComponent('minecraft:equippable'),offhand=equipment?.getEquipment('Offhand');
- if(room(offhand,bottle)){offhand.amount++;if(equipment.setEquipment('Offhand',offhand)!==true)throw Error('OFFHAND_BOTTLE_WRITE_REJECTED');return 'OFFHAND';}
- for(let slot=0;slot<inventory.size;slot++)if(merge(slot))return 'INVENTORY';
- for(let slot=0;slot<inventory.size;slot++)if(!inventory.getItem(slot)){inventory.setItem(slot,bottle);return 'INVENTORY';}
- // Bedrock has no Player.drop(false) packet/physics hook. Count is preserved;
- // exact Java throw velocity, eye offset and pickup delay remain tracked gaps.
- player.dimension.spawnItem(bottle,player.location);return 'DROP';
+ return giveJavaInventoryItem(player,createStack('minecraft:glass_bottle',1));
 }
 
 /** BottledDrinkItem.finishUsingItem calls Item/Player/LivingEntity.eat first:

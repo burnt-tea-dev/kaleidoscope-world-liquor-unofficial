@@ -96,7 +96,7 @@ jobs:
           node --test tests/record-audio.test.mjs tests/multi-jump.test.mjs tests/freezer-state.test.mjs tests/drink-audio.test.mjs tests/combat-source.test.mjs tests/kill-credit.test.mjs tests/motion-source.test.mjs tests/critical-feedback.test.mjs tests/accepted-hurt-feedback.test.mjs tests/frost-water.test.mjs tests/treasure-block.test.mjs tests/crazy-source.test.mjs tests/respawn-source.test.mjs tests/respawn-runtime.test.mjs tests/respawn-metadata.test.mjs tests/respawn-native-evidence.test.mjs tests/elbow-source.test.mjs tests/elbow-native-evidence.test.mjs tests/elbow-velocity-control.test.mjs tests/player-charge-source.test.mjs
           node --check tests/native/elbow-probe.js
           node --test tests/accepted-hurt-native-trace.test.mjs
-          node --test tests/bottled-drink.test.mjs tests/food-phase-trace.test.mjs tests/freezer-result-height.test.mjs
+          node --test tests/bottled-drink.test.mjs tests/food-phase-trace.test.mjs tests/freezer-result-height.test.mjs tests/freezer-output.test.mjs
           node --check tests/native/freezer-tick-probe.js
           node --check tests/native/hurt-correlation-probe.js
           node --check tests/native/hurt-correlation-variants-probe.js
