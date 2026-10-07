@@ -11,6 +11,7 @@ import {FREEZER_RECIPES} from './freezer-recipes.js';
 import {LEGACY_FREEZER_RECIPES} from './legacy-freezer-recipes.js';
 import {extractFreezerOutput} from './freezer-output.js';
 import {fillFreezerMilk} from './freezer-milk.js';
+import {insertFreezerInput,extractFreezerInput} from './freezer-input.js';
 const savedFreezerRecipes=[...FREEZER_RECIPES,...LEGACY_FREEZER_RECIPES];
 import {RECORD_MODELS} from './wall-record-models.js';
 export const NS='kaleidoscope_world_liquor',KT='kaleidoscope_tavern',FACING=KT+':facing';
@@ -108,8 +109,14 @@ function freezer(p,b,s,h){
  }
  if(h?.typeId in liquids&&h.typeId!=='minecraft:milk_bucket'){if(s.fluid)return;s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,give:creative(p)?[]:[['minecraft:bucket',1]]});return;}
  if(h?.typeId==='minecraft:bucket'&&s.fluid){const filled=Object.keys(liquids).find(x=>liquids[x]===s.fluid);if(filled){s.fluid=null;transaction(p,b,s,{take:1,give:[[filled,1]]});}return;}
- if(h){if(!plain(h)||s.input.length>=4)return;s.input.push(h.typeId);transaction(p,b,s,{take:1});}
- else if(s.input.length){const id=s.input.pop();transaction(p,b,s,{give:[[id,1]]});}
+ if(h&&!plain(h))return;
+ const raw=world.getDynamicProperty(key(b)),options={createStack:(id,n)=>new ItemStack(id,n),commit:next=>save(b,next),restore:()=>world.setDynamicProperty(key(b),raw)};
+ const result=h?insertFreezerInput(p,s,options):extractFreezerInput(p,s,options);
+ if(h&&result.status!=='INSERTED')return;
+ // useWithoutItem plays remove even when input is empty. Audio/render errors
+ // are cosmetic and cannot reverse successfully settled machine contents.
+ try{b.dimension.playSound('kaleidoscope_world_liquor.java.freezer_input_'+(h?'add':'remove'),center(b),{volume:Math.fround(.8),pitch:Math.fround(1.1)});}catch(error){console.warn('[World Liquor freezer audio] '+error);}
+ if(result.state)try{syncFreezerVisuals(b,result.state,savedFreezerRecipes);}catch(error){console.warn('[World Liquor visuals] '+error);}
 }
 function freezerRedstone(event){
  if(event.block?.typeId!==NS+':freezer'||!Number.isFinite(event.powerLevel))return;

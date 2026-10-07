@@ -1533,7 +1533,7 @@
     },
     "runtime/RP/sounds/sound_definitions.json": {
       "before": "76aa7ecbb815840e0cb1f304a80f97b14b6f2bcf165d34bfeb4bb6a91d17fd3c",
-      "after": "9ae58942c2aa1f6a70dfb81622036faa85fc7b45b644e7526672e6c8be740277",
+      "after": "74039088db9acbc5eaeaf3c24d898e5d5863726d0ee8db9833c544567a105129",
       "reason": "Current Java use/combat source repair: cadence, cancellation, predicates, float operations and original feedback audio; full visual/physics goal remains open; reviewed original MC1.21.1 Player burp and LivingEntity eating completion events with selected publisher samples, original categories and16-block ranges. 0.1.94 adds original BLOCKS item pickup event for freezer extraction; existing events retained. 0.1.95 adds original bucket-empty event for explicit milk branch, preserves all earlier events.",
       "beforeGzipBase64": "H4sIAAAAAAACA+2a326CMBSH730K4jXB4Zz78yrL0jTtQRuhZW2ZM8Z3X4vK3KJxmUHPxbkwEE7rj9OvMeGT9SBJhoWxFffsA6xTRg9fkmGe5ZPsbpjGqjONlkxCobTyoe7CgHUohNKCl6CkccLUwJbGlpKV6r0xNlMCmAfOgPtueJgguIeZsauYUZd8BbbNaGttTvzy192VpJvX1jWvIM7bjhstluXoMCU9HOu8BV6F0QUvHfwoLUHN5vGm8u7qZnf21h436bnmhDEl22dLq/Sixx6PhF2x1XAjltVlU/Xe5++kKzZZNU4JJpUTmeVamqo9P9WrBWGsvIxp43xI2ebmJ1r1tjnfafq/zPElmfvV7Vag4p9xxTzXIqZOJ98VpQ8r+fSPRGoj5orVjZRKz1gBIHvceUfCbr75srBm8ceW3dE2vN02PMMmJzZo2YyJDVo298QGLZsJsUHL5oHYoGUzJTZo2TwSG7RsnogNWjbPxAbvsyeJAcRwyAwghkNqADEccgOI4ZAcQAyH7ABiOKQHEMMhP4AYDgkCxHDIECD+B5QMAWI4ZAgQwyFDgBgOGQLEcMgQIIZDhgAxHDIEiOGQIUAMhwwBYjhkCBC/h0uGADEcMgT9wRnEz2bwBVLj/zj+OAAA"
     },
@@ -1688,6 +1688,51 @@
       "before": null,
       "after": "713d54d7a1478163cabef813473f50b9ead6f41d1af4fb7ce3b41d8dd831f62d",
       "reason": "Source-backed0.1.95 milk tank/hand settlement or selected official publisher bucket-empty sample. No private gameplay builder/installation patch."
+    },
+    "runtime/BP/scripts/freezer-input.js": {
+      "before": null,
+      "after": "7457afc823aa0585ef88e646ca269c043e234246302d1b3da96783cc30282139",
+      "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
+    },
+    "runtime/RP/sounds/kwl/java21/entity/itemframe/add_item1.ogg": {
+      "before": null,
+      "after": "047c950cb8e0205e6fb6da8b84d19e078b62856697acc173aa6c926e75b044e0",
+      "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
+    },
+    "runtime/RP/sounds/kwl/java21/entity/itemframe/remove_item4.ogg": {
+      "before": null,
+      "after": "9bba0de4f6bed39bbb2b9c5ecc134bcd25876a18006a23a68faf66c8e4c27358",
+      "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
+    },
+    "runtime/RP/sounds/kwl/java21/entity/itemframe/remove_item2.ogg": {
+      "before": null,
+      "after": "acdf8a4812136ea960753036b764866fe1d8d690bb76ef21a768d424cb6b1e47",
+      "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
+    },
+    "runtime/RP/sounds/kwl/java21/entity/itemframe/remove_item3.ogg": {
+      "before": null,
+      "after": "81e88fcb46b1f960d3f2c93cb2a80a684324b4921a518e0a447687dee19836b7",
+      "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
+    },
+    "runtime/RP/sounds/kwl/java21/entity/itemframe/add_item4.ogg": {
+      "before": null,
+      "after": "2cd3e69f5c0341ee035181d2289455a01b4881a9b162d5b9750c30ba7d33e9b3",
+      "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
+    },
+    "runtime/RP/sounds/kwl/java21/entity/itemframe/add_item3.ogg": {
+      "before": null,
+      "after": "3937392b76bee53c17462976cb91a2aa6cc2d8a4af475cee3a4be36dfdfb61dd",
+      "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
+    },
+    "runtime/RP/sounds/kwl/java21/entity/itemframe/remove_item1.ogg": {
+      "before": null,
+      "after": "8dac5bc8df9d4157b32849f4d79f58daa78b3da52ff3976ad27f89d9595210be",
+      "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
+    },
+    "runtime/RP/sounds/kwl/java21/entity/itemframe/add_item2.ogg": {
+      "before": null,
+      "after": "b81d00daa43880eff6cf939c7eb892f90172ced89ba61f9229059cf4ab0f7966",
+      "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
     }
   },
   "reviewedFunctionalDeltaLayers": [
@@ -1899,6 +1944,28 @@
             ]
           ],
           "reason": "Current NeoForge1.1.11 FreezerBlock.useItemOn explicit milk fill/Creative/last-hand and ignored-addItem return semantics, original BLOCKS bucket-empty event. See0.1.95 source callback regressions and documented gaps."
+        }
+      }
+    },
+    {
+      "release": "0.1.96",
+      "files": {
+        "runtime/BP/scripts/furniture.js": {
+          "before": "39c77b8c3f91f72780ba0d9245778255a781dd82b55558aa3ea66bf196b6e1f9",
+          "after": "ac544bd0e6e1f95313278b0bfd40b4e6535732a4d2f991771d3732875f412f7a",
+          "reason": "Current CF9066406 input copy-before-unconditional Creative debit, LIFO extraction-before-unchecked addItem, original add/remove audio; compact metadata limitation retained.",
+          "reverseOps": [
+            [
+              13,
+              14,
+              ""
+            ],
+            [
+              111,
+              119,
+              " if(h){if(!plain(h)||s.input.length>=4)return;s.input.push(h.typeId);transaction(p,b,s,{take:1});}\n else if(s.input.length){const id=s.input.pop();transaction(p,b,s,{give:[[id,1]]});}\n"
+            ]
+          ]
         }
       }
     }
