@@ -39,7 +39,9 @@ export function applyEffect(p,effect,duration,amplifier=0){
 }
 function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntity,melee=isMeleeSource(e.damageSource);
  if(e.cancel===true||!isLivingCombatEntity(target))return;
- if(e.damageSource.cause==='fall'&&(active(target,'reverse_gravity')||active(target,'multi_jump'))){e.cancel=true;return;}
+ // Java reverse gravity's calculateFallDamage injection is Player-only;
+ // MultiJumpFallDamageMixin applies to every LivingEntity.
+ if(e.damageSource.cause==='fall'&&(target.typeId==='minecraft:player'&&active(target,'reverse_gravity')||active(target,'multi_jump'))){e.cancel=true;return;}
  const credited=killCredit.previous(target.id),double=credited&&active(credited,'double_damage');
  if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(e,credited,NS+'.java.critical',{volume:1,pitch:1.5});if(credited.typeId==='minecraft:player')criticalFeedback.queue(e,credited);}
  if(attacker){

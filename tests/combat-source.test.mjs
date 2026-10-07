@@ -51,3 +51,11 @@ test('respawn emits its source sound once before searching, including an unavail
  calls.length=0;available=true;vm.runInContext("applyEffect(actor,'kaleidoscope_world_liquor:respawn',1)",ctx);
  const sounds=calls.filter(c=>c[0]==='sound');assert.equal(sounds.length,2);assert.deepEqual(sounds[0][2],{x:30,y:40,z:50});assert.deepEqual(sounds[1][2],{x:1.5,y:10,z:2.5});assert.deepEqual(calls.find(c=>c[0]==='effect'),['effect','hunger',300]);
 });
+test('actual fall callback follows Player-only reverse gravity and LivingEntity multi-jump sources',()=>{
+ const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
+ const states=new Map(),ctx=vm.createContext({AcceptedHurtFeedback,CriticalFeedback:class{},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:e=>states.get(e)??{},world:{},system:{run(){}},EffectTypes:{},ItemStack:class{}});vm.runInContext(source,ctx);
+ for(const type of ['minecraft:player','minecraft:zombie'])for(const effect of ['reverse_gravity','multi_jump']){
+  const entity={id:type,typeId:type,getComponent:id=>id==='minecraft:health'?{currentValue:20,effectiveMax:20}:id==='minecraft:type_family'?{hasTypeFamily:family=>family==='mob'}:undefined};states.set(entity,{[effect]:{amplifier:0}});
+  const event={hurtEntity:entity,damage:4,damageSource:{cause:'fall'}};ctx.event=event;vm.runInContext('hurt(event)',ctx);assert.equal(event.cancel===true,type==='minecraft:player'||effect==='multi_jump',type+'/'+effect);
+ }
+});
