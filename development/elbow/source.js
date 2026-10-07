@@ -39,3 +39,18 @@ export function livingKnockback({velocity,ground,resistance,strength,direction})
   z:finite(velocity.z)/2-z/length*effective},applied:true};
 }
 export function attackerAfterKnockback(velocity){return {x:finite(velocity.x)*.6,y:finite(velocity.y),z:finite(velocity.z)*.6};}
+
+/** Full original two-call sequence for an explicitly proven fresh melee hurt.
+ * The .4F hurt constant is widened to double before LivingEntity.knockback.
+ * The caller supplies whether that source hurt branch actually executed, the
+ * fresh source-position direction, and the original velocity entering it.
+ * Do not infer these facts from Native afterHurt or applyDamage's return value.
+ */
+export function meleeKnockbackSequence({velocity,ground,resistance,baseHurtApplied,baseDirection,attackPlan}){
+ if(typeof ground!=='boolean'||typeof baseHurtApplied!=='boolean')throw Error('SOURCE_HURT_BRANCH_REQUIRED');
+ finite(resistance);if(resistance<0||resistance>1)throw Error('SOURCE_RESISTANCE_REQUIRED');
+ let next={x:finite(velocity.x),y:finite(velocity.y),z:finite(velocity.z)},baseApplied=false,extraApplied=false;
+ if(baseHurtApplied){const row=livingKnockback({velocity:next,ground,resistance,strength:f(.4),direction:baseDirection});next=row.velocity;baseApplied=row.applied;}
+ if(attackPlan){const row=livingKnockback({velocity:next,ground,resistance,strength:attackPlan.strength,direction:attackPlan.direction});next=row.velocity;extraApplied=row.applied;}
+ return {velocity:next,baseApplied,extraApplied,settleAttacker:!!attackPlan,clearSprint:attackPlan?.clearSprint===true};
+}

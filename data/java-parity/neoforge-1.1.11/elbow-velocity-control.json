@@ -1,0 +1,353 @@
+{
+  "schema": 1,
+  "source_world_liquor": "NeoForge1.21.1 / author1.1.11 / CF9066406",
+  "native_engine": "1.26.51.1",
+  "api": "@minecraft/server2.7.0",
+  "actual_ai_attacks": true,
+  "simulated_players": false,
+  "real_players": 0,
+  "client": false,
+  "production_adapter_installed": false,
+  "runtime_changed": false,
+  "controls": [
+    {
+      "case": "r0/air/control",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0.3999999761581421,
+        "y": 0.40000152587890625,
+        "x": 0
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r0/air/clear",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r05/air/clear",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r1/air/clear",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r0/air/teleport",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r05/air/teleport",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r1/air/teleport",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r0/air/clear_impulse",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0.7000000476837158,
+        "y": 0.0500030517578125,
+        "x": 0.19999998807907104
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r05/air/clear_impulse",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0.7000000476837158,
+        "y": 0.0500030517578125,
+        "x": 0.19999998807907104
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r1/air/clear_impulse",
+      "before_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "same_tick_velocity": {
+        "z": 0,
+        "y": 0.01000213623046875,
+        "x": 0
+      },
+      "next_tick_velocity": {
+        "z": 0.7000000476837158,
+        "y": 0.0500030517578125,
+        "x": 0.19999998807907104
+      },
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    }
+  ],
+  "source_sequence": [
+    {
+      "case": "r0/air/source",
+      "expected": {
+        "x": 0.024857983054414383,
+        "y": 0.029998779296875,
+        "z": 0.6985056482930918
+      },
+      "actual_next_tick": {
+        "z": 0.6985056400299072,
+        "y": 0.029998779296875,
+        "x": 0.02485796809196472
+      },
+      "maximum_absolute_error": 1.4962449661204413e-08,
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r05/air/source",
+      "expected": {
+        "x": 0.012887328628653976,
+        "y": 0.029998779296875,
+        "z": 0.3492143399359843
+      },
+      "actual_next_tick": {
+        "z": 0.3492143154144287,
+        "y": 0.029998779296875,
+        "x": 0.012887328863143921
+      },
+      "maximum_absolute_error": 2.4521555563872255e-08,
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r1/air/source",
+      "expected": {
+        "x": 0.0015069246292114258,
+        "y": 0.029998779296875,
+        "z": 0
+      },
+      "actual_next_tick": {
+        "z": 0,
+        "y": 0.029998779296875,
+        "x": 0.0015069246292114258
+      },
+      "maximum_absolute_error": 0.0,
+      "ground_before": false,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r0/ground/source",
+      "expected": {
+        "x": 0.0088020075115236,
+        "y": 0.4,
+        "z": 0.6998062207636688
+      },
+      "actual_next_tick": {
+        "z": 0.6998062133789062,
+        "y": 0.40000152587890625,
+        "x": 0.008802004158496857
+      },
+      "maximum_absolute_error": 1.5258789062277955e-06,
+      "ground_before": true,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r05/ground/source",
+      "expected": {
+        "x": 0.0044010037557618,
+        "y": 0.3500000014901161,
+        "z": 0.3499031103818344
+      },
+      "actual_next_tick": {
+        "z": 0.3499031066894531,
+        "y": 0.34999847412109375,
+        "x": 0.00440099835395813
+      },
+      "maximum_absolute_error": 1.5273690223693848e-06,
+      "ground_before": true,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    },
+    {
+      "case": "r1/ground/source",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "actual_next_tick": {
+        "z": 0,
+        "y": 0,
+        "x": 0
+      },
+      "maximum_absolute_error": 0,
+      "ground_before": true,
+      "before_hurt": 1,
+      "accepted_hurt": 1,
+      "melee_hit": 1
+    }
+  ],
+  "scope": "Buffered Native velocity control and explicitly provided source two-call state only; not current production Elbow or complete Player/cross-addon fidelity",
+  "remaining": [
+    "Actual source attributes, enchantment hooks and target resistance",
+    "Player attack charge and sprint clearing",
+    "Batched attack/accepted-hit correlation and cooldown base-hurt flags",
+    "Foreign queued-impulse ordering and event mutation",
+    "Real Player/PvP movement packets and client acceptance"
+  ],
+  "player_swing_signal_available": true
+}
