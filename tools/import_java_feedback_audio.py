@@ -11,7 +11,7 @@ from pathlib import Path
 import urllib.request
 
 ROOT=Path(__file__).resolve().parents[1]
-EVENTS={'critical':'entity.player.attack.crit','respawn':'item.chorus_fruit.teleport','crazy':'block.beacon.activate','burp':'entity.player.burp','eating':'entity.generic.eat','freezer_pickup':'entity.item.pickup','freezer_bucket_empty':'item.bucket.empty'}
+EVENTS={'critical':'entity.player.attack.crit','respawn':'item.chorus_fruit.teleport','crazy':'block.beacon.activate','burp':'entity.player.burp','eating':'entity.generic.eat','freezer_pickup':'entity.item.pickup','freezer_bucket_empty':'item.bucket.empty','freezer_input_add':'entity.item_frame.add_item','freezer_input_remove':'entity.item_frame.remove_item'}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--reference',type=Path,required=True);p.add_argument('--events',nargs='+',choices=EVENTS,default=list(EVENTS));args=p.parse_args()
@@ -39,7 +39,7 @@ def main():
             path=target/(relative+'.ogg');path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
             entries.append({**row,'name':relative,'stream':False})
             files.append({'author_asset':asset,'publisher_sha1':ref['hash'],'url':url,'output':relative+'.ogg'})
-        category='neutral' if alias=='eating' else 'block' if alias in {'freezer_pickup','freezer_bucket_empty'} else 'player'
+        category='neutral' if alias=='eating' else 'block' if alias.startswith('freezer_') else 'player'
         definitions['sound_definitions']['kaleidoscope_world_liquor.java.'+alias]={'category':category,'sounds':entries,'max_distance':16}
         source['events'][alias]={'event':event,'original':sounds[event],'files':files}
     (target/'sounds/sound_definitions.json').write_text(json.dumps(definitions,indent=2)+'\n')

@@ -707,6 +707,50 @@
         }
       ],
       "max_distance": 16
+    },
+    "kaleidoscope_world_liquor.java.freezer_input_add": {
+      "category": "block",
+      "sounds": [
+        {
+          "name": "sounds/kwl/java21/entity/itemframe/add_item1",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/entity/itemframe/add_item2",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/entity/itemframe/add_item3",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/entity/itemframe/add_item4",
+          "stream": false
+        }
+      ],
+      "max_distance": 16
+    },
+    "kaleidoscope_world_liquor.java.freezer_input_remove": {
+      "category": "block",
+      "sounds": [
+        {
+          "name": "sounds/kwl/java21/entity/itemframe/remove_item1",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/entity/itemframe/remove_item2",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/entity/itemframe/remove_item3",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/entity/itemframe/remove_item4",
+          "stream": false
+        }
+      ],
+      "max_distance": 16
     }
   }
 }
