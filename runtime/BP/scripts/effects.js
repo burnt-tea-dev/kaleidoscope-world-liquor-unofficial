@@ -7,6 +7,7 @@ import {CriticalFeedback} from './critical-feedback.js';
 import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
 import {freezeWater} from './frost-water.js';
 import {addTreasureBlockDrops} from './treasure-block.js';
+import {selectCrazyEffects} from './crazy-source.js';
 /** World Liquor effect rules, with current Java 1.1.11 repairs.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
@@ -33,7 +34,7 @@ export function applyEffect(p,effect,duration,amplifier=0){
  case 'explosion':p.dimension.createExplosion(p.location,3+amplifier,{breaksBlocks:world.gameRules.tntExplodes!==false,causesFire:false,source:p});return;
  case 'level_boost':if(p.typeId==='minecraft:player')p.addLevels(3+amplifier*3);return;
  case 'respawn':if(p.typeId==='minecraft:player')safeRespawn(p);return;
- case 'crazy':for(const type of EffectTypes.getAll())try{p.addEffect(type,200,{amplifier,showParticles:false});}catch{}play(p,NS+'.java.crazy',{volume:1,pitch:1.5});return;
+ case 'crazy':for(const {type} of selectCrazyEffects(EffectTypes.getAll()).effects)try{p.addEffect(type,200,{amplifier,showParticles:false});}catch{}play(p,NS+'.java.crazy',{volume:1,pitch:1.5});return;
  }
  system.sendScriptEvent('kaleidoscope_tavern:effect_apply',JSON.stringify({entity:p.id,effect,duration,amplifier}));
 }
