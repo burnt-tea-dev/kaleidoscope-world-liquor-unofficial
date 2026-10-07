@@ -18,7 +18,17 @@ def read(p):return json.loads(p.read_text())
 def readjs(p):
  if p.name=='payload.js':
   review=read(ROOT/'data/current-mixology-review.json');assert review['test_only']
-  assert hashlib.sha256(p.read_bytes()).hexdigest()==review['after']
+  data=p.read_bytes()
+  if 'after_payload_version' in review:
+   current=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))['version']
+   assert current==read(ROOT/'package.json')['version']
+   assert current=='.'.join(map(str,read(ROOT/'baseline.json')['version']))
+   # Only the explicitly source-reviewed version field can differ.
+   expected=('\"version\": '+json.dumps(current)).encode()
+   replacement=('\"version\": '+json.dumps(review['after_payload_version'])).encode()
+   assert data.count(expected)==1
+   data=data.replace(expected,replacement,1)
+  assert hashlib.sha256(data).hexdigest()==review['after']
   original=(ROOT/review['previous_payload']).read_bytes();assert hashlib.sha256(original).hexdigest()==review['before']
   return json.loads(original.decode().split('=',1)[1].strip().rstrip(';'))
  return json.loads(previous_bytes(ROOT,p).decode().split('=',1)[1].strip().rstrip(';'))
