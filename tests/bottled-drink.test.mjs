@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {completeBottledDrink,giveGlassBottle,burpPitch,eatingPitch,bottledCompletionAudio} from '../runtime/BP/scripts/bottled-drink.js';
 import {payload} from '../runtime/BP/scripts/payload.js';
+import {traceFoodPhase} from '../runtime/BP/scripts/food-phase-trace.js';
 class Stack{
  constructor(typeId,amount=1,nameTag=''){this.typeId=typeId;this.amount=amount;this.nameTag=nameTag;this.maxAmount=typeId==='minecraft:glass_bottle'?64:16;}
  clone(){return new Stack(this.typeId,this.amount,this.nameTag);}
@@ -36,7 +37,7 @@ test('second sound keeps the original world but observes fresh coordinates; cosm
 });
 test('registered completed-use callback dispatches original effects before all inventory writes',()=>{
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/main.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
- let startup;const registered=new Map(),context=vm.createContext({completeBottledDrink,ItemStack:Stack,NS:'kaleidoscope_world_liquor',registerFurniture(){},system:{beforeEvents:{startup:{subscribe:fn=>startup=fn}}},world:{afterEvents:{worldLoad:{subscribe(){}}}}});vm.runInContext(source,context);
+ let startup;const registered=new Map(),context=vm.createContext({completeBottledDrink,traceFoodPhase,ItemStack:Stack,NS:'kaleidoscope_world_liquor',registerFurniture(){},system:{beforeEvents:{startup:{subscribe:fn=>startup=fn}}},world:{afterEvents:{worldLoad:{subscribe(){}}}}});vm.runInContext(source,context);
  startup({itemComponentRegistry:{registerCustomComponent:(id,handlers)=>registered.set(id,handlers)}});
  for(const [id,expected]of [['cola',['haste','speed']],['tonic_water',['regeneration']]]){
   const f=fixture(id);registered.get('kaleidoscope_world_liquor:consume').onCompleteUse(f.event);
