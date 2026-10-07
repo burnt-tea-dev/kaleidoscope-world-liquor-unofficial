@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "test_only": true,
+  "production_adapter_installed": false,
+  "client": false,
+  "simulated_players": false,
+  "script": "tests/native/elbow-velocity-control.js",
+  "api": "@minecraft/server 2.7.0",
+  "entity_templates": [
+    {"source": "tests/native/elbow-probe-actor.json", "identifier": "senluo_elbow_qa:actor"},
+    {"source": "tests/native/elbow-probe-target.json", "identifier": "senluo_elbow_qa:r0", "knockback_resistance": 0},
+    {"source": "tests/native/elbow-probe-target.json", "identifier": "senluo_elbow_qa:r05", "knockback_resistance": 0.5},
+    {"source": "tests/native/elbow-probe-target.json", "identifier": "senluo_elbow_qa:r1", "knockback_resistance": 1}
+  ],
+  "expected_cases": 10
+}

@@ -20,4 +20,42 @@ The public `data/java-parity/neoforge-1.1.11/elbow-knockback-capabilities.json` 
 
 Production wiring remains unimplemented. Source attack attributes, enchantments, Player charge and target resistance are not exposed by the sampled stable API. The buffered base operation is not visible at the callbacks, arbitrary initial velocity and operation order are not covered by these zero-XZ cases, and Player/client behavior was not observed. Numeric source regressions and this Native evidence do not justify applying a second fixed kick or publishing a version that claims elbow is repaired.
 
-Later execution results belong to their distinct output directories. Exported runtime remains unchanged at package0.1.84; this source-only work changes no package identity and performs no runtime deployment or client acceptance. Full source damage ordering, exact native force composition and dot's player/client validation remain required before a production wiring decision.
+Later execution results belong to their distinct output directories. Exported runtime remains unchanged at package0.1.89; this source-only work changes no package identity and performs no runtime deployment or client acceptance. Full source damage ordering, exact native force composition and dot's player/client validation remain required before a production wiring decision.
+
+## Queued velocity replacement, 2026-10-08
+
+Ten new real AI melee cases isolate the pending Native operation. The untouched
+air control receives the prior source-independent Native0.4 vertical kick.
+`clearVelocity` in matching afterHurt clears the pending base kick for resistance
+0/.5/1 even though the same-tick getter still exposes the old velocity. Clearing
+then applying one explicit impulse replaces the pending vector with that vector;
+it is not resistance-aware by itself. A same-position teleport also clears it,
+but it is not chosen as a movement implementation.
+
+`native-motion.js` therefore provides an explicit final-vector writer using
+clearVelocity plus applyImpulse. It does not infer source state or subscribe to
+gameplay. `meleeKnockbackSequence` composes the original hurt base call followed
+by the attack-attribute call. Official1.21.1 bytecode widens the float0.4 constant
+to double0.4000000059604645 at the hurt call; the source helper preserves that.
+Grounded vertical clamping and horizontal halving happen separately in each
+call. Full resistance leaves target momentum unchanged while a positive attack
+branch still settles attacker velocity/sprint.
+
+Six further actual AI cases provide explicit source resistance and a fresh
+first-hit base branch, calculate from actual entry motion/positions/yaw, then
+write the composed vector. Three resistance values and actual ground/air states
+match the original source calculation within Native component precision
+(maximum absolute component error about1.53e-6). The accepted callback, melee
+hit and before-hurt counts are each1. This does not prove Java double precision
+inside Bedrock or real Player physics. API2.7 exposes a subscribable
+playerSwingStart signal in the native observation, but no players were used.
+
+Evidence is the sanitized `elbow-velocity-control.json`; native world/engine
+inventories, paths, absolute ticks and raw logs are kept out of the public file.
+The observed method clears pending operations, so production must preserve
+other addon impulses and use exact source event ordering rather than wiping
+unknown queued motion. Reading the current getter is still insufficient.
+Actual source attributes/enchantment hooks/resistance, base-hurt cooldown
+branch, Player charge/sprint reset, batched event correlation and movement
+packets remain required. No production Elbow force adapter or complete
+player/client fidelity is claimed by these observations.
