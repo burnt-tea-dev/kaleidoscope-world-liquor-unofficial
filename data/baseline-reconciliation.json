@@ -1533,8 +1533,8 @@
     },
     "runtime/RP/sounds/sound_definitions.json": {
       "before": "76aa7ecbb815840e0cb1f304a80f97b14b6f2bcf165d34bfeb4bb6a91d17fd3c",
-      "after": "e1f1697a926b6045bf798549c32071d4222229cbc080f4ae912534c678d655ad",
-      "reason": "Current Java use/combat source repair: cadence, cancellation, predicates, float operations and original feedback audio; full visual/physics goal remains open; reviewed original MC1.21.1 Player burp and LivingEntity eating completion events with selected publisher samples, original categories and16-block ranges. 0.1.94 adds original BLOCKS item pickup event for freezer extraction; existing events retained.",
+      "after": "9ae58942c2aa1f6a70dfb81622036faa85fc7b45b644e7526672e6c8be740277",
+      "reason": "Current Java use/combat source repair: cadence, cancellation, predicates, float operations and original feedback audio; full visual/physics goal remains open; reviewed original MC1.21.1 Player burp and LivingEntity eating completion events with selected publisher samples, original categories and16-block ranges. 0.1.94 adds original BLOCKS item pickup event for freezer extraction; existing events retained. 0.1.95 adds original bucket-empty event for explicit milk branch, preserves all earlier events.",
       "beforeGzipBase64": "H4sIAAAAAAACA+2a326CMBSH730K4jXB4Zz78yrL0jTtQRuhZW2ZM8Z3X4vK3KJxmUHPxbkwEE7rj9OvMeGT9SBJhoWxFffsA6xTRg9fkmGe5ZPsbpjGqjONlkxCobTyoe7CgHUohNKCl6CkccLUwJbGlpKV6r0xNlMCmAfOgPtueJgguIeZsauYUZd8BbbNaGttTvzy192VpJvX1jWvIM7bjhstluXoMCU9HOu8BV6F0QUvHfwoLUHN5vGm8u7qZnf21h436bnmhDEl22dLq/Sixx6PhF2x1XAjltVlU/Xe5++kKzZZNU4JJpUTmeVamqo9P9WrBWGsvIxp43xI2ebmJ1r1tjnfafq/zPElmfvV7Vag4p9xxTzXIqZOJ98VpQ8r+fSPRGoj5orVjZRKz1gBIHvceUfCbr75srBm8ceW3dE2vN02PMMmJzZo2YyJDVo298QGLZsJsUHL5oHYoGUzJTZo2TwSG7RsnogNWjbPxAbvsyeJAcRwyAwghkNqADEccgOI4ZAcQAyH7ABiOKQHEMMhP4AYDgkCxHDIECD+B5QMAWI4ZAgQwyFDgBgOGQLEcMgQIIZDhgAxHDIEiOGQIUAMhwwBYjhkCBC/h0uGADEcMgT9wRnEz2bwBVLj/zj+OAAA"
     },
     "runtime/BP/scripts/kill-credit.js": {
@@ -1668,6 +1668,26 @@
       "before": null,
       "after": "5e3baf518a0104760dc06a2e0088b377433997b46511c1730db0e3ba6f2b0ca7",
       "reason": "Source-backed0.1.94 freezer output/inventory settlement, or selected original publisher sound asset. No private builder or installation transform."
+    },
+    "runtime/BP/scripts/freezer-milk.js": {
+      "before": null,
+      "after": "15e3ffdd5c7f51ef8d5256a8a61e69c639187683c8da2bbb4c48200e84cf739e",
+      "reason": "Source-backed0.1.95 milk tank/hand settlement or selected official publisher bucket-empty sample. No private gameplay builder/installation patch."
+    },
+    "runtime/RP/sounds/kwl/java21/item/bucket/empty1.ogg": {
+      "before": null,
+      "after": "cc8edd6bf685ab466cdb19aacfedc84914aac83f043db7d5d7308aa3c28ef138",
+      "reason": "Source-backed0.1.95 milk tank/hand settlement or selected official publisher bucket-empty sample. No private gameplay builder/installation patch."
+    },
+    "runtime/RP/sounds/kwl/java21/item/bucket/empty2.ogg": {
+      "before": null,
+      "after": "f1faefdf9ceab385a441ae3993f12f7b3feb3b995c6d148d56616fbabdfab67f",
+      "reason": "Source-backed0.1.95 milk tank/hand settlement or selected official publisher bucket-empty sample. No private gameplay builder/installation patch."
+    },
+    "runtime/RP/sounds/kwl/java21/item/bucket/empty3.ogg": {
+      "before": null,
+      "after": "713d54d7a1478163cabef813473f50b9ead6f41d1af4fb7ce3b41d8dd831f62d",
+      "reason": "Source-backed0.1.95 milk tank/hand settlement or selected official publisher bucket-empty sample. No private gameplay builder/installation patch."
     }
   },
   "reviewedFunctionalDeltaLayers": [
@@ -1840,6 +1860,45 @@
             ]
           ],
           "reason": "Current NeoForge1.1.11 FreezerBlockEntity.extractOutput hand/Creative/inventory/source order; original one-shot block pickup audio; Adventure use; shared existing bottled Inventory.add ordering. See0.1.94 release notes and actual callback regressions."
+        }
+      }
+    },
+    {
+      "release": "0.1.95",
+      "files": {
+        "runtime/BP/scripts/furniture.js": {
+          "before": "eb7697a1248f19fb5929bcf2a01aca514e3d3b366582e6f9c32f7a826114648c",
+          "after": "39c77b8c3f91f72780ba0d9245778255a781dd82b55558aa3ea66bf196b6e1f9",
+          "reverseOps": [
+            [
+              12,
+              13,
+              ""
+            ],
+            [
+              99,
+              109,
+              " if(h?.typeId in liquids){if(s.fluid)return;s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,give:creative(p)?[]:[['minecraft:bucket',1]]});return;}\n"
+            ]
+          ],
+          "reason": "Current NeoForge1.1.11 FreezerBlock.useItemOn explicit milk fill/Creative/last-hand and ignored-addItem return semantics, original BLOCKS bucket-empty event. See0.1.95 source callback regressions and documented gaps."
+        },
+        "runtime/BP/scripts/java-player-inventory.js": {
+          "before": "bcfc2a21ffba69a347e500479387f1c5215ca9264f4de0eee4895c2e8bf2fe55",
+          "after": "fdc60521400491c25bb499434c24e7cd0df28ad442564e5c848ec9a5d0fb5cfd",
+          "reverseOps": [
+            [
+              3,
+              4,
+              "export function giveJavaInventoryItem(player,item,{writeInventory,writeEquipment,recordDrop}={}){\n"
+            ],
+            [
+              19,
+              20,
+              ""
+            ]
+          ],
+          "reason": "Current NeoForge1.1.11 FreezerBlock.useItemOn explicit milk fill/Creative/last-hand and ignored-addItem return semantics, original BLOCKS bucket-empty event. See0.1.95 source callback regressions and documented gaps."
         }
       }
     }

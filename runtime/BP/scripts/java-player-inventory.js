@@ -1,7 +1,7 @@
 /** Single-item Java Inventory.add ordering shared by bottle and freezer output.
  * Hooks journal actual writes, not a planned parallel inventory implementation.
  */
-export function giveJavaInventoryItem(player,item,{writeInventory,writeEquipment,recordDrop}={}){
+export function giveJavaInventoryItem(player,item,{writeInventory,writeEquipment,recordDrop,allowDrop=true}={}){
  if(item.amount!==1)throw Error('EXPECTED_SINGLE_INVENTORY_ITEM');
  const inventory=player.getComponent('minecraft:inventory').container;
  const write=(slot,before,after)=>writeInventory?writeInventory(inventory,slot,before,after):inventory.setItem(slot,after);
@@ -17,6 +17,7 @@ export function giveJavaInventoryItem(player,item,{writeInventory,writeEquipment
  }
  for(let slot=0;slot<inventory.size;slot++)if(merge(slot))return 'INVENTORY';
  for(let slot=0;slot<inventory.size;slot++)if(!inventory.getItem(slot)){write(slot,undefined,item);return 'INVENTORY';}
+ if(!allowDrop)return 'UNINSERTED';
  // Item count is preserved; exact Player.drop(false) physics/eye position,
  // thrower, packet and pickup delay remain explicit platform gaps.
  const entity=player.dimension.spawnItem(item,player.location);

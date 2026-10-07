@@ -154,6 +154,47 @@
           "output": "sounds/kwl/java21/random/pop.ogg"
         }
       ]
+    },
+    "freezer_bucket_empty": {
+      "event": "item.bucket.empty",
+      "original": {
+        "sounds": [
+          "item/bucket/empty1",
+          {
+            "name": "item/bucket/empty1",
+            "pitch": 0.9
+          },
+          "item/bucket/empty2",
+          "item/bucket/empty3"
+        ],
+        "subtitle": "subtitles.item.bucket.empty"
+      },
+      "files": [
+        {
+          "author_asset": "minecraft/sounds/item/bucket/empty1.ogg",
+          "publisher_sha1": "27987b7065ef4a27106246f9d32382a0514f87b2",
+          "url": "https://resources.download.minecraft.net/27/27987b7065ef4a27106246f9d32382a0514f87b2",
+          "output": "sounds/kwl/java21/item/bucket/empty1.ogg"
+        },
+        {
+          "author_asset": "minecraft/sounds/item/bucket/empty1.ogg",
+          "publisher_sha1": "27987b7065ef4a27106246f9d32382a0514f87b2",
+          "url": "https://resources.download.minecraft.net/27/27987b7065ef4a27106246f9d32382a0514f87b2",
+          "output": "sounds/kwl/java21/item/bucket/empty1.ogg"
+        },
+        {
+          "author_asset": "minecraft/sounds/item/bucket/empty2.ogg",
+          "publisher_sha1": "a796e8907874e6ae174c30da28ff000f1cf566c3",
+          "url": "https://resources.download.minecraft.net/a7/a796e8907874e6ae174c30da28ff000f1cf566c3",
+          "output": "sounds/kwl/java21/item/bucket/empty2.ogg"
+        },
+        {
+          "author_asset": "minecraft/sounds/item/bucket/empty3.ogg",
+          "publisher_sha1": "8dec8307dff359b0279e3e49798692309204d55e",
+          "url": "https://resources.download.minecraft.net/8d/8dec8307dff359b0279e3e49798692309204d55e",
+          "output": "sounds/kwl/java21/item/bucket/empty3.ogg"
+        }
+      ]
     }
   },
   "scope": "Selected original feedback samples and event entries; client mixing/attenuation remains separate evidence."

@@ -27,3 +27,7 @@ test('wrong bowl shows a localized item before the original pickup event and ret
  const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));const p=player(d),calls=[];p.isSneaking=false;p.onScreenDisplay.setActionBar=row=>calls.push(['message',row]);d.playSound=(...args)=>calls.push(['sound',...args]);world.setDynamicProperty(key,JSON.stringify({input:[],fluid:null,remaining:0,output:1,recipe:N+':freezer/pochi_pudding'}));
  furniture.onPlayerInteract({block:b,player:p});assert.equal(JSON.parse(world.getDynamicProperty(key)).output,1);assert.equal(calls[0][0],'message');assert.equal(calls[0][1].with.rawtext[0].translate,'item.bowl.name');assert.deepEqual(calls[1],['sound','kaleidoscope_world_liquor.java.freezer_pickup',{x:.5,y:.5,z:.5},{volume:1,pitch:1}]);
 });
+for(const mode of ['survival','adventure','creative'])test(mode+' real milk callback preserves source bucket hand and audio',()=>{
+ const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));const p=player(d,mode);p.isSneaking=false;p.inv.setItem(0,new ItemStack('minecraft:milk_bucket'));world.setDynamicProperty(key,JSON.stringify({input:[],fluid:null,remaining:0,output:0}));
+ furniture.onPlayerInteract({block:b,player:p});assert.equal(JSON.parse(world.getDynamicProperty(key)).fluid,N+':milk_still');assert.equal(p.inv.getItem(0).typeId,mode==='creative'?'minecraft:milk_bucket':'minecraft:bucket');assert.equal(p.inv.getItem(1),undefined);assert.equal(d.sounds.at(-1),'kaleidoscope_world_liquor.java.freezer_bucket_empty');
+});

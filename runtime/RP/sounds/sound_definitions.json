@@ -684,6 +684,29 @@
         }
       ],
       "max_distance": 16
+    },
+    "kaleidoscope_world_liquor.java.freezer_bucket_empty": {
+      "category": "block",
+      "sounds": [
+        {
+          "name": "sounds/kwl/java21/item/bucket/empty1",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/item/bucket/empty1",
+          "pitch": 0.9,
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/item/bucket/empty2",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/item/bucket/empty3",
+          "stream": false
+        }
+      ],
+      "max_distance": 16
     }
   }
 }
