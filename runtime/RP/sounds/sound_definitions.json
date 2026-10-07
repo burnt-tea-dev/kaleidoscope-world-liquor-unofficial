@@ -646,6 +646,34 @@
         }
       ],
       "max_distance": 16
+    },
+    "kaleidoscope_world_liquor.java.burp": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/kwl/java21/random/burp",
+          "stream": false
+        }
+      ],
+      "max_distance": 16
+    },
+    "kaleidoscope_world_liquor.java.eating": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/kwl/java21/random/eat1",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/random/eat2",
+          "stream": false
+        },
+        {
+          "name": "sounds/kwl/java21/random/eat3",
+          "stream": false
+        }
+      ],
+      "max_distance": 16
     }
   }
 }

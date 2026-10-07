@@ -1533,8 +1533,8 @@
     },
     "runtime/RP/sounds/sound_definitions.json": {
       "before": "76aa7ecbb815840e0cb1f304a80f97b14b6f2bcf165d34bfeb4bb6a91d17fd3c",
-      "after": "afb2b914329966cc4c751b26df4dafffde694d8aa22f270ee5256e8cdc775ade",
-      "reason": "Current Java use/combat source repair: cadence, cancellation, predicates, float operations and original feedback audio; full visual/physics goal remains open",
+      "after": "09e5c112eee36511c853ac27cf712979404fae5f6a8ae13be777c64351d58e65",
+      "reason": "Current Java use/combat source repair: cadence, cancellation, predicates, float operations and original feedback audio; full visual/physics goal remains open; reviewed original MC1.21.1 Player burp and LivingEntity eating completion events with selected publisher samples, original categories and16-block ranges.",
       "beforeGzipBase64": "H4sIAAAAAAACA+2a326CMBSH730K4jXB4Zz78yrL0jTtQRuhZW2ZM8Z3X4vK3KJxmUHPxbkwEE7rj9OvMeGT9SBJhoWxFffsA6xTRg9fkmGe5ZPsbpjGqjONlkxCobTyoe7CgHUohNKCl6CkccLUwJbGlpKV6r0xNlMCmAfOgPtueJgguIeZsauYUZd8BbbNaGttTvzy192VpJvX1jWvIM7bjhstluXoMCU9HOu8BV6F0QUvHfwoLUHN5vGm8u7qZnf21h436bnmhDEl22dLq/Sixx6PhF2x1XAjltVlU/Xe5++kKzZZNU4JJpUTmeVamqo9P9WrBWGsvIxp43xI2ebmJ1r1tjnfafq/zPElmfvV7Vag4p9xxTzXIqZOJ98VpQ8r+fSPRGoj5orVjZRKz1gBIHvceUfCbr75srBm8ceW3dE2vN02PMMmJzZo2YyJDVo298QGLZsJsUHL5oHYoGUzJTZo2TwSG7RsnogNWjbPxAbvsyeJAcRwyAwghkNqADEccgOI4ZAcQAyH7ABiOKQHEMMhP4AYDgkCxHDIECD+B5QMAWI4ZAgQwyFDgBgOGQLEcMgQIIZDhgAxHDIEiOGQIUAMhwwBYjhkCBC/h0uGADEcMgT9wRnEz2bwBVLj/zj+OAAA"
     },
     "runtime/BP/scripts/kill-credit.js": {
@@ -1598,6 +1598,26 @@
       "beforeGzipBase64": "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",
       "after": "d57c08c8ccc3ea36ddaa9acfcf3f43ef5abd7ea9c1ec74c69c013340db233936",
       "reason": "Living external effect routing, additive fresh-recipient SDK, source float heal and synced release identity; see World Liquor docs/LIVING-EFFECTS-0.1.81.md."
+    },
+    "runtime/RP/sounds/kwl/java21/random/eat2.ogg": {
+      "before": null,
+      "after": "71a4b8035a72e7c881219b6419bb7de66ffd128c10743448fc1c69cdfb3b8a35",
+      "reason": "Selected original MC1.21.1 completion audio; publisher index and source event preserved in data/java-feedback-audio.json; no synthesized replacement."
+    },
+    "runtime/RP/sounds/kwl/java21/random/eat3.ogg": {
+      "before": null,
+      "after": "3c6f012d2ceb63062d2705c4892a53970ed504c20b08d82e113fa876e734c5f0",
+      "reason": "Selected original MC1.21.1 completion audio; publisher index and source event preserved in data/java-feedback-audio.json; no synthesized replacement."
+    },
+    "runtime/RP/sounds/kwl/java21/random/eat1.ogg": {
+      "before": null,
+      "after": "b2c679f3a7c177a94134cbaa11dfe08ddefee439c1cffc448d7621f3e4229e82",
+      "reason": "Selected original MC1.21.1 completion audio; publisher index and source event preserved in data/java-feedback-audio.json; no synthesized replacement."
+    },
+    "runtime/RP/sounds/kwl/java21/random/burp.ogg": {
+      "before": null,
+      "after": "e49f343cf4289dc1c25f9932075a6b07a89bb13c885fea4ebc2634f43ba35c8d",
+      "reason": "Selected original MC1.21.1 completion audio; publisher index and source event preserved in data/java-feedback-audio.json; no synthesized replacement."
     }
   }
 }

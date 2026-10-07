@@ -11,17 +11,21 @@ from pathlib import Path
 import urllib.request
 
 ROOT=Path(__file__).resolve().parents[1]
-EVENTS={'critical':'entity.player.attack.crit','respawn':'item.chorus_fruit.teleport','crazy':'block.beacon.activate'}
+EVENTS={'critical':'entity.player.attack.crit','respawn':'item.chorus_fruit.teleport','crazy':'block.beacon.activate','burp':'entity.player.burp','eating':'entity.generic.eat'}
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--reference',type=Path,required=True);args=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--reference',type=Path,required=True);p.add_argument('--events',nargs='+',choices=EVENTS,default=list(EVENTS));args=p.parse_args()
     metadata=json.loads((args.reference/'minecraft-1.21.1-metadata.json').read_text())
     assert metadata['id']=='1.21.1'
     index=json.loads((args.reference/'minecraft-1.21.1-assets.json').read_text())['objects']
     sounds=json.loads((args.reference/'minecraft-1.21.1-sounds.json').read_text())
     target=ROOT/'runtime/RP';definitions=json.loads((target/'sounds/sound_definitions.json').read_text())
     source={'minecraft':'1.21.1','metadata_origin':'https://piston-meta.mojang.com/mc/game/version_manifest_v2.json','asset_index':metadata['assetIndex'],'events':{},'scope':'Selected original feedback samples and event entries; client mixing/attenuation remains separate evidence.'}
-    for alias,event in EVENTS.items():
+    existing=ROOT/'data/java-feedback-audio.json'
+    if existing.exists():
+        previous=json.loads(existing.read_text());assert previous['minecraft']=='1.21.1' and previous['asset_index']==metadata['assetIndex'];source['events']=previous['events']
+    for alias in args.events:
+        event=EVENTS[alias]
         entries=[];files=[]
         for entry in sounds[event]['sounds']:
             row={'name':entry} if isinstance(entry,str) else entry
@@ -33,7 +37,7 @@ def main():
             path=target/(relative+'.ogg');path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
             entries.append({**row,'name':relative,'stream':False})
             files.append({'author_asset':asset,'publisher_sha1':ref['hash'],'url':url,'output':relative+'.ogg'})
-        definitions['sound_definitions']['kaleidoscope_world_liquor.java.'+alias]={'category':'player','sounds':entries,'max_distance':16}
+        definitions['sound_definitions']['kaleidoscope_world_liquor.java.'+alias]={'category':'neutral' if alias=='eating' else 'player','sounds':entries,'max_distance':16}
         source['events'][alias]={'event':event,'original':sounds[event],'files':files}
     (target/'sounds/sound_definitions.json').write_text(json.dumps(definitions,indent=2)+'\n')
     (ROOT/'data/java-feedback-audio.json').write_text(json.dumps(source,indent=2)+'\n')
