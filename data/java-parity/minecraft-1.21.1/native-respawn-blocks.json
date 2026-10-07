@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "scope": "Native block projection and source stand-up numerical capability only",
+  "engine": "Bedrock Dedicated Server 1.26.51.1",
+  "scriptApi": "@minecraft/server 2.7.0",
+  "freshIsolatedWorld": true,
+  "testOnlyOverlay": true,
+  "sourceModulesUnchanged": true,
+  "normalExit": true,
+  "errors": [],
+  "cases": [
+    {
+      "kind": "case",
+      "name": "stone",
+      "nativeId": "minecraft:stone",
+      "nativeStates": {
+        "stone_type": "stone"
+      },
+      "sourceId": "minecraft:stone",
+      "boxes": [
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "upperFace": true,
+      "ok": true
+    },
+    {
+      "kind": "case",
+      "name": "soul_sand",
+      "nativeId": "minecraft:soul_sand",
+      "sourceId": "minecraft:soul_sand",
+      "boxes": [
+        [
+          0,
+          0,
+          0,
+          1,
+          0.875,
+          1
+        ]
+      ],
+      "upperFace": false,
+      "ok": true
+    },
+    {
+      "kind": "case",
+      "name": "nether_anchor_source_selection",
+      "nativeId": "minecraft:respawn_anchor",
+      "nativeStates": {
+        "respawn_anchor_charge": 2
+      },
+      "charges": 2,
+      "selected": {
+        "x": 10.5,
+        "y": 64,
+        "z": 9.5
+      },
+      "yaw": -4.9415598368796054e-06,
+      "ok": true
+    },
+    {
+      "kind": "case",
+      "name": "native_bed_source_properties",
+      "nativeId": "minecraft:bed",
+      "nativeStates": {
+        "occupied_bit": false,
+        "head_piece_bit": true,
+        "direction": 0
+      },
+      "sourceId": "minecraft:white_bed",
+      "facing": "south",
+      "part": "head",
+      "boxes": [
+        [
+          0,
+          0,
+          0.8125,
+          0.1875,
+          0.5625,
+          1
+        ],
+        [
+          0.8125,
+          0,
+          0.8125,
+          1,
+          0.5625,
+          1
+        ],
+        [
+          0,
+          0.1875,
+          0,
+          1,
+          0.5625,
+          0.8125
+        ],
+        [
+          0.1875,
+          0.1875,
+          0.8125,
+          0.8125,
+          0.5625,
+          1
+        ]
+      ],
+      "ok": true
+    }
+  ],
+  "acceptance": {
+    "nativeBlockProjection": true,
+    "nativeNumericCore": true,
+    "nativeProductionRespawn": false,
+    "realPlayerSpawnPoint": false,
+    "simulatedPlayers": false,
+    "client": false,
+    "liveMutated": false,
+    "productionReady": false
+  },
+  "earlierHarnessAttempt": "The first attempt used the wrong QA world folder and emitted no observations; it is not a successful test.",
+  "observedDate": "2026-10-07"
+}

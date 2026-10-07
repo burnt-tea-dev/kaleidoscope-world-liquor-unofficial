@@ -1,6 +1,6 @@
 # Respawn：Java 1.21.1 resolver 與 Native adapter
 
-這批把真正的 `effects.js` Respawn 入口接到原作 resolver，取代 Native 不支援的 `Block.isSolid` 與原本半徑 3／向上 6 格的替代搜尋。它是開發候選，尚未發版、部署或通過真人客戶端驗收；不是完整 Java 還原聲明。
+這批把真正的 `effects.js` Respawn 入口接到原作 resolver，取代 Native 不支援的 `Block.isSolid` 與原本半徑 3／向上 6 格的替代搜尋。0.1.87 是開發版本，真人客戶端驗收仍未完成；不是完整 Java 還原聲明。
 
 ## 來源
 
@@ -84,4 +84,4 @@ Native permutation 與 Java properties 的已知對應逐欄限制可能 states�
 
 真人對照場景：Nether 相同位置有電量錨＋keepInventory=true，喝 Respawn 酒；比較第一 North 落點、看向錨的方向、起點／終點音效與 Hunger。再 keepInventory=false 重新建立已宣告的 nonforced 點，確認只扣一次電量。Overworld 床朝北，分別以 +90/−90 設點後轉身喝酒，應採不同 source 第一側；舊床點沒有 metadata 時要保留 unknown。最後新世界 default spawn radius=0 的普通石地與有水表面，分別確認 column 成功與 sentinel fallback 未假造。
 
-本批 focused 測試涵蓋實際 production Respawn branch、來源順序、unknown 停止、錨扣除、default sentinel／heightmap、saved bed yaw、source facts consensus、border兩種語義、來源實體 bounds／root vehicle與 Cursor3D。它們是 API-shaped JS 回歸，不是模擬玩家或真人 Native 驗收。
+本批 focused 測試涵蓋實際 production Respawn branch、來源順序、unknown 停止、錨扣除、default sentinel／heightmap、saved bed yaw、source facts consensus、border兩種語義、來源實體 bounds／root vehicle與 Cursor3D。它們是 API-shaped JS 回歸，不是模擬玩家或真人 Native 驗收。BDS1.26.51.1另有4個真正Native block／numeric core觀測：stone、soul sand、Nether charged anchor第一North候選與yaw、Native床direction/head；normal exit／errors=[]且三個prototype modules未改。公開資料在 `data/java-parity/minecraft-1.21.1/native-respawn-blocks.json`，owned測試overlay入口在 `tests/native/respawn-block-probe.js`；它要在獨立測試包放上相同三個module，不能裝進live。該觀測沒有玩家，不是getSpawnPoint／actual Respawn callback或client驗收。第一次harness路徑錯誤沒有觀測，沒有算成通過。
