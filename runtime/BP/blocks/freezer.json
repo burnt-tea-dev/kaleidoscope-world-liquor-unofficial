@@ -82,8 +82,8 @@
       "kaleidoscope_world_liquor:furniture": {},
       "minecraft:tick": {
         "interval_range": [
-          80,
-          80
+          1,
+          1
         ],
         "looping": true
       },

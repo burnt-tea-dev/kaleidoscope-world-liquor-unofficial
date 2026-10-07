@@ -1,0 +1,56 @@
+{
+  "java_file_id": 9066406,
+  "author_version": "1.1.11",
+  "minecraft": "1.21.1",
+  "loader": "NeoForge",
+  "archive_sha256": "e1f51736138bfe65ac1ce2aae2f2f3bd292dce71e2b8d2f18580a68bdea807cc",
+  "recipe_paths": [
+    "kita_stuffed_crisp.json",
+    "ice.json",
+    "liangshan_ice_cone.json",
+    "pochi_pudding.json",
+    "obsidian.json"
+  ],
+  "identity_adapters": {
+    "minecraft:milk": "kaleidoscope_world_liquor:milk_still",
+    "kaleidoscope_twilight": "kaleidoscope_world_liquor"
+  },
+  "legacy_saved_only": {
+    "recipe": "kaleidoscope_world_liquor:freezer/magma_block",
+    "previous_runtime": "0.1.92",
+    "new_recipe_selection": false,
+    "preserve_existing_remaining_and_output": true
+  },
+  "timing": {
+    "before_interval": 80,
+    "after_interval": 1,
+    "source_method": "FreezerBlockEntity.tick",
+    "source_progress_per_loaded_tick": 1,
+    "interactive_remaining_seconds": "floor(maxProgress-progress)/20"
+  },
+  "client": false,
+  "additions": [
+    "runtime/BP/scripts/legacy-freezer-recipes.js",
+    "runtime/BP/entities/freezer_obsidian_visual.json",
+    "runtime/RP/entity/freezer_obsidian.entity.json",
+    "runtime/RP/models/entity/freezer_obsidian.geo.json",
+    "runtime/RP/render_controllers/freezer_obsidian.json",
+    "runtime/RP/textures/repair/freezer_obsidian.png",
+    "runtime/RP/textures/repair/freezer_obsidian.texture_set.json"
+  ],
+  "result_height": {
+    "source": "FreezerRenderer.drawResultTexture",
+    "bottom": 0.3125,
+    "top": 0.625,
+    "ratio": "min(1, output/maxOutput), or1 if maxOutput<=0",
+    "every_arithmetic_step": "JVM float"
+  },
+  "selected_original_png": {
+    "minecraft_version": "1.21.1",
+    "path": "assets/minecraft/textures/block/obsidian.png",
+    "official_client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+    "fixture": "data/java-parity/neoforge-1.1.11/freezer/obsidian.png",
+    "output": "runtime/RP/textures/repair/freezer_obsidian.png",
+    "sha256": "d9c7dc812d8e8b995e22caff2b10c1fc663b5e127a94c20a7476cfd88af2cd82"
+  }
+}

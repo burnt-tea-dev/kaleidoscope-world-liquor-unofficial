@@ -9,7 +9,7 @@ export const FREEZER_RECIPES = [
       "count": 3
     },
     "craft_time": 1800,
-    "texture": "kaleidoscope_world_liquor:block/ice",
+    "texture": "minecraft:block/ice",
     "id": "kaleidoscope_world_liquor:freezer/ice"
   },
   {
@@ -26,7 +26,7 @@ export const FREEZER_RECIPES = [
       "count": 1
     },
     "craft_time": 1200,
-    "texture": "kaleidoscope_world_liquor:block/snow",
+    "texture": "minecraft:block/snow",
     "id": "kaleidoscope_world_liquor:freezer/kita_stuffed_crisp"
   },
   {
@@ -43,7 +43,7 @@ export const FREEZER_RECIPES = [
       "count": 1
     },
     "craft_time": 1200,
-    "texture": "kaleidoscope_world_liquor:block/snow",
+    "texture": "minecraft:block/snow",
     "id": "kaleidoscope_world_liquor:freezer/liangshan_ice_cone"
   },
   {
@@ -52,12 +52,12 @@ export const FREEZER_RECIPES = [
     "fluid_amount": 1000,
     "ingredients": [],
     "result": {
-      "id": "minecraft:magma",
-      "count": 3
+      "id": "minecraft:obsidian",
+      "count": 1
     },
     "craft_time": 1800,
-    "texture": "kaleidoscope_world_liquor:block/magma",
-    "id": "kaleidoscope_world_liquor:freezer/magma_block"
+    "texture": "minecraft:block/obsidian",
+    "id": "kaleidoscope_world_liquor:freezer/obsidian"
   },
   {
     "type": "kaleidoscope_world_liquor:freezer",
@@ -73,7 +73,7 @@ export const FREEZER_RECIPES = [
       "count": 1
     },
     "craft_time": 1200,
-    "texture": "kaleidoscope_world_liquor:block/snow",
+    "texture": "minecraft:block/snow",
     "extract_condition": {
       "item": "minecraft:bowl"
     },

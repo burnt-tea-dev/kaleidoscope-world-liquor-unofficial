@@ -347,8 +347,8 @@
     },
     "runtime/BP/blocks/freezer.json": {
       "before": "554594326e3a498a27b92688e81559313b859d89205c131fe70d6ae3383b2597",
-      "after": "391d421a4ec56b4a9dc1b5908304e6a3e83f85fd6291848806ec5a62ad097436",
-      "reason": "Parity 0.1.33; see functional tests and release notes. Parity 0.1.34; see functional tests and release notes.",
+      "after": "42e0f7a3aae9af10133629dbe575c69bd98b3a11bb549fcf3bf8ab1d846ca281",
+      "reason": "Parity 0.1.33; see functional tests and release notes. Parity 0.1.34; see functional tests and release notes. Source-reviewed0.1.93 changes only native scheduled tick80 to1; SourceFreezerBlockEntity.tick increments progress each loaded tick.",
       "beforeGzipBase64": "H4sIAAAAAAACA+VX227iMBB95ytQXrq7omxCaaBI/ZJVZTn2hHrr2KnttKUV/76ThIJzgaVV1aLdp2B7PJ7bOTO8DIbDINUmo448gLFCq2AxDKLxJB5fhsGoPM6EAmZo6haJ1OwOz19wGw84WGZE7upL9SZuCw7KiVSAKVXdUQmCa8t0DuRRG8mJFPeFNovUADyj0Oj1YgaqIIw6WGqz8jTikbcbKK0g2Bytt5etQxHbvNV421F0UC1SyoRaotyvrdxwGI68ReQvJv7iYvv7ZrTnlYaHuKFaL6VUWvB1OlPATm3HLWeocC23dgnJJWWAYXOECwOslYlKGBRNJHCyjY9vTUMZo4YLRaWnyxO98Y0OVsRoVIgyRKepBYeKw63AeuB/N84ETGc5pk413PHeX4LOwLUz36ymV5nx3aMcL8llEkdREs4up2lK4ynvlsVOPZY4GIHuCYWxUKxdLD/akXPw5AoDVRE/SrI3zYRUuCAkNYIvgTCpLQSNcBlQHAxB0281LxVSmd9SgglxxGI5SsAPB968haUKmIwsqwu2rJTGOc0SUeZeMyaLDXS9JHglyiGlhXSn7mEHHH9z8UC6mZZSlDdIop+amdZGLEUbmOfz0T5COJ/34t6KZ2gpieLRgdUBmO/stiBr8B1r92y/3bOj7Z4esHt6lN3YDLBA0XJkG5KsCJ7USfUcsMC04pY4TSpxXWI9HMdvUAtPORZfm+eC7TYxYEWNb5SIJmF4QLnUusREUH6xP+AT9idkuVuNf1t8oY9E9EMp1uJj/VCTsFvlFZiwoDdynccPtMPCKLGB40uftU54zbfmRoWU9oCUZqhatnM6b9TCPOytBfQ837FLL23nYLKi5nq/ffjNGZMqNr0nuB/XXFH1m29n+1vw2ffh9fUw8gihv0O0o4C+2npi6Xa7kog2fanT6VrgqABy1dkKG+sbb7XeTzsfFIvJV8Yimp9ULC6+MhZfWBad+bEOR9UZ3xqS3oHq/UNVa6h4y3DVO2B98Ajy/jHkmGHriGmkE5+9g9c/6fmnY6I09JMgMWMX0yhJ4un0Kp5NruKThET1b/N/RMSJOn4YEIPXRrIerAd/ANwDCT6HEQAA"
     },
     "runtime/BP/blocks/birch_cellar_cabinet.json": {
@@ -1618,6 +1618,166 @@
       "before": null,
       "after": "e49f343cf4289dc1c25f9932075a6b07a89bb13c885fea4ebc2634f43ba35c8d",
       "reason": "Selected original MC1.21.1 completion audio; publisher index and source event preserved in data/java-feedback-audio.json; no synthesized replacement."
+    },
+    "runtime/BP/scripts/legacy-freezer-recipes.js": {
+      "before": null,
+      "after": "5183d56a763affa9c237213cd6ab822dab694e2b7ae711ba95239bac8d7b0198",
+      "reason": "0.1.93 current author lava -> obsidian output/selected original Minecraft1.21.1 obsidian PNG, or saved-only canonical0.1.92 magma recipe retention. No historical artifact is installed."
+    },
+    "runtime/BP/entities/freezer_obsidian_visual.json": {
+      "before": null,
+      "after": "fe955cbfa63fae9a0c7d629e185379065257d01896717ab67ba961358a4aaacd",
+      "reason": "0.1.93 current author lava -> obsidian output/selected original Minecraft1.21.1 obsidian PNG, or saved-only canonical0.1.92 magma recipe retention. No historical artifact is installed."
+    },
+    "runtime/RP/entity/freezer_obsidian.entity.json": {
+      "before": null,
+      "after": "a087f05511ea1648c818dd30776a15294337d58b883087ac821c360bced76b33",
+      "reason": "0.1.93 current author lava -> obsidian output/selected original Minecraft1.21.1 obsidian PNG, or saved-only canonical0.1.92 magma recipe retention. No historical artifact is installed."
+    },
+    "runtime/RP/models/entity/freezer_obsidian.geo.json": {
+      "before": null,
+      "after": "d490d9d1fd1cc0dc918982d44cd7f1915aca080eca1e96919d59e98493c0437c",
+      "reason": "0.1.93 current author lava -> obsidian output/selected original Minecraft1.21.1 obsidian PNG, or saved-only canonical0.1.92 magma recipe retention. No historical artifact is installed."
+    },
+    "runtime/RP/render_controllers/freezer_obsidian.json": {
+      "before": null,
+      "after": "12bdaaac9353f5b97acc627991d7da3bf0e72600ad6ce92b92457bf4675661b2",
+      "reason": "0.1.93 current author lava -> obsidian output/selected original Minecraft1.21.1 obsidian PNG, or saved-only canonical0.1.92 magma recipe retention. No historical artifact is installed."
+    },
+    "runtime/RP/textures/repair/freezer_obsidian.png": {
+      "before": null,
+      "after": "d9c7dc812d8e8b995e22caff2b10c1fc663b5e127a94c20a7476cfd88af2cd82",
+      "reason": "0.1.93 current author lava -> obsidian output/selected original Minecraft1.21.1 obsidian PNG, or saved-only canonical0.1.92 magma recipe retention. No historical artifact is installed."
+    },
+    "runtime/RP/textures/repair/freezer_obsidian.texture_set.json": {
+      "before": null,
+      "after": "a726739605a874118760d3af0bf95e4b6caaa277ab8f95126fe86dbc592d7e2e",
+      "reason": "0.1.93 current author lava -> obsidian output/selected original Minecraft1.21.1 obsidian PNG, or saved-only canonical0.1.92 magma recipe retention. No historical artifact is installed."
     }
-  }
+  },
+  "reviewedFunctionalDeltaLayers": [
+    {
+      "release": "0.1.93",
+      "files": {
+        "runtime/BP/scripts/furniture.js": {
+          "before": "12833bffad5dcbabf37ed17c9f44359336dd9bf32241240a005c8d7c652f03d1",
+          "after": "8ff3f9e226c826eab5684c8bdbffec4c1cb90df853622a52e987fbdd46463a97",
+          "reverseOps": [
+            [
+              0,
+              1,
+              "import {startFreezerRecipe,freezerPowerTransition} from './freezer-state.js';\n"
+            ],
+            [
+              10,
+              12,
+              ""
+            ],
+            [
+              73,
+              74,
+              " try{save(b,next);if(permutation)scriptedReplace(b,permutation);for(let i=0;i<after.length;i++)inv.setItem(i,after[i]);if(b.typeId===NS+':freezer')try{syncFreezerVisuals(b,next??{},FREEZER_RECIPES);}catch(err){console.warn('[World Liquor visuals] '+err);}return true;}\n"
+            ],
+            [
+              77,
+              78,
+              " if(s.remaining>0){say(p,'remaining',[String(Math.ceil(s.remaining/20))]);return;}\n"
+            ],
+            [
+              85,
+              86,
+              " if(s.output){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe),required=r?.extract_condition?.item;if(!r)return;if(required&&h?.typeId!==required){say(p,'need_item',[required]);return;}s.output--;transaction(p,b,s,{take:required?1:0,give:[[r.result.id,1]]});return;}\n"
+            ],
+            [
+              102,
+              103,
+              "  try{syncFreezerVisuals(block,plan.state,FREEZER_RECIPES);if(plan.open!==open)dimension.playSound(plan.open?'block.barrel.open':'block.barrel.close',center(block));}catch(error){console.warn('[World Liquor freezer visuals] '+error);}\n"
+            ],
+            [
+              110,
+              119,
+              ""
+            ],
+            [
+              146,
+              148,
+              "function tick(b){if(b.typeId.endsWith(':freezer')){const s=read(b);if(s.remaining>0){s.remaining=Math.max(0,s.remaining-80);if(!s.remaining){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);s.output=r?.result.count??1;}save(b,s);}syncFreezerVisuals(b,s,FREEZER_RECIPES);}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){if(b.typeId===WALL_RECORD){breakFeedback.transaction(b,()=>removeWallRecord(b));return;}removeUnsupported(b,b.typeId);}}}\nfunction drops(b,oldType,p){const s=read(b);save(b,undefined);if((!p||!creative(p))&&world.gameRules.doTileDrops!==false){const out=[[oldType.endsWith(':wall_record')?s.record:oldType,1],...(s.slots??[]).filter(Boolean).map(id=>[id,1]),...(s.input??[]).map(id=>[id,1])];if(s.output){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);if(r)out.push([r.result.id,s.output]);}for(const [id,n] of out)if(id)b.dimension.spawnItem(new ItemStack(id,n),center(b));}\n"
+            ],
+            [
+              154,
+              155,
+              " onTick:e=>{try{if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}tick(e.block);}catch(err){console.warn('[World Liquor] '+err);}},\n"
+            ]
+          ],
+          "reason": "Current NeoForge1.1.11 CF9066406 freezer recipes and loaded-tick/float rendering repair; preserve legacy saved lava output only. See current-freezer-review and native timing scenes."
+        },
+        "runtime/BP/scripts/freezer-state.js": {
+          "before": "d2bcb23b0a2c353075ac5fcb36e9b1af96d2d07cafbd9ddd8a21dc428f421069",
+          "after": "961b7be8c2e8f2c8df39f0651fb638352dfe578604e595ac8a3bf17cf56cf932",
+          "reverseOps": [
+            [
+              6,
+              17,
+              ""
+            ]
+          ],
+          "reason": "Current NeoForge1.1.11 CF9066406 freezer recipes and loaded-tick/float rendering repair; preserve legacy saved lava output only. See current-freezer-review and native timing scenes."
+        },
+        "runtime/BP/scripts/freezer-recipes.js": {
+          "before": "19bd7cdbd44e287b1c1b84e3b13a9e1ab897b96518d7e9b67e5dba38e07bb5c3",
+          "after": "593c904ab2e022902eee888716fdfe5d541938a0a97234abfc15b01b64dee323",
+          "reverseOps": [
+            [
+              11,
+              12,
+              "    \"texture\": \"kaleidoscope_world_liquor:block/ice\",\n"
+            ],
+            [
+              28,
+              29,
+              "    \"texture\": \"kaleidoscope_world_liquor:block/snow\",\n"
+            ],
+            [
+              45,
+              46,
+              "    \"texture\": \"kaleidoscope_world_liquor:block/snow\",\n"
+            ],
+            [
+              54,
+              56,
+              "      \"id\": \"minecraft:magma\",\n      \"count\": 3\n"
+            ],
+            [
+              58,
+              60,
+              "    \"texture\": \"kaleidoscope_world_liquor:block/magma\",\n    \"id\": \"kaleidoscope_world_liquor:freezer/magma_block\"\n"
+            ],
+            [
+              75,
+              76,
+              "    \"texture\": \"kaleidoscope_world_liquor:block/snow\",\n"
+            ]
+          ],
+          "reason": "Current NeoForge1.1.11 CF9066406 freezer recipes and loaded-tick/float rendering repair; preserve legacy saved lava output only. See current-freezer-review and native timing scenes."
+        },
+        "runtime/BP/scripts/freezer-visuals.js": {
+          "before": "722e469c54b46e74608f490a94f371b5f1a51d5995742471672da7dfd4c0bbef",
+          "after": "e5087ac7ab6c51ab5187f7e03c0145cef66d30a36075269531e1cfa0f97a4602",
+          "reverseOps": [
+            [
+              3,
+              8,
+              ""
+            ],
+            [
+              14,
+              15,
+              "  if(state.output>0){const recipe=recipes.find(r=>r.id===state.recipe),kind=recipe?.texture?.split('/').at(-1);if(['ice','snow','magma'].includes(kind))rows.push({slot:'result',kind,x:0,z:0,y:.75-(5-state.output)*.08});}\n"
+            ]
+          ],
+          "reason": "Current NeoForge1.1.11 CF9066406 freezer recipes and loaded-tick/float rendering repair; preserve legacy saved lava output only. See current-freezer-review and native timing scenes."
+        }
+      }
+    }
+  ]
 }
