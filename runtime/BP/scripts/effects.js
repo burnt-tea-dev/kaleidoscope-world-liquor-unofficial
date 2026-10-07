@@ -8,6 +8,7 @@ import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
 import {freezeWater} from './frost-water.js';
 import {addTreasureBlockDrops} from './treasure-block.js';
 import {selectCrazyEffects} from './crazy-source.js';
+import {applyJavaRespawn,installJavaRespawn} from './respawn-adapter.js';
 /** World Liquor effect rules, with current Java 1.1.11 repairs.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
@@ -25,9 +26,7 @@ function combatSound(event,p,id,options){
  // Before-event mutations are deferred, but use the original source position.
  acceptedFeedback.queue(event,accepted=>{if(accepted)dimension.playSound(id,at,options);});
 }
-function safeRespawn(p){play(p,NS+'.java.respawn');const spawn=p.getSpawnPoint()??{...world.getDefaultSpawnLocation(),dimension:world.getDimension('overworld')},d=spawn.dimension;
- for(let radius=0;radius<=3;radius++)for(let dy=0;dy<=6;dy++)for(let x=-radius;x<=radius;x++)for(let z=-radius;z<=radius;z++)try{const at={x:Math.floor(spawn.x)+x+.5,y:Math.floor(spawn.y)+dy,z:Math.floor(spawn.z)+z+.5},b=d.getBlock(at),up=d.getBlock({...at,y:at.y+1}),floor=d.getBlock({...at,y:at.y-1});if(b?.isAir&&up?.isAir&&floor?.isSolid){p.teleport(at,{dimension:d});p.addEffect('hunger',300);play(p,NS+'.java.respawn');return;}}catch{}
-}
+function safeRespawn(p){return applyJavaRespawn(p,world,NS+'.java.respawn');}
 export function applyEffect(p,effect,duration,amplifier=0){
  const name=effect.split(':')[1];if(!Number.isFinite(duration)||duration<0||duration>1e6||!Number.isInteger(amplifier)||amplifier<0||amplifier>255)return;
  switch(name){
@@ -88,6 +87,7 @@ function wearingUsableElytra(p){
  return !durability||durability.damage<durability.maxDurability-1;
 }
 export function installEffects(){
+ installJavaRespawn(world,system);
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(isLivingCombatEntity(p)&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
  world.afterEvents.entityHurt.subscribe(e=>{killCredit.applied(e);acceptedFeedback.applied(e);});
