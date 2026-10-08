@@ -45,7 +45,7 @@ def normalize(rp):
         before = json.loads(path.read_text(encoding='utf-8-sig'))
         after = rewrite_values(before)
         if after != before:
-            path.write_text(json.dumps(after, ensure_ascii=False, indent=2)+'\n', newline='\n')
+            path.write_text(json.dumps(after, ensure_ascii=False, indent=2)+'\n', encoding='utf-8', newline='\n')
             changed.append(path.relative_to(rp).as_posix())
     return changed
 

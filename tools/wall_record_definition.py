@@ -18,7 +18,7 @@ def normalize(path: Path) -> None:
         if facing is None:
             raise ValueError('Unexpected wall-record orientation condition')
         entry['components']['minecraft:transformation'] = {'rotation': [0, (-90*facing) % 360, 0]}
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n', encoding='utf-8', newline='\n')
 
 
 def historical_view(actual: bytes, projected: bytes) -> tuple[str, bytes]:

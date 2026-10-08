@@ -4,6 +4,7 @@
  */
 import {UnknownRespawnFact,javaBlockView,sourceBoxesIntersect,sourceFullUpperFace} from './respawn-blocks.js';
 import {getRespawnMetadata,declareRespawnMetadata,installRespawnMetadata} from './respawn-metadata.js';
+import {isNonCollidableHelper} from './respawn-helper-entities.js';
 const directions={north:{x:0,z:-1},east:{x:1,z:0},south:{x:0,z:1},west:{x:-1,z:0}};
 const f32=Math.fround;
 const numericBits=new DataView(new ArrayBuffer(8));
@@ -344,7 +345,7 @@ function adapter(player,world,provided,keepInventory){
     if(typeof declared.rootVehicleId!=='string')throw new UnknownRespawnFact('declared source entity root vehicle');
     if(declared.rootVehicleId!==rootVehicle(player))return true;continue;
    }
-   if(sourceNonCollidableEntities.has(entity.typeId))continue;
+   if(sourceNonCollidableEntities.has(entity.typeId)||isNonCollidableHelper(entity.typeId))continue;
    if(entity.typeId==='minecraft:item'&&entity.getComponent('minecraft:item'))continue;
    if(entity.typeId==='minecraft:boat'||entity.typeId==='minecraft:chest_boat'){
     if(!boundsIntersect(broadphase,boatBounds(entity)))continue;

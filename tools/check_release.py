@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """Asset and progression audit; no interaction emulation."""
 from pathlib import Path
-import json,re,subprocess,os
+import json,re,subprocess,os,sys
 from PIL import Image
 from texture_paths import check as check_texture_paths
 root=Path(__file__).resolve().parents[1];tav=Path(os.environ.get('TAVERN_ROOT',str(root.parent/'tavern-src')));bp=root/'runtime/BP';rp=root/'runtime/RP'
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 check_texture_paths(rp)
-subprocess.run(['python',str(root/'tools/item_render_contract.py')],check=True)
-subprocess.run(['python',str(root/'tools/check_effect_icons.py')],check=True)
-subprocess.run(['python',str(root/'tools/test_freezer_java_art.py')],check=True)
-subprocess.run(['python',str(root/'tools/test_java_face_topology.py')],check=True)
-subprocess.run(['python',str(root/'tools/build_drink_colors.py'),'--check'],check=True)
+subprocess.run([sys.executable,str(root/'tools/item_render_contract.py')],check=True)
+subprocess.run([sys.executable,str(root/'tools/check_effect_icons.py')],check=True)
+subprocess.run([sys.executable,str(root/'tools/test_freezer_java_art.py')],check=True)
+subprocess.run([sys.executable,str(root/'tools/test_java_face_topology.py')],check=True)
+subprocess.run([sys.executable,str(root/'tools/build_drink_colors.py'),'--check'],check=True)
 subprocess.run(['node','--test',str(root/'tools/optional-cookery.test.mjs')],check=True)
 errors=[]
 def check(ok,message):
@@ -61,7 +61,7 @@ for pack in [bp,rp]:
  if icon.exists():
   with Image.open(icon) as image:check(image.width==image.height and image.width>=16,pack.name+': invalid icon')
  for lc in ['en_US','zh_CN','zh_TW']:
-  rows=(pack/f'texts/{lc}.lang').read_text();check('pack.name=' in rows and 'pack.description=' in rows,pack.name+': '+lc+' package labels')
+  rows=(pack/f'texts/{lc}.lang').read_text(encoding='utf-8');check('pack.name=' in rows and 'pack.description=' in rows,pack.name+': '+lc+' package labels')
   # Empty separators are valid .lang lines; retain checks on all content lines.
   for line in (line for line in rows.splitlines() if line.strip()):check(not line.startswith('# ') and (line.startswith('##') or '=' in line),pack.name+': malformed '+lc+' line '+line[:60])
 recipes=[]
@@ -77,13 +77,13 @@ for path in (bp/'scripts').rglob('*.js'):
  subprocess.run(['node','--check',str(path)],check=True,capture_output=True)
 subprocess.run(['node',str(root/'tools/check_guide.mjs')],check=True,cwd=root)
 
-subprocess.run(['python3',str(root/'tools/check_storage_rendering.py')],check=True,cwd=root)
+subprocess.run([sys.executable,str(root/'tools/check_storage_rendering.py')],check=True,cwd=root)
 
 # Use the host's shared taxonomy and checks, not an addon-specific grouping engine.
-subprocess.run(['python3',str(tav/'tools/creative/catalog.py'),'--root',str(root)],check=True,cwd=root)
+subprocess.run([sys.executable,str(tav/'tools/creative/catalog.py'),'--root',str(root)],check=True,cwd=root)
 
-subprocess.run(['python3',str(tav/'tools/pick_block.py'),'--root',str(root)],check=True)
+subprocess.run([sys.executable,str(tav/'tools/pick_block.py'),'--root',str(root)],check=True)
 
-subprocess.run(['python3',str(tav/'tools/check_drink_surfaces.py'),str(root)],check=True,cwd=root)
+subprocess.run([sys.executable,str(tav/'tools/check_drink_surfaces.py'),str(root)],check=True,cwd=root)
 
 subprocess.run(['node',str(root/'tools/check_current_mixology.mjs')],check=True,cwd=root)

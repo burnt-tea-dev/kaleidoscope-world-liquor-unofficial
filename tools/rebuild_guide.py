@@ -11,13 +11,13 @@ LOCALES=('en_US','zh_CN','zh_TW')
 def loadjs(path):
  return json.loads(path.read_text(encoding='utf-8').split('=',1)[1].strip().rstrip(';'))
 def writejs(path,name,value):
- path.write_text('export const '+name+' = '+json.dumps(value,ensure_ascii=False,indent=2)+';\n',encoding='utf-8')
+ path.write_text('export const '+name+' = '+json.dumps(value,ensure_ascii=False,indent=2)+';\n',encoding='utf-8',newline='\n')
 def triple(en,cn,tw):return dict(zip(LOCALES,(en,cn,tw)))
-source=(TAV/'runtime/BP/scripts/data/cookery-guide-payload.js').read_text()
+source=(TAV/'runtime/BP/scripts/data/cookery-guide-payload.js').read_text(encoding='utf-8')
 names=json.loads(re.search(r'const GUIDE_ITEM_NAMES=(.*);',source).group(1))
 for pack in (TAV,ROOT):
  for lc in LOCALES:
-  for row in (pack/f'runtime/RP/texts/{lc}.lang').read_text().splitlines():
+  for row in (pack/f'runtime/RP/texts/{lc}.lang').read_text(encoding='utf-8').splitlines():
    if '=' not in row:continue
    key,value=row.split('=',1)
    if key.startswith('item.') and key.endswith('.name'):
@@ -68,24 +68,24 @@ def main():
   if recipe['kind']!='shaker':continue
   src=ROOT/'upstream/data'/NS/'recipe'/(recipe['id'].split(':',1)[1]+'.json')
   if not src.exists():raise ValueError('Missing Java shaker source: '+str(src))
-  recipe['ingredientTags']=[slot.get('tag') for slot in json.loads(src.read_text())['ingredients']]
+  recipe['ingredientTags']=[slot.get('tag') for slot in json.loads(src.read_text(encoding='utf-8'))['ingredients']]
 
- payload['version']='.'.join(str(v) for v in json.loads((ROOT/'runtime/BP/manifest.json').read_text())['header']['version'])
+ payload['version']='.'.join(str(v) for v in json.loads((ROOT/'runtime/BP/manifest.json').read_text(encoding='utf-8'))['header']['version'])
  freezers=loadjs(ROOT/'runtime/BP/scripts/freezer-recipes.js')
  recipe_by_id={r['id']:r for r in payload['recipes']}
  content_by_base={r.get('base',r.get('item')):r for r in payload['content']}
  item_crafts=collections.defaultdict(list)
  for path in sorted((ROOT/'runtime/BP/recipes').rglob('*.json')):
-  data=json.loads(path.read_text());kind,recipe=next((k,v) for k,v in data.items() if k.startswith('minecraft:recipe_'))
+  data=json.loads(path.read_text(encoding='utf-8'));kind,recipe=next((k,v) for k,v in data.items() if k.startswith('minecraft:recipe_'))
   item_crafts[recipe['result']['item']].append((kind,recipe))
  # Reuse source effect names; duration=0 instant actions are not "0 second buffs".
  effects={lc:{} for lc in LOCALES}
- traditional_effects=json.loads((ROOT/'data/guide-effect-names.zh_TW.json').read_text())
+ traditional_effects=json.loads((ROOT/'data/guide-effect-names.zh_TW.json').read_text(encoding='utf-8'))
  for lc in LOCALES:
   for space in (NS,KT,'smc','kaleidoscope_twilight'):
    file=ROOT/f'upstream/assets/{space}/lang/{"zh_cn" if lc=="zh_TW" else lc.lower()}.json'
    if not file.exists():continue
-   for key,value in json.loads(file.read_text()).items():
+   for key,value in json.loads(file.read_text(encoding='utf-8')).items():
     if key.startswith('effect.') and not key.endswith('.description'):
      key=key.replace('effect.smc.','effect.'+NS+'.').replace('effect.kaleidoscope_twilight.','effect.'+NS+'.')
      if lc=='zh_TW' and key not in traditional_effects:continue
@@ -182,6 +182,6 @@ def main():
   audits.append({'id':old['id'],'item':item,'category':category,'recipeIds':[r['id']for r in linked],'crafting':len(crafting),'freezerRecipes':[r['id']for r in freezing]})
  payload['pages']=out;writejs(ROOT/'runtime/BP/scripts/payload.js','payload',payload)
  audit={'guideVersion':2,'pageCount':len(out),'categories':dict(collections.Counter(p['category']for p in out)),'registeredRecipes':dict(collections.Counter(r['kind']for r in payload['recipes'])),'recipeSource':'canonical runtime registry','freezerRecipes':len(freezers),'nativeCraftingRecipes':sum(len(p.get('crafting',[]))for p in out),'pages':audits}
- (ROOT/f"docs/GUIDE-AUDIT-{payload['version']}.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
+ (ROOT/f"docs/GUIDE-AUDIT-{payload['version']}.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
  print(json.dumps({k:v for k,v in audit.items()if k!='pages'},ensure_ascii=False))
 if __name__=='__main__':main()
