@@ -1773,6 +1773,11 @@
       "before": null,
       "after": "d11b8c1e42c90cdd0d1d142aa21b54729d2234face6c6fa12ec1730098ac4c2b",
       "reason": "W99 missing Java1.21.1 FrostedIceBlock scheduled path: first60–120 dedup,20–40 reschedule, exact source predicates, native metadata/restart and scoped neighbors; no complete random-tick/event/light/client parity claim."
+    },
+    "runtime/BP/scripts/beheading-head.js": {
+      "before": null,
+      "after": "9b86f210508eefed0227cba2de67dcbe04d04f3263cedf8ca039aebc1dbef402",
+      "reason": "W100 restores current NeoForge1.1.11 getEntityHead namespace-local registry fallback in source precedence; source death hook, marker persistence, head dedup and player skin metadata remain separate gaps."
     }
   },
   "reviewedFunctionalDeltaLayers": [
@@ -2248,6 +2253,33 @@
               19,
               20,
               ""
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "release": "0.1.100",
+      "files": {
+        "runtime/BP/scripts/effects.js": {
+          "before": "0992edf2e7a0c5ddf74b45437ad7be0bc7a4736799827a37ea9fb6744dad0e22",
+          "after": "440035b485b8c7159abc82ab8864c3b189162acca3f31e73ebd503db79339a3b",
+          "reason": "W100 restores current NeoForge1.1.11 getEntityHead namespace-local registry fallback in source precedence; source death hook, marker persistence, head dedup and player skin metadata remain separate gaps.",
+          "reverseOps": [
+            [
+              9,
+              10,
+              ""
+            ],
+            [
+              16,
+              17,
+              "import {world,system,EffectTypes,ItemStack,MolangVariableMap} from '@minecraft/server';\n"
+            ],
+            [
+              101,
+              102,
+              " world.afterEvents.entityDie.subscribe(e=>{if(headDrops.delete(e.deadEntity.id)){const id={'minecraft:zombie':'minecraft:zombie_head','minecraft:skeleton':'minecraft:skeleton_skull','minecraft:creeper':'minecraft:creeper_head','minecraft:wither_skeleton':'minecraft:wither_skeleton_skull','minecraft:piglin':'minecraft:piglin_head','minecraft:player':'minecraft:player_head'}[e.deadEntity.typeId];if(id)try{e.deadEntity.dimension.spawnItem(new ItemStack(id),e.deadEntity.location);}catch{}}\n"
             ]
           ]
         }

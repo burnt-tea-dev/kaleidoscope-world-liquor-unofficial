@@ -6,6 +6,23 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import * as rules from '../runtime/BP/scripts/combat-source.js';
 import {useSoundPulse} from '../runtime/BP/scripts/drink-audio.js';
+import {beheadingHeadId} from '../runtime/BP/scripts/beheading-head.js';
+
+test('beheading resolves foreign registry heads in author order without an addon allowlist',()=>{
+ const registered=new Map(['beasts:otter_head','beasts:otter_skull','beasts:skull_otter','beasts:head_otter','beasts:dead_otter','beasts:otter_item'].map(id=>[id,{id}]));
+ const lookup=id=>registered.get(id);
+ for(const expected of [...registered.keys()]){
+  assert.equal(beheadingHeadId('beasts:otter',lookup),expected);
+  registered.delete(expected);
+ }
+ assert.equal(beheadingHeadId('beasts:otter',lookup),undefined);
+ registered.set('different:otter_head',{id:'different:otter_head'});
+ registered.set('beasts:otter_head',{id:'minecraft:air'});
+ assert.equal(beheadingHeadId('beasts:otter',lookup),undefined);
+ // Vanilla class-specific results take precedence over generic registry names.
+ assert.equal(beheadingHeadId('minecraft:skeleton',()=>{throw Error('unexpected registry fallback');}),'minecraft:skeleton_skull');
+ assert.equal(beheadingHeadId('minecraft:player',lookup),'minecraft:player_head');
+});
 const rows=fs.readFileSync(new URL('./fixtures/java-use-combat.jsonl',import.meta.url),'utf8').trim().split('\n').map(JSON.parse);
 test('ground crit eligibility, damage caps and use pulses agree with Java source evaluation',()=>{
  for(const r of rows){
