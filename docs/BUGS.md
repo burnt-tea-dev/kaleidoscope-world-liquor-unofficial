@@ -2,6 +2,24 @@
 
 來源：T0.6.126／W0.1.103 的 Phase0 盤點。此表區分已確認實作差距、歷史限定觀察及當前待測，沒有把「未測」寫成「已重現 bug」。實際還原狀態統一維護於 PARITY-MATRIX.md；舊逐版證據只作引用。T/、W/ 表示來源倉庫。
 
+## W-RESPAWN-HELPERS — 家族儲存／顯示 helper 阻止回到共用出生點
+
+2026-10-08 修補來源：`respawn-helper-entities.js` 列出 85 個已逐一定義為 `has_collision=false`、零寬高且沒有碰撞 component-group 覆寫的家族 helper。`respawn-adapter.js` 只採納這些精確 ID，沒有加入 namespace／family wildcard；有實際碰撞盒的 `thrown_drink`、未知自有 ID 及第三方仍須已知事實，原先 callback 覆寫優先次序保留。
+
+| 正式來源 | 檢視的 commit | entity 定義目錄 | 零碰撞 helper |
+| --- | --- | --- | --- |
+| Tavern | `1afc72e7e8a25ba32f538cc74244925f5c432175` | `runtime/BP/entities/` | 56 |
+| World Liquor | `6063030da50097971f2692bdef6b7020da0011b3` | `runtime/BP/entities/` | 21 |
+| Grilling | `b4bd3229f254adf58be1ee413f89daa1ab9c4df0` | `projects/grilling/gameplay_core/behavior_pack/entities/` | 8 |
+
+這些是修補來源證據，不是另一份發版 hash 表。`tools/check_respawn_helpers.mjs` 以 `TAVERN_SOURCE`／`GRILLING_SOURCE` 的实际配對來源核對每個 ID、零碰撞盒和 component groups；可獨立執行，亦由 family 回歸呼叫。任一 peer 缺失或事實改變即失敗，不自動放行新名稱。
+
+來源重現：正式 `planFreezerStorage` 在 512,64,512 保存有名稱／lore／foreign metadata 的糖，正式 `applyJavaRespawn` 在沒有個人出生點、或已證明個人點失效後查共用出生點。舊 W104 因遠處 `freezer_inputs` 返回 unknown；修補後回到第一個合法共用欄位，原 carrier／記錄／物品資料不變。有效床、重生錨及 forced 個人點不經此碰撞分支；這不是一般死亡重生故障。
+
+`tests/respawn-freezer.test.mjs` 覆蓋兩個正式入口場景、全部 22 個自有 entity 定義、未知外部／同 namespace ID，以及既有 callback 優先次序。`tests/respawn-family.test.mjs` 另外直接執行配對 Tavern `NativeItemStorage.plan` 和 Grilling `stationContainer`，保存原 metadata 後驗證 helper 不再阻止共用出生點；在同一場景加入未知第三方仍會拒絕傳送。
+
+這是 L1 source/API fixture 回歸，沒有執行原生 Player，也沒有聲稱新的 BDS／真人驗收。一般死亡、任意第三方碰撞形狀、原生床／錨 witness 和其他已記錄的 Respawn 平台差距仍分開驗收。
+
 ## T-W-STORAGE — 酒架/酒櫃格位、瓶身旋轉/莫洛托夫、材料資料保存
 
 現行狀態：`transaction_and_native_preservation_bounded_visual_pending`。

@@ -91,11 +91,11 @@ def main():
   try:claim_release(ROOT,config['version'],trees,config['repository'])
   except ReleaseClaimError as error:fail(str(error))
   history[version]=trees;config['source_trees']=trees
-  history_path.write_text(json.dumps(history,indent=2)+'\n');(ROOT/'baseline.json').write_text(json.dumps(config,indent=2)+'\n')
+  history_path.write_text(json.dumps(history,indent=2)+'\n',encoding='utf-8',newline='\n');(ROOT/'baseline.json').write_text(json.dumps(config,indent=2)+'\n',encoding='utf-8',newline='\n')
   print('Frozen '+version);return
  trees,files=check(config,args.release,args.archive,args.history_base)
  if args.receipt:
   payload={'schema':1,'repository':config['repository'],'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'version':config['version'],'source_trees':trees,'files':files,'archive_sha256':hashlib.sha256(args.archive.read_bytes()).hexdigest() if args.archive else None,'acceptance':{'static':True,'bds':False,'client':False}}
-  args.receipt.parent.mkdir(parents=True,exist_ok=True);args.receipt.write_text(json.dumps(payload,indent=2)+'\n')
+  args.receipt.parent.mkdir(parents=True,exist_ok=True);args.receipt.write_text(json.dumps(payload,indent=2)+'\n',encoding='utf-8',newline='\n')
  print('Canonical baseline verified: '+'.'.join(map(str,config['version'])))
 if __name__=='__main__':main()

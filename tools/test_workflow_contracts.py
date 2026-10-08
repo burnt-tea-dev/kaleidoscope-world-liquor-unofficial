@@ -41,10 +41,19 @@ def validate_ci(workflow):
                    'rebuild_guide.py', 'check_release.py', 'build_release.py', 'verify_release.py --development',
                    'tests/freezer-callback.test.mjs', 'tests/record-audio.test.mjs',
                    'tests/multi-jump.test.mjs', 'tests/freezer-state.test.mjs',
+                   'tests/respawn-freezer.test.mjs', 'tests/respawn-family.test.mjs',
                    'tests/elbow-source.test.mjs', 'tests/elbow-native-evidence.test.mjs',
                    'tools/test_pick_block.py', 'tools/effect-bar.test.mjs', 'tools/creative/test_catalog.py']:
         assert script in package, script
     assert 'steps.pin.outputs.commit' in str(jobs['package']['steps'])
+    grilling = [step.get('with', {}) for step in jobs['package']['steps']
+                if step.get('with', {}).get('repository') == 'casama233/kaleidoscope-grilling-unofficial']
+    assert len(grilling) == 1 and grilling[0]['ref'] == '${{ steps.pin.outputs.grilling_commit }}'
+    assert grilling[0]['path'] == 'grilling-src' and grilling[0]['persist-credentials'] == 'false'
+    family_steps = [step for step in jobs['package']['steps'] if 'tests/respawn-family.test.mjs' in step.get('run', '')]
+    assert len(family_steps) == 1
+    assert family_steps[0]['env']['TAVERN_SOURCE'] == '${{ github.workspace }}/tavern-src'
+    assert family_steps[0]['env']['GRILLING_SOURCE'] == '${{ github.workspace }}/grilling-src'
     assert 'tests/test_wall_record_generation.py' in wall
     assert sum(commands(job).count('tests/wall-record.test.mjs') for job in jobs.values()) == 1
     assert 'tests/wall-record.test.mjs' in wall
@@ -73,10 +82,11 @@ class WorkflowContracts(unittest.TestCase):
         with self.assertRaises(AssertionError): validate_ci(workflow)
 
     def test_missing_freezer_callback_coverage_is_rejected(self):
-        workflow = copy.deepcopy(self.workflow)
-        for step in workflow['jobs']['package']['steps']:
-            if 'run' in step: step['run'] = step['run'].replace('tests/freezer-callback.test.mjs', '')
-        with self.assertRaises(AssertionError): validate_ci(workflow)
+        for script in ['tests/freezer-callback.test.mjs', 'tests/respawn-freezer.test.mjs', 'tests/respawn-family.test.mjs']:
+            workflow = copy.deepcopy(self.workflow)
+            for step in workflow['jobs']['package']['steps']:
+                if 'run' in step: step['run'] = step['run'].replace(script, '')
+            with self.assertRaises(AssertionError): validate_ci(workflow)
 
     def test_missing_windows_export_boundary_is_rejected(self):
         workflow = copy.deepcopy(self.workflow)
