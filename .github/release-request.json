@@ -1,15 +1,15 @@
 {
-  "version": "0.1.106",
-  "tag": "v0.1.106-preview.1",
-  "title": "森羅物語：世界名酒 0.1.106 測試版｜配對酒館調酒修復",
+  "version": "0.1.107",
+  "tag": "v0.1.107-preview.1",
+  "title": "森羅物語：世界名酒 0.1.107 測試版｜配對酒館名稱與展示維護修復",
   "prerelease": true,
-  "expected_archive_sha256": "11b1abaa2d720fcd3e0070673bd3cd8a9ed6ce9c93055e61adeefa1129e6ae4f",
-  "tavern_commit": "64f5d25d3e7f6156630a9c3a90020cd87efba051",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.106.md",
+  "tavern_commit": "d5655de6b6bdd50bd19b0ae7b4844d30406d3808",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.107.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
-  "new_bds_test": false,
+  "new_bds_test": true,
   "saved_world_migration": "pending",
   "production_ready": false,
-  "live_deployment": false
+  "live_deployment": false,
+  "expected_archive_sha256": "7a5662d0f01a6acc9630cec16361ff2d9826a963b0227fe70ce1521334be9616"
 }
