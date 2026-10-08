@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "release": "0.1.99",
+  "source": {
+    "author": "World Liquor NeoForge1.21.1 1.1.11",
+    "curseforge_file_id": 9066406,
+    "vanilla": "Mojang Minecraft1.21.1",
+    "official_client": {
+      "sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+      "size": 26836906,
+      "url": "https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar"
+    },
+    "official_mappings": {
+      "sha1": "2244b6f072256667bcd9a73df124d6c58de77992",
+      "size": 9598610,
+      "url": "https://piston-data.mojang.com/v1/objects/2244b6f072256667bcd9a73df124d6c58de77992/client.txt"
+    },
+    "methods": [
+      "EventHandlers.freezeWater",
+      "FrostedIceBlock.onPlace",
+      "FrostedIceBlock.tick",
+      "FrostedIceBlock.slightlyMelt",
+      "FrostedIceBlock.neighborChanged",
+      "IceBlock.melt",
+      "LevelChunkTicks.schedule"
+    ]
+  },
+  "actual_java_bootstrap": {
+    "unmodified_official_classes": true,
+    "frosted_ice_light_block": 1,
+    "oracle": "tools/FrostLightOracle.java",
+    "entities": 0,
+    "client": false
+  },
+  "native": {
+    "engine": "1.26.51.1",
+    "modules": {
+      "frost-aging.js": "d11b8c1e42c90cdd0d1d142aa21b54729d2234face6c6fa12ec1730098ac4c2b",
+      "frost-water.js": "b19ed040f38d7bda3eea91e6f7265f6d7a9e64b14d23a7e8f2924e688db68e42"
+    },
+    "first_restart": true,
+    "cases": [
+      {
+        "kind": "case",
+        "name": "saved-half-delay",
+        "clock": 30,
+        "age": 0,
+        "saved": [
+          {
+            "key": "kwl:frost_ticks/minecraft%3Aoverworld/0/5/0/0",
+            "value": "{\"schema\":1,\"rows\":[[0,60,null,0]]}"
+          }
+        ]
+      },
+      {
+        "kind": "case",
+        "name": "first-age-after-restart",
+        "clock": 60,
+        "age": 1
+      },
+      {
+        "kind": "case",
+        "name": "age-2",
+        "clock": 80,
+        "age": 2
+      },
+      {
+        "kind": "case",
+        "name": "age-3",
+        "clock": 100,
+        "age": 3
+      },
+      {
+        "kind": "case",
+        "name": "melt",
+        "clock": 120,
+        "type": "minecraft:water"
+      },
+      {
+        "kind": "case",
+        "name": "night-deferred",
+        "light": 1,
+        "clock": 220,
+        "age": 0
+      },
+      {
+        "kind": "case",
+        "name": "time-command-isolated",
+        "clock": 240,
+        "age": 1
+      },
+      {
+        "kind": "case",
+        "name": "neighbor-removal",
+        "left": "minecraft:water",
+        "right": "minecraft:water",
+        "solid": "minecraft:stone"
+      },
+      {
+        "kind": "case",
+        "name": "production-enrollment",
+        "frozen": 28,
+        "queued": 28
+      }
+    ],
+    "errors": 0,
+    "players": 0,
+    "simulated_players": false,
+    "test_world_only": true,
+    "full_family_admission": false,
+    "rendered_client": false
+  },
+  "remaining": [
+    "Exact Java native random-tick/RNG distribution and shared stream",
+    "All foreign neighbor-change event timing",
+    "Complete light/opacity equivalence",
+    "Actually observed chunk unload/reload and crash phases",
+    "Pre-update unregistered vanilla frost",
+    "Human ground/movement/visual/audio acceptance",
+    "Latest separate Java branches"
+  ],
+  "full_java_parity": false,
+  "client": false
+}

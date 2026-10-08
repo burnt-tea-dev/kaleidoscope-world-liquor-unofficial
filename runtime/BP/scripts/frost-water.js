@@ -1,6 +1,7 @@
+import {queueFrostedIce,flushFrostedIce,frostBlock} from './frost-aging.js';
 /** Current Java 1.1.11 EventHandlers.freezeWater selection.
  * The source PlayerTick.Post calls this every tick with radius 3 + effect amplifier.
- * Native frosted-ice melting is a separately tracked parity gap; no second guessed timer.
+ * Native scheduled aging is supplied by the source-backed owned scheduler.
  */
 export function freezeWater(entity,amplifier){
  if(!entity.isOnGround)return 0;
@@ -10,11 +11,12 @@ export function freezeWater(entity,amplifier){
  for(let x=-radius;x<=radius;x++)for(let z=-radius;z<=radius;z++){
   if(x*x+z*z>radius*radius)continue;
   try{
-   const at={x:center.x+x,y:center.y,z:center.z+z},block=entity.dimension.getBlock(at);
+   const at={x:center.x+x,y:center.y,z:center.z+z},block=frostBlock(entity.dimension,at);
    if(block?.typeId!=='minecraft:water'||block.permutation.getState('liquid_depth')!==0)continue;
-   if(!entity.dimension.getBlock({...at,y:at.y+1})?.isAir)continue;
-   block.setType('minecraft:frosted_ice');frozen++;
+   if(!frostBlock(entity.dimension,{...at,y:at.y+1})?.isAir)continue;
+   block.setType('minecraft:frosted_ice');queueFrostedIce(entity.dimension,at);frozen++;
   }catch{/* Native queries cannot load unavailable chunks; preserve that explicit gap. */}
  }
+ flushFrostedIce();
  return frozen;
 }

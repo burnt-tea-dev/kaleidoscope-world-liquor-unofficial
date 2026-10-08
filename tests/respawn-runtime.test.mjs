@@ -1,3 +1,4 @@
+import {frostEffectFixture} from './frost-effect-fixture.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -19,7 +20,7 @@ function fixture({dimension='nether',keepInventory=true,spawn=true}={}){
 }
 function production(f){
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
- const context=vm.createContext({world:f.world,system:{},applyJavaRespawn,JavaKillCredit,AcceptedHurtFeedback,CriticalFeedback:class{},MolangVariableMap:class{},readTavernEffects:()=>({}),ItemStack:class{},actor:f.player});
+ const context=vm.createContext({...frostEffectFixture,world:f.world,system:{},applyJavaRespawn,JavaKillCredit,AcceptedHurtFeedback,CriticalFeedback:class{},MolangVariableMap:class{},readTavernEffects:()=>({}),ItemStack:class{},actor:f.player});
  vm.runInContext(source,context);vm.runInContext("applyEffect(actor,'kaleidoscope_world_liquor:respawn',1,0)",context);
 }
 function registeredProduction(f){
@@ -31,7 +32,7 @@ function registeredProduction(f){
  f.world.getDynamicProperty=key=>worldProperties.get(key);f.world.setDynamicProperty=(key,value)=>worldProperties.set(key,value);
  const system={afterEvents:{scriptEventReceive:{subscribe:(fn,options)=>{assert.deepEqual([...options.namespaces],['kaleidoscope_world_liquor']);callbacks.push(fn);return fn;}}},run:fn=>deferred.push(fn),runInterval:fn=>{intervals.push(fn);return intervals.length;}};
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
- const context=vm.createContext({world:f.world,system,applyJavaRespawn,installJavaRespawn,JavaKillCredit,AcceptedHurtFeedback,CriticalFeedback:class{},MolangVariableMap:class{},readTavernEffects:()=>({}),ItemStack:class{},actor:f.player});
+ const context=vm.createContext({...frostEffectFixture,world:f.world,system,applyJavaRespawn,installJavaRespawn,JavaKillCredit,AcceptedHurtFeedback,CriticalFeedback:class{},MolangVariableMap:class{},readTavernEffects:()=>({}),ItemStack:class{},actor:f.player});
  vm.runInContext(source,context);vm.runInContext('installEffects()',context);
  return {worldProperties,callbacks,emit:(id,payload,extra={})=>{const event={id:'kaleidoscope_world_liquor:'+id,sourceType:'Server',message:typeof payload==='string'?payload:JSON.stringify(payload),...extra};for(const callback of callbacks)callback(event);},again:()=>vm.runInContext('installEffects()',context)};
 }

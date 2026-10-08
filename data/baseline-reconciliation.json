@@ -1768,6 +1768,11 @@
       "before": null,
       "after": "bdc691bebffe0ece344a75366bde9407068be098d1f521bae8b1eb08d9b004e4",
       "reason": "W0.1.97 owned native four-slot freezer input addition; complete native ItemStacks, no hidden serializer or private integration."
+    },
+    "runtime/BP/scripts/frost-aging.js": {
+      "before": null,
+      "after": "d11b8c1e42c90cdd0d1d142aa21b54729d2234face6c6fa12ec1730098ac4c2b",
+      "reason": "W99 missing Java1.21.1 FrostedIceBlock scheduled path: first60–120 dedup,20–40 reschedule, exact source predicates, native metadata/restart and scoped neighbors; no complete random-tick/event/light/client parity claim."
     }
   },
   "reviewedFunctionalDeltaLayers": [
@@ -2174,6 +2179,75 @@
               27,
               30,
               "  check(required===1&&record?.schema===1&&record.key===key&&record.dimension===dimension.id&&same(record.position,position)&&same(record.ids,ids),'NATIVE_STORAGE_MISMATCH');\n"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "release": "0.1.99",
+      "files": {
+        "runtime/BP/scripts/effects.js": {
+          "before": "7d4767881c623a1cf9c0200ac992d2d8ba78f7bda1fbf1d0b10025699b338f6e",
+          "after": "0992edf2e7a0c5ddf74b45437ad7be0bc7a4736799827a37ea9fb6744dad0e22",
+          "reason": "W99 missing Java1.21.1 FrostedIceBlock scheduled path: first60–120 dedup,20–40 reschedule, exact source predicates, native metadata/restart and scoped neighbors; no complete random-tick/event/light/client parity claim.",
+          "reverseOps": [
+            [
+              0,
+              1,
+              ""
+            ],
+            [
+              18,
+              19,
+              ""
+            ],
+            [
+              77,
+              78,
+              "export function tick(){if(system.currentTick%20===0)killCredit.prune();const entities=new Map(world.getAllPlayers().map(p=>[p.id,p]));for(const entity of getTavernEffectEntities(world,NS))entities.set(entity.id,entity);for(const p of entities.values())try{\n"
+            ],
+            [
+              91,
+              92,
+              ""
+            ],
+            [
+              103,
+              104,
+              " world.afterEvents.playerBreakBlock.subscribe(e=>{const row=active(e.player,'treasure_guide');if(!row)return;try{addTreasureBlockDrops(e,row.amplifier,world.getLootTableManager());}catch(error){console.warn('[World Liquor treasure block] '+error);}});\n"
+            ]
+          ]
+        },
+        "runtime/BP/scripts/frost-water.js": {
+          "before": "22ef335de5b501a2a0a60ab1222bcc2ac801c86e7bbf9b31cf7e580c26eaf876",
+          "after": "b19ed040f38d7bda3eea91e6f7265f6d7a9e64b14d23a7e8f2924e688db68e42",
+          "reason": "W99 missing Java1.21.1 FrostedIceBlock scheduled path: first60–120 dedup,20–40 reschedule, exact source predicates, native metadata/restart and scoped neighbors; no complete random-tick/event/light/client parity claim.",
+          "reverseOps": [
+            [
+              0,
+              1,
+              ""
+            ],
+            [
+              3,
+              4,
+              " * Native frosted-ice melting is a separately tracked parity gap; no second guessed timer.\n"
+            ],
+            [
+              13,
+              14,
+              "   const at={x:center.x+x,y:center.y,z:center.z+z},block=entity.dimension.getBlock(at);\n"
+            ],
+            [
+              15,
+              17,
+              "   if(!entity.dimension.getBlock({...at,y:at.y+1})?.isAir)continue;\n   block.setType('minecraft:frosted_ice');frozen++;\n"
+            ],
+            [
+              19,
+              20,
+              ""
             ]
           ]
         }
