@@ -3,8 +3,10 @@
 from pathlib import Path
 import json,re,subprocess,os
 from PIL import Image
+from texture_paths import check as check_texture_paths
 root=Path(__file__).resolve().parents[1];tav=Path(os.environ.get('TAVERN_ROOT',str(root.parent/'tavern-src')));bp=root/'runtime/BP';rp=root/'runtime/RP'
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+check_texture_paths(rp)
 subprocess.run(['python',str(root/'tools/item_render_contract.py')],check=True)
 subprocess.run(['python',str(root/'tools/check_effect_icons.py')],check=True)
 subprocess.run(['python',str(root/'tools/test_freezer_java_art.py')],check=True)

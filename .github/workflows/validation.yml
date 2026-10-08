@@ -86,6 +86,7 @@ jobs:
         working-directory: world-liquor-src
         run: |
           python tools/test_storage_payload_projection.py
+          python tools/test_texture_paths.py
           python tools/test_effect_names.py
           python tools/build_effect_names.py --check
           python ../tavern-src/tools/creative/catalog.py --root . --peer ../tavern-src

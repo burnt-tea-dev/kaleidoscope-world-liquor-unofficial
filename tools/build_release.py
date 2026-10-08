@@ -9,7 +9,7 @@ name=f'Kaleidoscope_World_Liquor_Unofficial_{version}_preview1.mcaddon';target=o
 with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
  for path in sorted((root/'runtime').rglob('*')):
   if not path.is_file():continue
-  info=zipfile.ZipInfo(path.relative_to(root/'runtime').as_posix(),(2026,9,24,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16
+  info=zipfile.ZipInfo(path.relative_to(root/'runtime').as_posix(),(2026,9,24,0,0,0));info.create_system=3;info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16
   archive.writestr(info,path.read_bytes())
 baseline_check(baseline_read(root/'baseline.json'),archive=target)
 sha=hashlib.sha256(target.read_bytes()).hexdigest();(out/'SHA256SUMS').write_text(f'{sha}  {name}\n')

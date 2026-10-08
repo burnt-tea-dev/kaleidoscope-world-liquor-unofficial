@@ -58,6 +58,12 @@ def main() -> None:
         assert set(names) == set(expected), 'ZIP is not the complete canonical runtime'
         for name, path in expected.items():
             assert archive.read(name) == path.read_bytes(), name
+        # Release attribution must travel with the installed BP/RP, not only
+        # remain on the repository homepage. This is delivery integrity.
+        for side, notices in {'BP': ['LICENSE-CODE', 'LICENSE-TAVERN-CODE', 'NOTICE.md'],
+                              'RP': ['LICENSE-ASSETS', 'LICENSE-TAVERN-CODE', 'NOTICE.md']}.items():
+            for notice in notices:
+                assert archive.read(side + '/' + notice) == (ROOT / notice).read_bytes(), 'Missing/stale release notice: ' + side + '/' + notice
     evidence = {'publicationVerified': not args.development, 'version': version, 'archive': filename, 'sha256': digest, 'bytes': archive_path.stat().st_size,
                 'entries': len(expected), 'tavernCommit': actual_commit, 'fullRuntimeMatch': True,
                 'newBdsTest': False, 'clientTest': False, 'playerSimulation': False}
