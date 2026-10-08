@@ -41,8 +41,8 @@ function createGrillingStorage(f){
  return {entity:world.getEntity(record.entity),key,read:()=>[grilling.peekStationContainer(block).getItem(0)]};
 }
 
-test('all 85 listed helper facts match the actual paired BP definitions, including component groups',()=>{
- assert.deepEqual(checkRespawnHelperDefinitions(),{tavern:56,worldLiquor:21,grilling:8});
+test('all 87 listed helper facts match the actual paired BP definitions, including component groups',()=>{
+ assert.deepEqual(checkRespawnHelperDefinitions(),{tavern:56,worldLiquor:21,grilling:10});
 });
 for(const [name,create] of [['Tavern cabinet',createTavernStorage],['Grilling seasoning bottle',createGrillingStorage]]){
  for(const foreign of [false,true])test(`production ${name} storage ${foreign?'retains unknown foreign collision rejection':'does not block shared Respawn'}`,()=>{
@@ -55,3 +55,16 @@ for(const [name,create] of [['Tavern cabinet',createTavernStorage],['Grilling se
   assert.equal(world.getDynamicProperty(stored.key),before);assert.equal(world.getEntity(stored.entity.id),stored.entity);assert.deepEqual(stored.read(),[f.item]);
  });
 }
+test('G118 plate and recipe displays preserve shared Respawn while an unknown Grilling helper stays rejected',()=>{
+ const f=fixture();f.dimension.getBlock=f.column;
+ const displays=['kaleidoscope_grilling:plate_food_visual','kaleidoscope_grilling:recipe_icon_visual'].map((typeId,i)=>({id:'g118-display-'+i,typeId,location:{x:512,y:64,z:512}}));
+ f.dimension.getEntities=()=>[f.actor,...displays];
+ const ready=applyJavaRespawn(f.actor,world);
+ assert.equal(ready.status,'ready');assert.equal(ready.branch,'shared-column');
+ assert.deepEqual(f.calls.map(row=>row[0]),['teleport','effect']);
+ f.calls.length=0;
+ displays.push({id:'unreviewed-g118',typeId:'kaleidoscope_grilling:unreviewed_visual',location:{x:512,y:64,z:512}});
+ const unknown=applyJavaRespawn(f.actor,world);
+ assert.equal(unknown.status,'unknown');assert.equal(unknown.fact,'local source collidable entity facts kaleidoscope_grilling:unreviewed_visual');
+ assert.deepEqual(f.calls,[]);
+});

@@ -93,7 +93,9 @@ export const NON_COLLIDABLE_HELPERS=Object.freeze({
   'kaleidoscope_grilling:inventory_rack_v1',
   'kaleidoscope_grilling:inventory_seasoning_v1',
   'kaleidoscope_grilling:grill_food_visual',
-  'kaleidoscope_grilling:rack_tool_visual'
+  'kaleidoscope_grilling:rack_tool_visual',
+  'kaleidoscope_grilling:plate_food_visual',
+  'kaleidoscope_grilling:recipe_icon_visual'
  ])
 });
 const helpers=new Set(Object.values(NON_COLLIDABLE_HELPERS).flat());
