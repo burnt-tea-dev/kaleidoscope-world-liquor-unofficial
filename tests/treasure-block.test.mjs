@@ -1,3 +1,4 @@
+import {frostEffectFixture} from './frost-effect-fixture.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -34,6 +35,6 @@ test('the actual registered break callback uses the source effect amplifier and 
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
  let callback,enabled=false;const manager={},calls=[],subscribe={subscribe(){}},actor={id:'break API snapshot'};
  const world={beforeEvents:{playerInteractWithBlock:subscribe,entityHurt:subscribe},afterEvents:{entityHurt:subscribe,entityRemove:subscribe,playerSpawn:subscribe,playerLeave:subscribe,playerButtonInput:subscribe,entityDie:subscribe,playerBreakBlock:{subscribe:fn=>callback=fn}},getLootTableManager:()=>manager};
- const ctx=vm.createContext({installJavaRespawn,world,system:{afterEvents:{scriptEventReceive:subscribe},runInterval(){}},readTavernEffects:()=>enabled?{treasure_guide:{amplifier:2}}:{},JavaKillCredit:class{},AcceptedHurtFeedback:class{},CriticalFeedback:class{},MolangVariableMap:class{},addTreasureBlockDrops:(...args)=>calls.push(args)});
- vm.runInContext(source+'\ninstallEffects();',ctx);const event={player:actor};callback(event);assert.equal(calls.length,0);enabled=true;callback(event);assert.deepEqual(calls,[[event,2,manager]]);
+ const ctx=vm.createContext({...frostEffectFixture,installJavaRespawn,world,system:{afterEvents:{scriptEventReceive:subscribe},runInterval(){}},readTavernEffects:()=>enabled?{treasure_guide:{amplifier:2}}:{},JavaKillCredit:class{},AcceptedHurtFeedback:class{},CriticalFeedback:class{},MolangVariableMap:class{},addTreasureBlockDrops:(...args)=>calls.push(args)});
+ vm.runInContext(source+'\ninstallEffects();',ctx);const event={player:actor,brokenBlockPermutation:permutation('minecraft:stone')};callback(event);assert.equal(calls.length,0);enabled=true;callback(event);assert.deepEqual(calls,[[event,2,manager]]);
 });
