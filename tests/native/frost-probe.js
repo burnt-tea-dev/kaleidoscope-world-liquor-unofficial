@@ -33,6 +33,20 @@ world.afterEvents.worldLoad.subscribe(()=>{
    }
    await tick(1);
   }
+  for(const label of ['noon','midnight']){
+   dimension.runCommand('time set '+label);await tick(5);
+   const b=dimension.getBlock({x:24,y:82,z:0});out('brightness',{time:label,light:b.getLightLevel(),sky:b.getSkyLightLevel(),absolute:world.getAbsoluteTime()});
+  }
+  dimension.runCommand('time set noon');
+  // Changes around already scheduled vanilla blocks: observe the engine before adding script ticks.
+  for(const x of [0,1,2])dimension.getBlock({x,y:82,z:0}).setType('minecraft:frosted_ice');
+  await tick(1);dimension.getBlock({x:1,y:82,z:0}).setType('minecraft:air');await tick(1);
+  out('neighbor',{left:dimension.getBlock({x:0,y:82,z:0}).typeId,right:dimension.getBlock({x:2,y:82,z:0}).typeId});
+  world.gameRules.randomTickSpeed=600;
+  for(let elapsed=0;elapsed<=200;elapsed++){
+   for(const cell of cells){const b=dimension.getBlock(cell.location);const state={type:b.typeId,states:b.permutation.getAllStates()};const key=JSON.stringify(state);if(key!==cell.last){cell.last=key;out('random-transition',{elapsed,site:cell.site,at:cell.location,...state});}}
+   await tick(1);
+  }
   out('done',{players:world.getAllPlayers().length,randomTickSpeed:world.gameRules.randomTickSpeed,elapsed:system.currentTick-started});
  }catch(error){out('failure',{error:String(error),stack:error.stack});}},30);
 });

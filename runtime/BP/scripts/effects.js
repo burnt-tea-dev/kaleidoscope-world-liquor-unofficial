@@ -1,3 +1,4 @@
+import {FrostAgingScheduler,setFrostAgingScheduler} from './frost-aging.js';
 import {readTavernEffects,getTavernEffectEntities} from './sdk/tavern-effects.js';
 import {isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource} from './combat-source.js';
 import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from './kill-credit.js';
@@ -15,6 +16,7 @@ import {applyJavaRespawn,installJavaRespawn} from './respawn-adapter.js';
 import {world,system,EffectTypes,ItemStack,MolangVariableMap} from '@minecraft/server';
 export const NS='kaleidoscope_world_liquor';
 const jumps=new Map(),headDrops=new Map();
+let frostAging;
 const killCredit=new JavaKillCredit({now:()=>system.currentTick,resolve:id=>{try{return world.getEntity(id);}catch{return undefined;}}});
 const acceptedFeedback=new AcceptedHurtFeedback(system);
 const criticalFeedback=new CriticalFeedback(system,{delivery:acceptedFeedback,variables:()=>new MolangVariableMap()});
@@ -73,7 +75,7 @@ function jump(p,reverse,lava=lavaContact(p)){
  const at={x:Math.floor(p.location.x),y:Math.floor(p.location.y),z:Math.floor(p.location.z)},factor=b=>b?.typeId==='minecraft:honey_block'?.5:1,foot=factor(p.dimension.getBlock(at)),other=factor(p.dimension.getBlock({...at,y:reverse?at.y+1:Math.floor(p.location.y-.2)}));
  const target=sourceJumpVelocity({reverse,jumpFactor:foot===1?other:foot,jumpBoost:p.getEffect('jump_boost')?.amplifier,sprinting:p.isSprinting,yaw:p.getRotation().y}),velocity=p.getVelocity();p.applyImpulse(nativeJumpImpulse(velocity,target,{slowFalling:!!p.getEffect('slow_falling'),lava}));
 }
-export function tick(){if(system.currentTick%20===0)killCredit.prune();const entities=new Map(world.getAllPlayers().map(p=>[p.id,p]));for(const entity of getTavernEffectEntities(world,NS))entities.set(entity.id,entity);for(const p of entities.values())try{
+export function tick(){frostAging?.tick();if(system.currentTick%20===0)killCredit.prune();const entities=new Map(world.getAllPlayers().map(p=>[p.id,p]));for(const entity of getTavernEffectEntities(world,NS))entities.set(entity.id,entity);for(const p of entities.values())try{
  const state=read(p);if(!state.multi_jump)jumps.delete(p.id);
  if(!Object.keys(state).length)continue;
  const heal=state.continuous_heal;if(heal){const h=p.getComponent('minecraft:health');if(h&&h.currentValue>0&&h.currentValue<h.effectiveMax)h.setCurrentValue(Math.min(h.effectiveMax,Math.fround(Math.fround(h.currentValue)+Math.fround(heal.amplifier+1))));}
@@ -87,6 +89,7 @@ function wearingUsableElytra(p){
  return !durability||durability.damage<durability.maxDurability-1;
 }
 export function installEffects(){
+ frostAging=new FrostAgingScheduler(world);setFrostAgingScheduler(frostAging);
  installJavaRespawn(world,system);
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(isLivingCombatEntity(p)&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
@@ -98,6 +101,6 @@ export function installEffects(){
  world.afterEvents.entityDie.subscribe(e=>{if(headDrops.delete(e.deadEntity.id)){const id={'minecraft:zombie':'minecraft:zombie_head','minecraft:skeleton':'minecraft:skeleton_skull','minecraft:creeper':'minecraft:creeper_head','minecraft:wither_skeleton':'minecraft:wither_skeleton_skull','minecraft:piglin':'minecraft:piglin_head','minecraft:player':'minecraft:player_head'}[e.deadEntity.typeId];if(id)try{e.deadEntity.dimension.spawnItem(new ItemStack(id),e.deadEntity.location);}catch{}}
   const attacker=e.damageSource?.damagingEntity,row=attacker&&active(attacker,'treasure_guide');if(row)doubleFreshDrops(e.deadEntity.dimension,e.deadEntity.location,.15+.05*row.amplifier);
  });
- world.afterEvents.playerBreakBlock.subscribe(e=>{const row=active(e.player,'treasure_guide');if(!row)return;try{addTreasureBlockDrops(e,row.amplifier,world.getLootTableManager());}catch(error){console.warn('[World Liquor treasure block] '+error);}});
+ world.afterEvents.playerBreakBlock.subscribe(e=>{if(e.brokenBlockPermutation.type.id==='minecraft:frosted_ice')frostAging.removed(e.dimension,e.block.location);const row=active(e.player,'treasure_guide');if(!row)return;try{addTreasureBlockDrops(e,row.amplifier,world.getLootTableManager());}catch(error){console.warn('[World Liquor treasure block] '+error);}});
  system.runInterval(tick,1);
 }
