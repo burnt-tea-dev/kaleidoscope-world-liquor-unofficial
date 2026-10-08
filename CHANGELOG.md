@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.107
+
+Pair both packs with Tavern 0.6.130 for its native-label routing and storage-display maintenance repairs. World Liquor gameplay and the shared seven-section guide data remain unchanged; see [release scope](docs/RELEASE-NOTES-0.1.107.md).
+
 ## 0.1.106
 
 Pair both packs with Tavern 0.6.129 for its cocktail interaction, placed shaker preservation, presentation and supported-effect repairs. World Liquor recipes and the shared guide projection remain on the existing API; see [release scope](docs/RELEASE-NOTES-0.1.106.md).
