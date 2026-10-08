@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Asset and progression audit; no interaction emulation."""
 from pathlib import Path
-import json,re,subprocess,os,sys
+import importlib.util,json,re,subprocess,os,sys
 from PIL import Image
 from texture_paths import check as check_texture_paths
 root=Path(__file__).resolve().parents[1];tav=Path(os.environ.get('TAVERN_ROOT',str(root.parent/'tavern-src')));bp=root/'runtime/BP';rp=root/'runtime/RP'
@@ -19,7 +19,7 @@ def check(ok,message):
 for path in root.joinpath('runtime').rglob('*.json'):
  try:read(path)
  except Exception as e:errors.append(str(path)+': '+str(e))
-geometry=set();owned_geometry=set()
+geometry=set();owned_geometry=set();geometry_sources={}
 for pack in [rp,tav/'runtime/RP']:
  for p in (pack/'models').rglob('*.json'):
   try:
@@ -27,14 +27,21 @@ for pack in [rp,tav/'runtime/RP']:
     check(p.parent in (pack/'models/blocks',pack/'models/entity'),p.name+': geometry is outside a client-scanned models directory')
    for g in read(p).get('minecraft:geometry',[]):
     identifier=g['description']['identifier'];geometry.add(identifier)
+    geometry_sources.setdefault(identifier,[]).append(p.resolve())
     if pack==rp:
      check(identifier not in owned_geometry,p.name+': duplicate geometry '+identifier)
      check(len(identifier)<=48,p.name+': geometry identifier is too long '+identifier)
      owned_geometry.add(identifier)
   except Exception as e:errors.append(str(p)+': '+str(e))
-# Keep the combined pack compact. This count alone cannot prove client asset
-# registration: a valid geometry under an arbitrary directory is still missed.
-check(len(geometry)<1024,'combined Tavern + World Liquor geometry budget exceeded')
+# Preserve the original <1024 base budget, with only the four source-reviewed
+# T131 native item meshes allocated separately by the host's exact witness.
+# The host checks ownership, duplicate IDs, immutable content and complexity;
+# this is not an engine-limit declaration or rendered-client acceptance.
+try:
+ spec=importlib.util.spec_from_file_location('tavern_release_checks',tav/'tools/check_release.py')
+ host_checks=importlib.util.module_from_spec(spec);spec.loader.exec_module(host_checks)
+ host_checks.check_combined_geometry_budget(geometry_sources,tav)
+except Exception as e:errors.append('combined geometry allocation: '+str(e))
 for p in (bp/'blocks').glob('*.json'):
  d=read(p)['minecraft:block'];check(all(len(values)<=16 for values in d['description'].get('states',{}).values()),p.name+': state has more than 16 values');selectors=[d['components'],*(x['components'] for x in d.get('permutations',[]))]
  for c in selectors:

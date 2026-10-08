@@ -22,6 +22,8 @@
 
 G118 相容候選追加：以 Grilling `f7bd2d26367c113ab8881bc67e9f5e69624917ff` 的正式 `plate_food_visual.json`、`recipe_icon_visual.json` 核對兩個新增 exact ID。兩者均為 `has_collision=false`、零寬高且沒有碰撞 component-group 覆寫；清單因此增為 Grilling 10 個、家族合計 87 個。原有來源表保留其檢視時間與範圍，沒有倒改舊證據。既有 family 回歸增加兩種展示同場不阻止 shared Respawn、同 namespace 未審查實體仍返回 unknown 的檢查。L108/T131 版本、相依與 runtime 身分已統一凍結；本段只記來源／API 回歸，不聲稱原生／客戶端通過。
 
+G119 配對續核：正式來源 `b010ec2a6709ada74ed96ead19c60da4e0bc2789` 的 canonical BP entity 目錄仍是相同 11 檔；10 個非 player helper 定義與 G118 的 Git blob 全部相同，沒有新增、刪除或改碰撞的 helper。唯一 entity 差異是 `player.json` 的 held-render property range 上限；`family_station_storage.js` 亦與 G118 同 blob。因此沿用上述相同 helper／storage 輸入的 6/6 source/API fixture 證據，配對 metadata 改為 G119；不改 L108 凍結 runtime，也不把來源一致性當作新的 G119 全包、BDS、client 或 LIVE 驗收。
+
 ## T-W-STORAGE — 酒架/酒櫃格位、瓶身旋轉/莫洛托夫、材料資料保存
 
 現行狀態：`transaction_and_native_preservation_bounded_visual_pending`。

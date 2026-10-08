@@ -3,7 +3,7 @@
   "tag": "v0.1.108-preview.1",
   "title": "森羅物語：世界名酒 0.1.108 測試版｜配對酒館修補與煙火展示",
   "prerelease": true,
-  "tavern_commit": "b277d565a1bb67e55091d82f9cfde5542ccedf9d",
+  "tavern_commit": "9527b7ef57c597bb41710064fba69f603332a941",
   "validation_evidence": "docs/RELEASE-NOTES-0.1.108.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
