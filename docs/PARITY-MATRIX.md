@@ -1,5 +1,7 @@
 # Java / Bedrock parity matrix
 
+Current development candidate: W0.1.104 paired with T0.6.127. Twelve overlong filenames now use reviewed compact paths with identical source artwork; shipped notices are restored. These changes do not certify native client texture resolution or complete visual parity.
+
 Audited Bedrock sources: T0.6.126 ac4932b4 / W0.1.103 56314bac. This initial Phase0 matrix covers the inspected player-facing priorities; complete T1/T2/W1 recipe, timing, storage and effect coverage will be added in subsequent phases, not presumed complete. A single future slice reference awaits the owner decision. L0=source inspection, L1=executed source/oracle, L2=scoped native-engine scene, L3=paired actual-client observation. Historical partial L3 cannot certify later releases or all contexts. T/ and W/ identify the repository.
 
 | Item | Java reference | Current implementation / gap | Source result | Affected engine scene | Client evidence |
