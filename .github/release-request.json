@@ -4,7 +4,7 @@
   "title": "森羅物語：世界名酒 0.1.106 測試版｜配對酒館調酒修復",
   "prerelease": true,
   "expected_archive_sha256": "11b1abaa2d720fcd3e0070673bd3cd8a9ed6ce9c93055e61adeefa1129e6ae4f",
-  "tavern_commit": "596a2019c8bff62445ccfc8abaf1ac3f8d5e4762",
+  "tavern_commit": "64f5d25d3e7f6156630a9c3a90020cd87efba051",
   "validation_evidence": "docs/RELEASE-NOTES-0.1.106.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
