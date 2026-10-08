@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.108 candidate
+
+Prepare both packs for Tavern 0.6.131 and recognize Grilling 2.8.118's two additional zero-collision displays in shared Respawn checks. Unknown helpers remain rejected. Release freeze and native/client/live verification are pending; see [candidate scope](docs/RELEASE-NOTES-0.1.108.md).
+
 ## 0.1.107
 
 Pair both packs with Tavern 0.6.130 for its native-label routing and storage-display maintenance repairs. World Liquor gameplay and the shared seven-section guide data remain unchanged; see [release scope](docs/RELEASE-NOTES-0.1.107.md).
