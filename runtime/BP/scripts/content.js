@@ -582,7 +582,7 @@ export const CONTENT = [
         {
           "effect": "minecraft:luck",
           "duration": 80,
-          "amplifier": 0,
+          "amplifier": 1,
           "probability": 1.0
         }
       ],
@@ -596,7 +596,7 @@ export const CONTENT = [
         {
           "effect": "minecraft:luck",
           "duration": 240,
-          "amplifier": 1,
+          "amplifier": 3,
           "probability": 1.0
         }
       ],
@@ -610,7 +610,7 @@ export const CONTENT = [
         {
           "effect": "minecraft:luck",
           "duration": 720,
-          "amplifier": 2,
+          "amplifier": 5,
           "probability": 1.0
         }
       ],
@@ -624,7 +624,7 @@ export const CONTENT = [
         {
           "effect": "minecraft:luck",
           "duration": 2160,
-          "amplifier": 3,
+          "amplifier": 7,
           "probability": 1.0
         }
       ]

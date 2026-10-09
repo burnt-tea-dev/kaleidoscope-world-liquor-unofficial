@@ -1,6 +1,6 @@
 # Java / Bedrock parity matrix
 
-Current development candidate: W0.1.105 paired with T0.6.128 and source-checked with optional G2.8.117. Shared-spawn Respawn recognizes 85 exact family zero-collision helpers; current T128 dependencies and guide payload are paired. W104 compact paths/art/notices and all current source repairs remain. No native Player or rendered-client acceptance is inferred from the source checks.
+Current development candidate: W0.1.110 paired with T0.6.132 and optional G2.8.119. The current Forge1.1.12 / NeoForge1.1.11 source review corrects Dassai Q3–Q6 Luck amplifiers and four coupled cup meshes/atlases plus two authored inventory icons. Shared Respawn helper repairs and prior compact paths/storage/guide remain. Native Java Luck loot, Forge integration/event phases, the separate NeoForge26 branch and rendered-client acceptance remain incomplete. See [current source review](../data/current-author-review-20261009.json) and [release scope](RELEASE-NOTES-0.1.110.md).
 
 Audited Bedrock sources: T0.6.126 ac4932b4 / W0.1.103 56314bac. This initial Phase0 matrix covers the inspected player-facing priorities; complete T1/T2/W1 recipe, timing, storage and effect coverage will be added in subsequent phases, not presumed complete. A single future slice reference awaits the owner decision. L0=source inspection, L1=executed source/oracle, L2=scoped native-engine scene, L3=paired actual-client observation. Historical partial L3 cannot certify later releases or all contexts. T/ and W/ identify the repository.
 

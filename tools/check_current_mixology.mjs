@@ -4,6 +4,7 @@ import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 import {payload} from '../runtime/BP/scripts/payload.js';
+import {CONTENT} from '../runtime/BP/scripts/content.js';
 const host=pathToFileURL(path.resolve(process.env.TAVERN_ROOT??'../tavern-src')+path.sep);
 const {ExtensionRegistry}=await import(new URL('runtime/BP/scripts/core/registry.js',host));
 const {SHAKER_RECIPES}=await import(new URL('runtime/BP/scripts/data/mixology.js',host));
@@ -14,6 +15,16 @@ const source=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.
 assert.equal(source.file_id,9066406);
 assert.deepEqual(payload.shakerColors.map(row=>row.color),[8606770,16351261,3847130,15961002]);
 const r=new ExtensionRegistry({recipes:SHAKER_RECIPES,fluids:FLUIDS});r.install(payload);
+// Original author data, shared by current Forge1.1.12 and NeoForge1.1.11.
+// Check both direct drink admission and the actual host's mixology projection.
+const dassai=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.1.11/dassai.json',import.meta.url)));
+for(const content of [CONTENT,payload.content])assert.deepEqual(content.find(row=>row.base===dassai.item).effects,dassai.effects);
+for(const q of [4,5,6]){
+ const input=inputSnapshot(dassai.item+'_q'+q,r);
+ assert.deepEqual(input.effects,dassai.effects[q-1]);
+ const expected=dassai.effects[q-1].find(effect=>effect.effect==='minecraft:luck');
+ assert.equal(signaturePayload([input,input,input]).effects.find(effect=>effect.effect==='minecraft:luck').amplifier,expected.amplifier);
+}
 const recipes=payload.recipes.filter(row=>row.kind==='shaker');assert.equal(recipes.length,18);
 let cases=0;
 for(const recipe of recipes){

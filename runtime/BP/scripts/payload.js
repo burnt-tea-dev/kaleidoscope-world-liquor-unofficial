@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.109",
+  "version": "0.1.110",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -1125,7 +1125,7 @@ export const payload = {
         {
           "effect": "minecraft:luck",
           "duration": 240,
-          "amplifier": 1,
+          "amplifier": 3,
           "probability": 1.0
         }
       ],
@@ -1147,7 +1147,7 @@ export const payload = {
         {
           "effect": "minecraft:luck",
           "duration": 720,
-          "amplifier": 2,
+          "amplifier": 5,
           "probability": 1.0
         }
       ],
@@ -1169,7 +1169,7 @@ export const payload = {
         {
           "effect": "minecraft:luck",
           "duration": 2160,
-          "amplifier": 3,
+          "amplifier": 7,
           "probability": 1.0
         }
       ],
@@ -2945,7 +2945,7 @@ export const payload = {
           {
             "effect": "minecraft:luck",
             "duration": 80,
-            "amplifier": 0,
+            "amplifier": 1,
             "probability": 1.0
           }
         ],
@@ -2959,7 +2959,7 @@ export const payload = {
           {
             "effect": "minecraft:luck",
             "duration": 240,
-            "amplifier": 1,
+            "amplifier": 3,
             "probability": 1.0
           }
         ],
@@ -2973,7 +2973,7 @@ export const payload = {
           {
             "effect": "minecraft:luck",
             "duration": 720,
-            "amplifier": 2,
+            "amplifier": 5,
             "probability": 1.0
           }
         ],
@@ -2987,7 +2987,7 @@ export const payload = {
           {
             "effect": "minecraft:luck",
             "duration": 2160,
-            "amplifier": 3,
+            "amplifier": 7,
             "probability": 1.0
           }
         ]
@@ -4509,9 +4509,9 @@ export const payload = {
         "zh_TW": "獺祭"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 2（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Luck (Java-only; unavailable here) 3（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Luck (Java-only; unavailable here) 4（2160s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 2（240秒，100%）\n品质 5：微醺 1（20秒，100%）；幸运（Java 专属，本移植未提供） 3（720秒，100%）\n品质 6：微醺 1（10秒，100%）；幸运（Java 专属，本移植未提供） 4（2160秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 2（240秒，100%）\n品質 5：微醺 1（20秒，100%）；幸運（Java 專屬，本移植未提供） 3（720秒，100%）\n品質 6：微醺 1（10秒，100%）；幸運（Java 專屬，本移植未提供） 4（2160秒，100%）"
+        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 2（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 4（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Luck (Java-only; unavailable here) 6（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Luck (Java-only; unavailable here) 8（2160s，100%）",
+        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 2（80秒，100%）\n品质 4：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 4（240秒，100%）\n品质 5：微醺 1（20秒，100%）；幸运（Java 专属，本移植未提供） 6（720秒，100%）\n品质 6：微醺 1（10秒，100%）；幸运（Java 专属，本移植未提供） 8（2160秒，100%）",
+        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 2（80秒，100%）\n品質 4：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 4（240秒，100%）\n品質 5：微醺 1（20秒，100%）；幸運（Java 專屬，本移植未提供） 6（720秒，100%）\n品質 6：微醺 1（10秒，100%）；幸運（Java 專屬，本移植未提供） 8（2160秒，100%）"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/dassai"

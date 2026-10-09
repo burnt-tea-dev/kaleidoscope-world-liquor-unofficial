@@ -91,6 +91,6 @@ subprocess.run([sys.executable,str(tav/'tools/creative/catalog.py'),'--root',str
 
 subprocess.run([sys.executable,str(tav/'tools/pick_block.py'),'--root',str(root)],check=True)
 
-subprocess.run([sys.executable,str(tav/'tools/check_drink_surfaces.py'),str(root)],check=True,cwd=root)
+subprocess.run([sys.executable,str(root/'tools/check_current_drink_surfaces.py')],check=True,cwd=root)
 
 subprocess.run(['node',str(root/'tools/check_current_mixology.mjs')],check=True,cwd=root)
