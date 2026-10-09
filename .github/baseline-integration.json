@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "tavern_commit": "956727d8ed71f4a766f8668b680d3e9720db53be",
+  "tavern_commit": "27b7f7f9032264692141924eda61d147ec96e615",
   "tavern_version": "0.6.143",
   "publication_request": true,
-  "grilling_commit": "469441bc6556b5e91adedfd44876ac072572012a",
+  "grilling_commit": "06efffbef819bfbc906cc425c122e775d554409c",
   "grilling_version": "2.8.124"
 }

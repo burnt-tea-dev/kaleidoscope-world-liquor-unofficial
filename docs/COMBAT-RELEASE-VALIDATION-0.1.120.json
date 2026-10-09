@@ -21,7 +21,7 @@
     "public_guide_entries": 223,
     "public_guide_categories": 31,
     "public_guide_packets": 216,
-    "exact_head_required_ci": "pending"
+    "exact_head_required_ci": "Tracked by canonical PR101 checks for its exact head"
   },
   "acceptance": {
     "native": false,
@@ -32,5 +32,10 @@
     "production_ready": false,
     "simulated_players": false
   },
-  "scope": "Frozen owned admission repair and version pairing; prior candidate reports are preserved and not relabeled."
+  "scope": "Frozen owned admission repair and version pairing. Local checks use the listed frozen peer sources; CI peers include later tooling fixes with identical exported runtime. Prior reports and first CI failure are preserved and not relabeled.",
+  "ci_peer_sources": {
+    "Tavern": "27b7f7f9032264692141924eda61d147ec96e615",
+    "Grilling": "06efffbef819bfbc906cc425c122e775d554409c"
+  },
+  "ci_pr": "https://github.com/casama233/kaleidoscope-world-liquor-unofficial/pull/101"
 }

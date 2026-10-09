@@ -3,7 +3,7 @@
   "tag": "v0.1.120-preview.1",
   "title": "森羅物語：世界名酒 0.1.120 測試版｜生物戰鬥入口修復",
   "prerelease": true,
-  "tavern_commit": "956727d8ed71f4a766f8668b680d3e9720db53be",
+  "tavern_commit": "27b7f7f9032264692141924eda61d147ec96e615",
   "validation_evidence": "docs/COMBAT-RELEASE-VALIDATION-0.1.120.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
