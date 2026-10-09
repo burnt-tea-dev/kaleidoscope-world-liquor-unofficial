@@ -49,7 +49,7 @@ test('projectile owners and explosions are excluded from the original melee pred
 test('production callback applies source conditions and the 0.6-volume elbow sound',()=>{
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
  const states=new Map(),sounds=[],pending=[];
- const actor={id:'numeric API fixture',typeId:'minecraft:player',isOnGround:false,isClimbing:true,isInWater:false,getEffect:()=>undefined,getComponent:()=>undefined,getVelocity:()=>({y:-.2}),location:{x:1,y:2,z:3},dimension:{playSound:(...args)=>sounds.push(args)}};
+ const actor={id:'numeric API fixture',typeId:'minecraft:player',isOnGround:false,isClimbing:true,isInWater:false,getEffect:()=>undefined,getComponent:id=>id==='minecraft:health'?{currentValue:20}:undefined,getVelocity:()=>({y:-.2}),location:{x:1,y:2,z:3},dimension:{playSound:(...args)=>sounds.push(args)}};
  const target={id:'damage API fixture',typeId:'minecraft:player',getComponent:()=>({effectiveMax:20})};states.set(actor,{ground_crit:{amplifier:0},elbow_strike:{amplifier:0}});
  const ctx=vm.createContext({AcceptedHurtFeedback,CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:e=>states.get(e)??{},world:{},system:{run:fn=>pending.push(fn)},EffectTypes:{},ItemStack:class{},Math:Object.assign(Object.create(Math),{random:()=>0})});
  vm.runInContext(source,ctx);const event={hurtEntity:target,damage:4,damageSource:{cause:'entityAttack',damagingEntity:actor}};
@@ -136,4 +136,32 @@ test('registered before/after hurt callbacks preserve a fish attacker as previou
  cod.getComponent('minecraft:health').currentValue=0;
  const afterDeath={hurtEntity:target,damage:1,damageSource:{cause:'fire'}};
  f.before(afterDeath);assert.equal(afterDeath.damage,1,'dead mob cannot supply later kill credit');
+});
+test('registered beheading uses a direct living attacker and a living target without the ground-crit explosion filter',()=>{
+ const player=familylessEntity('beheading-player','minecraft:player'),fish=familylessEntity('beheading-fish'),boat=familylessEntity('beheading-boat','minecraft:boat'),target=familylessEntity('beheading-target','minecraft:zombie'),boss=familylessEntity('beheading-boss','minecraft:warden'),f=installedEffectsFixture([player,fish,boat,target,boss]);
+ player.isOnGround=true;
+ for(const entity of [player,fish,boat])f.states.set(entity,{beheading:{amplifier:0},ground_crit:{amplifier:0}});
+ const hit=(attacker,cause='entityAttack',victim=target,damagingProjectile)=>{const event={hurtEntity:victim,damage:4,damageSource:{cause,damagingEntity:attacker,damagingProjectile}};f.before(event);return event;};
+ assert.equal(hit(player).damage,10000);
+ assert.equal(hit(fish,'entityExplosion').damage,10000,'IncomingDamage checks the direct LivingEntity, not explosion tags');
+ assert.equal(hit(player,'entityExplosion').damage,10000);
+ assert.equal(hit(boat).damage,4,'health alone does not make the direct attacker LivingEntity');
+ assert.equal(hit(player,'projectile').damage,4,'a projectile owner is not its direct entity');
+ assert.equal(hit(player,'entityAttack',target,{}).damage,4);
+ assert.equal(hit(player,'entityAttack',boss).damage,6,'a boss skips beheading but retains independent ground crit');
+ target.getComponent('minecraft:health').currentValue=0;
+ assert.equal(hit(player).damage,6,'a dead target skips beheading but retains independent ground-crit admission');
+ f.states.set(player,{ground_crit:{amplifier:0}});
+ assert.equal(hit(player,'entityExplosion').damage,4,'ground crit keeps its own melee tag exclusions');
+});
+test('registered elbow feedback requires the direct LivingEntity even when a nonliving attacker has an effect snapshot',()=>{
+ const fish=familylessEntity('elbow-fish'),boat=familylessEntity('elbow-boat','minecraft:boat'),target=familylessEntity('elbow-target','minecraft:zombie'),f=installedEffectsFixture([fish,boat,target]);
+ for(const entity of [fish,boat])f.states.set(entity,{elbow_strike:{amplifier:0}});
+ const hit=(attacker,cause='entityAttack',damagingProjectile)=>{const event={hurtEntity:target,damage:4,damageSource:{cause,damagingEntity:attacker,damagingProjectile}};f.before(event);f.after(event);f.flush();};
+ hit(boat);hit(fish,'projectile');hit(fish,'entityAttack',{});
+ assert.equal(f.sounds.length,0);
+ hit(fish,'entityExplosion');
+ assert.equal(f.sounds.length,1);
+ assert.equal(f.sounds[0][0],'kaleidoscope_world_liquor.ice_tea_eat');
+ assert.deepEqual({...f.sounds[0][2]},{volume:.6,pitch:1});
 });

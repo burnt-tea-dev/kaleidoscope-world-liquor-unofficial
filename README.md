@@ -1,10 +1,6 @@
 ## Current maintained baseline: 0.1.119
 
-W119 preserves canonical W118 fish LivingEntity admission, all 67 guide entries, confirmed-anchor metadata and source assets. It pairs Tavern T142, combining the latest board/shaker repairs with the saved-aura load/spawn fix. New exact CI and native 21-first/22-restart results are tracked separately; see the [current release notes](docs/RELEASE-NOTES-0.1.119.md). The following W118 paragraphs retain their historical evidence scope.
-
-W118 pairs with Tavern T141 and Grilling G122, retaining the published W117 guide while repairing the LivingEntity gate for vanilla fish without a `mob` family. Its 84 reviewed class counterparts restore admission to the existing MultiJump, Tequila, instant-effect and accepted damage-credit paths. See the [release notes](docs/RELEASE-NOTES-0.1.118.md) for the exact predecessor and source scope.
-
-The published 67 three-language World Liquor entries, seven guide entrances, complete product preparation data and four paired AMW producer-page corrections remain intact, together with current-author assets, confirmed-anchor metadata and the host's aura repairs. The unchanged repair retains its 26 source/API cases and eight-case independent review. The earlier trial's native 21/22 results remain bound to that trial; **the fresh T141/W118 native first/save/restart and strict recorder passed**, including the cod API fall control/protected outcome. Actual Player, client and full private-family verification remain pending. The [published W117 notes](docs/RELEASE-NOTES-0.1.117.md) keep their original guide-only scope.
+W119 preserves all 67 guide pages, 84-class fish admission, confirmed-anchor metadata and current-author assets, paired with Tavern T142. The T142/G123/W119 family completed 42-pack static, new/saved-world first/restart, admission and LIVE readback on 2026-10-09. Human client acceptance and complete Java parity remain pending; see the [current family index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/82beed26/family/BASELINE-STATUS.md) and [remaining scope](docs/PARITY-MATRIX.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -14,7 +10,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 Use Tavern **0.6.142** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
-Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.122** remains the exact public CI helper reference and is optional for standalone use. The separate G123/Cookery family integration retains its own source and acceptance requirements.
+Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.122** remains the exact public CI helper reference and is optional for standalone use. The deployed G123/Cookery family integration has its own exact source and receiver evidence; the G122 public CI reference is not relabeled as G123 CI.
 
 Back up existing worlds before updating both sides of a package. Use the [current Releases](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases) rather than historical archives committed in `downloads/`. Source and release checks do not certify a live installation or client rendering.
 
@@ -32,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-Integration checks use the exact paired source commits in [.github/baseline-integration.json](.github/baseline-integration.json). W118 targets T141/G122, preserving the published guide, native clock/reload, machine metadata and confirmed-anchor repairs. The complete 84-class projection is checked against the paired Tavern source. The public guide remains 223 entries; four AMW producer pages belong to the 227-entry complete-family projection. The [published W113 guide report](docs/GUIDE-VALIDATION-0.1.113.json), published W117 and earlier trial evidence keep their original sources; new-candidate CI, native persistence, saved-world migration and human client acceptance are tracked separately.
+Integration checks use the exact paired source commits in [.github/baseline-integration.json](.github/baseline-integration.json). W119 pins T142/G122 for public CI; the deployed G123 complete-family evidence is recorded separately. The published guide, machine metadata, fish gate and confirmed-anchor repairs remain intact. The complete 84-class projection is checked against the paired Tavern source. The public guide remains 223 entries; four AMW producer pages belong to the 227-entry complete-family projection. The [published W113 guide report](docs/GUIDE-VALIDATION-0.1.113.json), published W117 and earlier trial evidence keep their original sources; new-candidate CI, native persistence, saved-world migration and human client acceptance are tracked separately.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 
@@ -48,8 +44,8 @@ Asset/reference checks are build preconditions. Source logic tests, affected nat
 
 ## Known limits
 
-- The fish repair changes class admission; later mob kill credit still requires a living owner. Effect event order and the source's `BEHEADED_MARKER` write before cancellation are preserved. Complete native beheading, Elbow knockback, CaptainGift collision and highball Creative Flight remain incomplete or unverified.
-- Shared-spawn Respawn now recognizes 87 source-verified family storage/render helpers with empty collision boxes, including Grilling 2.8.119's plate and recipe displays. G119 retains all 10 reviewed Grilling helper definitions from G118. Unknown entities still require known facts; native Player spawn/bed/anchor lifecycle and client acceptance remain separate.
+- The fish repair changes class admission; later mob kill credit still requires a living owner. Complete native beheading cancellation/reentry/head ownership, Elbow knockback, CaptainGift collision and highball Creative Flight remain incomplete or unverified. Source admission repairs are separate from these event-phase gaps.
+- Shared-spawn Respawn now recognizes 87 source-verified family storage/render helpers with empty collision boxes, including Grilling's ten reviewed zero-collision helper definitions. Unknown entities still require known facts; native Player spawn/bed/anchor lifecycle and client acceptance remain separate.
 - Glass transparency, four-way storage/freezer placement, animation, wall-disc angle and audio still require the current client comparison matrix. Historical scoped observations do not certify every current scene.
 - Through-wall Hostile Detection/Treasure Sense outlines, Brew Accelerator and native Java Luck consequences remain incomplete. Current stable camera animation supports three-axis rotation, but pure gameplay-camera roll preserving aim and held rendering remains unimplemented/unverified.
 - The custom record uses a script jukebox adapter; native playback, tracking and full lifecycle equality remain separate requirements.

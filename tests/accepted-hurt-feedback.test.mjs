@@ -4,7 +4,7 @@ import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from '../runti
 import * as rules from '../runtime/BP/scripts/combat-source.js';
 const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
 function production(){
- const pending=[],sounds=[],initial={id:'overworld',playSound:(...args)=>sounds.push(args)},actor={id:'source',typeId:'minecraft:player',location:{x:1,y:2,z:3},dimension:initial},target={id:'target',typeId:'minecraft:player',getComponent:()=>({currentValue:20})};
+ const pending=[],sounds=[],initial={id:'overworld',playSound:(...args)=>sounds.push(args)},actor={id:'source',typeId:'minecraft:player',location:{x:1,y:2,z:3},dimension:initial,getComponent:id=>id==='minecraft:health'?{currentValue:20}:undefined},target={id:'target',typeId:'minecraft:player',getComponent:()=>({currentValue:20})};
  const ctx=vm.createContext({...rules,AcceptedHurtFeedback,JavaKillCredit,damageCreditMutation,isLivingCombatEntity,CriticalFeedback:class{queue(){}},MolangVariableMap:class{},world:{getEntity:()=>actor},system:{currentTick:0,run:fn=>pending.push(fn)},readTavernEffects:e=>e===actor?{elbow_strike:{amplifier:0}}:{},EffectTypes:{},ItemStack:class{}});vm.runInContext(source,ctx);
  const event={hurtEntity:target,damage:4,cancel:false,damageSource:{cause:'entityAttack',damagingEntity:actor}};ctx.event=event;vm.runInContext('hurt(event)',ctx);
  return {ctx,event,actor,sounds,ack:()=>vm.runInContext('acceptedFeedback.applied(event)',ctx),settle:()=>pending.splice(0).forEach(fn=>fn())};

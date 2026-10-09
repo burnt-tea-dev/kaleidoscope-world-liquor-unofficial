@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "source": {
+    "project_id": 1502365,
+    "file_id": 9066406,
+    "minecraft": "1.21.1",
+    "loader": "NeoForge",
+    "version": "1.1.11",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/9066406",
+    "archive_sha256": "e1f51736138bfe65ac1ce2aae2f2f3bd292dce71e2b8d2f18580a68bdea807cc",
+    "member": "com/bmt/kaleidoscope_world_liquor/event/EventHandlers.class",
+    "member_sha256": "5bbac4ec51fb73747637a04beca16fc3590d99125bce8b684320ee3da5cd29af"
+  },
+  "method_facts": {
+    "onLivingIncomingDamage": [
+      "getDirectEntity must be LivingEntity (bytecode39-56)",
+      "target must be alive and absent from the current bosses tag (67-84)",
+      "beheading uses nextDouble < 0.04 + amplifier * 0.03 (99-129)",
+      "does not call isMeleeAttack; its projectile/explosion tag exclusions belong to ground crit"
+    ],
+    "onLivingDamagePre": [
+      "elbow sound requires direct LivingEntity (30-57)",
+      "ground crit independently requires Player, isMeleeAttack and !isVanillaCrit (117-199)"
+    ]
+  },
+  "owned_repair": {
+    "runtime_paths": [
+      "runtime/BP/scripts/effects.js"
+    ],
+    "changes": [
+      "separate direct LivingEntity admission from ground-crit melee filtering",
+      "reject nonliving health-bearing direct attackers for beheading and elbow feedback",
+      "require positive target health for beheading"
+    ],
+    "preserved": [
+      "84-class fish admission",
+      "ground-crit and double-damage formulas and filters",
+      "Tequila cap",
+      "accepted-hurt feedback delivery",
+      "all recipes, guide pages, assets and respawn storage"
+    ]
+  },
+  "limits": [
+    "Native direct-entity attribution remains bounded to damagingEntity plus the separately exposed projectile; complete Java DamageSource and event-phase equality is not established.",
+    "The existing 10000-damage approximation is retained; original cancellation, owner-attributed reentry, blocked-damage fallback, persistent markers, causal drop deduplication and Player SkullOwner remain unfinished.",
+    "Direct callback source regressions are not native-engine or human client acceptance."
+  ],
+  "verification": {
+    "targeted_files": [
+      "tests/combat-source.test.mjs",
+      "tests/accepted-hurt-feedback.test.mjs"
+    ],
+    "named_cases": 16,
+    "passed": true,
+    "native": false,
+    "client": false,
+    "simulated_players": false
+  }
+}

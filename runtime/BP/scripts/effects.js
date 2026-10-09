@@ -42,6 +42,9 @@ export function applyEffect(p,effect,duration,amplifier=0){
 }
 function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntity,melee=isMeleeSource(e.damageSource);
  if(e.cancel===true||!isLivingCombatEntity(target))return;
+ // Incoming beheading and the elbow sound check the direct LivingEntity;
+ // only ground crit additionally rejects the source's explosion/melee tags.
+ const directLiving=attacker&&!e.damageSource.damagingProjectile&&e.damageSource.cause!=='projectile'&&isLivingCombatEntity(attacker);
  // Java reverse gravity's calculateFallDamage injection is Player-only;
  // MultiJumpFallDamageMixin applies to every LivingEntity.
  if(e.damageSource.cause==='fall'&&(target.typeId==='minecraft:player'&&active(target,'reverse_gravity')||active(target,'multi_jump'))){e.cancel=true;return;}
@@ -49,8 +52,8 @@ function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntit
  if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(e,credited,NS+'.java.critical',{volume:1,pitch:1.5});if(credited.typeId==='minecraft:player')criticalFeedback.queue(e,credited);}
  if(attacker){
   const crit=active(attacker,'ground_crit');if(melee&&attacker.typeId==='minecraft:player'&&crit&&!isVanillaCrit(attacker)&&Math.random()<.2+.1*crit.amplifier){e.damage=javaDamageProduct(e.damage,1.5);criticalFeedback.queue(e,attacker);}
-  const behead=active(attacker,'beheading');if(melee&&behead&&!['minecraft:ender_dragon','minecraft:wither','minecraft:warden'].includes(target.typeId)&&Math.random()<.04+.03*behead.amplifier){e.damage=10000;headDrops.set(target.id,true);}
-  if(!e.damageSource.damagingProjectile&&e.damageSource.cause!=='projectile'&&active(attacker,'elbow_strike'))combatSound(e,attacker,NS+'.ice_tea_eat',{volume:.6,pitch:1});
+  const behead=active(attacker,'beheading');if(directLiving&&behead&&target.getComponent('minecraft:health').currentValue>0&&!['minecraft:ender_dragon','minecraft:wither','minecraft:warden'].includes(target.typeId)&&Math.random()<.04+.03*behead.amplifier){e.damage=10000;headDrops.set(target.id,true);}
+  if(directLiving&&active(attacker,'elbow_strike'))combatSound(e,attacker,NS+'.ice_tea_eat',{volume:.6,pitch:1});
  }
  const tequila=active(target,'tequila');if(tequila)e.damage=Math.min(e.damage,tequilaDamageCap(target.getComponent('minecraft:health')?.effectiveMax??20,tequila.amplifier));
  const pending=killCredit.begin(target.id,e,damageCreditMutation(e.damageSource));
