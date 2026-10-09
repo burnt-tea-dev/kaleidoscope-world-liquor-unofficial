@@ -1,4 +1,8 @@
-## 當前 W118／T141
+## 當前 W119／T142
+
+以 canonical W118 `bd022a205a317a0fe813041dcc5b99152d07bdf5` 為基礎，完整保留 84 類 LivingEntity／魚類效果入口、確認重生錨、指南與作者資產，僅同步發布身份和 Tavern T142 相依。新配套保留板面／雪克杯修復並加入載入光效與完整 recorder 綁定，須完成本次 CI／原生 first 21／restart 22；舊結果不改標。G122 公開 helper 對照與 G123／Cookery 家族接收範圍分開，Player、client、私人存檔與 LIVE 仍未驗收。見[本版說明](RELEASE-NOTES-0.1.119.md)。
+
+## 保留 W118／T141（歷史來源）
 
 承接已發布主線 `0ebf77ed7d302f453e75d9c56cc603e709ed226d` 的 W117 指南與四個配套 AMW 頁面修正，加入 fish LivingEntity gate。原 source/API 26 案例與交叉審查子集 8 案例保留；舊 trial 原生 21／22 仍綁舊提交，新 T141／W118 原生首次 21／重啟 22 項及嚴格 recorder 已通過。G122 完整家族、Player、畫面音效與私人 LIVE 仍待驗收。詳見 [本版說明](RELEASE-NOTES-0.1.118.md)，歷史來源與已發布 W117 notes 保持原樣。
 
