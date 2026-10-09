@@ -1,17 +1,16 @@
 {
-  "version": "0.1.114",
-  "tag": "v0.1.114-preview.1",
-  "title": "森羅物語：世界名酒 0.1.114 測試版｜重生錨與酒館 T137",
+  "version": "0.1.115",
+  "tag": "v0.1.115-preview.1",
+  "title": "森羅物語：世界名酒 0.1.115 測試版｜重生錨與酒館 T138",
   "prerelease": true,
-  "tavern_commit": "617187b05b7d2e26583470fc6d82b0f366756101",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.114.md",
+  "tavern_commit": "5214e24a3d4c8c99b80c869f566d006b2deb3290",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.115.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "new_bds_test": true,
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "expected_archive_sha256": "f612fa7b7b1474de84c8f6fab48967264777b1bf811e001896c60353b16907d4",
-  "native_evidence_scope": "The frozen T137/W114 pair completed fresh zero-player native first launch, normal save/stop and restart with exact pack/observer binding and the complete recorder. W113 anchor producer/resolver source regressions remain unchanged. No native Player anchor lifecycle, rendered-client, complete private-family migration or LIVE acceptance is claimed.",
-  "reviewed_runtime_source": "cfbe0f0351705e3257961d7c4e24db39e3133f9a"
+  "native_evidence_scope": "The frozen T138/W115 pair passed complete zero-player native first/save/restart and the strict source-bound recorder, including native clock expiry, saved aura acknowledgement, foreign handoff, machine counts/metadata and Mob recipients. W confirmed-anchor source behavior is retained. Actual Player anchor interaction, renderer/audio, full private-family migration and LIVE acceptance remain pending; final canonical CI is separate.",
+  "expected_archive_sha256": "16f88a5296976af9651d1d4de5aeb30f111358742802a0aaf1b037da32d4b2d6"
 }

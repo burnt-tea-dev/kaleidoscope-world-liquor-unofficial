@@ -1,5 +1,10 @@
 # Change history
 
+## 0.1.115
+
+- Pair exactly with Tavern T138 while preserving the confirmed-anchor implementation and all current author data, assets and gameplay.
+- Retain prior and parallel source histories; current native/CI/client/private LIVE scopes remain distinct.
+
 ## 0.1.114
 
 - 保留 W113 全部重生錨／作者適配，僅同步 identity 與 Tavern 0.6.137 宿主相依。

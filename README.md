@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.114
+## Current maintained baseline: 0.1.115
 
-W114 preserves the confirmed native anchor metadata repair and all W113 content, pairing its dependencies with T137 and the native aura reload repair. See the [repair scope](docs/RELEASE-NOTES-0.1.114.md).
+W115 pairs exactly with Tavern T138 and preserves the confirmed anchor repair and all current-author World Liquor content. T138 combines observed native countdown handling with the proven reload notification repair; see [current scope](docs/RELEASE-NOTES-0.1.115.md). Human Player, rendered-client and private LIVE acceptance remain separate.
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -8,7 +8,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.137** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.138** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
 Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.120** is the current family pairing, not a standalone requirement for this pack.
 
@@ -28,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-The exact Tavern T137 and Grilling G120 source revisions are recorded in the integration and publication metadata. G120 keeps the same helper collision definitions; its Cookery 0.2.7 descriptor and copied cuisine helper must be assembled together when reviewing a full family. These source pins do not certify Player, client or private LIVE acceptance.
+The exact Tavern T138 and Grilling G120 source revisions are recorded in the integration and publication metadata. G120 keeps the same helper collision definitions; its Cookery 0.2.7 descriptor and copied cuisine helper must be assembled together when reviewing a full family. These source pins do not certify Player, client or private LIVE acceptance.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 

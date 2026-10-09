@@ -1,5 +1,9 @@
 # Java / Bedrock parity matrix
 
+## Current repair candidate: World Liquor 0.1.115 / Tavern 0.6.138
+
+W115 retains the complete confirmed-anchor and current-author implementation, changing only release/host identity for the combined native-countdown and reload repair. The frozen T138/W115 pair passed a new complete zero-player native first/save/restart and source-bound recorder. [Current scope](RELEASE-NOTES-0.1.115.md) keeps final canonical CI and Player/client/private LIVE acceptance separate.
+
 Current development candidate: W0.1.114 paired with T0.6.137 and optional G2.8.120. [W114 scope](RELEASE-NOTES-0.1.114.md) preserves the W113 anchor repair and all author assets, changing only identity and the host dependency for the native aura reload repair. Old/unknown anchors and actual Player/client/private LIVE acceptance remain pending.
 
 Audited Bedrock sources: T0.6.126 ac4932b4 / W0.1.103 56314bac. This initial Phase0 matrix covers the inspected player-facing priorities; complete T1/T2/W1 recipe, timing, storage and effect coverage will be added in subsequent phases, not presumed complete. A single future slice reference awaits the owner decision. L0=source inspection, L1=executed source/oracle, L2=scoped native-engine scene, L3=paired actual-client observation. Historical partial L3 cannot certify later releases or all contexts. T/ and W/ identify the repository.
