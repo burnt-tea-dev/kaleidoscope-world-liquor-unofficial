@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.113
+
+Update the exact Tavern dependency to 0.6.136 for its native aura clock repair with a fresh package identity. All W112 World Liquor gameplay, data and artwork remain unchanged, including the W110 author corrections and preservation witnesses. Reviewed T136 source `7ad4f5849edce3eda23b7aaad7fa171b9c0604de` is pinned; new paired CI and native/client acceptance remain pending, and the prior T135/W112 evidence remains historical. See [release scope](docs/RELEASE-NOTES-0.1.113.md).
+
 ## 0.1.112
 
 Update the exact Tavern dependency to 0.6.135 with a fresh package identity. All W111 World Liquor gameplay, data and artwork remain unchanged, and W111/W110 histories are preserved. The reviewed T135 peer is pinned; new paired CI and native/client acceptance remain pending; see [release scope](docs/RELEASE-NOTES-0.1.112.md).

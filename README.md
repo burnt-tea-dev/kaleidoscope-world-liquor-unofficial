@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.112
+## Current maintained baseline: 0.1.113
 
-W112 updates the exact Tavern dependency to T135 and retains all W111 World Liquor content, including W110’s current-author Dassai Q3–Q6 Luck amplitudes, four cocktail models and authored inventory sprites. Native Java Luck loot behavior and rendered-client acceptance remain incomplete; see [release scope](docs/RELEASE-NOTES-0.1.112.md).
+W113 updates the exact Tavern dependency to T136 for its native aura clock repair and retains all W112 World Liquor content, including W110’s current-author Dassai Q3–Q6 Luck amplitudes, four cocktail models and authored inventory sprites. The reviewed T136 source is pinned; new paired checks remain pending. Native Java Luck loot behavior and rendered-client acceptance remain incomplete; see [release scope](docs/RELEASE-NOTES-0.1.113.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -8,7 +8,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.135** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.136** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
 Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.119** is the current family pairing, not a standalone requirement for this pack.
 
@@ -28,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-The integration and publication records pin reviewed Tavern T135 source `10453aea0fedc4d054562239d9c31daf138c24a9`, including the exact preservation witnesses for its new functional and asset changes. Its runtime was frozen at `4d4b1e390eb6aad23587b28bf3d9aa8bb7192287`. Grilling G119 remains pinned to `b010ec2a6709ada74ed96ead19c60da4e0bc2789`. At the time this metadata was prepared, the new T135/W112 paired CI was still pending; these pins do not claim completed CI, publication or native/client acceptance.
+The integration and publication records pin [reviewed Tavern T136 source `7ad4f5849edce3eda23b7aaad7fa171b9c0604de`](https://github.com/casama233/kaleidoscope-tavern-unofficial/commit/7ad4f5849edce3eda23b7aaad7fa171b9c0604de). Its runtime was frozen at `c169a2072373b1feda12b08fdd741ed4ecdbc1ec`. Grilling G119 remains pinned to `b010ec2a6709ada74ed96ead19c60da4e0bc2789`. New T136/W113 paired CI and native BDS checks were still pending when this metadata was prepared. These exact source pins do not claim completed CI, publication, client acceptance or LIVE deployment.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 
