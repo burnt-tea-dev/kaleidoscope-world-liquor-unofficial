@@ -51,3 +51,12 @@ metadata／runtime 測試 33 項通過，跨代理複核對應三個邊界。
 維度，以及既有視覺、音效、Luck／outline 等效果差距仍未全部完成。
 私人 BSM／world／quality 連線不可用；完整家族、停服存檔演練、LIVE
 部署／讀回未執行。client=false、production_ready=false、live_deployment=false。
+
+## 本機配套重啟結果
+
+T136／W113 的首次配套觀察通過；重啟確認雪克杯 ID、三種 portable 酒原料
+及兩種機器資料仍在，但 Tavern 保存的速度光效 lease 沒有恢復而失敗。
+[原始報告](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/edc9e464f8ea987fa07927182a2b741720c82430/docs/native/T136-W113-20261009.json)
+保留完整 frozen source 與 overlay、首次／重啟結果。它不含 Player 重生錨
+操作驗收，且不能作為完整配套通過或部署准入。本次 W113 來源功能回歸
+不變，後續候選必須自行驗證新的完整配對。
