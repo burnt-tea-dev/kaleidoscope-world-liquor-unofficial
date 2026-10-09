@@ -1,17 +1,14 @@
 {
-  "version": "0.1.117",
-  "tag": "v0.1.117-preview.1",
-  "title": "森羅物語：世界名酒 0.1.117 測試版｜完整家族指南配對",
+  "version": "0.1.118",
+  "tag": "v0.1.118-preview.1",
+  "title": "森羅物語：世界名酒 0.1.118 測試版｜配對載入光效修復",
   "prerelease": true,
-  "tavern_commit": "e45d1fd1e466de5a8e41e55210894f35fd506c19",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.117.md",
+  "tavern_commit": "3f91abbdb9cda2e2b51965c4858229e2c1feab1a",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.118.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
-  "new_bds_test": false,
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W117 preserves the complete W116 runtime except synchronized package identity, payload.version and Tavern T140 dependencies. Historical T139/W116 first/save/restart native evidence keeps its original source and identity; it is not relabeled for this candidate. New exact T140/W117 CI, full private-family BDS, saved-world migration, actual Player/client and LIVE evidence remain separate and pending.",
-  "expected_archive_sha256": "0445bb9ea9c52016f2e17b34878d41f20523d532033878e0e475814350a8a290",
-  "reviewed_runtime_source": "22623f335a2b388eaf1a5a72c71bbfcde008163a"
+  "native_evidence_scope": "The final T141/W118 candidate requires its own complete canonical native-persistence CI, with all 20 first/21 restart cases and exact recorded source/overlay binding. Preserved T139/W116 and guide T140/W117 evidence retain their original identities. Actual Player, rendered client, G122/private full family, saved-world and LIVE acceptance remain separate."
 }
