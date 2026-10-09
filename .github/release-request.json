@@ -10,5 +10,6 @@
   "new_bds_test": false,
   "saved_world_migration": "pending",
   "production_ready": false,
-  "live_deployment": false
+  "live_deployment": false,
+  "expected_archive_sha256": "5db4b6cad406385008fcde1a6f98912db0d0d8a9eeb9d823a8d02da5fc0c71ce"
 }
