@@ -5,7 +5,7 @@ The four reviewed source updates supersede their old UV/geometry witnesses.
 Those immutable witnesses remain intact. All cups still use the host's actual
 conflict, repair-idempotence and UV inventory checks; packaging uses no preimage.
 """
-import copy, hashlib, io, json, sys, tempfile
+import base64, copy, gzip, hashlib, io, json, sys, tempfile
 from pathlib import Path
 from PIL import Image
 import update_current_cocktail_art as author
@@ -19,6 +19,8 @@ def check():
  review=json.loads((root/'data/current-author-art-preservation.json').read_text())
  with tempfile.TemporaryDirectory(prefix='world-liquor-source-surface-') as directory:
   files,rows=author.planned(Path(directory))
+  source_meshes={root/f'runtime/RP/models/entity/kwl_g_{identity}.geo.json' for identity in author.ART.values()}
+  assert len(source_meshes)==4 and {path for path in files if path.suffix=='.json'}==source_meshes
   for path,data in files.items():
    if path.suffix=='.png':
     expected=Image.open(io.BytesIO(data)).convert('RGBA');actual=Image.open(path).convert('RGBA')
@@ -37,6 +39,9 @@ def check():
     assert name in review['changes'] and path.suffix=='.json'
     row=review['changes'][name]
     assert old and old['after']==row['before'],('Source overlay predecessor differs',name)
+    predecessor=gzip.decompress(base64.b64decode(row['beforeGzipBase64'],validate=True))
+    assert hashlib.sha256(predecessor).hexdigest()==old['after'],('Source predecessor bytes changed',name)
+    assert host.uv_digest(json.loads(predecessor))==old['uvInventory'],('Historical predecessor UV changed',name)
     assert hashlib.sha256(path.read_bytes()).hexdigest()==row['after'],('Source overlay differs',name)
     assert host.uv_inventory(doc)==host.uv_inventory(json.loads(files[path]))
    elif old:
