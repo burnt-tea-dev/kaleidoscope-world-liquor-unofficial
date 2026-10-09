@@ -1,15 +1,15 @@
 {
-  "version": "0.1.113",
-  "tag": "v0.1.113-preview.1",
-  "title": "森羅物語：世界名酒 0.1.113 測試版｜精簡完整指南",
+  "version": "0.1.114",
+  "tag": "v0.1.114-preview.1",
+  "title": "森羅物語：世界名酒 0.1.114 測試版｜完整家族指南配對",
   "prerelease": true,
-  "tavern_commit": "c8b4ecba641b683f011553ea3ba61e298758d0f0",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.113.md",
+  "tavern_commit": "afe801af7fe18a6213e171c8bc0d88f7ff300dd2",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.114.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "new_bds_test": false,
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "expected_archive_sha256": "31824a1257bc2537e3acbc4742cc5c5fe5b5eb53f94d96513d09ae7a10612892"
+  "expected_archive_sha256": "775c61f0d6d8a9b202465ded4a895a13b62aa8fd7cb58c0b61cbd80334277e6c"
 }

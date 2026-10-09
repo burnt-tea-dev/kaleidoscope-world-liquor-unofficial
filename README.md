@@ -28,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-The exact Tavern T137 integration and publication pin is pending the host freeze. Existing records still describe W113 until that pin is available. The public Tavern/World Liquor projection contains 223 entries; the complete 42-pack host includes additional producer pages and is validated separately. W113's original source and CI evidence remain unchanged. Remote CI, family BDS, saved-world migration and human client acceptance retain their separate gates.
+Integration and publication pin Tavern T137 `afe801af7fe18a6213e171c8bc0d88f7ff300dd2`; Grilling G121 stays at `2b422458ebfdd3831bc7a57af30c24cfa211d23a`. The public Tavern/World Liquor projection has [223 checked entries](docs/GUIDE-VALIDATION-0.1.114.json). The complete 42-pack host receives 227 entries, including other producer pages, and has separate source/native evidence. W113's original source and CI reports remain unchanged. Remote CI, family BDS, saved-world migration and human client acceptance retain their separate gates.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 
