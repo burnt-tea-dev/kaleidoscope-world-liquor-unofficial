@@ -1,6 +1,6 @@
 ## 當前 W117／T140
 
-W117 由已發布 `dd56def61d5b66d9bbc9e697e5e272e5f9e3ed4b` 承接，補齊沒有 `mob` family 的 vanilla LivingEntity 效果入口。84 類投影與正式回呼的 26 個定向案例、獨立 8 案例交叉審查已通過；T140 新原生 cod 摔落對照尚未執行，標記 pending。已發布指南、原料／光效／Mob／確認重生錨修補與 T139／W116 原始 native first 20／restart 21 證據保留，但不當作新候選結果。詳見 [本版說明](RELEASE-NOTES-0.1.117.md)。以下保留各功能的原始來源與範圍。
+W117 由已發布 `dd56def61d5b66d9bbc9e697e5e272e5f9e3ed4b` 承接，補齊沒有 `mob` family 的 vanilla LivingEntity 效果入口。84 類投影與正式回呼的 26 個定向案例、獨立 8 案例交叉審查已通過；T140／W117 新原生首次 21／重啟 22 項與嚴格 recorder 已通過，cod API fall control 3→2、公開 snapshot 下 MultiJump 3→3。已發布指南、原料／光效／Mob／確認重生錨修補與 T139／W116 原始 native first 20／restart 21 證據保留，但不當作新候選結果。詳見 [本版說明](RELEASE-NOTES-0.1.117.md)。以下保留各功能的原始來源與範圍。
 
 # 玩家可見問題與待驗收項
 
@@ -8,7 +8,7 @@ W117 由已發布 `dd56def61d5b66d9bbc9e697e5e272e5f9e3ed4b` 承接，補齊沒�
 
 W117 已修復來源／正式回呼入口。CF9066406／NeoForge 1.21.1／1.1.11 的 MultiJump 與 Tequila 適用所有 LivingEntity；舊 `mob` family gate 卻漏掉 cod。新 `vanilla-living-entities.js` 的 84 個精確 ID 與配套 Tavern 完整對照，魚類能進入 MultiJump、Tequila、Server instant-effect 及 accepted hurt 歸屬。必要 health／validity、非生物拒絕與 addon mob 適配保留；health=0 不改 class，但後續 mob kill credit 仍要求存活。
 
-兩個既有定向套件 26／26 通過，含七個先在舊實作失敗的反例與完整投影；獨立交叉審查重跑其中 8 個案例，8／8 通過。T140 新原生 cod MultiJump 與無效果 fall 傷害對照尚未執行，仍 pending。來源、正確 archive 摘要與詳細邊界見[本版說明](RELEASE-NOTES-0.1.117.md)。
+兩個既有定向套件 26／26 通過，含七個先在舊實作失敗的反例與完整投影；獨立交叉審查重跑其中 8 個案例，8／8 通過。T140／W117 新原生 cod API fall 對照首次及重啟均通過：無效果 3→2／一次 afterHurt，MultiJump 3→3／零 afterHurt；自然墜落與 Player 操作尚未驗收。來源、正確 archive 摘要與詳細邊界見[本版說明](RELEASE-NOTES-0.1.117.md)。
 
 `BEHEADED_MARKER` 先寫入再取消原傷害是作者設計，本輪沒有改 `effects.js` 事件順序。原生 Luck、高球 Creative Flight、完整斬首／Elbow／CaptainGift、已列其他效果與 Player／畫面／音效／完整私人家族／LIVE 仍保持未實現或未驗收的原範圍。
 
