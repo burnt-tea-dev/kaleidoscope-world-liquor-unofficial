@@ -1,6 +1,6 @@
-// Java stores the player's yaw when setting a bed spawn; Native exposes only
-// the point. Persist only an observed bed interaction or an explicit adapter
-// declaration. An existing point alone cannot reconstruct historical metadata.
+// Java stores the player's yaw for a bed and zero yaw for a newly set anchor;
+// Native exposes only the point. Persist only a confirmed observed interaction
+// or an explicit declaration. An existing point alone is not historical proof.
 const KEY = 'kaleidoscope_world_liquor:respawn_metadata_v1';
 const installed = new WeakMap();
 const horizontal = [[0, 1], [-1, 0], [0, -1], [1, 0]];
@@ -31,7 +31,7 @@ function nativePoint(player) {
 function record(value) {
   if (!value || value.schema !== 1 || typeof value.forced !== 'boolean' || !Number.isFinite(value.yaw)) return undefined;
   const p = point(value.point), yaw = Math.fround(value.yaw);
-  if (!p || !Number.isFinite(yaw) || !['declared', 'observed_bed_interaction'].includes(value.basis)) return undefined;
+  if (!p || !Number.isFinite(yaw) || !['declared', 'observed_bed_interaction', 'observed_anchor_interaction'].includes(value.basis)) return undefined;
   return {schema: 1, point: p, yaw, forced: value.forced, basis: value.basis};
 }
 function stored(player) {
@@ -111,21 +111,84 @@ export function confirmBedInteraction(player, capture) {
   } catch { return false; }
 }
 
+function anchor(block) {
+  try {
+    // This observation covers the Native Nether. Custom dimension contracts
+    // still provide explicit source metadata through the existing declaration.
+    if (block.typeId !== 'minecraft:respawn_anchor' || block.dimension.id !== 'minecraft:nether') return undefined;
+    const p = point({...block.location, dimensionId: block.dimension.id});
+    const charges = block.permutation.getState('respawn_anchor_charge');
+    if (!p || !Number.isInteger(charges) || charges < 1 || charges > 4) return undefined;
+    return {point: p, charges};
+  } catch { return undefined; }
+}
+
+/** Source RespawnAnchorBlock.useWithoutItem sets (yaw=0, forced=false) only
+ * for a changed point/dimension. It does not copy the player's current yaw.
+ */
+export function captureAnchorInteraction(player, block) {
+  const clicked = anchor(block);
+  if (!clicked) return undefined;
+  const previous = nativePoint(player);
+  if (!previous.known) return undefined;
+  try { return {player, clicked, dimension: block.dimension, previous: previous.value}; }
+  catch { return undefined; }
+}
+
+/** Native must confirm the exact changed point and unchanged positive charge.
+ * Fuel charging, same-point use, replacement and unavailable state prove no
+ * source metadata. The observer never writes a Native point or anchor charge.
+ */
+export function confirmAnchorInteraction(player, capture) {
+  if (!capture || capture.player !== player) return false;
+  try {
+    const current = nativePoint(player);
+    if (!current.known || !equal(current.value, capture.clicked.point) || equal(current.value, capture.previous)) return false;
+    const currentAnchor = anchor(capture.dimension.getBlock(current.value));
+    if (!currentAnchor || !equal(currentAnchor.point, capture.clicked.point) || currentAnchor.charges !== capture.clicked.charges) return false;
+    return write(player, {schema: 1, point: current.value, yaw: 0, forced: false, basis: 'observed_anchor_interaction'});
+  } catch { return false; }
+}
+
 /** Install once. All writes run outside the restricted before-event callback. */
 export function installRespawnMetadata(world, system) {
   if (installed.has(world)) return installed.get(world);
   const pending = new Map();
   const before = world.beforeEvents.playerInteractWithBlock.subscribe(event => {
-    if (event.cancel || event.isFirstEvent === false) return;
-    const capture = captureBedInteraction(event.player, event.block);
-    if (!capture) return;
-    pending.set(event.player.id, capture);
+    const id = event.player.id, previous = pending.get(id);
+    if (event.cancel) { pending.delete(id); return; }
+    // Preserve the existing first-press bed capture through same-bed held
+    // callbacks. Every retained event still participates in cancellation.
+    const repeatedBed = previous?.confirm === confirmBedInteraction && event.isFirstEvent === false && previous.capture.player === event.player ? bed(event.block) : undefined;
+    if (repeatedBed && sameBed(previous.capture.clicked, repeatedBed)) {
+      previous.events.push(event); return;
+    }
+    let capture = event.isFirstEvent === false ? undefined : captureBedInteraction(event.player, event.block);
+    const confirm = capture ? confirmBedInteraction : confirmAnchorInteraction;
+    if (!capture) capture = captureAnchorInteraction(event.player, event.block);
+    if (!capture) { pending.delete(id); return; }
+    // Native can set the point between before callbacks in the same tick.
+    // A same-point repeat must not replace the first changed-point witness;
+    // a new target/charge instead retires that earlier observation.
+    if (previous?.confirm === confirmAnchorInteraction && confirm === confirmAnchorInteraction && previous.capture.player === event.player &&
+        equal(previous.capture.clicked.point, capture.clicked.point) && previous.capture.clicked.charges === capture.clicked.charges &&
+        !equal(previous.capture.previous, capture.clicked.point) && equal(capture.previous, capture.clicked.point)) {
+      previous.events.push(event); return;
+    }
+    // The event guards live only until this deferred turn, including guards
+    // appended by a repeat whose later subscriber may still cancel that event.
+    const observation = {capture, confirm, events: [event]};
+    pending.set(id, observation);
     system.run(() => {
-      if (pending.get(event.player.id) !== capture) return;
-      pending.delete(event.player.id);
-      try { if (!event.cancel) confirmBedInteraction(event.player, capture); } catch {}
+      if (pending.get(id) !== observation) return;
+      pending.delete(id);
+      try { if (!observation.events.some(row => row.cancel)) confirm(event.player, capture); } catch {}
     });
   });
+  // A queued observation belongs to this player lifecycle. Confirmed metadata
+  // remains persistent while its point matches, as Java retains respawn data.
+  const spawn = world.afterEvents?.playerSpawn?.subscribe(event => pending.delete(event.player.id));
+  const leave = world.afterEvents?.playerLeave?.subscribe(event => pending.delete(event.playerId));
   // Invalidate an observed transition away from an owned point, so coming back
   // later cannot resurrect its yaw. Unobservable same-point external writes
   // require the explicit declaration contract above.
@@ -137,7 +200,7 @@ export function installRespawnMetadata(world, system) {
       }
     }
   }, 1);
-  const handle = {before, interval};
+  const handle = {before, interval, spawn, leave};
   installed.set(world, handle);
   return handle;
 }

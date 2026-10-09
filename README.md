@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.112
+## Current maintained baseline: 0.1.113
 
-W112 updates the exact Tavern dependency to T135 and retains all W111 World Liquor content, including W110’s current-author Dassai Q3–Q6 Luck amplitudes, four cocktail models and authored inventory sprites. Native Java Luck loot behavior and rendered-client acceptance remain incomplete; see [release scope](docs/RELEASE-NOTES-0.1.112.md).
+W113 observes confirmed native respawn-anchor changes, retaining the source zero yaw and non-forced flag through repeated or cancelled callbacks. It pairs with T136 and preserves all W112/W110 author content. See the [repair scope](docs/RELEASE-NOTES-0.1.113.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -8,9 +8,9 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.135** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.136** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
-Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.119** is the current family pairing, not a standalone requirement for this pack.
+Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.120** is the current family pairing, not a standalone requirement for this pack.
 
 Back up existing worlds before updating both sides of a package. Use the [current Releases](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases) rather than historical archives committed in `downloads/`. Source and release checks do not certify a live installation or client rendering.
 
@@ -28,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-The integration and publication records pin reviewed Tavern T135 source `10453aea0fedc4d054562239d9c31daf138c24a9`, including the exact preservation witnesses for its new functional and asset changes. Its runtime was frozen at `4d4b1e390eb6aad23587b28bf3d9aa8bb7192287`. Grilling G119 remains pinned to `b010ec2a6709ada74ed96ead19c60da4e0bc2789`. At the time this metadata was prepared, the new T135/W112 paired CI was still pending; these pins do not claim completed CI, publication or native/client acceptance.
+The exact Tavern T136 and Grilling G120 source revisions are recorded in the integration and publication metadata. G120 keeps the same helper collision definitions; its Cookery 0.2.7 descriptor and copied cuisine helper must be assembled together when reviewing a full family. These source pins do not certify Player, client or private LIVE acceptance.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 
@@ -44,7 +44,7 @@ Asset/reference checks are build preconditions. Source logic tests, affected nat
 
 ## Known limits
 
-- Shared-spawn Respawn now recognizes 87 source-verified family storage/render helpers with empty collision boxes, including Grilling 2.8.119's plate and recipe displays. G119 retains all 10 reviewed Grilling helper definitions from G118. Unknown entities still require known facts; native Player spawn/bed/anchor lifecycle and client acceptance remain separate.
+- Shared-spawn Respawn now recognizes 87 source-verified family storage/render helpers with empty collision boxes, including Grilling 2.8.120's plate and recipe displays. G120 retains all 10 reviewed Grilling helper definitions from G119. Unknown entities still require known facts; native Player spawn/bed/anchor lifecycle and client acceptance remain separate.
 - Glass transparency, four-way storage/freezer placement, animation, wall-disc angle and audio still require the current client comparison matrix. Historical scoped observations do not certify every current scene.
 - Through-wall Hostile Detection/Treasure Sense outlines, Brew Accelerator and native Java Luck consequences remain incomplete. Current stable camera animation supports three-axis rotation, but pure gameplay-camera roll preserving aim and held rendering remains unimplemented/unverified.
 - The custom record uses a script jukebox adapter; native playback, tracking and full lifecycle equality remain separate requirements.

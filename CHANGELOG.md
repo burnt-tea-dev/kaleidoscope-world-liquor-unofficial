@@ -1,5 +1,10 @@
 # Change history
 
+## 0.1.113
+
+- 確認原生下界重生錨的新出生點 metadata，保留 repeat／取消／重生／離線邊界，配對 T136 與已審查 G120 helper。
+- 詳細範圍及驗收限制見 [本版說明](docs/RELEASE-NOTES-0.1.113.md)。
+
 ## 0.1.112
 
 Update the exact Tavern dependency to 0.6.135 with a fresh package identity. All W111 World Liquor gameplay, data and artwork remain unchanged, and W111/W110 histories are preserved. The reviewed T135 peer is pinned; new paired CI and native/client acceptance remain pending; see [release scope](docs/RELEASE-NOTES-0.1.112.md).

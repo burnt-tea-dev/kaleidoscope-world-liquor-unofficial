@@ -1,5 +1,11 @@
 # 玩家可見問題與待驗收項
 
+## 當前 0.1.113
+
+在下界新設定已充能錨點，keepInventory=false 使用 Respawn；核對 yaw=0／forced=false、只扣一次 charge、聲音／傳送／Hunger。再測同tick repeat、晚取消、充能、同點、換塊、重生／離線。舊未觀察錨與不可讀狀態仍保守 unknown，沒有新增原生 Player／真人驗收。
+
+來源與可分辨回歸見 [本版說明](RELEASE-NOTES-0.1.113.md)；下方舊版段落保留歷史範圍。
+
 來源：T0.6.126／W0.1.103 的 Phase0 盤點。此表區分已確認實作差距、歷史限定觀察及當前待測，沒有把「未測」寫成「已重現 bug」。實際還原狀態統一維護於 PARITY-MATRIX.md；舊逐版證據只作引用。T/、W/ 表示來源倉庫。
 
 ## W-RESPAWN-HELPERS — 家族儲存／顯示 helper 阻止回到共用出生點

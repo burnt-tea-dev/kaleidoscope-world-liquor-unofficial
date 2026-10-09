@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "source": "Mojang original client and official client mappings",
+  "version_manifest": "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json",
+  "client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+  "client_mappings_sha1": "2244b6f072256667bcd9a73df124d6c58de77992",
+  "class": "net.minecraft.world.level.block.RespawnAnchorBlock",
+  "obfuscated_class": "dmh",
+  "method": "useWithoutItem",
+  "mapped_source_lines": [
+    97,
+    116
+  ],
+  "observed_call": "ServerPlayer.setRespawnPosition(dimension,pos,0f,false,true)",
+  "conditions": [
+    "charged anchor",
+    "dimension supports respawn anchors",
+    "personal point or dimension changes"
+  ],
+  "same_point_overwrite": false,
+  "bedrock_scope": "Confirmed before/deferred Nether-anchor interaction only; no guessed old point metadata or native Player/client acceptance.",
+  "regressions": [
+    "tests/respawn-metadata.test.mjs",
+    "tests/respawn-runtime.test.mjs"
+  ]
+}

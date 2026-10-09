@@ -1,15 +1,15 @@
 {
-  "version": "0.1.112",
-  "tag": "v0.1.112-preview.1",
-  "title": "森羅物語：世界名酒 0.1.112 測試版｜酒館 T135 精確配對",
+  "version": "0.1.113",
+  "tag": "v0.1.113-preview.1",
+  "title": "森羅物語：世界名酒 0.1.113 測試版｜重生錨互動與酒館 T136",
   "prerelease": true,
   "tavern_commit": "10453aea0fedc4d054562239d9c31daf138c24a9",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.112.md",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.113.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "new_bds_test": false,
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "expected_archive_sha256": "b30150aacd2b261acc00fbf8015aeecd02f759f10adebeb74703b2c350724ca8"
+  "expected_archive_sha256": "0651659f9d343356476d5d6834508c0953f01d5cf0d439e6822cded83bfcdc21"
 }
