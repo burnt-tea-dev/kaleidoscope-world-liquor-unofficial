@@ -1,8 +1,8 @@
-## Current maintained baseline: 0.1.117
+## Current maintained baseline: 0.1.118
 
-W117 preserves W116’s three-language guide and confirmed Nether-anchor metadata repair, paired with Tavern T140 and Grilling G122. See the [release notes](docs/RELEASE-NOTES-0.1.117.md) for immutable source history and actual verification scope.
+W118 pairs with Tavern T141 and Grilling G122, retaining the published W117 guide while repairing the LivingEntity gate for vanilla fish without a `mob` family. Its 84 reviewed class counterparts restore admission to the existing MultiJump, Tequila, instant-effect and accepted damage-credit paths. See the [release notes](docs/RELEASE-NOTES-0.1.118.md) for the exact predecessor and source scope.
 
-The published W113 guide revision rewrote all 67 World Liquor entries with concise instructions and drink purposes; W117 retains that content through Tavern T140's shared guide. Complete preparation data remain available on each product. W112 gameplay, current-author Dassai data, models, sounds and saved identities remain intact; see [release scope](docs/RELEASE-NOTES-0.1.117.md).
+The published 67 three-language World Liquor entries, seven guide entrances, complete product preparation data and four paired AMW producer-page corrections remain intact, together with current-author assets, confirmed-anchor metadata and the host's aura repairs. The unchanged repair retains its 26 source/API cases and eight-case independent review. The earlier trial's native 21/22 results remain bound to that trial; **new T141/W118 native verification is pending**. The [published W117 notes](docs/RELEASE-NOTES-0.1.117.md) keep their original guide-only scope.
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -10,7 +10,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.140** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.141** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
 Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.122** is the current family pairing, not a standalone requirement for this pack.
 
@@ -30,7 +30,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-Integration checks use the exact Tavern T140 and Grilling G122 commits in [.github/baseline-integration.json](.github/baseline-integration.json). The T140/W117 pair retains the published guide and the reviewed native clock/reload, machine metadata and confirmed-anchor repairs. Tavern also corrects four producer guide pages in the complete installed family; the public Tavern/World Liquor guide remains 223 entries. The [published W113 guide report](docs/GUIDE-VALIDATION-0.1.113.json) remains scoped to its original source; new-candidate CI, native persistence, saved-world migration and human client acceptance are tracked separately.
+Integration checks use the exact paired source commits in [.github/baseline-integration.json](.github/baseline-integration.json). W118 targets T141/G122, preserving the published guide, native clock/reload, machine metadata and confirmed-anchor repairs. The complete 84-class projection is checked against the paired Tavern source. The public guide remains 223 entries; four AMW producer pages belong to the 227-entry complete-family projection. The [published W113 guide report](docs/GUIDE-VALIDATION-0.1.113.json), published W117 and earlier trial evidence keep their original sources; new-candidate CI, native persistence, saved-world migration and human client acceptance are tracked separately.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 
@@ -46,6 +46,7 @@ Asset/reference checks are build preconditions. Source logic tests, affected nat
 
 ## Known limits
 
+- The fish repair changes class admission; later mob kill credit still requires a living owner. Effect event order and the source's `BEHEADED_MARKER` write before cancellation are preserved. Complete native beheading, Elbow knockback, CaptainGift collision and highball Creative Flight remain incomplete or unverified.
 - Shared-spawn Respawn now recognizes 87 source-verified family storage/render helpers with empty collision boxes, including Grilling 2.8.119's plate and recipe displays. G119 retains all 10 reviewed Grilling helper definitions from G118. Unknown entities still require known facts; native Player spawn/bed/anchor lifecycle and client acceptance remain separate.
 - Glass transparency, four-way storage/freezer placement, animation, wall-disc angle and audio still require the current client comparison matrix. Historical scoped observations do not certify every current scene.
 - Through-wall Hostile Detection/Treasure Sense outlines, Brew Accelerator and native Java Luck consequences remain incomplete. Current stable camera animation supports three-axis rotation, but pure gameplay-camera roll preserving aim and held rendering remains unimplemented/unverified.

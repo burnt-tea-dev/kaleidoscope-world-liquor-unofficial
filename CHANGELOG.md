@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.118
+
+承接已發布 W117 `0ebf77ed7d302f453e75d9c56cc603e709ed226d` 的 67 個三語指南條目與配套四個 AMW 頁面修正，配對 T141／G122。以 84 類 LivingEntity gate 補回魚類效果與 accepted hurt 歸屬；保留來源／API 26 案例與交叉審查 8 案例的原證據。舊 trial 原生 21／22 不改名，新配對原生 pending；見 [本版說明](docs/RELEASE-NOTES-0.1.118.md)。
+
 ## 0.1.117
 
 保留 W116 全部 67 個三語指南條目、配方、作者資源及已確認重生錨修補，只同步新身份與 Tavern T140 相依。T140 補齊完整安裝家族四頁指南；公開配對仍為 223 條目。見 [本版說明](docs/RELEASE-NOTES-0.1.117.md)。
