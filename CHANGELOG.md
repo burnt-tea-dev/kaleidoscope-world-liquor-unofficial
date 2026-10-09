@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.120
+
+Fix direct LivingEntity admission for beheading and elbow feedback while preserving ground-crit filters, all W119 gameplay data and shared guide content. Consolidate current gap and verification indexes; complete beheading phases/head ownership and other native gaps remain open. See [source scope](docs/RELEASE-NOTES-0.1.120.md).
+
 ## 0.1.119
 
 保留 canonical W118 魚類 LivingEntity 效果入口、確認重生錨與全部指南，只同步身份及 Tavern T142 相依。 見[本版說明](docs/RELEASE-NOTES-0.1.119.md)。
