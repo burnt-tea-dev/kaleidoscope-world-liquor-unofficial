@@ -27,3 +27,10 @@ T139 的原料 metadata、原生光效時序／重啟及其他已合併修補由
 `client=false`、`production_ready=false`、`pending_client_acceptance`。
 LIVE 更新依既有授權，待完整家族 static、BDS、fresh stopped-world
 演練、備份及准入通過後執行。
+
+凍結 runtime 來源 `22623f335a2b388eaf1a5a72c71bbfcde008163a` 已通過
+canonical baseline 與真實 packager；archive SHA256：
+`0445bb9ea9c52016f2e17b34878d41f20523d532033878e0e475814350a8a290`。
+
+配對 Tavern T140 凍結來源 `e45d1fd1e466de5a8e41e55210894f35fd506c19`；
+Grilling G122 主線來源 `8002da0086544cd18c9854e7fe79e8ccb2f9f982`。
