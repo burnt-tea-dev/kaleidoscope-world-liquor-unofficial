@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.117
+
+完整保留 W116 已確認重生錨、67 個三語指南與所有作者資料／資源，只同步新身份及 Tavern 0.6.140 精確相依；不是新增 World Liquor 玩法或完整原作適配。 見[本版說明](docs/RELEASE-NOTES-0.1.117.md)。
+
 ## 0.1.116
 
 保留已發布主線 67 個三語指南條目，整合確認下界重生錨修補，配對 Tavern T139／Grilling G122；保存舊 trial 與已發布 W113 的各自來源及歷史。 見 [本版說明](docs/RELEASE-NOTES-0.1.116.md)。

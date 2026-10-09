@@ -1,10 +1,10 @@
-## 當前 W116／T139
+## 當前 W117／T140
 
-已保留發布主線的三語指南與七入口，並合入固定原料／光效／Mob／確認重生錨修補。新配套完整 native first 20／restart 21 案例及嚴格來源 recorder 已通過；G122 完整家族、原生 Player、畫面音效與私人 LIVE 仍未驗收。詳見 [本版說明](RELEASE-NOTES-0.1.116.md)。以下保留各功能的原始來源與範圍。
+完整保留 canonical W116 的玩法、已確認重生錨與 67 个三語指南，只同步身份與 T140 精確相依。宿主補上載入光效／initialSpawn 及 native 輸入綁定；本輪 CI／原生結果由固定 PR Actions 提供，舊 T139／W116 成功保持原身份。G122 完整家族、原生 Player、畫面音效與私人 LIVE 仍未驗收。詳見 [本版說明](RELEASE-NOTES-0.1.117.md)。
 
 # Java / Bedrock parity matrix
 
-## Current repair candidate: World Liquor 0.1.115 / Tavern 0.6.138
+## Retained repair candidate: World Liquor 0.1.115 / Tavern 0.6.138
 
 W115 retains the complete confirmed-anchor and current-author implementation, changing only release/host identity for the combined native-countdown and reload repair. The frozen T138/W115 pair passed a new complete zero-player native first/save/restart and source-bound recorder. [Current scope](RELEASE-NOTES-0.1.115.md) keeps final canonical CI and Player/client/private LIVE acceptance separate.
 
