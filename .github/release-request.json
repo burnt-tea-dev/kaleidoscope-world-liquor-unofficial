@@ -1,17 +1,16 @@
 {
-  "version": "0.1.118",
-  "tag": "v0.1.118-preview.1",
-  "title": "森羅物語：世界名酒 0.1.118 測試版｜魚類效果與傷害入口修復",
+  "version": "0.1.119",
+  "tag": "v0.1.119-preview.1",
+  "title": "森羅物語：世界名酒 0.1.119 測試版｜保留魚類效果並配對光效修復",
   "prerelease": true,
-  "tavern_commit": "2f46ff89219b8d1ef7ac650231841b069cd4db20",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.118.md",
+  "tavern_commit": "2c378031110d6ff6e348613d4bc3c34092770ddf",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.119.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
-  "new_bds_test": true,
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Fresh exact T141/W118 paired BDS 1.26.52.3 passed first 21 and normal-save/restart 22 strict cases, zero players and errors, normal stops. Measured sources remain T824ec6d1697716cf77dc0fbbf9b0ab9fe7a644d4 and Wd02af8c9876d8e376fe592404dab9052fc5ad410; linked Tavern evidence commit contains the unchanged strict recorder output. Each phase newly creates cod and applies MultiJump through the normal timed effect and public snapshot: API fall control health 3 to 2 with one afterHurt versus protected 3 to 3 with zero afterHurt. Existing machine counts/item metadata and aura save/countdown/reload acknowledgement/foreign handoff also passed. Natural fall height, MultiJump persistence, actual Player input, native Tequila/beheading/kill-credit gameplay, rendered/audio client, full private family and LIVE remain unverified; fresh saved-world deployment gates are pending.",
-  "expected_archive_sha256": "7bf772a664608dc6e3c7382c6892d755558c2397f7724af388cc9c327017bdfb",
-  "reviewed_runtime_source": "d02af8c9876d8e376fe592404dab9052fc5ad410"
+  "native_evidence_scope": "This complete T142/W119 integration requires its own actual canonical CI and strict source/overlay-bound native first 21/restart 22 cases, retaining the familyless-fall observer. Prior T141/W118 board/shaker evidence and the separate PR310 aura candidate 20/21 evidence retain their original source identities. Player/client, G123/Cookery private family, saved-world and LIVE acceptance remain separate.",
+  "expected_archive_sha256": "f2a27946d69b979752390e3d0ad9b1f7c56badbf61fde64875a50fe42e303d81",
+  "reviewed_runtime_source": "f60174df93bb8544ea0836b3d7bb9bb06a281255"
 }
