@@ -35,8 +35,14 @@ W `0c311dab5b1488add7f8118bb0dca7d8302acd62`。它不是本次已發布
 main W117 的內容，也不是 W118 的新結果；原 notes、history 與證據
 保持各自身份。[已發布 W117 說明](RELEASE-NOTES-0.1.117.md)原文保留。
 
-**新 T141／W118 配對原生驗證尚未執行，pending。** API `fall` 傷害
-對照不等同自然墜落高度、MultiJump 跨重啟保存或真人飲用／操作。
+**新 T141／W118 配對原生首次 21／正常保存重啟 22 項與嚴格 recorder
+已通過**，兩次 0 玩家、0 錯誤、正常停止。
+[新配套原生證據](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/2f46ff89219b8d1ef7ac650231841b069cd4db20/docs/native/T141-W118-20261009.json)
+綁定 T `824ec6d1697716cf77dc0fbbf9b0ab9fe7a644d4`、W
+`d02af8c9876d8e376fe592404dab9052fc5ad410`。兩階段 cod API fall
+control 均為 3→2／一次 afterHurt；正常 timed effect／公開 snapshot
+下的 MultiJump 為 3→3／零 afterHurt。每階段重新建立 cod 並施效，
+不等同自然墜落、MultiJump 跨重啟保存或真人飲用／操作。完整 CI 由修補 PR 執行。
 原生 Luck、高球 Creative Flight、完整斬首／Elbow／CaptainGift 及
 已列差距保持未實現或未驗收；完整家族、私人存檔、畫面音效與 LIVE
 仍待驗證。維持 `client=false`、`production_ready=false`。

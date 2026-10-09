@@ -2,7 +2,7 @@
 
 W118 pairs with Tavern T141 and Grilling G122, retaining the published W117 guide while repairing the LivingEntity gate for vanilla fish without a `mob` family. Its 84 reviewed class counterparts restore admission to the existing MultiJump, Tequila, instant-effect and accepted damage-credit paths. See the [release notes](docs/RELEASE-NOTES-0.1.118.md) for the exact predecessor and source scope.
 
-The published 67 three-language World Liquor entries, seven guide entrances, complete product preparation data and four paired AMW producer-page corrections remain intact, together with current-author assets, confirmed-anchor metadata and the host's aura repairs. The unchanged repair retains its 26 source/API cases and eight-case independent review. The earlier trial's native 21/22 results remain bound to that trial; **new T141/W118 native verification is pending**. The [published W117 notes](docs/RELEASE-NOTES-0.1.117.md) keep their original guide-only scope.
+The published 67 three-language World Liquor entries, seven guide entrances, complete product preparation data and four paired AMW producer-page corrections remain intact, together with current-author assets, confirmed-anchor metadata and the host's aura repairs. The unchanged repair retains its 26 source/API cases and eight-case independent review. The earlier trial's native 21/22 results remain bound to that trial; **the fresh T141/W118 native first/save/restart and strict recorder passed**, including the cod API fall control/protected outcome. Actual Player, client and full private-family verification remain pending. The [published W117 notes](docs/RELEASE-NOTES-0.1.117.md) keep their original guide-only scope.
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
