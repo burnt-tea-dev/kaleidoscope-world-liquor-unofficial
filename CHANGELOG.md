@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.112
+
+Update the exact Tavern dependency to 0.6.135 with a fresh package identity. All W111 World Liquor gameplay, data and artwork remain unchanged, and W111/W110 histories are preserved. The reviewed T135 peer is pinned; new paired CI and native/client acceptance remain pending; see [release scope](docs/RELEASE-NOTES-0.1.112.md).
+
 ## 0.1.111
 
 Pair both packs with Tavern 0.6.134 while preserving the current-author Dassai correction, four cocktail models and source-art checks from W110. The reviewed T134 source is pinned; final paired CI and native/client acceptance remain pending; see [release scope](docs/RELEASE-NOTES-0.1.111.md).
