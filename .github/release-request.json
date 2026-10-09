@@ -1,16 +1,17 @@
 {
-  "version": "0.1.119",
-  "tag": "v0.1.119-preview.1",
-  "title": "森羅物語：世界名酒 0.1.119 測試版｜保留魚類效果並配對光效修復",
+  "version": "0.1.120",
+  "tag": "v0.1.120-preview.1",
+  "title": "森羅物語：世界名酒 0.1.120 測試版｜生物戰鬥入口修復",
   "prerelease": true,
-  "tavern_commit": "2c378031110d6ff6e348613d4bc3c34092770ddf",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.119.md",
+  "tavern_commit": "956727d8ed71f4a766f8668b680d3e9720db53be",
+  "validation_evidence": "docs/COMBAT-RELEASE-VALIDATION-0.1.120.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "This complete T142/W119 integration requires its own actual canonical CI and strict source/overlay-bound native first 21/restart 22 cases, retaining the familyless-fall observer. Prior T141/W118 board/shaker evidence and the separate PR310 aura candidate 20/21 evidence retain their original source identities. Player/client, G123/Cookery private family, saved-world and LIVE acceptance remain separate.",
-  "expected_archive_sha256": "f2a27946d69b979752390e3d0ad9b1f7c56badbf61fde64875a50fe42e303d81",
-  "reviewed_runtime_source": "f60174df93bb8544ea0836b3d7bb9bb06a281255"
+  "native_evidence_scope": "This candidate corrects direct LivingEntity/alive-target admission only. Two existing targeted source/API suites passed 16 named cases; the exact paired public guide passed 223 entries/31 categories/216 packets. These are not Native or Player/client acceptance. Prior W119/T142/G123 LIVE and T141/W118 scoped Native evidence retain their original source, identities and receipts. Complete Incoming cancellation/reentry/fallback/head lifecycle, Native force/collision/loot, matched T143/G124/W120 full-family BDS, saved-world and LIVE verification remain separate.",
+  "expected_archive_sha256": "5d66d8387d56b5984cc21494174050b71bb98cba5e68040c1fc5a0819a9dcdfb",
+  "reviewed_runtime_source": "af5af53f674ff00f57cbac4d9fe1babeaafc5cdc",
+  "new_bds_test": false
 }

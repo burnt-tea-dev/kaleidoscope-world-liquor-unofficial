@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "version": "0.1.120",
+  "runtime_source_commit": "af5af53f674ff00f57cbac4d9fe1babeaafc5cdc",
+  "functional_source_commit": "da2ee8c5e001c329f0e610d7403307aa25faacb7",
+  "preservation_ledger_commit": "87c5f8accae43f2ef5803c3982d36de6ca6861c5",
+  "peer_sources": {
+    "Tavern": "956727d8ed71f4a766f8668b680d3e9720db53be",
+    "Grilling": "469441bc6556b5e91adedfd44876ac072572012a"
+  },
+  "archive": {
+    "name": "Kaleidoscope_World_Liquor_Unofficial_0.1.120_preview1.mcaddon",
+    "sha256": "5d66d8387d56b5984cc21494174050b71bb98cba5e68040c1fc5a0819a9dcdfb",
+    "bytes": 7168033
+  },
+  "checks": {
+    "canonical_release_history_gate": "PASS",
+    "real_packager": "PASS",
+    "reviewed_delta_reverse_and_existing_layers": "PASS",
+    "affected_source_api_named_cases": 16,
+    "public_guide_entries": 223,
+    "public_guide_categories": 31,
+    "public_guide_packets": 216,
+    "exact_head_required_ci": "pending"
+  },
+  "acceptance": {
+    "native": false,
+    "client": false,
+    "full_family": false,
+    "saved_world_migration": false,
+    "live_deployment": false,
+    "production_ready": false,
+    "simulated_players": false
+  },
+  "scope": "Frozen owned admission repair and version pairing; prior candidate reports are preserved and not relabeled."
+}
