@@ -38,3 +38,14 @@ Tavern T142 審查提交 `2c378031110d6ff6e348613d4bc3c34092770ddf`，完整 Git
 `d4c56ad7847cc4061d96e4b4f4a4d4dcaf062748`，由 integration／release request 同時固定。
 後續 Tavern CI peer 提交只更新 metadata，host runtime 相同；
 最終各自完整來源仍需自己的 CI／原生證據，client 與 LIVE 不預先通過。
+
+## 凍結封裝
+
+本版完整來源 `f60174df93bb8544ea0836b3d7bb9bb06a281255`，Git tree
+`5a4bbb9caf32c586928da46089db26b75ae88593`，與本地乾淨建置提交
+`cddec53024ef5c1f3e8ed4f27211ae640ffcaf6d` 全 tree 相同。
+封裝 `Kaleidoscope_World_Liquor_Unofficial_0.1.119_preview1.mcaddon`
+為 7167938 bytes，SHA256
+`f2a27946d69b979752390e3d0ad9b1f7c56badbf61fde64875a50fe42e303d81`。
+後續只增加此來源／archive 審查 metadata，凍結 runtime 不變；
+PR CI、實際發布和真人驗收仍各依自身結果，不改標先前來源。

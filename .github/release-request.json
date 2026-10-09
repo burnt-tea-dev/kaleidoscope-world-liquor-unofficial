@@ -10,5 +10,7 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "This complete T142/W119 integration requires its own actual canonical CI and strict source/overlay-bound native first 21/restart 22 cases, retaining the familyless-fall observer. Prior T141/W118 board/shaker evidence and the separate PR310 aura candidate 20/21 evidence retain their original source identities. Player/client, G123/Cookery private family, saved-world and LIVE acceptance remain separate."
+  "native_evidence_scope": "This complete T142/W119 integration requires its own actual canonical CI and strict source/overlay-bound native first 21/restart 22 cases, retaining the familyless-fall observer. Prior T141/W118 board/shaker evidence and the separate PR310 aura candidate 20/21 evidence retain their original source identities. Player/client, G123/Cookery private family, saved-world and LIVE acceptance remain separate.",
+  "expected_archive_sha256": "f2a27946d69b979752390e3d0ad9b1f7c56badbf61fde64875a50fe42e303d81",
+  "reviewed_runtime_source": "f60174df93bb8544ea0836b3d7bb9bb06a281255"
 }
