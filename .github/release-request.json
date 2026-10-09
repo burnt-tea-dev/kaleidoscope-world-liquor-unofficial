@@ -12,5 +12,6 @@
   "production_ready": false,
   "live_deployment": false,
   "expected_archive_sha256": "f612fa7b7b1474de84c8f6fab48967264777b1bf811e001896c60353b16907d4",
-  "native_evidence_scope": "The frozen T137/W114 pair completed fresh zero-player native first launch, normal save/stop and restart with exact pack/observer binding and the complete recorder. W113 anchor producer/resolver source regressions remain unchanged. No native Player anchor lifecycle, rendered-client, complete private-family migration or LIVE acceptance is claimed."
+  "native_evidence_scope": "The frozen T137/W114 pair completed fresh zero-player native first launch, normal save/stop and restart with exact pack/observer binding and the complete recorder. W113 anchor producer/resolver source regressions remain unchanged. No native Player anchor lifecycle, rendered-client, complete private-family migration or LIVE acceptance is claimed.",
+  "reviewed_runtime_source": "cfbe0f0351705e3257961d7c4e24db39e3133f9a"
 }
