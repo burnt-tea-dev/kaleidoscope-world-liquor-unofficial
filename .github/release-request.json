@@ -12,5 +12,6 @@
   "production_ready": false,
   "live_deployment": false,
   "native_evidence_scope": "The frozen T138/W115 pair passed complete zero-player native first/save/restart and the strict source-bound recorder, including native clock expiry, saved aura acknowledgement, foreign handoff, machine counts/metadata and Mob recipients. W confirmed-anchor source behavior is retained. Actual Player anchor interaction, renderer/audio, full private-family migration and LIVE acceptance remain pending; final canonical CI is separate.",
-  "expected_archive_sha256": "16f88a5296976af9651d1d4de5aeb30f111358742802a0aaf1b037da32d4b2d6"
+  "expected_archive_sha256": "16f88a5296976af9651d1d4de5aeb30f111358742802a0aaf1b037da32d4b2d6",
+  "reviewed_runtime_source": "387c901febc539e20f74655d8be235f2c6e8364a"
 }
