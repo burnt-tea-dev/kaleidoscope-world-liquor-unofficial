@@ -1,5 +1,11 @@
 # Change history
 
+## 0.1.114
+
+- 保留 W113 全部重生錨／作者適配，僅同步 identity 與 Tavern 0.6.137 宿主相依。
+- [本版驗證與限制](docs/RELEASE-NOTES-0.1.114.md)。
+
+
 ## 0.1.113
 
 - 確認原生下界重生錨的新出生點 metadata，保留 repeat／取消／重生／離線邊界，配對 T136 與已審查 G120 helper。

@@ -1,6 +1,6 @@
 # Java / Bedrock parity matrix
 
-Current development candidate: W0.1.113 paired with T0.6.136 and optional G2.8.120. [W113 scope](RELEASE-NOTES-0.1.113.md) adds confirmed native Nether-anchor metadata (source zero yaw/non-forced flag), retaining repeated/cancelled callback and player-lifecycle boundaries. Old or unobserved anchors remain unknown. W112/W110 author assets, recipes and existing repairs remain unchanged. Source/API producer-to-resolver regressions passed; native Player, rendered client, complete private family and LIVE acceptance remain pending.
+Current development candidate: W0.1.114 paired with T0.6.137 and optional G2.8.120. [W114 scope](RELEASE-NOTES-0.1.114.md) preserves the W113 anchor repair and all author assets, changing only identity and the host dependency for the native aura reload repair. Old/unknown anchors and actual Player/client/private LIVE acceptance remain pending.
 
 Audited Bedrock sources: T0.6.126 ac4932b4 / W0.1.103 56314bac. This initial Phase0 matrix covers the inspected player-facing priorities; complete T1/T2/W1 recipe, timing, storage and effect coverage will be added in subsequent phases, not presumed complete. A single future slice reference awaits the owner decision. L0=source inspection, L1=executed source/oracle, L2=scoped native-engine scene, L3=paired actual-client observation. Historical partial L3 cannot certify later releases or all contexts. T/ and W/ identify the repository.
 

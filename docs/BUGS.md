@@ -1,6 +1,13 @@
 # 玩家可見問題與待驗收項
 
-## 當前 0.1.113
+## 當前 0.1.114
+
+保留 W113 全部重生錨／作者適配，僅同步 identity 與 Tavern 0.6.137 宿主相依。
+
+重啟後確認原生效果與來源光效繼續，再以外部同 amplifier 刷新確認交還控制。保存資料、chunk 載入、真正 Player 與真人畫面分別驗證；見 [本版說明](RELEASE-NOTES-0.1.114.md)。
+
+
+## 保留 0.1.113
 
 在下界新設定已充能錨點，keepInventory=false 使用 Respawn；核對 yaw=0／forced=false、只扣一次 charge、聲音／傳送／Hunger。再測同tick repeat、晚取消、充能、同點、換塊、重生／離線。舊未觀察錨與不可讀狀態仍保守 unknown，沒有新增原生 Player／真人驗收。
 

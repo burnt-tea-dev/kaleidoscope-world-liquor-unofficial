@@ -1,16 +1,16 @@
 {
-  "version": "0.1.113",
-  "tag": "v0.1.113-preview.1",
-  "title": "森羅物語：世界名酒 0.1.113 測試版｜重生錨互動與酒館 T136",
+  "version": "0.1.114",
+  "tag": "v0.1.114-preview.1",
+  "title": "森羅物語：世界名酒 0.1.114 測試版｜重生錨與酒館 T137",
   "prerelease": true,
-  "tavern_commit": "edc9e464f8ea987fa07927182a2b741720c82430",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.113.md",
+  "tavern_commit": "617187b05b7d2e26583470fc6d82b0f366756101",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.114.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
-  "new_bds_test": false,
+  "new_bds_test": true,
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "expected_archive_sha256": "0651659f9d343356476d5d6834508c0953f01d5cf0d439e6822cded83bfcdc21",
-  "reviewed_runtime_source": "a5b22dfb05176f626b89de3f46f1ecc1806e8f62"
+  "expected_archive_sha256": "f612fa7b7b1474de84c8f6fab48967264777b1bf811e001896c60353b16907d4",
+  "native_evidence_scope": "The frozen T137/W114 pair completed fresh zero-player native first launch, normal save/stop and restart with exact pack/observer binding and the complete recorder. W113 anchor producer/resolver source regressions remain unchanged. No native Player anchor lifecycle, rendered-client, complete private-family migration or LIVE acceptance is claimed."
 }
