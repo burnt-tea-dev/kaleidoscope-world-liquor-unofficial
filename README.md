@@ -10,7 +10,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 Use Tavern **0.6.136** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
-Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.119** is the current family pairing, not a standalone requirement for this pack.
+Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.121** is the current family pairing, not a standalone requirement for this pack.
 
 Back up existing worlds before updating both sides of a package. Use the [current Releases](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases) rather than historical archives committed in `downloads/`. Source and release checks do not certify a live installation or client rendering.
 
@@ -28,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-The exact Tavern T136 source pin and paired CI are pending while the host candidate is finalized. Existing integration and publication pins still describe W112 and must advance to the reviewed T136 commit before this candidate reaches its canonical remote. No new source, native or client acceptance is claimed by the package freeze.
+Integration checks pin Tavern T136 `496ce702161fb48ab6f67ea6645ad1e4d41b2a12` and Grilling G121 `2b422458ebfdd3831bc7a57af30c24cfa211d23a`. T136 retains the canonical T132 gameplay baseline and adds the guide revision; the separate T135 PR302 remains unmerged and is not part of this candidate. Paired guide data are checked in [the W113 report](docs/GUIDE-VALIDATION-0.1.113.json). Remote CI, family BDS, saved-world migration and human client acceptance retain their separate gates.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 

@@ -46,7 +46,10 @@ assert(!payload.entries.some(e=>e.category==='extensions'),'World Liquor dumped 
 const around=byId.get('kaleidoscope_world_liquor:around_the_world');
 for(const lc of ['zh_CN','zh_TW']){
  const labels=around.recipes[0].ingredients.map(id=>payload.names[lc][id]);
- assert(labels.every(x=>x.includes('≥4')));assert(labels[0].includes('蓝')||labels[0].includes('藍'));
+ assert(labels.every(x=>x.includes(lc==='zh_TW'?'調酒材料':'调酒材料')));
+ const aroundRecipe=standaloneGuideView(payload,lc,{type:'recipe',id:around.id,index:0});
+ assert.equal(aroundRecipe.body.split(lc==='zh_TW'?'品質 4':'品质 4').length-1,1,'Quality restriction belongs once in the shared recipe instructions');
+ assert(labels[0].includes('蓝')||labels[0].includes('藍'));
  assert(labels[1].includes('黄')||labels[1].includes('黃'));assert(labels[2].includes('红')||labels[2].includes('紅'));
  assert.equal(byId.get('kaleidoscope_world_liquor:cola').category,'mixers');
  assert.equal(byId.get('kaleidoscope_world_liquor:tonic_water').category,'mixers');

@@ -22,8 +22,17 @@ pack/module UUIDs remain intact. W110's current-author Dassai correction and
 four coupled cocktail surfaces remain preserved. Existing historical release
 records and validation reports are unchanged.
 
-The exact T136 peer commit, paired CI, family BDS and saved-world migration
-evidence will be attached to this candidate after the host is finalized.
+Paired source checks pin Tavern T136
+`496ce702161fb48ab6f67ea6645ad1e4d41b2a12` and Grilling G121
+`2b422458ebfdd3831bc7a57af30c24cfa211d23a`. T136 starts from the canonical
+T132 gameplay baseline and adds the shared guide changes; the separate T135
+PR302 remains unmerged and is not included. W112's runtime differences from
+W110 were confined to manifests and the payload version, so retained W112
+World Liquor gameplay introduces no dependency on the unmerged host changes.
+
+The [paired guide data report](GUIDE-VALIDATION-0.1.113.json) covers the 223
+entries, complete preparation data, translation and fixed navigation. Remote
+CI, family BDS and saved-world migration evidence remain separate gates.
 The package freeze and text review do not certify rendered client behavior.
 Keep client=false, production_ready=false and pending_client_acceptance until
 human acceptance. Full Java parity and the separate NeoForge 26.1.2 branch
