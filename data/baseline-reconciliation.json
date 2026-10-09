@@ -1783,6 +1783,14 @@
       "before": null,
       "after": "9b86f210508eefed0227cba2de67dcbe04d04f3263cedf8ca039aebc1dbef402",
       "reason": "W100 restores current NeoForge1.1.11 getEntityHead namespace-local registry fallback in source precedence; source death hook, marker persistence, head dedup and player skin metadata remain separate gaps."
+    },
+    "runtime/BP/scripts/vanilla-living-entities.js": {
+      "before": null,
+      "after": "cd6682a7e75cf6c4b22c2a122158136c6f662b25c9de115946a5c0dde287c9d1",
+      "reason": "Add an explicit frozen table of 84 Native entity identifiers corresponding to the Java 1.21.1 LivingEntity classes, including Player, armor stand, and familyless fish. Keep every identifier equal to the paired Tavern vanilla-instant-entities living projection. The table records class membership only and does not itself admit health-only addon entities or impose alive, damage, potion, or health-value policy. Focused regressions: tests/kill-credit.test.mjs [familyless vanilla LivingEntity classification is independent of remaining health; the complete vanilla class facts match the paired Tavern LivingEntity authority; the class gate retains explicit addon mob support and rejects health-only or invalid handles; a familyless fish can own accepted damage but a dead fish cannot supply later kill credit]; tests/combat-source.test.mjs [registered fall callback admits familyless cod for MultiJump while retaining source and nonliving guards; registered Tequila callback caps familyless fish damage using the source float arithmetic; registered instant-effect routing admits a familyless fish without admitting health-only entities; registered before/after hurt callbacks preserve a fish attacker as previous kill credit].",
+      "reviewedPredecessorCommit": "0ebf77ed7d302f453e75d9c56cc603e709ed226d",
+      "reviewedSourceCommit": "d02af8c9876d8e376fe592404dab9052fc5ad410",
+      "reviewDocument": "docs/RELEASE-NOTES-0.1.118.md"
     }
   },
   "reviewedFunctionalDeltaLayers": [
@@ -2367,6 +2375,31 @@
               202,
               203,
               "  const handle = {before, interval};\n"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "release": "0.1.118",
+      "files": {
+        "runtime/BP/scripts/kill-credit.js": {
+          "before": "453ae16c9189a3a5b04c9259423ec829248322b5b1b1e259093c94edc01891ba",
+          "after": "d74ba4830ac7fe6edce51c5c8e7b2dbddc2680040a963a4208234c0afbcf3dfd",
+          "reason": "Recognize Java LivingEntity counterparts that lack Bedrock's mob family by requiring a health component together with explicit vanilla class membership or the existing addon mob-family adapter. Reject invalid handles and health-only nonliving entities, including vehicles and owned helper entities. Class membership remains valid during a lethal hurt; the existing previous-mob kill-credit selection still requires a surviving actor. Preserve source, cancellation, callback ordering, Player-only effects, and Server-only instant-effect routing while allowing familyless fish through the existing registered combat callbacks. Focused regressions: tests/kill-credit.test.mjs [familyless vanilla LivingEntity classification is independent of remaining health; the complete vanilla class facts match the paired Tavern LivingEntity authority; the class gate retains explicit addon mob support and rejects health-only or invalid handles; a familyless fish can own accepted damage but a dead fish cannot supply later kill credit]; tests/combat-source.test.mjs [registered fall callback admits familyless cod for MultiJump while retaining source and nonliving guards; registered Tequila callback caps familyless fish damage using the source float arithmetic; registered instant-effect routing admits a familyless fish without admitting health-only entities; registered before/after hurt callbacks preserve a fish attacker as previous kill credit].",
+          "reviewedPredecessorCommit": "0ebf77ed7d302f453e75d9c56cc603e709ed226d",
+          "reviewedSourceCommit": "d02af8c9876d8e376fe592404dab9052fc5ad410",
+          "reviewDocument": "docs/RELEASE-NOTES-0.1.118.md",
+          "reverseOps": [
+            [
+              0,
+              1,
+              ""
+            ],
+            [
+              6,
+              12,
+              " try{return !!actor?.getComponent?.('minecraft:health')&&(actor.typeId==='minecraft:player'||actor.typeId==='minecraft:armor_stand'||actor.getComponent('minecraft:type_family')?.hasTypeFamily('mob')===true);}catch{return false;}\n"
             ]
           ]
         }

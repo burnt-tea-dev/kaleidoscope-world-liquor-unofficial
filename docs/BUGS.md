@@ -1,10 +1,16 @@
-## 當前 W116／T139
+## 當前 W118／T141
 
-已保留發布主線的三語指南與七入口，並合入固定原料／光效／Mob／確認重生錨修補。新配套完整 native first 20／restart 21 案例及嚴格來源 recorder 已通過；G122 完整家族、原生 Player、畫面音效與私人 LIVE 仍未驗收。詳見 [本版說明](RELEASE-NOTES-0.1.116.md)。以下保留各功能的原始來源與範圍。
+承接已發布主線 `0ebf77ed7d302f453e75d9c56cc603e709ed226d` 的 W117 指南與四個配套 AMW 頁面修正，加入 fish LivingEntity gate。原 source/API 26 案例與交叉審查子集 8 案例保留；舊 trial 原生 21／22 仍綁舊提交，新 T141／W118 原生首次 21／重啟 22 項及嚴格 recorder 已通過。G122 完整家族、Player、畫面音效與私人 LIVE 仍待驗收。詳見 [本版說明](RELEASE-NOTES-0.1.118.md)，歷史來源與已發布 W117 notes 保持原樣。
 
 # 玩家可見問題與待驗收項
 
-## 當前 0.1.115
+## W-LIVING-COMBAT-GATE — 魚類效果與傷害歸屬入口
+
+CF9066406／NeoForge Minecraft 1.21.1／1.1.11 的 MultiJump 與 Tequila 適用所有 LivingEntity；舊 `mob` family gate 卻漏掉 cod。W118 承接已審查的 84 個精確 vanilla ID 與 helper 修補，恢復魚類的 MultiJump、Tequila、Server instant route 及 accepted hurt 歸屬。必要 health／validity、非生物拒絕與 addon mob 適配保留；health=0 不改 class，後續 mob credit 仍要求存活。
+
+兩個定向套件 26／26、交叉審查子集 8／8 是原修補的來源／正式回呼證據。新 T141／W118 原生首次 21／重啟 22 項及嚴格 recorder 已通過：每個 phase 重新建立 cod，API fall 無效果組 health 3→2／一次 afterHurt；經正常 timed effect 與公開 snapshot 套用 MultiJump 後 3→3／零 afterHurt。這不證明自然墜落、MultiJump 跨重啟保存或 Player 入口。`BEHEADED_MARKER` 先寫再 cancel 是原作設計，事件順序未改；完整斬首、Elbow／CaptainGift、原生 Luck、高球 Creative Flight與已列其他差距仍保持原範圍。
+
+## 保留 0.1.115
 
 保留既有已確認重生錨與作者內容，配對 Tavern T138 的原生倒數／重啟光效整合。[本版範圍](RELEASE-NOTES-0.1.115.md)區分新候選驗證與原生 Player／真人／私人 LIVE 待驗收。
 

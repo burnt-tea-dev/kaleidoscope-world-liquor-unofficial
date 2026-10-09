@@ -1,17 +1,17 @@
 {
-  "version": "0.1.117",
-  "tag": "v0.1.117-preview.1",
-  "title": "森羅物語：世界名酒 0.1.117 測試版｜完整家族指南配對",
+  "version": "0.1.118",
+  "tag": "v0.1.118-preview.1",
+  "title": "森羅物語：世界名酒 0.1.118 測試版｜魚類效果與傷害入口修復",
   "prerelease": true,
-  "tavern_commit": "e45d1fd1e466de5a8e41e55210894f35fd506c19",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.117.md",
+  "tavern_commit": "2f46ff89219b8d1ef7ac650231841b069cd4db20",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.118.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
-  "new_bds_test": false,
+  "new_bds_test": true,
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W117 preserves the complete W116 runtime except synchronized package identity, payload.version and Tavern T140 dependencies. Historical T139/W116 first/save/restart native evidence keeps its original source and identity; it is not relabeled for this candidate. New exact T140/W117 CI, full private-family BDS, saved-world migration, actual Player/client and LIVE evidence remain separate and pending.",
-  "expected_archive_sha256": "0445bb9ea9c52016f2e17b34878d41f20523d532033878e0e475814350a8a290",
-  "reviewed_runtime_source": "22623f335a2b388eaf1a5a72c71bbfcde008163a"
+  "native_evidence_scope": "Fresh exact T141/W118 paired BDS 1.26.52.3 passed first 21 and normal-save/restart 22 strict cases, zero players and errors, normal stops. Measured sources remain T824ec6d1697716cf77dc0fbbf9b0ab9fe7a644d4 and Wd02af8c9876d8e376fe592404dab9052fc5ad410; linked Tavern evidence commit contains the unchanged strict recorder output. Each phase newly creates cod and applies MultiJump through the normal timed effect and public snapshot: API fall control health 3 to 2 with one afterHurt versus protected 3 to 3 with zero afterHurt. Existing machine counts/item metadata and aura save/countdown/reload acknowledgement/foreign handoff also passed. Natural fall height, MultiJump persistence, actual Player input, native Tequila/beheading/kill-credit gameplay, rendered/audio client, full private family and LIVE remain unverified; fresh saved-world deployment gates are pending.",
+  "expected_archive_sha256": "7bf772a664608dc6e3c7382c6892d755558c2397f7724af388cc9c327017bdfb",
+  "reviewed_runtime_source": "d02af8c9876d8e376fe592404dab9052fc5ad410"
 }
