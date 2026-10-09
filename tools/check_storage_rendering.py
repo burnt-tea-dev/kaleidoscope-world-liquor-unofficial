@@ -20,10 +20,26 @@ KT='kaleidoscope_tavern'
 COMPACT_REVIEW=json.loads((ROOT/'data/compact-texture-review.json').read_text())
 AUTHOR_ART_REVIEW=json.loads((ROOT/'data/current-author-art-preservation.json').read_text())
 def read(p):return json.loads(p.read_text())
+def restore_reviewed_guide(payload,review):
+ assert review['schema']==1 and review['test_only'] is True
+ current={key:value for key,value in payload.items() if key!='version'}
+ assert object_digest(current)==review['after_payload_except_version_sha256'],'Unreviewed guide or gameplay payload change'
+ raw=gzip.decompress(base64.b64decode(review['before_pages_gzip_base64'],validate=True))
+ assert hashlib.sha256(raw).hexdigest()==review['before_pages_sha256'],'Corrupt guide predecessor'
+ pages=json.loads(raw)
+ assert len(pages)==len(payload['pages'])==review['page_count']
+ restored={**payload,'pages':pages}
+ assert object_digest({key:value for key,value in restored.items() if key!='version'})==review['before_payload_except_version_sha256'],'Guide projection changed gameplay records'
+ return restored
 def readjs(p):
  if p.name=='payload.js':
   review=read(ROOT/'data/current-mixology-review.json');assert review['test_only']
   data=p.read_bytes()
+  guide_review=ROOT/'data/guide-copy-preservation-0.1.113.json'
+  if guide_review.exists():
+   current=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))
+   current=restore_reviewed_guide(current,read(guide_review))
+   data=('export const payload = '+json.dumps(current,ensure_ascii=False,indent=2)+';\n').encode()
   if review.get('functional_layers'):
    payload=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))
    for layer in reversed(review['functional_layers']):

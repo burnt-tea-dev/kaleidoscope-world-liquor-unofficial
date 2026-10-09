@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.110",
+  "version": "0.1.113",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -4414,9 +4414,9 @@ export const payload = {
         "zh_TW": "絕對伏特加"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Anti-Gravity 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Anti-Gravity 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Anti-Gravity 1（600s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Anti-Gravity 1（1920s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；反重力 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；反重力 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；反重力 1（600秒，100%）\n品质 6：微醺 1（10秒，100%）；反重力 1（1920秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；反重力 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；反重力 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；反重力 1（600秒，100%）\n品質 6：微醺 1（10秒，100%）；反重力 1（1920秒，100%）"
+        "en_US": "Character\nFrom quality 3, Reverse Gravity changes how you rise and fall. Leave room overhead before trying it.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起具有反重力效果，会改变升降方式；尝试前请留出头顶空间。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起具有反重力效果，會改變升降方式；嘗試前請留出頭頂空間。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/absolut_vodka"
@@ -4433,9 +4433,9 @@ export const payload = {
         "zh_TW": "百加得白朗姆"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Treasure Sensing 1（80s，100%） [outline unavailable in this port]\nQuality 4：Slightly Tipsy 1（30s，100%）；Treasure Sensing 1（240s，100%） [outline unavailable in this port]\nQuality 5：Slightly Tipsy 1（20s，100%）；Treasure Sensing 1（600s，100%） [outline unavailable in this port]\nQuality 6：Slightly Tipsy 1（10s，100%）；Treasure Sensing 1（1920s，100%） [outline unavailable in this port]",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；宝藏感知 1（80秒，100%）【本移植未实现透视描边】\n品质 4：微醺 1（30秒，100%）；宝藏感知 1（240秒，100%）【本移植未实现透视描边】\n品质 5：微醺 1（20秒，100%）；宝藏感知 1（600秒，100%）【本移植未实现透视描边】\n品质 6：微醺 1（10秒，100%）；宝藏感知 1（1920秒，100%）【本移植未实现透视描边】",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；寶藏感知 1（80秒，100%）【本移植未實作透視描邊】\n品質 4：微醺 1（30秒，100%）；寶藏感知 1（240秒，100%）【本移植未實作透視描邊】\n品質 5：微醺 1（20秒，100%）；寶藏感知 1（600秒，100%）【本移植未實作透視描邊】\n品質 6：微醺 1（10秒，100%）；寶藏感知 1（1920秒，100%）【本移植未實作透視描邊】"
+        "en_US": "Character\nTreasure Sense is its signature effect from quality 3. Nearby containers currently have no visible outline.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起以宝藏感知为特色；目前无法显示附近容器的透视轮廓。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起以寶藏感知為特色；目前無法顯示附近容器的透視輪廓。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/bacardi_carta_blanca"
@@ -4452,9 +4452,9 @@ export const payload = {
         "zh_TW": "竹葉青"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Invisibility 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Invisibility 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Invisibility 1（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Invisibility 1（2160s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；隐身 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；隐身 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；隐身 1（720秒，100%）\n品质 6：微醺 1（10秒，100%）；隐身 1（2160秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；隱形 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；隱形 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；隱形 1（720秒，100%）\n品質 6：微醺 1（10秒，100%）；隱形 1（2160秒，100%）"
+        "en_US": "Character\nFrom quality 3, it grants Invisibility. Further aging makes the effect last longer.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起可获得隐身；继续熟成能延长效果。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起可獲得隱形；繼續熟成能延長效果。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/bamboo_leaf_green_liquor"
@@ -4471,9 +4471,9 @@ export const payload = {
         "zh_TW": "孟買藍寶石金酒"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Multi-Jump 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Multi-Jump 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Multi-Jump 2（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Multi-Jump 3（2160s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；多段跳 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；多段跳 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；多段跳 2（720秒，100%）\n品质 6：微醺 1（10秒，100%）；多段跳 3（2160秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；多段跳 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；多段跳 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；多段跳 2（720秒，100%）\n品質 6：微醺 1（10秒，100%）；多段跳 3（2160秒，100%）"
+        "en_US": "Character\nFrom quality 3, Multi-Jump lets you jump again in midair. Higher qualities allow more extra jumps.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起可在空中再次跳跃；较高品质可增加额外跳跃次数。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起可在空中再次跳躍；較高品質可增加額外跳躍次數。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/bombay_sapphire_gin"
@@ -4490,9 +4490,9 @@ export const payload = {
         "zh_TW": "勁涼冰紅茶"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Slow Falling 1（60s，100%）；Frost Walker 1（60s，100%）\nQuality 4：Weakness 1（30s，100%）；Slow Falling 1（90s，100%）；Frost Walker 1（90s，100%）；Fire Resistance 1（45s，100%）\nQuality 5：Weakness 1（20s，100%）；Slow Falling 1（240s，100%）；Frost Walker 1（240s，100%）；Fire Resistance 1（150s，100%）；Resistance 1（70s，100%）\nQuality 6：Weakness 1（10s，100%）；Slow Falling 1（600s，100%）；Frost Walker 1（600s，100%）；Fire Resistance 1（240s，100%）；Resistance 1（150s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；缓降 1（60秒，100%）；冰霜行者 1（60秒，100%）\n品质 4：虚弱 1（30秒，100%）；缓降 1（90秒，100%）；冰霜行者 1（90秒，100%）；抗火 1（45秒，100%）\n品质 5：虚弱 1（20秒，100%）；缓降 1（240秒，100%）；冰霜行者 1（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品质 6：虚弱 1（10秒，100%）；缓降 1（600秒，100%）；冰霜行者 1（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；緩降 1（60秒，100%）；冰霜行者 1（60秒，100%）\n品質 4：虛弱 1（30秒，100%）；緩降 1（90秒，100%）；冰霜行者 1（90秒，100%）；抗火 1（45秒，100%）\n品質 5：虛弱 1（20秒，100%）；緩降 1（240秒，100%）；冰霜行者 1（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品質 6：虛弱 1（10秒，100%）；緩降 1（600秒，100%）；冰霜行者 1（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）"
+        "en_US": "Character\nFrom quality 3, it grants Slow Falling and Frost Walker. Higher qualities also offer Fire Resistance and Resistance.\n\nServing\nLow quality can cause Hunger or Weakness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起具有缓降与冰霜行者；较高品质还会增加抗火与抗性。\n\n取用\n低品质会带来饥饿或虚弱。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起具有緩降與冰霜行者；較高品質還會增加抗火與抗性。\n\n取用\n低品質會帶來飢餓或虛弱。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/cool_tea"
@@ -4509,9 +4509,9 @@ export const payload = {
         "zh_TW": "獺祭"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 2（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Luck (Java-only; unavailable here) 4（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Luck (Java-only; unavailable here) 6（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Luck (Java-only; unavailable here) 8（2160s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 2（80秒，100%）\n品质 4：微醺 1（30秒，100%）；幸运（Java 专属，本移植未提供） 4（240秒，100%）\n品质 5：微醺 1（20秒，100%）；幸运（Java 专属，本移植未提供） 6（720秒，100%）\n品质 6：微醺 1（10秒，100%）；幸运（Java 专属，本移植未提供） 8（2160秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 2（80秒，100%）\n品質 4：微醺 1（30秒，100%）；幸運（Java 專屬，本移植未提供） 4（240秒，100%）\n品質 5：微醺 1（20秒，100%）；幸運（Java 專屬，本移植未提供） 6（720秒，100%）\n品質 6：微醺 1（10秒，100%）；幸運（Java 專屬，本移植未提供） 8（2160秒，100%）"
+        "en_US": "Character\nLuck is its signature effect from quality 3, but it currently does not improve loot. Do not rely on it for better drops.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起以幸运为特色，但目前不会改善战利品；别依赖它提高掉落。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起以幸運為特色，但目前不會改善戰利品；別依賴它提高掉落。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/dassai"
@@ -4528,9 +4528,9 @@ export const payload = {
         "zh_TW": "冰紅茶"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Slow Falling 1（60s，100%）；Elbow Strike 1（60s，100%）\nQuality 4：Weakness 1（30s，100%）；Slow Falling 1（90s，100%）；Elbow Strike 1（90s，100%）；Fire Resistance 1（45s，100%）\nQuality 5：Weakness 1（20s，100%）；Slow Falling 1（240s，100%）；Elbow Strike 2（240s，100%）；Fire Resistance 1（150s，100%）；Resistance 1（70s，100%）\nQuality 6：Weakness 1（10s，100%）；Slow Falling 1（600s，100%）；Elbow Strike 3（600s，100%）；Fire Resistance 1（240s，100%）；Resistance 1（150s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；缓降 1（60秒，100%）；肘击 1（60秒，100%）\n品质 4：虚弱 1（30秒，100%）；缓降 1（90秒，100%）；肘击 1（90秒，100%）；抗火 1（45秒，100%）\n品质 5：虚弱 1（20秒，100%）；缓降 1（240秒，100%）；肘击 2（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品质 6：虚弱 1（10秒，100%）；缓降 1（600秒，100%）；肘击 3（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；緩降 1（60秒，100%）；肘擊 1（60秒，100%）\n品質 4：虛弱 1（30秒，100%）；緩降 1（90秒，100%）；肘擊 1（90秒，100%）；抗火 1（45秒，100%）\n品質 5：虛弱 1（20秒，100%）；緩降 1（240秒，100%）；肘擊 2（240秒，100%）；抗火 1（150秒，100%）；抗性提升 1（70秒，100%）\n品質 6：虛弱 1（10秒，100%）；緩降 1（600秒，100%）；肘擊 3（600秒，100%）；抗火 1（240秒，100%）；抗性提升 1（150秒，100%）"
+        "en_US": "Character\nFrom quality 3, it grants Slow Falling; higher qualities add Fire Resistance and Resistance. Elbow Strike currently plays its sound without an extra attack.\n\nServing\nLow quality can cause Hunger or Weakness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起具有缓降；较高品质还有抗火与抗性。肘击目前只有音效，不会追加攻击。\n\n取用\n低品质会带来饥饿或虚弱。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起具有緩降；較高品質還有抗火與抗性。肘擊目前只有音效，不會追加攻擊。\n\n取用\n低品質會帶來飢餓或虛弱。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/ice_tea"
@@ -4547,9 +4547,9 @@ export const payload = {
         "zh_TW": "傑克丹尼"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Decapitation 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Decapitation 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Decapitation 2（600s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Decapitation 3（1920s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；斩首 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；斩首 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；斩首 2（600秒，100%）\n品质 6：微醺 1（10秒，100%）；斩首 3（1920秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；斬首 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；斬首 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；斬首 2（600秒，100%）\n品質 6：微醺 1（10秒，100%）；斬首 3（1920秒，100%）"
+        "en_US": "Character\nFrom quality 3, Beheading gives melee attacks a chance to finish ordinary mobs and drop a supported head. It does not work on bosses.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起，近战有机会斩杀普通生物；若有对应头颅物品，也会掉落头颅。不适用于首领。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起，近戰有機會斬殺普通生物；若有對應頭顱物品，也會掉落頭顱。不適用於首領。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/jack_daniel"
@@ -4566,9 +4566,9 @@ export const payload = {
         "zh_TW": "尊尼獲加"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Gold Rush 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Gold Rush 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Gold Rush 2（600s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Gold Rush 3（1920s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；淘金热 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；淘金热 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；淘金热 2（600秒，100%）\n品质 6：微醺 1（10秒，100%）；淘金热 3（1920秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；淘金熱 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；淘金熱 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；淘金熱 2（600秒，100%）\n品質 6：微醺 1（10秒，100%）；淘金熱 3（1920秒，100%）"
+        "en_US": "Character\nFrom quality 3, Treasure Guide gives mob kills and mining a chance to produce extra drops. Higher quality improves the chance.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起，击败生物或采掘有机会获得额外掉落；较高品质能提高机会。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起，擊敗生物或採掘有機會獲得額外掉落；較高品質能提高機會。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/johnnie_walker"
@@ -4585,9 +4585,9 @@ export const payload = {
         "zh_TW": "格瓦斯"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Stridebreaker 1（80s，100%）\nQuality 4：Weakness 1（30s，100%）；Stridebreaker 1（240s，100%）\nQuality 5：Weakness 1（20s，100%）；Stridebreaker 2（600s，100%）\nQuality 6：Weakness 1（10s，100%）；Stridebreaker 3（1920s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；破势 1（80秒，100%）\n品质 4：虚弱 1（30秒，100%）；破势 1（240秒，100%）\n品质 5：虚弱 1（20秒，100%）；破势 2（600秒，100%）\n品质 6：虚弱 1（10秒，100%）；破势 3（1920秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；破勢 1（80秒，100%）\n品質 4：虛弱 1（30秒，100%）；破勢 1（240秒，100%）\n品質 5：虛弱 1（20秒，100%）；破勢 2（600秒，100%）\n品質 6：虛弱 1（10秒，100%）；破勢 3（1920秒，100%）"
+        "en_US": "Character\nFrom quality 3, grounded melee hits can become critical hits without jumping. Higher quality improves the chance.\n\nServing\nLow quality can cause Hunger or Weakness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起，站在地面近战也有机会打出暴击，不必起跳；较高品质能提高机会。\n\n取用\n低品质会带来饥饿或虚弱。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起，站在地面近戰也有機會打出暴擊，不必起跳；較高品質能提高機會。\n\n取用\n低品質會帶來飢餓或虛弱。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/kwas_chlebowy"
@@ -4604,9 +4604,9 @@ export const payload = {
         "zh_TW": "拉菲1982"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Health Boost 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Health Boost 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Health Boost 2（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Health Boost 3（2160s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；生命提升 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；生命提升 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；生命提升 2（720秒，100%）\n品质 6：微醺 1（10秒，100%）；生命提升 3（2160秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；生命提升 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；生命提升 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；生命提升 2（720秒，100%）\n品質 6：微醺 1（10秒，100%）；生命提升 3（2160秒，100%）"
+        "en_US": "Character\nFrom quality 3, it increases maximum health. The extra capacity expires with the effect; higher quality gives a larger boost.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起可提高生命上限，效果结束后上限恢复；较高品质可提供更多额外生命。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起可提高生命上限，效果結束後上限恢復；較高品質可提供更多額外生命。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/lafite_1982"
@@ -4623,9 +4623,9 @@ export const payload = {
         "zh_TW": "飛天茅臺"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Levitation 1（15s，100%）；Slow Falling 1（35s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Levitation 2（20s，100%）；Slow Falling 1（40s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Levitation 3（25s，100%）；Slow Falling 1（45s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Levitation 4（30s，100%）；Slow Falling 1（50s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；飘浮 1（15秒，100%）；缓降 1（35秒，100%）\n品质 4：微醺 1（30秒，100%）；飘浮 2（20秒，100%）；缓降 1（40秒，100%）\n品质 5：微醺 1（20秒，100%）；飘浮 3（25秒，100%）；缓降 1（45秒，100%）\n品质 6：微醺 1（10秒，100%）；飘浮 4（30秒，100%）；缓降 1（50秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；懸浮 1（15秒，100%）；緩降 1（35秒，100%）\n品質 4：微醺 1（30秒，100%）；懸浮 2（20秒，100%）；緩降 1（40秒，100%）\n品質 5：微醺 1（20秒，100%）；懸浮 3（25秒，100%）；緩降 1（45秒，100%）\n品質 6：微醺 1（10秒，100%）；懸浮 4（30秒，100%）；緩降 1（50秒，100%）"
+        "en_US": "Character\nFrom quality 3, it grants Levitation and a longer-lasting Slow Falling effect. Higher quality lifts you faster; drink in an open area.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起具有飘浮与持续更久的缓降；较高品质会升得更快，宜在开阔处饮用。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起具有懸浮與持續更久的緩降；較高品質會升得更快，宜在開闊處飲用。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/maotai"
@@ -4642,9 +4642,9 @@ export const payload = {
         "zh_TW": "馬利寶椰子朗姆酒"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Boating Mastery 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Boating Mastery 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Boating Mastery 1（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Boating Mastery 1（2160s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；船长的祝福 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；船长的祝福 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；船长的祝福 1（720秒，100%）\n品质 6：微醺 1（10秒，100%）；船长的祝福 1（2160秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；船長的祝福 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；船長的祝福 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；船長的祝福 1（720秒，100%）\n品質 6：微醺 1（10秒，100%）；船長的祝福 1（2160秒，100%）"
+        "en_US": "Character\nFrom quality 3, Boating Master increases speed while you steer a boat forward. Aging makes the effect last longer.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起，在驾驶船只向前划行时可提高船速；继续熟成能延长效果。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起，在駕駛船隻向前划行時可提高船速；繼續熟成能延長效果。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/pina_colada"
@@ -4661,9 +4661,9 @@ export const payload = {
         "zh_TW": "深藍伏特加"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Spectral Sight 1（80s，100%） [outline unavailable in this port]\nQuality 4：Slightly Tipsy 1（30s，100%）；Spectral Sight 1（240s，100%） [outline unavailable in this port]\nQuality 5：Slightly Tipsy 1（20s，100%）；Spectral Sight 1（600s，100%） [outline unavailable in this port]\nQuality 6：Slightly Tipsy 1（10s，100%）；Spectral Sight 1（1920s，100%） [outline unavailable in this port]",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；冥视 1（80秒，100%）【本移植未实现透视描边】\n品质 4：微醺 1（30秒，100%）；冥视 1（240秒，100%）【本移植未实现透视描边】\n品质 5：微醺 1（20秒，100%）；冥视 1（600秒，100%）【本移植未实现透视描边】\n品质 6：微醺 1（10秒，100%）；冥视 1（1920秒，100%）【本移植未实现透视描边】",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；冥視 1（80秒，100%）【本移植未實作透視描邊】\n品質 4：微醺 1（30秒，100%）；冥視 1（240秒，100%）【本移植未實作透視描邊】\n品質 5：微醺 1（20秒，100%）；冥視 1（600秒，100%）【本移植未實作透視描邊】\n品質 6：微醺 1（10秒，100%）；冥視 1（1920秒，100%）【本移植未實作透視描邊】"
+        "en_US": "Character\nHostile Detection is its signature effect from quality 3. Nearby hostile mobs currently have no visible outline.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起以冥视为特色；目前无法显示附近敌对生物的透视轮廓。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起以冥視為特色；目前無法顯示附近敵對生物的透視輪廓。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/skyy_vodka"
@@ -4680,9 +4680,9 @@ export const payload = {
         "zh_TW": "斯米諾紅牌伏特加"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Hero of the Village 1（60s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Hero of the Village 1（120s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Hero of the Village 2（200s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Hero of the Village 3（300s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；村庄英雄 1（60秒，100%）\n品质 4：微醺 1（30秒，100%）；村庄英雄 1（120秒，100%）\n品质 5：微醺 1（20秒，100%）；村庄英雄 2（200秒，100%）\n品质 6：微醺 1（10秒，100%）；村庄英雄 3（300秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；村莊英雄 1（60秒，100%）\n品質 4：微醺 1（30秒，100%）；村莊英雄 1（120秒，100%）\n品質 5：微醺 1（20秒，100%）；村莊英雄 2（200秒，100%）\n品質 6：微醺 1（10秒，100%）；村莊英雄 3（300秒，100%）"
+        "en_US": "Character\nFrom quality 3, Hero of the Village improves trading prices. Higher quality strengthens and extends the effect.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起具有村庄英雄效果，可改善交易价格；较高品质效果更强、持续更久。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起具有村莊英雄效果，可改善交易價格；較高品質效果更強、持續更久。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/smirnoff_red_vodka"
@@ -4699,9 +4699,9 @@ export const payload = {
         "zh_TW": "酸梅湯"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Hunger 1（30s，100%）\nQuality 2：Weakness 1（45s，100%）\nQuality 3：Weakness 1（30s，100%）；Tequila Fortitude 1（80s，100%）\nQuality 4：Weakness 1（30s，100%）；Tequila Fortitude 1（240s，100%）\nQuality 5：Weakness 1（20s，100%）；Tequila Fortitude 2（720s，100%）\nQuality 6：Weakness 1（10s，100%）；Tequila Fortitude 3（2160s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：饥饿 1（30秒，100%）\n品质 2：虚弱 1（45秒，100%）\n品质 3：虚弱 1（30秒，100%）；龙舌兰 1（80秒，100%）\n品质 4：虚弱 1（30秒，100%）；龙舌兰 1（240秒，100%）\n品质 5：虚弱 1（20秒，100%）；龙舌兰 2（720秒，100%）\n品质 6：虚弱 1（10秒，100%）；龙舌兰 3（2160秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：飢餓 1（30秒，100%）\n品質 2：虛弱 1（45秒，100%）\n品質 3：虛弱 1（30秒，100%）；龍舌蘭 1（80秒，100%）\n品質 4：虛弱 1（30秒，100%）；龍舌蘭 1（240秒，100%）\n品質 5：虛弱 1（20秒，100%）；龍舌蘭 2（720秒，100%）\n品質 6：虛弱 1（10秒，100%）；龍舌蘭 3（2160秒，100%）"
+        "en_US": "Character\nFrom quality 3, it limits the damage taken from a single hit to part of your maximum health. Higher quality lowers that limit.\n\nServing\nLow quality can cause Hunger or Weakness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起，单次受伤不超过生命上限的一部分；较高品质能进一步压低单次伤害。\n\n取用\n低品质会带来饥饿或虚弱。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起，單次受傷不超過生命上限的一部分；較高品質能進一步壓低單次傷害。\n\n取用\n低品質會帶來飢餓或虛弱。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/sour_plum"
@@ -4718,9 +4718,9 @@ export const payload = {
         "zh_TW": "生命之水96"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Captain's Grace 1（80s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Captain's Grace 1（240s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Captain's Grace 1（720s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Captain's Grace 1（2160s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；水上行走 1（80秒，100%）\n品质 4：微醺 1（30秒，100%）；水上行走 1（240秒，100%）\n品质 5：微醺 1（20秒，100%）；水上行走 1（720秒，100%）\n品质 6：微醺 1（10秒，100%）；水上行走 1（2160秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；水上行走 1（80秒，100%）\n品質 4：微醺 1（30秒，100%）；水上行走 1（240秒，100%）\n品質 5：微醺 1（20秒，100%）；水上行走 1（720秒，100%）\n品質 6：微醺 1（10秒，100%）；水上行走 1（2160秒，100%）"
+        "en_US": "Character\nFrom quality 3, it helps you stay on still water while standing. Sneaking lets you sink; it does not protect you from lava.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起可让你站在静止水面上；潜行可下沉，无法让你安全踩在岩浆上。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起可讓你站在靜止水面上；潛行可下沉，無法讓你安全踩在岩漿上。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/spiryt_vodka"
@@ -4737,9 +4737,9 @@ export const payload = {
         "zh_TW": "詩莊堡"
       },
       "body": {
-        "en_US": "Aging base time: 120s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.\nOnly Q4–Q6 bottles accepted by the shaker input table may be used for mixology.\nDrink effects (independent probability per effect)\nQuality 1：Nausea 1（30s，100%）\nQuality 2：Slightly Tipsy 1（45s，100%）\nQuality 3：Slightly Tipsy 1（30s，100%）；Absorption 1（70s，100%）；Regeneration 2（10s，100%）\nQuality 4：Slightly Tipsy 1（30s，100%）；Absorption 2（150s，100%）；Regeneration 2（15s，100%）\nQuality 5：Slightly Tipsy 1（20s，100%）；Absorption 3（230s，100%）；Regeneration 2（20s，100%）；Fire Resistance 1（150s，100%）\nQuality 6：Slightly Tipsy 1（10s，100%）；Absorption 4（310s，100%）；Regeneration 2（25s，100%）；Fire Resistance 1（300s，100%）；Resistance 1（150s，100%）",
-        "zh_CN": "熟成基础时间：120 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。\n只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。\n饮用效果（各效果独立判定）\n品质 1：恶心 1（30秒，100%）\n品质 2：微醺 1（45秒，100%）\n品质 3：微醺 1（30秒，100%）；伤害吸收 1（70秒，100%）；生命恢复 2（10秒，100%）\n品质 4：微醺 1（30秒，100%）；伤害吸收 2（150秒，100%）；生命恢复 2（15秒，100%）\n品质 5：微醺 1（20秒，100%）；伤害吸收 3（230秒，100%）；生命恢复 2（20秒，100%）；抗火 1（150秒，100%）\n品质 6：微醺 1（10秒，100%）；伤害吸收 4（310秒，100%）；生命恢复 2（25秒，100%）；抗火 1（300秒，100%）；抗性提升 1（150秒，100%）",
-        "zh_TW": "熟成基礎時間：120 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。\n只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。\n飲用效果（各效果獨立判定）\n品質 1：噁心 1（30秒，100%）\n品質 2：微醺 1（45秒，100%）\n品質 3：微醺 1（30秒，100%）；吸收 1（70秒，100%）；生命恢復 2（10秒，100%）\n品質 4：微醺 1（30秒，100%）；吸收 2（150秒，100%）；生命恢復 2（15秒，100%）\n品質 5：微醺 1（20秒，100%）；吸收 3（230秒，100%）；生命恢復 2（20秒，100%）；抗火 1（150秒，100%）\n品質 6：微醺 1（10秒，100%）；吸收 4（310秒，100%）；生命恢復 2（25秒，100%）；抗火 1（300秒，100%）；抗性提升 1（150秒，100%）"
+        "en_US": "Character\nFrom quality 3, it grants Absorption and Regeneration. Higher qualities add Fire Resistance and Resistance.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起具有伤害吸收与生命恢复；较高品质还会增加抗火与抗性。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起具有吸收與生命恢復；較高品質還會增加抗火與抗性。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/strongbow"
@@ -4756,9 +4756,9 @@ export const payload = {
         "zh_TW": "環遊世界"
       },
       "body": {
-        "en_US": "Drink effects (independent probability per effect)\nINSANITY!!! 1（instant，100%）",
-        "zh_CN": "饮用效果（各效果独立判定）\n疯狂！！！ 1（即时触发，100%）",
-        "zh_TW": "飲用效果（各效果獨立判定）\n瘋狂！！！ 1（即時觸發，100%）"
+        "en_US": "Character\nA chaotic cocktail that applies many helpful and harmful effects at once for about 10 seconds. Try it somewhere safe.",
+        "zh_CN": "饮用特点\n会同时带来多种有益与有害效果，约持续 10 秒；适合在安全处尝试。",
+        "zh_TW": "飲用特色\n會同時帶來多種有益與有害效果，約持續 10 秒；適合在安全處嘗試。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/around_the_world"
@@ -4775,9 +4775,9 @@ export const payload = {
         "zh_TW": "金湯力"
       },
       "body": {
-        "en_US": "Drink effects (independent probability per effect)\nInstant Regeneration 1（60s，100%）",
-        "zh_CN": "饮用效果（各效果独立判定）\n瞬间治疗 1（60秒，100%）",
-        "zh_TW": "飲用效果（各效果獨立判定）\n瞬間恢復 1（60秒，100%）"
+        "en_US": "Character\nRapidly restores health for 1 minute. It only heals while you are alive and below full health.",
+        "zh_CN": "饮用特点\n饮用后持续快速恢复生命，持续 1 分钟；仅在存活且未满血时治疗。",
+        "zh_TW": "飲用特色\n飲用後持續快速恢復生命，持續 1 分鐘；僅在存活且未滿血時治療。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/gin_tonic"
@@ -4794,9 +4794,9 @@ export const payload = {
         "zh_TW": "渣男"
       },
       "body": {
-        "en_US": "Drink effects (independent probability per effect)\nExplosion 1（instant，100%）",
-        "zh_CN": "饮用效果（各效果独立判定）\n爆炸 1（即时触发，100%）",
-        "zh_TW": "飲用效果（各效果獨立判定）\n爆炸 1（即時觸發，100%）"
+        "en_US": "Character\nDrinking causes an immediate explosion at your position. Nearby creatures and blocks may be affected; keep it away from your tavern.",
+        "zh_CN": "饮用特点\n饮用后会立刻在自己所在位置爆炸，可能影响附近生物与方块；请远离酒馆饮用。",
+        "zh_TW": "飲用特色\n飲用後會立刻在自己所在位置爆炸，可能影響附近生物與方塊；請遠離酒館飲用。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/jerk"
@@ -4813,9 +4813,9 @@ export const payload = {
         "zh_TW": "長島冰茶"
       },
       "body": {
-        "en_US": "Drink effects (independent probability per effect)\nYou wake up in a familiar dwelling... 1（instant，100%）",
-        "zh_CN": "饮用效果（各效果独立判定）\n宿命之海 1（即时触发，100%）",
-        "zh_TW": "飲用效果（各效果獨立判定）\n睜眼便身處熟悉居所 1（即時觸發，100%）"
+        "en_US": "Character\nReturns you to your respawn point when a safe destination can be found. Keep a usable bed or respawn anchor before relying on it.",
+        "zh_CN": "饮用特点\n找到安全落点时可返回重生点；依赖它出行前，先保留可用的床或重生锚。",
+        "zh_TW": "飲用特色\n找到安全落點時可返回重生點；依賴它出行前，先保留可用的床或重生錨。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/long_island_iced_tea",
@@ -4833,9 +4833,9 @@ export const payload = {
         "zh_TW": "椰林飄香"
       },
       "body": {
-        "en_US": "Drink effects (independent probability per effect)\nHit-Hard 1（1800s，100%）",
-        "zh_CN": "饮用效果（各效果独立判定）\n重斩 1（1800秒，100%）",
-        "zh_TW": "飲用效果（各效果獨立判定）\n重斬 1（1800秒，100%）"
+        "en_US": "Character\nFor 30 minutes, follow-up damage against a target you have attacked can be doubled. It does not double every hit.",
+        "zh_CN": "饮用特点\n饮用后 30 分钟内，攻击同一目标时，后续伤害有机会加倍；并非每次命中都会触发。",
+        "zh_TW": "飲用特色\n飲用後 30 分鐘內，攻擊同一目標時，後續傷害有機會加倍；並非每次命中都會觸發。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/pine_colada"
@@ -4852,9 +4852,9 @@ export const payload = {
         "zh_TW": "鮮蝦雞尾酒"
       },
       "body": {
-        "en_US": "Drink effects (independent probability per effect)\nBrewed from scarlet lake water, carries a peculiar briny, sweet scent 1（instant，100%）",
-        "zh_CN": "饮用效果（各效果独立判定）\n取自泛红湖水，泛着诡异虾腥甜香 1（即时触发，100%）",
-        "zh_TW": "飲用效果（各效果獨立判定）\n取自泛紅湖水，泛着詭異蝦腥甜香 1（即時觸發，100%）"
+        "en_US": "Character\nImmediately adds 3 experience levels. It is a one-time gain, rather than a lasting experience bonus.",
+        "zh_CN": "饮用特点\n饮用后立即增加 3 级经验，属于一次性获得，不会持续提高经验收益。",
+        "zh_TW": "飲用特色\n飲用後立即增加 3 級經驗，屬於一次性獲得，不會持續提高經驗收益。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/shrimp_cocktail",
@@ -4872,9 +4872,9 @@ export const payload = {
         "zh_TW": "白色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_white",
@@ -4889,9 +4889,9 @@ export const payload = {
         "zh_TW": "橙色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_orange",
@@ -4906,9 +4906,9 @@ export const payload = {
         "zh_TW": "品紅色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_magenta",
@@ -4923,9 +4923,9 @@ export const payload = {
         "zh_TW": "淺藍色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_light_blue",
@@ -4940,9 +4940,9 @@ export const payload = {
         "zh_TW": "黃色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_yellow",
@@ -4957,9 +4957,9 @@ export const payload = {
         "zh_TW": "黃綠色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_lime",
@@ -4974,9 +4974,9 @@ export const payload = {
         "zh_TW": "粉色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_pink",
@@ -4991,9 +4991,9 @@ export const payload = {
         "zh_TW": "灰色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_gray",
@@ -5008,9 +5008,9 @@ export const payload = {
         "zh_TW": "淺灰色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_light_gray",
@@ -5025,9 +5025,9 @@ export const payload = {
         "zh_TW": "青色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_cyan",
@@ -5042,9 +5042,9 @@ export const payload = {
         "zh_TW": "紫色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_purple",
@@ -5059,9 +5059,9 @@ export const payload = {
         "zh_TW": "藍色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_blue",
@@ -5076,9 +5076,9 @@ export const payload = {
         "zh_TW": "棕色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_brown",
@@ -5093,9 +5093,9 @@ export const payload = {
         "zh_TW": "綠色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_green",
@@ -5110,9 +5110,9 @@ export const payload = {
         "zh_TW": "紅色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_red",
@@ -5127,9 +5127,9 @@ export const payload = {
         "zh_TW": "黑色高腳方凳"
       },
       "body": {
-        "en_US": "Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.",
-        "zh_CN": "摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。",
-        "zh_TW": "擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。"
+        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_black",
@@ -5144,9 +5144,9 @@ export const payload = {
         "zh_TW": "橡木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nTwo slots; a wide bottle occupies both. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n两格收纳酒瓶，宽瓶会独占两格。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n兩格收納酒瓶，寬瓶會獨佔兩格。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/oak_bar_cabinet",
@@ -5161,9 +5161,9 @@ export const payload = {
         "zh_TW": "橡木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nNine slots for compact bottles. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n九格收纳小型酒瓶。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n九格收納小型酒瓶。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/oak_cellar_cabinet",
@@ -5178,9 +5178,9 @@ export const payload = {
         "zh_TW": "白樺木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nTwo slots; a wide bottle occupies both. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n两格收纳酒瓶，宽瓶会独占两格。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n兩格收納酒瓶，寬瓶會獨佔兩格。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/birch_bar_cabinet",
@@ -5195,9 +5195,9 @@ export const payload = {
         "zh_TW": "白樺木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nNine slots for compact bottles. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n九格收纳小型酒瓶。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n九格收納小型酒瓶。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/birch_cellar_cabinet",
@@ -5212,9 +5212,9 @@ export const payload = {
         "zh_TW": "雲杉木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nTwo slots; a wide bottle occupies both. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n两格收纳酒瓶，宽瓶会独占两格。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n兩格收納酒瓶，寬瓶會獨佔兩格。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/spruce_bar_cabinet",
@@ -5229,9 +5229,9 @@ export const payload = {
         "zh_TW": "雲杉木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nNine slots for compact bottles. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n九格收纳小型酒瓶。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n九格收納小型酒瓶。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/spruce_cellar_cabinet",
@@ -5246,9 +5246,9 @@ export const payload = {
         "zh_TW": "深色橡木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nTwo slots; a wide bottle occupies both. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n两格收纳酒瓶，宽瓶会独占两格。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n兩格收納酒瓶，寬瓶會獨佔兩格。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/dark_oak_bar_cabinet",
@@ -5263,9 +5263,9 @@ export const payload = {
         "zh_TW": "深色橡木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nNine slots for compact bottles. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n九格收纳小型酒瓶。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n九格收納小型酒瓶。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/dark_oak_cellar_cabinet",
@@ -5280,9 +5280,9 @@ export const payload = {
         "zh_TW": "櫻花木酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nTwo slots; a wide bottle occupies both. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n两格收纳酒瓶，宽瓶会独占两格。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n兩格收納酒瓶，寬瓶會獨佔兩格。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/cherry_bar_cabinet",
@@ -5297,9 +5297,9 @@ export const payload = {
         "zh_TW": "櫻花木窖藏酒櫃"
       },
       "body": {
-        "en_US": "Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.",
-        "zh_CN": "手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。",
-        "zh_TW": "手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。"
+        "en_US": "Store and retrieve\nNine slots for compact bottles. Use a bottle on the slot you want; empty-hand use retrieves that slot.\n\nArrange\nMatching cabinets connect side by side. Stored bottles keep their quality; breaking the cabinet returns its bottles.",
+        "zh_CN": "存取\n九格收纳小型酒瓶。 手持酒瓶点击目标格存入，空手点击该格取回。\n\n摆放\n同款酒柜并排会连接；存入的酒瓶保留品质，拆除时会一并掉出。",
+        "zh_TW": "存取\n九格收納小型酒瓶。 手持酒瓶點擊目標格存入，空手點擊該格取回。\n\n擺放\n同款酒櫃並排會連接；存入的酒瓶保留品質，拆除時會一併掉出。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/cherry_cellar_cabinet",
@@ -5314,9 +5314,9 @@ export const payload = {
         "zh_TW": "冰櫃"
       },
       "body": {
-        "en_US": "Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid. \nStored ingredients retain their names and enchantments. In Creative, adding an ordinary ingredient still consumes one.\nWater and lava are supported: water freezes into ice, and lava into obsidian in the current author version.",
-        "zh_CN": "潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。\n原料的名称与附魔会保留；创造模式投入普通原料也会消耗一份。\n支持水与岩浆：当前作者版本中，水冷冻成冰，岩浆冷冻成黑曜石。",
-        "zh_TW": "潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。\n原料的名稱與附魔會保留；創造模式投入普通原料也會消耗一份。\n支援水與岩漿：目前作者版本中，水冷凍成冰，岩漿冷凍成黑曜石。"
+        "en_US": "Load and freeze\nLeave space above the lid. Sneak-use to open it, add one matching fluid bucket, then one item per ingredient slot in the shown order. Sneak-use again to close and start. It stays closed while working.\n\nTake or undo\nAfter completion, open and take products one at a time with an empty hand; Pochi Pudding needs a Bowl. Before starting, empty-hand use returns the last ingredient and an empty bucket drains the fluid.\n\nRedstone\nA change to powered opens an idle freezer; losing power closes it and starts a matching batch. A blocked lid cannot open.\n\nBefore breaking\nBreaking it drops ingredients still stored inside, but loses fluid, a batch already started, and uncollected products. Drain or collect them first.",
+        "zh_CN": "放料与冷冻\n上方留空，潜行互动开盖。先加入一桶对应液体，再按配方槽顺序各放一份材料；再次潜行互动关盖开始。加工中无法打开。\n\n取出与退料\n完成后开盖，空手逐个取出成品；波奇布丁须用碗盛出。开始前，空手可退回最后一份原料，空桶可取回液体。\n\n红石\n通电时可打开空闲冰柜，断电时关盖并开始符合配方的批次；上方被挡住时无法开盖。\n\n拆除前\n拆除会掉出仍存放的原料，但液体、已开始的批次与未取出的成品会损失；请先排空或取完。",
+        "zh_TW": "放料與冷凍\n上方留空，潛行互動開蓋。先加入一桶對應液體，再按配方槽順序各放一份材料；再次潛行互動關蓋開始。加工中無法打開。\n\n取出與退料\n完成後開蓋，空手逐個取出成品；波奇布丁須用碗盛出。開始前，空手可退回最後一份原料，空桶可取回液體。\n\n紅石\n通電時可打開閒置冰櫃，斷電時關蓋並開始符合配方的批次；上方被擋住時無法開蓋。\n\n拆除前\n拆除會掉出仍存放的原料，但液體、已開始的批次與未取出的成品會損失；請先排空或取完。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/freezer",
@@ -5331,9 +5331,9 @@ export const payload = {
         "zh_TW": "可樂"
       },
       "body": {
-        "en_US": "Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.",
-        "zh_CN": "这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。",
-        "zh_TW": "這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。"
+        "en_US": "Drink\nGrants Speed and Haste for 15 seconds. Hold use to drink; Survival drinking returns a Glass Bottle.\n\nMixology\nCraft it on a crafting table. It has no aging stages; use one where a recipe calls for it.",
+        "zh_CN": "饮用\n获得速度与急迫，持续 15 秒。 按住使用饮用；生存模式饮用后返还玻璃瓶。\n\n调酒\n在工作台合成，不需要熟成；配方列出它时，投入一份即可。",
+        "zh_TW": "飲用\n獲得速度與挖掘加速，持續 15 秒。 按住使用飲用；生存模式飲用後返還玻璃瓶。\n\n調酒\n在工作台合成，不需要熟成；配方列出它時，投入一份即可。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/cola",
@@ -5361,9 +5361,9 @@ export const payload = {
         "zh_TW": "湯力水"
       },
       "body": {
-        "en_US": "Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.",
-        "zh_CN": "这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。",
-        "zh_TW": "這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。"
+        "en_US": "Drink\nGrants Regeneration for 15 seconds. Hold use to drink; Survival drinking returns a Glass Bottle.\n\nMixology\nCraft it on a crafting table. It has no aging stages; use one where a recipe calls for it.",
+        "zh_CN": "饮用\n获得生命恢复，持续 15 秒。 按住使用饮用；生存模式饮用后返还玻璃瓶。\n\n调酒\n在工作台合成，不需要熟成；配方列出它时，投入一份即可。",
+        "zh_TW": "飲用\n獲得生命恢復，持續 15 秒。 按住使用飲用；生存模式飲用後返還玻璃瓶。\n\n調酒\n在工作台合成，不需要熟成；配方列出它時，投入一份即可。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/tonic_water",
@@ -5391,9 +5391,9 @@ export const payload = {
         "zh_TW": "涼山田筒"
       },
       "body": {
-        "en_US": "Make this food using its Preparation entry, then hold use to eat it.",
-        "zh_CN": "从制作入口查看工作站与材料，再按住使用食用。",
-        "zh_TW": "從製作入口查看工作站與材料，再按住使用食用。"
+        "en_US": "Eat\nHold use to eat. Grants Fire Resistance and Speed for 8 minutes.",
+        "zh_CN": "食用\n按住使用食用。获得抗火与速度，持续 8 分钟。",
+        "zh_TW": "食用\n按住使用食用。獲得抗火與速度，持續 8 分鐘。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/liangshan_ice_cone",
@@ -5420,9 +5420,9 @@ export const payload = {
         "zh_TW": "喜多夾心脆"
       },
       "body": {
-        "en_US": "Make this food using its Preparation entry, then hold use to eat it.",
-        "zh_CN": "从制作入口查看工作站与材料，再按住使用食用。",
-        "zh_TW": "從製作入口查看工作站與材料，再按住使用食用。"
+        "en_US": "Eat\nHold use to eat. Grants Saturation for 8 minutes, replenishing hunger while the effect lasts.",
+        "zh_CN": "食用\n按住使用食用。获得饱和效果，持续 8 分钟，效果期间会补充饥饿值。",
+        "zh_TW": "食用\n按住使用食用。獲得飽食效果，持續 8 分鐘，效果期間會補充飢餓值。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/kita_stuffed_crisp",
@@ -5449,9 +5449,9 @@ export const payload = {
         "zh_TW": "波奇布丁"
       },
       "body": {
-        "en_US": "Make this food using its Preparation entry, then hold use to eat it.",
-        "zh_CN": "从制作入口查看工作站与材料，再按住使用食用。",
-        "zh_TW": "從製作入口查看工作站與材料，再按住使用食用。"
+        "en_US": "Eat\nHold use to eat. Grants Regeneration for 8 minutes. Eating it returns the Bowl.\n\nServe\nUse a Bowl to take the finished pudding from the freezer; do not add the Bowl as an ingredient.",
+        "zh_CN": "食用\n按住使用食用。获得生命恢复，持续 8 分钟；吃完会返还碗。\n\n盛装\n用碗从冰柜盛出成品；碗用于取出，不要作为材料放入。",
+        "zh_TW": "食用\n按住使用食用。獲得生命恢復，持續 8 分鐘；吃完會返還碗。\n\n盛裝\n用碗從冰櫃盛出成品；碗用於取出，不要作為材料放入。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/pochi_pudding",
@@ -5478,9 +5478,9 @@ export const payload = {
         "zh_TW": "妙脆角"
       },
       "body": {
-        "en_US": "Make this food using its Preparation entry, then hold use to eat it.",
-        "zh_CN": "从制作入口查看工作站与材料，再按住使用食用。",
-        "zh_TW": "從製作入口查看工作站與材料，再按住使用食用。"
+        "en_US": "Eat\nHold use to eat. Grants Haste for 8 minutes, helping you mine faster.",
+        "zh_CN": "食用\n按住使用食用。获得急迫，持续 8 分钟，可加快挖掘。",
+        "zh_TW": "食用\n按住使用食用。獲得挖掘加速，持續 8 分鐘，可加快挖掘。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/magic_crispy_corner",
@@ -5514,9 +5514,9 @@ export const payload = {
         "zh_TW": "掛畫 · 白帆小喵L"
       },
       "body": {
-        "en_US": "Place it on a supporting surface.",
-        "zh_CN": "放在支撑表面。",
-        "zh_TW": "放在支撐表面。"
+        "en_US": "Display\nUse it on a supporting surface to place it. Breaking the painting or removing its support drops the painting.",
+        "zh_CN": "陈设\n对支撑表面使用即可摆放；破坏挂画或移除支撑会掉出挂画。",
+        "zh_TW": "陳設\n對支撐表面使用即可擺放；破壞掛畫或移除支撐會掉出掛畫。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bfxm_painting",
@@ -5531,9 +5531,9 @@ export const payload = {
         "zh_TW": "掛畫 · 白饅頭"
       },
       "body": {
-        "en_US": "Place it on a supporting surface.",
-        "zh_CN": "放在支撑表面。",
-        "zh_TW": "放在支撐表面。"
+        "en_US": "Display\nUse it on a supporting surface to place it. Breaking the painting or removing its support drops the painting.",
+        "zh_CN": "陈设\n对支撑表面使用即可摆放；破坏挂画或移除支撑会掉出挂画。",
+        "zh_TW": "陳設\n對支撐表面使用即可擺放；破壞掛畫或移除支撐會掉出掛畫。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bmt_painting",
@@ -5548,9 +5548,9 @@ export const payload = {
         "zh_TW": "掛畫 · 舊夢"
       },
       "body": {
-        "en_US": "Place it on a supporting surface.",
-        "zh_CN": "放在支撑表面。",
-        "zh_TW": "放在支撐表面。"
+        "en_US": "Display\nUse it on a supporting surface to place it. Breaking the painting or removing its support drops the painting.",
+        "zh_CN": "陈设\n对支撑表面使用即可摆放；破坏挂画或移除支撑会掉出挂画。",
+        "zh_TW": "陳設\n對支撐表面使用即可擺放；破壞掛畫或移除支撐會掉出掛畫。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/dream_painting",
@@ -5565,9 +5565,9 @@ export const payload = {
         "zh_TW": "掛畫 · 茶棗子"
       },
       "body": {
-        "en_US": "Place it on a supporting surface.",
-        "zh_CN": "放在支撑表面。",
-        "zh_TW": "放在支撐表面。"
+        "en_US": "Display\nUse it on a supporting surface to place it. Breaking the painting or removing its support drops the painting.",
+        "zh_CN": "陈设\n对支撑表面使用即可摆放；破坏挂画或移除支撑会掉出挂画。",
+        "zh_TW": "陳設\n對支撐表面使用即可擺放；破壞掛畫或移除支撐會掉出掛畫。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/cha_painting",
@@ -5582,9 +5582,9 @@ export const payload = {
         "zh_TW": "掛畫 · 辰"
       },
       "body": {
-        "en_US": "Place it on a supporting surface.",
-        "zh_CN": "放在支撑表面。",
-        "zh_TW": "放在支撐表面。"
+        "en_US": "Display\nUse it on a supporting surface to place it. Breaking the painting or removing its support drops the painting.",
+        "zh_CN": "陈设\n对支撑表面使用即可摆放；破坏挂画或移除支撑会掉出挂画。",
+        "zh_TW": "陳設\n對支撐表面使用即可擺放；破壞掛畫或移除支撐會掉出掛畫。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/chen_painting",
@@ -5599,9 +5599,9 @@ export const payload = {
         "zh_TW": "掛畫 · 小兔子要聽話哦"
       },
       "body": {
-        "en_US": "Place it on a supporting surface.",
-        "zh_CN": "放在支撑表面。",
-        "zh_TW": "放在支撐表面。"
+        "en_US": "Display\nUse it on a supporting surface to place it. Breaking the painting or removing its support drops the painting.",
+        "zh_CN": "陈设\n对支撑表面使用即可摆放；破坏挂画或移除支撑会掉出挂画。",
+        "zh_TW": "陳設\n對支撐表面使用即可擺放；破壞掛畫或移除支撐會掉出掛畫。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/rabbit_painting",
@@ -5616,9 +5616,9 @@ export const payload = {
         "zh_TW": "掛畫 · 阡雪星躍F"
       },
       "body": {
-        "en_US": "Place it on a supporting surface.",
-        "zh_CN": "放在支撑表面。",
-        "zh_TW": "放在支撐表面。"
+        "en_US": "Display\nUse it on a supporting surface to place it. Breaking the painting or removing its support drops the painting.",
+        "zh_CN": "陈设\n对支撑表面使用即可摆放；破坏挂画或移除支撑会掉出挂画。",
+        "zh_TW": "陳設\n對支撐表面使用即可擺放；破壞掛畫或移除支撐會掉出掛畫。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/ch_painting",
@@ -5633,9 +5633,9 @@ export const payload = {
         "zh_TW": "掛畫 · 花菜"
       },
       "body": {
-        "en_US": "Place it on a supporting surface.",
-        "zh_CN": "放在支撑表面。",
-        "zh_TW": "放在支撐表面。"
+        "en_US": "Display\nUse it on a supporting surface to place it. Breaking the painting or removing its support drops the painting.",
+        "zh_CN": "陈设\n对支撑表面使用即可摆放；破坏挂画或移除支撑会掉出挂画。",
+        "zh_TW": "陳設\n對支撐表面使用即可擺放；破壞掛畫或移除支撐會掉出掛畫。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/qxxy_painting",
@@ -5650,9 +5650,9 @@ export const payload = {
         "zh_TW": "酒館唱片"
       },
       "body": {
-        "en_US": "Use it on an empty jukebox to choose randomly between the two included Java tracks. Use the jukebox with an empty hand to retrieve it. It can also be hung on a wall and retrieved with an empty hand.",
-        "zh_CN": "对空唱片机使用，随机播放附带的两首 Java 曲目之一；空手操作唱片机可取回。也可悬挂于墙面，空手取回。",
-        "zh_TW": "對空唱片機使用，隨機播放附帶的兩首 Java 曲目之一；空手操作唱片機可取回。也可懸掛於牆面，空手取回。"
+        "en_US": "Play\nUse on an empty jukebox to play one of its two tracks at random. Empty-hand use stops playback and returns the disc.\n\nWall display\nSneak-use on a wall to hang it; empty-hand use takes it back. Removing its support also drops the disc.",
+        "zh_CN": "播放\n对空唱片机使用，随机播放两首曲目之一；空手互动停止播放并取回唱片。\n\n挂墙\n潜行对墙面使用可悬挂；空手互动可取回，移除支撑也会掉出唱片。",
+        "zh_TW": "播放\n對空唱片機使用，隨機播放兩首曲目之一；空手互動停止播放並取回唱片。\n\n掛牆\n潛行對牆面使用可懸掛；空手互動可取回，移除支撐也會掉出唱片。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/custom_record",
@@ -5669,9 +5669,9 @@ export const payload = {
         "zh_TW": "嗨棒"
       },
       "body": {
-        "en_US": "Drink effects (independent probability per effect)\nCreative Flight 1（600s，100%）\nThe Java Creative Flight ability is not implemented on stable Bedrock.",
-        "zh_CN": "饮用效果（各效果独立判定）\n创造飞行 1（600秒，100%）\nJava 创造飞行能力目前未在基岩稳定版实现。",
-        "zh_TW": "飲用效果（各效果獨立判定）\n創造飛行 1（600秒，100%）\nJava 創造飛行能力目前未在基岩穩定版實現。"
+        "en_US": "Character\nIts original signature is temporary creative flight. Flight is currently unavailable, so this drink will not let you fly.",
+        "zh_CN": "饮用特点\n原有特色是暂时获得创造飞行；目前尚不提供飞行能力，饮用后不能飞行。",
+        "zh_TW": "飲用特色\n原有特色是暫時獲得創造飛行；目前尚不提供飛行能力，飲用後不能飛行。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:shaker/highball",

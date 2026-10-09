@@ -46,7 +46,10 @@ assert(!payload.entries.some(e=>e.category==='extensions'),'World Liquor dumped 
 const around=byId.get('kaleidoscope_world_liquor:around_the_world');
 for(const lc of ['zh_CN','zh_TW']){
  const labels=around.recipes[0].ingredients.map(id=>payload.names[lc][id]);
- assert(labels.every(x=>x.includes('≥4')));assert(labels[0].includes('蓝')||labels[0].includes('藍'));
+ assert(labels.every(x=>x.includes(lc==='zh_TW'?'調酒材料':'调酒材料')));
+ const aroundRecipe=standaloneGuideView(payload,lc,{type:'recipe',id:around.id,index:0});
+ assert.equal(aroundRecipe.body.split(lc==='zh_TW'?'品質 4':'品质 4').length-1,1,'Quality restriction belongs once in the shared recipe instructions');
+ assert(labels[0].includes('蓝')||labels[0].includes('藍'));
  assert(labels[1].includes('黄')||labels[1].includes('黃'));assert(labels[2].includes('红')||labels[2].includes('紅'));
  assert.equal(byId.get('kaleidoscope_world_liquor:cola').category,'mixers');
  assert.equal(byId.get('kaleidoscope_world_liquor:tonic_water').category,'mixers');
@@ -67,12 +70,12 @@ const messages=encodeCookeryGuideMessages(payload);
 for(const lc of GUIDE_LANGUAGES){
  const ice=byId.get('kaleidoscope_world_liquor:ice_tea_q1');
  const view=standaloneGuideView(payload,lc,{type:'recipe',id:ice.id,index:0});
- assert(view.body.includes('4000 mB (4 '),'Ice tea must explain the full barrel volume');
+ assert(view.body.includes('×4 (4000 mB)'),'Ice tea must explain the full barrel volume');
  assert.equal(view.body.split(payload.names[lc]['minecraft:water_bucket']).length-1,1,'Four repeated water IDs returned');
  assert(view.body.includes(payload.names[lc]['kaleidoscope_tavern:empty_bottle']),'Bottling instructions missing');
- assert(view.body.includes('120 '),'Source aging time missing');
+ assert(view.body.includes(lc==='en_US'?'2 min':lc==='zh_TW'?'2 分鐘':'2 分钟'),'Source aging time missing');
  assert(!/\b(?:minecraft|kaleidoscope_\w+):/.test(view.body),'Unresolved recipe labels');
- assert(wire.entries.find(e=>e.id===ice.id).mechanicsByLocale[lc].join('\n').includes('4000 mB'),'Optional guide lost fluid instructions');
+ assert.equal(wire.entries.find(e=>e.id===ice.id).recipes[0].preparation.amount,4000,'Optional entrance must retain full recipe data');
 }
 assert.deepEqual(buildCookeryGuidePayload(registry),payload,'Guide projection mutates between reads');
 const chunkText=messages.slice(1,-1).map(m=>m.message.split('\n').slice(4).join('\n')).join('');

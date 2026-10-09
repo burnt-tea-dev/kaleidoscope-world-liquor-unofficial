@@ -1,15 +1,15 @@
 {
-  "version": "0.1.110",
-  "tag": "v0.1.110-preview.1",
-  "title": "森羅物語：世界名酒 0.1.110 測試版｜作者新版獺祭效果與四款雞尾酒模型",
+  "version": "0.1.113",
+  "tag": "v0.1.113-preview.1",
+  "title": "森羅物語：世界名酒 0.1.113 測試版｜精簡完整指南",
   "prerelease": true,
-  "tavern_commit": "e36204175d6d750189382e5254debc70e2f42d42",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.110.md",
+  "tavern_commit": "c8b4ecba641b683f011553ea3ba61e298758d0f0",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.113.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "new_bds_test": false,
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "expected_archive_sha256": "5db4b6cad406385008fcde1a6f98912db0d0d8a9eeb9d823a8d02da5fc0c71ce"
+  "expected_archive_sha256": "31824a1257bc2537e3acbc4742cc5c5fe5b5eb53f94d96513d09ae7a10612892"
 }

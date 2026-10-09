@@ -1,5 +1,17 @@
 # Change history
 
+## 0.1.113
+
+Rewrite all 67 product and furniture guide entries with brief uses, complete preparation data and accurate platform limits. Pair with Tavern 0.6.136 while retaining W112 gameplay, data, assets and saved identities; see [release scope](docs/RELEASE-NOTES-0.1.113.md).
+
+## 0.1.112
+
+Update the exact Tavern dependency to 0.6.135 with a fresh package identity. All W111 World Liquor gameplay, data and artwork remain unchanged, and W111/W110 histories are preserved. The reviewed T135 peer is pinned; new paired CI and native/client acceptance remain pending; see [release scope](docs/RELEASE-NOTES-0.1.112.md).
+
+## 0.1.111
+
+Pair both packs with Tavern 0.6.134 while preserving the current-author Dassai correction, four cocktail models and source-art checks from W110. The reviewed T134 source is pinned; final paired CI and native/client acceptance remain pending; see [release scope](docs/RELEASE-NOTES-0.1.111.md).
+
 ## 0.1.110
 
 Restore current-author Dassai Q3–Q6 Luck amplifiers1/3/5/7 and four coupled cocktail models/atlases plus two authored inventory sprites. Retain reviewed T132/G119 pairing and original W109 histories; see [release scope](docs/RELEASE-NOTES-0.1.110.md).

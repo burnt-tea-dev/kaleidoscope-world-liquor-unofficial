@@ -3,7 +3,8 @@
 Does not regenerate models, change recipes, or simulate Minecraft interactions.
 """
 from pathlib import Path
-import collections, json, re, os
+import collections, json, re, os, sys
+from guide_copy import guide_body
 ROOT=Path(__file__).resolve().parents[1]
 TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
 NS='kaleidoscope_world_liquor'; KT='kaleidoscope_tavern'
@@ -62,7 +63,7 @@ def label(item,lc):
  if item not in names[lc]:raise ValueError(f'Missing guide localization: {lc} {item}')
  return names[lc][item]
 
-def main():
+def main(*,write_audit=True):
  payload=loadjs(ROOT/'runtime/BP/scripts/payload.js')
  for recipe in payload['recipes']:
   if recipe['kind']!='shaker':continue
@@ -78,59 +79,6 @@ def main():
  for path in sorted((ROOT/'runtime/BP/recipes').rglob('*.json')):
   data=json.loads(path.read_text(encoding='utf-8'));kind,recipe=next((k,v) for k,v in data.items() if k.startswith('minecraft:recipe_'))
   item_crafts[recipe['result']['item']].append((kind,recipe))
- # Reuse source effect names; duration=0 instant actions are not "0 second buffs".
- effects={lc:{} for lc in LOCALES}
- traditional_effects=json.loads((ROOT/'data/guide-effect-names.zh_TW.json').read_text(encoding='utf-8'))
- for lc in LOCALES:
-  for space in (NS,KT,'smc','kaleidoscope_twilight'):
-   file=ROOT/f'upstream/assets/{space}/lang/{"zh_cn" if lc=="zh_TW" else lc.lower()}.json'
-   if not file.exists():continue
-   for key,value in json.loads(file.read_text(encoding='utf-8')).items():
-    if key.startswith('effect.') and not key.endswith('.description'):
-     key=key.replace('effect.smc.','effect.'+NS+'.').replace('effect.kaleidoscope_twilight.','effect.'+NS+'.')
-     if lc=='zh_TW' and key not in traditional_effects:continue
-     effects[lc][key]=traditional_effects[key] if lc=='zh_TW' else value
- effect_terms={
-  NS+':creative_flight':('Creative Flight','创造飞行','創造飛行'),
-  'minecraft:hunger':('Hunger', '饥饿', '飢餓'),
-  'minecraft:weakness':('Weakness', '虚弱', '虛弱'),
-  'minecraft:absorption':('Absorption', '伤害吸收', '吸收'),
-  'minecraft:health_boost':('Health Boost', '生命提升', '生命提升'),
-  'minecraft:hero_of_the_village':('Hero of the Village', '村庄英雄', '村莊英雄'),
-  'minecraft:levitation':('Levitation', '飘浮', '懸浮'),
-
-  'minecraft:invisibility':('Invisibility','隐身','隱形'),
-  'minecraft:nausea':('Nausea','恶心','噁心'), 'minecraft:speed':('Speed','速度','速度'),
-  'minecraft:strength':('Strength','力量','力量'),'minecraft:regeneration':('Regeneration','生命恢复','生命恢復'),
-  'minecraft:instant_health':('Instant Health','瞬间治疗','瞬間治療'),'minecraft:resistance':('Resistance','抗性提升','抗性提升'),
-  'minecraft:fire_resistance':('Fire Resistance','抗火','抗火'),'minecraft:night_vision':('Night Vision','夜视','夜視'),
-  'minecraft:jump_boost':('Jump Boost','跳跃提升','跳躍提升'),'minecraft:slow_falling':('Slow Falling','缓降','緩降'),
-  'minecraft:water_breathing':('Water Breathing','水下呼吸','水下呼吸'),'minecraft:haste':('Haste','急迫','挖掘加速'),
-  'minecraft:luck':('Luck (Java-only; unavailable here)','幸运（Java 专属，本移植未提供）','幸運（Java 專屬，本移植未提供）'),
-  KT+':slightly_tipsy':('Slightly Tipsy','微醺','微醺')}
- for item,row in effect_terms.items():
-  for lc,value in zip(LOCALES,row):effects[lc]['effect.'+item.replace(':','.')]=value
- def effect_text(e,lc):
-  key='effect.'+e['effect'].replace(':','.')
-  if key not in effects[lc]:raise ValueError('Missing effect name '+lc+' '+key)
-  value=effects[lc][key]
-  level=str(e['amplifier']+1);chance=f"{e['probability']*100:g}%"
-  instant=e['effect'].split(':')[-1] in {'crazy','explosion','level_boost','respawn','instant_health','instant_damage'}
-  duration=triple('instant','即时触发','即時觸發')[lc] if instant else f"{e['duration']:g}"+triple('s','秒','秒')[lc]
-  value+=f' {level}（{duration}，{chance}）'
-  if e['effect'].endswith((':hostile_detection',':treasure_sense')):
-   value+=triple(' [outline unavailable in this port]','【本移植未实现透视描边】','【本移植未實作透視描邊】')[lc]
-  return value
- usages={
- 'bottle':triple('Open the Tavern barrel by sneaking. Add four matching fluid buckets FIRST (4000 mB), then the listed ingredients. Close the lid to start. Extract each bottle using one empty Tavern bottle. Keep a batch in the loaded barrel to improve its quality.','潜行操作酒桶开盖，先加四桶同种液体（4000 mB），再加所列原料。关盖开始发酵，每瓶用一个空酒瓶接取；留在已加载的酒桶内可继续提升品质。','潛行操作酒桶開蓋，先加四桶同種液體（4000 mB），再加所列原料。關蓋開始發酵，每瓶用一個空酒瓶接取；留在已載入的酒桶內可繼續提升品質。'),
- 'cocktail':triple('Use the same shaker workflow as Tavern: place the shaker, add one item for each of its THREE slots, take it with an empty hand, then hold use while aiming into air. Release in the recipe timing window. Place an empty glass, use the filled shaker ON THAT GLASS to pour, then empty-hand use the finished glass to pick it up.','与酒馆本体相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空气按住使用；在配方时机区间松手。先摆空玻璃杯，再持已调好的雪克杯对准空杯倒酒，最后空手拿起成品。','與酒館本體相同：放置雪克杯，三槽各投入一份原料，空手取回，朝空氣按住使用；在配方時機區間鬆手。先擺空玻璃杯，再持已調好的雪克杯對準空杯倒酒，最後空手拿起成品。'),
- 'freezer':triple('Sneak-use the freezer to open or close its lid; leave the block above clear. While open, add ONE matching fluid bucket (1000 mB), then one item for EACH listed ingredient slot in order. Close the lid to start. Open after completion and take the products one at a time. Use an empty hand to remove the last input, or an empty bucket to drain unused fluid. \nStored ingredients retain their names and enchantments. In Creative, adding an ordinary ingredient still consumes one.\nWater and lava are supported: water freezes into ice, and lava into obsidian in the current author version.','潜行操作冷冻柜开关盖，上方须留空。开盖后放入一桶对应液体（1000 mB），按原料槽顺序每槽投入一份，关盖开始。完成后开盖逐个取出；空手退回最后一份原料，空桶可退回未消耗的液体。\n原料的名称与附魔会保留；创造模式投入普通原料也会消耗一份。\n支持水与岩浆：当前作者版本中，水冷冻成冰，岩浆冷冻成黑曜石。','潛行操作冷凍櫃開關蓋，上方須留空。開蓋後放入一桶對應液體（1000 mB），按原料槽順序每槽投入一份，關蓋開始。完成後開蓋逐個取出；空手退回最後一份原料，空桶可退回未消耗的液體。\n原料的名稱與附魔會保留；創造模式投入普通原料也會消耗一份。\n支援水與岩漿：目前作者版本中，水冷凍成冰，岩漿冷凍成黑曜石。'),
- 'cabinet':triple('Use a bottle on the desired cabinet slot to store it; use that slot with an empty hand to retrieve it. Matching neighboring cabinets connect visually. Bar cabinets have two slots (a wide bottle uses both); cellar cabinets have nine slots and accept compatible compact bottles only.','手持酒瓶点击目标格存入，空手点击该格取回。同款相邻酒柜可连接显示；吧台酒柜有两格（宽瓶独占），地窖酒柜有九格，仅收兼容的小型酒瓶。','手持酒瓶點擊目標格存入，空手點擊該格取回。同款相鄰酒櫃可連接顯示；吧台酒櫃有兩格（寬瓶獨佔），地窖酒櫃有九格，僅收相容的小型酒瓶。'),
- 'stool':triple('Place the stool, then use it with an empty hand while NOT sneaking to sit. Dismount normally to get up.','摆放后，非潜行状态下空手使用即可坐下；使用正常的下坐骑操作起身。','擺放後，非潛行狀態下空手使用即可坐下；使用正常的下坐騎操作起身。'),
- 'painting':triple('Place it on a supporting surface.','放在支撑表面。','放在支撐表面。'),
- 'mixer':triple('Craft this mixer on a crafting table, not in a barrel or freezer. It has no Q1–Q6 quality stages. A recipe slot that lists it accepts one mixer; it does not replace every alcohol slot.','这是工作台合成的调酒辅料，不经过酒桶或冷冻柜，也没有 Q1–Q6 品质。只有明确列出它的配方槽才可投入一份，不能任意替换所有基酒。','這是工作台合成的調酒輔料，不經過酒桶或冷凍櫃，也沒有 Q1–Q6 品質。只有明確列出它的配方槽才可投入一份，不能任意替換所有基酒。'),
- 'record':triple('Use it on an empty jukebox to choose randomly between the two included Java tracks. Use the jukebox with an empty hand to retrieve it. It can also be hung on a wall and retrieved with an empty hand.','对空唱片机使用，随机播放附带的两首 Java 曲目之一；空手操作唱片机可取回。也可悬挂于墙面，空手取回。','對空唱片機使用，隨機播放附帶的兩首 Java 曲目之一；空手操作唱片機可取回。也可懸掛於牆面，空手取回。'),
- 'food':triple('Make this food using its Preparation entry, then hold use to eat it.','从制作入口查看工作站与材料，再按住使用食用。','從製作入口查看工作站與材料，再按住使用食用。')}
  out=[];audits=[]
  for old in payload['pages']:
   short=old['id'].split('/')[-1];base=NS+':'+short;content=content_by_base.get(base)
@@ -158,30 +106,16 @@ def main():
      counts=collections.Counter(ingredients);rows.extend(label(i,lc)+' × '+str(n) for i,n in counts.items())
     rows.append(triple('Output','成品','成品')[lc]+'：'+label(item,lc)+' × '+str(c['result'].get('count',1)))
     if any(x.startswith('#') for x in ingredients):rows.append(triple('The native ingredient diagram uses wine as an example; all nine slots accept the alcohol tag stated above.','下方配方图以葡萄酒举例；九格实际均接受上述 alcohol 标签酒品。','下方配方圖以葡萄酒舉例；九格實際均接受上述 alcohol 標籤酒品。')[lc])
-  body={}
-  for lc in LOCALES:
-   # Standard barrel/shaker steps are owned by the Tavern guide API.
-   rows=([] if kind in ('bottle','cocktail') else [usages[kind][lc]])
-   if kind=='bottle':
-    r=linked[0]
-    unit=r.get('unitTime',2400)/20
-    rows.append(triple(f'Aging base time: {unit:g}s; each next stage takes base time × current quality, plus loaded-block update rounding. Q6 is the maximum.',f'熟成基础时间：{unit:g} 秒；下一品质耗时为基础时间乘当前品质，另有方块更新取整。最高 Q6。',f'熟成基礎時間：{unit:g} 秒；下一品質耗時為基礎時間乘目前品質，另有方塊更新取整。最高 Q6。')[lc])
-    mixable=any(x['item']==base+'_q4' for x in payload['shakerInputs'])
-    rows.append(triple('Only Q4–Q6 bottles accepted by the shaker input table may be used for mixology.','只有注册为调酒材料的 Q4–Q6 酒品才能投入雪克杯。','只有註冊為調酒材料的 Q4–Q6 酒品才能投入雪克杯。')[lc] if mixable else triple('This bottled drink is not registered as a shaker input.','此瓶装饮品未注册为雪克杯原料。','此瓶裝飲品未註冊為雪克杯原料。')[lc])
-   if content:
-    groups=content['effects'] if kind=='bottle' else [content['effects']]
-    rows.append(triple('Drink effects (independent probability per effect)','饮用效果（各效果独立判定）','飲用效果（各效果獨立判定）')[lc])
-    for quality,group in enumerate(groups,1):
-     prefix=(triple('Quality','品质','品質')[lc]+f' {quality}：') if kind=='bottle' else ''
-     rows.append(prefix+('；'.join(effect_text(e,lc) for e in group) or triple('No listed effects.','无额外效果。','無額外效果。')[lc]))
-    if item==NS+':highball':rows.append(triple('The Java Creative Flight ability is not implemented on stable Bedrock.','Java 创造飞行能力目前未在基岩稳定版实现。','Java 創造飛行能力目前未在基岩穩定版實現。')[lc])
-   body[lc]='\n'.join(rows)
-   if len(body[lc])>8192:raise ValueError('Page too long '+old['id'])
+  mixable=any(x['item']==base+'_q4' for x in payload['shakerInputs'])
+  body={lc:guide_body(short,kind,lc,mixable=mixable) for lc in LOCALES}
+  for lc,prose in body.items():
+   rows=[row for row in prose.split('\n') if row]
+   if len(rows)>8 or any(len(row)>512 for row in rows):raise ValueError('Guide transport limit '+lc+' '+old['id'])
   preparations=[{'method':'Freezer','ingredients':[next((i for i,fluid in {'minecraft:water_bucket':'minecraft:water','minecraft:milk_bucket':NS+':milk_still',KT+':grape_bucket':KT+':grape_juice',KT+':sweet_berries_bucket':KT+':sweet_berries_juice'}.items() if fluid==r['fluid']),r['fluid']),*row],'result':item,'count':r['result'].get('count',1),'time':r['craft_time']} for r in freezing for row in __import__('itertools').product(*r['ingredients'])]
   out.append({**{k:v for k,v in old.items() if k not in ('crafting','preparations')},'item':item,'category':category,'title':{lc:label(item,lc) for lc in LOCALES},'body':body,'recipeIds':[r['id'] for r in linked],**({'preparations':preparations or crafting} if kind in ('food','mixer') and (preparations or crafting) else {})})
   audits.append({'id':old['id'],'item':item,'category':category,'recipeIds':[r['id']for r in linked],'crafting':len(crafting),'freezerRecipes':[r['id']for r in freezing]})
  payload['pages']=out;writejs(ROOT/'runtime/BP/scripts/payload.js','payload',payload)
  audit={'guideVersion':2,'pageCount':len(out),'categories':dict(collections.Counter(p['category']for p in out)),'registeredRecipes':dict(collections.Counter(r['kind']for r in payload['recipes'])),'recipeSource':'canonical runtime registry','freezerRecipes':len(freezers),'nativeCraftingRecipes':sum(len(p.get('crafting',[]))for p in out),'pages':audits}
- (ROOT/f"docs/GUIDE-AUDIT-{payload['version']}.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+ if write_audit:(ROOT/f"docs/GUIDE-AUDIT-{payload['version']}.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
  print(json.dumps({k:v for k,v in audit.items()if k!='pages'},ensure_ascii=False))
-if __name__=='__main__':main()
+if __name__=='__main__':main(write_audit='--no-audit' not in sys.argv)

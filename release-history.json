@@ -738,5 +738,35 @@
       "sha256": "874f9841ccae85b3bdaf2c2d5ec1569446017c49429272edca3e3a4017b541e7",
       "files": 549
     }
+  },
+  "0.1.111": {
+    "BP": {
+      "sha256": "fb4f57f2437cf1b8b3f31d71546738e16d75a2ed00da9900de76522850a292c4",
+      "files": 339
+    },
+    "RP": {
+      "sha256": "73324b3071d408d199ccd1431706b7d627018427327434bea35012c60d762035",
+      "files": 549
+    }
+  },
+  "0.1.112": {
+    "BP": {
+      "sha256": "fc2fffbf9cb25b9d2e2d3d1fb73ad96787e92cb6a29fcc09e719f76c38cdcbfe",
+      "files": 339
+    },
+    "RP": {
+      "sha256": "a1e52b9b20bf843478ae012dcd8aed9c590f7f34b5b9098660d4cc77c5b48856",
+      "files": 549
+    }
+  },
+  "0.1.113": {
+    "BP": {
+      "sha256": "e40f0ce514ebb3d4432bc6c4c1b1b50662750c7dd408cac9463dd1906456fd5f",
+      "files": 339
+    },
+    "RP": {
+      "sha256": "4ace28dcc210a8c4cd879234f5f3d7fce4a0a19c6b29b2320ff4e4e272c56baa",
+      "files": 549
+    }
   }
 }
