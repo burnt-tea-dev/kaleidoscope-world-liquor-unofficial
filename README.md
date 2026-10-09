@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.108
+## Current maintained baseline: 0.1.109
 
-L108/T131 has a frozen runtime identity; the final public source pin and paired CI results are recorded with the release. Native, client and live verification have separate scopes; see [candidate scope](docs/RELEASE-NOTES-0.1.108.md).
+W109/T131 restores the current author Dassai Q3–Q6 Luck amplitudes in drink, shaker and guide data. Native Java Luck loot behavior and rendered-client acceptance remain incomplete; see [release scope](docs/RELEASE-NOTES-0.1.109.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 

@@ -2289,6 +2289,38 @@
           ]
         }
       }
+    },
+    {
+      "release": "0.1.109",
+      "files": {
+        "runtime/BP/scripts/content.js": {
+          "before": "e76f487cbf61681a52d81920260e5e682e56b48be4d4532692bf9bf26bbaf1e0",
+          "after": "4118f5d1af1c6d2836ae6d1e81d7d33fcb11d8c90c36af49031a1e1012345e90",
+          "reverseOps": [
+            [
+              584,
+              585,
+              "          \"amplifier\": 0,\n"
+            ],
+            [
+              598,
+              599,
+              "          \"amplifier\": 1,\n"
+            ],
+            [
+              612,
+              613,
+              "          \"amplifier\": 2,\n"
+            ],
+            [
+              626,
+              627,
+              "          \"amplifier\": 3,\n"
+            ]
+          ],
+          "reason": "Current author CF9066406 / Forge9066402 Dassai Q3-Q6 Luck amplifiers1,3,5,7; only this exact selected source numeric difference is projected for old preservation checks."
+        }
+      }
     }
   ]
 }

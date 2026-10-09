@@ -169,79 +169,7 @@
           ]
         },
         {
-          "name": "instance_0_source_0_mixed_up_4",
-          "parent": "root",
-          "pivot": [
-            0,
-            0,
-            0
-          ],
-          "cubes": [
-            {
-              "origin": [
-                -2.5,
-                6.4,
-                -2.5
-              ],
-              "size": [
-                5.0,
-                0.0,
-                5.0
-              ],
-              "uv": {
-                "down": {
-                  "uv": [
-                    0.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    0.0
-                  ],
-                  "material_instance": "default"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "name": "instance_0_source_0_mixed_down_5",
-          "parent": "root",
-          "pivot": [
-            0,
-            0,
-            0
-          ],
-          "cubes": [
-            {
-              "origin": [
-                -2.5,
-                1.4,
-                -2.5
-              ],
-              "size": [
-                5.0,
-                0.0,
-                5.0
-              ],
-              "uv": {
-                "up": {
-                  "uv": [
-                    0.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    0.0
-                  ],
-                  "material_instance": "default"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "name": "instance_0_element_6_6",
+          "name": "instance_0_element_4_4",
           "parent": "root",
           "pivot": [
             0,
@@ -302,7 +230,7 @@
           ]
         },
         {
-          "name": "instance_0_element_7_7",
+          "name": "instance_0_element_5_5",
           "parent": "root",
           "pivot": [
             0,
@@ -349,7 +277,7 @@
           ]
         },
         {
-          "name": "instance_0_source_3_mixed_north_8",
+          "name": "instance_0_source_3_mixed_north_6",
           "parent": "root",
           "pivot": [
             0,
@@ -385,7 +313,7 @@
           ]
         },
         {
-          "name": "instance_0_source_3_mixed_east_9",
+          "name": "instance_0_source_3_mixed_east_7",
           "parent": "root",
           "pivot": [
             0,
@@ -421,7 +349,7 @@
           ]
         },
         {
-          "name": "instance_0_source_3_mixed_south_10",
+          "name": "instance_0_source_3_mixed_south_8",
           "parent": "root",
           "pivot": [
             0,
@@ -457,7 +385,7 @@
           ]
         },
         {
-          "name": "instance_0_source_3_mixed_west_11",
+          "name": "instance_0_source_3_mixed_west_9",
           "parent": "root",
           "pivot": [
             0,
@@ -493,43 +421,7 @@
           ]
         },
         {
-          "name": "instance_0_source_3_mixed_up_12",
-          "parent": "root",
-          "pivot": [
-            0,
-            0,
-            0
-          ],
-          "cubes": [
-            {
-              "origin": [
-                -3,
-                6.9375,
-                -3
-              ],
-              "size": [
-                6,
-                0,
-                6
-              ],
-              "uv": {
-                "down": {
-                  "uv": [
-                    0.0,
-                    0.0
-                  ],
-                  "uv_size": [
-                    0.0,
-                    0.0
-                  ],
-                  "material_instance": "default"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "name": "instance_0_source_3_mixed_down_13",
+          "name": "instance_0_source_3_mixed_down_10",
           "parent": "root",
           "pivot": [
             0,
@@ -565,7 +457,7 @@
           ]
         },
         {
-          "name": "instance_0_element_14_14",
+          "name": "instance_0_element_11_11",
           "parent": "root",
           "pivot": [
             0,
@@ -656,7 +548,7 @@
           ]
         },
         {
-          "name": "instance_0_element_15_15",
+          "name": "instance_0_element_12_12",
           "parent": "root",
           "pivot": [
             0,
@@ -747,7 +639,7 @@
           ]
         },
         {
-          "name": "instance_0_element_16_16",
+          "name": "instance_0_element_13_13",
           "parent": "root",
           "pivot": [
             0,
@@ -838,7 +730,7 @@
           ]
         },
         {
-          "name": "instance_0_element_17_17",
+          "name": "instance_0_element_14_14",
           "parent": "root",
           "pivot": [
             0,
@@ -929,7 +821,7 @@
           ]
         },
         {
-          "name": "instance_0_element_18_18",
+          "name": "instance_0_element_15_15",
           "parent": "root",
           "pivot": [
             0,
@@ -1020,7 +912,7 @@
           ]
         },
         {
-          "name": "instance_0_element_19_19",
+          "name": "instance_0_element_16_16",
           "parent": "root",
           "pivot": [
             0,
@@ -1121,7 +1013,7 @@
           ]
         },
         {
-          "name": "instance_0_element_20_20",
+          "name": "instance_0_element_17_17",
           "parent": "root",
           "pivot": [
             0,
@@ -1212,7 +1104,7 @@
           ]
         },
         {
-          "name": "instance_0_element_21_21",
+          "name": "instance_0_element_18_18",
           "parent": "root",
           "pivot": [
             0,
@@ -1303,7 +1195,7 @@
           ]
         },
         {
-          "name": "instance_0_element_22_22",
+          "name": "instance_0_element_19_19",
           "parent": "root",
           "pivot": [
             0,
@@ -1404,7 +1296,7 @@
           ]
         },
         {
-          "name": "instance_0_element_23_23",
+          "name": "instance_0_element_20_20",
           "parent": "root",
           "pivot": [
             0,
@@ -1505,7 +1397,7 @@
           ]
         },
         {
-          "name": "instance_0_element_24_24",
+          "name": "instance_0_element_21_21",
           "parent": "root",
           "pivot": [
             0,
@@ -1606,7 +1498,7 @@
           ]
         },
         {
-          "name": "instance_0_element_25_25",
+          "name": "instance_0_element_22_22",
           "parent": "root",
           "pivot": [
             0,

@@ -1,0 +1,192 @@
+{
+  "schema": 1,
+  "reviewed_at": "2026-10-09T00:46:38.770076+00:00",
+  "project_id": 1502365,
+  "public_author_url": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor",
+  "author_identity_verified_by": "official CurseForge API; family read-only watcher 2026-10-09",
+  "source_branches": [
+    {
+      "minecraft": "1.20.1",
+      "loader": "Forge",
+      "file_id": 9066402,
+      "author_version": "1.1.12",
+      "file_date": "2026-10-05T05:34:28.403Z",
+      "published_sha1": "402e08eb6638c365b523c0af7256301d4e51ecb8",
+      "published_length": 7443860,
+      "sha1_and_length_verified_at_download": true,
+      "archive_sha256": "438e5604e39ab9c521fdbca96db5cd211c5a117123b52746e05480aa1a86c743",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/9066402",
+      "declared_license": "CC BY-NC-ND 4.0",
+      "full_branch_adaptation": false
+    },
+    {
+      "minecraft": "1.21.1",
+      "loader": "NeoForge",
+      "file_id": 9066406,
+      "author_version": "1.1.11",
+      "archive_sha256": "e1f51736138bfe65ac1ce2aae2f2f3bd292dce71e2b8d2f18580a68bdea807cc",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/9066406",
+      "maintained_gameplay_authority": true,
+      "full_branch_adaptation": false
+    },
+    {
+      "minecraft": "26.1.2",
+      "loader": "NeoForge",
+      "file_id": 9087098,
+      "author_version": "1.1.6",
+      "status": "branch_specific_adaptation_pending",
+      "existing_review": "Tavern family/world-liquor-26.1.2-1.1.6-review.json",
+      "shared_adaptations_do_not_substitute_branch_effect_registry": true
+    }
+  ],
+  "selected_source_members": {
+    "data/kaleidoscope_world_liquor/datamap/drink_effect/dassai.json": "b1d19ebf7ed649206e8c1aa6d83893028a0d90f152bc3b1aa3b5946fcf298e14",
+    "assets/kaleidoscope_world_liquor/models/block/mixology/around_the_world.json": "7bca016f6c088e2b633c02bd78912c079cf1e79946db58d1068775661afac948",
+    "assets/kaleidoscope_world_liquor/textures/block/mixology/around_the_world.png": "da512562e3373da65a21f89bd88c24a6723f4cd46ac9224adf67b2745ad79176",
+    "assets/kaleidoscope_world_liquor/models/block/mixology/jerk.json": "42d7d7890754f9509ddccd50a7346eb285d6a1898c6d71a14261c32f138e6dbc",
+    "assets/kaleidoscope_world_liquor/textures/block/mixology/jerk.png": "f3a21ff7119780f150509b7e4e3ae3b706b69f5884b1c02257020c8d96e0b98c",
+    "assets/kaleidoscope_world_liquor/models/block/mixology/long_island_iced_tea.json": "fcdb768642767f00d9dce8e537656a8419dda59f888465b25d7b110c564c3fec",
+    "assets/kaleidoscope_world_liquor/textures/block/mixology/long_island_iced_tea.png": "b69bc2250705e8c4c59ec658b5f32003a14c8c3782663e29096132ad69b2092f",
+    "assets/kaleidoscope_world_liquor/models/block/mixology/shrimp_cocktail.json": "575df47445fc33dbc521bba6c91d93e252c380534260d6df2de8819d37bbc809",
+    "assets/kaleidoscope_world_liquor/textures/block/mixology/shrimp_cocktail.png": "06809e11370283ed4e704b8c7791cd1a8a5a601e81c4cb83ddb1b8c7a43a2aa8",
+    "assets/kaleidoscope_world_liquor/textures/item/around_the_world.png": "a37ca637a4bde2ba2711bf23320846927ba79c3035cfa21f451e9f78d3bcca22",
+    "assets/kaleidoscope_world_liquor/textures/item/jerk.png": "dafe7d23ab4aae7d9b2feebc1dee536e14fd6af2fa39539eba93e7841ec9f25c"
+  },
+  "current_java_branch_comparison": [
+    {
+      "category": "shaker",
+      "compared": 18,
+      "different": [],
+      "normalization": "result.item to result.id only; all other values and list order retained"
+    },
+    {
+      "category": "freezer",
+      "compared": 5,
+      "different": [],
+      "normalization": "result.item to result.id only; all other values and list order retained"
+    },
+    {
+      "category": "drink_effect",
+      "compared": 25,
+      "different": [],
+      "normalization": "none"
+    },
+    {
+      "category": "cocktail_models",
+      "shared_compared": 7,
+      "different": [],
+      "forge_only": [],
+      "comparison": "exact archive member bytes"
+    },
+    {
+      "category": "cocktail_textures",
+      "shared_compared": 7,
+      "different": [],
+      "forge_only": [],
+      "comparison": "exact archive member bytes"
+    },
+    {
+      "category": "original_audio",
+      "shared_compared": 6,
+      "different": [],
+      "forge_only": [],
+      "comparison": "exact archive member bytes"
+    }
+  ],
+  "previous_forge_to_latest": {
+    "previous_file_id": 8947050,
+    "current_file_id": 9066402,
+    "old_members": 864,
+    "new_members": 869,
+    "added": 50,
+    "removed": 45,
+    "changed": 79,
+    "equal": 740,
+    "raw_diff_retained_outside_git": true
+  },
+  "runtime_comparison": {
+    "before_version": "0.1.108",
+    "before_commit": "e8fa8c9",
+    "after_version": "0.1.109",
+    "shaker_recipes": {
+      "reviewed": 18,
+      "equivalent_with_documented_result_schema": 18
+    },
+    "freezer_recipes": {
+      "reviewed": 5,
+      "equivalent_with_documented_schema_and_identity_adapters": 5,
+      "identity_adapters": {
+        "minecraft:milk": "kaleidoscope_world_liquor:milk_still",
+        "kaleidoscope_twilight": "kaleidoscope_world_liquor"
+      },
+      "ingredients": "author item predicate becomes singleton accepted-ID list"
+    },
+    "effect_records": {
+      "reviewed": 25,
+      "bottle_records": 18,
+      "cocktail_records": 7,
+      "before_equal_after_smc_namespace_alias": 24,
+      "after_equal_after_smc_namespace_alias": 25,
+      "source_amplifiers_dassai_q3_to_q6": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "before_amplifiers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "durations_seconds": [
+        80,
+        240,
+        720,
+        2160
+      ],
+      "native_java_luck_loot_implemented": false
+    },
+    "original_ogg": {
+      "reviewed": 6,
+      "current_runtime_exact_bytes_equal": 6
+    },
+    "art": {
+      "shared_author_models_equal": 7,
+      "shared_author_textures_equal": 7,
+      "current_prior_atlases_differ": 4,
+      "changed_cups": [
+        "around_the_world",
+        "jerk",
+        "long_island_iced_tea",
+        "shrimp_cocktail"
+      ],
+      "current_prior_source": "upstream/source.lock.json initial NeoForge1.1.8 CF8704187; later selected updates retained separately",
+      "concrete_old_to_new_source_deltas": {
+        "around_the_world": "10 to11 elements; garnish coordinates and two rotated planes change; crazy_cocktail texture alias changes to around_the_world",
+        "jerk": "garnish plane coordinate, rotation45 and UV change",
+        "long_island_iced_tea": "Removes three zero-UV faces across two inverted source boxes; converter removes their three oriented planes.",
+        "shrimp_cocktail": "three garnish boxes/pivots shift source X by+0.2"
+      },
+      "atlas_byte_inequality_alone_is_not_parity_evidence": true,
+      "implemented_by_release": [
+        "four source geometry and coupled atlases",
+        "two original authored inventory icons"
+      ],
+      "platform_adapter": "existing mixed-axis/UV conversion and documented host drink-sheet separation",
+      "rendered_client": false
+    }
+  },
+  "unimplemented_or_unverified": [
+    "Native Java Luck attribute/loot behavior remains absent; exact data is not loot parity.",
+    "Forge event phases, cabinet automation, Create/Jade/SMC integration and TreasureSense tracking remain scoped adaptation work.",
+    "NeoForge26 custom luck, BlockDrops copying and differing effect registry remain separate unported branch semantics.",
+    "Source converter equality does not certify rendered transparency, depth, light, held views, audio attenuation or human interactions."
+  ],
+  "acceptance": {
+    "source_data": true,
+    "client": false,
+    "production_ready": false,
+    "status": "pending_client_acceptance"
+  }
+}

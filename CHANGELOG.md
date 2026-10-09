@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.109
+
+Restore current Java Dassai Q3–Q6 Luck amplifiers 1/3/5/7 across bottle, mixology and guide data. Record latest Forge 1.1.12 source comparison and real remaining cocktail art/event/automation gaps; see [release scope](docs/RELEASE-NOTES-0.1.109.md).
+
 ## 0.1.108 candidate
 
 Prepare both packs for Tavern 0.6.131 and recognize Grilling 2.8.118's two additional zero-collision displays in shared Respawn checks. Unknown helpers remain rejected. Release freeze and native/client/live verification are pending; see [candidate scope](docs/RELEASE-NOTES-0.1.108.md).
