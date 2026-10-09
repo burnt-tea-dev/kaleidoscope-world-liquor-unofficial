@@ -40,3 +40,13 @@ Grilling G122 與 Cookery helper 0.2.9 的完整私人家族整合另行驗證�
 私人世界保存遷移或 LIVE 部署。原生 Luck、Creative Flight、模組
 事件與其他已列原作差距保留；`client=false`、
 `production_ready=false`、`live_deployment=false`。
+
+## 固定來源與實際安裝包
+
+W117 原始功能來源固定為 `6733e284e74ef5374799509c97366a59da59195e`，
+完整 tree 為 `56ad3143037c65c9dd024a537db0833f558bea97`。本次正式
+打包產物 `Kaleidoscope_World_Liquor_Unofficial_0.1.117_preview1.mcaddon`
+為 7,166,915 bytes，SHA256：
+`0445bb9ea9c52016f2e17b34878d41f20523d532033878e0e475814350a8a290`。
+後續發布 metadata 保持 runtime 相同；完整 CI／原生與真人验收依
+前述實際結果範圍，不由這份打包校驗推定完成。
