@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.113
+## Current maintained baseline: 0.1.114
 
-W113 rewrites all 67 World Liquor guide entries with concise instructions and drink purposes, paired with Tavern T136's shared guide. Complete preparation data remain available on each product. W112 gameplay, current-author Dassai data, models, sounds and saved identities remain intact; see [release scope](docs/RELEASE-NOTES-0.1.113.md).
+W114 pairs the unchanged W113 World Liquor content with Tavern T137's correction of four additional installed-addon guide entries. World Liquor's 67 concise pages and complete preparations remain intact; see [release scope](docs/RELEASE-NOTES-0.1.114.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -8,7 +8,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.136** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.137** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
 Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.121** is the current family pairing, not a standalone requirement for this pack.
 
@@ -28,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-Integration checks pin Tavern T136 `c8b4ecba641b683f011553ea3ba61e298758d0f0` and Grilling G121 `2b422458ebfdd3831bc7a57af30c24cfa211d23a`. T136 retains the canonical T132 gameplay baseline and adds the guide revision; the separate T135 PR302 remains unmerged and is not part of this candidate. Paired guide data are checked in [the W113 report](docs/GUIDE-VALIDATION-0.1.113.json). Remote CI, family BDS, saved-world migration and human client acceptance retain their separate gates.
+The exact Tavern T137 integration and publication pin is pending the host freeze. Existing records still describe W113 until that pin is available. The public Tavern/World Liquor projection contains 223 entries; the complete 42-pack host includes additional producer pages and is validated separately. W113's original source and CI evidence remain unchanged. Remote CI, family BDS, saved-world migration and human client acceptance retain their separate gates.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 

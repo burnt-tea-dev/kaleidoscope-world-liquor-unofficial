@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.114
+
+Pair unchanged W113 content with Tavern 0.6.137, which corrects four additional installed-addon guide entries. Keep the public paired guide's 223 entries distinct from complete-family validation; see [release scope](docs/RELEASE-NOTES-0.1.114.md).
+
 ## 0.1.113
 
 Rewrite all 67 product and furniture guide entries with brief uses, complete preparation data and accurate platform limits. Pair with Tavern 0.6.136 while retaining W112 gameplay, data, assets and saved identities; see [release scope](docs/RELEASE-NOTES-0.1.113.md).
