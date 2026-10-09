@@ -1,10 +1,10 @@
 # 世界名酒：開放差距與驗收場景
 
-現行 LIVE 為 W119／T142／G123，2026-10-09 已完成完整 42 包 static、新世界／保存世界首次及重啟、准入與部署讀回。真人操作及完整 Java 一比一仍未接受；`client=false`、`production_ready=false`。[現行家族索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/82beed26/family/BASELINE-STATUS.md)記錄本次收據；成功載入沒有關閉下列具體玩法差距。
+目前 LIVE 版本、完整家族部署結果及精確收據統一記錄在 [家族索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)。真人操作及完整 Java 一比一仍未接受；`client=false`、`production_ready=false`。部署成功沒有關閉下列具體玩法差距。
 
 來源、已完成範圍和證據等級只維護在 [PARITY-MATRIX.md](PARITY-MATRIX.md)。舊 W114／W115／85-helper 敘述和各版失敗仍由 Git、release notes 與原收據保留，本頁不再複製整份矩陣或把舊版本當成當前阻擋。
 
-## 本分支已修，待發版
+## W120 已修的入口
 
 斬首誤用了 ground-crit 的 melee／explosion 篩選，漏掉直接生物造成的爆炸傷害，亦未檢查目標仍存活；肘擊音效漏了直接生物類別。現行原作 CF9066406 的兩個 handler 分別要求 direct LivingEntity，只有 ground-crit 額外使用 melee 篩選。最小修補及 16 個既有套件案例見 [來源核對](../data/combat-admission-review-20261009.json)。完整斬首流程仍開放，不能把入口修補寫成 SkullOwner、補殺或 causal drops 已完成。
 
@@ -22,7 +22,7 @@
 
 ## 保留實作，仍待真人或特定生命周期驗收
 
-- 冰櫃：五個 current recipe、loaded ticks、四槽 native metadata 及來源 height 算術已實作；真玩家插取、offhand、unload／crash、任意 metadata 和完整流體／原料／成品渲染另驗，不把 LIVE 零輸入樣本當非空證據。
+- 冰櫃：五個 current recipe、loaded ticks、四槽 native metadata 及來源 height 算術已實作；真玩家插取、offhand、unload／crash、任意 metadata 和完整流體／原料／成品渲染另驗，既有零輸入樣本不證明非空冰櫃內容。
 - 酒櫃與家具：原格位、native item carrier、重啟／回滾修補保留；四向座位、玻璃、觸控／游標點選與實際展示仍待比較。
 - Respawn：87 個精確零碰撞 helper、新確認錨 yaw=0／forced=false 及 repeat／取消防線保留；未知來源不放寬，真 Player 床／錨／重生另驗。
 - 唱片：兩首原音檔、牆掛四向及取回保留；32 station 音訊渠道仍是 adapter 限制，實際聲場、播放／停止／重登 lifecycle 待驗。
