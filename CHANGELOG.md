@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.115 candidate
+
+Pin reviewed Tavern 0.6.137 source `d6bfb01451cfb016630b756dca15cc4c0bdda830` for the integrated parity repairs and saved native-effect replay fix. Preserve canonical W113's 67 three-language guide entries byte for byte, all existing World Liquor gameplay and assets, and the current Grilling G121 pin. W115 runtime is frozen; new paired CI and native/client acceptance remain pending. See [candidate scope](docs/RELEASE-NOTES-0.1.115.md). W114 is already reserved by the older integration and is not reused.
+
 ## 0.1.113
 
 Rewrite all 67 product and furniture guide entries with brief uses, complete preparation data and accurate platform limits. Pair with Tavern 0.6.136 while retaining W112 gameplay, data, assets and saved identities; see [release scope](docs/RELEASE-NOTES-0.1.113.md).

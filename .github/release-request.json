@@ -1,15 +1,15 @@
 {
-  "version": "0.1.113",
-  "tag": "v0.1.113-preview.1",
-  "title": "森羅物語：世界名酒 0.1.113 測試版｜精簡完整指南",
+  "version": "0.1.115",
+  "tag": "v0.1.115-preview.1",
+  "title": "森羅物語：世界名酒 0.1.115 測試版｜完整指南與酒館相容修復",
   "prerelease": true,
-  "tavern_commit": "c8b4ecba641b683f011553ea3ba61e298758d0f0",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.113.md",
+  "tavern_commit": "d6bfb01451cfb016630b756dca15cc4c0bdda830",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.115.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "new_bds_test": false,
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "expected_archive_sha256": "31824a1257bc2537e3acbc4742cc5c5fe5b5eb53f94d96513d09ae7a10612892"
+  "expected_archive_sha256": "4c5f4c466f5f39a3ce40373cfaf6ce8785852f957cc2199634bf54611d9ca948"
 }
