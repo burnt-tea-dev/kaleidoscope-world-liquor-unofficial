@@ -1,9 +1,15 @@
+import {VANILLA_LIVING_ENTITIES} from './vanilla-living-entities.js';
 /** Minecraft 1.21.1 transient kill credit, read before the current hurt updates it.
  * NeoForge LivingDamage.Pre runs inside actuallyHurt; hurt updates credit later.
  * Nothing here is persisted or written to another pack's dynamic properties.
  */
 export function isLivingCombatEntity(actor){
- try{return !!actor?.getComponent?.('minecraft:health')&&(actor.typeId==='minecraft:player'||actor.typeId==='minecraft:armor_stand'||actor.getComponent('minecraft:type_family')?.hasTypeFamily('mob')===true);}catch{return false;}
+ try{
+  if(!actor||actor.isValid===false)return false;
+  // A lethal hurt does not change the target's class. Only credit selection
+  // below requires a surviving mob; a health-bearing vehicle is not LivingEntity.
+  return !!actor.getComponent?.('minecraft:health')&&(Object.hasOwn(VANILLA_LIVING_ENTITIES,actor.typeId)||actor.getComponent('minecraft:type_family')?.hasTypeFamily('mob')===true);
+ }catch{return false;}
 }
 export function damageCreditMutation(source){
  try{

@@ -1,8 +1,10 @@
-## Current maintained baseline: 0.1.116
+## Current maintained baseline: 0.1.117
 
-W116 keeps the published three-language guide and the reviewed confirmed Nether-anchor metadata repair, paired with Tavern T139 and Grilling G122. See the [release notes](docs/RELEASE-NOTES-0.1.116.md) for immutable source history and actual verification scope.
+W117, paired with Tavern T140 and Grilling G122, repairs the LivingEntity gate for vanilla fish without a `mob` family. The shared gate now admits 84 reviewed vanilla class counterparts while retaining health, validity and nonliving checks. Fish can reach the existing MultiJump fall immunity, Tequila cap, instant-effect routing and accepted damage-credit paths. The [release notes](docs/RELEASE-NOTES-0.1.117.md) record the exact published W116 predecessor, source authority and verification scope.
 
-The published W113 guide revision rewrote all 67 World Liquor entries with concise instructions and drink purposes; W116 retains that content through Tavern T139's shared guide. Complete preparation data remain available on each product. W112 gameplay, current-author Dassai data, models, sounds and saved identities remain intact; see [release scope](docs/RELEASE-NOTES-0.1.116.md).
+The 26 targeted source/callback cases passed, including the complete paired class projection; independent review also passed its eight affected cases. T140's new native cod fall-damage control/protected scene is **pending and has not run**. This is separate from the preserved T139/W116 native first/save/restart evidence and from client acceptance.
+
+The published three-language guide retains all 67 World Liquor entries, complete product preparation data and Tavern's seven entrances. Current-author Dassai data, models, sounds, saved identities, confirmed Nether-anchor metadata and the host's verified aura clock/reload repairs remain intact. See the [W117 scope](docs/RELEASE-NOTES-0.1.117.md) and the [previous published scope](docs/RELEASE-NOTES-0.1.116.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -10,7 +12,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.139** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.140** with this W117 candidate and both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
 Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.122** is the current family pairing, not a standalone requirement for this pack.
 
@@ -30,7 +32,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-Integration checks use the exact Tavern T139 and Grilling G122 commits in [.github/baseline-integration.json](.github/baseline-integration.json). The T139/W116 pair retains both the published guide revision and the reviewed native clock/reload, machine metadata and confirmed-anchor repairs. The [published W113 guide report](docs/GUIDE-VALIDATION-0.1.113.json) remains scoped to its original source; new-candidate CI, native persistence, saved-world migration and human client acceptance are tracked separately.
+Integration checks use the exact paired source commits in [.github/baseline-integration.json](.github/baseline-integration.json). W117 targets T140 and preserves the published guide revision and the reviewed native clock/reload, machine metadata and confirmed-anchor repairs. The complete 84-class projection is checked against the paired Tavern source. The [published W113 guide report](docs/GUIDE-VALIDATION-0.1.113.json) and [T139/W116 native evidence](docs/RELEASE-NOTES-0.1.116.md) remain scoped to their original sources; new-candidate CI, native persistence, saved-world migration and human client acceptance are tracked separately.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 
@@ -46,6 +48,7 @@ Asset/reference checks are build preconditions. Source logic tests, affected nat
 
 ## Known limits
 
+- W117 corrects class admission, not every downstream effect consequence. A zero-health LivingEntity retains its class, while later mob kill credit still requires it to be alive. The source's `BEHEADED_MARKER` write before cancellation is preserved; this release does not rewrite effect event order or certify the complete native beheading, Elbow knockback or CaptainGift collision behavior.
 - Shared-spawn Respawn now recognizes 87 source-verified family storage/render helpers with empty collision boxes, including Grilling 2.8.119's plate and recipe displays. G119 retains all 10 reviewed Grilling helper definitions from G118. Unknown entities still require known facts; native Player spawn/bed/anchor lifecycle and client acceptance remain separate.
 - Glass transparency, four-way storage/freezer placement, animation, wall-disc angle and audio still require the current client comparison matrix. Historical scoped observations do not certify every current scene.
 - Through-wall Hostile Detection/Treasure Sense outlines, Brew Accelerator and native Java Luck consequences remain incomplete. Current stable camera animation supports three-axis rotation, but pure gameplay-camera roll preserving aim and held rendering remains unimplemented/unverified.

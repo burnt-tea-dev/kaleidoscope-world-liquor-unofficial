@@ -77,3 +77,63 @@ test('actual fall callback follows Player-only reverse gravity and LivingEntity 
  }
 });
 import {applyJavaRespawn} from '../runtime/BP/scripts/respawn-adapter.js';
+
+function installedEffectsFixture(entities){
+ const signal=()=>({subscribe(fn){this.callback=fn;}}),states=new Map(),pending=[],explosions=[],sounds=[];
+ const beforeHurt=signal(),afterHurt=signal(),scriptEvent=signal();
+ const dimension={createExplosion:(...args)=>explosions.push(args),playSound:(...args)=>sounds.push(args)};
+ for(const entity of entities){entity.dimension=dimension;entity.location={x:1,y:2,z:3};}
+ const byId=new Map(entities.map(entity=>[entity.id,entity]));
+ const world={getEntity:id=>byId.get(id),gameRules:{tntExplodes:true},beforeEvents:{entityHurt:beforeHurt},afterEvents:{entityHurt:afterHurt,entityRemove:signal(),playerSpawn:signal(),playerLeave:signal(),playerButtonInput:signal(),entityDie:signal(),playerBreakBlock:signal()}};
+ const system={currentTick:0,run:fn=>pending.push(fn),runInterval(){},afterEvents:{scriptEventReceive:scriptEvent}};
+ const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
+ const ctx=vm.createContext({AcceptedHurtFeedback,CriticalFeedback:class{queue(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,world,system,readTavernEffects:entity=>states.get(entity)??{},FrostAgingScheduler:class{},setFrostAgingScheduler(){},installJavaRespawn(){},Math:Object.assign(Object.create(Math),{random:()=>0})});
+ vm.runInContext(source+'\ninstallEffects();',ctx);
+ return {states,explosions,sounds,system,flush:()=>pending.splice(0).forEach(fn=>fn()),before:event=>beforeHurt.callback(event),after:event=>afterHurt.callback(event),script:event=>scriptEvent.callback(event)};
+}
+function familylessEntity(id,typeId='minecraft:cod'){
+ const health={currentValue:3,effectiveMax:3};
+ return {id,typeId,isValid:true,getComponent:key=>key==='minecraft:health'?health:key==='minecraft:type_family'?{hasTypeFamily:family=>['aquatic','cod','fish'].includes(family)}:undefined};
+}
+test('registered fall callback admits familyless cod for MultiJump while retaining source and nonliving guards',()=>{
+ const cod=familylessEntity('fall-cod'),boat=familylessEntity('fall-boat','minecraft:boat'),helper=familylessEntity('fall-helper','kaleidoscope_tavern:effect_anchor'),f=installedEffectsFixture([cod,boat,helper]);
+ const hurt=target=>{const event={hurtEntity:target,damage:1,damageSource:{cause:'fall'}};f.before(event);return event;};
+ assert.equal(hurt(cod).cancel,undefined,'untreated cod must not receive fall immunity');
+ f.states.set(cod,{multi_jump:{amplifier:0}});
+ assert.equal(hurt(cod).cancel,true,'LivingEntity MultiJumpFallDamageMixin includes cod without mob family');
+ f.states.set(cod,{reverse_gravity:{amplifier:0}});
+ assert.equal(hurt(cod).cancel,undefined,'reverse gravity retains its Player-only source gate');
+ for(const entity of [boat,helper]){f.states.set(entity,{multi_jump:{amplifier:0}});assert.equal(hurt(entity).cancel,undefined,entity.typeId);}
+});
+test('registered Tequila callback caps familyless fish damage using the source float arithmetic',()=>{
+ const cod=familylessEntity('tequila-cod'),boat=familylessEntity('tequila-boat','minecraft:boat'),f=installedEffectsFixture([cod,boat]);
+ const hurt=(target,cancel)=>{const event={hurtEntity:target,damage:100,cancel,damageSource:{cause:'fire'}};f.before(event);return event;};
+ assert.equal(hurt(cod).damage,100);
+ for(const target of [cod,boat])f.states.set(target,{tequila:{amplifier:0}});
+ // DamageEvents.onLivingDamagePre in CF9066406: float(3 * 0.4f).
+ assert.equal(hurt(cod).damage,1.2000000476837158);
+ assert.equal(hurt(boat).damage,100,'health alone does not make a boat LivingEntity');
+ assert.equal(hurt(cod,true).damage,100,'an already canceled event stays untouched');
+});
+test('registered instant-effect routing admits a familyless fish without admitting health-only entities',()=>{
+ const cod=familylessEntity('instant-cod'),boat=familylessEntity('instant-boat','minecraft:boat'),helper=familylessEntity('instant-helper','kaleidoscope_tavern:effect_anchor'),removed=familylessEntity('instant-removed');removed.isValid=false;
+ const f=installedEffectsFixture([cod,boat,helper,removed]);
+ const send=(entity,sourceType='Server')=>f.script({sourceType,id:'kaleidoscope_world_liquor:apply_effect',message:JSON.stringify({entity:entity.id,effect:'kaleidoscope_world_liquor:explosion',duration:1,amplifier:2})});
+ send(cod);assert.equal(f.explosions.length,1);assert.equal(f.explosions[0][1],5);assert.equal(f.explosions[0][2].source,cod);assert.equal(f.explosions[0][2].breaksBlocks,true);
+ for(const entity of [boat,helper,removed])send(entity);
+ send(cod,'Entity');
+ assert.equal(f.explosions.length,1,'nonliving, invalid and non-Server inputs must not execute instant effects');
+});
+test('registered before/after hurt callbacks preserve a fish attacker as previous kill credit',()=>{
+ const cod=familylessEntity('attacking-cod'),target=familylessEntity('credit-target','minecraft:zombie'),f=installedEffectsFixture([cod,target]);
+ f.states.set(cod,{double_damage:{amplifier:4}});
+ const first={hurtEntity:target,damage:1,damageSource:{cause:'entityAttack',damagingEntity:cod}};
+ f.before(first);assert.equal(first.damage,1,'fresh first hit has no previous credit');
+ f.after(first);f.flush();f.system.currentTick=1;
+ const later={hurtEntity:target,damage:1,damageSource:{cause:'fire'}};
+ f.before(later);assert.equal(later.damage,2,'accepted fish owner survives into an environmental damage callback');
+ f.after(later);f.flush();assert.equal(f.sounds.length,1);
+ cod.getComponent('minecraft:health').currentValue=0;
+ const afterDeath={hurtEntity:target,damage:1,damageSource:{cause:'fire'}};
+ f.before(afterDeath);assert.equal(afterDeath.damage,1,'dead mob cannot supply later kill credit');
+});

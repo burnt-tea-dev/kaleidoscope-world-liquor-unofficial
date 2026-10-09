@@ -2,8 +2,11 @@ import {AcceptedHurtFeedback} from '../runtime/BP/scripts/accepted-hurt-feedback
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath,pathToFileURL} from 'node:url';
 import vm from 'node:vm';
 import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from '../runtime/BP/scripts/kill-credit.js';
+import {VANILLA_LIVING_ENTITIES} from '../runtime/BP/scripts/vanilla-living-entities.js';
 import * as rules from '../runtime/BP/scripts/combat-source.js';
 const actor=(id,typeId='minecraft:zombie',tame)=>({id,typeId,getComponent:key=>key==='minecraft:health'?{currentValue:20}:key==='minecraft:type_family'?{hasTypeFamily:family=>family==='mob'}:key==='minecraft:tameable'?tame:undefined});
 function fixture(){let now=0;const entities=new Map(),credit=new JavaKillCredit({now:()=>now,resolve:id=>entities.get(id)});return {credit,entities,time:value=>now=value,hit:(id,owner,cancel=false)=>{const row=credit.begin(id,{cancel,damage:4,damageSource:{cause:'entityAttack',damagingEntity:owner}},damageCreditMutation({damagingEntity:owner}));if(row)row.accepted=true;return row;}};}
@@ -34,6 +37,53 @@ test('dead mob, unload and missing player are handled without adopting a differe
 test('nonliving health-bearing vehicles and removed actor handles never update credit',()=>{
  const boat={id:'boat',typeId:'minecraft:boat',getComponent:key=>key==='minecraft:health'?{currentValue:20}:undefined};assert.equal(damageCreditMutation({damagingEntity:boat}),undefined);assert.equal(damageCreditMutation({damagingEntity:{getComponent(){throw Error('removed');}}}),undefined);
  assert.deepEqual(damageCreditMutation({damagingEntity:actor('stand','minecraft:armor_stand')}),{mob:'stand',playerChanged:false,player:undefined});
+});
+test('familyless vanilla LivingEntity classification is independent of remaining health',()=>{
+ for(const typeId of ['cod','salmon','pufferfish','tropicalfish','tadpole','squid','glow_squid','axolotl']){
+  for(const currentValue of [3,0]){
+   const entity={typeId:'minecraft:'+typeId,isValid:true,getComponent:key=>key==='minecraft:health'?{currentValue}:key==='minecraft:type_family'?{hasTypeFamily:family=>family==='aquatic'}:undefined};
+   assert.equal(isLivingCombatEntity(entity),true,typeId+' health='+currentValue);
+  }
+ }
+});
+test('the complete vanilla class facts match the paired Tavern LivingEntity authority',async()=>{
+ const root=fileURLToPath(new URL('../',import.meta.url));
+ const peer=path.resolve(process.env.TAVERN_SOURCE??process.env.TAVERN_ROOT??path.join(root,'../tavern-src'));
+ const {VANILLA_INSTANT_ENTITIES}=await import(pathToFileURL(path.join(peer,'runtime/BP/scripts/data/vanilla-instant-entities.js')).href);
+ const expected=Object.keys(VANILLA_INSTANT_ENTITIES).filter(id=>VANILLA_INSTANT_ENTITIES[id].living===true).sort();
+ assert.equal(expected.length,84,'reviewed Minecraft 1.21.1 Native counterparts');
+ assert.deepEqual(Object.keys(VANILLA_LIVING_ENTITIES).sort(),expected);
+ assert.ok(Object.isFrozen(VANILLA_LIVING_ENTITIES));
+ for(const typeId of expected){
+  assert.equal(VANILLA_LIVING_ENTITIES[typeId],true,'class facts must not import potion or damage policy');
+  const entity={typeId,isValid:true,getComponent:key=>key==='minecraft:health'?{currentValue:0}:undefined};
+  assert.equal(isLivingCombatEntity(entity),true,typeId+' remains LivingEntity without mob family at zero health');
+ }
+});
+test('the class gate retains explicit addon mob support and rejects health-only or invalid handles',()=>{
+ const entity=(typeId,families=[],isValid=true,health=true)=>({typeId,isValid,getComponent:key=>key==='minecraft:health'&&health?{currentValue:3}:key==='minecraft:type_family'?{hasTypeFamily:family=>families.includes(family)}:undefined});
+ assert.equal(isLivingCombatEntity(entity('addon:otter',['mob'])),true);
+ for(const typeId of ['minecraft:boat','minecraft:xp_orb','kaleidoscope_tavern:effect_anchor','addon:health_only','toString','__proto__']){
+  assert.equal(isLivingCombatEntity(entity(typeId)),false,typeId);
+ }
+ assert.equal(isLivingCombatEntity(entity('minecraft:cod',[],false)),false);
+ assert.equal(isLivingCombatEntity(entity('minecraft:zombie',['mob'],false)),false);
+ assert.equal(isLivingCombatEntity(entity('minecraft:cod',[],true,false)),false);
+ assert.equal(isLivingCombatEntity({typeId:'minecraft:cod',getComponent(){throw Error('removed');}}),false);
+});
+test('a familyless fish can own accepted damage but a dead fish cannot supply later kill credit',()=>{
+ const f=fixture(),health={currentValue:3},fish={id:'cod-credit',typeId:'minecraft:cod',isValid:true,getComponent:key=>key==='minecraft:health'?health:key==='minecraft:type_family'?{hasTypeFamily:family=>['aquatic','cod','fish'].includes(family)}:undefined};
+ f.entities.set(fish.id,fish);
+ const mutation=damageCreditMutation({damagingEntity:fish});
+ assert.deepEqual(mutation,{mob:fish.id,playerChanged:false,player:undefined});
+ const event={damage:1,damageSource:{cause:'entityAttack',damagingEntity:fish}},row=f.credit.begin('target',event,mutation);
+ assert.equal(row.accepted,false);
+ f.credit.applied({...event,hurtEntity:{id:'target'}});
+ assert.equal(row.accepted,true);f.credit.complete(row);
+ assert.equal(f.credit.previous('target'),fish);
+ health.currentValue=0;
+ assert.equal(isLivingCombatEntity(fish),true,'LivingEntity remains its class after damage');
+ assert.equal(f.credit.previous('target'),undefined,'getKillCredit separately requires the mob to remain alive');
 });
 test('production hurt callback uses previous credit for environmental damage and does not proc on the first hit',()=>{
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
