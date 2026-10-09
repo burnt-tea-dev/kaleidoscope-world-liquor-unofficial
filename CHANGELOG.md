@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.111
+
+Pair both packs with Tavern 0.6.134 while preserving the current-author Dassai correction, four cocktail models and source-art checks from W110. The reviewed T134 source is pinned; final paired CI and native/client acceptance remain pending; see [release scope](docs/RELEASE-NOTES-0.1.111.md).
+
 ## 0.1.110
 
 Restore current-author Dassai Q3–Q6 Luck amplifiers1/3/5/7 and four coupled cocktail models/atlases plus two authored inventory sprites. Retain reviewed T132/G119 pairing and original W109 histories; see [release scope](docs/RELEASE-NOTES-0.1.110.md).
