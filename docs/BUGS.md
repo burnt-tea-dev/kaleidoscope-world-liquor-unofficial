@@ -156,3 +156,7 @@ Java 比較來源：refs: W/upstream/assets/kaleidoscope_world_liquor/models/blo
 
 - 歷史額外180度和onPlace清掉DP已修；當前牆角度、鼠標點選及實際掉落位置仍待D，不能把未測寫成仍壞。
 
+
+## W110 current-author adaptation
+
+Dassai Q3–Q6 source Luck amplifiers are corrected to1/3/5/7 in direct content, host payload and Q4–Q6 mixology inputs; displayed guide levels are2/4/6/8. Native Java Luck attribute/loot behavior remains absent. Four placed cocktail cups now use current-source geometry, UV and coupled atlases, and Around the World/Jerk use authored inventory icons. Source conversion does not establish actual transparency/depth/light or hand/client acceptance. Latest Forge cabinet automation, event phases, Create/Jade/SMC and TreasureSense tracking remain open; NeoForge26 is separately unported. See [current source review](../data/current-author-review-20261009.json).

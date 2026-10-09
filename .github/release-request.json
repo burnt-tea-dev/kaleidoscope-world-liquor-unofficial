@@ -1,15 +1,14 @@
 {
-  "version": "0.1.109",
-  "tag": "v0.1.109-preview.1",
-  "title": "森羅物語：世界名酒 0.1.109 測試版｜配對酒館濺射與交易修補",
+  "version": "0.1.110",
+  "tag": "v0.1.110-preview.1",
+  "title": "森羅物語：世界名酒 0.1.110 測試版｜作者新版獺祭效果與四款雞尾酒模型",
   "prerelease": true,
-  "tavern_commit": "7e869291b22fc544fbe1eb9d5ad850891bdc2599",
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.109.md",
+  "tavern_commit": "e36204175d6d750189382e5254debc70e2f42d42",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.110.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "new_bds_test": false,
   "saved_world_migration": "pending",
   "production_ready": false,
-  "live_deployment": false,
-  "expected_archive_sha256": "f8055fdbfe921d180498671d062f89dec7647e8780b7a0f9f276e2336d1db0f0"
+  "live_deployment": false
 }

@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.109
+## Current maintained baseline: 0.1.110
 
-L109 pairs Tavern T132's splash, interaction, storage and presentation repairs. Exact source pins and paired CI results are recorded with the release; native, client and live verification have separate scopes. See [candidate scope](docs/RELEASE-NOTES-0.1.109.md).
+W110/T132 restores the current author Dassai Q3–Q6 Luck amplitudes in drink, shaker and guide data. Native Java Luck loot behavior and rendered-client acceptance remain incomplete; see [release scope](docs/RELEASE-NOTES-0.1.110.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -28,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-The integration record pins Tavern T131 source `9527b7ef57c597bb41710064fba69f603332a941` and Grilling G119 source `b010ec2a6709ada74ed96ead19c60da4e0bc2789`. The frozen pack identities and these public commits define the paired source checks.
+The integration record pins Tavern T132 source `e36204175d6d750189382e5254debc70e2f42d42` and Grilling G119 source `b010ec2a6709ada74ed96ead19c60da4e0bc2789`. The frozen pack identities and these public commits define the paired source checks.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 

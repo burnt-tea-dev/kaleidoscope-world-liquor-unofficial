@@ -11,6 +11,7 @@ subprocess.run([sys.executable,str(root/'tools/item_render_contract.py')],check=
 subprocess.run([sys.executable,str(root/'tools/check_effect_icons.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/test_freezer_java_art.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/test_java_face_topology.py')],check=True)
+subprocess.run([sys.executable,str(root/'tools/update_current_cocktail_art.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/build_drink_colors.py'),'--check'],check=True)
 subprocess.run(['node','--test',str(root/'tools/optional-cookery.test.mjs')],check=True)
 errors=[]

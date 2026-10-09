@@ -7,6 +7,8 @@ import json
 import subprocess
 import sys
 import os
+import base64
+import gzip
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
@@ -16,6 +18,7 @@ from texture_paths import PATHS,check as check_texture_paths,rewrite_values
 NS='kaleidoscope_world_liquor'
 KT='kaleidoscope_tavern'
 COMPACT_REVIEW=json.loads((ROOT/'data/compact-texture-review.json').read_text())
+AUTHOR_ART_REVIEW=json.loads((ROOT/'data/current-author-art-preservation.json').read_text())
 def read(p):return json.loads(p.read_text())
 def readjs(p):
  if p.name=='payload.js':
@@ -26,8 +29,11 @@ def readjs(p):
    for layer in reversed(review['functional_layers']):
     if layer['field']=='shakerInput.effects':
      rows=[row for row in payload['shakerInputs'] if row['item']==layer['item']];field='effects'
+    elif layer['field']=='content.effects':
+     assert layer['base']=='kaleidoscope_world_liquor:dassai','Unknown source effect layer'
+     rows=[row for row in payload['content'] if row.get('base')==layer['base']];field='effects'
     else:
-     assert layer['field']=='page.body' and layer['id']=='kaleidoscope_world_liquor:guide/freezer','Unknown functional payload layer'
+     assert layer['field']=='page.body' and layer['id'] in ('kaleidoscope_world_liquor:guide/freezer','kaleidoscope_world_liquor:guide/dassai'),'Unknown functional payload layer'
      rows=[row for row in payload['pages'] if row['id']==layer['id']];field='body'
     assert len(rows)==1 and rows[0][field]==layer['after'],'Unreviewed functional payload change'
     rows[0][field]=layer['before']
@@ -53,6 +59,12 @@ def compact_preimage(p):
  assert hashlib.sha256(restored).hexdigest()==row['before'],('Compact change exceeds texture paths',p)
  return restored
 def digest(p):
+ author=AUTHOR_ART_REVIEW['changes'].get(p.relative_to(ROOT).as_posix())
+ if author:
+  assert hashlib.sha256(p.read_bytes()).hexdigest()==author['after'],('Unreviewed current author art',p)
+  original=gzip.decompress(base64.b64decode(author['beforeGzipBase64'],validate=True))
+  assert hashlib.sha256(original).hexdigest()==author['before'],('Author art predecessor corrupt',p)
+  return author['before']
  row=COMPACT_REVIEW['changes'].get(p.relative_to(ROOT).as_posix())
  data=compact_preimage(p) if row and not row['handled_by_baseline_reference'] else previous_bytes(ROOT,p)
  return hashlib.sha256(data).hexdigest()
@@ -104,6 +116,7 @@ def main():
    assert digest(p) in (change['before'],change['after']),('Unreviewed break-feedback mutation',p)
    return change['before']
   if name in COMPACT_REVIEW['changes']:return digest(p)
+  if name in AUTHOR_ART_REVIEW['changes']:return digest(p)
   return hashlib.sha256(raw).hexdigest() if raw is not None else digest(p)
 
  def historical_block_bytes(p):
