@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "date": "2026-10-09",
+  "candidate": "0.1.116",
+  "published_main_commit": "beda960c242b3b98a6b69e8950486ab5c6a44564",
+  "preserved_trial_commit": "41c71180aa86be28297c767f7759298f02de1621",
+  "published_main_tags": [
+    "v0.1.113-preview.1"
+  ],
+  "history_policy": "Keep every published main key unchanged; append only nonconflicting trial identities. Same-version trial claims, sources, witnesses and native evidence remain immutable at their original commits and local checkpoints. Never republish a conflicting old identity.",
+  "history_conflicts": {
+    "0.1.113": {
+      "published_main": {
+        "BP": {
+          "sha256": "e40f0ce514ebb3d4432bc6c4c1b1b50662750c7dd408cac9463dd1906456fd5f",
+          "files": 339
+        },
+        "RP": {
+          "sha256": "4ace28dcc210a8c4cd879234f5f3d7fce4a0a19c6b29b2320ff4e4e272c56baa",
+          "files": 549
+        }
+      },
+      "preserved_trial": {
+        "BP": {
+          "sha256": "451552c0146712701d4a1820dba810b1ea7e8396f02d0117fd573235dd3d97a1",
+          "files": 339
+        },
+        "RP": {
+          "sha256": "4ace28dcc210a8c4cd879234f5f3d7fce4a0a19c6b29b2320ff4e4e272c56baa",
+          "files": 549
+        }
+      }
+    }
+  },
+  "main_history_sha256": "a67ded96e27a5f8c7f7c35783efad76fba777f13f922b72396492a30dafecca2",
+  "trial_history_sha256": "24cb37b448d51a4fd7c694ae89b8b7a6c2779937f419b7c1f482095fd265c8e9",
+  "main_ledger_sha256": "66c4529de5f806c0fb5deb4de0676dd98d3d38d21f82eed6e4a6b9c9bb00bc40",
+  "trial_ledger_sha256": "0334eca025cc45805bb479f0e74ad9afc152937c45b766ad14b86b0234efd1cf",
+  "witness_join": {
+    "reviewedFunctionalDeltaLayers": {
+      "common_prefix": 9,
+      "main_count": 9,
+      "trial_count": 10,
+      "joined_count": 10
+    }
+  },
+  "review_document_resolution": "Historical reviewedSourceCommit fields bind runtime source bytes. reviewDocument is resolved at that source when present; explicitly recorded later documentation sources are separate. Published main keeps the shared same-version release-note pathname; trial documents remain in immutable ancestors.",
+  "runtime_composition": {
+    "counts": {
+      "both_exact": 884,
+      "main_exact": 0,
+      "trial_exact": 1,
+      "identity_only": 3
+    },
+    "paths_differing_between_reviewed_sources": {
+      "runtime/BP/manifest.json": {
+        "source_commits": [
+          "beda960c242b3b98a6b69e8950486ab5c6a44564",
+          "41c71180aa86be28297c767f7759298f02de1621"
+        ],
+        "composition": "identity_only",
+        "sha256": "827dca44c58e68edfb8154434c8dfe87175212748a2b8fce79a84e691e4f5314"
+      },
+      "runtime/BP/scripts/payload.js": {
+        "source_commits": [
+          "beda960c242b3b98a6b69e8950486ab5c6a44564"
+        ],
+        "composition": "identity_only",
+        "sha256": "3956a968456251fd057ff2b1ef56f5df8c135a69a59566a839541d4ec9e43133"
+      },
+      "runtime/BP/scripts/respawn-metadata.js": {
+        "source_commits": [
+          "41c71180aa86be28297c767f7759298f02de1621"
+        ],
+        "composition": "trial_exact",
+        "sha256": "c1eeabd69e4187fc34ac41c643ed580de2687a642752a8380784ed1e159eb044"
+      },
+      "runtime/RP/manifest.json": {
+        "source_commits": [
+          "beda960c242b3b98a6b69e8950486ab5c6a44564",
+          "41c71180aa86be28297c767f7759298f02de1621"
+        ],
+        "composition": "identity_only",
+        "sha256": "e444697bccfa8ea5b027eecb93f7eda9d9e2d51a2252df52c3a97199d6a249f0"
+      }
+    },
+    "unexpected_combined_paths": [],
+    "historical_projection": {
+      "result": "W historical projection checked by the assigned guide/storage reviewer"
+    }
+  },
+  "native_evidence": {
+    "result": "pass",
+    "pair": "T139/W116",
+    "document": "https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/v0.6.139-beta.1/docs/native/T139-W116-20261009.json",
+    "evidence_sha256": "ba235b99e33d43fceb3295ca2339a82c509af2349e2ea113bfd80621bf060de0",
+    "phases": [
+      "first",
+      "restart"
+    ],
+    "required_cases": [
+      20,
+      21
+    ],
+    "normal_stop": true,
+    "player_sessions": 0,
+    "content_errors": 0,
+    "client": false,
+    "full_family": false,
+    "live": false,
+    "driver_note": "The first recorder invocation redirected stdout to its reserved evidence log pathname and was correctly refused before output. That failed driver log is retained separately; only the invocation output path was corrected. Native input files/logs and the runner report were unchanged; the strict recorder then passed."
+  },
+  "client_tested": false,
+  "production_ready": false,
+  "live_deployment": false,
+  "grilling_source": {
+    "commit": "8002da0086544cd18c9854e7fe79e8ccb2f9f982",
+    "version": "2.8.122",
+    "source_trees": {
+      "BP": {
+        "sha256": "65da2e167bba12c0a7b69f5f60c543c0f75b33cffd44bdd093646ce9baee8b1b",
+        "files": 765
+      },
+      "RP": {
+        "sha256": "18b733fe62cd926babedf435a226454263ebba22ddcea7c45431fd25ea69b510",
+        "files": 3511
+      }
+    },
+    "shared_guide_bridge_preserved_from": "2b422458ebfdd3831bc7a57af30c24cfa211d23a",
+    "cookery_family_helper": "0.2.9",
+    "full_family_native_tested": false,
+    "deployment_requirement": "G122 descriptor, author patch and all copied helper files must be assembled and validated together; earlier helper output is not reused."
+  }
+}
