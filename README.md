@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.109
+## Current maintained baseline: 0.1.110
 
-L109 pairs Tavern T132's splash, interaction, storage and presentation repairs. Exact source pins and paired CI results are recorded with the release; native, client and live verification have separate scopes. See [candidate scope](docs/RELEASE-NOTES-0.1.109.md).
+L110 pairs Tavern T133's complete native machine ingredients, bounded portable metadata, owned status particles and source visual repairs, retaining T132. Exact source pins and paired CI results are recorded with the release; native, client and live verification have separate scopes. See [candidate scope](docs/RELEASE-NOTES-0.1.110.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -8,7 +8,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.132** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.133** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
 Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.119** is the current family pairing, not a standalone requirement for this pack.
 
@@ -28,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-The integration record pins Tavern T131 source `9527b7ef57c597bb41710064fba69f603332a941` and Grilling G119 source `b010ec2a6709ada74ed96ead19c60da4e0bc2789`. The frozen pack identities and these public commits define the paired source checks.
+The integration record pins the reviewed Tavern T133 source and Grilling G119 source `b010ec2a6709ada74ed96ead19c60da4e0bc2789`. The exact immutable Tavern revision is maintained in [.github/baseline-integration.json](.github/baseline-integration.json); its frozen pack identity defines the paired source checks.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 

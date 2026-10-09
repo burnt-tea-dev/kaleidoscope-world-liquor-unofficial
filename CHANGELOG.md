@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.110
+
+Pair both packs with Tavern 0.6.133 for native ingredient retention, machine exchanges, owned status particles, board outlines and shaded RGB/animation repairs. World Liquor gameplay and assets retain their existing content; [release scope](docs/RELEASE-NOTES-0.1.110.md) separates exact pairing from native/client/live acceptance.
+
 ## 0.1.109
 
 Pair both packs with Tavern 0.6.132 for its shared splash dispatch, shaker input/rollback, living-recipient and presentation repairs. World Liquor gameplay, recipes and guide data retain their existing content; [release scope](docs/RELEASE-NOTES-0.1.109.md) separates exact pairing from native/client/live acceptance.
