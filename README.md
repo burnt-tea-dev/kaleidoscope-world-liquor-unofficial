@@ -28,7 +28,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-Integration checks pin Tavern T136 `496ce702161fb48ab6f67ea6645ad1e4d41b2a12` and Grilling G121 `2b422458ebfdd3831bc7a57af30c24cfa211d23a`. T136 retains the canonical T132 gameplay baseline and adds the guide revision; the separate T135 PR302 remains unmerged and is not part of this candidate. Paired guide data are checked in [the W113 report](docs/GUIDE-VALIDATION-0.1.113.json). Remote CI, family BDS, saved-world migration and human client acceptance retain their separate gates.
+Integration checks pin Tavern T136 `c8b4ecba641b683f011553ea3ba61e298758d0f0` and Grilling G121 `2b422458ebfdd3831bc7a57af30c24cfa211d23a`. T136 retains the canonical T132 gameplay baseline and adds the guide revision; the separate T135 PR302 remains unmerged and is not part of this candidate. Paired guide data are checked in [the W113 report](docs/GUIDE-VALIDATION-0.1.113.json). Remote CI, family BDS, saved-world migration and human client acceptance retain their separate gates.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 

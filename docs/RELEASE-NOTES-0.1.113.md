@@ -23,7 +23,7 @@ four coupled cocktail surfaces remain preserved. Existing historical release
 records and validation reports are unchanged.
 
 Paired source checks pin Tavern T136
-`496ce702161fb48ab6f67ea6645ad1e4d41b2a12` and Grilling G121
+`c8b4ecba641b683f011553ea3ba61e298758d0f0` and Grilling G121
 `2b422458ebfdd3831bc7a57af30c24cfa211d23a`. T136 starts from the canonical
 T132 gameplay baseline and adds the shared guide changes; the separate T135
 PR302 remains unmerged and is not included. W112's runtime differences from
