@@ -1,5 +1,5 @@
 """Only the reviewed version identity may change in the historical storage view."""
-import hashlib,importlib.util,json,tempfile,unittest
+import base64,gzip,hashlib,importlib.util,json,tempfile,unittest
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('storage_check',Path(__file__).with_name('check_storage_rendering.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 def data(version,recipes):return ('export const payload = '+json.dumps({'version':version,'recipes':recipes},ensure_ascii=False,indent=2)+';\n').encode()
@@ -19,4 +19,20 @@ class ProjectionTests(unittest.TestCase):
  def test_corrupt_historical_payload_is_rejected(self):
   (self.root/'data/old.js').write_bytes(data('0.1.67',['mutated']))
   with self.assertRaises(AssertionError):m.readjs(self.p)
+class GuideProjectionTests(unittest.TestCase):
+ def setUp(self):
+  self.before={'recipes':['preserved'],'content':['preserved'],'pages':[{'id':'guide/drink','body':{'en_US':'Old instructions'}}]}
+  self.after={**self.before,'version':'0.1.113','pages':[{'id':'guide/drink','body':{'en_US':'Reviewed short instructions'}}]}
+  pages=json.dumps(self.before['pages']).encode()
+  self.review={'schema':1,'test_only':True,'page_count':1,'before_payload_except_version_sha256':m.object_digest(self.before),'after_payload_except_version_sha256':m.object_digest({k:v for k,v in self.after.items()if k!='version'}),'before_pages_sha256':hashlib.sha256(pages).hexdigest(),'before_pages_gzip_base64':base64.b64encode(gzip.compress(pages)).decode()}
+ def test_reviewed_copy_restores_only_guide_pages(self):
+  restored=m.restore_reviewed_guide(self.after,self.review)
+  self.assertEqual(restored,{**self.before,'version':'0.1.113'})
+  self.assertEqual(self.after['pages'][0]['body']['en_US'],'Reviewed short instructions')
+ def test_unreviewed_copy_or_gameplay_changes_are_rejected(self):
+  for field,value in [('recipes',['unreviewed']),('content',['unreviewed']),('pages',[{'id':'guide/drink','body':{'en_US':'Unreviewed copy'}}])]:
+   with self.assertRaises(AssertionError):m.restore_reviewed_guide({**self.after,field:value},self.review)
+ def test_corrupt_guide_predecessor_is_rejected(self):
+  corrupt={**self.review,'before_pages_gzip_base64':base64.b64encode(gzip.compress(b'[]')).decode()}
+  with self.assertRaises(AssertionError):m.restore_reviewed_guide(self.after,corrupt)
 if __name__=='__main__':unittest.main()
