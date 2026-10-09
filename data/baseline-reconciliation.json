@@ -2404,6 +2404,31 @@
           ]
         }
       }
+    },
+    {
+      "release": "0.1.120",
+      "files": {
+        "runtime/BP/scripts/effects.js": {
+          "before": "440035b485b8c7159abc82ab8864c3b189162acca3f31e73ebd503db79339a3b",
+          "after": "12a8a45ddd2d3f533aab9ea2762fbccaed4f67b51ceb79ac2745dd950457a09e",
+          "reason": "Current CF9066406 EventHandlers onLivingIncomingDamage checks the direct LivingEntity and a living non-boss target without using the ground-crit melee/explosion tag filter. onLivingDamagePre checks the direct LivingEntity for elbow feedback, while ground crit independently retains its Player/melee/vanilla-crit conditions. Fix only these admission predicates; preserve all damage formulas, accepted-feedback delivery, 84-class fish gate, recipes, guide and storage. Targeted registered-callback regressions in combat-source.test.mjs cover direct living explosions, projectile owners, health-only boats, bosses and dead targets, and accepted-hurt-feedback.test.mjs keeps cancellation/rejection and captured-position delivery. Complete Incoming cancellation/reentry/fallback/head lifecycle remains explicitly open.",
+          "reviewedPredecessorCommit": "a16855806c93e0ff32877b0d1177eeeb2eb1fa90",
+          "reviewedSourceCommit": "da2ee8c5e001c329f0e610d7403307aa25faacb7",
+          "reviewDocument": "docs/RELEASE-NOTES-0.1.120.md",
+          "reverseOps": [
+            [
+              44,
+              47,
+              ""
+            ],
+            [
+              54,
+              56,
+              "  const behead=active(attacker,'beheading');if(melee&&behead&&!['minecraft:ender_dragon','minecraft:wither','minecraft:warden'].includes(target.typeId)&&Math.random()<.04+.03*behead.amplifier){e.damage=10000;headDrops.set(target.id,true);}\n  if(!e.damageSource.damagingProjectile&&e.damageSource.cause!=='projectile'&&active(attacker,'elbow_strike'))combatSound(e,attacker,NS+'.ice_tea_eat',{volume:.6,pitch:1});\n"
+            ]
+          ]
+        }
+      }
     }
   ]
 }
