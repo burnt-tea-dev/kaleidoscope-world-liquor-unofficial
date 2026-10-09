@@ -2321,6 +2321,56 @@
           "reason": "Current author CF9066406 / Forge9066402 Dassai Q3-Q6 Luck amplifiers1,3,5,7; only this exact selected source numeric difference is projected for old preservation checks."
         }
       }
+    },
+    {
+      "release": "0.1.113",
+      "files": {
+        "runtime/BP/scripts/respawn-metadata.js": {
+          "before": "980ec2ddf96b0ddd5d8d36551060d555089308b6d4889726fb4a89465ebbe951",
+          "after": "c1eeabd69e4187fc34ac41c643ed580de2687a642752a8380784ed1e159eb044",
+          "reason": "W113 appended exact source review. Only an observed changed spawn point at the same charged Nether anchor, with unchanged positive charge, records source yaw zero and nonforced metadata. Same-tick same-anchor repeats preserve the first changed-point witness; retained callback cancellation, a different target or charge, respawn and leave retire pending observations. The existing bed and declaration contracts and confirmed metadata persist. These are source and SDK-shaped callback regressions, not Native Player lifecycle or rendered-client acceptance. Focused regressions: tests/respawn-metadata.test.mjs [a confirmed changed charged Nether anchor records source zero yaw and nonforced status, surviving a new player handle; an unchanged anchor point does not invent metadata or replace declared forced/yaw facts; charging, wrong dimension, changed block and unrelated point cannot confirm a source anchor set; a held-use callback can confirm the full anchor after charging, while cancellation still prevents capture; a same-tick anchor repeat retains the first changed-point observation; later cancellation or a different target cannot commit the earlier anchor observation; the existing first bed observation also survives an uncancelled same-bed held callback; respawn and leave discard an unconfirmed gesture while retaining confirmed point metadata]; tests/respawn-runtime.test.mjs [a production observed anchor set enables Respawn without an external declaration when keepInventory is false].",
+          "reviewedPredecessorCommit": "ed78beed3204a8a9e3c3a83d48350fb0e84ba516",
+          "reviewedSourceCommit": "a5b22dfb05176f626b89de3f46f1ecc1806e8f62",
+          "reviewDocument": "docs/RELEASE-NOTES-0.1.113.md",
+          "reverseOps": [
+            [
+              0,
+              3,
+              "// Java stores the player's yaw when setting a bed spawn; Native exposes only\n// the point. Persist only an observed bed interaction or an explicit adapter\n// declaration. An existing point alone cannot reconstruct historical metadata.\n"
+            ],
+            [
+              33,
+              34,
+              "  if (!p || !Number.isFinite(yaw) || !['declared', 'observed_bed_interaction'].includes(value.basis)) return undefined;\n"
+            ],
+            [
+              113,
+              152,
+              ""
+            ],
+            [
+              157,
+              181,
+              "    if (event.cancel || event.isFirstEvent === false) return;\n    const capture = captureBedInteraction(event.player, event.block);\n    if (!capture) return;\n    pending.set(event.player.id, capture);\n"
+            ],
+            [
+              182,
+              185,
+              "      if (pending.get(event.player.id) !== capture) return;\n      pending.delete(event.player.id);\n      try { if (!event.cancel) confirmBedInteraction(event.player, capture); } catch {}\n"
+            ],
+            [
+              187,
+              191,
+              ""
+            ],
+            [
+              202,
+              203,
+              "  const handle = {before, interval};\n"
+            ]
+          ]
+        }
+      }
     }
   ]
 }

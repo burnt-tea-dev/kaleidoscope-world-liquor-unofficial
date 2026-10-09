@@ -1,8 +1,27 @@
 # Change history
 
+## 0.1.116
+
+保留已發布主線 67 個三語指南條目，整合確認下界重生錨修補，配對 Tavern T139／Grilling G122；保存舊 trial 與已發布 W113 的各自來源及歷史。 見 [本版說明](docs/RELEASE-NOTES-0.1.116.md)。
+
 ## 0.1.113
 
 Rewrite all 67 product and furniture guide entries with brief uses, complete preparation data and accurate platform limits. Pair with Tavern 0.6.136 while retaining W112 gameplay, data, assets and saved identities; see [release scope](docs/RELEASE-NOTES-0.1.113.md).
+## 0.1.115
+
+- Pair exactly with Tavern T138 while preserving the confirmed-anchor implementation and all current author data, assets and gameplay.
+- Retain prior and parallel source histories; current native/CI/client/private LIVE scopes remain distinct.
+
+## 0.1.114
+
+- 保留 W113 全部重生錨／作者適配，僅同步 identity 與 Tavern 0.6.137 宿主相依。
+- [本版驗證與限制](docs/RELEASE-NOTES-0.1.114.md)。
+
+
+## 0.1.113
+
+- 確認原生下界重生錨的新出生點 metadata，保留 repeat／取消／重生／離線邊界，配對 T136 與已審查 G120 helper。
+- 詳細範圍及驗收限制見 [本版說明](docs/RELEASE-NOTES-0.1.113.md)。
 
 ## 0.1.112
 

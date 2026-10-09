@@ -9,7 +9,7 @@ import {AcceptedHurtFeedback} from '../runtime/BP/scripts/accepted-hurt-feedback
 import {JavaKillCredit} from '../runtime/BP/scripts/kill-credit.js';
 function fixture({dimension='nether',keepInventory=true,spawn=true}={}){
  const calls=[],overrides=new Map(),key=p=>[p.x,p.y,p.z].join(',');
- const makeBlock=(id,p,states={})=>({typeId:id,location:{...p},dimension:d,isWaterlogged:false,permutation:{getAllStates:()=>({...states}),withState:(name,value)=>{calls.push(['charge-state',name,value]);return {name,value};}},setPermutation:value=>calls.push(['charge',value])});
+ const makeBlock=(id,p,states={})=>({typeId:id,location:{...p},dimension:d,isWaterlogged:false,permutation:{getAllStates:()=>({...states}),getState:name=>states[name],withState:(name,value)=>{calls.push(['charge-state',name,value]);return {name,value};}},setPermutation:value=>calls.push(['charge',value])});
  const d={id:'minecraft:'+dimension,getBlock:p=>overrides.get(key(p))??makeBlock(p.y<=63?'minecraft:stone':'minecraft:air',p),getEntities:()=>[player],playSound:(id,at,options)=>calls.push(['sound',d.id,id,{...at},{...options}])};
  const source={id:'minecraft:overworld',playSound:(id,at,options)=>calls.push(['sound',source.id,id,{...at},{...options}])};
  const anchor=makeBlock('minecraft:respawn_anchor',{x:10,y:64,z:10},{respawn_anchor_charge:2});overrides.set('10,64,10',anchor);
@@ -24,9 +24,9 @@ function production(f){
  vm.runInContext(source,context);vm.runInContext("applyEffect(actor,'kaleidoscope_world_liquor:respawn',1,0)",context);
 }
 function registeredProduction(f){
- const callbacks=[],deferred=[],intervals=[],worldProperties=new Map();
+ const callbacks=[],deferred=[],intervals=[],interactions=[],worldProperties=new Map();
  const signal=()=>({subscribe:fn=>fn});
- f.world.beforeEvents={entityHurt:signal(),playerInteractWithBlock:signal()};
+ f.world.beforeEvents={entityHurt:signal(),playerInteractWithBlock:{subscribe:fn=>{interactions.push(fn);return fn;}}};
  f.world.afterEvents=Object.fromEntries(['entityHurt','entityRemove','playerSpawn','playerLeave','playerButtonInput','entityDie','playerBreakBlock'].map(name=>[name,signal()]));
  f.world.getAllPlayers=()=>[f.player];f.world.getEntity=id=>id===f.player.id?f.player:{id,typeId:'minecraft:cow'};
  f.world.getDynamicProperty=key=>worldProperties.get(key);f.world.setDynamicProperty=(key,value)=>worldProperties.set(key,value);
@@ -34,7 +34,7 @@ function registeredProduction(f){
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
  const context=vm.createContext({...frostEffectFixture,world:f.world,system,applyJavaRespawn,installJavaRespawn,JavaKillCredit,AcceptedHurtFeedback,CriticalFeedback:class{},MolangVariableMap:class{},readTavernEffects:()=>({}),ItemStack:class{},actor:f.player});
  vm.runInContext(source,context);vm.runInContext('installEffects()',context);
- return {worldProperties,callbacks,emit:(id,payload,extra={})=>{const event={id:'kaleidoscope_world_liquor:'+id,sourceType:'Server',message:typeof payload==='string'?payload:JSON.stringify(payload),...extra};for(const callback of callbacks)callback(event);},again:()=>vm.runInContext('installEffects()',context)};
+ return {worldProperties,callbacks,interact:event=>{for(const callback of interactions)callback(event);},flush:()=>{while(deferred.length)deferred.shift()();},emit:(id,payload,extra={})=>{const event={id:'kaleidoscope_world_liquor:'+id,sourceType:'Server',message:typeof payload==='string'?payload:JSON.stringify(payload),...extra};for(const callback of callbacks)callback(event);},again:()=>vm.runInContext('installEffects()',context)};
 }
 test('actual production Respawn uses the first Java anchor candidate without forced/yaw/provider and preserves source sound/Hunger order',()=>{
  setJavaRespawnContextProvider(undefined);const f=fixture();production(f);
@@ -54,6 +54,17 @@ test('known nonforced charged anchor consumes once after resolution and before t
  const f=fixture({keepInventory:false});assert.equal(resolveJavaRespawn(f.player,f.world).status,'unknown');assert.equal(f.calls.length,0);
  setJavaRespawnContextProvider(()=>({metadata:()=>({forced:false})}));production(f);setJavaRespawnContextProvider(undefined);
  assert.deepEqual(f.calls.map(row=>row[0]),['sound','charge-state','charge','teleport','sound','effect']);assert.deepEqual(f.calls[1],['charge-state','respawn_anchor_charge',1]);
+});
+test('a production observed anchor set enables Respawn without an external declaration when keepInventory is false',()=>{
+ setJavaRespawnContextProvider(undefined);const f=fixture({keepInventory:false}),anchorPoint=f.player.getSpawnPoint();let point;
+ f.player.getSpawnPoint=()=>point;
+ const r=registeredProduction(f);r.interact({player:f.player,block:f.anchor,isFirstEvent:true,cancel:false});
+ point=anchorPoint;r.interact({player:f.player,block:f.anchor,isFirstEvent:false,cancel:false});r.flush();
+ const result=resolveJavaRespawn(f.player,f.world);assert.equal(result.status,'ready');assert.equal(result.branch,'anchor');assert.equal(result.consumeAnchor.charges,2);
+ production(f);
+ assert.deepEqual(f.calls.map(row=>row[0]),['sound','charge-state','charge','teleport','sound','effect']);
+ assert.deepEqual(f.calls[1],['charge-state','respawn_anchor_charge',1]);assert.deepEqual(f.calls[3][1],{x:10.5,y:64,z:9.5});
+ assert.deepEqual(f.calls[5],['effect','hunger',300,{amplifier:0}]);
 });
 test('source default heightmaps resolve Native dynamic-height sentinel by a real column, without using raw Y or a height cap',()=>{
  const f=fixture({dimension:'overworld',spawn:false});f.overrides.clear();

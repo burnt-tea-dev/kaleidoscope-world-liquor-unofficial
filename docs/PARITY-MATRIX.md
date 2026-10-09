@@ -1,6 +1,14 @@
+## 當前 W116／T139
+
+已保留發布主線的三語指南與七入口，並合入固定原料／光效／Mob／確認重生錨修補。新配套完整 native first 20／restart 21 案例及嚴格來源 recorder 已通過；G122 完整家族、原生 Player、畫面音效與私人 LIVE 仍未驗收。詳見 [本版說明](RELEASE-NOTES-0.1.116.md)。以下保留各功能的原始來源與範圍。
+
 # Java / Bedrock parity matrix
 
-Current development candidate: W0.1.110 paired with T0.6.132 and optional G2.8.119. The current Forge1.1.12 / NeoForge1.1.11 source review corrects Dassai Q3–Q6 Luck amplifiers and four coupled cup meshes/atlases plus two authored inventory icons. Shared Respawn helper repairs and prior compact paths/storage/guide remain. Native Java Luck loot, Forge integration/event phases, the separate NeoForge26 branch and rendered-client acceptance remain incomplete. See [current source review](../data/current-author-review-20261009.json) and [release scope](RELEASE-NOTES-0.1.110.md).
+## Current repair candidate: World Liquor 0.1.115 / Tavern 0.6.138
+
+W115 retains the complete confirmed-anchor and current-author implementation, changing only release/host identity for the combined native-countdown and reload repair. The frozen T138/W115 pair passed a new complete zero-player native first/save/restart and source-bound recorder. [Current scope](RELEASE-NOTES-0.1.115.md) keeps final canonical CI and Player/client/private LIVE acceptance separate.
+
+Current development candidate: W0.1.114 paired with T0.6.137 and optional G2.8.120. [W114 scope](RELEASE-NOTES-0.1.114.md) preserves the W113 anchor repair and all author assets, changing only identity and the host dependency for the native aura reload repair. Old/unknown anchors and actual Player/client/private LIVE acceptance remain pending.
 
 Audited Bedrock sources: T0.6.126 ac4932b4 / W0.1.103 56314bac. This initial Phase0 matrix covers the inspected player-facing priorities; complete T1/T2/W1 recipe, timing, storage and effect coverage will be added in subsequent phases, not presumed complete. A single future slice reference awaits the owner decision. L0=source inspection, L1=executed source/oracle, L2=scoped native-engine scene, L3=paired actual-client observation. Historical partial L3 cannot certify later releases or all contexts. T/ and W/ identify the repository.
 
