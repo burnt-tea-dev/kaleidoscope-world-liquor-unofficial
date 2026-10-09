@@ -38,3 +38,14 @@ Tavern T141 審查來源固定
 `72fb6f6ee3b8f1a014e8f9395352fa879c37775c`。Integration 與 release
 request 共同引用此提交；後續 Tavern 只固定本版 CI peer，凍結 runtime
 保持相同。GitHub checks 仍核對最終各自完整來源，不把來源相同視作真人驗收。
+
+## 凍結封裝
+
+本版 runtime 審查來源 `abf7a605a1ac8e0a81f3bce620a9c04bdafbaad8`，完整 Git
+tree `3abbe7428120189f1bad0a5e03001bdffd5176d4`；本地乾淨建置
+提交 `42a87ae7618cee226862c690c123cb6e562edd98` 與其完整 tree 相同。
+封裝 `Kaleidoscope_World_Liquor_Unofficial_0.1.118_preview1.mcaddon`
+為 7166915 bytes，SHA256
+`983e11fd4811ff695f26021a408168321b4069d1a26d327eeb440c7cb6beaa8f`。
+後續只增加此來源／archive 審查 metadata，凍結 runtime 未變；
+正式 PR 的完整來源仍須通過其本身 CI。發布與實際畫面另以各自結果為準。

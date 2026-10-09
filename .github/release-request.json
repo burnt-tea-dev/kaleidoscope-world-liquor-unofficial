@@ -10,5 +10,7 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "The final T141/W118 candidate requires its own complete canonical native-persistence CI, with all 20 first/21 restart cases and exact recorded source/overlay binding. Preserved T139/W116 and guide T140/W117 evidence retain their original identities. Actual Player, rendered client, G122/private full family, saved-world and LIVE acceptance remain separate."
+  "native_evidence_scope": "The final T141/W118 candidate requires its own complete canonical native-persistence CI, with all 20 first/21 restart cases and exact recorded source/overlay binding. Preserved T139/W116 and guide T140/W117 evidence retain their original identities. Actual Player, rendered client, G122/private full family, saved-world and LIVE acceptance remain separate.",
+  "expected_archive_sha256": "983e11fd4811ff695f26021a408168321b4069d1a26d327eeb440c7cb6beaa8f",
+  "reviewed_runtime_source": "abf7a605a1ac8e0a81f3bce620a9c04bdafbaad8"
 }
