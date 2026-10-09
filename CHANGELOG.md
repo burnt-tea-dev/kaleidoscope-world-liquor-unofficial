@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.109
+
+Pair both packs with Tavern 0.6.132 for its shared splash dispatch, shaker input/rollback, living-recipient and presentation repairs. World Liquor gameplay, recipes and guide data retain their existing content; [release scope](docs/RELEASE-NOTES-0.1.109.md) separates exact pairing from native/client/live acceptance.
+
 ## 0.1.108 candidate
 
 Prepare both packs for Tavern 0.6.131 and recognize Grilling 2.8.118's two additional zero-collision displays in shared Respawn checks. Unknown helpers remain rejected. Release freeze and native/client/live verification are pending; see [candidate scope](docs/RELEASE-NOTES-0.1.108.md).
