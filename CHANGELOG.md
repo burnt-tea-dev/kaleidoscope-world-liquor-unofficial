@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.121
+
+Pair both packs with Tavern T144 and pin the current G125 integration peer. Preserve all W120 gameplay, guide data and assets; see [release scope](docs/RELEASE-NOTES-0.1.121.md).
+
 ## 0.1.120
 
 Fix direct LivingEntity admission for beheading and elbow feedback while preserving ground-crit filters, all W119 gameplay data and shared guide content. Consolidate current gap and verification indexes; complete beheading phases/head ownership and other native gaps remain open. See [source scope](docs/RELEASE-NOTES-0.1.120.md).
