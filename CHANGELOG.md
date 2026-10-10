@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.122
+
+Pair both packs with Tavern T145 and keep the current G125 integration peer. Preserve all W121 gameplay, guide data and assets; see [release scope](docs/RELEASE-NOTES-0.1.122.md).
+
 ## 0.1.121
 
 Pair both packs with Tavern T144 and pin the current G125 integration peer. Preserve all W120 gameplay, guide data and assets; see [release scope](docs/RELEASE-NOTES-0.1.121.md).

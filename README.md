@@ -1,4 +1,4 @@
-## Current maintained baseline: 0.1.121
+## Current maintained baseline: 0.1.122
 
 W121 pairs with Tavern T144 and Grilling G125, preserving W120's direct LivingEntity admission fixes for beheading and elbow feedback. All 67 guide pages, 84-class fish admission, recipes, confirmed-anchor metadata and author assets remain from W119. The current complete-family deployment, exact receipt and verification scope are recorded in the [family index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md). Human client acceptance and complete Java parity remain pending; see the [remaining scope](docs/PARITY-MATRIX.md).
 
@@ -8,7 +8,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.144** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.145** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
 Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.125** is the exact public CI helper reference and remains optional for standalone use. The deployed Cookery integration and receiver evidence follow the current family index; historical peer checks retain their original source.
 
