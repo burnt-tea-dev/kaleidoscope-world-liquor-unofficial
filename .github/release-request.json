@@ -1,17 +1,19 @@
 {
-  "version": "0.1.120",
-  "tag": "v0.1.120-preview.1",
-  "title": "森羅物語：世界名酒 0.1.120 測試版｜生物戰鬥入口修復",
+  "version": "0.1.124",
+  "tag": "v0.1.124-preview.1",
+  "title": "森羅物語：世界名酒 0.1.124 測試版｜配對酒館 0.6.147",
   "prerelease": true,
-  "tavern_commit": "27b7f7f9032264692141924eda61d147ec96e615",
-  "validation_evidence": "docs/COMBAT-RELEASE-VALIDATION-0.1.120.json",
+  "tavern_commit": "b0e5351e33ad2d4cde2aeeca91f540b67267a69d",
+  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.124.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "This candidate corrects direct LivingEntity/alive-target admission only. Two existing targeted source/API suites passed 16 named cases; the exact paired public guide passed 223 entries/31 categories/216 packets. These are not Native or Player/client acceptance. Prior W119/T142/G123 LIVE and T141/W118 scoped Native evidence retain their original source, identities and receipts. Complete Incoming cancellation/reentry/fallback/head lifecycle, Native force/collision/loot, matched T143/G124/W120 full-family BDS, saved-world and LIVE verification remain separate.",
-  "expected_archive_sha256": "5d66d8387d56b5984cc21494174050b71bb98cba5e68040c1fc5a0819a9dcdfb",
-  "reviewed_runtime_source": "af5af53f674ff00f57cbac4d9fe1babeaafc5cdc",
-  "new_bds_test": false
+  "native_evidence_scope": "W124 changes only release identity and exact Tavern T147 dependencies. Current family static, BDS, saved-world and live results are tracked separately in the family index; historic native/client evidence remains bound to its original source. Client acceptance and complete Java parity remain pending.",
+  "expected_archive_sha256": "5c5a0352fd743258f323e958d32be56fd2062752343da6afe1f934cdb1c122c5",
+  "reviewed_runtime_source": "63d6f5c11ffe6e3c5579212a51314c24466c49a8",
+  "new_bds_test": false,
+  "publication_request": false,
+  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.124.md"
 }
