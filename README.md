@@ -1,6 +1,6 @@
 ## Current maintained baseline: 0.1.124
 
-W124 is a draft-only exact dependency companion for Tavern T147 (HUD200) and the existing Grilling G125 CI peer. It preserves all W123 gameplay, recipes, guide data and assets, including W120's direct LivingEntity admission fixes for beheading and elbow feedback. All 67 guide pages, 84-class fish admission, recipes, confirmed-anchor metadata and author assets remain from W119. The current complete-family deployment, exact receipt and verification scope are recorded in the [family index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md). Human client acceptance and complete Java parity remain pending; see the [remaining scope](docs/PARITY-MATRIX.md).
+W124 is the exact dependency companion for Tavern T147 (HUD200), checked with Grilling G128. The public archive contains every canonical BP/RP file without server-only gameplay changes; see the [current publication scope](docs/RELEASE-PUBLICATION-0.1.124.md). It preserves all W123 gameplay, recipes, guide data and assets, including W120's direct LivingEntity admission fixes for beheading and elbow feedback. All 67 guide pages, 84-class fish admission, recipes, confirmed-anchor metadata and author assets remain from W119. The current complete-family deployment, exact receipt and verification scope are recorded in the [family index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md). Human client acceptance and complete Java parity remain pending; see the [remaining scope](docs/PARITY-MATRIX.md).
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -10,7 +10,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 Use Tavern **0.6.147** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
-Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.125** is the exact public CI helper reference and remains optional for standalone use. The deployed Cookery integration and receiver evidence follow the current family index; historical peer checks retain their original source.
+Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.128** is the exact public CI helper reference and remains optional for standalone use. The deployed Cookery integration and receiver evidence follow the current family index; historical peer checks retain their original source.
 
 Back up existing worlds before updating both sides of a package. Use the [current Releases](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases) rather than historical archives committed in `downloads/`. Source and release checks do not certify a live installation or client rendering.
 

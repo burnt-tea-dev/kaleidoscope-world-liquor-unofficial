@@ -4,14 +4,45 @@ on:
     branches: [main]
     paths: ['.github/release-request.json']
   workflow_dispatch:
+    inputs:
+      publish_release:
+        description: Publish the verified current release after family deployment
+        required: true
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
   group: world-liquor-publication
   cancel-in-progress: false
 jobs:
-  publish:
+  authorization:
     if: github.repository == 'casama233/kaleidoscope-world-liquor-unofficial' && github.repository_id == '1385218112' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      publish: ${{ steps.request.outputs.publish }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - id: request
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          MANUAL_PUBLISH: ${{ inputs.publish_release }}
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          request=json.loads(Path('.github/release-request.json').read_text())
+          manual=os.environ['EVENT_NAME']=='workflow_dispatch'
+          publish=(os.environ['MANUAL_PUBLISH']=='true') if manual else request.get('publication_request',True)
+          assert type(publish) is bool
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('publish='+str(publish).lower()+'\n')
+          PY
+  publish:
+    needs: authorization
+    if: needs.authorization.outputs.publish == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -75,6 +106,17 @@ jobs:
       - name: Include source and static validation evidence
         run: |
           printf '%s\n' "$SOURCE_SHA" > dist/SOURCE_COMMIT
+          python - <<'PY'
+          import json,shutil
+          from pathlib import Path
+          request=json.loads(Path('.github/release-request.json').read_text())
+          for key,target in [('publication_notes','RELEASE-NOTES.md'),('validation_evidence','CURRENT-PUBLICATION.json')]:
+              if key not in request:continue
+              path=Path(request[key])
+              assert not path.is_absolute() and '..' not in path.parts and path.parts[0]=='docs'
+              assert path.is_file() and not path.is_symlink()
+              shutil.copy2(path,Path('dist',target))
+          PY
           cp docs/BDS-FRIEND-MERGE-20261001.json docs/BDS-MIXOLOGY-20261001.json docs/BDS-FAMILY-20261001.json docs/BDS-JAVA-PARITY-20261001.json dist/
       - name: Stage or resume identical draft, verify assets, then publish
         env:
