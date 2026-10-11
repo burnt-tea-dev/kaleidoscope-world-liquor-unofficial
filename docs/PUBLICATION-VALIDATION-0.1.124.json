@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "version": "0.1.124",
+  "reviewed_runtime_source": "63d6f5c11ffe6e3c5579212a51314c24466c49a8",
+  "runtime_pr": 106,
+  "successful_runtime_ci": 38125073667,
+  "archive_sha256": "5c5a0352fd743258f323e958d32be56fd2062752343da6afe1f934cdb1c122c5",
+  "paired_versions": {
+    "tavern": "0.6.147",
+    "grilling": "2.8.128"
+  },
+  "runtime_changes_since_reviewed_source": false,
+  "source_ci_scope": "Actual successful PR106 checks retain their original full source tree. Publication metadata and updated paired CI pins require their own checks before merge.",
+  "family_evidence": "https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md",
+  "client": false,
+  "production_ready": false,
+  "client_acceptance": "pending",
+  "full_java_parity": false,
+  "reviewed_source_tree": "f95b5b25e02ed4a90c7cfab9bb705860c13fcdc0"
+}
