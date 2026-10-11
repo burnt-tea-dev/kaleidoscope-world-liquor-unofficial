@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.124
+
+Draft-only exact pairing with Tavern T147 (HUD200). Preserve all W123 gameplay, guide data, recipes and assets; update only package, module, dependency and payload identities with an append-only freeze. See [candidate scope](docs/RELEASE-NOTES-0.1.124.md).
+
 ## 0.1.122
 
 Pair both packs with Tavern T145 and keep the current G125 integration peer. Preserve all W121 gameplay, guide data and assets; see [release scope](docs/RELEASE-NOTES-0.1.122.md).
