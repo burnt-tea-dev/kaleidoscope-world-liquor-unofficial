@@ -1,19 +1,19 @@
 {
-  "version": "0.1.126",
-  "tag": "v0.1.126-preview.1",
-  "title": "森羅物語：世界名酒 0.1.126 測試版｜有界啟動準備",
+  "version": "0.1.127",
+  "tag": "v0.1.127-preview.1",
+  "title": "森羅物語：世界名酒 0.1.127 測試版｜有界原生 JSON 與酒館150配對",
   "prerelease": true,
-  "tavern_commit": "93b18d7c7e637b95d21eeae8711f81f7b914dc55",
-  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.126.json",
+  "tavern_commit": "db4dbaa61369c2119495632308e5dbee46f50288",
+  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.127.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W126 bounds startup registration preparation before BEGIN and pairs Tavern T149. Source differential preserves W125 protocol bytes aside from reviewed release identity; recipes/assets/storage unchanged. Current native performance, complete-family save/LIVE and rendered-client results are separate, never inherited from W125.",
-  "expected_archive_sha256": "f3379fbddbc76eb097dd69b91323914a5365f024216cb39539fb0eb672a7ee6f",
-  "reviewed_runtime_source": "f6e529a4a315006e0758fac76cb8ce9253190240",
+  "native_evidence_scope": "W127 replaces per-character JavaScript quoting with bounded native JSON quoting and pairs Tavern T150. Complete W125 protocol packets are preserved aside from release identity; recipes/assets/storage unchanged. New source/native/save/LIVE/client results are separately recorded, never inherited from W126.",
+  "expected_archive_sha256": "30f48fd172526114453ab0439f0be6c1cd31561e84ef9a8147b95778568eb7c2",
+  "reviewed_runtime_source": "c820d8838a6376513ddf789215e3d03c4169da59",
   "new_bds_test": false,
   "publication_request": false,
-  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.126.md"
+  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.127.md"
 }
