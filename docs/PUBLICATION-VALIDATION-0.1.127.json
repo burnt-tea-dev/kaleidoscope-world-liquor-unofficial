@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "version": "0.1.127",
+  "reviewed_runtime_source": "c820d8838a6376513ddf789215e3d03c4169da59",
+  "reviewed_source_tree": "7dfb8bda2dc6760997f05ca9bec48f6ed5c3800a",
+  "archive_sha256": "30f48fd172526114453ab0439f0be6c1cd31561e84ef9a8147b95778568eb7c2",
+  "paired_versions": {
+    "tavern": "0.6.150",
+    "grilling": "2.8.130"
+  },
+  "paired_source": {
+    "tavern": "db4dbaa61369c2119495632308e5dbee46f50288",
+    "grilling": "a567e17c0316f7f2175dfef07004bb944634ca90"
+  },
+  "runtime_changes_since_reviewed_source": false,
+  "source_ci_scope": "Frozen baseline/history and canonical archive checks passed; the actual production registration packet regression passed. Final PR CI and fresh family native/save/LIVE remain pending and cannot be inferred from prior builds.",
+  "family_evidence": "https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md",
+  "client": false,
+  "production_ready": false,
+  "client_acceptance": "pending",
+  "full_java_parity": false,
+  "runtime_changed_files": [
+    "runtime/BP/manifest.json",
+    "runtime/BP/scripts/payload.js",
+    "runtime/BP/scripts/sdk/util.js",
+    "runtime/RP/manifest.json"
+  ],
+  "unchanged_runtime_files": 885,
+  "private_capabilities_included": false
+}
