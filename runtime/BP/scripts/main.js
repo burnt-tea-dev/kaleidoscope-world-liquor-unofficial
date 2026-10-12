@@ -19,6 +19,8 @@ system.beforeEvents.startup.subscribe(e=>{
 world.afterEvents.worldLoad.subscribe(()=>{
  installFoodPhaseTrace(system,ScriptEventSource.Server);
  installFurniture();installEffects();installDrinkAudio(world,system,payload.content);const foundationPayload=withFoundation(buildRegistrationPayload(payload,id=>!!ItemTypes.get(id)));
-setFoundationClient(registerTavernExtension(system,foundationPayload),system,world,foundationPayload);
+ // The SDK retains early host readiness while preparing this exact payload
+ // over bounded slices; it emits no transfer until every packet is validated.
+ setFoundationClient(registerTavernExtension(system,foundationPayload),system,world,foundationPayload);
  console.log('[World Liquor] '+payload.version+' preview: '+payload.content.length+' drink descriptors, '+foundationPayload.recipes.length+' active recipes ('+(payload.recipes.length-foundationPayload.recipes.length)+' optional Cookery recipes unavailable). Client visuals require device review.');
 });
