@@ -1,19 +1,19 @@
 {
-  "version": "0.1.127",
-  "tag": "v0.1.127-preview.1",
-  "title": "森羅物語：世界名酒 0.1.127 測試版｜有界原生 JSON 與酒館150配對",
+  "version": "0.1.128",
+  "tag": "v0.1.128-preview.1",
+  "title": "森羅物語：世界名酒 0.1.128 測試版｜酒館151原生查詢配對",
   "prerelease": true,
-  "tavern_commit": "db4dbaa61369c2119495632308e5dbee46f50288",
-  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.127.json",
+  "tavern_commit": "2747f6ffca534033878d45b57a5f19d150cde415",
+  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.128.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W127 replaces per-character JavaScript quoting with bounded native JSON quoting and pairs Tavern T150. Complete W125 protocol packets are preserved aside from release identity; recipes/assets/storage unchanged. New source/native/save/LIVE/client results are separately recorded, never inherited from W126.",
-  "expected_archive_sha256": "30f48fd172526114453ab0439f0be6c1cd31561e84ef9a8147b95778568eb7c2",
-  "reviewed_runtime_source": "c820d8838a6376513ddf789215e3d03c4169da59",
+  "native_evidence_scope": "W128 changes release identity and pairs with T151 native item-definition cache. SDK, recipes, timing, guides, assets and storage unchanged. Source lookup reduction is not native/client acceptance; this candidate needs its own CI and family saved-load/admission/deployment.",
+  "expected_archive_sha256": "0908b6c6c33e110ddb0e2e648948d2846d3a09742cdc7cb7ccebc58e88c13632",
   "new_bds_test": false,
   "publication_request": false,
-  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.127.md"
+  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.128.md",
+  "reviewed_runtime_source": "3613e7a45de8af1ae196fdc8202e52cbc373c832"
 }
