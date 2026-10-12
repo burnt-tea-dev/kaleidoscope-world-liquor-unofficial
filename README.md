@@ -1,8 +1,8 @@
-## Current maintained baseline: 0.1.126
+## Current maintained baseline: 0.1.127
 
-W126 prepares extension registration in bounded startup batches and pairs with Tavern **0.6.149**, checked with Grilling **2.8.130**. It preserves W125 recipes, timing, guide data, fish admission, assets and storage schema. [Candidate scope](docs/RELEASE-NOTES-0.1.126.md) separates source conservation from native performance and rendered-client acceptance.
+W127 uses bounded native JSON string escaping and pairs with Tavern **0.6.150**, checked with Grilling **2.8.130**. Complete registration packets, recipes, timing, guide data, fish admission, assets and storage schema are preserved. [Candidate scope](docs/RELEASE-NOTES-0.1.127.md) separates source conservation from native performance and rendered-client acceptance.
 
-The most recent published/live release remains [W125, paired with Tavern T148](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.125-preview.1) until this family passes admission and deployment. Its [public-download/live comparison](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/PUBLIC-DOWNLOAD-LIVE-UI-20261012.md) retains its original verification scope. Public packaging reads canonical BP/RP directly; private Cookery/AMW capabilities are separate sources and are not included. The [family index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md) records actual deployment and client status.
+The most recent published/live release remains [W126, paired with Tavern T149](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.126-preview.1) until this family passes admission and deployment. Its [public-download/live comparison](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/PUBLIC-DOWNLOAD-LIVE-HUD-20261013.md) retains its original verification scope. Public packaging reads canonical BP/RP directly; private Cookery/AMW capabilities are separate sources and are not included. The [family index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md) records actual deployment and client status.
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -10,7 +10,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.149** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.150** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
 Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.130** is the exact public CI helper reference and remains optional for standalone use. The deployed Cookery integration and receiver evidence follow the current family index; historical peer checks retain their original source.
 
@@ -30,7 +30,7 @@ The archive and release integrity checksum are written to `dist/`; its filename 
 
 ## Checks
 
-Integration checks use the exact paired source commits in [.github/baseline-integration.json](.github/baseline-integration.json). W126 pins exact T149/G130 source for public CI. This candidate has no new native/BDS, saved-world, rendered-client or LIVE acceptance; prior deployment evidence in the family index keeps its original identity. The published guide, machine metadata, fish gate and confirmed-anchor repairs remain intact. The complete 84-class projection is checked against the paired Tavern source. The public guide remains 223 entries; four AMW producer pages belong to the 227-entry complete-family projection. The [published W113 guide report](docs/GUIDE-VALIDATION-0.1.113.json), published W117 and earlier trial evidence keep their original sources; new-candidate CI, native persistence, saved-world migration and human client acceptance are tracked separately.
+Integration checks use the exact paired source commits in [.github/baseline-integration.json](.github/baseline-integration.json). W127 pins exact T150/G130 source for public CI. This candidate has no new native/BDS, saved-world, rendered-client or LIVE acceptance; prior deployment evidence in the family index keeps its original identity. The published guide, machine metadata, fish gate and confirmed-anchor repairs remain intact. The complete 84-class projection is checked against the paired Tavern source. The public guide remains 223 entries; four AMW producer pages belong to the 227-entry complete-family projection. The [published W113 guide report](docs/GUIDE-VALIDATION-0.1.113.json), published W117 and earlier trial evidence keep their original sources; new-candidate CI, native persistence, saved-world migration and human client acceptance are tracked separately.
 
 For cross-pack source checks, use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
 
