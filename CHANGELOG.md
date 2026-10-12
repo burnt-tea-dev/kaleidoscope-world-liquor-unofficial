@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.126
+
+Prepare complete registration packets in bounded startup batches before BEGIN; preserve protocol bytes, recipes, timing, assets and storage semantics. Pair with Tavern T149 and Grilling G130. See [release scope](docs/RELEASE-NOTES-0.1.126.md). Native performance and human acceptance remain separately tracked.
+
 ## 0.1.124
 
 Draft-only exact pairing with Tavern T147 (HUD200). Preserve all W123 gameplay, guide data, recipes and assets; update only package, module, dependency and payload identities with an append-only freeze. See [candidate scope](docs/RELEASE-NOTES-0.1.124.md).
