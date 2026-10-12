@@ -1,19 +1,18 @@
 {
-  "version": "0.1.128",
-  "tag": "v0.1.128-preview.1",
-  "title": "森羅物語：世界名酒 0.1.128 測試版｜酒館151原生查詢配對",
+  "version": "0.1.129",
+  "tag": "v0.1.129-preview.1",
+  "title": "森羅物語：世界名酒 0.1.129 測試版｜酒館152同步分包校驗配對",
   "prerelease": true,
-  "tavern_commit": "2747f6ffca534033878d45b57a5f19d150cde415",
-  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.128.json",
+  "tavern_commit": "cf52c8fc677c7a11be9fc03619ecfe758b320ec6",
+  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.129.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W128 changes release identity and pairs with T151 native item-definition cache. SDK, recipes, timing, guides, assets and storage unchanged. Source lookup reduction is not native/client acceptance; this candidate needs its own CI and family saved-load/admission/deployment.",
-  "expected_archive_sha256": "0908b6c6c33e110ddb0e2e648948d2846d3a09742cdc7cb7ccebc58e88c13632",
+  "native_evidence_scope": "W129 changes release identity and pairs T152 synchronous per-chunk receiver integrity. SDK, recipes, timing, guides, assets and storage unchanged. Same-input packet/ACK equivalence is source evidence, not native/client performance; this candidate requires real CI and its own family saved-load/admission/deployment.",
+  "expected_archive_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
   "new_bds_test": false,
   "publication_request": false,
-  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.128.md",
-  "reviewed_runtime_source": "3613e7a45de8af1ae196fdc8202e52cbc373c832"
+  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.129.md"
 }
