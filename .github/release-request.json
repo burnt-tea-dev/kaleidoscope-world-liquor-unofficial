@@ -3,7 +3,7 @@
   "tag": "v0.1.129-preview.1",
   "title": "森羅物語：世界名酒 0.1.129 測試版｜酒館152同步分包校驗配對",
   "prerelease": true,
-  "tavern_commit": "cf52c8fc677c7a11be9fc03619ecfe758b320ec6",
+  "tavern_commit": "88c7fcb377bc958392bc86846faf491660116e13",
   "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.129.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
@@ -11,8 +11,9 @@
   "production_ready": false,
   "live_deployment": false,
   "native_evidence_scope": "W129 changes release identity and pairs T152 synchronous per-chunk receiver integrity. SDK, recipes, timing, guides, assets and storage unchanged. Same-input packet/ACK equivalence is source evidence, not native/client performance; this candidate requires real CI and its own family saved-load/admission/deployment.",
-  "expected_archive_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "expected_archive_sha256": "c084222f1fd358d4d264fd9d0047bd2d430dcf10ef8fd983c7946842f9ac6e2f",
   "new_bds_test": false,
   "publication_request": false,
-  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.129.md"
+  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.129.md",
+  "reviewed_runtime_source": "a73a5ec2525acc30bf71244d28f75ebd58128caa"
 }
