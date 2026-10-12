@@ -1,19 +1,19 @@
 {
-  "version": "0.1.125",
-  "tag": "v0.1.125-preview.1",
-  "title": "森羅物語：世界名酒 0.1.125 測試版｜配對酒館 0.6.148 UI bridge",
+  "version": "0.1.126",
+  "tag": "v0.1.126-preview.1",
+  "title": "森羅物語：世界名酒 0.1.126 測試版｜有界啟動準備",
   "prerelease": true,
-  "tavern_commit": "5912c8c79d8e4e5ed6074a9f0c58da27ae31f889",
-  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.125.json",
+  "tavern_commit": "93b18d7c7e637b95d21eeae8711f81f7b914dc55",
+  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.126.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W125 changes only release identity and exact Tavern T148 dependencies. Namespaced UI bridge changes belong to Tavern/Grilling canonical source; full channel arbitration and rendered-client acceptance remain pending. Complete-family/save/LIVE results are recorded separately in the family index and are not inherited from W124.",
-  "expected_archive_sha256": "b840b826e5bc25df9948b221ebd725820baa7caa8866d52df74f2263a475d131",
-  "reviewed_runtime_source": "7b91c75f814066b010ad0cfb4e4b169b6dac7965",
+  "native_evidence_scope": "W126 bounds startup registration preparation before BEGIN and pairs Tavern T149. Source differential preserves W125 protocol bytes aside from reviewed release identity; recipes/assets/storage unchanged. Current native performance, complete-family save/LIVE and rendered-client results are separate, never inherited from W125.",
+  "expected_archive_sha256": "f3379fbddbc76eb097dd69b91323914a5365f024216cb39539fb0eb672a7ee6f",
+  "reviewed_runtime_source": "f6e529a4a315006e0758fac76cb8ce9253190240",
   "new_bds_test": false,
   "publication_request": false,
-  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.125.md"
+  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.126.md"
 }
