@@ -1,19 +1,19 @@
 {
-  "version": "0.1.124",
-  "tag": "v0.1.124-preview.1",
-  "title": "森羅物語：世界名酒 0.1.124 測試版｜配對酒館 0.6.147",
+  "version": "0.1.125",
+  "tag": "v0.1.125-preview.1",
+  "title": "森羅物語：世界名酒 0.1.125 測試版｜配對酒館 0.6.148 UI bridge",
   "prerelease": true,
-  "tavern_commit": "b0e5351e33ad2d4cde2aeeca91f540b67267a69d",
-  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.124.json",
+  "tavern_commit": "5912c8c79d8e4e5ed6074a9f0c58da27ae31f889",
+  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.125.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W124 changes only release identity and exact Tavern T147 dependencies. Current family static, BDS, saved-world and live results are tracked separately in the family index; historic native/client evidence remains bound to its original source. Client acceptance and complete Java parity remain pending.",
-  "expected_archive_sha256": "5c5a0352fd743258f323e958d32be56fd2062752343da6afe1f934cdb1c122c5",
-  "reviewed_runtime_source": "63d6f5c11ffe6e3c5579212a51314c24466c49a8",
+  "native_evidence_scope": "W125 changes only release identity and exact Tavern T148 dependencies. Namespaced UI bridge changes belong to Tavern/Grilling canonical source; full channel arbitration and rendered-client acceptance remain pending. Complete-family/save/LIVE results are recorded separately in the family index and are not inherited from W124.",
+  "expected_archive_sha256": "b840b826e5bc25df9948b221ebd725820baa7caa8866d52df74f2263a475d131",
+  "reviewed_runtime_source": "7b91c75f814066b010ad0cfb4e4b169b6dac7965",
   "new_bds_test": false,
   "publication_request": false,
-  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.124.md"
+  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.125.md"
 }
