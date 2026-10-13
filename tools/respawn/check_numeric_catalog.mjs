@@ -2,12 +2,21 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {JAVA_BLOCK_CATALOG as C,JAVA_BLOCK_FLAGS as F,javaSourceStateKey,javaStaticStateFacts as lookup,javaDynamicStateObservation as dynamic} from '../../development/respawn/java-vanilla-block-catalog-1.21.1.js';
+import {javaBlockView,UnknownRespawnFact} from '../../runtime/BP/scripts/respawn-blocks.js';
 let checked=0;
 for(const [blockId,block] of Object.entries(C.blocks)){
  const names=Object.keys(block.properties).sort(),category=block.dynamic_shape?C.dynamic_states:C.static_states;
  let count=0;
  function enumerate(at,properties){
-  if(at===names.length){const key=javaSourceStateKey(blockId,properties),row=category[key];assert(row,'missing '+key);assert.equal(!!(row[1]&F.dynamic_shape),block.dynamic_shape);assert(row[0]>=0&&row[0]<C.shapes.length);assert(row[2]>=0&&row[2]<C.fluids.length);count++;return;}
+  if(at===names.length){const key=javaSourceStateKey(blockId,properties),row=category[key];assert(row,'missing '+key);assert.equal(!!(row[1]&F.dynamic_shape),block.dynamic_shape);assert(row[0]>=0&&row[0]<C.shapes.length);assert(row[2]>=0&&row[2]<C.fluids.length);
+   const view=javaBlockView({location:{x:0,y:0,z:0}},{id:blockId,properties});
+   for(const name of names)assert.equal(view.property(name),properties[name],key+' '+name);
+   for(const [name,bit] of Object.entries(F))assert.equal(view.flag(name),!!(row[1]&bit),key+' '+name);
+   assert.equal(view.nonemptyFluid(),!C.fluids[row[2]].empty,key);
+   if(!block.dynamic_shape||blockId==='minecraft:scaffolding')assert.deepEqual(view.collisionBoxes(),C.shapes[row[0]],key);
+   else if(blockId==='minecraft:powder_snow')assert.deepEqual(view.collisionBoxes(),[],key);
+   else assert.throws(()=>view.collisionBoxes(),UnknownRespawnFact,key);
+   count++;return;}
   const name=names[at];for(const value of block.properties[name])enumerate(at+1,{...properties,[name]:value});
  }
  enumerate(0,{});assert.equal(count,block.state_count);assert(category[block.default_key]);checked+=count;
@@ -26,4 +35,4 @@ assert.equal(lookup('minecraft:oak_slab'),undefined);assert.equal(lookup('minecr
 const powdered=C.blocks['minecraft:powder_snow'];assert.equal(lookup('minecraft:powder_snow'),undefined);assert(dynamic('minecraft:powder_snow'));assert(powdered.dynamic_shape);
 const bed=observed('minecraft:red_bed',{facing:'north',occupied:false,part:'foot'});assert.equal(Math.max(...bed.collisionBoxes.map(b=>b[4])),.5625);
 console.log(JSON.stringify({all_state_keys_resolved:checked,static_state_count:C.scope.static_states,dynamic_state_count:C.scope.dynamic_states,source_counterexamples:observations,unknown_block_and_incomplete_properties:'unresolved, no fallback',dynamic_shapes:'excluded from static lookup'},null,2));
-console.log(JSON.stringify({keys_resolved:checked,counterexamples:observations.length,unknown_and_dynamic_policy:'passed'}));
+console.log(JSON.stringify({keys_resolved:checked,runtime_packed_states_compared:checked,counterexamples:observations.length,unknown_and_dynamic_policy:'passed'}));

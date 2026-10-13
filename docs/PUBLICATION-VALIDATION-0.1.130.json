@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "version": "0.1.130",
+  "reviewed_runtime_source": "31850c96616d8287355201dc9b160a40119e470b",
+  "reviewed_source_tree": "e6855835caa332a934585c5a5a1dca9da285ecb5",
+  "archive_sha256": "951ccb73b382edabec957ebd573588b47b0d8666d358cee8fc0f134abad0104b",
+  "paired_versions": {
+    "tavern": "0.6.153",
+    "grilling": "2.8.132"
+  },
+  "runtime_changes_since_reviewed_source": false,
+  "source_ci_scope": "Frozen canonical runtime was packaged once. Source checks compare all 65536 sine values, the existing 92 motion and 60 respawn JVM oracle rows, all 26684 packed source states and 32230 old/new production queries including partial/unknown projections. Actual required PR CI and this candidate's native/save/admission/LIVE are tracked separately; previous candidate evidence is not relabelled.",
+  "family_evidence": "https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md",
+  "client": false,
+  "production_ready": false,
+  "client_acceptance": "pending",
+  "full_java_parity": false,
+  "runtime_changed_files": [
+    "runtime/BP/manifest.json",
+    "runtime/BP/scripts/motion-source.js",
+    "runtime/BP/scripts/payload.js",
+    "runtime/BP/scripts/respawn-adapter.js",
+    "runtime/BP/scripts/respawn-blocks.js",
+    "runtime/BP/scripts/respawn-catalog.js",
+    "runtime/RP/manifest.json"
+  ],
+  "unchanged_runtime_files": 883,
+  "private_capabilities_included": false,
+  "paired_source": {
+    "tavern": "110720255849ac910edd2309a25bed1f63581f3f",
+    "grilling": "5ce756f4ab339b5ec6dc05def1bd04c8e3973a83"
+  }
+}
