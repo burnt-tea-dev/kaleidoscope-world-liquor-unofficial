@@ -15,7 +15,7 @@
   "client": false,
   "status": "awaiting_source_ci_family_save_admission_and_live_readback",
   "public_notes_path": "docs/RELEASE-NOTES-0.1.138.md",
-  "tavern_commit": "52198a77bf7d0e5a7bc05e524f484fef6d2e7553",
+  "tavern_commit": "b63f394be488ea8a24e40bfd7aa6e75aaf10bd40",
   "reviewed_runtime_source": "2e391f4a9132785985c0004f4ea3b3103d0232bf",
   "expected_archive_sha256": "4123f262ba109fbaeeb7574c30fa1faf69e1ef556d9fd2ad74ae5c617682d3a1"
 }
