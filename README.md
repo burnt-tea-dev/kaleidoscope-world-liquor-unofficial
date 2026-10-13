@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.138
+## Current maintained baseline: 0.1.139
 
-W138 synchronizes both pack dependencies with Tavern T160 animated item depth repair. Rendered-client acceptance remains pending. [Scope](docs/RELEASE-NOTES-0.1.138.md).
+W139 pairs both BP/RP dependencies with Tavern T161 and the G134 HUD mount correction. World Liquor gameplay is preserved; client visibility remains pending. [Scope](docs/RELEASE-NOTES-0.1.139.md).
 
 W132 pairs with Tavern **0.6.155** and Grilling **2.8.133** for the persistent shaker/eating UI repair. World Liquor changes only its release identity and paired dependencies; gameplay and saved data are unchanged. [Candidate scope](docs/RELEASE-NOTES-0.1.132.md). Source checks do not establish rendered-client recovery.
 
