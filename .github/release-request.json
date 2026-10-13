@@ -1,21 +1,19 @@
 {
-  "version": "0.1.138",
-  "tag": "v0.1.138-preview.1",
-  "title": "森羅動態手持物品厚度修復 0.1.138",
+  "version": "0.1.139",
+  "tag": "v0.1.139-preview.1",
+  "title": "World Liquor 0.1.139 — pair with T161/G134",
   "prerelease": true,
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.138.md",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.139.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Four animated item side meshes aligned with their front/back sprite UVs; source-pixel boundary checks and unchanged native use components. Rendered-client acceptance remains pending; full-family saved-world/admission/live readback is separate.",
+  "native_evidence_scope": "Optional HUD provider scope correction; local shadows removed, same graphical receivers and gameplay. Actual rendered-client recovery remains pending.",
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
   "status": "awaiting_source_ci_family_save_admission_and_live_readback",
-  "public_notes_path": "docs/RELEASE-NOTES-0.1.138.md",
-  "tavern_commit": "b63f394be488ea8a24e40bfd7aa6e75aaf10bd40",
-  "reviewed_runtime_source": "2e391f4a9132785985c0004f4ea3b3103d0232bf",
-  "expected_archive_sha256": "4123f262ba109fbaeeb7574c30fa1faf69e1ef556d9fd2ad74ae5c617682d3a1"
+  "public_notes_path": "docs/RELEASE-NOTES-0.1.139.md",
+  "tavern_commit": "b63f394be488ea8a24e40bfd7aa6e75aaf10bd40"
 }
