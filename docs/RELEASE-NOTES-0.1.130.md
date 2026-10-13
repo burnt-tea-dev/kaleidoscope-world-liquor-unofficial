@@ -9,7 +9,7 @@ Motion 啟動與 Respawn 首用的 65,536 點 sine 全表改成只計算所需�
 index，保持 float 值、飽和和取整次序，不建立延後全表或成長 cache。
 全值與實際查詢差分及 Java oracle 範圍見 [來源核對](JAVA-STARTUP-20261013.md)。
 
-版本、模組、payload 與 Tavern 0.6.153 相依同步；Grilling 2.8.131 是精確
+版本、模組、payload 與 Tavern 0.6.153 相依同步；Grilling 2.8.132 是精確
 CI 配對來源。T153 另保護已裝來源尚未註冊時的新酒桶原料，已開始的 batch
 沿用原保存快照。W SDK、配方／數量／時間、聲畫資產及保存 schema 未改。
 
