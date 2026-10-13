@@ -1,8 +1,20 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import vm from 'node:vm';
 import {boatingVelocity,sourceJumpVelocity,reverseGravityImpulse,nativeJumpImpulse} from '../runtime/BP/scripts/motion-source.js';
 const rows=fs.readFileSync(new URL('./fixtures/java-motion.jsonl',import.meta.url),'utf8').trim().split('\n').map(JSON.parse);
+test('quantized jump samples preserve every old float LUT entry without eager initialization',()=>{
+ const source=fs.readFileSync(new URL('../runtime/BP/scripts/motion-source.js',import.meta.url),'utf8').replaceAll('export function','function');
+ let calls=0;const countedMath=Object.create(Math);countedMath.sin=value=>{calls++;return Math.sin(value);};
+ const context=vm.createContext({Math:countedMath});vm.runInContext(source,context);
+ assert.equal(calls,0);
+ const sample=vm.runInContext('sinSample',context),old=new Float32Array(65536);
+ for(let index=0;index<old.length;index++)old[index]=Math.sin(index*Math.PI*2/65536);
+ for(let index=0;index<old.length;index++)assert.ok(Object.is(sample(index),old[index]),'LUT index '+index);
+ calls=0;vm.runInContext('sourceJumpVelocity({reverse:false,sprinting:true,yaw:71.23})',context);assert.equal(calls,2);
+ calls=0;vm.runInContext('sourceJumpVelocity({reverse:true,sprinting:false,yaw:-147.8})',context);assert.equal(calls,0);
+});
 test('boat and jump numeric results agree with current Java source oracle',()=>{
  for(const r of rows){const got=r.kind==='boat'?boatingVelocity({x:r.speed,y:.17,z:r.speed*.5},r.amp,r.forward):sourceJumpVelocity({reverse:r.reverse,yaw:r.yaw,jumpFactor:r.factor,jumpBoost:r.jump<0?undefined:r.jump,sprinting:true});assert.deepEqual(got,r.expected,JSON.stringify(r));}
  assert.equal(rows.length,92);

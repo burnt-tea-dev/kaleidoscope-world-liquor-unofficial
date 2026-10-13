@@ -2,8 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {bedStandUpOffsets,bedStandUpStages,anchorStandUpStages,selectStandUpPosition,respawnFloorHeight,findSafeDismount,forcedRespawnPosition,respawnLookAtYaw,sharedSpawnSearchPlan,sharedSpawnColumns,findSharedSpawn} from '../development/respawn/respawn-source.js';
+import * as production from '../runtime/BP/scripts/respawn-adapter.js';
 const rows=fs.readFileSync(new URL('./fixtures/java-respawn.jsonl',import.meta.url),'utf8').trim().split('\n').map(JSON.parse);
 test('reviewed source numeric rules match executed Java expressions, including float yaw and radius edge cases',()=>{
+ const implementations=[{bedStandUpOffsets,respawnLookAtYaw,sharedSpawnSearchPlan,sharedSpawnColumns},production];
+ for(const {bedStandUpOffsets,respawnLookAtYaw,sharedSpawnSearchPlan,sharedSpawnColumns} of implementations){
  for(const row of rows){
   if(row.kind==='bed')assert.deepEqual(bedStandUpOffsets(row.facing,row.angle).map(p=>[p.x,p.z]),row.expected,JSON.stringify(row));
   else if(row.kind==='yaw')assert.equal(respawnLookAtYaw(row.position,{x:0,y:0,z:0}),row.expected,JSON.stringify(row));
@@ -13,6 +16,7 @@ test('reviewed source numeric rules match executed Java expressions, including f
   }else assert.fail('Unknown Java oracle kind');
  }
  assert.equal(rows.length,60);
+ }
 });
 test('bed bunk and anchor run a complete strict pass before allowing dangerous candidates',()=>{
  const normal=bedStandUpStages('north',0);assert.deepEqual(normal.map(s=>[s.checkDanger,s.dy,s.offsets.length]),[[true,0,12],[false,0,12]]);
