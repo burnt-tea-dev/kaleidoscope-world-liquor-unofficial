@@ -37,10 +37,11 @@ export function multiJumpStep(previous,input){
  return {remaining,pressed:input.pressed,jump};
 }
 
-const sinTable=new Float32Array(65536);
-for(let i=0;i<sinTable.length;i++)sinTable[i]=Math.sin(i*Math.PI*2/65536);
-function sin(angle){return sinTable[Math.trunc(Math.fround(angle*Math.fround(10430.378)))&65535];}
-function cos(angle){return sinTable[Math.trunc(Math.fround(Math.fround(angle*Math.fround(10430.378))+16384))&65535];}
+// Preserve the Java LUT's quantized index and float value without filling all
+// 65,536 entries during module load. A sprint jump reads only two indices.
+function sinSample(index){return Math.fround(Math.sin(index*Math.PI*2/65536));}
+function sin(angle){return sinSample(Math.trunc(Math.fround(angle*Math.fround(10430.378)))&65535);}
+function cos(angle){return sinSample(Math.trunc(Math.fround(Math.fround(angle*Math.fround(10430.378))+16384))&65535);}
 export function sourceJumpVelocity({reverse,jumpFactor=1,jumpBoost,sprinting,yaw=0}){
  const boost=jumpBoost===undefined?0:Math.fround(Math.fround(.1)*(jumpBoost+1));
  const power=Math.fround(Math.fround(Math.fround(.42)*Math.fround(jumpFactor))+boost);
