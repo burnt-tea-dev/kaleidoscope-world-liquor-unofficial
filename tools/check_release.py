@@ -39,7 +39,11 @@ for pack in [rp,tav/'runtime/RP']:
 # this is not an engine-limit declaration or rendered-client acceptance.
 try:
  spec=importlib.util.spec_from_file_location('tavern_release_checks',tav/'tools/check_release.py')
- host_checks=importlib.util.module_from_spec(spec);spec.loader.exec_module(host_checks)
+ # The pinned host checker imports its own reviewed asset projection helper.
+ sys.path.insert(0,str(tav/'tools'))
+ try:
+  host_checks=importlib.util.module_from_spec(spec);spec.loader.exec_module(host_checks)
+ finally:sys.path.pop(0)
  host_checks.check_combined_geometry_budget(geometry_sources,tav)
 except Exception as e:errors.append('combined geometry allocation: '+str(e))
 for p in (bp/'blocks').glob('*.json'):
