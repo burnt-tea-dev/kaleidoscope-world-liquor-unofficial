@@ -1,19 +1,19 @@
 {
-  "version": "0.1.130",
-  "tag": "v0.1.130-preview.1",
-  "title": "森羅物語：世界名酒 0.1.130 測試版｜精簡重生資料與啟動計算",
+  "version": "0.1.131",
+  "tag": "v0.1.131-preview.1",
+  "title": "森羅物語：世界名酒 0.1.131 測試版｜減少啟動傳輸的重複處理",
   "prerelease": true,
-  "tavern_commit": "110720255849ac910edd2309a25bed1f63581f3f",
-  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.130.json",
+  "tavern_commit": "8055b730d986e13096949fc5625538e1175f704d",
+  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.131.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W130 compacts the complete source collision catalog and removes eager/first-use 65536-entry sine fills while preserving indexed float values and queried state behavior. T153 pairs the source-ready barrel protection and owned startup reductions; source checks do not certify native watchdog, saved-world or client acceptance. Fresh full-family admission/deployment remains required.",
-  "expected_archive_sha256": "951ccb73b382edabec957ebd573588b47b0d8666d358cee8fc0f134abad0104b",
+  "native_evidence_scope": "W131 mirrors the reviewed shared foundation three-ID admission and UTF-16-based UTF-8 count. The profile observed post-initialization transport work but missed first initialization spikes. Supported requests/ACK/effect snapshots, wire bytes, scheduling, gameplay and storage stay unchanged. Actual candidate CI and fresh complete-family save/admission/LIVE evidence remain separate; source checks do not certify watchdog or client acceptance.",
+  "expected_archive_sha256": "aee9420d1e2fced7b0e986eca817f0c4a35cedd3e1a9dcfc69c2f819a9585511",
   "new_bds_test": false,
   "publication_request": false,
-  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.130.md",
-  "reviewed_runtime_source": "31850c96616d8287355201dc9b160a40119e470b"
+  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.131.md",
+  "reviewed_runtime_source": "503b02fbae115864bb3e4f036b0784fac8a21659"
 }
