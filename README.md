@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.135
+## Current maintained baseline: 0.1.137
 
-W135 pairs with Tavern 0.6.157 diagnostics. [Scope](docs/RELEASE-NOTES-0.1.135.md). No drink gameplay change or claim of resolved client failures.
+W137 pairs both pack dependencies with Tavern T159 incense surface repair. [Scope](docs/RELEASE-NOTES-0.1.137.md). Client rendering remains pending; shaker insertion and eating/mixology UI remain unresolved.
 
 W132 pairs with Tavern **0.6.155** and Grilling **2.8.133** for the persistent shaker/eating UI repair. World Liquor changes only its release identity and paired dependencies; gameplay and saved data are unchanged. [Candidate scope](docs/RELEASE-NOTES-0.1.132.md). Source checks do not establish rendered-client recovery.
 
