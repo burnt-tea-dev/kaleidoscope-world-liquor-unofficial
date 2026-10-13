@@ -2,7 +2,7 @@
 
 W132 pairs with Tavern **0.6.155** and Grilling **2.8.133** for the persistent shaker/eating UI repair. World Liquor changes only its release identity and paired dependencies; gameplay and saved data are unchanged. [Candidate scope](docs/RELEASE-NOTES-0.1.132.md). Source checks do not establish rendered-client recovery.
 
-The most recent published/live release is [W130, paired with Tavern T153](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.130-preview.1). The [T153 public-download/live comparison](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/PUBLIC-DOWNLOAD-LIVE-JAVA-STARTUP-20261013.md) records six owned packs and 9,346 matching files. W131 requires its own complete-family admission and deployment. Public packaging reads canonical BP/RP directly; private Cookery/AMW capabilities remain separate. The [family index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md) records actual deployment and client status.
+[W132, paired with Tavern T155](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.132-preview.1) was deployed at 2026-10-13 17:05:52 HKT after canonical PR/CI and complete-family saved-world admission. The [current anonymous public-download/LIVE comparison](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/PUBLIC-DOWNLOAD-LIVE-PERSISTENT-HUD-20261013.md) covers six owned packs and 9,346 matching files. Client UI recovery remains pending. Private Cookery/AMW capabilities remain separate; the [family index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md) records current status.
 
 # 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
 
@@ -10,9 +10,9 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.154** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.155** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
-Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.132** is the exact public CI helper reference and remains optional for standalone use. The deployed Cookery integration and receiver evidence follow the current family index; historical peer checks retain their original source.
+Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.133** is the exact public CI helper reference and remains optional for standalone use. The deployed Cookery integration and receiver evidence follow the current family index; historical peer checks retain their original source.
 
 Back up existing worlds before updating both sides of a package. Use the [current Releases](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases) rather than historical archives committed in `downloads/`. Source and release checks do not certify a live installation or client rendering.
 
