@@ -3,7 +3,7 @@
   "tag": "v0.1.130-preview.1",
   "title": "森羅物語：世界名酒 0.1.130 測試版｜精簡重生資料與啟動計算",
   "prerelease": true,
-  "tavern_commit": "076b8de0d842a5c31dd6efd358e54c3df5f149c7",
+  "tavern_commit": "110720255849ac910edd2309a25bed1f63581f3f",
   "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.130.json",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
@@ -11,8 +11,9 @@
   "production_ready": false,
   "live_deployment": false,
   "native_evidence_scope": "W130 compacts the complete source collision catalog and removes eager/first-use 65536-entry sine fills while preserving indexed float values and queried state behavior. T153 pairs the source-ready barrel protection and owned startup reductions; source checks do not certify native watchdog, saved-world or client acceptance. Fresh full-family admission/deployment remains required.",
-  "expected_archive_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "expected_archive_sha256": "951ccb73b382edabec957ebd573588b47b0d8666d358cee8fc0f134abad0104b",
   "new_bds_test": false,
   "publication_request": false,
-  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.130.md"
+  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.130.md",
+  "reviewed_runtime_source": "31850c96616d8287355201dc9b160a40119e470b"
 }
