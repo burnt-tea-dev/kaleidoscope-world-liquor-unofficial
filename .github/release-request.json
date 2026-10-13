@@ -1,9 +1,9 @@
 {
-  "version": "0.1.136",
-  "tag": "v0.1.136-preview.1",
-  "title": "森羅全部香薰交叉面修復 0.1.136",
+  "version": "0.1.137",
+  "tag": "v0.1.137-preview.1",
+  "title": "森羅全部香薰交叉面修復 0.1.137",
   "prerelease": true,
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.136.md",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.137.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
@@ -14,7 +14,7 @@
   "publication_request": false,
   "client": false,
   "status": "awaiting_source_ci_family_save_admission_and_live_readback",
-  "public_notes_path": "docs/RELEASE-NOTES-0.1.136.md",
+  "public_notes_path": "docs/RELEASE-NOTES-0.1.137.md",
   "tavern_commit": "6aec2dba516da50bf1410c02c3f076ec4ab9e255",
   "reviewed_runtime_source": "81fde859c9ea489013c1f971f7c344a20826efaa",
   "expected_archive_sha256": "6f0a15eebc84aa461208d3ce9cc9c4bded3593c6f888e0bb4eb9daaa4a2834e6"
