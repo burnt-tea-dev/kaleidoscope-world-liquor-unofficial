@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.131
+
+Filter unrelated script events before foundation payload byte counting/parsing, and mirror the allocation-reduced UTF-8 counter from Tavern. Supported channel validation, transport packets, scheduling and W gameplay remain unchanged; pair with Tavern T154 and Grilling G132. See [release scope](docs/RELEASE-NOTES-0.1.131.md). Native watchdog and human acceptance require this candidate’s own evidence.
+
 ## 0.1.126
 
 Prepare complete registration packets in bounded startup batches before BEGIN; preserve protocol bytes, recipes, timing, assets and storage semantics. Pair with Tavern T149 and Grilling G130. See [release scope](docs/RELEASE-NOTES-0.1.126.md). Native performance and human acceptance remain separately tracked.

@@ -2,6 +2,8 @@
 
 現行完整家族 LIVE 版本、部署與保存驗證及精確收據以 [家族索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)為準。新來源的啟動精簡與保留 Java 數值行為見 [2026-10-13 來源範圍](JAVA-STARTUP-20261013.md)；不得將先前版本的部署／公開下载一致性當成新來源驗收。`client=false`、`production_ready=false`；完整 Java 一比一、原生 Player 操作和畫面音效不由載入或相同 hash 推定。
 
+W131針對profile所見的傳輸CPU熱點，讓foundation receiver先篩選三個支援ID，再處理byte上限與JSON；共享UTF-8計數改按UTF-16讀取，保留配對及孤立surrogate的原數值。封包、ACK、排程及保存規則不變，詳見[本版範圍](RELEASE-NOTES-0.1.131.md)。此来源修正不能宣稱首輪啟動尖峰或整體watchdog已解決。
+
 玩法 authority 為 NeoForge 1.21.1／World Liquor 1.1.11／CF9066406，Forge 1.20.1／1.1.12／CF9066402 的差異分開核對。[current-author-review](../data/current-author-review-20261009.json)記錄來源；26.1.2／CF9087098 是另行待適配分支，custom Luck／BlockDrops copying 不能替換 1.21.1 的 vanilla Luck／block reroll。L0 為來源檢視，L1 為執行的 source／API／JVM 案例，L2 為明列來源的 native 引擎場景，L3 為真人客戶端比較。舊 L2／L3 保留其原版本，不改標成當前接受。
 
 | 項目 | 已完成與證據 | 剩餘範圍 |
