@@ -1,6 +1,6 @@
 # World Liquor Java／Bedrock 差距矩陣
 
-現行維護候選 W125，精確配對 T148／G129 的 UI namespace bridge；W 自有 UI namespace 與 W124 玩法／資產保持，只有身份及相依變更，見[本次範圍](RELEASE-NOTES-0.1.125.md)。既有 W124／T147／G128 公開自有 BP／RP 與 LIVE 的逐檔比對見[原公開下載核對](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/PUBLIC-DOWNLOAD-LIVE-20261012.md)，不挪作新候選驗收。目前完整家族 LIVE 版本、部署與保存驗證及精確收據以 [家族索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)為準。`client=false`、`production_ready=false`；完整 Java 一比一、原生 Player 操作和畫面音效不由載入或相同 hash 推定。
+現行完整家族 LIVE 版本、部署與保存驗證及精確收據以 [家族索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)為準。新來源的啟動精簡與保留 Java 數值行為見 [2026-10-13 來源範圍](JAVA-STARTUP-20261013.md)；不得將先前版本的部署／公開下载一致性當成新來源驗收。`client=false`、`production_ready=false`；完整 Java 一比一、原生 Player 操作和畫面音效不由載入或相同 hash 推定。
 
 玩法 authority 為 NeoForge 1.21.1／World Liquor 1.1.11／CF9066406，Forge 1.20.1／1.1.12／CF9066402 的差異分開核對。[current-author-review](../data/current-author-review-20261009.json)記錄來源；26.1.2／CF9087098 是另行待適配分支，custom Luck／BlockDrops copying 不能替換 1.21.1 的 vanilla Luck／block reroll。L0 為來源檢視，L1 為執行的 source／API／JVM 案例，L2 為明列來源的 native 引擎場景，L3 為真人客戶端比較。舊 L2／L3 保留其原版本，不改標成當前接受。
 
@@ -14,6 +14,7 @@
 | Elbow | 原作 ATTACK_KNOCKBACK 和 float／LUT／ground／resistance 已有獨立 JVM 數值；已有真 airborne、buffered force 能力 L2。見 [development scope](../development/elbow/README.md) | Production attribute／charge／enchantment 與原力合成尚未接入；既有能力證據否定固定 extra impulse，不作平台完成豁免 |
 | CaptainGift／movement／flight | Boating、reverse-gravity、MultiJump 有來源算術與有限 native adapter；CaptainGift 現僅 source-water 浮力 | 原作 12 格 water-fluid／AABB movement clipping、ground/fallDistance、原生 collision/input 和 Creative Flight 仍有差距 |
 | Respawn／helpers | 87 個精確零碰撞 helper、Native storage API 保存場景、新確認錨 metadata 和 repeat／取消防線保留，見 [source adapter](RESPAWN-RUNTIME-SOURCE-ADAPTER.md)及 [W116](RELEASE-NOTES-0.1.116.md) | 真 Player、舊／未知錨、床、自然死亡及任意第三方 collision unknown 不自動放行 |
+| 啟動與數值目錄 | 移除 motion 載入及 respawn 首用各 65,536 點 sine 全表；依原量化 index 計算所需值。Runtime 重生資料按 block 壓縮，同樣保留 26,684 states、missing-state consensus／dynamic unknown，見 [source comparison](JAVA-STARTUP-20261013.md) | 新候選 native watchdog／memory 結果與真人流暢度另驗；不以 source operation count 稱完整效能修復 |
 | Freezer state／storage | 五個 current recipe、loaded tick 時序、四槽完整 native item carrier、rollback／reanchor／legacy adoption 保留；既有有限 L1／L2 見 [W93](RELEASE-NOTES-0.1.93.md)、[W98](RELEASE-NOTES-0.1.98.md) | 任意 callback／流體／metadata／offhand／crash phases 和真玩家；既有零 input 樣本不證明非空冰櫃內容 |
 | Freezer height／frost | source result-height 的 20 個 JVM cases、current freeze selection 和排程老化有有限 L1／L2，見 [W99](RELEASE-NOTES-0.1.99.md)及 [current-freezer-review](../data/current-freezer-review.json) | 原料展示僅 bounded map；全 UV／light／lid／動畫、任意附魔外觀、chunk／Player interactions 仍待比較 |
 | Cabinet／furniture／wall record | 原 source slots／rotations／native metadata 和牆掛四向、取回、破壞 conservation 保留，見 [wall record](WALL-RECORD-FIX-20260929.md) | 真實點格、四向、透明、seat／waterlogging、models／animation／held view 等 L3 待接受 |

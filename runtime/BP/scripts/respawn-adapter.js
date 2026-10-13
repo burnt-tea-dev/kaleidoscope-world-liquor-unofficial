@@ -11,7 +11,6 @@ const numericBits=new DataView(new ArrayBuffer(8));
 const asinTable=Array.from({length:257},(_,i)=>Math.asin(i/256));
 const cosineTable=asinTable.map(Math.cos);
 const fractionalBias=2**44;
-let sineTable;
 function finite(value,name){if(!Number.isFinite(value))throw new TypeError(name+' must be known and finite');return value;}
 function decision(value,name){if(typeof value!=='boolean')throw new TypeError(name+' must be a known boolean');return value;}
 function int32(value,name){if(!Number.isInteger(value)||value< -2147483648||value>2147483647)throw new TypeError(name+' must be a Java int');return value;}
@@ -19,11 +18,12 @@ function blockPosition(value){for(const axis of ['x','y','z'])int32(value?.[axis
 function vector(value){for(const axis of ['x','y','z'])finite(value?.[axis],'position '+axis);return value;}
 function direction(name){const result=directions[name];if(!result)throw new TypeError('A known horizontal bed facing is required');return result;}
 function sin(angle,cosine=false){
- if(!sineTable){sineTable=new Float32Array(65536);for(let i=0;i<sineTable.length;i++)sineTable[i]=Math.sin(i*Math.PI*2/65536);}
  const index=f32(f32(angle*f32(10430.378))+(cosine?16384:0));
  // Java float-to-int conversion saturates rather than wrapping first.
  const integer=Math.max(-2147483648,Math.min(2147483647,Math.trunc(index)));
- return sineTable[integer&65535];
+ // Read the exact indexed float sample without a 65,536-entry first-use fill.
+ const sample=integer&65535;
+ return f32(Math.sin(sample*Math.PI*2/65536));
 }
 function fastInverseSqrt(value){
  numericBits.setFloat64(0,value);
