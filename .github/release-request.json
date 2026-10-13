@@ -1,19 +1,18 @@
 {
-  "version": "0.1.131",
-  "tag": "v0.1.131-preview.1",
-  "title": "森羅物語：世界名酒 0.1.131 測試版｜減少啟動傳輸的重複處理",
+  "version": "0.1.132",
+  "tag": "v0.1.132-preview.1",
+  "title": "森羅物語：世界名酒 0.1.132 測試版｜配對酒館 UI 修補",
   "prerelease": true,
-  "tavern_commit": "8055b730d986e13096949fc5625538e1175f704d",
-  "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.131.json",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.132.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W131 mirrors the reviewed shared foundation three-ID admission and UTF-16-based UTF-8 count. The profile observed post-initialization transport work but missed first initialization spikes. Supported requests/ACK/effect snapshots, wire bytes, scheduling, gameplay and storage stay unchanged. Actual candidate CI and fresh complete-family save/admission/LIVE evidence remain separate; source checks do not certify watchdog or client acceptance.",
-  "expected_archive_sha256": "aee9420d1e2fced7b0e986eca817f0c4a35cedd3e1a9dcfc69c2f819a9585511",
+  "native_evidence_scope": "Persistent HUD receiver candidate. Targeted source diagnostics only so far; exact canonical CI, complete-family saved-world/load/admission/live evidence and rendered-client results remain separate. No rendered-client acceptance claimed.",
   "new_bds_test": false,
   "publication_request": false,
-  "publication_notes": "docs/RELEASE-PUBLICATION-0.1.131.md",
-  "reviewed_runtime_source": "503b02fbae115864bb3e4f036b0784fac8a21659"
+  "client": false,
+  "status": "awaiting_source_ci_family_save_admission_and_live_readback",
+  "public_notes_path": "docs/RELEASE-NOTES-0.1.132.md"
 }

@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.131
+## Current maintained baseline: 0.1.132
 
-W131 pairs with Tavern **0.6.154** and Grilling **2.8.132**. Its shared foundation receiver ignores unrelated event IDs before reading or parsing their payload, and UTF-8 byte counting avoids constructing one string per code point. The supported foundation requests, acknowledgements and effect snapshots retain their validation and scheduling. [Candidate scope](docs/RELEASE-NOTES-0.1.131.md) separates source equivalence from native watchdog and rendered-client acceptance.
+W132 pairs with Tavern **0.6.155** and Grilling **2.8.133** for the persistent shaker/eating UI repair. World Liquor changes only its release identity and paired dependencies; gameplay and saved data are unchanged. [Candidate scope](docs/RELEASE-NOTES-0.1.132.md). Source checks do not establish rendered-client recovery.
 
 The most recent published/live release is [W130, paired with Tavern T153](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.130-preview.1). The [T153 public-download/live comparison](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/PUBLIC-DOWNLOAD-LIVE-JAVA-STARTUP-20261013.md) records six owned packs and 9,346 matching files. W131 requires its own complete-family admission and deployment. Public packaging reads canonical BP/RP directly; private Cookery/AMW capabilities remain separate. The [family index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md) records actual deployment and client status.
 
