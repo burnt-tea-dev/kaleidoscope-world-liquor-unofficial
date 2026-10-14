@@ -11,6 +11,33 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+def publication_identity(request, version):
+    assert re.fullmatch(r'\d+\.\d+\.\d+', version)
+    assert request['version'] == version
+    prerelease = request['prerelease']
+    assert type(prerelease) is bool
+    suffix = request.get('artifact_suffix', 'preview1')
+    assert suffix == ('preview1' if prerelease else 'baseline1')
+    assert request['tag'] == f'v{version}' + ('-preview.1' if prerelease else '')
+    return suffix, prerelease
+
+def publication_notes(root, request):
+    path = Path(request.get('public_notes_path', request.get('publication_notes', 'CHANGELOG.md')))
+    assert not path.is_absolute() and '..' not in path.parts
+    assert path.as_posix() in ('CHANGELOG.md', 'README.md') or path.parts[0] == 'docs'
+    assert path.suffix == '.md'
+    source = root / path
+    assert source.is_file() and not source.is_symlink() and source.resolve().is_relative_to(root.resolve())
+    return source
+
+def publication_notes_text(root, request):
+    inline = request.get('public_notes_inline')
+    if inline is not None:
+        assert isinstance(inline, str) and inline.strip() and len(inline) <= 4096
+        assert '\x00' not in inline and not re.search(r'/root/|/var/|file://', inline)
+        return inline.strip() + '\n'
+    return publication_notes(root, request).read_text(encoding='utf-8')
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--export-env', action='store_true')
@@ -22,11 +49,11 @@ def main() -> None:
         baseline=json.loads((ROOT/'baseline.json').read_text())
         pin=json.loads((ROOT/'.github/baseline-integration.json').read_text())
         version='.'.join(map(str,baseline['version']))
-        request={'version':version,'tag':f'v{version}-preview.1','prerelease':True,'title':'Integration candidate','expected_archive_sha256':'0'*64,'tavern_commit':pin['tavern_commit']}
+        suffix=request.get('artifact_suffix','preview1')
+        prerelease=suffix!='baseline1'
+        request={'version':version,'tag':f'v{version}'+('-preview.1' if prerelease else ''),'prerelease':prerelease,'artifact_suffix':suffix,'title':'Integration candidate','expected_archive_sha256':'0'*64,'tavern_commit':pin['tavern_commit']}
     version = request['version']
-    assert re.fullmatch(r'\d+\.\d+\.\d+', version)
-    assert request['tag'] == f'v{version}-preview.1'
-    assert request['prerelease'] is True
+    suffix, prerelease = publication_identity(request, version)
     assert request['title'] and '\n' not in request['title'] and '\r' not in request['title']
     assert re.fullmatch(r'[0-9a-f]{64}', request['expected_archive_sha256'])
     assert re.fullmatch(r'[0-9a-f]{40}', request['tavern_commit'])
@@ -44,7 +71,7 @@ def main() -> None:
     payload_text = (ROOT / 'runtime/BP/scripts/payload.js').read_text()
     payload = json.loads(payload_text.split('=', 1)[1].strip().rstrip(';'))
     assert payload['version'] == version, 'Guide protocol version is stale'
-    filename = f'Kaleidoscope_World_Liquor_Unofficial_{version}_preview1.mcaddon'
+    filename = f'Kaleidoscope_World_Liquor_Unofficial_{version}_{suffix}.mcaddon'
     archive_path = ROOT / 'dist' / filename
     digest = hashlib.sha256(archive_path.read_bytes()).hexdigest()
     if not args.development:
@@ -71,7 +98,7 @@ def main() -> None:
     print(json.dumps(evidence))
     if args.export_env:
         with open(os.environ['GITHUB_ENV'], 'a') as output:
-            output.write(f"TAG={request['tag']}\nTITLE={request['title']}\n")
+            output.write(f"TAG={request['tag']}\nTITLE={request['title']}\nRELEASE_PRERELEASE={str(prerelease).lower()}\n")
 
 if __name__ == '__main__':
     main()
