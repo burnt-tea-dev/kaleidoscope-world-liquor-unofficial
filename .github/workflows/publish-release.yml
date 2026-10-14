@@ -1,4 +1,4 @@
-name: Publish verified GitHub prerelease
+name: Publish verified GitHub release
 on:
   push:
     branches: [main]
@@ -111,9 +111,11 @@ jobs:
           from pathlib import Path
           request=json.loads(Path('.github/release-request.json').read_text())
           for key,target in [('publication_notes','RELEASE-NOTES.md'),('validation_evidence','CURRENT-PUBLICATION.json')]:
+              if key=='publication_notes' and request.get('public_notes_inline') is not None:continue
               if key not in request:continue
               path=Path(request[key])
-              assert not path.is_absolute() and '..' not in path.parts and path.parts[0]=='docs'
+              assert not path.is_absolute() and '..' not in path.parts
+              assert path.parts[0]=='docs' or path.as_posix() in ('CHANGELOG.md','README.md')
               assert path.is_file() and not path.is_symlink()
               shutil.copy2(path,Path('dist',target))
           PY
@@ -130,14 +132,15 @@ jobs:
           if view_draft > "$RUNNER_TEMP/draft-release.json"; then
             echo 'Existing release found; only an identical unpublished draft may resume.'
           else
-            gh release create "$TAG" dist/* --repo "$GH_REPO" --target "$SOURCE_SHA" --title "$TITLE" --notes-file dist/RELEASE-NOTES.md --draft --prerelease
+            gh release create "$TAG" dist/* --repo "$GH_REPO" --target "$SOURCE_SHA" --title "$TITLE" --notes-file dist/RELEASE-NOTES.md --draft --prerelease="$RELEASE_PRERELEASE" --latest=false
             view_draft > "$RUNNER_TEMP/draft-release.json"
           fi
           python - <<'PY'
           import json,os
           from pathlib import Path
           r=json.loads(Path(os.environ['RUNNER_TEMP'],'draft-release.json').read_text())
-          assert r['isDraft'] is True and r['isPrerelease'] is True,'Refusing to modify a published release'
+          assert r['isDraft'] is True,'Refusing to modify a published release'
+          assert r['isPrerelease'] is (os.environ['RELEASE_PRERELEASE']=='true'),'Draft release class differs from request'
           assert r['tagName']==os.environ['TAG'] and r['targetCommitish']==os.environ['SOURCE_SHA']
           assert r['name']==os.environ['TITLE']
           assert r['body'].strip()==Path('dist/RELEASE-NOTES.md').read_text().strip()
@@ -167,14 +170,15 @@ jobs:
           root=Path(os.environ['RUNNER_TEMP'])
           assert json.loads((root/'draft-release.json').read_text())==json.loads((root/'draft-recheck.json').read_text())
           PY
-          gh release edit "$TAG" --repo "$GH_REPO" --draft=false --prerelease --latest=false
+          gh release edit "$TAG" --repo "$GH_REPO" --draft=false --prerelease="$RELEASE_PRERELEASE" --latest=false
           test "$(gh api "repos/$GH_REPO/git/ref/tags/$TAG" --jq '.object.sha')" = "$SOURCE_SHA"
           gh release view "$TAG" --repo "$GH_REPO" --json url,tagName,isDraft,isPrerelease,publishedAt,targetCommitish > "$RUNNER_TEMP/published-release.json"
           python - <<'PY'
           import json,os
           from pathlib import Path
           data=json.loads(Path(os.environ['RUNNER_TEMP'],'published-release.json').read_text())
-          assert data['tagName']==os.environ['TAG'] and not data['isDraft'] and data['isPrerelease'] and data['publishedAt']
+          assert data['tagName']==os.environ['TAG'] and not data['isDraft'] and data['publishedAt']
+          assert data['isPrerelease'] is (os.environ['RELEASE_PRERELEASE']=='true')
           assert data['targetCommitish']==os.environ['SOURCE_SHA']
           print(data)
           PY

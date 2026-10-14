@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.142
+
+Pair both packs with Tavern 0.6.164 and Grilling 2.8.139 for the formal family HUD layout, touch and native-token-filter repair. World Liquor gameplay, saved ownership and assets are preserved. Existing beta publication remains supported; this release uses the exact version tag and baseline1 artifacts. Client rendering and full Java parity remain unverified.
+
 ## 0.1.131
 
 Filter unrelated script events before foundation payload byte counting/parsing, and mirror the allocation-reduced UTF-8 counter from Tavern. Supported channel validation, transport packets, scheduling and W gameplay remain unchanged; pair with Tavern T154 and Grilling G132. See [release scope](docs/RELEASE-NOTES-0.1.131.md). Native watchdog and human acceptance require this candidate’s own evidence.
