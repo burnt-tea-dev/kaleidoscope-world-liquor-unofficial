@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.143
+
+Pair with Tavern 0.6.165 and Grilling 2.8.141 for source-backed Java shaker coordinates and remaining-use eating HUD synchronization. Only package, module, payload identity and paired dependencies change here. Existing gameplay, saved ownership and assets remain unchanged; rendered-client acceptance remains pending.
+
 ## 0.1.142
 
 Pair both packs with Tavern 0.6.164 and Grilling 2.8.140 for the formal family HUD layout, touch and native-token-filter repair. World Liquor gameplay, saved ownership and assets are preserved. Existing beta publication remains supported; this release uses the exact version tag and baseline1 artifacts. Client rendering and full Java parity remain unverified.
