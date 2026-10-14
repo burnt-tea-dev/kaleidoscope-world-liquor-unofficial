@@ -17,5 +17,7 @@
   "public_notes_path": "CHANGELOG.md",
   "tavern_commit": "efc59ff467a2f3accd1090bdcce3dc9d5f4b56df",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "同步酒館與燒烤的圖形 HUD 裁剪，以及酒館未變雪克杯預覽的有界快取。世界名酒只更新配對版本，保留玩法、存檔資料與素材。\n\n實際客戶端延遲與效能仍待確認。"
+  "public_notes_inline": "同步酒館與燒烤的圖形 HUD 裁剪，以及酒館未變雪克杯預覽的有界快取。世界名酒只更新配對版本，保留玩法、存檔資料與素材。\n\n實際客戶端延遲與效能仍待確認。",
+  "reviewed_runtime_source": "ce4fc2bbc2ff698495c6de6ded23e0c5d24eecbf",
+  "expected_archive_sha256": "0cbeca72ca634c1e6e8a4da890d8cc93d7f3bd80f1dc58a339dfbe1246df089b"
 }
