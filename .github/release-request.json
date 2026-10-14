@@ -1,7 +1,7 @@
 {
   "version": "0.1.140",
   "tag": "v0.1.140-preview.1",
-  "title": "World Liquor 0.1.140 — pair readable HUD transport T162/G135",
+  "title": "World Liquor 0.1.140 \u2014 pair readable HUD transport T162/G135",
   "prerelease": true,
   "validation_evidence": "docs/RELEASE-NOTES-0.1.140.md",
   "client_acceptance": "pending",
@@ -15,7 +15,7 @@
   "client": false,
   "status": "awaiting_source_ci_family_save_admission_and_live_readback",
   "public_notes_path": "docs/RELEASE-NOTES-0.1.140.md",
-  "tavern_commit": "097ac46caad74f6e7927adafabf31242b6a5cc32",
+  "tavern_commit": "30caf5ab270be08f3e9d36a18b88d13622a34d0f",
   "expected_archive_sha256": "3ac76b5e40c02ef7d35fc21cdd50c3bebcd6366f8b54c99158729bf250c58a8e",
   "reviewed_runtime_source": "d722e37f8168c777135c6125185f8a93f22aa788"
 }
