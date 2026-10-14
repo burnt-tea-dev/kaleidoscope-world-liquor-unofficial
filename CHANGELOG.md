@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.144
+
+Pair with Tavern 0.6.166 and Grilling 2.8.142 for ignored-state HUD pruning and bounded shaker preview caching. World Liquor changes only release and paired dependency identities; gameplay, saved ownership and assets remain unchanged. Client latency and performance acceptance remain pending.
+
 ## 0.1.143
 
 Pair with Tavern 0.6.165 and Grilling 2.8.141 for source-backed Java shaker coordinates and remaining-use eating HUD synchronization. Only package, module, payload identity and paired dependencies change here. Existing gameplay, saved ownership and assets remain unchanged; rendered-client acceptance remains pending.

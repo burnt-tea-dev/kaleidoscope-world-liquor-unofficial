@@ -1,7 +1,7 @@
 {
-  "version": "0.1.143",
-  "tag": "v0.1.143",
-  "title": "World Liquor 0.1.143 — family HUD synchronization",
+  "version": "0.1.144",
+  "tag": "v0.1.144",
+  "title": "World Liquor 0.1.144 — graphical HUD performance pairing",
   "prerelease": false,
   "validation_evidence": "CHANGELOG.md",
   "client_acceptance": "pending",
@@ -9,15 +9,13 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Dependency-only pairing with source-backed Java shaker coordinates and remaining-use eating HUD synchronization. World Liquor gameplay and assets preserved; actual client acceptance pending.",
+  "native_evidence_scope": "Dependency-only pairing with graphical HUD ignored-state pruning and bounded shaker preview caching. World Liquor gameplay and assets preserved; no client latency claim.",
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
   "status": "awaiting_source_ci_family_save_admission_and_live_readback",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "9e0ba08669cbd76c888c6abd0159e1bed153deac",
+  "tavern_commit": "efc59ff467a2f3accd1090bdcce3dc9d5f4b56df",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "同步酒館原作 UI 座標及燒烤進食條的剩餘時間計算。世界名酒只更新配對版本，保留玩法、存檔資料與素材。\n\n實際客戶端效果仍待確認。",
-  "reviewed_runtime_source": "7fb5c3991b67b202c6ffe85bb45a309577ff74ca",
-  "expected_archive_sha256": "dfb051d9d06767a2d91e441d853373c74cf298130850200ec916e264977aac9e"
+  "public_notes_inline": "同步酒館與燒烤的圖形 HUD 裁剪，以及酒館未變雪克杯預覽的有界快取。世界名酒只更新配對版本，保留玩法、存檔資料與素材。\n\n實際客戶端延遲與效能仍待確認。"
 }
