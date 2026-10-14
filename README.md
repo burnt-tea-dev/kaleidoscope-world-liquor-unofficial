@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.143
+## Current maintained baseline: 0.1.144
 
-W143 pairs with Tavern **0.6.165** and Grilling **2.8.141** for the Java shaker layout and eating HUD clock repair. World Liquor gameplay and assets are preserved; rendered-client acceptance remains pending.
+W144 pairs with Tavern **0.6.166** and Grilling **2.8.142** for bounded graphical HUD selection and shaker preview caching. World Liquor gameplay and assets are preserved; rendered-client acceptance remains pending.
 
 W140 pairs with Tavern T162 and Grilling G135 readable HUD transport. World Liquor gameplay is unchanged; actual UI recovery remains unverified. [Scope](docs/RELEASE-NOTES-0.1.140.md).
 
@@ -14,9 +14,9 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.165** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.166** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
-Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.141** is the exact public CI helper reference and remains optional for standalone use. The deployed Cookery integration and receiver evidence follow the current family index; historical peer checks retain their original source.
+Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.142** is the exact public CI helper reference and remains optional for standalone use. The deployed Cookery integration and receiver evidence follow the current family index; historical peer checks retain their original source.
 
 Back up existing worlds before updating both sides of a package. Use the [current Releases](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases) rather than historical archives committed in `downloads/`. Source and release checks do not certify a live installation or client rendering.
 
