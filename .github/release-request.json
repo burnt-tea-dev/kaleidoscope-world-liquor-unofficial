@@ -18,5 +18,6 @@
   "tavern_commit": "9e0ba08669cbd76c888c6abd0159e1bed153deac",
   "artifact_suffix": "baseline1",
   "public_notes_inline": "同步酒館原作 UI 座標及燒烤進食條的剩餘時間計算。世界名酒只更新配對版本，保留玩法、存檔資料與素材。\n\n實際客戶端效果仍待確認。",
-  "reviewed_runtime_source": "7fb5c3991b67b202c6ffe85bb45a309577ff74ca"
+  "reviewed_runtime_source": "7fb5c3991b67b202c6ffe85bb45a309577ff74ca",
+  "expected_archive_sha256": "dfb051d9d06767a2d91e441d853373c74cf298130850200ec916e264977aac9e"
 }
