@@ -1,4 +1,4 @@
-## Current maintained baseline: 0.1.140
+## Current maintained baseline: 0.1.141
 
 W140 pairs with Tavern T162 and Grilling G135 readable HUD transport. World Liquor gameplay is unchanged; actual UI recovery remains unverified. [Scope](docs/RELEASE-NOTES-0.1.140.md).
 
