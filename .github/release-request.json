@@ -1,7 +1,7 @@
 {
-  "version": "0.1.142",
-  "tag": "v0.1.142",
-  "title": "World Liquor 0.1.142 — stable family HUD pairing",
+  "version": "0.1.143",
+  "tag": "v0.1.143",
+  "title": "World Liquor 0.1.143 — family HUD synchronization",
   "prerelease": false,
   "validation_evidence": "CHANGELOG.md",
   "client_acceptance": "pending",
@@ -9,15 +9,14 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Dependency-only pairing with the formal Tavern/Grilling HUD coordinate, touch and native-token-filter repair; World Liquor gameplay and assets preserved. Actual client recovery pending.",
+  "native_evidence_scope": "Dependency-only pairing with source-backed Java shaker coordinates and remaining-use eating HUD synchronization. World Liquor gameplay and assets preserved; actual client acceptance pending.",
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
   "status": "awaiting_source_ci_family_save_admission_and_live_readback",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "8df3cc2646a4530098d4d610f4a7990549fbfca6",
-  "expected_archive_sha256": "018a6ef0a8bd9e60af5c6754eceefa3a86a1cd2d3f33b139aa55042c92b7bd1a",
+  "tavern_commit": "9e0ba08669cbd76c888c6abd0159e1bed153deac",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "同步酒館 0.6.164 與燒烤 2.8.140 的 UI 位置、觸控及資料碼修補。世界名酒只更新配對版本，保留原有玩法、資料與資產。\n\n實際畫面與玩法仍待客戶端確認；正式發版標籤不代表完整 Java 一比一或全部客戶端驗收。",
-  "reviewed_runtime_source": "18b7921d08bbf28f39c9f1f568d88a8f7cb8929a"
+  "public_notes_inline": "同步酒館原作 UI 座標及燒烤進食條的剩餘時間計算。世界名酒只更新配對版本，保留玩法、存檔資料與素材。\n\n實際客戶端效果仍待確認。",
+  "reviewed_runtime_source": "7fb5c3991b67b202c6ffe85bb45a309577ff74ca"
 }
