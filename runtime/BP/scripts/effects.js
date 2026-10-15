@@ -68,6 +68,7 @@ function doubleFreshDrops(dimension,position,chance){
  }}catch(e){console.warn('[World Liquor treasure guide] '+e);}},1);
 }
 function motion(p,state){
+ if(!state.multi_jump&&!state.reverse_gravity&&!state.captain_gift&&!state.boating_master)return;
  const v=p.getVelocity(),lava=(state.reverse_gravity||state.multi_jump)?lavaContact(p):false;
  let jumped=false;
  if(state.multi_jump){const row=multiJumpStep(jumps.get(p.id),{effect:true,amplifier:state.multi_jump.amplifier,ground:p.isOnGround,climbing:p.isClimbing,elytra:wearingUsableElytra(p),gliding:p.isGliding,riding:!!p.getComponent('minecraft:riding')?.entityRidingOn,water:p.isInWater,levitation:!!p.getEffect('levitation'),reverse:!!state.reverse_gravity,velocityY:v.y,pressed:p.inputInfo.getButtonState('Jump')==='Pressed',flying:p.isFlying});jumps.set(p.id,row);if(row.jump){jump(p,!!state.reverse_gravity,lava);jumped=true;}}
@@ -79,7 +80,12 @@ function jump(p,reverse,lava=lavaContact(p)){
  const at={x:Math.floor(p.location.x),y:Math.floor(p.location.y),z:Math.floor(p.location.z)},factor=b=>b?.typeId==='minecraft:honey_block'?.5:1,foot=factor(p.dimension.getBlock(at)),other=factor(p.dimension.getBlock({...at,y:reverse?at.y+1:Math.floor(p.location.y-.2)}));
  const target=sourceJumpVelocity({reverse,jumpFactor:foot===1?other:foot,jumpBoost:p.getEffect('jump_boost')?.amplifier,sprinting:p.isSprinting,yaw:p.getRotation().y}),velocity=p.getVelocity();p.applyImpulse(nativeJumpImpulse(velocity,target,{slowFalling:!!p.getEffect('slow_falling'),lava}));
 }
-export function tick(){frostAging?.tick();if(system.currentTick%20===0)killCredit.prune();const entities=new Map(world.getAllPlayers().map(p=>[p.id,p]));for(const entity of getTavernEffectEntities(world,NS))entities.set(entity.id,entity);for(const p of entities.values())try{
+export function tick(){frostAging?.tick();if(system.currentTick%20===0)killCredit.prune();
+ // Fresh host snapshots already identify every player/mob this pack can affect.
+ // Retire jump allowance when the recipient expires, without polling idle players.
+ const entities=getTavernEffectEntities(world,NS);
+ if(jumps.size){const current=new Set(entities.map(p=>p.id));for(const id of jumps.keys())if(!current.has(id))jumps.delete(id);}
+ for(const p of entities)try{
  const state=read(p);if(!state.multi_jump)jumps.delete(p.id);
  if(!Object.keys(state).length)continue;
  const heal=state.continuous_heal;if(heal){const h=p.getComponent('minecraft:health');if(h&&h.currentValue>0&&h.currentValue<h.effectiveMax)h.setCurrentValue(Math.min(h.effectiveMax,Math.fround(Math.fround(h.currentValue)+Math.fround(heal.amplifier+1))));}

@@ -4,6 +4,8 @@
 
 W131針對profile所見的傳輸CPU熱點，讓foundation receiver先篩選三個支援ID，再處理byte上限與JSON；共享UTF-8計數改按UTF-16讀取，保留配對及孤立surrogate的原數值。封包、ACK、排程及保存規則不變，詳見[本版範圍](RELEASE-NOTES-0.1.131.md)。此来源修正不能宣稱首輪啟動尖峰或整體watchdog已解決。
 
+W146只訪問fresh effect recipients、保留20tick TTL與空snapshot立即撤銷，並略過被動效果的velocity讀取及冰櫃未變transform的teleport。每tick玩法、存檔倒數、native物品保全與原作聲畫資料保留；[定向操作數與邊界案例](evidence/performance-20261015.md)不冒充實際高延遲／FPS驗收。
+
 玩法 authority 為 NeoForge 1.21.1／World Liquor 1.1.11／CF9066406，Forge 1.20.1／1.1.12／CF9066402 的差異分開核對。[current-author-review](../data/current-author-review-20261009.json)記錄來源；26.1.2／CF9087098 是另行待適配分支，custom Luck／BlockDrops copying 不能替換 1.21.1 的 vanilla Luck／block reroll。L0 為來源檢視，L1 為執行的 source／API／JVM 案例，L2 為明列來源的 native 引擎場景，L3 為真人客戶端比較。舊 L2／L3 保留其原版本，不改標成當前接受。
 
 | 項目 | 已完成與證據 | 剩餘範圍 |
