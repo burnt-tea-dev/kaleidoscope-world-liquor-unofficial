@@ -71,6 +71,7 @@ jobs:
         with:
           repository: casama233/kaleidoscope-tavern-unofficial
           ref: ${{ steps.pin.outputs.commit }}
+          fetch-depth: 0
           path: tavern-src
           persist-credentials: false
       - uses: actions/setup-python@v5

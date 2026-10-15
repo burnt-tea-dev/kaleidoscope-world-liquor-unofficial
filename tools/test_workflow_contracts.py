@@ -17,6 +17,14 @@ def commands(job):
     return '\n'.join(step.get('run', '') for step in job['steps'])
 
 
+def validate_tavern_history(workflow):
+    peers = [step['with'] for job in workflow['jobs'].values() for step in job['steps']
+             if step.get('with', {}).get('repository') == 'casama233/kaleidoscope-tavern-unofficial']
+    assert len(peers) == 1
+    assert peers[0]['ref'] == '${{ steps.pin.outputs.commit }}'
+    assert peers[0].get('fetch-depth') == '0', 'Immutable Tavern witnesses require complete peer history'
+
+
 def validate_ci(workflow):
     assert set(workflow['on']) == {'push', 'pull_request', 'workflow_dispatch'}
     assert workflow['on']['push']['branches'] == ['main']
@@ -57,6 +65,7 @@ def validate_ci(workflow):
                    'tools/test_pick_block.py', 'tools/effect-bar.test.mjs', 'tools/creative/test_catalog.py']:
         assert script in package, script
     assert 'steps.pin.outputs.commit' in str(jobs['package']['steps'])
+    validate_tavern_history(workflow)
     grilling = [step.get('with', {}) for step in jobs['package']['steps']
                 if step.get('with', {}).get('repository') == 'casama233/kaleidoscope-grilling-unofficial']
     assert len(grilling) == 1 and grilling[0]['ref'] == '${{ steps.pin.outputs.grilling_commit }}'
@@ -116,6 +125,7 @@ class WorkflowContracts(unittest.TestCase):
 
     def test_publication_stays_explicit_and_preserves_uploaded_byte_readback(self):
         workflow = read_workflow(WORKFLOWS / 'publish-release.yml')
+        validate_tavern_history(workflow)
         self.assertEqual(workflow['on']['push']['paths'], ['.github/release-request.json'])
         self.assertEqual(workflow['concurrency']['cancel-in-progress'], 'false')
         publish = commands(workflow['jobs']['publish'])
@@ -124,6 +134,17 @@ class WorkflowContracts(unittest.TestCase):
                        'gh release edit', 'asset-readback.json']:
             self.assertIn(marker, publish)
         self.assertLess(publish.index('assert local==remote'), publish.index('gh release edit'))
+
+    def test_shallow_or_missing_tavern_witness_history_is_rejected_on_both_routes(self):
+        for name in ['validation.yml', 'publish-release.yml']:
+            for depth in [None, '1']:
+                workflow = read_workflow(WORKFLOWS / name)
+                peer = next(step['with'] for job in workflow['jobs'].values() for step in job['steps']
+                            if step.get('with', {}).get('repository') == 'casama233/kaleidoscope-tavern-unofficial')
+                if depth is None: peer.pop('fetch-depth', None)
+                else: peer['fetch-depth'] = depth
+                with self.subTest(route=name, depth=depth), self.assertRaisesRegex(AssertionError, 'history'):
+                    validate_tavern_history(workflow)
 
 
 if __name__ == '__main__': unittest.main()
