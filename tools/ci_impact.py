@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import posixpath
 from pathlib import Path
 import re
 import subprocess
@@ -32,7 +33,9 @@ def release_inputs(repo):
     # Include every string rather than assuming only today's known field names.
     def strings(value):
         if isinstance(value, str):
-            yield value
+            # Release consumers normalize ./ and repeated separators with Path.
+            # Normalize dot segments too, conservatively covering equivalent paths.
+            yield posixpath.normpath(value)
         elif isinstance(value, dict):
             for item in value.values():
                 yield from strings(item)
