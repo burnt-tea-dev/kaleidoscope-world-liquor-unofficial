@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.147
+
+Move the existing animated freezer material definitions to the standard `materials/entity.material` entry and verify every World Liquor entity/render-controller material alias against its registry and builtin parent. Preserve texture pixels, alpha, UV animation, recipes and storage; pair with Tavern 0.6.169 and retain the optional Grilling 2.8.144 source-check peer. [Source evidence](docs/evidence/freezer-material-registry-20261015.md) records the client failure and source checks; actual restored client rendering remains pending.
+
 ## 0.1.146
 
 Visit fresh effect recipients instead of polling all players each tick, avoid velocity reads for passive effects, and skip unchanged freezer-display teleports while preserving repair and result-height updates. Snapshot revocation/expiry, per-tick gameplay, saved progress and item ownership remain intact. Pair with Tavern 0.6.168 and Grilling 2.8.144; see the [focused evidence](docs/evidence/performance-20261015.md). Actual client latency/FPS acceptance remains pending.

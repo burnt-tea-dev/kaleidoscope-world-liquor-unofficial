@@ -87,6 +87,7 @@ jobs:
         with:
           repository: casama233/kaleidoscope-tavern-unofficial
           ref: ${{ steps.pin.outputs.commit }}
+          fetch-depth: 0
           path: tavern-src
           persist-credentials: false
       - uses: actions/checkout@v4
@@ -109,6 +110,7 @@ jobs:
           GRILLING_SOURCE: ${{ github.workspace }}/grilling-src
         run: |
           python tools/test_storage_payload_projection.py
+          python tools/test_entity_material_registry.py
           python tools/test_texture_paths.py
           python tools/test_effect_names.py
           python tools/build_effect_names.py --check

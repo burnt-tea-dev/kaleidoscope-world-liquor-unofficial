@@ -121,7 +121,9 @@ def planned():
             'scale': [1, 1],
         }
         outputs[controller_path] = encoded(controller)
-    outputs[RP / 'materials/freezer_surface.material'] = encoded({'materials': materials})
+    # Entity materials use the client's standard entity registry entry. An
+    # arbitrary .material basename is not an entity material load declaration.
+    outputs[RP / 'materials/entity.material'] = encoded({'materials': materials})
     return outputs
 
 
