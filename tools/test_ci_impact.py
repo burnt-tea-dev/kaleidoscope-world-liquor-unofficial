@@ -40,6 +40,18 @@ class Planning(unittest.TestCase):
             p.write_text('[]')
             with self.assertRaises(ValueError): release_inputs(root)
 
+    def test_normalized_release_input_paths_require_full_validation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / '.github').mkdir()
+            for selected, changed in [('./README.md', 'README.md'),
+                                      ('docs//BUGS.md', 'docs/BUGS.md'),
+                                      ('docs/../README.md', 'README.md')]:
+                with self.subTest(selected=selected):
+                    (root / '.github/release-request.json').write_text(
+                        json.dumps({'publication_notes': selected}))
+                    self.assertTrue(plan([changed], release_inputs=release_inputs(root))['runtime'])
+
     def test_dispatch_unknown_missing_and_zero_revision(self):
         for name, event in [('workflow_dispatch', {}), ('schedule', {}), ('push', {}),
                             ('push', {'before': '0' * 40, 'after': '1' * 40}),
