@@ -1,0 +1,15 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "kwl_freezer_animated_alphablend:entity_alphablend": {
+      "+defines": [
+        "USE_UV_ANIM"
+      ]
+    },
+    "kwl_freezer_animated_alphatest:entity_alphatest": {
+      "+defines": [
+        "USE_UV_ANIM"
+      ]
+    }
+  }
+}

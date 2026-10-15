@@ -106,6 +106,19 @@ def main():
   assert name in baseline_additions(ROOT),('Unregistered native input addition',name)
   if name.startswith('runtime/RP/') or '/entities/' in name:
    assert name not in additions;additions[name]=digest(ROOT/name)
+ # The original magma strip remains unchanged for historical/source review.
+ # Its new opaque interpolation atlas is derived only from those source texels;
+ # the authoring checker verifies the whole active route before excluding these
+ # exact additions from the unchanged historical texture-tree witness.
+ from freezer_surface_animation import planned as freezer_animation_outputs
+ current_freezer_animation=freezer_animation_outputs()
+ for name in ('runtime/RP/materials/freezer_surface.material',
+              'runtime/RP/textures/repair/freezer_magma_interpolated.png',
+              'runtime/RP/textures/repair/freezer_magma_interpolated.texture_set.json'):
+  path=ROOT/name
+  assert name in baseline_additions(ROOT) and name not in additions
+  assert path.read_bytes()==current_freezer_animation[path],('Unreviewed freezer animation addition',name)
+  additions[name]=digest(path)
  highball=['runtime/RP/models/entity/kwl_highball_111.geo.json','runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__highball.png','runtime/RP/textures/kwl/items/highball.png','runtime/BP/items/highball.json','runtime/BP/blocks/cup_highball.json']
  for name in highball:
   assert name in baseline_additions(ROOT);additions[name]=digest(ROOT/name)

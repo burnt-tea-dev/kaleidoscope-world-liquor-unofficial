@@ -10,7 +10,17 @@
       ],
       "textures": [
         "Texture.default"
-      ]
+      ],
+      "uv_anim": {
+        "offset": [
+          0,
+          "((math.mod(math.floor(q.time_stamp / 2), 38) <= 19 ? math.mod(math.floor(q.time_stamp / 2), 38) : 38 - math.mod(math.floor(q.time_stamp / 2), 38))) / 20"
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
     }
   }
 }
