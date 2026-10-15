@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "scope": "Original maintained source sprites/metadata plus explicitly legacy saved result. No client acceptance claim.",
+  "minecraft_client": {
+    "url": "https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar",
+    "sha1": "30c73b1c5da787909b2f73340419fdf13b9def88"
+  },
+  "world_liquor": {
+    "file_id": 9066406,
+    "sha256": "e1f51736138bfe65ac1ce2aae2f2f3bd292dce71e2b8d2f18580a68bdea807cc"
+  },
+  "legacy_world_liquor": {
+    "file_id": 8704187,
+    "sha256": "d29a7507b3cfc90f9ff620d75e69102c0d25b3de8dbd0d89c73331e4c9e12205",
+    "new_recipe_selection": false
+  },
+  "sprites": [
+    {
+      "kind": "water",
+      "archive_member": "assets/minecraft/textures/block/water_still.png",
+      "source_release": "Minecraft1.21.1",
+      "image": {
+        "path": "data/freezer-surface-source/water.png",
+        "sha256": "5843e8826507c484dfc15d5d255843d041804bcaa2036ed137320610d7fb9af7"
+      },
+      "metadata": {
+        "path": "data/freezer-surface-source/water.png.mcmeta",
+        "sha256": "e9b8025fde1b09b0a4d2a38427b04f98f28a593045be6d177eb2b29164c872b0"
+      }
+    },
+    {
+      "kind": "lava",
+      "archive_member": "assets/minecraft/textures/block/lava_still.png",
+      "source_release": "Minecraft1.21.1",
+      "image": {
+        "path": "data/freezer-surface-source/lava.png",
+        "sha256": "7ba546bb9093670f1277ad39d4e973a693ce362f1854a9db00fdb7ab3e434c3c"
+      },
+      "metadata": {
+        "path": "data/freezer-surface-source/lava.png.mcmeta",
+        "sha256": "6a19bef21d66aac8fdcd8032751057733e321446b304d38f5ee8ba35efe99a1d"
+      }
+    },
+    {
+      "kind": "milk_still",
+      "archive_member": "assets/kaleidoscope_world_liquor/textures/block/milk_still.png",
+      "source_release": "WorldLiquor1.1.11-NeoForge1.21.1-CF9066406",
+      "image": {
+        "path": "data/freezer-surface-source/milk_still.png",
+        "sha256": "bba19eff21dc9b57a41cd73f352321c68de918a80b99c4590a11595cd01a9857"
+      },
+      "metadata": {
+        "path": "data/freezer-surface-source/milk_still.png.mcmeta",
+        "sha256": "e9b8025fde1b09b0a4d2a38427b04f98f28a593045be6d177eb2b29164c872b0"
+      }
+    },
+    {
+      "kind": "magma",
+      "archive_member": "assets/kaleidoscope_world_liquor/textures/block/magma.png",
+      "source_release": "Legacy saved result only: pinned WorldLiquor1.1.8-CF8704187; absent from current author archive",
+      "image": {
+        "path": "data/freezer-surface-source/magma.png",
+        "sha256": "b5abcdf0675a26b54140cbf982c1835492951a2faa627002c7b528e18781e722"
+      },
+      "metadata": {
+        "path": "data/freezer-surface-source/magma.png.mcmeta",
+        "sha256": "aaf0ed9c58bc8aed21cd08c751722c0262242919da2014ec484f3ddaa96e88c5"
+      }
+    }
+  ],
+  "platform": "Render-controller uv_anim using level q.time_stamp and USE_UV_ANIM materials; no server tick texture swapping.",
+  "docs": [
+    "https://learn.microsoft.com/en-us/minecraft/creator/reference/content/visualreference/render_controller.v1.8.0?view=minecraft-bedrock-stable",
+    "https://learn.microsoft.com/en-us/minecraft/creator/documents/practices/improvingperformanceandresourceusage?view=minecraft-bedrock-stable"
+  ]
+}

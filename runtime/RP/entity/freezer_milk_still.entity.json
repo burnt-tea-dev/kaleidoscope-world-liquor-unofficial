@@ -4,7 +4,7 @@
     "description": {
       "identifier": "kaleidoscope_world_liquor:freezer_milk_still_visual",
       "materials": {
-        "default": "entity_alphablend"
+        "default": "kwl_freezer_animated_alphablend"
       },
       "textures": {
         "default": "textures/repair/freezer_milk_still"
