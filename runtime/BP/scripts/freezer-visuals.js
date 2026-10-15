@@ -17,6 +17,12 @@ export function syncFreezerVisuals(block,state,recipes){
  const existing=block.dimension.getEntities({families:['kwl_visual'],location:{x:p.x+.5,y:p.y+.5,z:p.z+.5},maxDistance:2}).filter(e=>e.getDynamicProperty(N+':anchor')===anchor&&e.typeId.startsWith(N+':freezer_'));
  const chosen=new Map();for(const e of existing){const slot=e.getDynamicProperty(N+':visual_slot'),row=rows.find(r=>r.slot===slot&&e.typeId===N+':freezer_'+r.kind+'_visual');if(!row||chosen.has(slot))e.remove();else chosen.set(slot,e);}
  for(const row of rows){const angle=yaw*Math.PI/180,x=row.x*Math.cos(angle)-row.z*Math.sin(angle),z=row.x*Math.sin(angle)+row.z*Math.cos(angle),at={x:p.x+.5+x,y:p.y+row.y,z:p.z+.5+z};let e=chosen.get(row.slot);
-  if(!e){e=block.dimension.spawnEntity(N+':freezer_'+row.kind+'_visual',at,{initialRotation:yaw});e.setDynamicProperty(N+':anchor',anchor);e.setDynamicProperty(N+':position',JSON.stringify(p));e.setDynamicProperty(N+':block',block.typeId);e.setDynamicProperty(N+':visual_slot',row.slot);}else e.teleport(at,{rotation:{x:0,y:yaw}});
+  if(!e){e=block.dimension.spawnEntity(N+':freezer_'+row.kind+'_visual',at,{initialRotation:yaw});e.setDynamicProperty(N+':anchor',anchor);e.setDynamicProperty(N+':position',JSON.stringify(p));e.setDynamicProperty(N+':block',block.typeId);e.setDynamicProperty(N+':visual_slot',row.slot);}
+  else{
+   // Refresh still reconciles missing/moved entities, lid and result height.
+   // Unchanged native transforms need no redundant movement replication.
+   const location=e.location,rotation=e.getRotation();
+   if(['x','y','z'].some(k=>Math.fround(location[k])!==Math.fround(at[k]))||rotation.x%360!==0||(rotation.y-yaw)%360!==0)e.teleport(at,{rotation:{x:0,y:yaw}});
+  }
  }
 }
