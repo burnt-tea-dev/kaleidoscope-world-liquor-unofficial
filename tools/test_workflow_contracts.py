@@ -29,8 +29,19 @@ def validate_ci(workflow):
     baseline, bridge, package, wall = [commands(jobs[key]) for key in ['baseline', 'bridge', 'package', 'wall-record']]
     assert '--history-base' in baseline
     assert 'python tools/baseline_gate.py check --release' in baseline
-    for script in ['test_baseline_gate.py', 'test_bridge_project.py', 'test_workflow_contracts.py']:
+    for script in ['test_baseline_gate.py', 'test_bridge_project.py', 'test_workflow_contracts.py', 'test_ci_impact.py']:
         assert sum(commands(job).count(script) for job in jobs.values()) == 1, script
+    assert 'if' not in jobs['baseline']
+    assert jobs['baseline']['outputs']['runtime'] == '${{ steps.impact.outputs.runtime }}'
+    impact = [s for s in jobs['baseline']['steps'] if s.get('id') == 'impact']
+    assert len(impact) == 1 and impact[0]['run'] == 'python tools/ci_impact.py'
+    assert 'if' not in impact[0] and 'continue-on-error' not in impact[0]
+    checkout = jobs['baseline']['steps'][0]
+    assert checkout['with']['fetch-depth'] == '0'
+    for key in ['bridge', 'package', 'wall-record']:
+        assert jobs[key]['needs'] == 'baseline'
+        assert jobs[key]['if'] == ("always() && (needs.baseline.result != 'success' || "
+                                  "needs.baseline.outputs.runtime != 'false')")
     assert jobs['bridge']['runs-on'] == 'windows-latest'
     for marker in ['core.autocrlf false', 'deno-dash-compiler/releases/download/v1.2.0/dash.exe',
                    '00bb6d984f0ffb819e2fb26c1eda5768db2d6e07a979712e34e1c76c2b7594de',
@@ -92,6 +103,15 @@ class WorkflowContracts(unittest.TestCase):
         workflow = copy.deepcopy(self.workflow)
         for step in workflow['jobs']['bridge']['steps']:
             if 'run' in step: step['run'] = step['run'].replace('--verify-export builds/dist', '')
+        with self.assertRaises(AssertionError): validate_ci(workflow)
+
+    def test_fail_open_or_missing_impact_contract_is_rejected(self):
+        for key in ['bridge', 'package', 'wall-record']:
+            workflow = copy.deepcopy(self.workflow)
+            workflow['jobs'][key]['if'] = "needs.baseline.outputs.runtime == 'true'"
+            with self.assertRaises(AssertionError): validate_ci(workflow)
+        workflow = copy.deepcopy(self.workflow)
+        workflow['jobs']['baseline']['steps'][0]['with']['fetch-depth'] = '1'
         with self.assertRaises(AssertionError): validate_ci(workflow)
 
     def test_publication_stays_explicit_and_preserves_uploaded_byte_readback(self):

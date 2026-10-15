@@ -40,7 +40,7 @@ node tools/check_respawn_helpers.mjs
 python3 tools/verify_release.py --development
 ```
 
-The verification command reads the archive produced by the build. CI runs the complete required suite once. Local work uses only checks affected by the concrete change; successful evidence for unchanged candidates is reused. See [baseline maintenance](docs/BASELINE-MAINTENANCE.md) and [test audit](docs/audit/TEST-AUDIT.md).
+The verification command reads the archive produced by the build. CI runs the complete required suite once for functional or unknown inputs. Only changes confined to the reviewed `README.md`, `README.zh-TW.md` and `docs/BUGS.md` prose paths can skip bridge/package/wall-record jobs; baseline, release-claim and workflow checks still run. A prose path selected by release metadata is treated as functional. Manual runs, unavailable or empty diffs, and every other path require full validation. The gate uses complete push or PR merge-base diffs, including both sides of renames. The publication workflow always retains its full validation. Local work uses only checks affected by the concrete change; successful evidence for unchanged candidates is reused. See [baseline maintenance](docs/BASELINE-MAINTENANCE.md) and [test audit](docs/audit/TEST-AUDIT.md).
 
 Asset/reference checks are build preconditions. Source logic tests, affected native BDS scenes and actual rendered-client/audio acceptance are recorded separately. No simulated-player or full Java parity claim is made by these commands.
 
