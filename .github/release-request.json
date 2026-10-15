@@ -17,5 +17,7 @@
   "public_notes_path": "docs/RELEASE-NOTES-0.1.147.md",
   "tavern_commit": "08ccd47b93dc60dd0b935a8d5e812d4195858e9d",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "Load the existing animated freezer materials through the standard entity.material entry after client reports of undefined materials. Preserve the liquid and magma textures, alpha, UV animation, timing, recipes and storage. Pair with Tavern 0.6.169; Grilling 2.8.144 remains the optional source-check peer. Actual restored client rendering remains pending."
+  "public_notes_inline": "Load the existing animated freezer materials through the standard entity.material entry after client reports of undefined materials. Preserve the liquid and magma textures, alpha, UV animation, timing, recipes and storage. Pair with Tavern 0.6.169; Grilling 2.8.144 remains the optional source-check peer. Actual restored client rendering remains pending.",
+  "reviewed_runtime_source": "69a07c08e6ea3631304ceac145893c3a370e8d71",
+  "expected_archive_sha256": "e68257e20af9307776e52005f1a48ca084e5a120654854a4555b091c47c81241"
 }
