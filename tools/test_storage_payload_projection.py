@@ -1,5 +1,5 @@
 """Only the reviewed version identity may change in the historical storage view."""
-import base64,gzip,hashlib,importlib.util,json,tempfile,unittest
+import base64,copy,gzip,hashlib,importlib.util,json,tempfile,unittest
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('storage_check',Path(__file__).with_name('check_storage_rendering.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 def data(version,recipes):return ('export const payload = '+json.dumps({'version':version,'recipes':recipes},ensure_ascii=False,indent=2)+';\n').encode()
@@ -35,4 +35,29 @@ class GuideProjectionTests(unittest.TestCase):
  def test_corrupt_guide_predecessor_is_rejected(self):
   corrupt={**self.review,'before_pages_gzip_base64':base64.b64encode(gzip.compress(b'[]')).decode()}
   with self.assertRaises(AssertionError):m.restore_reviewed_guide(self.after,corrupt)
+class PerformanceProjectionTests(unittest.TestCase):
+ def setUp(self):
+  self.layer=next(row for row in m.read(m.ROOT/'data/baseline-reconciliation.json')['reviewedFunctionalDeltaLayers'] if row['release']=='0.1.146')
+ def test_exact_frozen_sources_reverse_to_immutable_w145_before_old_storage_guards(self):
+  self.assertEqual(set(self.layer['files']),m.PERFORMANCE_PATHS)
+  for name,row in self.layer['files'].items():
+   with self.subTest(path=name):
+    before,after=m.performance_sources(name)
+    self.assertEqual((m.ROOT/name).read_bytes(),after)
+    self.assertEqual(m.performance_preimage(name,after,row),before)
+    if name.endswith('/freezer-visuals.js'):
+     self.assertEqual(m.storage_reference_bytes(m.ROOT/name),m.previous_bytes(m.ROOT,m.ROOT/name))
+ def test_extra_line_is_rejected_even_with_synchronized_fixture_hash(self):
+  for name,row in self.layer['files'].items():
+   with self.subTest(path=name):
+    _,after=m.performance_sources(name);changed=after+b'\n// unreviewed source\n'
+    with self.assertRaises(AssertionError):m.performance_preimage(name,changed,row)
+    updated=copy.deepcopy(row);updated['after']=hashlib.sha256(changed).hexdigest()
+    with self.assertRaises(AssertionError):m.performance_preimage(name,changed,updated)
+ def test_other_preimage_is_rejected_even_with_synchronized_fixture_hash(self):
+  for name,row in self.layer['files'].items():
+   with self.subTest(path=name):
+    before,after=m.performance_sources(name);updated=copy.deepcopy(row)
+    updated['reverseOps'][-1][2]+='// forged predecessor\n';updated['before']=hashlib.sha256(before+b'// forged predecessor\n').hexdigest()
+    with self.assertRaises(AssertionError):m.performance_preimage(name,after,updated)
 if __name__=='__main__':unittest.main()

@@ -1,6 +1,6 @@
-## Current maintained baseline: 0.1.145
+## Current maintained baseline: 0.1.146
 
-W145 restores freezer water, lava and milk animation, original Java water/lava pixels and water opacity. Legacy saved magma results retain their original RGB interpolation. It pairs with Tavern0.6.167 and Grilling2.8.143; recipes, quantities, storage and source assets outside these reviewed surfaces remain unchanged. Current rendered-client acceptance is pending.
+W146 reduces idle-player effect polling and unchanged freezer-display teleports while preserving recipient expiry, active effect cadence, saved progress and original rendering. It retains W145's Java liquid animation and pixels, and pairs with Tavern0.6.168 and Grilling2.8.144. See the [source and operation-count evidence](docs/evidence/performance-20261015.md); actual client latency/FPS and rendered-client acceptance remain pending.
 
 Previous deployment evidence (T166/G142/W144, not acceptance for W145): The family deployed on **2026-10-14 21:41:21 HKT** after canonical PR/checks/merge and stopped-save first start/restart. All 42 packs passed startup readback. The formal [v0.1.144 release](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.144) is public (`prerelease=false`); the six public family packs contain 9,349 files matching the reviewed receipt and LIVE. This is delivery evidence, not a rendered-client latency or full Java parity result. See [client reports and remaining work](docs/BUGS.md) and the [family status](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md). `client=false`, `production_ready=false`, `pending_client_acceptance`.
 
@@ -10,7 +10,7 @@ A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.c
 
 ## Requirements and installation
 
-Use Tavern **0.6.167** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
+Use Tavern **0.6.168** with both packs' BP and RP enabled. Bedrock/BDS **1.26.50+** and the stable Script API versions in the manifests are required. [baseline.json](baseline.json) records the exact package identities and dependencies.
 
 Cookery **1.6.0** is optional. Its rice ingredients enable the original Dassai/Maotai preparation recipes. Existing bottles remain drinkable and placeable without Cookery. Tavern has an independent guide; the optional Cookery entrance uses the same seven sections. Grilling **2.8.143** is the exact public CI helper reference and remains optional for standalone use. The deployed Cookery integration and receiver evidence follow the current family index; historical peer checks retain their original source.
 
