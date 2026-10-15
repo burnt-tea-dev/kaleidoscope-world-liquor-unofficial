@@ -141,7 +141,10 @@ def main():
  # exact additions from the unchanged historical texture-tree witness.
  from freezer_surface_animation import planned as freezer_animation_outputs
  current_freezer_animation=freezer_animation_outputs()
- for name in ('runtime/RP/materials/freezer_surface.material',
+ from entity_material_registry import check as check_entity_material_registry
+ check_entity_material_registry(ROOT/'runtime/RP',[TAV/'runtime/RP'])
+ assert not (ROOT/'runtime/RP/materials/freezer_surface.material').exists(), 'Unloaded legacy material entry remains'
+ for name in ('runtime/RP/materials/entity.material',
               'runtime/RP/textures/repair/freezer_magma_interpolated.png',
               'runtime/RP/textures/repair/freezer_magma_interpolated.texture_set.json'):
   path=ROOT/name
