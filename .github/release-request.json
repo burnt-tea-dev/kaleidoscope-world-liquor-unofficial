@@ -1,7 +1,7 @@
 {
-  "version": "0.1.144",
-  "tag": "v0.1.144",
-  "title": "World Liquor 0.1.144 — graphical HUD performance pairing",
+  "version": "0.1.145",
+  "tag": "v0.1.145",
+  "title": "World Liquor0.1.145 \u2014 restore freezer surface animation",
   "prerelease": false,
   "validation_evidence": "CHANGELOG.md",
   "client_acceptance": "pending",
@@ -9,15 +9,15 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Dependency-only pairing with graphical HUD ignored-state pruning and bounded shaker preview caching. World Liquor gameplay and assets preserved; no client latency claim.",
+  "native_evidence_scope": "Restores freezer water/lava/milk animation and original Java water/lava pixels and water alpha. Legacy saved magma output keeps source RGB interpolation. Recipes, storage, quantities and timing remain unchanged.\n\nClient rendering and complete Java parity remain pending.",
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
   "status": "awaiting_source_ci_family_save_admission_and_live_readback",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "efc59ff467a2f3accd1090bdcce3dc9d5f4b56df",
+  "tavern_commit": "b913d957d126e095e7fc9b71dd2ebdf179f9c499",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "同步酒館與燒烤的圖形 HUD 裁剪，以及酒館未變雪克杯預覽的有界快取。世界名酒只更新配對版本，保留玩法、存檔資料與素材。\n\n實際客戶端延遲與效能仍待確認。",
-  "reviewed_runtime_source": "ce4fc2bbc2ff698495c6de6ded23e0c5d24eecbf",
-  "expected_archive_sha256": "0cbeca72ca634c1e6e8a4da890d8cc93d7f3bd80f1dc58a339dfbe1246df089b"
+  "public_notes_inline": "Restores freezer water/lava/milk animation and original Java water/lava pixels and water alpha. Legacy saved magma output keeps source RGB interpolation. Recipes, storage, quantities and timing remain unchanged.\n\nClient rendering and complete Java parity remain pending.",
+  "reviewed_runtime_source": "7f0e749c15eea165f2a1a4fce06723493d9510ee",
+  "expected_archive_sha256": "98b73b71e0392a7dcad1b118d857f11c58227856ab1bf2f3a01a42e6f01e82dd"
 }
