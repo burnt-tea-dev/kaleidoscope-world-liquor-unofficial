@@ -15,7 +15,9 @@
   "client": false,
   "status": "awaiting_source_ci_family_save_admission_and_live_readback",
   "public_notes_path": "docs/RELEASE-NOTES-0.1.146.md",
-  "tavern_commit": "b913d957d126e095e7fc9b71dd2ebdf179f9c499",
+  "tavern_commit": "4e549925509f3ab3e8521485a0e14b5d66f218a9",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "Reduce idle-player effect polling and unchanged freezer-display movement while preserving active effect cadence, snapshot revocation/expiry, saved progress and original rendering. Pair with Tavern 0.6.168 and Grilling 2.8.144. Actual client latency/FPS and full Java visual acceptance remain pending."
+  "public_notes_inline": "Reduce idle-player effect polling and unchanged freezer-display movement while preserving active effect cadence, snapshot revocation/expiry, saved progress and original rendering. Pair with Tavern 0.6.168 and Grilling 2.8.144. Actual client latency/FPS and full Java visual acceptance remain pending.",
+  "reviewed_runtime_source": "6bc779243fa7c46f2b33561a52387231ad21dbce",
+  "expected_archive_sha256": "e2131fc3bbae2cbe7703bcbe65843965bbe1bc1c8304f53a0140196c9f497fca"
 }
