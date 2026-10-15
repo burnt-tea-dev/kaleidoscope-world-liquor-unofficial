@@ -9,17 +9,41 @@ import sys
 import os
 import base64
 import gzip
+from functools import lru_cache
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 TAV=Path(os.environ.get('TAVERN_ROOT',str(ROOT.parent/'tavern-src')))
 sys.path.insert(0,str(TAV/'tools'))
-from baseline_reference import previous_bytes,additions as baseline_additions
+from baseline_reference import previous_bytes,reverse_functional_delta,additions as baseline_additions
 from texture_paths import PATHS,check as check_texture_paths,rewrite_values
 NS='kaleidoscope_world_liquor'
 KT='kaleidoscope_tavern'
 COMPACT_REVIEW=json.loads((ROOT/'data/compact-texture-review.json').read_text())
 AUTHOR_ART_REVIEW=json.loads((ROOT/'data/current-author-art-preservation.json').read_text())
+PERFORMANCE_PREVIOUS='cc8ec7b202230185a62c2786affcf7acb85a5ebe'
+PERFORMANCE_REVIEWED='6bc779243fa7c46f2b33561a52387231ad21dbce'
+PERFORMANCE_PATHS=frozenset({'runtime/BP/scripts/effects.js','runtime/BP/scripts/freezer-visuals.js'})
 def read(p):return json.loads(p.read_text())
+@lru_cache(maxsize=2)
+def performance_sources(name):
+ assert name in PERFORMANCE_PATHS
+ return tuple(subprocess.check_output(['git','show',commit+':'+name],cwd=ROOT) for commit in (PERFORMANCE_PREVIOUS,PERFORMANCE_REVIEWED))
+def performance_preimage(name,data,row):
+ # Pin complete immutable source, not just a mutable review fixture's hash.
+ before,after=performance_sources(name)
+ assert data==after,('Unreviewed performance source',name)
+ restored=reverse_functional_delta(name,data,row)
+ assert restored==before,('Performance reverse delta has another preimage',name)
+ return restored
+def storage_reference_bytes(p):
+ name=p.relative_to(ROOT).as_posix()
+ if name in PERFORMANCE_PATHS:
+  layers=[x for x in read(ROOT/'data/baseline-reconciliation.json')['reviewedFunctionalDeltaLayers'] if x['release']=='0.1.146']
+  assert len(layers)==1 and set(layers[0]['files'])==PERFORMANCE_PATHS
+  layer=layers[0]
+  assert layer['previousCommit']==PERFORMANCE_PREVIOUS and layer['reviewedCommit']==PERFORMANCE_REVIEWED
+  performance_preimage(name,p.read_bytes(),layer['files'][name])
+ return previous_bytes(ROOT,p)
 def restore_reviewed_guide(payload,review):
  assert review['schema']==1 and review['test_only'] is True
  current={key:value for key,value in payload.items() if key!='version'}
@@ -66,7 +90,7 @@ def readjs(p):
   assert hashlib.sha256(data).hexdigest()==review['after']
   original=(ROOT/review['previous_payload']).read_bytes();assert hashlib.sha256(original).hexdigest()==review['before']
   return json.loads(original.decode().split('=',1)[1].strip().rstrip(';'))
- return json.loads(previous_bytes(ROOT,p).decode().split('=',1)[1].strip().rstrip(';'))
+ return json.loads(storage_reference_bytes(p).decode().split('=',1)[1].strip().rstrip(';'))
 def compact_preimage(p):
  row=COMPACT_REVIEW['changes'][p.relative_to(ROOT).as_posix()]
  data=p.read_bytes();assert hashlib.sha256(data).hexdigest()==row['after'],('Unreviewed compact texture reference',p)
@@ -82,10 +106,15 @@ def digest(p):
   assert hashlib.sha256(original).hexdigest()==author['before'],('Author art predecessor corrupt',p)
   return author['before']
  row=COMPACT_REVIEW['changes'].get(p.relative_to(ROOT).as_posix())
- data=compact_preimage(p) if row and not row['handled_by_baseline_reference'] else previous_bytes(ROOT,p)
+ data=compact_preimage(p) if row and not row['handled_by_baseline_reference'] else storage_reference_bytes(p)
  return hashlib.sha256(data).hexdigest()
 def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def main():
+ # Both reviewed JS bodies are bound even where an older storage guard only
+ # checks selected semantics rather than a complete historical file digest.
+ for name in PERFORMANCE_PATHS:
+  layer=next(x for x in read(ROOT/'data/baseline-reconciliation.json')['reviewedFunctionalDeltaLayers'] if x['release']=='0.1.146')
+  performance_preimage(name,(ROOT/name).read_bytes(),layer['files'][name])
  spec=importlib.util.spec_from_file_location('creative_history',TAV/'tools/creative/historical.py')
  history=importlib.util.module_from_spec(spec);spec.loader.exec_module(history)
  projection=history.LegacyMenuProjection(ROOT)
