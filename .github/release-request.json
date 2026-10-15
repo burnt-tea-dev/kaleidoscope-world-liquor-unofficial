@@ -1,7 +1,7 @@
 {
   "version": "0.1.145",
   "tag": "v0.1.145",
-  "title": "World Liquor0.1.145 — restore freezer surface animation",
+  "title": "World Liquor0.1.145 \u2014 restore freezer surface animation",
   "prerelease": false,
   "validation_evidence": "CHANGELOG.md",
   "client_acceptance": "pending",
@@ -15,9 +15,9 @@
   "client": false,
   "status": "awaiting_source_ci_family_save_admission_and_live_readback",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "efc59ff467a2f3accd1090bdcce3dc9d5f4b56df",
+  "tavern_commit": "b913d957d126e095e7fc9b71dd2ebdf179f9c499",
   "artifact_suffix": "baseline1",
   "public_notes_inline": "Restores freezer water/lava/milk animation and original Java water/lava pixels and water alpha. Legacy saved magma output keeps source RGB interpolation. Recipes, storage, quantities and timing remain unchanged.\n\nClient rendering and complete Java parity remain pending.",
-  "reviewed_runtime_source": "ce4fc2bbc2ff698495c6de6ded23e0c5d24eecbf",
-  "expected_archive_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  "reviewed_runtime_source": "7f0e749c15eea165f2a1a4fce06723493d9510ee",
+  "expected_archive_sha256": "98b73b71e0392a7dcad1b118d857f11c58227856ab1bf2f3a01a42e6f01e82dd"
 }
