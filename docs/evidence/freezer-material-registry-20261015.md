@@ -38,10 +38,13 @@ Targeted source checks:
   version. Texture pixels, alpha, geometry, UV selectors/frame cadence, gameplay
   scripts, recipes and saved ownership remain unchanged.
 
-W147 pairs with Tavern T169 source
-`08ccd47b93dc60dd0b935a8d5e812d4195858e9d`; the optional Grilling G144 source
+W147 pairs with Tavern T169 source/tools
+`64934a0b2432bbd81b61bb79ce47f9d15d119b20` (runtime frozen at
+`08ccd47b93dc60dd0b935a8d5e812d4195858e9d`); the optional Grilling G144 source
 peer remains `b0267c295305a1bc6a0c1e6a0c01e3f812b149f1`. Existing W146
 performance changes and historical evidence retain their original identities.
+The first W147 PR run [38749385734](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/actions/runs/38749385734) passed its World Liquor source, generator, package and bridge checks, then failed the shared Tavern `check_launch.py` asset witness for `runtime/RP/ui/kt_tavern_hud.json`. Its original T169 runtime-freeze pin preceded the exact HUD witness continuation. The corrected peer pin includes that reviewed tool continuation with identical T169 runtime; W147 runtime, version and archive remain unchanged. The original failure is retained.
+
 The earlier standalone `header.version: invalid string` client line lacked pack
 context and is not attributed to this material entry; material schema version
 and numeric pack header versions are different fields.
