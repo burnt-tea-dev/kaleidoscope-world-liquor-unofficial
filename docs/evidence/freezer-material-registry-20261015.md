@@ -45,6 +45,8 @@ peer remains `b0267c295305a1bc6a0c1e6a0c01e3f812b149f1`. Existing W146
 performance changes and historical evidence retain their original identities.
 The first W147 PR run [38749385734](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/actions/runs/38749385734) passed its World Liquor source, generator, package and bridge checks, then failed the shared Tavern `check_launch.py` asset witness for `runtime/RP/ui/kt_tavern_hud.json`. Its original T169 runtime-freeze pin preceded the exact HUD witness continuation. The corrected peer pin includes that reviewed tool continuation with identical T169 runtime; W147 runtime, version and archive remain unchanged. The original failure is retained.
 
+The next run [38750051104](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/actions/runs/38750051104) reached the exact witness but the shallow Tavern checkout lacked its immutable predecessor. CI and publication now fetch the paired Tavern history; a workflow regression rejects missing or shallow history on both routes. This changes CI inputs only and retains the second failure.
+
 The earlier standalone `header.version: invalid string` client line lacked pack
 context and is not attributed to this material entry; material schema version
 and numeric pack header versions are different fields.
