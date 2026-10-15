@@ -1806,6 +1806,11 @@
       "before": null,
       "after": "c21f6516c397835ca22e88d84060e253886bfd7c0a9068655ce51f5a6db7b144",
       "reason": "Source-backed freezer animation addition; retained legacy source and gameplay."
+    },
+    "runtime/RP/materials/entity.material": {
+      "before": null,
+      "after": "a49a59442f385b9dadc19def017c274584f917e978a0bf905a55ca028d9e66c4",
+      "reason": "W147 moves the exact existing freezer UV material bytes to standard client entity registry entry; retain the prior unloaded-path review unchanged. No texture/alpha/UV/frame/recipe changes."
     }
   },
   "reviewedFunctionalDeltaLayers": [
