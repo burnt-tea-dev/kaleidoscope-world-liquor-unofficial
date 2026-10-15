@@ -71,6 +71,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: world-liquor-src
+          fetch-depth: 0
       - name: Read exact paired source pin
         id: pin
         run: |

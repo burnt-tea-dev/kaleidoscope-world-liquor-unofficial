@@ -2444,6 +2444,42 @@
           ]
         }
       }
+    },
+    {
+      "release": "0.1.146",
+      "previousCommit": "cc8ec7b202230185a62c2786affcf7acb85a5ebe",
+      "reviewedCommit": "6bc779243fa7c46f2b33561a52387231ad21dbce",
+      "files": {
+        "runtime/BP/scripts/effects.js": {
+          "reason": "Visit the same fresh snapshot recipients without idle-player enumeration; preserve per-tick actions and clear expired jump allowance.",
+          "before": "12a8a45ddd2d3f533aab9ea2762fbccaed4f67b51ceb79ac2745dd950457a09e",
+          "after": "703072584ebda6b236b830a85b4bee40dffb6b89f4cc688da9570686f32871f4",
+          "reverseOps": [
+            [
+              70,
+              71,
+              ""
+            ],
+            [
+              82,
+              88,
+              "export function tick(){frostAging?.tick();if(system.currentTick%20===0)killCredit.prune();const entities=new Map(world.getAllPlayers().map(p=>[p.id,p]));for(const entity of getTavernEffectEntities(world,NS))entities.set(entity.id,entity);for(const p of entities.values())try{\n"
+            ]
+          ]
+        },
+        "runtime/BP/scripts/freezer-visuals.js": {
+          "reason": "Skip only unchanged native transform teleports while retaining owned visual reconciliation and original result heights.",
+          "before": "e5087ac7ab6c51ab5187f7e03c0145cef66d30a36075269531e1cfa0f97a4602",
+          "after": "b15f6e7a57cbebbfe5f7abb7682723aa234930e8cde5c4231c7d662c9ed17bd8",
+          "reverseOps": [
+            [
+              19,
+              26,
+              "  if(!e){e=block.dimension.spawnEntity(N+':freezer_'+row.kind+'_visual',at,{initialRotation:yaw});e.setDynamicProperty(N+':anchor',anchor);e.setDynamicProperty(N+':position',JSON.stringify(p));e.setDynamicProperty(N+':block',block.typeId);e.setDynamicProperty(N+':visual_slot',row.slot);}else e.teleport(at,{rotation:{x:0,y:yaw}});\n"
+            ]
+          ]
+        }
+      }
     }
   ],
   "reviewedAssetDeltaLayers": [
