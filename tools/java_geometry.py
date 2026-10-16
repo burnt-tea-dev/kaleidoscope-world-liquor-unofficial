@@ -7,39 +7,20 @@ silently. Coordinate/UV conventions are documented in docs/CONVERSION.zh-TW.md.
 """
 from __future__ import annotations
 
-import argparse
-import base64
 import copy
-import hashlib
 import json
 import math
 import re
-import shutil
-import sys
-import uuid
 from pathlib import Path
-from typing import Any
 
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "upstream/assets"
-NS = "kaleidoscope_grilling"
 FACES = ("north", "east", "south", "west", "up", "down")
-UUID_NS = uuid.UUID("9633f1b6-13a6-4b96-b80b-66e3cfa0cd0a")
-BOTTLE_OFFSETS = [
-    [[0, 0]], [[4, 3], [-3, -1]],
-    [[4, 4], [-3, 3], [3, -3.75]],
-    [[4, 5], [-3, 4], [3.5, -3.25], [-4.25, -3.25]],
-]
 
 class AssetError(ValueError):
     """The input cannot be converted faithfully by this restricted exporter."""
-
-
-def write_json(path: Path, value: Any) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 
 
 def checked_id(identifier: str) -> tuple[str, str]:
@@ -137,52 +118,6 @@ def inspect_model(model: dict, allow_native_uv_rotation: bool = False) -> list[d
     return warnings
 
 
-def lower_inward_surfaces(model: dict) -> tuple[dict, list[dict]]:
-    """Preserve six-plane semantics of all-axis-reversed authored cuboids.
-
-    Each original face stays at its own plane with its own outward normal and
-    corner UVs. This is NOT abs(size), a filled replacement box, or extra thickness.
-    Mixed-axis inversions remain blocked pending a dedicated verified mapping.
-    """
-    out = copy.deepcopy(model)
-    out["elements"] = []
-    changes = []
-    for i, e in enumerate(model.get("elements", [])):
-        a = check_vector(e.get("from"), 3, "from")
-        b = check_vector(e.get("to"), 3, "to")
-        inverted = [b[j] < a[j] for j in range(3)]
-        if not any(inverted):
-            out["elements"].append(copy.deepcopy(e))
-            continue
-        if not all(inverted):
-            raise AssetError("Mixed-axis inverted dimensions still require separate review")
-        planes = {"north": (2, a[2]), "south": (2, b[2]),
-                  "west": (0, a[0]), "east": (0, b[0]),
-                  "up": (1, b[1]), "down": (1, a[1])}
-        for face, data in e.get("faces", {}).items():
-            if data.get("rotation", 0):
-                raise AssetError("Rotated UV on inward face is not yet supported")
-            axis, value = planes[face]
-            lo, hi = list(b), list(a)
-            lo[axis] = hi[axis] = value
-            uv = data["uv"]
-            f = copy.deepcopy(data)
-            f["uv"] = [uv[2], uv[3], uv[0], uv[1]]
-            plane = {"name": f"source_{i}_inward_{face}", "from": lo, "to": hi,
-                     "faces": {face: f}}
-            if "rotation" in e:
-                plane["rotation"] = copy.deepcopy(e["rotation"])
-            if "shade" in e:
-                plane["shade"] = e["shade"]
-            out["elements"].append(plane)
-        changes.append({"code": "INWARD_SURFACES_TO_ONE_SIDED_PLANES", "source_element": i,
-                        "source_faces": list(e.get("faces", {})),
-                        "planes_created": len(e.get("faces", {})),
-                        "added_thickness": 0, "source_retained": True})
-    inspect_model(out)
-    return out, changes
-
-
 def lower_mixed_axis_surfaces(model: dict) -> tuple[dict, list[dict]]:
     """Preserve signed-cuboid face winding via oriented, zero-thickness planes.
 
@@ -276,27 +211,6 @@ def lower_uv_half_turns(model: dict, allow_quarter_turns: bool = False) -> tuple
     return out, changes
 
 
-def metadata_warnings(model: dict) -> list[dict]:
-    """Record source requirements without silently claiming runtime support."""
-    warnings = []
-    ref = model.get("textures", {}).get("particle")
-    if ref is not None:
-        try:
-            texture_id(ref, model["textures"])
-        except (AssetError, TypeError, AttributeError) as exc:
-            warnings.append({"code": "UNRESOLVED_SOURCE_PARTICLE_ALIAS", "source_value": ref,
-                             "reason": str(exc), "affects_body_face_uv": False,
-                             "particle_runtime_implemented": False})
-    for i, e in enumerate(model.get("elements", [])):
-        if "neoforge_data" in e:
-            warnings.append({"code": "SOURCE_LIGHTING_METADATA_NOT_PORTED", "source_element": i,
-                             "source_value": copy.deepcopy(e["neoforge_data"]),
-                             "geometry_and_uv_preserved": True,
-                             "bedrock_emissive_material_implemented": False,
-                             "offline_fullbright_simulated": False})
-    return warnings
-
-
 def build_atlas(model: dict, destination: Path, root: Path = ASSETS) -> dict[str, dict]:
     refs = sorted({texture_id(f["texture"], model.get("textures", {}))
                    for e in model["elements"] for f in e.get("faces", {}).values()})
@@ -384,5 +298,4 @@ def geometry(model: dict, name: str, placement: dict, offsets: list[list[float]]
                         "visible_bounds_width": 4, "visible_bounds_height": 4,
                         "visible_bounds_offset": [0, 1, 0]},
         "bones": bones}]}
-
 
