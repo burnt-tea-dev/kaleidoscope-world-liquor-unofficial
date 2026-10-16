@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "review_date": "2026-10-16",
+  "repository": "casama233/kaleidoscope-world-liquor-unofficial",
+  "source_commit": "0fcca4eeaddb64a7452b89c2cdc3d5930f852b39",
+  "targets": [
+    {
+      "path": "tools/java_geometry.py",
+      "source_blob": "20414d98e2857fcf5397ae8647e7cd207c471f2f",
+      "functions": [
+        {
+          "name": "write_json",
+          "first_line": 40,
+          "last_line": 42
+        },
+        {
+          "name": "lower_inward_surfaces",
+          "first_line": 140,
+          "last_line": 183
+        },
+        {
+          "name": "metadata_warnings",
+          "first_line": 279,
+          "last_line": 297
+        }
+      ],
+      "decision": "remove unused helper functions and their exclusive unused imports/constants",
+      "geometry_consumers": [
+        {
+          "path": "tools/_build_port_source.py",
+          "accessed_attributes": [
+            "build_atlas",
+            "geometry",
+            "lower_mixed_axis_surfaces",
+            "lower_uv_half_turns",
+            "resolve_model",
+            "resource_path"
+          ]
+        },
+        {
+          "path": "tools/update_current_cocktail_art.py",
+          "accessed_attributes": [
+            "build_atlas",
+            "geometry",
+            "lower_mixed_axis_surfaces",
+            "lower_uv_half_turns",
+            "resolve_model"
+          ]
+        },
+        {
+          "path": "tools/update_freezer_java_art.py",
+          "accessed_attributes": [
+            "geometry",
+            "lower_uv_half_turns",
+            "resolve_model"
+          ]
+        },
+        {
+          "path": "tools/update_mixology_111.py",
+          "accessed_attributes": [
+            "build_atlas",
+            "geometry",
+            "lower_mixed_axis_surfaces",
+            "lower_uv_half_turns",
+            "resolve_model"
+          ]
+        }
+      ],
+      "same_named_grilling_importer_functions_preserved": true,
+      "all_retained_module_ast_nodes_unchanged": true
+    }
+  ],
+  "reference_review": {
+    "scope": "Tracked source, tests, workflow and documentation in the three public canonical repositories plus the optional private integration; current maintenance entry was also checked. Private source is not published here.",
+    "retired_hud_module_or_entrypoint_references_outside_the_four_retired_modules": 0,
+    "private_source_kept_private": true
+  },
+  "production_reachability": {
+    "basis": "Source-to-export exclusion: these Python authoring helpers are outside the canonical BP/RP roots and absent from every pack in the admitted full-family runtime. This is structural exclusion, not a sampled zero-call result.",
+    "full_family_reviewed_receipt_sha256": "c563149cea7e4413e67da2a37777ed583aa1ed0d739b3160b7e9130bc9f91bd3",
+    "admitted_pack_count": 42,
+    "python_files_in_admitted_packs": 0,
+    "export_roots": {
+      "BP": {
+        "path": "runtime/BP",
+        "git_tree": "ae4769f59e5f0d10f8642505acfb24b9dec1428d"
+      },
+      "RP": {
+        "path": "runtime/RP",
+        "git_tree": "2c70ecfdc4e5deea038ff8980ff4311a3d236b48"
+      }
+    },
+    "runtime_call_counters_available": false,
+    "profile_proves_zero_calls": false
+  },
+  "preserved": {
+    "runtime_roots": true,
+    "version_and_manifests": true,
+    "release_history_and_baseline": true,
+    "existing_hud_or_geometry_contracts": true,
+    "historical_sources": true
+  },
+  "external_sources": {
+    "slack": "not_connected",
+    "statsig": "not_connected",
+    "native_profile": "Existing short samples do not establish per-function zero usage; no new profiler or telemetry changes were made."
+  },
+  "limits": [
+    "No unused gameplay, feature flag or saved-data compatibility code is deleted on the basis of missing samples.",
+    "This review covers the pinned source and admitted runtime; it is not a claim about every external manual consumer or all future tools."
+  ],
+  "validation": {
+    "targeted_existing_check": "python -B tools/test_freezer_java_art.py",
+    "exit_code": 0,
+    "required_ci": "Actual pull request checks are authoritative; no successful unchanged suite is repeated locally.",
+    "new_tests_added": false,
+    "runtime_candidate_or_live_restart": false
+  }
+}
