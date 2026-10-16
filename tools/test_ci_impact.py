@@ -11,12 +11,12 @@ from ci_impact import changed_paths, plan, release_inputs
 
 class Planning(unittest.TestCase):
     def test_reviewed_prose(self):
-        self.assertFalse(plan(['README.md', 'README.zh-TW.md', 'docs/BUGS.md'])['runtime'])
+        self.assertFalse(plan(['AGENTS.md', 'README.md', 'README.zh-TW.md', 'docs/BUGS.md'])['runtime'])
 
     def test_empty_unknown_and_mixed_changes(self):
         self.assertTrue(plan([])['runtime'])
         for path in ['runtime/BP/scripts/main.js', 'tests/check.md', 'package.json',
-                     'package-lock.json', 'requirements.txt', 'baseline.json',
+                     'package-lock.json', 'requirements.txt', 'baseline.json', 'docs/AGENTS.md',
                      '.github/baseline-integration.json', '.github/workflows/validation.yml',
                      '.github/release-request.json', 'tools/ci_impact.py', 'new-config.toml',
                      'docs/BASELINE-STATUS.md', 'docs/RELEASE-NOTES-0.1.144.md',
@@ -29,6 +29,7 @@ class Planning(unittest.TestCase):
         self.assertTrue(plan(['README.md'], 'diff failed')['runtime'])
         self.assertTrue(plan(['README.md'], release_inputs={'README.md'})['runtime'])
         self.assertTrue(plan(['docs/BUGS.md'], release_inputs={'docs/BUGS.md'})['runtime'])
+        self.assertTrue(plan(['AGENTS.md'], release_inputs={'AGENTS.md'})['runtime'])
 
     def test_release_metadata_read(self):
         with tempfile.TemporaryDirectory() as tmp:
