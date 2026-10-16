@@ -15,7 +15,7 @@
   "client": false,
   "status": "stable_development_candidate_pending_family_gates",
   "public_notes_path": "docs/RELEASE-NOTES-0.1.151.md",
-  "tavern_commit": "2a95dbe7d9a2e7bc06aa0e54fb3a629dcc38e243",
+  "tavern_commit": "08d20994cc0c8821af2b912733b9cb8231492a5b",
   "artifact_suffix": "baseline1",
   "public_notes_inline": "Restore original Java freezer, cup, stool and cabinet collision shapes; pair both World Liquor 0.1.151 packs with Tavern 0.6.173. Stable Bedrock collision arrays require no new experiments. Treasure Guide nearby-item/death-callback limitations remain unchanged and unverified natively. Client acceptance and production readiness remain false. This development candidate is not an automatic public release request.",
   "expected_archive_sha256": "393c210c6b7cf6db45c27a9f31f7b90c77771f7efc9ec87d61985db33556469a"
