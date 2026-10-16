@@ -33,17 +33,28 @@
           "ambient_occlusion": 0
         }
       },
-      "minecraft:collision_box": false,
-      "minecraft:selection_box": {
+      "minecraft:collision_box": {
         "origin": [
-          -7,
+          -4,
           0,
-          -7
+          -4
         ],
         "size": [
-          14,
-          16,
-          14
+          8,
+          10,
+          8
+        ]
+      },
+      "minecraft:selection_box": {
+        "origin": [
+          -4,
+          0,
+          -4
+        ],
+        "size": [
+          8,
+          10,
+          8
         ]
       },
       "minecraft:destructible_by_mining": {

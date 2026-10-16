@@ -119,6 +119,13 @@ def item(item,kind='plain',javaitem=None,modelinfo=None):
 def block(identifier,mi,kind,states=None,perms=None):
  materials={'*':{'texture':mi['texture'],'render_method':'alpha_test_single_sided','face_dimming':True,'ambient_occlusion':0},'default':{'texture':mi['texture'],'render_method':'alpha_test_single_sided','face_dimming':False,'ambient_occlusion':0}}
  c={'minecraft:geometry':{'identifier':mi['geometry']},'minecraft:material_instances':materials,'minecraft:collision_box':False if kind in ['bottle','cocktail'] else {'origin':[-8,0,-8],'size':[16,16,16]},'minecraft:selection_box':{'origin':[-7,0,-7],'size':[14,16,14]},'minecraft:destructible_by_mining':{'seconds_to_destroy':.6},'minecraft:destructible_by_explosion':{'explosion_resistance':2.5 if 'cabinet' in identifier else 1200 if identifier.endswith(':freezer') else 1 if ':bar_stool_' in identifier else .8 if identifier.endswith('_painting') else 0},'minecraft:loot':'loot_tables/empty.json','minecraft:movable':{'movement_type':'immovable'}}
+ if kind=='cocktail':
+  c['minecraft:collision_box']={'origin':[-4,0,-4],'size':[8,10,8]};c['minecraft:selection_box']={'origin':[-4,0,-4],'size':[8,10,8]}
+ if identifier.endswith(':freezer'):
+  c['minecraft:collision_box']={'origin':[-8,0,-7],'size':[16,12,13]};c['minecraft:selection_box']={'origin':[-8,0,-7],'size':[16,12,13]}
+ if identifier.endswith('_cabinet'):
+  box={'origin':[-7.999,.001,-7.999],'size':[15.998,15.998,15.998]}
+  c['minecraft:collision_box']=box;c['minecraft:selection_box']=copy.deepcopy(box)
  if kind in ('bottle','cocktail') or 'cabinet' in identifier:c['kaleidoscope_tavern:natural_break']={'drop':identifier,**({'storage':True} if 'cabinet' in identifier else {})}
  if kind=='bottle':c[KT+':bottle_display']={}
  elif kind=='cocktail':c[KT+':cocktail_cup']={};c['minecraft:tick']={'interval_range':[20,20],'looping':True}
@@ -196,7 +203,9 @@ for short in furniture:
   if key not in props or props[key] in seen:continue
   seen.add(props[key]);mi=model(v['model']);value=props[key];expr=value if key=='open' else "'"+value+"'"
   d['permutations'].append({'condition':f"q.block_state('{NS}:{key}') == {expr}",'components':{'minecraft:geometry':{'identifier':mi['geometry']},'minecraft:material_instances':{'*':{'texture':mi['texture'],'render_method':'alpha_test_single_sided','face_dimming':True,'ambient_occlusion':0}}}})
- if 'bar_stool' in short:d['components']['minecraft:collision_box']={'origin':[-6,0,-6],'size':[12,15,12]};d['components']['minecraft:selection_box']={'origin':[-6,0,-6],'size':[12,15,12]}
+ if 'bar_stool' in short:
+  d['components']['minecraft:collision_box']=[{'origin':[-6,0,-6],'size':[12,1,12]},{'origin':[-1,1,-1],'size':[2,11,2]},{'origin':[-5,12,-5],'size':[10,3,10]}]
+  d['components']['minecraft:selection_box']={'origin':[-6,0,-6],'size':[12,15,12]}
  
  for perm in d['permutations']:
   mats=perm['components'].get('minecraft:material_instances')
