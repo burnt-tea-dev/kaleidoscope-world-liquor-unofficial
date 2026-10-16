@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.148
+
+Pair with Tavern 0.6.170 using exact BP/RP dependencies and synchronized release/guide versions. Preserve World Liquor pack/module UUIDs and all gameplay, recipes, storage and presentation. The optional Grilling 2.8.144 source-check peer is unchanged. No Elbow or Treasure gameplay repair is included. Full family and client acceptance remain pending.
+
 ## 0.1.147
 
 Move the existing animated freezer material definitions to the standard `materials/entity.material` entry and verify every World Liquor entity/render-controller material alias against its registry and builtin parent. Preserve texture pixels, alpha, UV animation, recipes and storage; pair with Tavern 0.6.169 and retain the optional Grilling 2.8.144 source-check peer. [Source evidence](docs/evidence/freezer-material-registry-20261015.md) records the client failure and source checks; actual restored client rendering remains pending.
