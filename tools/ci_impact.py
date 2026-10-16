@@ -11,7 +11,7 @@ import subprocess
 # Reviewed non-package inputs. README baseline identity is checked unconditionally.
 # Do not widen this to docs/**: release notes, evidence, status and admission data
 # can be functional inputs. Re-audit this list when adding consumers of these files.
-PROSE = frozenset({'README.md', 'README.zh-TW.md', 'docs/BUGS.md'})
+PROSE = frozenset({'AGENTS.md', 'README.md', 'README.zh-TW.md', 'docs/BUGS.md'})
 
 
 def plan(paths, force_full_reason=None, release_inputs=()):
