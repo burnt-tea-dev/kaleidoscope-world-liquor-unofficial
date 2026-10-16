@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "release": "0.1.149",
+  "release": "0.1.150",
   "previous_commit": "978c2594040555a668e842f3452d98a07973db34",
   "author_archive": {
     "file_id": 9066406,
@@ -177,5 +177,7 @@
     "Bytecode/source checks do not certify native entity contact, block ray tracing or rendered-client acceptance.",
     "Cellar cabinet JSON preserves the original 0.001-unit inset; native engine floating precision remains unverified."
   ],
-  "client": false
+  "client": false,
+  "introduced_candidate": "0.1.149",
+  "candidate_history_note": "The same shape body continues in W150 after W149 CI exposed a stale payload release identity. Original W149 history and failed evidence remain unchanged."
 }
