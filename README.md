@@ -1,4 +1,6 @@
-## Current maintained baseline: 0.1.148
+## Current maintained baseline: 0.1.151
+
+World Liquor 0.1.151 restores the pinned Java freezer, cup, stool and cabinet collision/selection shapes, paired with Tavern 0.6.173. Stable Bedrock collision arrays reproduce the three-part stools without experiments; the engine keeps one selection outline. [Source and remaining client checks](docs/evidence/collision-shapes-20261016.md).
 
 W148 updates the exact dependencies and release/guide identity for Tavern 0.6.170. World Liquor gameplay, recipes, storage, models, textures and materials remain unchanged, including W147’s freezer registry repair. The optional Grilling 2.8.144 source-check peer remains unchanged. See [pairing notes](docs/RELEASE-NOTES-0.1.148.md) and the retained [freezer source evidence](docs/evidence/freezer-material-registry-20261015.md); full family and human client acceptance remain pending.
 
