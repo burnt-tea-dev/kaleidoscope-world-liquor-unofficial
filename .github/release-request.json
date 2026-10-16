@@ -1,9 +1,9 @@
 {
-  "version": "0.1.150",
-  "tag": "v0.1.150",
-  "title": "World Liquor 0.1.150: restore Java collision shapes; Tavern 0.6.172",
+  "version": "0.1.151",
+  "tag": "v0.1.151",
+  "title": "World Liquor 0.1.151: restore Java collision shapes; Tavern 0.6.173",
   "prerelease": false,
-  "validation_evidence": "docs/RELEASE-NOTES-0.1.150.md",
+  "validation_evidence": "docs/RELEASE-NOTES-0.1.151.md",
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
   "saved_world_migration": "pending",
@@ -14,9 +14,9 @@
   "publication_request": false,
   "client": false,
   "status": "stable_development_candidate_pending_family_gates",
-  "public_notes_path": "docs/RELEASE-NOTES-0.1.150.md",
-  "tavern_commit": "2398dd45b894cf14990d8b2b208141f12a6bcee9",
+  "public_notes_path": "docs/RELEASE-NOTES-0.1.151.md",
+  "tavern_commit": "2a95dbe7d9a2e7bc06aa0e54fb3a629dcc38e243",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "Restore original Java freezer, cup, stool and cabinet collision shapes; pair both World Liquor 0.1.150 packs with Tavern 0.6.172. Stable Bedrock collision arrays require no new experiments. Treasure Guide nearby-item/death-callback limitations remain unchanged and unverified natively. Client acceptance and production readiness remain false. This development candidate is not an automatic public release request.",
-  "expected_archive_sha256": "a2a07677ec09605726bdfe6e166de9190e39d1acb99751a27f639d9927e3f55e"
+  "public_notes_inline": "Restore original Java freezer, cup, stool and cabinet collision shapes; pair both World Liquor 0.1.151 packs with Tavern 0.6.173. Stable Bedrock collision arrays require no new experiments. Treasure Guide nearby-item/death-callback limitations remain unchanged and unverified natively. Client acceptance and production readiness remain false. This development candidate is not an automatic public release request.",
+  "expected_archive_sha256": "393c210c6b7cf6db45c27a9f31f7b90c77771f7efc9ec87d61985db33556469a"
 }
