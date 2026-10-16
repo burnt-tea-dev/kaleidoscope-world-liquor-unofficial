@@ -1,0 +1,183 @@
+{
+  "schema": 1,
+  "release": "0.1.151",
+  "previous_commit": "978c2594040555a668e842f3452d98a07973db34",
+  "author_archive": {
+    "file_id": 9066406,
+    "minecraft": "1.21.1",
+    "loader": "NeoForge",
+    "version": "1.1.11",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/9066406",
+    "sha256": "e1f51736138bfe65ac1ce2aae2f2f3bd292dce71e2b8d2f18580a68bdea807cc",
+    "class_members": {
+      "com/bmt/kaleidoscope_world_liquor/block/FreezerBlock.class": "da7a8b6c0ba6b04837b9a1db097ba8302101f6653017ec7edc0686ae5ff2d7f7",
+      "com/bmt/kaleidoscope_world_liquor/block/ChairBlock.class": "83416df86fa1289b318bf1955088537aaef64a235cfbda3218c82ea2cbdd40c1",
+      "com/bmt/kaleidoscope_world_liquor/init/ModBlocks.class": "f7a7bb4b104dadce0190dc0cf95e378171cd9df1728f38e3661b19e517553291",
+      "com/bmt/kaleidoscope_world_liquor/block/BarCabinetBlock.class": "5c6fedaac7955815c0785fec260cafac10e9090639f35dae7937dcc2fc3e3c2f",
+      "com/bmt/kaleidoscope_world_liquor/block/BarCellarCabinetBlock.class": "4a53de1a1dacf94ca4a545f7e9ffde146b066661e8647e16910761ce77b2758b"
+    }
+  },
+  "author_shapes": {
+    "freezer_north": [
+      0,
+      0,
+      1,
+      16,
+      12,
+      14
+    ],
+    "chair_union": [
+      [
+        2,
+        0,
+        2,
+        14,
+        1,
+        14
+      ],
+      [
+        7,
+        1,
+        7,
+        9,
+        12,
+        9
+      ],
+      [
+        3,
+        12,
+        3,
+        13,
+        15,
+        13
+      ]
+    ],
+    "cocktail_inherited_glassware": [
+      4,
+      0,
+      4,
+      12,
+      10,
+      12
+    ],
+    "cellar_cabinet_safe": [
+      0.001,
+      0.001,
+      0.001,
+      15.999,
+      15.999,
+      15.999
+    ],
+    "bar_cabinet_safe": [
+      0.001,
+      0.001,
+      0.001,
+      15.999,
+      15.999,
+      15.999
+    ]
+  },
+  "freezer_facing_bounds": {
+    "north": [
+      0,
+      0,
+      1,
+      16,
+      12,
+      14
+    ],
+    "east": [
+      2,
+      0,
+      0,
+      15,
+      12,
+      16
+    ],
+    "south": [
+      0,
+      0,
+      2,
+      16,
+      12,
+      15
+    ],
+    "west": [
+      1,
+      0,
+      0,
+      14,
+      12,
+      16
+    ]
+  },
+  "tavern_dependency_source": {
+    "repository": "KaleidoscopeMods/KaleidoscopeTavern",
+    "commit": "a1afba34981a00e89d57130d3dc8f1e64f1820a2",
+    "base_sources": {
+      "CocktailBlock": {
+        "path": "src/main/java/com/github/ysbbbbbb/kaleidoscopetavern/block/mixology/CocktailBlock.java",
+        "sha256": "b8c728754bb7de8728d9f460401efc1b3f78083113cab26a4ee0b25cbcceaabd"
+      },
+      "GlasswareBlock": {
+        "path": "src/main/java/com/github/ysbbbbbb/kaleidoscopetavern/block/mixology/GlasswareBlock.java",
+        "sha256": "af293ab761031f295a53de0d5332480df5e0af5dbafd6acb86e72b558257aee0"
+      },
+      "VoxelShapeUtils": {
+        "path": "src/main/java/com/github/ysbbbbbb/kaleidoscopetavern/util/VoxelShapeUtils.java",
+        "sha256": "3fe2ca24c8e9fbfa50fb63a2bfaf9d39cd56125afc549694ffc6bafcc74f2f6e"
+      }
+    }
+  },
+  "changed_blocks": [
+    "freezer.json",
+    "cup_around_the_world.json",
+    "cup_gin_tonic.json",
+    "cup_highball.json",
+    "cup_jerk.json",
+    "cup_long_island_iced_tea.json",
+    "cup_pine_colada.json",
+    "cup_shrimp_cocktail.json",
+    "bar_stool_black.json",
+    "bar_stool_blue.json",
+    "bar_stool_brown.json",
+    "bar_stool_cyan.json",
+    "bar_stool_gray.json",
+    "bar_stool_green.json",
+    "bar_stool_light_blue.json",
+    "bar_stool_light_gray.json",
+    "bar_stool_lime.json",
+    "bar_stool_magenta.json",
+    "bar_stool_orange.json",
+    "bar_stool_pink.json",
+    "bar_stool_purple.json",
+    "bar_stool_red.json",
+    "bar_stool_white.json",
+    "bar_stool_yellow.json",
+    "birch_bar_cabinet.json",
+    "birch_cellar_cabinet.json",
+    "cherry_bar_cabinet.json",
+    "cherry_cellar_cabinet.json",
+    "dark_oak_bar_cabinet.json",
+    "dark_oak_cellar_cabinet.json",
+    "oak_bar_cabinet.json",
+    "oak_cellar_cabinet.json",
+    "spruce_bar_cabinet.json",
+    "spruce_cellar_cabinet.json"
+  ],
+  "inherited_properties": "Freezer uses Properties.of with no noCollission; Chair likewise. Seven author ModBlocks constructors directly instantiate CocktailBlock -> GlasswareBlock default Properties.of with no noCollission. No collision override replaces these shapes.",
+  "stable_multi_box_support": {
+    "minimum_version": "1.26.0",
+    "experiment_required": false,
+    "documentation": "https://learn.microsoft.com/en-us/minecraft/creator/reference/content/blockreference/examples/blockcomponents/minecraftblock_collision_box?view=minecraft-bedrock-stable",
+    "reviewed_date": "2026-10-16"
+  },
+  "limits": [
+    "Chair physical collision is the original three-box union; Bedrock selection retains one union AABB.",
+    "Bytecode/source checks do not certify native entity contact, block ray tracing or rendered-client acceptance.",
+    "Cellar cabinet JSON preserves the original 0.001-unit inset; native engine floating precision remains unverified."
+  ],
+  "client": false,
+  "introduced_candidate": "0.1.149",
+  "candidate_history_note": "The same shape body continues in W150 after W149 CI exposed a stale payload release identity. Original W149 history and failed evidence remain unchanged."
+}
