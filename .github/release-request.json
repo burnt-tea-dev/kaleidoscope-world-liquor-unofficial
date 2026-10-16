@@ -11,12 +11,12 @@
   "live_deployment": false,
   "native_evidence_scope": "Dependency and release-identity pairing only. World Liquor gameplay and presentation are unchanged. Tavern editor arithmetic warning verification does not establish complete World Liquor client or family acceptance.",
   "new_bds_test": false,
-  "publication_request": false,
+  "publication_request": true,
   "client": false,
-  "status": "awaiting_paired_source_ci_and_family_admission",
+  "status": "stable_publication_requested_pending_final_ci",
   "public_notes_path": "docs/RELEASE-NOTES-0.1.148.md",
-  "tavern_commit": "b636a369266cc91a718416f437f76e601ff28807",
+  "tavern_commit": "e5f38820a8863886f6183c3075a2f3e5c25bc6c6",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "Pair the unchanged World Liquor runtime with Tavern 0.6.170 through exact BP/RP dependencies and synchronized release/guide versions. Preserve pack and module UUIDs, gameplay, recipes, storage, models, textures and materials. The optional Grilling 2.8.144 source-check peer is unchanged. Full family, saved-world and human client acceptance remain pending.",
+  "public_notes_inline": "Known issue: Treasure Guide's mob bonus can copy unrelated newly dropped items; overlapping death callbacks can multiply bonus drops. This release retains the existing behavior; no fix is included. Reproduced against W148 source in an isolated mocked scheduler, not a native-server reproduction.\n\n已知風險：淘金熱（Treasure Guide）的生物掉落加成仍以死亡位置附近的新物品判定，可能誤複製玩家剛丟出的物品或其他生物的掉落；重疊死亡回呼可能放大額外掉落。本版保留現有行為，未包含此問題的修補。此問題已在目前 W148 原始碼的隔離模擬中重現，尚非原生伺服器實測。\n\nUse both World Liquor 0.1.148 packs with both Tavern 0.6.170 packs. The optional Grilling source-check peer is 2.8.149. Gameplay, recipes, storage, models, textures and materials are unchanged by this pairing. The stable release uses source/editor, strict CI and exact package evidence; it does not claim complete Java parity. Additional real-client, install/upgrade/restart/rollback, saved-world and soak acceptance are unverified and are not gates for this publication. Existing strict CI remains required. Client acceptance, production readiness and live deployment remain false; historical runtime evidence is not reassigned to this family.",
   "expected_archive_sha256": "0449bedca6eeaca853a05f17aab58f78150365d2d3a50891957cf49dd8c0d3e6"
 }
