@@ -1,10 +1,16 @@
 # 世界名酒：開放差距與驗收場景
 
+## 當前入口（2026-10-17）
+
+目前來源 **W151**，固定[b8692380](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/commit/b86923801febbf23a43f36017ad299b28128b029)。來源、公開下載及倉庫最後記錄部署各自的配套只維護在[家族主索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)；每項實作狀態見[PARITY-MATRIX](PARITY-MATRIX.md)，本頁保存具體回報與場景。
+
+本次重新列出布丁餘碗差距，並保留使用者指定延後修復的Treasure Guide生物掉落問題。current `effects.js`與W148相同的來源核對沒有新增native重現；已修的冰紅茶matcher、四杯mesh／UV、冰櫃材質及唱片來源修補仍由矩陣承接。全物品Blockbench及完整真人驗收仍未完成。`client=false`、`production_ready=false`。
+
 目前 LIVE 版本、完整家族部署結果及精確收據統一記錄在 [家族索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)。真人操作及完整 Java 一比一仍未接受；`client=false`、`production_ready=false`。部署成功沒有關閉下列具體玩法差距。
 
 來源、已完成範圍和證據等級只維護在 [PARITY-MATRIX.md](PARITY-MATRIX.md)。舊 W114／W115／85-helper 敘述和各版失敗仍由 Git、release notes 與原收據保留，本頁不再複製整份矩陣或把舊版本當成當前阻擋。
 
-## 2026-10-14 客戶端回報與當前修補
+## 2026-10-14 歷史客戶端回報與當時修補
 
 玩家確認原生 HUD、AMW 的 Java 飢餓 UI 和 Java Saturation 正常，只有森羅調酒／進食圖形缺失；多次指示文字未出現，後續截圖直接顯示內部 `KT_HUD!` 資料碼。這些是真實失敗，不能改寫為「未測」或以送出成功關閉。後續截圖已看到調酒色塊與進食畫面，但仍回報位置過高、進食條延遲，以及雪克杯按很久才顯示／效能不佳。
 
@@ -23,6 +29,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 
 | 項目 | 剩餘問題 | 可分辨場景 |
 |---|---|---|
+| 布丁餘碗／食物完成 | 仍統一插入inventory；原作最後一份回傳新碗供hand replacement，非空／Creative則spawnAtLocation；Luck／原作random draw亦未完整適配 | Survival最後一份／多份及Creative各自核對碗去向與真實debit順序，並驗取消／換槽；不重啟已停用探針 |
 | Luck | 1.21.1 的 vanilla Luck attribute／loot context 尚無完整 native adapter；26.1.2 的 custom reroll 是另一套玩法 | 同工具、loot table 與 Luck 等級比較 Java／Bedrock，分開記資料等級和實際掉落 |
 | 斬首與頭顱 | Incoming cancellation、owner-attributed 重入、blocked fallback、marker 保存、同次 drops 去重及玩家頭 owner 未完成 | 取消／護甲／Tequila／圖騰、已死目標、原本已掉頭、玩家頭與重啟後標記各自對照 |
 | 尋寶指南 mob drops | 現行一 tick 鄰近新 item 掃描沒有實際死亡 drops 集合的來源證明 | 兩個 mob 同 tick 死亡、玩家丟物、旁邊新 item；額外物品只能屬於本次死亡 |

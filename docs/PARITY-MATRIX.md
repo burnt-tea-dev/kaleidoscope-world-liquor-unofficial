@@ -1,6 +1,12 @@
 # World Liquor Java／Bedrock 差距矩陣
 
-現行完整家族 LIVE 版本、部署與保存驗證及精確收據以 [家族索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)為準。新來源的啟動精簡與保留 Java 數值行為見 [2026-10-13 來源範圍](JAVA-STARTUP-20261013.md)；不得將先前版本的部署／公開下载一致性當成新來源驗收。`client=false`、`production_ready=false`；完整 Java 一比一、原生 Player 操作和畫面音效不由載入或相同 hash 推定。
+## 2026-10-17 現行來源
+
+**W151**（[b8692380](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/commit/b86923801febbf23a43f36017ad299b28128b029)）配T173；公開包W148配T170。版本、下載及倉庫部署證據見[家族主索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)。W151的34個方塊碰撞／選取修補已合併，原生接觸及同批家族驗收另記。W110四杯mesh／UV、冰紅茶brown匹配、W147冰櫃material registry與唱片來源修補保留，畫面仍按具體場景接受。
+
+目前157份BP item定義＝27家具＋130 sprite routes；缺當前逐項Blockbench全物品FP／側面結果，舊156清單與單一W48 freezer觀察保留原範圍。下表已補布丁餘碗實作差距，並將Treasure Guide生物掉落標為使用者指定保留。詳細回報見[BUGS](BUGS.md)。
+
+現行完整家族 LIVE 版本、部署與保存驗證及精確收據以 [家族索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)為準。新來源的啟動精簡與保留 Java 數值行為見 [2026-10-13 來源範圍](JAVA-STARTUP-20261013.md)；不得將先前版本的部署／公開下載一致性當成新來源驗收。`client=false`、`production_ready=false`；完整 Java 一比一、原生 Player 操作和畫面音效不由載入或相同 hash 推定。
 
 W131針對profile所見的傳輸CPU熱點，讓foundation receiver先篩選三個支援ID，再處理byte上限與JSON；共享UTF-8計數改按UTF-16讀取，保留配對及孤立surrogate的原數值。封包、ACK、排程及保存規則不變，詳見[本版範圍](RELEASE-NOTES-0.1.131.md)。此来源修正不能宣稱首輪啟動尖峰或整體watchdog已解決。
 
@@ -13,8 +19,9 @@ W146只訪問fresh effect recipients、保留20tick TTL與空snapshot立即撤�
 | LivingEntity／魚類 admission | 84 類精確 native counterpart，health／validity／非生物與存活 credit 條件保留。L1 26 原案例；T141／W118 L2 首次 21／重啟 22 的 cod API fall 對照仍綁原來源。見 [W118](RELEASE-NOTES-0.1.118.md) | 自然墜落、全部 Player／原生效果與完整事件階段 |
 | 戰鬥入口（W120） | 斬首／Elbow 分開 direct LivingEntity，斬首要求目標存活；ground-crit melee 規則不變。16 個定向案例通過。見 [來源核對](../data/combat-admission-review-20261009.json) | 不是原生 DamageSource／Incoming／Pre 的完整等價；取消、重入、fallback、marker、causal heads 與 SkullOwner 仍未完成 |
 | Use／crit／Tequila／Crazy／ContinuousHeal | 原 sound cadence、float damage／chance、Tequila cap、Crazy source selection 和每 tick amp+1 heal 保留。見 [use/combat](JAVA-USE-COMBAT-0.1.74.md)、既有 combat／crazy 案例 | 原生來源／護甲／absorption／cooldown、缺失 vanilla effects、實際聲場和原生 Player；不誤把原作 heal 改慢 |
+| 布丁餘碗／食物完成 | W92已記錄原作last-serving hand replacement及非空／Creative掉碗；[當前main.js](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/blob/b86923801febbf23a43f36017ad299b28128b029/runtime/BP/scripts/main.js)仍inventory.addItem | 真正尚未對齊的實作；先核原生debit／callback順序，驗最後一份／多份／Creative、取消與換槽；Luck及random draw另保留 |
 | Luck／SkullOwner | Dassai Q3–Q6 的 Luck amplifier 1／3／5／7 資料正確；一般 head registry candidate 順序已實作 | 穩定 API 缺完整 Java Luck loot attribute/context 與原生 Player head owner；資料正確不等於掉落／頭像還原 |
-| Treasure Guide | source crop／ore 選取、原 block state／工具 reroll 和掉落中心已有 L1，見 [block source](JAVA-TREASURE-BLOCK-20261007.md) | mob one-tick nearby scan 缺本次死亡 drops 集合證明；player/block-entity/global loot-modifier context 與 pickup delay 未閉合 |
+| Treasure Guide | source crop／ore 選取、原 block state／工具 reroll 和掉落中心已有 L1，見 [block source](JAVA-TREASURE-BLOCK-20261007.md) | mob one-tick nearby scan 缺本次死亡drops cohort／跨回呼去重；W148已公開source mock風險，W151同檔未改，依使用者決定保留／延後修復。方塊線仍缺player/block-entity/global loot-modifier context與pickup delay |
 | Elbow | 原作 ATTACK_KNOCKBACK 和 float／LUT／ground／resistance 已有獨立 JVM 數值；已有真 airborne、buffered force 能力 L2。見 [development scope](../development/elbow/README.md) | Production attribute／charge／enchantment 與原力合成尚未接入；既有能力證據否定固定 extra impulse，不作平台完成豁免 |
 | CaptainGift／movement／flight | Boating、reverse-gravity、MultiJump 有來源算術與有限 native adapter；CaptainGift 現僅 source-water 浮力 | 原作 12 格 water-fluid／AABB movement clipping、ground/fallDistance、原生 collision/input 和 Creative Flight 仍有差距 |
 | Respawn／helpers | 87 個精確零碰撞 helper、Native storage API 保存場景、新確認錨 metadata 和 repeat／取消防線保留，見 [source adapter](RESPAWN-RUNTIME-SOURCE-ADAPTER.md)及 [W116](RELEASE-NOTES-0.1.116.md) | 真 Player、舊／未知錨、床、自然死亡及任意第三方 collision unknown 不自動放行 |
