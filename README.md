@@ -4,7 +4,7 @@ Reviewed on **2026-10-17** at [b8692380](https://github.com/casama233/kaleidosco
 
 **Public download:** [World Liquor v0.1.148](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.148), paired with **Tavern 0.6.170** and optional Grilling **2.8.149** source checks. W151's [release request](.github/release-request.json) remains `publication_request=false`; the successful authorization workflow skipped publication.
 
-**Last repository-recorded verified family deployment:** **T169/G144/W147/private-integration**, 2026-10-15 22:40:27 HKT. This documentation audit did not connect to LIVE. Source, downloads, deployment and acceptance are maintained in the [single family status index](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md).
+**Deployment records:** Actual server identities, private integration versions, deployment times and production receipts are kept in private maintenance records. Public versions and acceptance limits remain in the family status index.
 
 **Remaining work:** current all-item Blockbench first-person/side-texture coverage, paired gameplay/client scenes and the implementation gaps in [PARITY-MATRIX](docs/PARITY-MATRIX.md) / [BUGS](docs/BUGS.md). Treasure Guide mob-drop duplication remains intentionally retained under the owner's existing decision; it is unchanged in W151. The known pudding bowl remainder difference is tracked explicitly. `client=false`, `production_ready=false`.
 
