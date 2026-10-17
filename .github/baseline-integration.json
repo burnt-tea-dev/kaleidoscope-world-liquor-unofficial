@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "tavern_commit": "a67c796810d338e473bd09460373f802a8bce92b",
+  "tavern_commit": "a636158d53442b39b0aaa51d84d4a20fff93c4b4",
   "tavern_version": "0.6.175",
   "publication_request": false,
-  "grilling_commit": "b692c62077f6fa4f1d3cbf744c2709ec109938b8",
-  "grilling_version": "2.8.150",
-  "peer_pins_final": false,
+  "grilling_commit": "9e27ec700eea5a56e4dea277e4535cf46f238db0",
+  "grilling_version": "2.8.153",
+  "peer_pins_final": true,
   "target_peer_versions": {
     "tavern": "0.6.175",
     "grilling": "2.8.153"
   },
-  "peer_pin_status": "provisional_pending_final_tavern_tooling_and_grilling_commits",
-  "peer_pin_note": "Known source pins are retained for the local immutable W152 runtime anchor only. The Grilling 2.8.150 pin is historical and does not certify the target G153 family. Replace both source pins and rerun final-peer checks before publication."
+  "peer_pin_status": "final_canonical_source_pins",
+  "peer_pin_note": "Exact canonical T175/G153 source pins for the unchanged frozen W152 runtime. Source validation and archive integrity are separate from canonical CI, complete-family native/saved-world gates, release publication and human client acceptance."
 }

@@ -80,8 +80,8 @@
   },
   "freeze_count": 1,
   "history_append_only": true,
-  "peer_pins_final": false,
-  "final_peer_validation": "pending",
+  "peer_pins_final": true,
+  "final_peer_validation": "passed_local_source_checks",
   "target_peer_versions": {
     "tavern": "0.6.175",
     "grilling": "2.8.153"
@@ -92,7 +92,31 @@
   },
   "publication_ready": false,
   "bds": false,
-  "archive_verification": "Local clean runtime anchor built twice identically; all 893 archive entries matched canonical runtime. Final peer-source checks remain pending.",
+  "archive_verification": "Frozen archive reverified against all 893 canonical runtime entries and exact final Tavern source. SHA256 unchanged. Original clean anchor was built twice identically; no runtime refreeze.",
   "preliminary_canonical_tavern_commit": "a67c796810d338e473bd09460373f802a8bce92b",
-  "archive_sha256": "e4ef8235e113dbe6f29c6958dbd5c08d10aa6dc765dedeb6b1745d2e37208f2b"
+  "archive_sha256": "e4ef8235e113dbe6f29c6958dbd5c08d10aa6dc765dedeb6b1745d2e37208f2b",
+  "final_source_check_context": {
+    "tavern_commit": "a636158d53442b39b0aaa51d84d4a20fff93c4b4",
+    "tavern_git_tree": "12c991d19f34f3773f6b58e067681dcf46319891",
+    "grilling_commit": "9e27ec700eea5a56e4dea277e4535cf46f238db0",
+    "grilling_git_tree": "f9466dc72c451ab77baca8023f9c25092480473c",
+    "world_liquor_runtime_anchor": "5efa46e85cf2449cd1d0f7be105546119374368d",
+    "scope": "Metadata-only peer pin finalization; frozen runtime and one-time freeze unchanged",
+    "release_aggregate": "passed",
+    "storage_payload_tests": 9,
+    "baseline_guard_tests": 11,
+    "release_claim_tests": 14,
+    "workflow_contract_tests": 9,
+    "family_noncollidable_helpers": {
+      "tavern": 56,
+      "worldLiquor": 21,
+      "grilling": 10
+    },
+    "paired_creative_catalog": "passed_no_changes",
+    "strict_archive_integrity": "passed_exact_final_tavern_source_and_all_893_entries",
+    "canonical_successor_ci": "pending",
+    "native_bds_test": "not_run",
+    "saved_world_migration": "pending",
+    "human_client_acceptance": "pending"
+  }
 }

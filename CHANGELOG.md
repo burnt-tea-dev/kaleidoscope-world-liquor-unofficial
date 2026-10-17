@@ -2,7 +2,7 @@
 
 ## 0.1.152
 
-Pair both packs exactly with Tavern 0.6.175 and update their release/module identities plus the payload version. Preserve all functional W151 payload data and every other non-manifest runtime byte. The target optional source-check peer is Grilling 2.8.153; final T175/G153 commit pins and exact-peer checks remain pending. This is a local immutable runtime anchor, not a publication-ready family. W151 and earlier release histories remain unchanged. Complete-family native/saved-world gates and human client acceptance remain separate and pending. See [pairing scope](docs/RELEASE-NOTES-0.1.152.md).
+Pair both packs exactly with Tavern 0.6.175 and update their release/module identities plus the payload version. Preserve all functional W151 payload data and every other non-manifest runtime byte. The optional source-check peer is Grilling 2.8.153; final canonical T175/G153 commit pins are recorded in a metadata-only follow-up. The frozen runtime/archive is unchanged. Local exact-peer checks and canonical CI remain distinct from publication readiness. W151 and earlier release histories remain unchanged. Complete-family native/saved-world gates and human client acceptance remain separate and pending. See [pairing scope](docs/RELEASE-NOTES-0.1.152.md).
 
 ## 0.1.148
 
