@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "scope": "Identity-only successor; no gameplay or presentation changes",
+  "previous_version": [
+    0,
+    1,
+    151
+  ],
+  "version": [
+    0,
+    1,
+    152
+  ],
+  "previous_source_commit": "b86923801febbf23a43f36017ad299b28128b029",
+  "tavern_version": [
+    0,
+    6,
+    175
+  ],
+  "tavern_source_commit": "2941e233f92a81030e9570232e0a625243a7ee9b",
+  "runtime_files": 893,
+  "byte_identical_files": 890,
+  "changed_runtime_files": [
+    {
+      "path": "runtime/BP/manifest.json",
+      "before_sha256": "5a9cf22064c56101b4351e8f32e746af121b6c8ceadfff4e9dc2ec8e8f88b628",
+      "after_sha256": "25071f2d9a87f39138f727a17c402d75ebce103b576b96e34ef6b1b0f260c1dd"
+    },
+    {
+      "path": "runtime/BP/scripts/payload.js",
+      "before_sha256": "76603758c25778b14b5b5ab1751372250f4b11b8fbd6fe7ea39ffca19c5dcc28",
+      "after_sha256": "66f2fc733a6e0cb4825b38f6442bdd733bdba5b256b95e249ad172292ac39d36"
+    },
+    {
+      "path": "runtime/RP/manifest.json",
+      "before_sha256": "ab70e0a5120df0fefec10d65f1e9b65a4e5a951f6979594297480bfa667379fc",
+      "after_sha256": "68cbee53ecead2c630667dda1591b2ee1c9e45c6c178841db770b8816b819ae2"
+    }
+  ],
+  "payload_byte_identical_after_version_normalization": true,
+  "pack_and_module_uuids_preserved": true,
+  "manifests_unchanged_except_versions": true,
+  "previous_source_trees": {
+    "BP": {
+      "sha256": "4a6b9ba2c6e9724ce4c69bbd7f54924a6e5a8aa7499ce1236e45adf6dc868350",
+      "files": 341
+    },
+    "RP": {
+      "sha256": "2f26c80ea47d38fae9094abfd7f645abcb17d4f88c151701878cc375f9ac9ced",
+      "files": 552
+    }
+  },
+  "source_trees": {
+    "BP": {
+      "sha256": "b1dad70a85425c1509555ac9c22dfa78eea78eb69dc06170b5e63f9b0bd79249",
+      "files": 341
+    },
+    "RP": {
+      "sha256": "23d87632dc3efa8750ba93af25f530cb071d1589f4ff7839752df5532e503cda",
+      "files": 552
+    }
+  },
+  "client": false,
+  "production_ready": false,
+  "fresh_bds_evidence": false,
+  "source_checks": {
+    "release_aggregate": "passed",
+    "guide_entries": 223,
+    "guide_entrances": 7,
+    "guide_packets": 216,
+    "storage_preservation_tests": 9,
+    "baseline_guard_tests": 11,
+    "release_claim_tests": 14,
+    "workflow_contract_tests": 9,
+    "bridge_project_tests": 10,
+    "ci_impact_tests": 13,
+    "family_noncollidable_helpers": 87,
+    "changed_runtime_files": 3,
+    "authoring_reproducibility": "All 893 runtime files identical after storage visual and guide rebuild in an isolated copy"
+  },
+  "freeze_count": 1,
+  "history_append_only": true,
+  "peer_pins_final": false,
+  "final_peer_validation": "pending",
+  "target_peer_versions": {
+    "tavern": "0.6.175",
+    "grilling": "2.8.153"
+  },
+  "source_check_context": {
+    "tavern_commit": "2941e233f92a81030e9570232e0a625243a7ee9b",
+    "grilling_helpers": "G151 local preparation; not final G153 evidence"
+  },
+  "publication_ready": false,
+  "bds": false,
+  "archive_verification": "Local clean runtime anchor built twice identically; all 893 archive entries matched canonical runtime. Final peer-source checks remain pending.",
+  "preliminary_canonical_tavern_commit": "a67c796810d338e473bd09460373f802a8bce92b",
+  "archive_sha256": "e4ef8235e113dbe6f29c6958dbd5c08d10aa6dc765dedeb6b1745d2e37208f2b"
+}
