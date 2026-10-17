@@ -114,9 +114,26 @@
     },
     "paired_creative_catalog": "passed_no_changes",
     "strict_archive_integrity": "passed_exact_final_tavern_source_and_all_893_entries",
+    "canonical_successor_ci": "passed",
+    "native_bds_test": "not_run",
+    "saved_world_migration": "pending",
+    "human_client_acceptance": "pending",
+    "canonical_successor_ci_commit": "5d3e0d0c3b50e5fc021b37c61a382971cd568e1e",
+    "canonical_successor_ci_url": "https://github.com/casama233/kaleidoscope-world-liquor-unofficial/actions/runs/39043811431"
+  },
+  "tooling_successor_pin_context": {
+    "tavern_commit": "f76327f36bd103302cf6dda5bf86a873db6345a7",
+    "tavern_git_tree": "abc8801a8908daf287c659b7f40c0c7466b5f660",
+    "grilling_commit": "686cde5578ae5ddc66632b8e0d24fa9d6d89b656",
+    "grilling_git_tree": "d21ee853aa5a86e51656ee1b8f8afcb7406a8e3f",
+    "scope": "Tavern provenance-only and Grilling test-only successors; all paired runtime bytes remain unchanged",
+    "prior_source_aggregate": "Retained in final_source_check_context for unchanged runtime and W source-check implementations; not relabeled as a new complete-family aggregate",
+    "exact_peer_helper_check": "passed_87_definitions",
+    "strict_archive_integrity": "passed_exact_tavern_source_and_all_893_entries",
     "canonical_successor_ci": "pending",
     "native_bds_test": "not_run",
     "saved_world_migration": "pending",
-    "human_client_acceptance": "pending"
+    "human_client_acceptance": "pending",
+    "workflow_contract_tests": 9
   }
 }
