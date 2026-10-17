@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.152
+
+Pair both packs exactly with Tavern 0.6.175 and update their release/module identities plus the payload version. Preserve all functional W151 payload data and every other non-manifest runtime byte. The target optional source-check peer is Grilling 2.8.153; final T175/G153 commit pins and exact-peer checks remain pending. This is a local immutable runtime anchor, not a publication-ready family. W151 and earlier release histories remain unchanged. Complete-family native/saved-world gates and human client acceptance remain separate and pending. See [pairing scope](docs/RELEASE-NOTES-0.1.152.md).
+
 ## 0.1.148
 
 Pair with Tavern 0.6.170 using exact BP/RP dependencies and synchronized release/guide versions. Preserve World Liquor pack/module UUIDs and all gameplay, recipes, storage and presentation. The optional Grilling 2.8.144 source-check peer is unchanged. No Elbow or Treasure gameplay repair is included. Full family and client acceptance remain pending.
