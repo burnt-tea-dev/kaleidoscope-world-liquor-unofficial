@@ -1,22 +1,22 @@
 {
   "schema": 1,
-  "tavern_commit": "4f75735da76d826c675394e0ec567cdf4ea9100d",
-  "tavern_version": "0.6.176",
+  "tavern_commit": "e1ed931998782449e48100b2e2df393bc2d5961e",
+  "tavern_version": "0.6.177",
   "publication_request": false,
-  "grilling_commit": "2388111b8b494d8c406a3898409aa912d383e82b",
+  "grilling_commit": "ea5cd6a24aca18e236c7d3ed24205e52f628853d",
   "grilling_version": "2.8.155",
   "peer_pins_final": true,
   "target_peer_versions": {
-    "tavern": "0.6.176",
+    "tavern": "0.6.177",
     "grilling": "2.8.155"
   },
   "peer_pin_status": "exact_frozen_runtime_source_anchors",
-  "peer_pin_note": "Exact frozen T176 and G155 source anchors. Canonical successor PR checks/merges and full-family admission remain separate required gates. Tooling-only descendants may advance without changing these runtime trees.",
+  "peer_pin_note": "Exact pushed T177 family-lock source and merged G155 P0 source anchors. T177 runtime/baseline/history equal its initial frozen source. Canonical PR checks/merges and full-family admission remain separate gates; no Grilling runtime refactor is adopted.",
   "predecessor_peer_pins": {
-    "world_liquor_source_commit": "ddff7b599b3771b3770a86e1b813dd196ed074c7",
-    "tavern_commit": "2810a59c08e52004bb69522a8900a8da1dcc2c16",
-    "tavern_version": "0.6.175",
-    "grilling_commit": "686cde5578ae5ddc66632b8e0d24fa9d6d89b656",
-    "grilling_version": "2.8.153"
+    "tavern_commit": "4f75735da76d826c675394e0ec567cdf4ea9100d",
+    "tavern_version": "0.6.176",
+    "grilling_commit": "2388111b8b494d8c406a3898409aa912d383e82b",
+    "grilling_version": "2.8.155",
+    "world_liquor_source_commit": "bd7d03b2e36c692407d202d35e06c59dc5ea1e11"
   }
 }
