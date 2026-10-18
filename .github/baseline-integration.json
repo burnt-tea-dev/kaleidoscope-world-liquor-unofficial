@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "tavern_commit": "fd791c0faa839b4317e7e07ad332b97c34ad9758",
+  "tavern_commit": "4f75735da76d826c675394e0ec567cdf4ea9100d",
   "tavern_version": "0.6.176",
   "publication_request": false,
   "grilling_commit": "2388111b8b494d8c406a3898409aa912d383e82b",
@@ -11,7 +11,7 @@
     "grilling": "2.8.155"
   },
   "peer_pin_status": "exact_frozen_runtime_source_anchors",
-  "peer_pin_note": "Exact frozen T176 and G154 source anchors. Canonical successor PR checks/merges and full-family admission remain separate required gates. Tooling-only descendants may advance without changing these runtime trees.",
+  "peer_pin_note": "Exact frozen T176 and G155 source anchors. Canonical successor PR checks/merges and full-family admission remain separate required gates. Tooling-only descendants may advance without changing these runtime trees.",
   "predecessor_peer_pins": {
     "world_liquor_source_commit": "ddff7b599b3771b3770a86e1b813dd196ed074c7",
     "tavern_commit": "2810a59c08e52004bb69522a8900a8da1dcc2c16",
