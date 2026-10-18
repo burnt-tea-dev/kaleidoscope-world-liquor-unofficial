@@ -1,6 +1,6 @@
 # World Liquor 0.1.153
 
-Pair both World Liquor packs exactly with Tavern0.6.176. Grilling2.8.154 remains an optional source-check peer, without adding a hard runtime dependency. This successor preserves the existing W152 candidate and advances only these exported identities:
+Pair both World Liquor packs exactly with Tavern0.6.176. Grilling2.8.155 remains an optional source-check peer, without adding a hard runtime dependency. This successor preserves the existing W152 candidate and advances only these exported identities:
 
 - `BP/manifest.json`: paired package/modules, own RP and Tavern BP dependency versions.
 - `RP/manifest.json`: paired package/module and Tavern RP dependency versions.
