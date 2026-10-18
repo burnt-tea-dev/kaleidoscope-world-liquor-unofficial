@@ -85,14 +85,14 @@ jobs:
           PY
       - uses: actions/checkout@v4
         with:
-          repository: casama233/kaleidoscope-tavern-unofficial
+          repository: burnt-tea-dev/kaleidoscope-tavern-unofficial
           ref: ${{ steps.pin.outputs.commit }}
           fetch-depth: 0
           path: tavern-src
           persist-credentials: false
       - uses: actions/checkout@v4
         with:
-          repository: casama233/kaleidoscope-grilling-unofficial
+          repository: burnt-tea-dev/kaleidoscope-grilling-unofficial
           ref: ${{ steps.pin.outputs.grilling_commit }}
           path: grilling-src
           persist-credentials: false
