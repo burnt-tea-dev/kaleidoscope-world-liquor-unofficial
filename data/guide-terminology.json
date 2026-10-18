@@ -1,0 +1,3722 @@
+{
+  "schema": 1,
+  "repository": "world-liquor",
+  "source_base": "e7b8d30eb954abb826c921dec46a776d51890efb",
+  "native_bindings": [
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:around_the_world",
+      "key": "item.kaleidoscope_world_liquor:around_the_world.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q1",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q2",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q3",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q4",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q5",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q2",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q3",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q4",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q5",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_black",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_black.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_blue",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_blue.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_brown",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_brown.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_cyan",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_cyan.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_gray",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_gray.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_green",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_green.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_light_blue",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_light_blue.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_light_gray",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_light_gray.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_lime",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_lime.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_magenta",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_magenta.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_orange",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_orange.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_pink",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_pink.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_purple",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_purple.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_red",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_red.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_white",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_white.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bar_stool_yellow",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_yellow.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bfxm_painting",
+      "key": "item.kaleidoscope_world_liquor:bfxm_painting.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:birch_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:birch_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:birch_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bmt_painting",
+      "key": "item.kaleidoscope_world_liquor:bmt_painting.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q1",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q2",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q3",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q4",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q5",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:ch_painting",
+      "key": "item.kaleidoscope_world_liquor:ch_painting.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cha_painting",
+      "key": "item.kaleidoscope_world_liquor:cha_painting.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:chen_painting",
+      "key": "item.kaleidoscope_world_liquor:chen_painting.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:cherry_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:cherry_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cola",
+      "key": "item.kaleidoscope_world_liquor:cola.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cool_tea_q1",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cool_tea_q2",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cool_tea_q3",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cool_tea_q4",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cool_tea_q5",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:cool_tea_q6",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:custom_record",
+      "key": "item.kaleidoscope_world_liquor:custom_record.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:dark_oak_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:dark_oak_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:dassai_q1",
+      "key": "item.kaleidoscope_world_liquor:dassai_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:dassai_q2",
+      "key": "item.kaleidoscope_world_liquor:dassai_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:dassai_q3",
+      "key": "item.kaleidoscope_world_liquor:dassai_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:dassai_q4",
+      "key": "item.kaleidoscope_world_liquor:dassai_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:dassai_q5",
+      "key": "item.kaleidoscope_world_liquor:dassai_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:dassai_q6",
+      "key": "item.kaleidoscope_world_liquor:dassai_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:dream_painting",
+      "key": "item.kaleidoscope_world_liquor:dream_painting.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:freezer",
+      "key": "item.kaleidoscope_world_liquor:freezer.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:gin_tonic",
+      "key": "item.kaleidoscope_world_liquor:gin_tonic.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:highball",
+      "key": "item.kaleidoscope_world_liquor:highball.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:ice_tea_q1",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:ice_tea_q2",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:ice_tea_q3",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:ice_tea_q4",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:ice_tea_q5",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:ice_tea_q6",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q1",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q2",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q3",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q4",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q5",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q6",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:jerk",
+      "key": "item.kaleidoscope_world_liquor:jerk.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q1",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q2",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q3",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q4",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q5",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q6",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+      "key": "item.kaleidoscope_world_liquor:kita_stuffed_crisp.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q1",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q2",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q3",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q4",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q5",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q6",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q1",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q2",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q3",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q4",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q5",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q6",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:liangshan_ice_cone",
+      "key": "item.kaleidoscope_world_liquor:liangshan_ice_cone.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:long_island_iced_tea",
+      "key": "item.kaleidoscope_world_liquor:long_island_iced_tea.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:magic_crispy_corner",
+      "key": "item.kaleidoscope_world_liquor:magic_crispy_corner.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:maotai_q1",
+      "key": "item.kaleidoscope_world_liquor:maotai_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:maotai_q2",
+      "key": "item.kaleidoscope_world_liquor:maotai_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:maotai_q3",
+      "key": "item.kaleidoscope_world_liquor:maotai_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:maotai_q4",
+      "key": "item.kaleidoscope_world_liquor:maotai_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:maotai_q5",
+      "key": "item.kaleidoscope_world_liquor:maotai_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:maotai_q6",
+      "key": "item.kaleidoscope_world_liquor:maotai_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:oak_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:oak_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:oak_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:pina_colada_q1",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:pina_colada_q2",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:pina_colada_q3",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:pina_colada_q4",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:pina_colada_q5",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:pina_colada_q6",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:pine_colada",
+      "key": "item.kaleidoscope_world_liquor:pine_colada.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:pochi_pudding",
+      "key": "item.kaleidoscope_world_liquor:pochi_pudding.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:qxxy_painting",
+      "key": "item.kaleidoscope_world_liquor:qxxy_painting.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:rabbit_painting",
+      "key": "item.kaleidoscope_world_liquor:rabbit_painting.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:shrimp_cocktail",
+      "key": "item.kaleidoscope_world_liquor:shrimp_cocktail.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:sour_plum_q1",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:sour_plum_q2",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:sour_plum_q3",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:sour_plum_q4",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:sour_plum_q5",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:sour_plum_q6",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:spruce_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:spruce_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:strongbow_q1",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q1.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:strongbow_q2",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q2.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:strongbow_q3",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q3.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:strongbow_q4",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q4.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:strongbow_q5",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q5.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:strongbow_q6",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q6.name"
+    },
+    {
+      "locale": "zh_CN",
+      "id": "kaleidoscope_world_liquor:tonic_water",
+      "key": "item.kaleidoscope_world_liquor:tonic_water.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:around_the_world",
+      "key": "item.kaleidoscope_world_liquor:around_the_world.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q1",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q2",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q3",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q4",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q5",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q2",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q3",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q4",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q5",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_black",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_black.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_blue",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_blue.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_brown",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_brown.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_cyan",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_cyan.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_gray",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_gray.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_green",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_green.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_light_blue",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_light_blue.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_light_gray",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_light_gray.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_lime",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_lime.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_magenta",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_magenta.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_orange",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_orange.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_pink",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_pink.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_purple",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_purple.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_red",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_red.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_white",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_white.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bar_stool_yellow",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_yellow.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bfxm_painting",
+      "key": "item.kaleidoscope_world_liquor:bfxm_painting.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:birch_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:birch_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:birch_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bmt_painting",
+      "key": "item.kaleidoscope_world_liquor:bmt_painting.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q1",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q2",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q3",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q4",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q5",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:ch_painting",
+      "key": "item.kaleidoscope_world_liquor:ch_painting.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cha_painting",
+      "key": "item.kaleidoscope_world_liquor:cha_painting.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:chen_painting",
+      "key": "item.kaleidoscope_world_liquor:chen_painting.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:cherry_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:cherry_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cola",
+      "key": "item.kaleidoscope_world_liquor:cola.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cool_tea_q1",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cool_tea_q2",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cool_tea_q3",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cool_tea_q4",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cool_tea_q5",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:cool_tea_q6",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:custom_record",
+      "key": "item.kaleidoscope_world_liquor:custom_record.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:dark_oak_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:dark_oak_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:dassai_q1",
+      "key": "item.kaleidoscope_world_liquor:dassai_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:dassai_q2",
+      "key": "item.kaleidoscope_world_liquor:dassai_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:dassai_q3",
+      "key": "item.kaleidoscope_world_liquor:dassai_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:dassai_q4",
+      "key": "item.kaleidoscope_world_liquor:dassai_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:dassai_q5",
+      "key": "item.kaleidoscope_world_liquor:dassai_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:dassai_q6",
+      "key": "item.kaleidoscope_world_liquor:dassai_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:dream_painting",
+      "key": "item.kaleidoscope_world_liquor:dream_painting.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:freezer",
+      "key": "item.kaleidoscope_world_liquor:freezer.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:gin_tonic",
+      "key": "item.kaleidoscope_world_liquor:gin_tonic.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:highball",
+      "key": "item.kaleidoscope_world_liquor:highball.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:ice_tea_q1",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:ice_tea_q2",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:ice_tea_q3",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:ice_tea_q4",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:ice_tea_q5",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:ice_tea_q6",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q1",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q2",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q3",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q4",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q5",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q6",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:jerk",
+      "key": "item.kaleidoscope_world_liquor:jerk.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q1",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q2",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q3",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q4",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q5",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q6",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+      "key": "item.kaleidoscope_world_liquor:kita_stuffed_crisp.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q1",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q2",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q3",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q4",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q5",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q6",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q1",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q2",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q3",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q4",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q5",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q6",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:liangshan_ice_cone",
+      "key": "item.kaleidoscope_world_liquor:liangshan_ice_cone.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:long_island_iced_tea",
+      "key": "item.kaleidoscope_world_liquor:long_island_iced_tea.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:magic_crispy_corner",
+      "key": "item.kaleidoscope_world_liquor:magic_crispy_corner.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:maotai_q1",
+      "key": "item.kaleidoscope_world_liquor:maotai_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:maotai_q2",
+      "key": "item.kaleidoscope_world_liquor:maotai_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:maotai_q3",
+      "key": "item.kaleidoscope_world_liquor:maotai_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:maotai_q4",
+      "key": "item.kaleidoscope_world_liquor:maotai_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:maotai_q5",
+      "key": "item.kaleidoscope_world_liquor:maotai_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:maotai_q6",
+      "key": "item.kaleidoscope_world_liquor:maotai_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:oak_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:oak_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:oak_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:pina_colada_q1",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:pina_colada_q2",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:pina_colada_q3",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:pina_colada_q4",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:pina_colada_q5",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:pina_colada_q6",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:pine_colada",
+      "key": "item.kaleidoscope_world_liquor:pine_colada.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:pochi_pudding",
+      "key": "item.kaleidoscope_world_liquor:pochi_pudding.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:qxxy_painting",
+      "key": "item.kaleidoscope_world_liquor:qxxy_painting.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:rabbit_painting",
+      "key": "item.kaleidoscope_world_liquor:rabbit_painting.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:shrimp_cocktail",
+      "key": "item.kaleidoscope_world_liquor:shrimp_cocktail.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:sour_plum_q1",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:sour_plum_q2",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:sour_plum_q3",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:sour_plum_q4",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:sour_plum_q5",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:sour_plum_q6",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:spruce_bar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:spruce_cellar_cabinet.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:strongbow_q1",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q1.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:strongbow_q2",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q2.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:strongbow_q3",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q3.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:strongbow_q4",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q4.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:strongbow_q5",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q5.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:strongbow_q6",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q6.name"
+    },
+    {
+      "locale": "zh_TW",
+      "id": "kaleidoscope_world_liquor:tonic_water",
+      "key": "item.kaleidoscope_world_liquor:tonic_water.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:absolut_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:absolut_vodka_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:around_the_world",
+      "key": "item.kaleidoscope_world_liquor:around_the_world.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q1",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q2",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q3",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q4",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q5",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
+      "key": "item.kaleidoscope_world_liquor:bacardi_carta_blanca_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q2",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q3",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q4",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q5",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
+      "key": "item.kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_black",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_black.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_blue",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_blue.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_brown",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_brown.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_cyan",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_cyan.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_gray",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_gray.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_green",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_green.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_light_blue",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_light_blue.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_light_gray",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_light_gray.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_lime",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_lime.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_magenta",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_magenta.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_orange",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_orange.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_pink",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_pink.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_purple",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_purple.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_red",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_red.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_white",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_white.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bar_stool_yellow",
+      "key": "item.kaleidoscope_world_liquor:bar_stool_yellow.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bfxm_painting",
+      "key": "item.kaleidoscope_world_liquor:bfxm_painting.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:birch_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:birch_bar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:birch_cellar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bmt_painting",
+      "key": "item.kaleidoscope_world_liquor:bmt_painting.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q1",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q2",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q3",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q4",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q5",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+      "key": "item.kaleidoscope_world_liquor:bombay_sapphire_gin_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:ch_painting",
+      "key": "item.kaleidoscope_world_liquor:ch_painting.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cha_painting",
+      "key": "item.kaleidoscope_world_liquor:cha_painting.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:chen_painting",
+      "key": "item.kaleidoscope_world_liquor:chen_painting.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:cherry_bar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:cherry_cellar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cola",
+      "key": "item.kaleidoscope_world_liquor:cola.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cool_tea_q1",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cool_tea_q2",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cool_tea_q3",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cool_tea_q4",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cool_tea_q5",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:cool_tea_q6",
+      "key": "item.kaleidoscope_world_liquor:cool_tea_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:custom_record",
+      "key": "item.kaleidoscope_world_liquor:custom_record.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:dark_oak_bar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:dark_oak_cellar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:dassai_q1",
+      "key": "item.kaleidoscope_world_liquor:dassai_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:dassai_q2",
+      "key": "item.kaleidoscope_world_liquor:dassai_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:dassai_q3",
+      "key": "item.kaleidoscope_world_liquor:dassai_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:dassai_q4",
+      "key": "item.kaleidoscope_world_liquor:dassai_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:dassai_q5",
+      "key": "item.kaleidoscope_world_liquor:dassai_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:dassai_q6",
+      "key": "item.kaleidoscope_world_liquor:dassai_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:dream_painting",
+      "key": "item.kaleidoscope_world_liquor:dream_painting.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:freezer",
+      "key": "item.kaleidoscope_world_liquor:freezer.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:gin_tonic",
+      "key": "item.kaleidoscope_world_liquor:gin_tonic.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:highball",
+      "key": "item.kaleidoscope_world_liquor:highball.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:ice_tea_q1",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:ice_tea_q2",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:ice_tea_q3",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:ice_tea_q4",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:ice_tea_q5",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:ice_tea_q6",
+      "key": "item.kaleidoscope_world_liquor:ice_tea_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q1",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q2",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q3",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q4",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q5",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:jack_daniel_q6",
+      "key": "item.kaleidoscope_world_liquor:jack_daniel_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:jerk",
+      "key": "item.kaleidoscope_world_liquor:jerk.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q1",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q2",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q3",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q4",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q5",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:johnnie_walker_q6",
+      "key": "item.kaleidoscope_world_liquor:johnnie_walker_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+      "key": "item.kaleidoscope_world_liquor:kita_stuffed_crisp.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q1",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q2",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q3",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q4",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q5",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:kwas_chlebowy_q6",
+      "key": "item.kaleidoscope_world_liquor:kwas_chlebowy_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q1",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q2",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q3",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q4",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q5",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:lafite_1982_q6",
+      "key": "item.kaleidoscope_world_liquor:lafite_1982_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:liangshan_ice_cone",
+      "key": "item.kaleidoscope_world_liquor:liangshan_ice_cone.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:long_island_iced_tea",
+      "key": "item.kaleidoscope_world_liquor:long_island_iced_tea.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:magic_crispy_corner",
+      "key": "item.kaleidoscope_world_liquor:magic_crispy_corner.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:maotai_q1",
+      "key": "item.kaleidoscope_world_liquor:maotai_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:maotai_q2",
+      "key": "item.kaleidoscope_world_liquor:maotai_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:maotai_q3",
+      "key": "item.kaleidoscope_world_liquor:maotai_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:maotai_q4",
+      "key": "item.kaleidoscope_world_liquor:maotai_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:maotai_q5",
+      "key": "item.kaleidoscope_world_liquor:maotai_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:maotai_q6",
+      "key": "item.kaleidoscope_world_liquor:maotai_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:oak_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:oak_bar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:oak_cellar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:pina_colada_q1",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:pina_colada_q2",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:pina_colada_q3",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:pina_colada_q4",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:pina_colada_q5",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:pina_colada_q6",
+      "key": "item.kaleidoscope_world_liquor:pina_colada_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:pine_colada",
+      "key": "item.kaleidoscope_world_liquor:pine_colada.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:pochi_pudding",
+      "key": "item.kaleidoscope_world_liquor:pochi_pudding.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:qxxy_painting",
+      "key": "item.kaleidoscope_world_liquor:qxxy_painting.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:rabbit_painting",
+      "key": "item.kaleidoscope_world_liquor:rabbit_painting.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:shrimp_cocktail",
+      "key": "item.kaleidoscope_world_liquor:shrimp_cocktail.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:skyy_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:skyy_vodka_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:smirnoff_red_vodka_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:sour_plum_q1",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:sour_plum_q2",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:sour_plum_q3",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:sour_plum_q4",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:sour_plum_q5",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:sour_plum_q6",
+      "key": "item.kaleidoscope_world_liquor:sour_plum_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q1",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q2",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q3",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q4",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q5",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:spiryt_vodka_q6",
+      "key": "item.kaleidoscope_world_liquor:spiryt_vodka_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:spruce_bar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+      "key": "item.kaleidoscope_world_liquor:spruce_cellar_cabinet.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:strongbow_q1",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q1.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:strongbow_q2",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q2.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:strongbow_q3",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q3.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:strongbow_q4",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q4.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:strongbow_q5",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q5.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:strongbow_q6",
+      "key": "item.kaleidoscope_world_liquor:strongbow_q6.name"
+    },
+    {
+      "locale": "en_US",
+      "id": "kaleidoscope_world_liquor:tonic_water",
+      "key": "item.kaleidoscope_world_liquor:tonic_water.name"
+    }
+  ],
+  "review_status": "candidate_pending_independent_review",
+  "concepts": {
+    "kaleidoscope_cookery:rice": {
+      "zh_CN": "稻米",
+      "zh_TW": "稻米",
+      "en_US": "Rice"
+    },
+    "kaleidoscope_cookery:rice_panicle": {
+      "zh_CN": "稻穗",
+      "zh_TW": "稻穗",
+      "en_US": "Rice Panicle"
+    },
+    "kaleidoscope_tavern:empty_bottle": {
+      "zh_CN": "空瓶子",
+      "zh_TW": "空瓶子",
+      "en_US": "Empty Bottle"
+    },
+    "kaleidoscope_tavern:empty_glassware": {
+      "zh_CN": "空酒杯",
+      "zh_TW": "空酒杯",
+      "en_US": "Empty Glassware"
+    },
+    "kaleidoscope_tavern:grape": {
+      "zh_CN": "葡萄",
+      "zh_TW": "葡萄",
+      "en_US": "Grape"
+    },
+    "kaleidoscope_tavern:grape_bucket": {
+      "zh_CN": "葡萄桶",
+      "zh_TW": "葡萄桶",
+      "en_US": "Grape Bucket"
+    },
+    "kaleidoscope_tavern:grape_juice": {
+      "zh_CN": "葡萄汁",
+      "zh_TW": "葡萄汁",
+      "en_US": "Grape Juice"
+    },
+    "kaleidoscope_tavern:sweet_berries_bucket": {
+      "zh_CN": "甜浆果桶",
+      "zh_TW": "甜漿果桶",
+      "en_US": "Sweet Berries Bucket"
+    },
+    "kaleidoscope_world_liquor:absolut_vodka": {
+      "zh_CN": "绝对伏特加",
+      "zh_TW": "絕對伏特加",
+      "en_US": "Absolut Vodka"
+    },
+    "kaleidoscope_world_liquor:absolut_vodka_q1": {
+      "zh_CN": "绝对伏特加",
+      "zh_TW": "絕對伏特加",
+      "en_US": "Absolut Vodka"
+    },
+    "kaleidoscope_world_liquor:absolut_vodka_q2": {
+      "zh_CN": "绝对伏特加",
+      "zh_TW": "絕對伏特加",
+      "en_US": "Absolut Vodka"
+    },
+    "kaleidoscope_world_liquor:absolut_vodka_q3": {
+      "zh_CN": "绝对伏特加",
+      "zh_TW": "絕對伏特加",
+      "en_US": "Absolut Vodka"
+    },
+    "kaleidoscope_world_liquor:absolut_vodka_q4": {
+      "zh_CN": "绝对伏特加",
+      "zh_TW": "絕對伏特加",
+      "en_US": "Absolut Vodka"
+    },
+    "kaleidoscope_world_liquor:absolut_vodka_q5": {
+      "zh_CN": "绝对伏特加",
+      "zh_TW": "絕對伏特加",
+      "en_US": "Absolut Vodka"
+    },
+    "kaleidoscope_world_liquor:absolut_vodka_q6": {
+      "zh_CN": "绝对伏特加",
+      "zh_TW": "絕對伏特加",
+      "en_US": "Absolut Vodka"
+    },
+    "kaleidoscope_world_liquor:around_the_world": {
+      "zh_CN": "环游世界",
+      "zh_TW": "環遊世界",
+      "en_US": "Around the World"
+    },
+    "kaleidoscope_world_liquor:bacardi_carta_blanca": {
+      "zh_CN": "百加得白朗姆",
+      "zh_TW": "百加得白朗姆",
+      "en_US": "Bacardi Superior White Rum"
+    },
+    "kaleidoscope_world_liquor:bacardi_carta_blanca_q1": {
+      "zh_CN": "百加得白朗姆",
+      "zh_TW": "百加得白朗姆",
+      "en_US": "Bacardi Superior White Rum"
+    },
+    "kaleidoscope_world_liquor:bacardi_carta_blanca_q2": {
+      "zh_CN": "百加得白朗姆",
+      "zh_TW": "百加得白朗姆",
+      "en_US": "Bacardi Superior White Rum"
+    },
+    "kaleidoscope_world_liquor:bacardi_carta_blanca_q3": {
+      "zh_CN": "百加得白朗姆",
+      "zh_TW": "百加得白朗姆",
+      "en_US": "Bacardi Superior White Rum"
+    },
+    "kaleidoscope_world_liquor:bacardi_carta_blanca_q4": {
+      "zh_CN": "百加得白朗姆",
+      "zh_TW": "百加得白朗姆",
+      "en_US": "Bacardi Superior White Rum"
+    },
+    "kaleidoscope_world_liquor:bacardi_carta_blanca_q5": {
+      "zh_CN": "百加得白朗姆",
+      "zh_TW": "百加得白朗姆",
+      "en_US": "Bacardi Superior White Rum"
+    },
+    "kaleidoscope_world_liquor:bacardi_carta_blanca_q6": {
+      "zh_CN": "百加得白朗姆",
+      "zh_TW": "百加得白朗姆",
+      "en_US": "Bacardi Superior White Rum"
+    },
+    "kaleidoscope_world_liquor:bamboo_leaf_green_liquor": {
+      "zh_CN": "竹叶青",
+      "zh_TW": "竹葉青",
+      "en_US": "Bamboo Leaf Green Liquor"
+    },
+    "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1": {
+      "zh_CN": "竹叶青",
+      "zh_TW": "竹葉青",
+      "en_US": "Bamboo Leaf Green Liquor"
+    },
+    "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q2": {
+      "zh_CN": "竹叶青",
+      "zh_TW": "竹葉青",
+      "en_US": "Bamboo Leaf Green Liquor"
+    },
+    "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q3": {
+      "zh_CN": "竹叶青",
+      "zh_TW": "竹葉青",
+      "en_US": "Bamboo Leaf Green Liquor"
+    },
+    "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q4": {
+      "zh_CN": "竹叶青",
+      "zh_TW": "竹葉青",
+      "en_US": "Bamboo Leaf Green Liquor"
+    },
+    "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q5": {
+      "zh_CN": "竹叶青",
+      "zh_TW": "竹葉青",
+      "en_US": "Bamboo Leaf Green Liquor"
+    },
+    "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6": {
+      "zh_CN": "竹叶青",
+      "zh_TW": "竹葉青",
+      "en_US": "Bamboo Leaf Green Liquor"
+    },
+    "kaleidoscope_world_liquor:bar_stool_black": {
+      "zh_CN": "黑色高脚方凳",
+      "zh_TW": "黑色高腳方凳",
+      "en_US": "Black Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_blue": {
+      "zh_CN": "蓝色高脚方凳",
+      "zh_TW": "藍色高腳方凳",
+      "en_US": "Blue Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_brown": {
+      "zh_CN": "棕色高脚方凳",
+      "zh_TW": "棕色高腳方凳",
+      "en_US": "Brown Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_cyan": {
+      "zh_CN": "青色高脚方凳",
+      "zh_TW": "青色高腳方凳",
+      "en_US": "Cyan Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_gray": {
+      "zh_CN": "灰色高脚方凳",
+      "zh_TW": "灰色高腳方凳",
+      "en_US": "Gray Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_green": {
+      "zh_CN": "绿色高脚方凳",
+      "zh_TW": "綠色高腳方凳",
+      "en_US": "Green Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_light_blue": {
+      "zh_CN": "浅蓝色高脚方凳",
+      "zh_TW": "淺藍色高腳方凳",
+      "en_US": "Light Blue Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_light_gray": {
+      "zh_CN": "浅灰色高脚方凳",
+      "zh_TW": "淺灰色高腳方凳",
+      "en_US": "Light Gray Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_lime": {
+      "zh_CN": "黄绿色高脚方凳",
+      "zh_TW": "黃綠色高腳方凳",
+      "en_US": "Lime Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_magenta": {
+      "zh_CN": "品红色高脚方凳",
+      "zh_TW": "品紅色高腳方凳",
+      "en_US": "Magenta Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_orange": {
+      "zh_CN": "橙色高脚方凳",
+      "zh_TW": "橙色高腳方凳",
+      "en_US": "Orange Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_pink": {
+      "zh_CN": "粉色高脚方凳",
+      "zh_TW": "粉色高腳方凳",
+      "en_US": "Pink Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_purple": {
+      "zh_CN": "紫色高脚方凳",
+      "zh_TW": "紫色高腳方凳",
+      "en_US": "Purple Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_red": {
+      "zh_CN": "红色高脚方凳",
+      "zh_TW": "紅色高腳方凳",
+      "en_US": "Red Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_white": {
+      "zh_CN": "白色高脚方凳",
+      "zh_TW": "白色高腳方凳",
+      "en_US": "White Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:bar_stool_yellow": {
+      "zh_CN": "黄色高脚方凳",
+      "zh_TW": "黃色高腳方凳",
+      "en_US": "Yellow Square Bar Stool"
+    },
+    "kaleidoscope_world_liquor:barrel/strongbow/ingredient_1": {
+      "zh_CN": "绒球葱 或 蓝花美耳草 或 兰花 或 矢车菊 或 蒲公英 或 丁香 或 铃兰 或 橙色郁金香 或 滨菊 或 牡丹 或 粉红色郁金香 或 猪笼草 或 虞美人 或 红色郁金香 或 玫瑰丛 或 向日葵 或 火把花 或 白色郁金香 或 凋零玫瑰",
+      "zh_TW": "紫紅球花 或 雛草 或 藍色蝴蝶蘭 或 矢車菊 或 蒲公英 或 紫丁香 或 鈴蘭 或 橙色鬱金香 或 雛菊 或 牡丹花 或 粉紅色鬱金香 或 豬籠草 或 罌粟 或 紅色鬱金香 或 玫瑰叢 或 向日葵 或 火炬花 或 白色鬱金香 或 凋零玫瑰",
+      "en_US": "Allium OR Azure Bluet OR Blue Orchid OR Cornflower OR Dandelion OR Lilac OR Lily of the Valley OR Orange Tulip OR Oxeye Daisy OR Peony OR Pink Tulip OR Pitcher Plant OR Poppy OR Red Tulip OR Rose Bush OR Sunflower OR Torchflower OR White Tulip OR Wither Rose"
+    },
+    "kaleidoscope_world_liquor:bfxm_painting": {
+      "zh_CN": "挂画 · 白帆小喵L",
+      "zh_TW": "掛畫 · 白帆小喵L",
+      "en_US": "Painting · Artist: White Sail Kitty L"
+    },
+    "kaleidoscope_world_liquor:birch_bar_cabinet": {
+      "zh_CN": "白桦木酒柜",
+      "zh_TW": "白樺木酒櫃",
+      "en_US": "Birch Bar Cabinet"
+    },
+    "kaleidoscope_world_liquor:birch_cellar_cabinet": {
+      "zh_CN": "白桦木窖藏酒柜",
+      "zh_TW": "白樺木窖藏酒櫃",
+      "en_US": "Birch Cellar Cabinet"
+    },
+    "kaleidoscope_world_liquor:bmt_painting": {
+      "zh_CN": "挂画 · 白馒头",
+      "zh_TW": "掛畫 · 白饅頭",
+      "en_US": "Painting · Artist: White Bun"
+    },
+    "kaleidoscope_world_liquor:bombay_sapphire_gin": {
+      "zh_CN": "孟买蓝宝石金酒",
+      "zh_TW": "孟買藍寶石金酒",
+      "en_US": "Bombay Sapphire Gin"
+    },
+    "kaleidoscope_world_liquor:bombay_sapphire_gin_q1": {
+      "zh_CN": "孟买蓝宝石金酒",
+      "zh_TW": "孟買藍寶石金酒",
+      "en_US": "Bombay Sapphire Gin"
+    },
+    "kaleidoscope_world_liquor:bombay_sapphire_gin_q2": {
+      "zh_CN": "孟买蓝宝石金酒",
+      "zh_TW": "孟買藍寶石金酒",
+      "en_US": "Bombay Sapphire Gin"
+    },
+    "kaleidoscope_world_liquor:bombay_sapphire_gin_q3": {
+      "zh_CN": "孟买蓝宝石金酒",
+      "zh_TW": "孟買藍寶石金酒",
+      "en_US": "Bombay Sapphire Gin"
+    },
+    "kaleidoscope_world_liquor:bombay_sapphire_gin_q4": {
+      "zh_CN": "孟买蓝宝石金酒",
+      "zh_TW": "孟買藍寶石金酒",
+      "en_US": "Bombay Sapphire Gin"
+    },
+    "kaleidoscope_world_liquor:bombay_sapphire_gin_q5": {
+      "zh_CN": "孟买蓝宝石金酒",
+      "zh_TW": "孟買藍寶石金酒",
+      "en_US": "Bombay Sapphire Gin"
+    },
+    "kaleidoscope_world_liquor:bombay_sapphire_gin_q6": {
+      "zh_CN": "孟买蓝宝石金酒",
+      "zh_TW": "孟買藍寶石金酒",
+      "en_US": "Bombay Sapphire Gin"
+    },
+    "kaleidoscope_world_liquor:ch_painting": {
+      "zh_CN": "挂画 · 阡雪星跃F",
+      "zh_TW": "掛畫 · 阡雪星躍F",
+      "en_US": "Painting · Artist: Star Leap Qianxue F"
+    },
+    "kaleidoscope_world_liquor:cha_painting": {
+      "zh_CN": "挂画 · 茶枣子",
+      "zh_TW": "掛畫 · 茶棗子",
+      "en_US": "Painting · Artist: Tea Jujube"
+    },
+    "kaleidoscope_world_liquor:chen_painting": {
+      "zh_CN": "挂画 · 辰",
+      "zh_TW": "掛畫 · 辰",
+      "en_US": "Painting · Artist: Chen"
+    },
+    "kaleidoscope_world_liquor:cherry_bar_cabinet": {
+      "zh_CN": "樱花木酒柜",
+      "zh_TW": "櫻花木酒櫃",
+      "en_US": "Cherry Bar Cabinet"
+    },
+    "kaleidoscope_world_liquor:cherry_cellar_cabinet": {
+      "zh_CN": "樱花木窖藏酒柜",
+      "zh_TW": "櫻花木窖藏酒櫃",
+      "en_US": "Cherry Cellar Cabinet"
+    },
+    "kaleidoscope_world_liquor:cola": {
+      "zh_CN": "可乐",
+      "zh_TW": "可樂",
+      "en_US": "Cola"
+    },
+    "kaleidoscope_world_liquor:cool_tea": {
+      "zh_CN": "劲凉冰红茶",
+      "zh_TW": "勁涼冰紅茶",
+      "en_US": "Icy Refreshing Black Tea"
+    },
+    "kaleidoscope_world_liquor:cool_tea_q1": {
+      "zh_CN": "劲凉冰红茶",
+      "zh_TW": "勁涼冰紅茶",
+      "en_US": "Icy Refreshing Black Tea"
+    },
+    "kaleidoscope_world_liquor:cool_tea_q2": {
+      "zh_CN": "劲凉冰红茶",
+      "zh_TW": "勁涼冰紅茶",
+      "en_US": "Icy Refreshing Black Tea"
+    },
+    "kaleidoscope_world_liquor:cool_tea_q3": {
+      "zh_CN": "劲凉冰红茶",
+      "zh_TW": "勁涼冰紅茶",
+      "en_US": "Icy Refreshing Black Tea"
+    },
+    "kaleidoscope_world_liquor:cool_tea_q4": {
+      "zh_CN": "劲凉冰红茶",
+      "zh_TW": "勁涼冰紅茶",
+      "en_US": "Icy Refreshing Black Tea"
+    },
+    "kaleidoscope_world_liquor:cool_tea_q5": {
+      "zh_CN": "劲凉冰红茶",
+      "zh_TW": "勁涼冰紅茶",
+      "en_US": "Icy Refreshing Black Tea"
+    },
+    "kaleidoscope_world_liquor:cool_tea_q6": {
+      "zh_CN": "劲凉冰红茶",
+      "zh_TW": "勁涼冰紅茶",
+      "en_US": "Icy Refreshing Black Tea"
+    },
+    "kaleidoscope_world_liquor:custom_record": {
+      "zh_CN": "酒馆唱片",
+      "zh_TW": "酒館唱片",
+      "en_US": "Bar Music Disc"
+    },
+    "kaleidoscope_world_liquor:dark_oak_bar_cabinet": {
+      "zh_CN": "深色橡木酒柜",
+      "zh_TW": "深色橡木酒櫃",
+      "en_US": "Dark Oak Bar Cabinet"
+    },
+    "kaleidoscope_world_liquor:dark_oak_cellar_cabinet": {
+      "zh_CN": "深色橡木窖藏酒柜",
+      "zh_TW": "深色橡木窖藏酒櫃",
+      "en_US": "Dark Oak Cellar Cabinet"
+    },
+    "kaleidoscope_world_liquor:dassai": {
+      "zh_CN": "獺祭",
+      "zh_TW": "獺祭",
+      "en_US": "Dassai Sake"
+    },
+    "kaleidoscope_world_liquor:dassai_q1": {
+      "zh_CN": "獺祭",
+      "zh_TW": "獺祭",
+      "en_US": "Dassai Sake"
+    },
+    "kaleidoscope_world_liquor:dassai_q2": {
+      "zh_CN": "獺祭",
+      "zh_TW": "獺祭",
+      "en_US": "Dassai Sake"
+    },
+    "kaleidoscope_world_liquor:dassai_q3": {
+      "zh_CN": "獺祭",
+      "zh_TW": "獺祭",
+      "en_US": "Dassai Sake"
+    },
+    "kaleidoscope_world_liquor:dassai_q4": {
+      "zh_CN": "獺祭",
+      "zh_TW": "獺祭",
+      "en_US": "Dassai Sake"
+    },
+    "kaleidoscope_world_liquor:dassai_q5": {
+      "zh_CN": "獺祭",
+      "zh_TW": "獺祭",
+      "en_US": "Dassai Sake"
+    },
+    "kaleidoscope_world_liquor:dassai_q6": {
+      "zh_CN": "獺祭",
+      "zh_TW": "獺祭",
+      "en_US": "Dassai Sake"
+    },
+    "kaleidoscope_world_liquor:dream_painting": {
+      "zh_CN": "挂画 · 旧梦",
+      "zh_TW": "掛畫 · 舊夢",
+      "en_US": "Painting · Artist: Old Dream"
+    },
+    "kaleidoscope_world_liquor:freezer": {
+      "zh_CN": "冰柜",
+      "zh_TW": "冰櫃",
+      "en_US": "Freezer"
+    },
+    "kaleidoscope_world_liquor:gin_tonic": {
+      "zh_CN": "金汤力",
+      "zh_TW": "金湯力",
+      "en_US": "Gin Tonic"
+    },
+    "kaleidoscope_world_liquor:highball": {
+      "zh_CN": "嗨棒",
+      "zh_TW": "嗨棒",
+      "en_US": "Highball"
+    },
+    "kaleidoscope_world_liquor:ice_tea": {
+      "zh_CN": "冰红茶",
+      "zh_TW": "冰紅茶",
+      "en_US": "Iced Black Tea"
+    },
+    "kaleidoscope_world_liquor:ice_tea_q1": {
+      "zh_CN": "冰红茶",
+      "zh_TW": "冰紅茶",
+      "en_US": "Iced Black Tea"
+    },
+    "kaleidoscope_world_liquor:ice_tea_q2": {
+      "zh_CN": "冰红茶",
+      "zh_TW": "冰紅茶",
+      "en_US": "Iced Black Tea"
+    },
+    "kaleidoscope_world_liquor:ice_tea_q3": {
+      "zh_CN": "冰红茶",
+      "zh_TW": "冰紅茶",
+      "en_US": "Iced Black Tea"
+    },
+    "kaleidoscope_world_liquor:ice_tea_q4": {
+      "zh_CN": "冰红茶",
+      "zh_TW": "冰紅茶",
+      "en_US": "Iced Black Tea"
+    },
+    "kaleidoscope_world_liquor:ice_tea_q5": {
+      "zh_CN": "冰红茶",
+      "zh_TW": "冰紅茶",
+      "en_US": "Iced Black Tea"
+    },
+    "kaleidoscope_world_liquor:ice_tea_q6": {
+      "zh_CN": "冰红茶",
+      "zh_TW": "冰紅茶",
+      "en_US": "Iced Black Tea"
+    },
+    "kaleidoscope_world_liquor:jack_daniel": {
+      "zh_CN": "杰克丹尼",
+      "zh_TW": "傑克丹尼",
+      "en_US": "Jack Daniel's"
+    },
+    "kaleidoscope_world_liquor:jack_daniel_q1": {
+      "zh_CN": "杰克丹尼",
+      "zh_TW": "傑克丹尼",
+      "en_US": "Jack Daniel's"
+    },
+    "kaleidoscope_world_liquor:jack_daniel_q2": {
+      "zh_CN": "杰克丹尼",
+      "zh_TW": "傑克丹尼",
+      "en_US": "Jack Daniel's"
+    },
+    "kaleidoscope_world_liquor:jack_daniel_q3": {
+      "zh_CN": "杰克丹尼",
+      "zh_TW": "傑克丹尼",
+      "en_US": "Jack Daniel's"
+    },
+    "kaleidoscope_world_liquor:jack_daniel_q4": {
+      "zh_CN": "杰克丹尼",
+      "zh_TW": "傑克丹尼",
+      "en_US": "Jack Daniel's"
+    },
+    "kaleidoscope_world_liquor:jack_daniel_q5": {
+      "zh_CN": "杰克丹尼",
+      "zh_TW": "傑克丹尼",
+      "en_US": "Jack Daniel's"
+    },
+    "kaleidoscope_world_liquor:jack_daniel_q6": {
+      "zh_CN": "杰克丹尼",
+      "zh_TW": "傑克丹尼",
+      "en_US": "Jack Daniel's"
+    },
+    "kaleidoscope_world_liquor:jerk": {
+      "zh_CN": "渣男",
+      "zh_TW": "渣男",
+      "en_US": "Jerk Cocktail"
+    },
+    "kaleidoscope_world_liquor:johnnie_walker": {
+      "zh_CN": "尊尼获加",
+      "zh_TW": "尊尼獲加",
+      "en_US": "Johnnie Walker"
+    },
+    "kaleidoscope_world_liquor:johnnie_walker_q1": {
+      "zh_CN": "尊尼获加",
+      "zh_TW": "尊尼獲加",
+      "en_US": "Johnnie Walker"
+    },
+    "kaleidoscope_world_liquor:johnnie_walker_q2": {
+      "zh_CN": "尊尼获加",
+      "zh_TW": "尊尼獲加",
+      "en_US": "Johnnie Walker"
+    },
+    "kaleidoscope_world_liquor:johnnie_walker_q3": {
+      "zh_CN": "尊尼获加",
+      "zh_TW": "尊尼獲加",
+      "en_US": "Johnnie Walker"
+    },
+    "kaleidoscope_world_liquor:johnnie_walker_q4": {
+      "zh_CN": "尊尼获加",
+      "zh_TW": "尊尼獲加",
+      "en_US": "Johnnie Walker"
+    },
+    "kaleidoscope_world_liquor:johnnie_walker_q5": {
+      "zh_CN": "尊尼获加",
+      "zh_TW": "尊尼獲加",
+      "en_US": "Johnnie Walker"
+    },
+    "kaleidoscope_world_liquor:johnnie_walker_q6": {
+      "zh_CN": "尊尼获加",
+      "zh_TW": "尊尼獲加",
+      "en_US": "Johnnie Walker"
+    },
+    "kaleidoscope_world_liquor:kita_stuffed_crisp": {
+      "zh_CN": "喜多夹心脆",
+      "zh_TW": "喜多夾心脆",
+      "en_US": "Kita Stuffed Crisps"
+    },
+    "kaleidoscope_world_liquor:kwas_chlebowy": {
+      "zh_CN": "格瓦斯",
+      "zh_TW": "格瓦斯",
+      "en_US": "Kvass"
+    },
+    "kaleidoscope_world_liquor:kwas_chlebowy_q1": {
+      "zh_CN": "格瓦斯",
+      "zh_TW": "格瓦斯",
+      "en_US": "Kvass"
+    },
+    "kaleidoscope_world_liquor:kwas_chlebowy_q2": {
+      "zh_CN": "格瓦斯",
+      "zh_TW": "格瓦斯",
+      "en_US": "Kvass"
+    },
+    "kaleidoscope_world_liquor:kwas_chlebowy_q3": {
+      "zh_CN": "格瓦斯",
+      "zh_TW": "格瓦斯",
+      "en_US": "Kvass"
+    },
+    "kaleidoscope_world_liquor:kwas_chlebowy_q4": {
+      "zh_CN": "格瓦斯",
+      "zh_TW": "格瓦斯",
+      "en_US": "Kvass"
+    },
+    "kaleidoscope_world_liquor:kwas_chlebowy_q5": {
+      "zh_CN": "格瓦斯",
+      "zh_TW": "格瓦斯",
+      "en_US": "Kvass"
+    },
+    "kaleidoscope_world_liquor:kwas_chlebowy_q6": {
+      "zh_CN": "格瓦斯",
+      "zh_TW": "格瓦斯",
+      "en_US": "Kvass"
+    },
+    "kaleidoscope_world_liquor:lafite_1982": {
+      "zh_CN": "拉菲1982",
+      "zh_TW": "拉菲1982",
+      "en_US": "Château Lafite Rothschild 1982"
+    },
+    "kaleidoscope_world_liquor:lafite_1982_q1": {
+      "zh_CN": "拉菲1982",
+      "zh_TW": "拉菲1982",
+      "en_US": "Château Lafite Rothschild 1982"
+    },
+    "kaleidoscope_world_liquor:lafite_1982_q2": {
+      "zh_CN": "拉菲1982",
+      "zh_TW": "拉菲1982",
+      "en_US": "Château Lafite Rothschild 1982"
+    },
+    "kaleidoscope_world_liquor:lafite_1982_q3": {
+      "zh_CN": "拉菲1982",
+      "zh_TW": "拉菲1982",
+      "en_US": "Château Lafite Rothschild 1982"
+    },
+    "kaleidoscope_world_liquor:lafite_1982_q4": {
+      "zh_CN": "拉菲1982",
+      "zh_TW": "拉菲1982",
+      "en_US": "Château Lafite Rothschild 1982"
+    },
+    "kaleidoscope_world_liquor:lafite_1982_q5": {
+      "zh_CN": "拉菲1982",
+      "zh_TW": "拉菲1982",
+      "en_US": "Château Lafite Rothschild 1982"
+    },
+    "kaleidoscope_world_liquor:lafite_1982_q6": {
+      "zh_CN": "拉菲1982",
+      "zh_TW": "拉菲1982",
+      "en_US": "Château Lafite Rothschild 1982"
+    },
+    "kaleidoscope_world_liquor:liangshan_ice_cone": {
+      "zh_CN": "凉山田筒",
+      "zh_TW": "涼山田筒",
+      "en_US": "Liangshan Ice Cone"
+    },
+    "kaleidoscope_world_liquor:long_island_iced_tea": {
+      "zh_CN": "长岛冰茶",
+      "zh_TW": "長島冰茶",
+      "en_US": "Long Island Iced Tea"
+    },
+    "kaleidoscope_world_liquor:magic_crispy_corner": {
+      "zh_CN": "妙脆角",
+      "zh_TW": "妙脆角",
+      "en_US": "Magic Crispy Corners"
+    },
+    "kaleidoscope_world_liquor:maotai": {
+      "zh_CN": "飞天茅台",
+      "zh_TW": "飛天茅臺",
+      "en_US": "Feitian Moutai"
+    },
+    "kaleidoscope_world_liquor:maotai_q1": {
+      "zh_CN": "飞天茅台",
+      "zh_TW": "飛天茅臺",
+      "en_US": "Feitian Moutai"
+    },
+    "kaleidoscope_world_liquor:maotai_q2": {
+      "zh_CN": "飞天茅台",
+      "zh_TW": "飛天茅臺",
+      "en_US": "Feitian Moutai"
+    },
+    "kaleidoscope_world_liquor:maotai_q3": {
+      "zh_CN": "飞天茅台",
+      "zh_TW": "飛天茅臺",
+      "en_US": "Feitian Moutai"
+    },
+    "kaleidoscope_world_liquor:maotai_q4": {
+      "zh_CN": "飞天茅台",
+      "zh_TW": "飛天茅臺",
+      "en_US": "Feitian Moutai"
+    },
+    "kaleidoscope_world_liquor:maotai_q5": {
+      "zh_CN": "飞天茅台",
+      "zh_TW": "飛天茅臺",
+      "en_US": "Feitian Moutai"
+    },
+    "kaleidoscope_world_liquor:maotai_q6": {
+      "zh_CN": "飞天茅台",
+      "zh_TW": "飛天茅臺",
+      "en_US": "Feitian Moutai"
+    },
+    "kaleidoscope_world_liquor:oak_bar_cabinet": {
+      "zh_CN": "橡木酒柜",
+      "zh_TW": "橡木酒櫃",
+      "en_US": "Oak Bar Cabinet"
+    },
+    "kaleidoscope_world_liquor:oak_cellar_cabinet": {
+      "zh_CN": "橡木窖藏酒柜",
+      "zh_TW": "橡木窖藏酒櫃",
+      "en_US": "Oak Cellar Cabinet"
+    },
+    "kaleidoscope_world_liquor:pina_colada": {
+      "zh_CN": "马利宝椰子朗姆酒",
+      "zh_TW": "馬利寶椰子朗姆酒",
+      "en_US": "Malibu Coconut Rum"
+    },
+    "kaleidoscope_world_liquor:pina_colada_q1": {
+      "zh_CN": "马利宝椰子朗姆酒",
+      "zh_TW": "馬利寶椰子朗姆酒",
+      "en_US": "Malibu Coconut Rum"
+    },
+    "kaleidoscope_world_liquor:pina_colada_q2": {
+      "zh_CN": "马利宝椰子朗姆酒",
+      "zh_TW": "馬利寶椰子朗姆酒",
+      "en_US": "Malibu Coconut Rum"
+    },
+    "kaleidoscope_world_liquor:pina_colada_q3": {
+      "zh_CN": "马利宝椰子朗姆酒",
+      "zh_TW": "馬利寶椰子朗姆酒",
+      "en_US": "Malibu Coconut Rum"
+    },
+    "kaleidoscope_world_liquor:pina_colada_q4": {
+      "zh_CN": "马利宝椰子朗姆酒",
+      "zh_TW": "馬利寶椰子朗姆酒",
+      "en_US": "Malibu Coconut Rum"
+    },
+    "kaleidoscope_world_liquor:pina_colada_q5": {
+      "zh_CN": "马利宝椰子朗姆酒",
+      "zh_TW": "馬利寶椰子朗姆酒",
+      "en_US": "Malibu Coconut Rum"
+    },
+    "kaleidoscope_world_liquor:pina_colada_q6": {
+      "zh_CN": "马利宝椰子朗姆酒",
+      "zh_TW": "馬利寶椰子朗姆酒",
+      "en_US": "Malibu Coconut Rum"
+    },
+    "kaleidoscope_world_liquor:pine_colada": {
+      "zh_CN": "椰林飘香",
+      "zh_TW": "椰林飄香",
+      "en_US": "Piña Colada"
+    },
+    "kaleidoscope_world_liquor:pochi_pudding": {
+      "zh_CN": "波奇布丁",
+      "zh_TW": "波奇布丁",
+      "en_US": "Pochi Pudding"
+    },
+    "kaleidoscope_world_liquor:qxxy_painting": {
+      "zh_CN": "挂画 · 花菜",
+      "zh_TW": "掛畫 · 花菜",
+      "en_US": "Painting · Artist: Cauliflower"
+    },
+    "kaleidoscope_world_liquor:rabbit_painting": {
+      "zh_CN": "挂画 · 小兔子要听话哦",
+      "zh_TW": "掛畫 · 小兔子要聽話哦",
+      "en_US": "Painting · Artist: Be Good Little Bunny"
+    },
+    "kaleidoscope_world_liquor:shaker/allium_garden1": {
+      "zh_CN": "kaleidoscope_world_liquor:shaker/allium_garden1",
+      "zh_TW": "kaleidoscope_world_liquor:shaker/allium_garden1",
+      "en_US": "kaleidoscope_world_liquor:shaker/allium_garden1"
+    },
+    "kaleidoscope_world_liquor:shaker/allium_garden1/ingredient_0": {
+      "zh_CN": "深紫色调酒材料",
+      "zh_TW": "深紫色調酒材料",
+      "en_US": "Dark Purple shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/allium_garden1/ingredient_1": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/allium_garden1/ingredient_2": {
+      "zh_CN": "淡紫色调酒材料",
+      "zh_TW": "淺紫色調酒材料",
+      "en_US": "Light Purple shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/around_the_world/ingredient_0": {
+      "zh_CN": "浅蓝色调酒材料",
+      "zh_TW": "淺藍色調酒材料",
+      "en_US": "Light Blue shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/around_the_world/ingredient_1": {
+      "zh_CN": "黄色调酒材料",
+      "zh_TW": "黃色調酒材料",
+      "en_US": "Yellow shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/around_the_world/ingredient_2": {
+      "zh_CN": "红色调酒材料",
+      "zh_TW": "紅色調酒材料",
+      "en_US": "Red shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/brass_heart1": {
+      "zh_CN": "kaleidoscope_world_liquor:shaker/brass_heart1",
+      "zh_TW": "kaleidoscope_world_liquor:shaker/brass_heart1",
+      "en_US": "kaleidoscope_world_liquor:shaker/brass_heart1"
+    },
+    "kaleidoscope_world_liquor:shaker/brass_heart1/ingredient_0": {
+      "zh_CN": "橙色调酒材料",
+      "zh_TW": "橙色調酒材料",
+      "en_US": "Orange shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/brass_heart1/ingredient_1": {
+      "zh_CN": "黄色调酒材料",
+      "zh_TW": "黃色調酒材料",
+      "en_US": "Yellow shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/brass_heart1/ingredient_2": {
+      "zh_CN": "橙色调酒材料",
+      "zh_TW": "橙色調酒材料",
+      "en_US": "Orange shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/depth_charge1": {
+      "zh_CN": "kaleidoscope_world_liquor:shaker/depth_charge1",
+      "zh_TW": "kaleidoscope_world_liquor:shaker/depth_charge1",
+      "en_US": "kaleidoscope_world_liquor:shaker/depth_charge1"
+    },
+    "kaleidoscope_world_liquor:shaker/depth_charge1/ingredient_0": {
+      "zh_CN": "深蓝色调酒材料",
+      "zh_TW": "深藍色調酒材料",
+      "en_US": "Dark Blue shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/depth_charge1/ingredient_1": {
+      "zh_CN": "浅蓝色调酒材料",
+      "zh_TW": "淺藍色調酒材料",
+      "en_US": "Light Blue shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/depth_charge1/ingredient_2": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/gin_tonic/ingredient_1": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/gin_tonic/ingredient_2": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/godfather1": {
+      "zh_CN": "kaleidoscope_world_liquor:shaker/godfather1",
+      "zh_TW": "kaleidoscope_world_liquor:shaker/godfather1",
+      "en_US": "kaleidoscope_world_liquor:shaker/godfather1"
+    },
+    "kaleidoscope_world_liquor:shaker/godfather1/ingredient_0": {
+      "zh_CN": "红色调酒材料",
+      "zh_TW": "紅色調酒材料",
+      "en_US": "Red shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/godfather1/ingredient_1": {
+      "zh_CN": "橙色调酒材料",
+      "zh_TW": "橙色調酒材料",
+      "en_US": "Orange shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/godfather1/ingredient_2": {
+      "zh_CN": "棕色调酒材料",
+      "zh_TW": "棕色調酒材料",
+      "en_US": "Brown shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/grasshopper1": {
+      "zh_CN": "kaleidoscope_world_liquor:shaker/grasshopper1",
+      "zh_TW": "kaleidoscope_world_liquor:shaker/grasshopper1",
+      "en_US": "kaleidoscope_world_liquor:shaker/grasshopper1"
+    },
+    "kaleidoscope_world_liquor:shaker/grasshopper1/ingredient_0": {
+      "zh_CN": "绿色调酒材料",
+      "zh_TW": "綠色調酒材料",
+      "en_US": "Green shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/grasshopper1/ingredient_1": {
+      "zh_CN": "黄色调酒材料",
+      "zh_TW": "黃色調酒材料",
+      "en_US": "Yellow shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/grasshopper1/ingredient_2": {
+      "zh_CN": "水蓝色调酒材料",
+      "zh_TW": "水藍色調酒材料",
+      "en_US": "Aqua shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/highball/ingredient_0": {
+      "zh_CN": "黄色调酒材料",
+      "zh_TW": "黃色調酒材料",
+      "en_US": "Yellow shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/highball/ingredient_1": {
+      "zh_CN": "黄色调酒材料",
+      "zh_TW": "黃色調酒材料",
+      "en_US": "Yellow shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/highball/ingredient_2": {
+      "zh_CN": "黄色调酒材料",
+      "zh_TW": "黃色調酒材料",
+      "en_US": "Yellow shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/highball1/ingredient_0": {
+      "zh_CN": "橙色调酒材料",
+      "zh_TW": "橙色調酒材料",
+      "en_US": "Orange shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/highball1/ingredient_1": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/highball1/ingredient_2": {
+      "zh_CN": "金色调酒材料",
+      "zh_TW": "金色調酒材料",
+      "en_US": "Gold shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/jerk/ingredient_0": {
+      "zh_CN": "绿色调酒材料",
+      "zh_TW": "綠色調酒材料",
+      "en_US": "Green shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/jerk/ingredient_1": {
+      "zh_CN": "浅蓝色调酒材料",
+      "zh_TW": "淺藍色調酒材料",
+      "en_US": "Light Blue shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/jerk/ingredient_2": {
+      "zh_CN": "绿色调酒材料",
+      "zh_TW": "綠色調酒材料",
+      "en_US": "Green shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/long_island_iced_tea/ingredient_1": {
+      "zh_CN": "棕色调酒材料",
+      "zh_TW": "棕色調酒材料",
+      "en_US": "Brown shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/long_island_iced_tea/ingredient_2": {
+      "zh_CN": "棕色调酒材料",
+      "zh_TW": "棕色調酒材料",
+      "en_US": "Brown shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/long_island_iced_tea1/ingredient_1": {
+      "zh_CN": "红色调酒材料",
+      "zh_TW": "紅色調酒材料",
+      "en_US": "Red shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/long_island_iced_tea1/ingredient_2": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/pine_colada/ingredient_0": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/pine_colada/ingredient_1": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/pine_colada/ingredient_2": {
+      "zh_CN": "黄色调酒材料",
+      "zh_TW": "黃色調酒材料",
+      "en_US": "Yellow shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/screwdriver1": {
+      "zh_CN": "kaleidoscope_world_liquor:shaker/screwdriver1",
+      "zh_TW": "kaleidoscope_world_liquor:shaker/screwdriver1",
+      "en_US": "kaleidoscope_world_liquor:shaker/screwdriver1"
+    },
+    "kaleidoscope_world_liquor:shaker/screwdriver1/ingredient_0": {
+      "zh_CN": "金色调酒材料",
+      "zh_TW": "金色調酒材料",
+      "en_US": "Gold shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/screwdriver1/ingredient_1": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/screwdriver1/ingredient_2": {
+      "zh_CN": "金色调酒材料",
+      "zh_TW": "金色調酒材料",
+      "en_US": "Gold shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/sculk_special1": {
+      "zh_CN": "kaleidoscope_world_liquor:shaker/sculk_special1",
+      "zh_TW": "kaleidoscope_world_liquor:shaker/sculk_special1",
+      "en_US": "kaleidoscope_world_liquor:shaker/sculk_special1"
+    },
+    "kaleidoscope_world_liquor:shaker/sculk_special1/ingredient_0": {
+      "zh_CN": "深蓝色调酒材料",
+      "zh_TW": "深藍色調酒材料",
+      "en_US": "Dark Blue shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/sculk_special1/ingredient_1": {
+      "zh_CN": "水蓝色调酒材料",
+      "zh_TW": "水藍色調酒材料",
+      "en_US": "Aqua shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/sculk_special1/ingredient_2": {
+      "zh_CN": "淡紫色调酒材料",
+      "zh_TW": "淺紫色調酒材料",
+      "en_US": "Light Purple shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/shrimp_cocktail/ingredient_0": {
+      "zh_CN": "红色调酒材料",
+      "zh_TW": "紅色調酒材料",
+      "en_US": "Red shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/shrimp_cocktail/ingredient_1": {
+      "zh_CN": "红色调酒材料",
+      "zh_TW": "紅色調酒材料",
+      "en_US": "Red shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/shrimp_cocktail/ingredient_2": {
+      "zh_CN": "黄色调酒材料",
+      "zh_TW": "黃色調酒材料",
+      "en_US": "Yellow shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/shrimp_cocktail1/ingredient_0": {
+      "zh_CN": "红色调酒材料",
+      "zh_TW": "紅色調酒材料",
+      "en_US": "Red shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/shrimp_cocktail1/ingredient_1": {
+      "zh_CN": "红色调酒材料",
+      "zh_TW": "紅色調酒材料",
+      "en_US": "Red shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/shrimp_cocktail1/ingredient_2": {
+      "zh_CN": "粉色调酒材料",
+      "zh_TW": "粉色調酒材料",
+      "en_US": "Pink shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/white_lady1": {
+      "zh_CN": "kaleidoscope_world_liquor:shaker/white_lady1",
+      "zh_TW": "kaleidoscope_world_liquor:shaker/white_lady1",
+      "en_US": "kaleidoscope_world_liquor:shaker/white_lady1"
+    },
+    "kaleidoscope_world_liquor:shaker/white_lady1/ingredient_0": {
+      "zh_CN": "白色调酒材料",
+      "zh_TW": "白色調酒材料",
+      "en_US": "White shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/white_lady1/ingredient_1": {
+      "zh_CN": "水蓝色调酒材料",
+      "zh_TW": "水藍色調酒材料",
+      "en_US": "Aqua shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shaker/white_lady1/ingredient_2": {
+      "zh_CN": "黄色调酒材料",
+      "zh_TW": "黃色調酒材料",
+      "en_US": "Yellow shaker ingredient"
+    },
+    "kaleidoscope_world_liquor:shrimp_cocktail": {
+      "zh_CN": "鲜虾鸡尾酒",
+      "zh_TW": "鮮蝦雞尾酒",
+      "en_US": "Shrimp Cocktail"
+    },
+    "kaleidoscope_world_liquor:skyy_vodka": {
+      "zh_CN": "深蓝伏特加",
+      "zh_TW": "深藍伏特加",
+      "en_US": "SKYY Vodka"
+    },
+    "kaleidoscope_world_liquor:skyy_vodka_q1": {
+      "zh_CN": "深蓝伏特加",
+      "zh_TW": "深藍伏特加",
+      "en_US": "SKYY Vodka"
+    },
+    "kaleidoscope_world_liquor:skyy_vodka_q2": {
+      "zh_CN": "深蓝伏特加",
+      "zh_TW": "深藍伏特加",
+      "en_US": "SKYY Vodka"
+    },
+    "kaleidoscope_world_liquor:skyy_vodka_q3": {
+      "zh_CN": "深蓝伏特加",
+      "zh_TW": "深藍伏特加",
+      "en_US": "SKYY Vodka"
+    },
+    "kaleidoscope_world_liquor:skyy_vodka_q4": {
+      "zh_CN": "深蓝伏特加",
+      "zh_TW": "深藍伏特加",
+      "en_US": "SKYY Vodka"
+    },
+    "kaleidoscope_world_liquor:skyy_vodka_q5": {
+      "zh_CN": "深蓝伏特加",
+      "zh_TW": "深藍伏特加",
+      "en_US": "SKYY Vodka"
+    },
+    "kaleidoscope_world_liquor:skyy_vodka_q6": {
+      "zh_CN": "深蓝伏特加",
+      "zh_TW": "深藍伏特加",
+      "en_US": "SKYY Vodka"
+    },
+    "kaleidoscope_world_liquor:smirnoff_red_vodka": {
+      "zh_CN": "斯米诺红牌伏特加",
+      "zh_TW": "斯米諾紅牌伏特加",
+      "en_US": "Smirnoff Red Label Vodka"
+    },
+    "kaleidoscope_world_liquor:smirnoff_red_vodka_q1": {
+      "zh_CN": "斯米诺红牌伏特加",
+      "zh_TW": "斯米諾紅牌伏特加",
+      "en_US": "Smirnoff Red Label Vodka"
+    },
+    "kaleidoscope_world_liquor:smirnoff_red_vodka_q2": {
+      "zh_CN": "斯米诺红牌伏特加",
+      "zh_TW": "斯米諾紅牌伏特加",
+      "en_US": "Smirnoff Red Label Vodka"
+    },
+    "kaleidoscope_world_liquor:smirnoff_red_vodka_q3": {
+      "zh_CN": "斯米诺红牌伏特加",
+      "zh_TW": "斯米諾紅牌伏特加",
+      "en_US": "Smirnoff Red Label Vodka"
+    },
+    "kaleidoscope_world_liquor:smirnoff_red_vodka_q4": {
+      "zh_CN": "斯米诺红牌伏特加",
+      "zh_TW": "斯米諾紅牌伏特加",
+      "en_US": "Smirnoff Red Label Vodka"
+    },
+    "kaleidoscope_world_liquor:smirnoff_red_vodka_q5": {
+      "zh_CN": "斯米诺红牌伏特加",
+      "zh_TW": "斯米諾紅牌伏特加",
+      "en_US": "Smirnoff Red Label Vodka"
+    },
+    "kaleidoscope_world_liquor:smirnoff_red_vodka_q6": {
+      "zh_CN": "斯米诺红牌伏特加",
+      "zh_TW": "斯米諾紅牌伏特加",
+      "en_US": "Smirnoff Red Label Vodka"
+    },
+    "kaleidoscope_world_liquor:sour_plum": {
+      "zh_CN": "酸梅汤",
+      "zh_TW": "酸梅湯",
+      "en_US": "Sour Plum Drink"
+    },
+    "kaleidoscope_world_liquor:sour_plum_q1": {
+      "zh_CN": "酸梅汤",
+      "zh_TW": "酸梅湯",
+      "en_US": "Sour Plum Drink"
+    },
+    "kaleidoscope_world_liquor:sour_plum_q2": {
+      "zh_CN": "酸梅汤",
+      "zh_TW": "酸梅湯",
+      "en_US": "Sour Plum Drink"
+    },
+    "kaleidoscope_world_liquor:sour_plum_q3": {
+      "zh_CN": "酸梅汤",
+      "zh_TW": "酸梅湯",
+      "en_US": "Sour Plum Drink"
+    },
+    "kaleidoscope_world_liquor:sour_plum_q4": {
+      "zh_CN": "酸梅汤",
+      "zh_TW": "酸梅湯",
+      "en_US": "Sour Plum Drink"
+    },
+    "kaleidoscope_world_liquor:sour_plum_q5": {
+      "zh_CN": "酸梅汤",
+      "zh_TW": "酸梅湯",
+      "en_US": "Sour Plum Drink"
+    },
+    "kaleidoscope_world_liquor:sour_plum_q6": {
+      "zh_CN": "酸梅汤",
+      "zh_TW": "酸梅湯",
+      "en_US": "Sour Plum Drink"
+    },
+    "kaleidoscope_world_liquor:spiryt_vodka": {
+      "zh_CN": "生命之水96",
+      "zh_TW": "生命之水96",
+      "en_US": "Spirytus 96% ABV Vodka"
+    },
+    "kaleidoscope_world_liquor:spiryt_vodka_q1": {
+      "zh_CN": "生命之水96",
+      "zh_TW": "生命之水96",
+      "en_US": "Spirytus 96% ABV Vodka"
+    },
+    "kaleidoscope_world_liquor:spiryt_vodka_q2": {
+      "zh_CN": "生命之水96",
+      "zh_TW": "生命之水96",
+      "en_US": "Spirytus 96% ABV Vodka"
+    },
+    "kaleidoscope_world_liquor:spiryt_vodka_q3": {
+      "zh_CN": "生命之水96",
+      "zh_TW": "生命之水96",
+      "en_US": "Spirytus 96% ABV Vodka"
+    },
+    "kaleidoscope_world_liquor:spiryt_vodka_q4": {
+      "zh_CN": "生命之水96",
+      "zh_TW": "生命之水96",
+      "en_US": "Spirytus 96% ABV Vodka"
+    },
+    "kaleidoscope_world_liquor:spiryt_vodka_q5": {
+      "zh_CN": "生命之水96",
+      "zh_TW": "生命之水96",
+      "en_US": "Spirytus 96% ABV Vodka"
+    },
+    "kaleidoscope_world_liquor:spiryt_vodka_q6": {
+      "zh_CN": "生命之水96",
+      "zh_TW": "生命之水96",
+      "en_US": "Spirytus 96% ABV Vodka"
+    },
+    "kaleidoscope_world_liquor:spruce_bar_cabinet": {
+      "zh_CN": "云杉木酒柜",
+      "zh_TW": "雲杉木酒櫃",
+      "en_US": "Spruce Bar Cabinet"
+    },
+    "kaleidoscope_world_liquor:spruce_cellar_cabinet": {
+      "zh_CN": "云杉木窖藏酒柜",
+      "zh_TW": "雲杉木窖藏酒櫃",
+      "en_US": "Spruce Cellar Cabinet"
+    },
+    "kaleidoscope_world_liquor:strongbow": {
+      "zh_CN": "诗庄堡",
+      "zh_TW": "詩莊堡",
+      "en_US": "Strongbow Cider"
+    },
+    "kaleidoscope_world_liquor:strongbow_q1": {
+      "zh_CN": "诗庄堡",
+      "zh_TW": "詩莊堡",
+      "en_US": "Strongbow Cider"
+    },
+    "kaleidoscope_world_liquor:strongbow_q2": {
+      "zh_CN": "诗庄堡",
+      "zh_TW": "詩莊堡",
+      "en_US": "Strongbow Cider"
+    },
+    "kaleidoscope_world_liquor:strongbow_q3": {
+      "zh_CN": "诗庄堡",
+      "zh_TW": "詩莊堡",
+      "en_US": "Strongbow Cider"
+    },
+    "kaleidoscope_world_liquor:strongbow_q4": {
+      "zh_CN": "诗庄堡",
+      "zh_TW": "詩莊堡",
+      "en_US": "Strongbow Cider"
+    },
+    "kaleidoscope_world_liquor:strongbow_q5": {
+      "zh_CN": "诗庄堡",
+      "zh_TW": "詩莊堡",
+      "en_US": "Strongbow Cider"
+    },
+    "kaleidoscope_world_liquor:strongbow_q6": {
+      "zh_CN": "诗庄堡",
+      "zh_TW": "詩莊堡",
+      "en_US": "Strongbow Cider"
+    },
+    "kaleidoscope_world_liquor:tonic_water": {
+      "zh_CN": "汤力水",
+      "zh_TW": "湯力水",
+      "en_US": "Tonic Water"
+    },
+    "minecraft:apple": {
+      "zh_CN": "苹果",
+      "zh_TW": "蘋果",
+      "en_US": "Apple"
+    },
+    "minecraft:bamboo": {
+      "zh_CN": "竹子",
+      "zh_TW": "竹子",
+      "en_US": "Bamboo"
+    },
+    "minecraft:beetroot": {
+      "zh_CN": "甜菜根",
+      "zh_TW": "甜菜根",
+      "en_US": "Beetroot"
+    },
+    "minecraft:blue_dye": {
+      "zh_CN": "蓝色染料",
+      "zh_TW": "藍色染料",
+      "en_US": "Blue Dye"
+    },
+    "minecraft:bread": {
+      "zh_CN": "面包",
+      "zh_TW": "麵包",
+      "en_US": "Bread"
+    },
+    "minecraft:carrot": {
+      "zh_CN": "胡萝卜",
+      "zh_TW": "胡蘿蔔",
+      "en_US": "Carrot"
+    },
+    "minecraft:cookie": {
+      "zh_CN": "曲奇",
+      "zh_TW": "餅乾",
+      "en_US": "Cookie"
+    },
+    "minecraft:crimson_roots": {
+      "zh_CN": "绯红菌索",
+      "zh_TW": "緋紅蕈根",
+      "en_US": "Crimson Roots"
+    },
+    "minecraft:gold_nugget": {
+      "zh_CN": "金粒",
+      "zh_TW": "金粒",
+      "en_US": "Gold Nugget"
+    },
+    "minecraft:ice": {
+      "zh_CN": "冰",
+      "zh_TW": "冰",
+      "en_US": "Ice"
+    },
+    "minecraft:ink_sac": {
+      "zh_CN": "墨囊",
+      "zh_TW": "墨囊",
+      "en_US": "Ink Sac"
+    },
+    "minecraft:milk_bucket": {
+      "zh_CN": "牛奶桶",
+      "zh_TW": "牛奶桶",
+      "en_US": "Milk Bucket"
+    },
+    "minecraft:packed_ice": {
+      "zh_CN": "浮冰",
+      "zh_TW": "冰磚",
+      "en_US": "Packed Ice"
+    },
+    "minecraft:potato": {
+      "zh_CN": "马铃薯",
+      "zh_TW": "馬鈴薯",
+      "en_US": "Potato"
+    },
+    "minecraft:potion": {
+      "zh_CN": "药水",
+      "zh_TW": "藥水",
+      "en_US": "Potion"
+    },
+    "minecraft:slime_ball": {
+      "zh_CN": "黏液球",
+      "zh_TW": "史萊姆球",
+      "en_US": "Slimeball"
+    },
+    "minecraft:snowball": {
+      "zh_CN": "雪球",
+      "zh_TW": "雪球",
+      "en_US": "Snowball"
+    },
+    "minecraft:sugar": {
+      "zh_CN": "糖",
+      "zh_TW": "糖",
+      "en_US": "Sugar"
+    },
+    "minecraft:sugar_cane": {
+      "zh_CN": "甘蔗",
+      "zh_TW": "甘蔗",
+      "en_US": "Sugar Cane"
+    },
+    "minecraft:sweet_berries": {
+      "zh_CN": "甜莓",
+      "zh_TW": "甜莓",
+      "en_US": "Sweet Berries"
+    },
+    "minecraft:vine": {
+      "zh_CN": "藤蔓",
+      "zh_TW": "藤蔓",
+      "en_US": "Vines"
+    },
+    "minecraft:water": {
+      "zh_CN": "水",
+      "zh_TW": "水",
+      "en_US": "Water"
+    },
+    "minecraft:water_bucket": {
+      "zh_CN": "水桶",
+      "zh_TW": "水桶",
+      "en_US": "Water Bucket"
+    },
+    "minecraft:wheat": {
+      "zh_CN": "小麦",
+      "zh_TW": "作物",
+      "en_US": "Crops"
+    },
+    "minecraft:wheat_seeds": {
+      "zh_CN": "小麦种子",
+      "zh_TW": "小麥種子",
+      "en_US": "Wheat Seeds"
+    }
+  },
+  "guide_sha256": "ae46fe8f614745f57160b27faf95efaf6818eea8a60a2247a9f1085ac39a8c2a",
+  "semantic_sha256": "2ac7e8a0d8a531bb755fab04a65d9d7f44ab3a2fd4d9f2a769330f5374e0df12",
+  "quantity_sha256": "0ca8fb262c22fd8aea0f71b56c6bbc70669c23aa439017a0ae22afc8e5d35585",
+  "native_sha256": "6404ea3bd0cd978d5cca9c740645d7a88868726236d5c63d8bb89d06bb22f430",
+  "runtime_sha256": {},
+  "coverage": {
+    "entries": 67,
+    "recipes": 34,
+    "concepts": 268,
+    "guide_strings": 2125,
+    "native_bindings": 471,
+    "shared_keys": 30,
+    "native_fields": 663,
+    "live_aliases": 25,
+    "runtime_files": 0
+  },
+  "boundary": "Exact owned source projections, every non-preview locale field, selected actual runtime message-source files. Excludes third-party author originals, debug-log terminology claims, and native/client acceptance."
+}

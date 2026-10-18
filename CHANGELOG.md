@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.154
+
+Unify owned guide and placed bottle/cup terminology through Tavern 0.6.177's existing shared guide API, preserving recipes, quantities, timing, effects, storage behavior, collision and visual/audio assets. Advance paired BP/RP, module, payload and required Tavern dependency identities together. Keep Grilling 2.8.155 as the unchanged optional source-check peer. Freeze, exact T177 pin and canonical CI remain pending; full-family publication and deployment retain their separate blocked status. No new BDS, saved-world or human-client acceptance is claimed; `publication_request=false`. See [scope](docs/RELEASE-NOTES-0.1.154.md).
+
 ## 0.1.153
 
 Pair both packs with Tavern0.6.176 and optional Grilling2.8.154 source checks. Change only package/module/dependency and payload-version identities from W152, preserving the W151 gameplay, collision and freezer material repairs. Exact successor peer commits, freeze, canonical CI and publication remain pending. New Java Forge1.20.1 file9217901, NeoForge1.21.1 file9217896 and separate26.1.2 file9087098 remain adaptation pending; this pairing does not change their recipes or effects. Native/saved-world checks and human-client acceptance require their own results. See [scope](docs/RELEASE-NOTES-0.1.153.md).

@@ -1,0 +1,210 @@
+{
+  "prefix": "kaleidoscope_world_liquor:",
+  "bp": "runtime/BP",
+  "rp": "runtime/RP",
+  "base": "e7b8d30eb954abb826c921dec46a776d51890efb",
+  "runtime": [],
+  "name": "world-liquor",
+  "aliases": {
+    "kaleidoscope_world_liquor:bottle_absolut_vodka": {
+      "parentId": "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_bacardi_carta_blanca": {
+      "parentId": "kaleidoscope_world_liquor:bacardi_carta_blanca_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_bamboo_leaf_green_liquor": {
+      "parentId": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_bombay_sapphire_gin": {
+      "parentId": "kaleidoscope_world_liquor:bombay_sapphire_gin_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_cool_tea": {
+      "parentId": "kaleidoscope_world_liquor:cool_tea_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_dassai": {
+      "parentId": "kaleidoscope_world_liquor:dassai_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_ice_tea": {
+      "parentId": "kaleidoscope_world_liquor:ice_tea_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_jack_daniel": {
+      "parentId": "kaleidoscope_world_liquor:jack_daniel_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_johnnie_walker": {
+      "parentId": "kaleidoscope_world_liquor:johnnie_walker_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_kwas_chlebowy": {
+      "parentId": "kaleidoscope_world_liquor:kwas_chlebowy_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_lafite_1982": {
+      "parentId": "kaleidoscope_world_liquor:lafite_1982_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_maotai": {
+      "parentId": "kaleidoscope_world_liquor:maotai_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_pina_colada": {
+      "parentId": "kaleidoscope_world_liquor:pina_colada_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_skyy_vodka": {
+      "parentId": "kaleidoscope_world_liquor:skyy_vodka_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_smirnoff_red_vodka": {
+      "parentId": "kaleidoscope_world_liquor:smirnoff_red_vodka_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_sour_plum": {
+      "parentId": "kaleidoscope_world_liquor:sour_plum_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_spiryt_vodka": {
+      "parentId": "kaleidoscope_world_liquor:spiryt_vodka_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:bottle_strongbow": {
+      "parentId": "kaleidoscope_world_liquor:strongbow_q1",
+      "suffix": {
+        "zh_CN": "・酒瓶陈列",
+        "zh_TW": "・酒瓶陳列",
+        "en_US": " · Bottle Display"
+      }
+    },
+    "kaleidoscope_world_liquor:cup_around_the_world": {
+      "parentId": "kaleidoscope_world_liquor:around_the_world",
+      "suffix": {
+        "zh_CN": "",
+        "zh_TW": "",
+        "en_US": ""
+      }
+    },
+    "kaleidoscope_world_liquor:cup_gin_tonic": {
+      "parentId": "kaleidoscope_world_liquor:gin_tonic",
+      "suffix": {
+        "zh_CN": "",
+        "zh_TW": "",
+        "en_US": ""
+      }
+    },
+    "kaleidoscope_world_liquor:cup_highball": {
+      "parentId": "kaleidoscope_world_liquor:highball",
+      "suffix": {
+        "zh_CN": "",
+        "zh_TW": "",
+        "en_US": ""
+      }
+    },
+    "kaleidoscope_world_liquor:cup_jerk": {
+      "parentId": "kaleidoscope_world_liquor:jerk",
+      "suffix": {
+        "zh_CN": "",
+        "zh_TW": "",
+        "en_US": ""
+      }
+    },
+    "kaleidoscope_world_liquor:cup_long_island_iced_tea": {
+      "parentId": "kaleidoscope_world_liquor:long_island_iced_tea",
+      "suffix": {
+        "zh_CN": "",
+        "zh_TW": "",
+        "en_US": ""
+      }
+    },
+    "kaleidoscope_world_liquor:cup_pine_colada": {
+      "parentId": "kaleidoscope_world_liquor:pine_colada",
+      "suffix": {
+        "zh_CN": "",
+        "zh_TW": "",
+        "en_US": ""
+      }
+    },
+    "kaleidoscope_world_liquor:cup_shrimp_cocktail": {
+      "parentId": "kaleidoscope_world_liquor:shrimp_cocktail",
+      "suffix": {
+        "zh_CN": "",
+        "zh_TW": "",
+        "en_US": ""
+      }
+    }
+  }
+}

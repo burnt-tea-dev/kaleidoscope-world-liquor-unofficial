@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "baseline": "e7b8d30eb954abb826c921dec46a776d51890efb",
+  "semantic_sha256": "2ac7e8a0d8a531bb755fab04a65d9d7f44ab3a2fd4d9f2a769330f5374e0df12",
+  "semantic_unchanged": true,
+  "quantity_before_sha256": "0ca8fb262c22fd8aea0f71b56c6bbc70669c23aa439017a0ae22afc8e5d35585",
+  "quantity_after_sha256": "0ca8fb262c22fd8aea0f71b56c6bbc70669c23aa439017a0ae22afc8e5d35585",
+  "quantity_differences": [],
+  "version_token_exclusion": "Only explicit three-component dotted version tokens are excluded from prose quantity comparison. Complete structured recipes are included without exclusions."
+}

@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "tavern_commit": "4f75735da76d826c675394e0ec567cdf4ea9100d",
-  "tavern_version": "0.6.176",
+  "tavern_version": "0.6.177",
   "publication_request": false,
   "grilling_commit": "2388111b8b494d8c406a3898409aa912d383e82b",
   "grilling_version": "2.8.155",
-  "peer_pins_final": true,
+  "peer_pins_final": false,
   "target_peer_versions": {
-    "tavern": "0.6.176",
+    "tavern": "0.6.177",
     "grilling": "2.8.155"
   },
-  "peer_pin_status": "exact_frozen_runtime_source_anchors",
-  "peer_pin_note": "Exact frozen T176 and G155 source anchors. Canonical successor PR checks/merges and full-family admission remain separate required gates. Tooling-only descendants may advance without changing these runtime trees.",
+  "peer_pin_status": "pending_exact_t177_source_anchor",
+  "peer_pin_note": "W154 targets Tavern 0.6.177. The tavern_commit currently retains the T176 predecessor anchor and must be replaced by the exact frozen T177 source commit before final paired checks. The optional Grilling 2.8.155 source anchor is unchanged. Canonical PR checks/merges and full-family admission remain separate required gates.",
   "predecessor_peer_pins": {
     "world_liquor_source_commit": "ddff7b599b3771b3770a86e1b813dd196ed074c7",
     "tavern_commit": "2810a59c08e52004bb69522a8900a8da1dcc2c16",

@@ -1,3 +1,5 @@
+import {verifyTerminology} from './check_guide_terminology.mjs';
+await verifyTerminology();
 /** Canonical data projection audit. No mocked game, world, inventory, or player. */
 import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
