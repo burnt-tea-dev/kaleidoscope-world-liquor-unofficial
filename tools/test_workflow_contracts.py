@@ -19,7 +19,7 @@ def commands(job):
 
 def validate_tavern_history(workflow):
     peers = [step['with'] for job in workflow['jobs'].values() for step in job['steps']
-             if step.get('with', {}).get('repository') == 'casama233/kaleidoscope-tavern-unofficial']
+             if step.get('with', {}).get('repository') == 'burnt-tea-dev/kaleidoscope-tavern-unofficial']
     assert len(peers) == 1
     assert peers[0]['ref'] == '${{ steps.pin.outputs.commit }}'
     assert peers[0].get('fetch-depth') == '0', 'Immutable Tavern witnesses require complete peer history'
@@ -67,7 +67,7 @@ def validate_ci(workflow):
     assert 'steps.pin.outputs.commit' in str(jobs['package']['steps'])
     validate_tavern_history(workflow)
     grilling = [step.get('with', {}) for step in jobs['package']['steps']
-                if step.get('with', {}).get('repository') == 'casama233/kaleidoscope-grilling-unofficial']
+                if step.get('with', {}).get('repository') == 'burnt-tea-dev/kaleidoscope-grilling-unofficial']
     assert len(grilling) == 1 and grilling[0]['ref'] == '${{ steps.pin.outputs.grilling_commit }}'
     assert grilling[0]['path'] == 'grilling-src' and grilling[0]['persist-credentials'] == 'false'
     family_steps = [step for step in jobs['package']['steps'] if 'tests/respawn-family.test.mjs' in step.get('run', '')]
@@ -140,7 +140,7 @@ class WorkflowContracts(unittest.TestCase):
             for depth in [None, '1']:
                 workflow = read_workflow(WORKFLOWS / name)
                 peer = next(step['with'] for job in workflow['jobs'].values() for step in job['steps']
-                            if step.get('with', {}).get('repository') == 'casama233/kaleidoscope-tavern-unofficial')
+                            if step.get('with', {}).get('repository') == 'burnt-tea-dev/kaleidoscope-tavern-unofficial')
                 if depth is None: peer.pop('fetch-depth', None)
                 else: peer['fetch-depth'] = depth
                 with self.subTest(route=name, depth=depth), self.assertRaisesRegex(AssertionError, 'history'):

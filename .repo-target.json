@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "default_branch": "main",
+  "project": "Kaleidoscope World Liquor unofficial Bedrock port",
+  "require_remote_identity_check_before_write": true,
+  "allow_writes_to_other_repositories": false,
+  "repository": "burnt-tea-dev/kaleidoscope-world-liquor-unofficial",
+  "repository_id": 1385218112,
+  "owner": {
+    "login": "burnt-tea-dev",
+    "id": 344456559,
+    "type": "Organization"
+  },
+  "private": false,
+  "logical_runtime_repository": "casama233/kaleidoscope-world-liquor-unofficial"
+}
