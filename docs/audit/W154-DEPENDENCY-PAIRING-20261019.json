@@ -42,8 +42,10 @@
   "source_pin_coordination": {
     "initial_tavern_commit": "2c3b029343f2e451bf9d2120c1dacae2d549d3ee",
     "grilling_commit": "ea5cd6a24aca18e236c7d3ed24205e52f628853d",
-    "peer_pins_final": false,
-    "reason": "Coordinated T177 family lock must reference W154 before final W154 peer source is recorded"
+    "peer_pins_final": true,
+    "reason": "Exact pushed T177 source includes the coordinated W154 family lock; its runtime/baseline/history match the initial frozen T177 source. Canonical checks and full-family gates remain pending.",
+    "final_tavern_commit": "e1ed931998782449e48100b2e2df393bc2d5961e",
+    "tavern_runtime_baseline_history_unchanged": true
   },
   "validation_scope": "targeted identity conservation; canonical freeze/package checks recorded separately; full CI belongs to PR",
   "bds": false,
