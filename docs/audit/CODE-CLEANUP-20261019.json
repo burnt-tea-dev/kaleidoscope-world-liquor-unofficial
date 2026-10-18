@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "date": "2026-10-19",
+  "repository": "burnt-tea-dev/kaleidoscope-world-liquor-unofficial",
+  "source_commit": "32998e1157a5de1f84fdb268be168b28b1573e13",
+  "evidence_recorded_before_deletion": true,
+  "exported_runtime_changed": false,
+  "decisions": [
+    {
+      "action": "delete_duplicate_implementation",
+      "path": "development/respawn/respawn-source.js",
+      "before_sha256": "bbbb986326ac2e3afb63b5dc8b556f6e9e2bf86d0b62f86dc907e0c0000114b1",
+      "before_bytes": 9633,
+      "before_lines": 163,
+      "only_current_code_consumer": "tests/respawn-source.test.mjs:4",
+      "replacement": "runtime/BP/scripts/respawn-adapter.js",
+      "coverage_preserved": ["All five respawn-source tests now target production", "60 independent Java vectors", "tests/respawn-runtime.test.mjs"],
+      "retained": ["tests/fixtures/JavaRespawnOracle.java", "tests/fixtures/java-respawn.jsonl"],
+      "predeletion_diagnostic": "The proposed import redirection and single production vector pass executed in memory: 5 passed, 0 failed"
+    },
+    {
+      "action": "delete_retired_packager",
+      "path": "tools/family_candidate.py",
+      "before_sha256": "b54cda39b893211b3c6320a2c60d0dff73bc2b3655c71b7044622925aa705ab5",
+      "before_bytes": 4743,
+      "before_lines": 71,
+      "obsolete_contract": "Fixed W0.1.28 / Tavern0.6.64 candidate, compared to current W0.1.153 runtime",
+      "current_callers": [],
+      "historical_references": ["docs/FAMILY-COMPAT-BATCH1.md", "docs/RELEASE-NOTES-0.1.28.md"],
+      "predeletion_diagnostic": {"command": "python3 tools/family_candidate.py --no-syntax", "exit_code": 1, "failure": "AssertionError at line 20: current manifest version differs from candidate version", "writes": false},
+      "replacement": ["tools/build_release.py", "tools/baseline_gate.py", "tools/verify_release.py", "Tavern canonical family update/bundle/guard"],
+      "retained": ["compat/family/candidate.json", "docs/FAMILY-COMPAT-BATCH1.md", "docs/RELEASE-NOTES-0.1.28.md"]
+    },
+    {
+      "action": "remove_duplicate_invocation",
+      "path": "tools/check_release.py",
+      "original_line": 15,
+      "command_removed": "subprocess.run([sys.executable,str(root/'tools/collision_shapes.py')],check=True)",
+      "same_check_retained_at": "tools/test_collision_shapes.py:18",
+      "equivalence": "Both invoke collision_shapes.check_shapes() without arguments; CLI adds only printed JSON when no author archive is supplied",
+      "retained": ["tools/collision_shapes.py", "All four tests in tools/test_collision_shapes.py", "Optional author archive/bytecode verification"]
+    }
+  ],
+  "validation": {
+    "state": "targeted_checks_passed",
+    "node_version": "v22.23.3",
+    "checks": [
+      {"command": "node tests/respawn-source.test.mjs", "passed": 5, "failed": 0, "independent_java_vectors_retained": 60},
+      {"command": "node tests/respawn-runtime.test.mjs", "passed": 16, "failed": 0},
+      {"command": "TAVERN_ROOT=/root/bsm-work/tavern-src python3 tools/test_collision_shapes.py", "passed": 4, "failed": 0},
+      {"command": "git diff --check", "exit_code": 0}
+    ],
+    "local_diagnostic_logs": [
+      "/tmp/world-liquor-audit-respawn-source-20261019.tap",
+      "/tmp/world-liquor-audit-respawn-runtime-20261019.tap",
+      "/tmp/world-liquor-audit-collision-20261019.log"
+    ],
+    "full_required_ci": "deferred_to_PR",
+    "bds": false,
+    "client": false,
+    "deployment": false
+  }
+}
