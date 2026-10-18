@@ -135,5 +135,19 @@
     "saved_world_migration": "pending",
     "human_client_acceptance": "pending",
     "workflow_contract_tests": 9
+  },
+  "host_tooling_source_update_20261018": {
+    "tavern_commit": "2810a59c08e52004bb69522a8900a8da1dcc2c16",
+    "tavern_git_tree": "4901ed5ba30a7801949df3a5ce59e7a3e072a06f",
+    "grilling_commit": "686cde5578ae5ddc66632b8e0d24fa9d6d89b656",
+    "previous_world_liquor_source": "edfc126d0d86129f6f2f836cc8889034c42b6f61",
+    "scope": "Metadata-only Tavern tooling source-pin update; no World Liquor or peer runtime changes",
+    "focused_validation": "passed_world_liquor_release_aggregate_exact_peer_helpers87_workflow_tests9",
+    "canonical_ci": "pending",
+    "native_bds_test": "not_run",
+    "saved_world_migration": "pending",
+    "human_client_acceptance": "pending",
+    "runtime_file_conservation": 893,
+    "archive_sha256_unchanged": "e4ef8235e113dbe6f29c6958dbd5c08d10aa6dc765dedeb6b1745d2e37208f2b"
   }
 }
