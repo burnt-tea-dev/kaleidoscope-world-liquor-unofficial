@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   authorization:
-    if: github.repository == 'casama233/kaleidoscope-world-liquor-unofficial' && github.repository_id == '1385218112' && github.ref == 'refs/heads/main'
+    if: github.repository == 'burnt-tea-dev/kaleidoscope-world-liquor-unofficial' && github.repository_id == '1385218112' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     outputs:
       publish: ${{ steps.request.outputs.publish }}
@@ -69,7 +69,7 @@ jobs:
           PY
       - uses: actions/checkout@v4
         with:
-          repository: casama233/kaleidoscope-tavern-unofficial
+          repository: burnt-tea-dev/kaleidoscope-tavern-unofficial
           ref: ${{ steps.pin.outputs.commit }}
           fetch-depth: 0
           path: tavern-src
@@ -124,7 +124,7 @@ jobs:
       - name: Stage or resume identical draft, verify assets, then publish
         env:
           GH_TOKEN: ${{ github.token }}
-          GH_REPO: casama233/kaleidoscope-world-liquor-unofficial
+          GH_REPO: burnt-tea-dev/kaleidoscope-world-liquor-unofficial
         run: |
           set -euo pipefail
           view_draft() {
