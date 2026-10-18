@@ -1,5 +1,13 @@
 # Change history
 
+## 0.1.153
+
+Pair both packs with Tavern0.6.176 and optional Grilling2.8.154 source checks. Change only package/module/dependency and payload-version identities from W152, preserving the W151 gameplay, collision and freezer material repairs. Exact successor peer commits, freeze, canonical CI and publication remain pending. New Java Forge1.20.1 file9217901, NeoForge1.21.1 file9217896 and separate26.1.2 file9087098 remain adaptation pending; this pairing does not change their recipes or effects. Native/saved-world checks and human-client acceptance require their own results. See [scope](docs/RELEASE-NOTES-0.1.153.md).
+
+## 0.1.152
+
+Pair both packs exactly with Tavern 0.6.175 and update their release/module identities plus the payload version. Preserve all functional W151 payload data and every other non-manifest runtime byte. The optional source-check peer is Grilling 2.8.153; final canonical T175/G153 commit pins are recorded in a metadata-only follow-up. The frozen runtime/archive is unchanged. Local exact-peer checks and canonical CI remain distinct from publication readiness. W151 and earlier release histories remain unchanged. Complete-family native/saved-world gates and human client acceptance remain separate and pending. See [pairing scope](docs/RELEASE-NOTES-0.1.152.md).
+
 ## 0.1.148
 
 Pair with Tavern 0.6.170 using exact BP/RP dependencies and synchronized release/guide versions. Preserve World Liquor pack/module UUIDs and all gameplay, recipes, storage and presentation. The optional Grilling 2.8.144 source-check peer is unchanged. No Elbow or Treasure gameplay repair is included. Full family and client acceptance remain pending.
