@@ -1,3 +1,5 @@
+> **Published-install correction (2026-10-18):** W141 TEST requires **Tavern T163 BP/RP**, despite its historical tag README saying T155. W148 stable requires T170. See [exact published-package guidance](docs/PUBLIC-DOWNLOAD-INSTALLATION-20261018.md); existing assets and historical tags are unchanged.
+
 ## Current maintained source: 0.1.151
 
 Reviewed on **2026-10-17** at [b8692380](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/commit/b86923801febbf23a43f36017ad299b28128b029). W151 is merged and paired with **Tavern 0.6.173**; it restores Java collision/selection shapes for the freezer, cups, stools and cabinets. See [source scope](docs/evidence/collision-shapes-20261016.md).
