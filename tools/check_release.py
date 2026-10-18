@@ -12,7 +12,6 @@ subprocess.run([sys.executable,str(root/'tools/check_effect_icons.py')],check=Tr
 subprocess.run([sys.executable,str(root/'tools/test_freezer_java_art.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/freezer_surface_animation.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/entity_material_registry.py')],check=True)
-subprocess.run([sys.executable,str(root/'tools/collision_shapes.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/test_collision_shapes.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/test_java_face_topology.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/build_drink_colors.py'),'--check'],check=True)
