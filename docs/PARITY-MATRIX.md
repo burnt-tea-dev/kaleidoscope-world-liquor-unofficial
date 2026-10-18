@@ -1,5 +1,9 @@
 # World Liquor Java／Bedrock 差距矩陣
 
+## W153 source preparation (2026-10-18)
+
+W153 changes only paired release/dependency and payload-version identities for T176; G154 remains an optional source-check peer. The W151 implementation and remaining gameplay/client gaps below are conserved, not reclassified as accepted. Canonical successor pins, freeze and checks remain pending. Fresh author metadata identifies Forge1.20.1 file9217901, NeoForge1.21.1 file9217896 and separate26.1.2 file9087098 as adaptation pending; W153 does not claim their new mechanics or complete Java parity. See [release scope](RELEASE-NOTES-0.1.153.md).
+
 ## 2026-10-17 現行來源
 
 **W151**（[b8692380](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/commit/b86923801febbf23a43f36017ad299b28128b029)）配T173；公開包W148配T170。版本、下載及倉庫部署證據見[家族主索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)。W151的34個方塊碰撞／選取修補已合併，原生接觸及同批家族驗收另記。W110四杯mesh／UV、冰紅茶brown匹配、W147冰櫃material registry與唱片來源修補保留，畫面仍按具體場景接受。
