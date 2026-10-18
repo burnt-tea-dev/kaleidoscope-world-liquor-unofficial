@@ -15,7 +15,7 @@
   "client": false,
   "status": "frozen_runtime_with_final_peer_source_pins",
   "public_notes_path": "docs/RELEASE-NOTES-0.1.152.md",
-  "tavern_commit": "f76327f36bd103302cf6dda5bf86a873db6345a7",
+  "tavern_commit": "2810a59c08e52004bb69522a8900a8da1dcc2c16",
   "artifact_suffix": "baseline1",
   "public_notes_inline": "Pair both World Liquor 0.1.152 packs exactly with Tavern 0.6.175. Preserve all W151 functional payload data and other non-manifest runtime bytes; only package/module/dependency and payload version identities change. Canonical T175/G153 source pins are finalized, with Grilling 2.8.153 remaining an optional source-check peer. This metadata-only finalization preserves the frozen archive. Canonical CI, release publication, complete-family native/saved-world gates and human client acceptance remain distinct; publication_request=false, publication_ready=false, bds=false, client=false and production_ready=false.",
   "expected_archive_sha256": "e4ef8235e113dbe6f29c6958dbd5c08d10aa6dc765dedeb6b1745d2e37208f2b",
