@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.156
+
+Preserve all W155 functional runtime and change only package/module/dependency and payload identities to pair with Tavern0.6.179. W155 source CI passed, but the T178 companion failed effect-track retirement and the pair was not merged. Both historical claims remain unchanged; T179 fixes empty-effect track re-creation. See [pairing scope and evidence](docs/RELEASE-NOTES-0.1.156.md).
+
 ## 0.1.155
 
 Bind deferred furniture use to the accepted player hand, potion identity and block context, and restore the freezer blue-dye sprite from the exact official Java item asset. Pair with Tavern0.6.178 and preserve storage/pack identities. General freezer display parity and new Java author adaptations remain open; see [scope and evidence](docs/RELEASE-NOTES-0.1.155.md).

@@ -1,0 +1,9 @@
+# World Liquor 0.1.156
+
+Pair both World Liquor packs with **Tavern 0.6.179** and retain **Grilling 2.8.155** as the optional source-check peer. W156 changes only package/module/dependency and payload-version identities from W155. Every other runtime byte, including deferred furniture guards, native potion identity checks and the official freezer blue-dye sprite, is unchanged. Pack/module UUIDs and stored data keys are preserved.
+
+W155's four source CI jobs passed, but its T178 companion failed the existing effect-track retirement regression: reading an entity with no remaining effects could recreate an expired track. The pair was not merged. T179 limits creation of a new track to entities with remaining effects. T178 and W155 fingerprints and their original results are preserved; the corrected pair receives fresh identities.
+
+The unchanged W155 implementation reuses its 32 freezer callback, 62 wall-record, seven native-storage and six targeted potion cases, together with the exact official Minecraft1.21.1 sprite verification. This identity-only increment verifies the exact three-file runtime delta, unchanged earlier release-history entries, synchronized own/peer identities, paired guide projection and canonical package export. These checks do not replace canonical PR CI or full-family admission. [W155 release scope](RELEASE-NOTES-0.1.155.md) retains the detailed repair evidence and limits.
+
+Arbitrary freezer item rendering, Java seeded placement, component-dependent visuals and newer Java author-release adaptations remain pending. [The source-derived visual plan](audit/FREEZER-VISUAL-REVIEW-20261024.md) remains unchanged. Full-family BDS/saved-world gates and human rendered-client acceptance are separate. `publication_request=false`, `bds=false`, `client=false`, `production_ready=false`.

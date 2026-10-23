@@ -1,5 +1,9 @@
 # World Liquor Java／Bedrock 差距矩陣
 
+## W156 paired source candidate (2026-10-24)
+
+W156 retains every W155 gameplay and visual repair below, changing only release/dependency and payload identities to pair with T179. W155 source CI passed; its T178 companion failed the effect-track retirement regression, so that pair was not merged. Preserved history and new pairing do not resolve the remaining visual or client gaps. See [release scope](RELEASE-NOTES-0.1.156.md).
+
 ## W155 source candidate (2026-10-24)
 
 W155 binds the four deferred furniture routes to the original hand, observable potion identity, dimension, crouch state and target block. Changed context cancels before inventory mutation. The freezer blue-dye display now uses the exact official Minecraft1.21.1 sprite; the previous pixels were lapis lazuli. Source/API regressions and source pixels are verified, while native/player/client evidence remains pending. Arbitrary input rendering, Java seeded placement and component-dependent visuals remain open in the [source-derived visual plan](audit/FREEZER-VISUAL-REVIEW-20261024.md). [Release scope](RELEASE-NOTES-0.1.155.md) records the T178 pairing, known metadata limits and newer Java releases still awaiting adaptation. Earlier sections retain their original source scope.

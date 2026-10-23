@@ -1,17 +1,17 @@
 {
   "schema": 1,
-  "tavern_commit": "0be1a7c04d69339d2f3960b34b48361b9c5b15b4",
-  "tavern_version": "0.6.178",
+  "tavern_commit": "b7c62285905f3d925ff1be46da4e6df7487d38c0",
+  "tavern_version": "0.6.179",
   "publication_request": false,
   "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
   "grilling_version": "2.8.155",
   "peer_pins_final": true,
   "target_peer_versions": {
-    "tavern": "0.6.178",
+    "tavern": "0.6.179",
     "grilling": "2.8.155"
   },
   "peer_pin_status": "exact_frozen_runtime_source_anchors",
-  "peer_pin_note": "W155 requires both frozen T178 packs at the exact reviewed source anchor, including ordinary-ice transparency and initial online effect-clock repair. G155 is an optional source-check peer on equivalent rewritten public history. Canonical PR/checks/merge and full-family admission remain separate gates.",
+  "peer_pin_note": "W156 requires both frozen T179 packs at the exact reviewed source anchor. W155 source CI passed, but its T178 companion failed the effect-track retirement regression and the pair was not merged. W156 changes only release/dependency and payload identities from W155; T179 preserves that failed claim and corrects empty-effect track re-creation. G155 remains the optional source-check peer. Canonical PR/checks/merge and full-family admission remain separate gates.",
   "predecessor_peer_pins": {
     "tavern_commit": "4f75735da76d826c675394e0ec567cdf4ea9100d",
     "tavern_version": "0.6.176",
