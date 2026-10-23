@@ -5,11 +5,6 @@
       "before": "38a3ba11d7cd9054fef99d06cac18efcf1ee2660fffce893b7e0dc15e13f364a",
       "after": "851bf0504d504ef67559a526f39efd2c905f93f4c29f67c3bee724c8db311097",
       "reason": "2026-09-29 reviewed destruction-feedback registration/support-loss repair."
-    },
-    "runtime/BP/scripts/furniture.js": {
-      "before": "5bf66709339848e84f26e73390fd3ca2f67625d84a5c0c8c18eb25098744cc59",
-      "after": "3218602d5c87497abe2f0b0961aa1428d0c811befb869f6842c155724f0df822",
-      "reason": "2026-09-29 reviewed destruction-feedback registration/support-loss repair."
     }
   },
   "additions": {

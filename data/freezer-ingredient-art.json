@@ -17,12 +17,6 @@
   },
   "target": "runtime/RP/textures/repair/freezer_blue_dye.png",
   "reason": "The old blue_dye display used the lapis_lazuli item sprite. Copy the exact official blue_dye sprite for the maintained Minecraft 1.21.1 Java renderer; preserve the existing alpha-tested surface geometry.",
-  "historicalProjection": {
-    "testOnly": true,
-    "before": "aa158721022891ee61f50b61fbfec40ce7337f13ab6365d0e04522b3658a6c0b",
-    "after": "6cf7ce48373b5e4d1b42c36abdff0abc847eef2dd10c9886bc1a77903b66617d",
-    "beforeGzipBase64": "H4sIAAAAAAACA+sM8HPn5ZLiYmBg4PX0cAkC0gIgzMEGJOU//08EUizpjr6ODAwb+7n/JLIC+YzFQe5ODOvOybwEciZ6ujiGWJxOTpC44nBq2397o7RQz3/+k9JmPhD9v3iWXONGzzuJBvM1nB1mOUo5SHkv29+ULVb0Qi2HY1OaRO8aSRW3CwwT1hr0nth2mEclg+HMfYXmCabCJgzPaiIeNN5QyXYrs9u02bFmDyOHEcMSxptpERICoq0KnjPcUmZ39tVPYJrRa6DefCRhxoor7Wsal6RYL2BgOL7ljvQV621XgI5j8HT1c1nnlNAEANXmUIfnAAAA"
-  },
   "acceptance": {
     "source": true,
     "native": false,

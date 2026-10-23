@@ -1,7 +1,5 @@
 """Rebuild the blue-dye surface from its exact official Java item asset."""
 import argparse
-import base64
-import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -37,17 +35,6 @@ def source_bytes(jar):
     return contents['assets/minecraft/textures/item/blue_dye.png']
 
 
-def historical_bytes(data):
-    """Only the existing preservation checker may read the old wrong sprite."""
-    row = read(REVIEW)['historicalProjection']
-    assert row['testOnly'] is True
-    assert hashlib.sha256(data).hexdigest() == row['after'] == ASSETS['assets/minecraft/textures/item/blue_dye.png']
-    old = gzip.decompress(base64.b64decode(row['beforeGzipBase64'], validate=True))
-    assert hashlib.sha256(old).hexdigest() == row['before']
-    assert row['before'] == read(ROOT / 'data/freezer-visual-additions.json')['files'][TARGET]
-    return old
-
-
 def check(write=False, jar=None):
     target = ROOT / TARGET
     assert not write or jar, '--write requires the pinned official --jar source'
@@ -66,8 +53,7 @@ def check(write=False, jar=None):
     cubes = [cube for bone in geometry['bones'] for cube in bone.get('cubes', [])]
     assert len(cubes) == 1 and cubes[0]['size'] == [4, 0, 4]
     assert cubes[0]['uv'] == {'up': {'uv': [0, 0], 'uv_size': [16, 16]}}
-    historical_bytes(data)
-    print('Freezer blue dye matches official Minecraft 1.21.1 item pixels; client rendering unverified')
+    return {TARGET: hashlib.sha256(data).hexdigest()}
 
 
 if __name__ == '__main__':
@@ -76,3 +62,4 @@ if __name__ == '__main__':
     parser.add_argument('--jar', type=Path, help='Also verify against the pinned official client archive')
     args = parser.parse_args()
     check(args.write, args.jar)
+    print('Freezer blue dye matches official Minecraft 1.21.1 item pixels; client rendering unverified')

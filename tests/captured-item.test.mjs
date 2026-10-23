@@ -8,3 +8,23 @@ test('observable nonstackable metadata/count changes and missing origins are rej
  assert.equal(sameCapturedItem(undefined,stack()),false);
 });
 test('engine-rejected stackable metadata never falls back to the intrinsic-one-item guard',()=>{assert.equal(sameCapturedItem(stack({maxAmount:64}),stack({maxAmount:64})),false);});
+const potion=(component,typeId='minecraft:potion')=>stack({typeId,getComponent:id=>id==='minecraft:potion'?component:undefined});
+const healing=()=>({potionEffectType:{id:'Healing'},potionDeliveryType:{id:'Consume'}});
+test('captured potion identity includes its native effect and delivery type',()=>{
+ for(const typeId of ['minecraft:potion','minecraft:splash_potion','minecraft:lingering_potion']){
+  const original=potion(healing(),typeId);assert.equal(sameCapturedItem(potion(healing(),typeId),original),true);
+  assert.equal(sameCapturedItem(potion({...healing(),potionEffectType:{id:'Poison'}},typeId),original),false);
+  assert.equal(sameCapturedItem(potion({...healing(),potionDeliveryType:{id:'Splash'}},typeId),original),false);
+ }
+});
+test('unavailable potion identity cannot authorize a captured-item mutation',()=>{
+ for(const typeId of ['minecraft:potion','minecraft:splash_potion','minecraft:lingering_potion']){
+  for(const component of [undefined,{}, {...healing(),potionEffectType:{id:''}}, {...healing(),potionDeliveryType:{}}]){
+   assert.throws(()=>sameCapturedItem(potion(component,typeId),potion(component,typeId)),/POTION_IDENTITY_UNAVAILABLE/);
+  }
+ }
+ const unreadable=stack({typeId:'minecraft:potion',getComponent:id=>{if(id==='minecraft:potion')throw Error('COMPONENT_UNAVAILABLE');}});
+ assert.throws(()=>sameCapturedItem(unreadable,potion(healing())),/COMPONENT_UNAVAILABLE/);
+ const effectError={...healing(),get potionEffectType(){throw Error('EFFECT_UNAVAILABLE');}};
+ assert.throws(()=>sameCapturedItem(potion(effectError),potion(healing())),/EFFECT_UNAVAILABLE/);
+});

@@ -110,9 +110,6 @@ def compact_preimage(p):
  assert hashlib.sha256(restored).hexdigest()==row['before'],('Compact change exceeds texture paths',p)
  return restored
 def digest(p):
- if p.relative_to(ROOT).as_posix()=='runtime/RP/textures/repair/freezer_blue_dye.png':
-  from freezer_ingredient_art import historical_bytes
-  return hashlib.sha256(historical_bytes(p.read_bytes())).hexdigest()
  author=AUTHOR_ART_REVIEW['changes'].get(p.relative_to(ROOT).as_posix())
  if author:
   assert hashlib.sha256(p.read_bytes()).hexdigest()==author['after'],('Unreviewed current author art',p)
@@ -140,6 +137,12 @@ def main():
  reviewed=read(ROOT/'data/guide-destruction-review.json')
  plane_review=read(ROOT/'data/drink-plane-review.json')['files']
  additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
+ # The current Java asset contract owns blue dye. Its old wrong-image witness
+ # is retired; hashes below inspect current bytes and never fabricate a past PNG.
+ from freezer_ingredient_art import check as check_ingredient_art
+ current_ingredient_assets=check_ingredient_art()
+ assert not (set(additions)&set(current_ingredient_assets))
+ additions.update(current_ingredient_assets)
  # Current-source result is additive; keep all older art/tree assertions.
  for name in read(ROOT/'data/current-freezer-review.json')['additions']:
   assert name in baseline_additions(ROOT),('Unregistered current freezer addition',name)
@@ -306,7 +309,7 @@ def main():
      delta=max(abs(a-b) for a,b in zip(expected,actual));maximum=max(maximum,delta)
      assert delta<1e-12,(case,model,expected,actual)
      checks+=1
- report={'baselineCommit':baseline['baselineCommit'],'javaReferenceCommit':contract['upstreamCommit'],'cabinetBlockVariants':len(blocks),'helperFamilies':2,'facings':4,'poseCases':len(cases),'vertexComparisons':checks,'maxCoordinateErrorBlocks':maximum,'modelBindings':bindings,'preservedFiles':preserved,'creativeMenuProjectionFiles':len(projection.menus),'molotovKind':25,'watermelonKind':44,'playerSimulation':False,'bdsTest':'NOT_RUN','clientVisualTest':'NOT_RUN'}
+ report={'baselineCommit':baseline['baselineCommit'],'javaReferenceCommit':contract['upstreamCommit'],'cabinetBlockVariants':len(blocks),'helperFamilies':2,'facings':4,'poseCases':len(cases),'vertexComparisons':checks,'maxCoordinateErrorBlocks':maximum,'modelBindings':bindings,'preservedFiles':preserved,'creativeMenuProjectionFiles':len(projection.menus),'currentSourceAssets':current_ingredient_assets,'molotovKind':25,'watermelonKind':44,'playerSimulation':False,'bdsTest':'NOT_RUN','clientVisualTest':'NOT_RUN'}
  version='.'.join(map(str,read(ROOT/'runtime/BP/manifest.json')['header']['version']))
  (ROOT/f'docs/STORAGE-VALIDATION-{version}.json').write_text(json.dumps(report,indent=2)+'\n')
  print(json.dumps(report))

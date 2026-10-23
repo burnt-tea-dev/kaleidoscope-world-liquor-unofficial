@@ -53,22 +53,14 @@ const safeBlock=(d,p)=>{try{return d.getBlock(p);}catch{return undefined;}};
 // block context: a later slot/item/dimension change is a different interaction.
 const pendingUses=new Map();
 function invalidateUses(block){for(const use of pendingUses.get(key(block))??[])use.invalid=true;}
-function potionIdentity(item){
- if(!item)return null;
- const component=item.getComponent('minecraft:potion');
- if(!component){if(['minecraft:potion','minecraft:splash_potion','minecraft:lingering_potion'].includes(item.typeId))throw Error('FREEZER_POTION_IDENTITY_UNAVAILABLE');return null;}
- const effect=component.potionEffectType?.id,delivery=component.potionDeliveryType?.id;
- if(typeof effect!=='string'||!effect||typeof delivery!=='string'||!delivery)throw Error('FREEZER_POTION_IDENTITY_UNAVAILABLE');
- return JSON.stringify([effect,delivery]);
-}
 function deferPlayerUse(event,action){
  try{
-  const player=event.player,source=event.block,dimension=source.dimension,position={...source.location},type=source.typeId,states=source.permutation.getAllStates(),slot=player.selectedSlotIndex,item=event.itemStack?.clone(),potion=potionIdentity(item),sneaking=player.isSneaking;
+  const player=event.player,source=event.block,dimension=source.dimension,position={...source.location},type=source.typeId,states=source.permutation.getAllStates(),slot=player.selectedSlotIndex,item=event.itemStack?.clone(),sneaking=player.isSneaking;
   if(player.dimension.id!==dimension.id)return;
   const anchor=key(source),use={invalid:false},pending=pendingUses.get(anchor)??new Set();pending.add(use);pendingUses.set(anchor,pending);
   system.run(()=>{try{
    if(use.invalid||player.isValid===false||player.dimension.id!==dimension.id||player.selectedSlotIndex!==slot||player.isSneaking!==sneaking)return;
-   const held=hand(player);if((item?!sameCapturedItem(held,item):held!==undefined)||potionIdentity(held)!==potion)return;
+   const held=hand(player);if(item?!sameCapturedItem(held,item):held!==undefined)return;
    const block=safeBlock(dimension,position);if(block?.typeId!==type)return;
    const current=block.permutation.getAllStates();if(Object.keys(current).length!==Object.keys(states).length||Object.keys(states).some(name=>current[name]!==states[name]))return;
    action(player,block);

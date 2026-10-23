@@ -1,12 +1,16 @@
 # Change history
 
+## 0.1.157
+
+Bind deferred furniture interactions to the accepted hand and block context, and move observable potion identity into the shared captured-item comparison used by furniture, freezer storage and drink callbacks. Restore the exact official Minecraft 1.21.1 blue-dye sprite. The affected furniture, captured-item and sprite domains now use current behavior and Java resource contracts; their superseded inverse-source projections are retired. Pair with Tavern 0.6.179 and retain optional Grilling 2.8.155 source checks. Pack/module UUIDs and saved data keys remain unchanged. See [validation, preserved candidate history and limits](docs/PARITY-MATRIX.md) and the [remaining freezer visual plan](docs/audit/FREEZER-VISUAL-REVIEW-20261024.md).
+
 ## 0.1.156
 
-Preserve all W155 functional runtime and change only package/module/dependency and payload identities to pair with Tavern0.6.179. W155 source CI passed, but the T178 companion failed effect-track retirement and the pair was not merged. Both historical claims remain unchanged; T179 fixes empty-effect track re-creation. See [pairing scope and evidence](docs/RELEASE-NOTES-0.1.156.md).
+Superseded unmerged pairing candidate: preserve W155 functional runtime and change only package/module/dependency and payload identities for Tavern 0.6.179. Its immutable claim and release-history record remain unchanged. W157 consolidates the shared captured-item implementation and affected validation domains; see [current scope](docs/PARITY-MATRIX.md).
 
 ## 0.1.155
 
-Bind deferred furniture use to the accepted player hand, potion identity and block context, and restore the freezer blue-dye sprite from the exact official Java item asset. Pair with Tavern0.6.178 and preserve storage/pack identities. General freezer display parity and new Java author adaptations remain open; see [scope and evidence](docs/RELEASE-NOTES-0.1.155.md).
+Superseded unmerged candidate: add deferred furniture continuity guards and correct the freezer blue-dye sprite, paired with Tavern 0.6.178. All four World Liquor source CI jobs passed, but the T178 companion failed effect-track retirement, so the pair was not merged. T179 corrects empty-effect track re-creation. The original claims, history and results retain their scope; see [current validation and limits](docs/PARITY-MATRIX.md).
 
 ## 0.1.153
 
