@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.155
+
+Bind deferred furniture use to the accepted player hand, potion identity and block context, and restore the freezer blue-dye sprite from the exact official Java item asset. Pair with Tavern0.6.178 and preserve storage/pack identities. General freezer display parity and new Java author adaptations remain open; see [scope and evidence](docs/RELEASE-NOTES-0.1.155.md).
+
 ## 0.1.153
 
 Pair both packs with Tavern0.6.176 and optional Grilling2.8.154 source checks. Change only package/module/dependency and payload-version identities from W152, preserving the W151 gameplay, collision and freezer material repairs. Exact successor peer commits, freeze, canonical CI and publication remain pending. New Java Forge1.20.1 file9217901, NeoForge1.21.1 file9217896 and separate26.1.2 file9087098 remain adaptation pending; this pairing does not change their recipes or effects. Native/saved-world checks and human-client acceptance require their own results. See [scope](docs/RELEASE-NOTES-0.1.153.md).

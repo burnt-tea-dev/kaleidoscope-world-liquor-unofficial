@@ -1,6 +1,7 @@
 """Only the reviewed version identity may change in the historical storage view."""
 import base64,copy,gzip,hashlib,importlib.util,json,tempfile,unittest
 from pathlib import Path
+from unittest.mock import patch
 spec=importlib.util.spec_from_file_location('storage_check',Path(__file__).with_name('check_storage_rendering.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 def data(version,recipes):return ('export const payload = '+json.dumps({'version':version,'recipes':recipes},ensure_ascii=False,indent=2)+';\n').encode()
 class ProjectionTests(unittest.TestCase):
@@ -38,6 +39,13 @@ class GuideProjectionTests(unittest.TestCase):
 class PerformanceProjectionTests(unittest.TestCase):
  def setUp(self):
   self.layer=next(row for row in m.read(m.ROOT/'data/baseline-reconciliation.json')['reviewedFunctionalDeltaLayers'] if row['release']=='0.1.146')
+ def test_public_history_alias_rejects_a_different_runtime(self):
+  old=m.PERFORMANCE_HISTORY_ALIASES[m.PERFORMANCE_PREVIOUS]
+  different=m.PERFORMANCE_HISTORY_ALIASES[m.PERFORMANCE_REVIEWED][0]
+  m.performance_sources.cache_clear();self.addCleanup(m.performance_sources.cache_clear)
+  with patch.dict(m.PERFORMANCE_HISTORY_ALIASES,{m.PERFORMANCE_PREVIOUS:(different,old[1])}):
+   with self.assertRaisesRegex(AssertionError,'Historical performance runtime tree differs'):
+    m.performance_sources('runtime/BP/scripts/freezer-visuals.js')
  def test_exact_frozen_sources_reverse_to_immutable_w145_before_old_storage_guards(self):
   self.assertEqual(set(self.layer['files']),m.PERFORMANCE_PATHS)
   for name,row in self.layer['files'].items():

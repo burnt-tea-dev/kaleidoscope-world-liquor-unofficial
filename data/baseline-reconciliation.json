@@ -2485,6 +2485,63 @@
           ]
         }
       }
+    },
+    {
+      "release": "0.1.155",
+      "files": {
+        "runtime/BP/scripts/furniture.js": {
+          "reason": "Bind deferred furniture interactions to the accepted dimension, slot, complete observable item/potion identity, sneaking and block states; invalidate observed replacement before any inventory mutation. Java synchronous hand use and production callback regression cases are recorded in RELEASE-NOTES-0.1.155.md.",
+          "before": "6137ea457f780b04b511690ff5ac71e402e7ec26fdd2d76af24321a605a88df9",
+          "after": "551199c4dbd29814df8bcec03eaf620194e2234779037802653b10b029fba350",
+          "reverseOps": [
+            [
+              15,
+              16,
+              ""
+            ],
+            [
+              51,
+              77,
+              ""
+            ],
+            [
+              223,
+              224,
+              " onPlace:e=>{pendingBreaks.delete(breakKey(e.block,e.block.typeId));if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}if(e.block.typeId===WALL_RECORD){wallRemovalTicks.delete(key(e.block));save(e.block,read(e.block));return;}if(e.block.typeId===NS+':freezer'&&(read(e.block).input??[]).length)return;save(e.block,undefined);},\n"
+            ],
+            [
+              226,
+              227,
+              " onBreak:e=>{try{if(consumeBreak(e.block,e.brokenBlockPermutation.type.id))return;if(e.brokenBlockPermutation.type.id===WALL_RECORD){removeWallRecord(e.block,{permutation:e.brokenBlockPermutation,player:e.entitySource?.typeId==='minecraft:player'?e.entitySource:undefined,native:true});return;}if(isManagedCabinet(e.brokenBlockPermutation.type.id))return;drops(e.block,e.brokenBlockPermutation.type.id,e.entitySource?.typeId==='minecraft:player'?e.entitySource:undefined);}catch(err){console.warn('[World Liquor] '+err);}}\n"
+            ],
+            [
+              238,
+              239,
+              "   e.cancel=true;if(e.isFirstEvent===false)return;const p=e.player,b=e.block;system.run(()=>{try{if(!mutable(p)||b.typeId!=='minecraft:jukebox')return;const h=hand(p),s=read(b);if(s.record&&!h){if(transaction(p,b,undefined,{give:[[s.record,1]]}))stopRecord(b,s);return;}if(h?.typeId!==NS+':custom_record'||s.record||b.getComponent('minecraft:record_player')?.getRecord())return;s.record=h.typeId;s.recordSound=reserveRecordSound();if(transaction(p,b,s,{take:1})){playRecord(b,s);say(p,'now_playing');}}catch(err){console.warn('[World Liquor] '+err);}});return;\n"
+            ],
+            [
+              247,
+              249,
+              "    const p=e.player,b=e.block,face=e.blockFace,point=e.faceLocation;\n    system.run(()=>{try{if(furniture(b.typeId))interact(p,b,face,point);}catch(err){console.warn('[World Liquor] '+err);}});\n"
+            ],
+            [
+              254,
+              256,
+              "   e.cancel=true;if(e.isFirstEvent===false)return;const p=e.player,d=e.block.dimension,face=String(e.blockFace).toLowerCase(),f=['north','east','south','west'].indexOf(face),pos=plus(e.block.location,vectors[f]),supportPos={...e.block.location},supportType=e.block.typeId,slot=p.selectedSlotIndex;\n   system.run(()=>{try{const b=safeBlock(d,pos),h=hand(p);if(!mutable(p)||p.dimension.id!==d.id||p.selectedSlotIndex!==slot||safeBlock(d,supportPos)?.typeId!==supportType||!b?.isAir||h?.typeId!==disc)return;const index=RECORD_MODELS[disc]??19+Math.floor(Math.random()*6),perm=BlockPermutation.resolve(NS+':wall_record',{[FACING]:f,[NS+':model_group']:Math.floor(index/5),[NS+':model_variant']:index%5});if(transaction(p,b,{record:disc},{take:1,permutation:perm}))d.playSound('itemframe.add_item',center(b));}catch(err){console.warn('[World Liquor] '+err);}});return;\n"
+            ],
+            [
+              258,
+              260,
+              "  const p=e.player,d=e.block.dimension,face=String(e.blockFace).toLowerCase(),v={north:vectors[0],east:vectors[1],south:vectors[2],west:vectors[3],up:{x:0,y:1,z:0},down:{x:0,y:-1,z:0}}[face],pos=plus(e.block.location,v);\n  system.run(()=>{try{if(!mutable(p)||hand(p)?.typeId!==id)return;const b=safeBlock(d,pos);if(!b?.isAir)return;const f=['north','east','south','west'].indexOf(face),perm=BlockPermutation.resolve(id,{[FACING]:f<0?rotation(p):f,[KT+':attach_face']:face==='up'?1:face==='down'?2:0});transaction(p,b,undefined,{take:1,permutation:perm});}catch(err){console.warn('[World Liquor] '+err);}});\n"
+            ],
+            [
+              263,
+              264,
+              " world.afterEvents.playerBreakBlock.subscribe(e=>{if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!s.record)return;stopRecord(e.block,s);save(e.block,undefined);if(e.player.getGameMode()!=='Creative')e.dimension.spawnItem(new ItemStack(s.record),center(e.block));});\n"
+            ]
+          ]
+        }
+      }
     }
   ],
   "reviewedAssetDeltaLayers": [

@@ -13,6 +13,7 @@ import {extractFreezerOutput} from './freezer-output.js';
 import {fillFreezerMilk} from './freezer-milk.js';
 import {insertFreezerInput,extractFreezerInput} from './freezer-input.js';
 import {readFreezerItems,planFreezerStorage,installFreezerStoragePinning} from './freezer-storage.js';
+import {sameCapturedItem} from './captured-item.js';
 const savedFreezerRecipes=[...FREEZER_RECIPES,...LEGACY_FREEZER_RECIPES];
 import {RECORD_MODELS} from './wall-record-models.js';
 export const NS='kaleidoscope_world_liquor',KT='kaleidoscope_tavern',FACING=KT+':facing';
@@ -48,6 +49,32 @@ function freezerSettlement(b,s){
  };
 }
 const safeBlock=(d,p)=>{try{return d.getBlock(p);}catch{return undefined;}};
+// Native before-events require deferred writes. Keep the accepted hand and
+// block context: a later slot/item/dimension change is a different interaction.
+const pendingUses=new Map();
+function invalidateUses(block){for(const use of pendingUses.get(key(block))??[])use.invalid=true;}
+function potionIdentity(item){
+ if(!item)return null;
+ const component=item.getComponent('minecraft:potion');
+ if(!component){if(['minecraft:potion','minecraft:splash_potion','minecraft:lingering_potion'].includes(item.typeId))throw Error('FREEZER_POTION_IDENTITY_UNAVAILABLE');return null;}
+ const effect=component.potionEffectType?.id,delivery=component.potionDeliveryType?.id;
+ if(typeof effect!=='string'||!effect||typeof delivery!=='string'||!delivery)throw Error('FREEZER_POTION_IDENTITY_UNAVAILABLE');
+ return JSON.stringify([effect,delivery]);
+}
+function deferPlayerUse(event,action){
+ try{
+  const player=event.player,source=event.block,dimension=source.dimension,position={...source.location},type=source.typeId,states=source.permutation.getAllStates(),slot=player.selectedSlotIndex,item=event.itemStack?.clone(),potion=potionIdentity(item),sneaking=player.isSneaking;
+  if(player.dimension.id!==dimension.id)return;
+  const anchor=key(source),use={invalid:false},pending=pendingUses.get(anchor)??new Set();pending.add(use);pendingUses.set(anchor,pending);
+  system.run(()=>{try{
+   if(use.invalid||player.isValid===false||player.dimension.id!==dimension.id||player.selectedSlotIndex!==slot||player.isSneaking!==sneaking)return;
+   const held=hand(player);if((item?!sameCapturedItem(held,item):held!==undefined)||potionIdentity(held)!==potion)return;
+   const block=safeBlock(dimension,position);if(block?.typeId!==type)return;
+   const current=block.permutation.getAllStates();if(Object.keys(current).length!==Object.keys(states).length||Object.keys(states).some(name=>current[name]!==states[name]))return;
+   action(player,block);
+  }catch(error){console.warn('[World Liquor] '+error);}finally{pending.delete(use);if(!pending.size)pendingUses.delete(anchor);}});
+ }catch(error){console.warn('[World Liquor] '+error);}
+}
 // Script removals may schedule onBreak. Suppress only this exact removal token.
 const pendingBreaks=new Map();
 const breakKey=(b,id)=>b.dimension.id+'/'+b.location.x+'_'+b.location.y+'_'+b.location.z+'/'+id;
@@ -194,10 +221,10 @@ function drops(b,oldType,p){
 }
 export function registerFurniture(e){e.blockComponentRegistry.registerCustomComponent(NS+':freezer_redstone',{onRedstoneUpdate:freezerRedstone});e.blockComponentRegistry.registerCustomComponent(NS+':furniture',{
  beforeOnPlayerPlace:e=>{let perm=e.permutationToPlace;if(perm.type.id===NS+':freezer')perm=perm.withState(FACING,['north','east','south','west'].indexOf(perm.getState('minecraft:cardinal_direction')));else if(e.player)perm=perm.withState(FACING,rotation(e.player));e.permutationToPlace=perm;},
- onPlace:e=>{pendingBreaks.delete(breakKey(e.block,e.block.typeId));if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}if(e.block.typeId===WALL_RECORD){wallRemovalTicks.delete(key(e.block));save(e.block,read(e.block));return;}if(e.block.typeId===NS+':freezer'&&(read(e.block).input??[]).length)return;save(e.block,undefined);},
+ onPlace:e=>{invalidateUses(e.block);pendingBreaks.delete(breakKey(e.block,e.block.typeId));if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}if(e.block.typeId===WALL_RECORD){wallRemovalTicks.delete(key(e.block));save(e.block,read(e.block));return;}if(e.block.typeId===NS+':freezer'&&(read(e.block).input??[]).length)return;save(e.block,undefined);},
  onPlayerInteract:e=>{try{if(isManagedCabinet(e.block.typeId)){forwardNativeUse(e);return;}interact(e.player,e.block,e.face,e.faceLocation);}catch(err){console.warn('[World Liquor] '+err);}},
  onTick:e=>{try{if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}tick(e.block);}catch(err){tickWarning(e.block,err);}},
- onBreak:e=>{try{if(consumeBreak(e.block,e.brokenBlockPermutation.type.id))return;if(e.brokenBlockPermutation.type.id===WALL_RECORD){removeWallRecord(e.block,{permutation:e.brokenBlockPermutation,player:e.entitySource?.typeId==='minecraft:player'?e.entitySource:undefined,native:true});return;}if(isManagedCabinet(e.brokenBlockPermutation.type.id))return;drops(e.block,e.brokenBlockPermutation.type.id,e.entitySource?.typeId==='minecraft:player'?e.entitySource:undefined);}catch(err){console.warn('[World Liquor] '+err);}}
+ onBreak:e=>{try{invalidateUses(e.block);if(consumeBreak(e.block,e.brokenBlockPermutation.type.id))return;if(e.brokenBlockPermutation.type.id===WALL_RECORD){removeWallRecord(e.block,{permutation:e.brokenBlockPermutation,player:e.entitySource?.typeId==='minecraft:player'?e.entitySource:undefined,native:true});return;}if(isManagedCabinet(e.brokenBlockPermutation.type.id))return;drops(e.block,e.brokenBlockPermutation.type.id,e.entitySource?.typeId==='minecraft:player'?e.entitySource:undefined);}catch(err){console.warn('[World Liquor] '+err);}}
  });}
 export function installFurniture(){
  installRecordCleanup();
@@ -209,7 +236,7 @@ export function installFurniture(){
  world.beforeEvents.playerInteractWithBlock.subscribe(e=>{
   if(!foundationReady()&&(isManagedCabinet(e.block.typeId)||isManagedCabinet(e.itemStack?.typeId))){e.cancel=true;if(e.isFirstEvent!==false)unavailable(e.player);return;}
   if(e.block.typeId==='minecraft:jukebox'&&(e.itemStack?.typeId===NS+':custom_record'||read(e.block).record)){
-   e.cancel=true;if(e.isFirstEvent===false)return;const p=e.player,b=e.block;system.run(()=>{try{if(!mutable(p)||b.typeId!=='minecraft:jukebox')return;const h=hand(p),s=read(b);if(s.record&&!h){if(transaction(p,b,undefined,{give:[[s.record,1]]}))stopRecord(b,s);return;}if(h?.typeId!==NS+':custom_record'||s.record||b.getComponent('minecraft:record_player')?.getRecord())return;s.record=h.typeId;s.recordSound=reserveRecordSound();if(transaction(p,b,s,{take:1})){playRecord(b,s);say(p,'now_playing');}}catch(err){console.warn('[World Liquor] '+err);}});return;
+   e.cancel=true;if(e.isFirstEvent===false)return;deferPlayerUse(e,(p,b)=>{if(!mutable(p))return;const h=hand(p),s=read(b);if(s.record&&!h){if(transaction(p,b,undefined,{give:[[s.record,1]]}))stopRecord(b,s);return;}if(h?.typeId!==NS+':custom_record'||s.record||b.getComponent('minecraft:record_player')?.getRecord())return;s.record=h.typeId;s.recordSound=reserveRecordSound();if(transaction(p,b,s,{take:1})){playRecord(b,s);say(p,'now_playing');}});return;
   }
   if(furniture(e.block.typeId)){
    const id=e.block.typeId,held=e.itemStack?.typeId;
@@ -218,22 +245,22 @@ export function installFurniture(){
     ||id.includes(':bar_stool_')&&!held&&!e.player.isSneaking;
    if(wantsUse){
     e.cancel=true;if(e.isFirstEvent===false)return;
-    const p=e.player,b=e.block,face=e.blockFace,point=e.faceLocation;
-    system.run(()=>{try{if(furniture(b.typeId))interact(p,b,face,point);}catch(err){console.warn('[World Liquor] '+err);}});
+    const face=e.blockFace,point=e.faceLocation&&{...e.faceLocation};
+    deferPlayerUse(e,(p,b)=>interact(p,b,face,point));
     return;
    }
   }
   const disc=e.itemStack?.typeId;
   if(e.player.isSneaking&&(disc===NS+':custom_record'||disc in RECORD_MODELS)&&['north','east','south','west'].includes(String(e.blockFace).toLowerCase())){
-   e.cancel=true;if(e.isFirstEvent===false)return;const p=e.player,d=e.block.dimension,face=String(e.blockFace).toLowerCase(),f=['north','east','south','west'].indexOf(face),pos=plus(e.block.location,vectors[f]),supportPos={...e.block.location},supportType=e.block.typeId,slot=p.selectedSlotIndex;
-   system.run(()=>{try{const b=safeBlock(d,pos),h=hand(p);if(!mutable(p)||p.dimension.id!==d.id||p.selectedSlotIndex!==slot||safeBlock(d,supportPos)?.typeId!==supportType||!b?.isAir||h?.typeId!==disc)return;const index=RECORD_MODELS[disc]??19+Math.floor(Math.random()*6),perm=BlockPermutation.resolve(NS+':wall_record',{[FACING]:f,[NS+':model_group']:Math.floor(index/5),[NS+':model_variant']:index%5});if(transaction(p,b,{record:disc},{take:1,permutation:perm}))d.playSound('itemframe.add_item',center(b));}catch(err){console.warn('[World Liquor] '+err);}});return;
+   e.cancel=true;if(e.isFirstEvent===false)return;const d=e.block.dimension,face=String(e.blockFace).toLowerCase(),f=['north','east','south','west'].indexOf(face),pos=plus(e.block.location,vectors[f]);
+   deferPlayerUse(e,p=>{const b=safeBlock(d,pos);if(!mutable(p)||!b?.isAir)return;const index=RECORD_MODELS[disc]??19+Math.floor(Math.random()*6),perm=BlockPermutation.resolve(NS+':wall_record',{[FACING]:f,[NS+':model_group']:Math.floor(index/5),[NS+':model_variant']:index%5});if(transaction(p,b,{record:disc},{take:1,permutation:perm}))d.playSound('itemframe.add_item',center(b));});return;
   }
   const id=e.itemStack?.typeId;if(!id?.startsWith(NS+':')||!id.endsWith('_painting'))return;e.cancel=true;if(e.isFirstEvent===false)return;
-  const p=e.player,d=e.block.dimension,face=String(e.blockFace).toLowerCase(),v={north:vectors[0],east:vectors[1],south:vectors[2],west:vectors[3],up:{x:0,y:1,z:0},down:{x:0,y:-1,z:0}}[face],pos=plus(e.block.location,v);
-  system.run(()=>{try{if(!mutable(p)||hand(p)?.typeId!==id)return;const b=safeBlock(d,pos);if(!b?.isAir)return;const f=['north','east','south','west'].indexOf(face),perm=BlockPermutation.resolve(id,{[FACING]:f<0?rotation(p):f,[KT+':attach_face']:face==='up'?1:face==='down'?2:0});transaction(p,b,undefined,{take:1,permutation:perm});}catch(err){console.warn('[World Liquor] '+err);}});
+  const d=e.block.dimension,face=String(e.blockFace).toLowerCase(),v={north:vectors[0],east:vectors[1],south:vectors[2],west:vectors[3],up:{x:0,y:1,z:0},down:{x:0,y:-1,z:0}}[face],pos=plus(e.block.location,v);
+  deferPlayerUse(e,p=>{if(!mutable(p))return;const b=safeBlock(d,pos);if(!b?.isAir)return;const f=['north','east','south','west'].indexOf(face),perm=BlockPermutation.resolve(id,{[FACING]:f<0?rotation(p):f,[KT+':attach_face']:face==='up'?1:face==='down'?2:0});transaction(p,b,undefined,{take:1,permutation:perm});});
  });
  const clean=e=>{try{if(!e.typeId.startsWith(NS+':')||!e.getDynamicProperty(NS+':position'))return;const b=safeBlock(e.dimension,JSON.parse(e.getDynamicProperty(NS+':position')));if(b&&b.typeId!==e.getDynamicProperty(NS+':block'))e.remove();}catch{}};
  world.afterEvents.entityLoad.subscribe(e=>system.run(()=>clean(e.entity)));
- world.afterEvents.playerBreakBlock.subscribe(e=>{if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!s.record)return;stopRecord(e.block,s);save(e.block,undefined);if(e.player.getGameMode()!=='Creative')e.dimension.spawnItem(new ItemStack(s.record),center(e.block));});
+ world.afterEvents.playerBreakBlock.subscribe(e=>{invalidateUses(e.block);if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!s.record)return;stopRecord(e.block,s);save(e.block,undefined);if(e.player.getGameMode()!=='Creative')e.dimension.spawnItem(new ItemStack(s.record),center(e.block));});
  system.runInterval(()=>{cooldown.clear();for(const [k,t] of wallRemovalTicks)if(system.currentTick-t>2)wallRemovalTicks.delete(k);for(const p of world.getAllPlayers())for(const e of p.dimension.getEntities({families:['kwl_visual'],location:p.location,maxDistance:24}))clean(e);},600);
 }

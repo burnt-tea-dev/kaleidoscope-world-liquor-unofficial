@@ -22,12 +22,23 @@ COMPACT_REVIEW=json.loads((ROOT/'data/compact-texture-review.json').read_text())
 AUTHOR_ART_REVIEW=json.loads((ROOT/'data/current-author-art-preservation.json').read_text())
 PERFORMANCE_PREVIOUS='cc8ec7b202230185a62c2786affcf7acb85a5ebe'
 PERFORMANCE_REVIEWED='6bc779243fa7c46f2b33561a52387231ad21dbce'
+# Public-history replacements retain the exact complete runtime trees.
+PERFORMANCE_HISTORY_ALIASES={
+ PERFORMANCE_PREVIOUS:('9fe8371e27d1537219bcc248c73520325740aae7','a553a3d15bdd877e0ef9117b1e7903a54da195bb'),
+ PERFORMANCE_REVIEWED:('8972d98dd488ef9e2a33eb6d7b3779dbd9b475d4','357ec2ff57eec6b6b0630a2cab7fc849b31c222b'),
+}
 PERFORMANCE_PATHS=frozenset({'runtime/BP/scripts/effects.js','runtime/BP/scripts/freezer-visuals.js'})
 def read(p):return json.loads(p.read_text())
 @lru_cache(maxsize=2)
 def performance_sources(name):
  assert name in PERFORMANCE_PATHS
- return tuple(subprocess.check_output(['git','show',commit+':'+name],cwd=ROOT) for commit in (PERFORMANCE_PREVIOUS,PERFORMANCE_REVIEWED))
+ sources=[]
+ for original in (PERFORMANCE_PREVIOUS,PERFORMANCE_REVIEWED):
+  replacement,expected_tree=PERFORMANCE_HISTORY_ALIASES[original]
+  actual=subprocess.check_output(['git','rev-parse',replacement+':runtime'],cwd=ROOT,text=True).strip()
+  assert actual==expected_tree,'Historical performance runtime tree differs'
+  sources.append(subprocess.check_output(['git','show',replacement+':'+name],cwd=ROOT))
+ return tuple(sources)
 def performance_preimage(name,data,row):
  # Pin complete immutable source, not just a mutable review fixture's hash.
  before,after=performance_sources(name)
@@ -99,6 +110,9 @@ def compact_preimage(p):
  assert hashlib.sha256(restored).hexdigest()==row['before'],('Compact change exceeds texture paths',p)
  return restored
 def digest(p):
+ if p.relative_to(ROOT).as_posix()=='runtime/RP/textures/repair/freezer_blue_dye.png':
+  from freezer_ingredient_art import historical_bytes
+  return hashlib.sha256(historical_bytes(p.read_bytes())).hexdigest()
  author=AUTHOR_ART_REVIEW['changes'].get(p.relative_to(ROOT).as_posix())
  if author:
   assert hashlib.sha256(p.read_bytes()).hexdigest()==author['after'],('Unreviewed current author art',p)
