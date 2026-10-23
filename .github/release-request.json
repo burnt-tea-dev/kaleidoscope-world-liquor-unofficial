@@ -15,7 +15,7 @@
   "client": false,
   "status": "reviewed_source_candidate_pending_canonical_ci_and_family_admission",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "f829505f573bd411923e0b64722bb1e7775acf1a",
+  "tavern_commit": "d08a4bb975d4965af93d110c739d79fc245fd0b6",
   "artifact_suffix": "baseline1",
   "public_notes_inline": "Pair World Liquor with Tavern 0.6.180 for the shared potion-bottle tint repair. This companion changes only release, dependency and guide payload version identities; World Liquor gameplay, resources and saved data remain unchanged from W157. Full-family admission and client acceptance remain pending.",
   "peer_pins_final": true,
