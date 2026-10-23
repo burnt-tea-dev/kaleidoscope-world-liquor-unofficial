@@ -36,18 +36,18 @@ for pack in [rp,tav/'runtime/RP']:
      check(len(identifier)<=48,p.name+': geometry identifier is too long '+identifier)
      owned_geometry.add(identifier)
   except Exception as e:errors.append(str(p)+': '+str(e))
-# Preserve the original <1024 base budget, with only the four source-reviewed
-# T131 native item meshes allocated separately by the host's exact witness.
-# The host checks ownership, duplicate IDs, immutable content and complexity;
+# Preserve the original <1024 base budget while the shared host validates
+# reviewed and current source-contract model allocations separately.
+# The host checks ownership, duplicate IDs, resource wiring and complexity;
 # this is not an engine-limit declaration or rendered-client acceptance.
 try:
  spec=importlib.util.spec_from_file_location('tavern_release_checks',tav/'tools/check_release.py')
- # The pinned host checker imports its own reviewed asset projection helper.
+ # Keep the pinned host's helpers available for imports made during validation.
  sys.path.insert(0,str(tav/'tools'))
  try:
   host_checks=importlib.util.module_from_spec(spec);spec.loader.exec_module(host_checks)
+  host_checks.check_combined_geometry_budget(geometry_sources,tav)
  finally:sys.path.pop(0)
- host_checks.check_combined_geometry_budget(geometry_sources,tav)
 except Exception as e:errors.append('combined geometry allocation: '+str(e))
 for p in (bp/'blocks').glob('*.json'):
  d=read(p)['minecraft:block'];check(all(len(values)<=16 for values in d['description'].get('states',{}).values()),p.name+': state has more than 16 values');selectors=[d['components'],*(x['components'] for x in d.get('permutations',[]))]
