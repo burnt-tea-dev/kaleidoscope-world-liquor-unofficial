@@ -1,5 +1,9 @@
 # World Liquor Java／Bedrock 差距矩陣
 
+## W158 dependency companion (2026-10-24)
+
+W158 pairs with Tavern 0.6.180 for Tavern's placed potion-bottle tint repair. World Liquor gameplay, resources and saved data remain as in merged W157; only release/module/dependency and guide payload version identities change. This companion does not resolve arbitrary freezer item rendering, Java seeded placement, component-dependent appearance or the pending Java author upgrades below. Exact T180 and optional G155 source-check pins are finalized; canonical checks remain pending. Complete-family native/saved-world gates and actual client acceptance remain separate; `client=false`, `production_ready=false`.
+
 ## W157 source candidate (2026-10-24)
 
 W157 binds all four deferred furniture routes to the accepted hand, dimension, crouch state and target block before inventory mutation. Observable potion effect and delivery identity now belong to the shared captured-item comparison used by furniture, freezer insertion/milk and drink callbacks. This removes the earlier furniture-only rule and also rejects a potion replacement that occurs after native storage insertion but before hand debit. The freezer's Adventure allowance and complete native-item storage remain intact. Pack/module UUIDs and saved data keys are unchanged; both packs require Tavern 0.6.179, with Grilling 2.8.155 as an optional source-check peer.

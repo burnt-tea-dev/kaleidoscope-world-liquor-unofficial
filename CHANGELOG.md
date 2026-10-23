@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.158
+
+Pair both packs with Tavern 0.6.180 for its shared potion-bottle liquid tint repair. Retain W157 gameplay, resources, storage identities and the optional Grilling 2.8.155 source-check peer. Only release, module, dependency and guide payload version identities change; complete-family and client acceptance remain pending.
+
 ## 0.1.157
 
 Bind deferred furniture interactions to the accepted hand and block context, and move observable potion identity into the shared captured-item comparison used by furniture, freezer storage and drink callbacks. Restore the exact official Minecraft 1.21.1 blue-dye sprite. The affected furniture, captured-item and sprite domains now use current behavior and Java resource contracts; their superseded inverse-source projections are retired. Pair with Tavern 0.6.179 and retain optional Grilling 2.8.155 source checks. Pack/module UUIDs and saved data keys remain unchanged. See [validation, preserved candidate history and limits](docs/PARITY-MATRIX.md) and the [remaining freezer visual plan](docs/audit/FREEZER-VISUAL-REVIEW-20261024.md).

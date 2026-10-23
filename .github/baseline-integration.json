@@ -1,22 +1,22 @@
 {
   "schema": 1,
-  "tavern_commit": "a786b69641512d58ff4c30adc63da269842e627a",
-  "tavern_version": "0.6.179",
+  "tavern_commit": "f829505f573bd411923e0b64722bb1e7775acf1a",
+  "tavern_version": "0.6.180",
   "publication_request": false,
   "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
   "grilling_version": "2.8.155",
   "peer_pins_final": true,
   "target_peer_versions": {
-    "tavern": "0.6.179",
+    "tavern": "0.6.180",
     "grilling": "2.8.155"
   },
   "peer_pin_status": "exact_reviewed_source_anchors",
-  "peer_pin_note": "W157 requires both frozen T179 packs at the exact reviewed source anchor, including the completed current behavior/resource-contract cleanup. G155 remains the unchanged optional source-check peer. W155 and W156 are superseded unmerged candidates; their immutable claims and histories remain preserved. Canonical PR/checks/merge and full-family admission remain separate gates.",
+  "peer_pin_note": "W158 requires both frozen T180 packs at the exact reviewed source anchor for the shared potion-bottle liquid tint repair. G155 remains the unchanged optional source-check peer. World Liquor gameplay, resources and saved data remain unchanged from merged W157. Canonical PR/checks/merge and full-family admission remain separate gates.",
   "predecessor_peer_pins": {
-    "tavern_commit": "4f75735da76d826c675394e0ec567cdf4ea9100d",
-    "tavern_version": "0.6.176",
-    "grilling_commit": "2388111b8b494d8c406a3898409aa912d383e82b",
+    "tavern_commit": "a786b69641512d58ff4c30adc63da269842e627a",
+    "tavern_version": "0.6.179",
+    "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
     "grilling_version": "2.8.155",
-    "world_liquor_source_commit": "bd7d03b2e36c692407d202d35e06c59dc5ea1e11"
+    "world_liquor_source_commit": "a95e3c3c4cbbbde5c1f4a2dac167aa137a814489"
   }
 }
