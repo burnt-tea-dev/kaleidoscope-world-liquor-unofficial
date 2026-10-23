@@ -3,8 +3,8 @@ class Signal{handlers=[];subscribe(f){this.handlers.push(f);}emit(e){for(const f
 const dynamic=new Map(),queue=[],entities=new Map(),dimensions=new Map();let entitySerial=0;
 export const system={currentTick:0,run:f=>queue.push(f),runInterval(){},runTimeout(f){queue.push(f);},flush(){while(queue.length)queue.shift()();}};
 export const world={beforeEvents:{playerBreakBlock:new Signal(),playerInteractWithBlock:new Signal()},afterEvents:{entityLoad:new Signal(),entitySpawn:new Signal(),entityRemove:new Signal(),playerBreakBlock:new Signal()},gameRules:{doTileDrops:true},getDimension:id=>dimensions.get(id.startsWith('minecraft:')?id:'minecraft:'+id)??{getEntities:()=>[]},getEntity:id=>entities.get(id),getDynamicProperty:k=>dynamic.get(k),setDynamicProperty(k,v){if(this.failSave){this.failSave=false;throw Error('injected save failure');}if(v===undefined)dynamic.delete(k);else dynamic.set(k,v);},getAllPlayers:()=>[]};
-export class BlockPermutation{constructor(id,states={}){this.type={id};this.states={...states};}static resolve(id,s){return new this(id,s);}getState(k){return this.states[k];}withState(k,v){return new BlockPermutation(this.type.id,{...this.states,[k]:v});}}
-export class ItemStack{constructor(id,amount=1){this.typeId=id;this.amount=amount;this.maxAmount=['minecraft:milk_bucket','minecraft:diamond_sword'].includes(id)?1:64;}clone(){return Object.assign(new ItemStack(this.typeId,this.amount),JSON.parse(JSON.stringify(this)));}isStackableWith(x){return this.maxAmount>1&&x?.typeId===this.typeId&&x.nameTag===this.nameTag&&JSON.stringify(x.lore)===JSON.stringify(this.lore)&&JSON.stringify(x.data)===JSON.stringify(this.data);}getLore(){return this.lore??[];}getDynamicPropertyIds(){return Object.keys(this.data??{});}getDynamicProperty(key){return this.data?.[key];}getComponent(){}}
+export class BlockPermutation{constructor(id,states={}){this.type={id};this.states={...states};}static resolve(id,s){return new this(id,s);}getState(k){return this.states[k];}getAllStates(){return {...this.states};}withState(k,v){return new BlockPermutation(this.type.id,{...this.states,[k]:v});}}
+export class ItemStack{constructor(id,amount=1){this.typeId=id;this.amount=amount;this.maxAmount=['minecraft:milk_bucket','minecraft:diamond_sword','minecraft:potion'].includes(id)?1:64;}clone(){return Object.assign(new ItemStack(this.typeId,this.amount),JSON.parse(JSON.stringify(this)));}isStackableWith(x){return this.maxAmount>1&&x?.typeId===this.typeId&&x.nameTag===this.nameTag&&JSON.stringify(x.lore)===JSON.stringify(this.lore)&&JSON.stringify(x.data)===JSON.stringify(this.data);}getLore(){return this.lore??[];}getDynamicPropertyIds(){return Object.keys(this.data??{});}getDynamicProperty(key){return this.data?.[key];}getComponent(id){if(id==='minecraft:potion'){if(this.potionThrows)throw Error('injected potion identity failure');return this.potion;}}}
 let handler,placeMode='none';
 export function setup(h){handler=h;}
 export function placements(mode){placeMode=mode;}
@@ -21,6 +21,7 @@ export class Dimension{
 class Block{
  constructor(d,p){this.dimension=d;this.location=p;this.permutation=BlockPermutation.resolve('minecraft:air');}
  get typeId(){return this.permutation.type.id;}get isAir(){return this.typeId==='minecraft:air';}get isSolid(){return !this.isAir;}
+ getComponent(){return undefined;}
  setPermutation(p){if(this.dimension.failSet){this.dimension.failSet=false;throw Error('injected block failure');}const old=this.permutation;this.permutation=p;if(p.type.id==='kaleidoscope_world_liquor:wall_record'&&placeMode!=='none'){const f=()=>handler.onPlace({block:this,previousBlock:old});if(placeMode==='sync')f();else system.run(f);}}
  setType(id){this.setPermutation(BlockPermutation.resolve(id));}
 }

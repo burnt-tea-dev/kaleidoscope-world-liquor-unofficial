@@ -1,17 +1,17 @@
 {
   "schema": 1,
-  "tavern_commit": "e1ed931998782449e48100b2e2df393bc2d5961e",
-  "tavern_version": "0.6.177",
+  "tavern_commit": "a786b69641512d58ff4c30adc63da269842e627a",
+  "tavern_version": "0.6.179",
   "publication_request": false,
-  "grilling_commit": "ea5cd6a24aca18e236c7d3ed24205e52f628853d",
+  "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
   "grilling_version": "2.8.155",
   "peer_pins_final": true,
   "target_peer_versions": {
-    "tavern": "0.6.177",
+    "tavern": "0.6.179",
     "grilling": "2.8.155"
   },
-  "peer_pin_status": "exact_frozen_runtime_source_anchors",
-  "peer_pin_note": "Exact pushed T177 family-lock source and merged G155 P0 source anchors. T177 runtime/baseline/history equal its initial frozen source. Canonical PR checks/merges and full-family admission remain separate gates; no Grilling runtime refactor is adopted.",
+  "peer_pin_status": "exact_reviewed_source_anchors",
+  "peer_pin_note": "W157 requires both frozen T179 packs at the exact reviewed source anchor, including the completed current behavior/resource-contract cleanup. G155 remains the unchanged optional source-check peer. W155 and W156 are superseded unmerged candidates; their immutable claims and histories remain preserved. Canonical PR/checks/merge and full-family admission remain separate gates.",
   "predecessor_peer_pins": {
     "tavern_commit": "4f75735da76d826c675394e0ec567cdf4ea9100d",
     "tavern_version": "0.6.176",

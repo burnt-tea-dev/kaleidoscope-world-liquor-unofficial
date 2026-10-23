@@ -56,3 +56,26 @@ for(const change of ['slot','support','dimension','adventure','spectator'])test(
 test('invalid model indices are rejected individually (no clamping/empty item)',()=>{for(const value of [-1,5,undefined,NaN,'0']){assert.throws(()=>wallRecordItem(BlockPermutation.resolve(WALL_RECORD,{[NS+':model_group']:value,[NS+':model_variant']:0})));assert.throws(()=>wallRecordItem(BlockPermutation.resolve(WALL_RECORD,{[NS+':model_group']:0,[NS+':model_variant']:value})));}});
 
 test('failed retrieval does not suppress an immediate real break after rollback',()=>{reset();const {b,d,p}=wall(6);p.inv.failWrite=true;c.onPlayerInteract({block:b,player:p});assert.equal(b.typeId,WALL_RECORD);broken(b,p);assert.equal(live(d).length,1);});
+
+test('deferred wall placement does not consume a different same-ID stack',()=>{
+ reset();const d=new Dimension(),support=d.getBlock({x:0,y:0,z:0});support.setType('minecraft:stone');const p=player(d),original=new ItemStack(idAt(0));original.nameTag='clicked record';p.inv.setItem(0,original);
+ world.beforeEvents.playerInteractWithBlock.emit({block:support,player:p,blockFace:'north',itemStack:p.inv.getItem(0),isFirstEvent:true});
+ const replacement=new ItemStack(idAt(0));replacement.nameTag='replacement record';p.inv.setItem(0,replacement);system.flush();
+ assert.equal(d.getBlock({x:0,y:0,z:-1}).isAir,true);assert.deepEqual(p.inv.getItem(0),replacement);
+});
+test('deferred painting placement preserves normal placement and rejects changed dimension',()=>{
+ for(const moved of [false,true]){
+  reset();const d=new Dimension(),support=d.getBlock({x:0,y:0,z:0});support.setType('minecraft:stone');const p=player(d),item=new ItemStack(NS+':test_painting');p.inv.setItem(0,item);
+  world.beforeEvents.playerInteractWithBlock.emit({block:support,player:p,blockFace:'north',itemStack:p.inv.getItem(0),isFirstEvent:true});
+  if(moved)p.dimension={id:'minecraft:nether'};system.flush();
+  assert.equal(d.getBlock({x:0,y:0,z:-1}).typeId,moved?'minecraft:air':item.typeId);assert.equal(p.inv.getItem(0)?.typeId,moved?item.typeId:undefined);
+ }
+});
+test('deferred jukebox insertion preserves normal use and rejects a replaced record',()=>{
+ for(const changed of [false,true]){
+  reset();const d=new Dimension(),b=d.getBlock({x:0,y:0,z:0});b.setType('minecraft:jukebox');const p=player(d),item=new ItemStack(NS+':custom_record');item.nameTag='clicked record';p.isSneaking=false;p.inv.setItem(0,item);
+  world.beforeEvents.playerInteractWithBlock.emit({block:b,player:p,blockFace:'up',itemStack:p.inv.getItem(0),isFirstEvent:true});
+  if(changed){const replacement=item.clone();replacement.nameTag='replacement record';p.inv.setItem(0,replacement);}system.flush();
+  assert.equal(JSON.parse(world.getDynamicProperty(key(b))??'null')?.record,changed?undefined:item.typeId);assert.equal(p.inv.getItem(0)?.nameTag,changed?'replacement record':undefined);
+ }
+});

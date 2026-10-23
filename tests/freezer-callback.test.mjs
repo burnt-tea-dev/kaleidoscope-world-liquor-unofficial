@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {world,system,BlockPermutation,Dimension,reset,player,ItemStack} from './wall-record-mock.mjs';
-import {registerFurniture} from '../runtime/BP/scripts/furniture.js';
+import {registerFurniture,installFurniture} from '../runtime/BP/scripts/furniture.js';
 const N='kaleidoscope_world_liquor',key=N+':storage/overworld/0_0_0';let c,furniture;
 registerFurniture({blockComponentRegistry:{registerCustomComponent:(id,callbacks)=>{if(id===N+':freezer_redstone')c=callbacks;if(id===N+':furniture')furniture=callbacks;}}});
+installFurniture();
 function fixture(){reset();const d=new Dimension(),b=d.getBlock({x:0,y:0,z:0});b.setPermutation(BlockPermutation.resolve(N+':freezer',{[N+':open']:false}));world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid:'minecraft:water',remaining:0,output:0,redstonePowered:false}));return {d,b};}
 const power=(b,n)=>c.onRedstoneUpdate({block:b,powerLevel:n});
 test('real furniture callback defers writes and starts only on falling power',()=>{const {b}=fixture();power(b,15);assert.equal(b.permutation.getState(N+':open'),false);system.flush();assert.equal(b.permutation.getState(N+':open'),true);power(b,0);system.flush();assert.equal(b.permutation.getState(N+':open'),false);assert.equal(JSON.parse(world.getDynamicProperty(key)).remaining,1800);});
@@ -48,4 +49,45 @@ test('native break drops complete input in Creative even with doTileDrops false,
 });
 test('registered intrinsic maxAmount1 input is accepted and restored with its original metadata',()=>{
  const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));const p=player(d);p.isSneaking=false;const item=new ItemStack('minecraft:diamond_sword');item.nameTag='intrinsic';item.lore=['kept'];item.data={custom:17};assert.equal(item.isStackableWith(item.clone()),false);p.inv.setItem(0,item);furniture.onPlayerInteract({block:b,player:p});assert.equal(p.inv.getItem(0),undefined);system.currentTick+=5;furniture.onPlayerInteract({block:b,player:p});assert.deepEqual(p.inv.getItem(0),item);
+});
+
+function deferredInput(item=new ItemStack('minecraft:sugar',2),mode='survival'){
+ const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));
+ world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid:null,remaining:0,output:0}));
+ const p=player(d,mode);p.isSneaking=false;p.inv.setItem(0,item);
+ const event={block:b,player:p,blockFace:'north',itemStack:p.inv.getItem(0),isFirstEvent:true};
+ world.beforeEvents.playerInteractWithBlock.emit(event);assert.equal(event.cancel,true);
+ return {b,d,p,raw:world.getDynamicProperty(key)};
+}
+for(const mode of ['survival','adventure','creative'])test(mode+' deferred freezer input keeps the original accepted stack',()=>{
+ const {p}=deferredInput(new ItemStack('minecraft:sugar',2),mode);system.flush();
+ assert.deepEqual(JSON.parse(world.getDynamicProperty(key)).input,['minecraft:sugar']);assert.equal(p.inv.getItem(0).amount,1);
+});
+for(const change of ['slot','type','count','metadata','dimension','sneaking','block-state','same-block-replacement'])test('deferred freezer input rejects changed '+change,()=>{
+ const original=new ItemStack(change==='metadata'?'minecraft:diamond_sword':'minecraft:sugar',change==='metadata'?1:2);original.nameTag='original';original.lore=['kept'];original.data={owner:'source'};
+ const {b,p,raw}=deferredInput(original);
+ if(change==='slot'){p.inv.setItem(1,new ItemStack('minecraft:diamond_sword'));p.selectedSlotIndex=1;}
+ if(change==='type')p.inv.setItem(0,new ItemStack('minecraft:diamond_sword'));
+ if(change==='count'){const item=p.inv.getItem(0);item.amount++;p.inv.setItem(0,item);}
+ if(change==='metadata'){const item=p.inv.getItem(0);item.nameTag='replacement';item.lore=['different'];item.data={owner:'other'};p.inv.setItem(0,item);}
+ if(change==='dimension')p.dimension={id:'minecraft:nether'};
+ if(change==='sneaking')p.isSneaking=true;
+ if(change==='block-state')b.setPermutation(b.permutation.withState('kaleidoscope_tavern:facing',1));
+ if(change==='same-block-replacement'){const old=b.permutation;b.setType('minecraft:air');furniture.onBreak({block:b,brokenBlockPermutation:old});b.setPermutation(old);furniture.onPlace({block:b});world.setDynamicProperty(key,raw);}
+ const before=Array.from({length:p.inv.size},(_,i)=>p.inv.getItem(i)),permutation=b.permutation;
+ system.flush();assert.equal(world.getDynamicProperty(key),raw);assert.deepEqual(Array.from({length:p.inv.size},(_,i)=>p.inv.getItem(i)),before);assert.equal(b.permutation,permutation);
+});
+function potion(){const item=new ItemStack('minecraft:potion');item.potion={potionEffectType:{id:'Healing'},potionDeliveryType:{id:'Consume'}};return item;}
+test('deferred potion input retains the original native payload through extraction',()=>{
+ const item=potion(),{b,p}=deferredInput(item);system.flush();assert.equal(p.inv.getItem(0),undefined);assert.deepEqual(JSON.parse(world.getDynamicProperty(key)).input,['minecraft:potion']);
+ system.currentTick+=5;furniture.onPlayerInteract({block:b,player:p});assert.deepEqual(p.inv.getItem(0),item);
+});
+for(const change of ['effect','delivery','missing-id','missing-component','read-error'])test('deferred potion input rejects '+change,()=>{
+ const {p,raw}=deferredInput(potion()),replacement=p.inv.getItem(0);
+ if(change==='effect')replacement.potion.potionEffectType.id='Poison';
+ if(change==='delivery')replacement.potion.potionDeliveryType.id='Splash';
+ if(change==='missing-id')delete replacement.potion.potionEffectType.id;
+ if(change==='missing-component')delete replacement.potion;
+ if(change==='read-error')replacement.potionThrows=true;
+ p.inv.setItem(0,replacement);system.flush();assert.equal(world.getDynamicProperty(key),raw);assert.deepEqual(p.inv.getItem(0),replacement);
 });

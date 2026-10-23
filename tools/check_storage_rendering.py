@@ -22,12 +22,23 @@ COMPACT_REVIEW=json.loads((ROOT/'data/compact-texture-review.json').read_text())
 AUTHOR_ART_REVIEW=json.loads((ROOT/'data/current-author-art-preservation.json').read_text())
 PERFORMANCE_PREVIOUS='cc8ec7b202230185a62c2786affcf7acb85a5ebe'
 PERFORMANCE_REVIEWED='6bc779243fa7c46f2b33561a52387231ad21dbce'
+# Public-history replacements retain the exact complete runtime trees.
+PERFORMANCE_HISTORY_ALIASES={
+ PERFORMANCE_PREVIOUS:('9fe8371e27d1537219bcc248c73520325740aae7','a553a3d15bdd877e0ef9117b1e7903a54da195bb'),
+ PERFORMANCE_REVIEWED:('8972d98dd488ef9e2a33eb6d7b3779dbd9b475d4','357ec2ff57eec6b6b0630a2cab7fc849b31c222b'),
+}
 PERFORMANCE_PATHS=frozenset({'runtime/BP/scripts/effects.js','runtime/BP/scripts/freezer-visuals.js'})
 def read(p):return json.loads(p.read_text())
 @lru_cache(maxsize=2)
 def performance_sources(name):
  assert name in PERFORMANCE_PATHS
- return tuple(subprocess.check_output(['git','show',commit+':'+name],cwd=ROOT) for commit in (PERFORMANCE_PREVIOUS,PERFORMANCE_REVIEWED))
+ sources=[]
+ for original in (PERFORMANCE_PREVIOUS,PERFORMANCE_REVIEWED):
+  replacement,expected_tree=PERFORMANCE_HISTORY_ALIASES[original]
+  actual=subprocess.check_output(['git','rev-parse',replacement+':runtime'],cwd=ROOT,text=True).strip()
+  assert actual==expected_tree,'Historical performance runtime tree differs'
+  sources.append(subprocess.check_output(['git','show',replacement+':'+name],cwd=ROOT))
+ return tuple(sources)
 def performance_preimage(name,data,row):
  # Pin complete immutable source, not just a mutable review fixture's hash.
  before,after=performance_sources(name)
@@ -126,6 +137,12 @@ def main():
  reviewed=read(ROOT/'data/guide-destruction-review.json')
  plane_review=read(ROOT/'data/drink-plane-review.json')['files']
  additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
+ # The current Java asset contract owns blue dye. Its old wrong-image witness
+ # is retired; hashes below inspect current bytes and never fabricate a past PNG.
+ from freezer_ingredient_art import check as check_ingredient_art
+ current_ingredient_assets=check_ingredient_art()
+ assert not (set(additions)&set(current_ingredient_assets))
+ additions.update(current_ingredient_assets)
  # Current-source result is additive; keep all older art/tree assertions.
  for name in read(ROOT/'data/current-freezer-review.json')['additions']:
   assert name in baseline_additions(ROOT),('Unregistered current freezer addition',name)
@@ -292,7 +309,7 @@ def main():
      delta=max(abs(a-b) for a,b in zip(expected,actual));maximum=max(maximum,delta)
      assert delta<1e-12,(case,model,expected,actual)
      checks+=1
- report={'baselineCommit':baseline['baselineCommit'],'javaReferenceCommit':contract['upstreamCommit'],'cabinetBlockVariants':len(blocks),'helperFamilies':2,'facings':4,'poseCases':len(cases),'vertexComparisons':checks,'maxCoordinateErrorBlocks':maximum,'modelBindings':bindings,'preservedFiles':preserved,'creativeMenuProjectionFiles':len(projection.menus),'molotovKind':25,'watermelonKind':44,'playerSimulation':False,'bdsTest':'NOT_RUN','clientVisualTest':'NOT_RUN'}
+ report={'baselineCommit':baseline['baselineCommit'],'javaReferenceCommit':contract['upstreamCommit'],'cabinetBlockVariants':len(blocks),'helperFamilies':2,'facings':4,'poseCases':len(cases),'vertexComparisons':checks,'maxCoordinateErrorBlocks':maximum,'modelBindings':bindings,'preservedFiles':preserved,'creativeMenuProjectionFiles':len(projection.menus),'currentSourceAssets':current_ingredient_assets,'molotovKind':25,'watermelonKind':44,'playerSimulation':False,'bdsTest':'NOT_RUN','clientVisualTest':'NOT_RUN'}
  version='.'.join(map(str,read(ROOT/'runtime/BP/manifest.json')['header']['version']))
  (ROOT/f'docs/STORAGE-VALIDATION-{version}.json').write_text(json.dumps(report,indent=2)+'\n')
  print(json.dumps(report))

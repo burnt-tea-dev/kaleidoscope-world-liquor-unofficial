@@ -1,3 +1,6 @@
 dist/
 __pycache__/
 *.pyc
+# Generated validation reports are CI artifacts, not versioned source.
+/docs/GUIDE-VALIDATION-*.json
+/docs/STORAGE-VALIDATION-*.json

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "release": "0.1.155",
+  "source": {
+    "minecraft": "1.21.1",
+    "clientUrl": "https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar",
+    "clientSha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+    "clientSha256": "499f6897d1837516680f3114072d8106e11c9adcd933fe5cf051b551089b0c99",
+    "assets": {
+      "assets/minecraft/textures/item/blue_dye.png": {
+        "sha256": "6cf7ce48373b5e4d1b42c36abdff0abc847eef2dd10c9886bc1a77903b66617d"
+      },
+      "assets/minecraft/models/item/blue_dye.json": {
+        "sha256": "1f63a2badaf341c49903d29d950aeca0243620a8f421adcde620ea21ec07a96c"
+      }
+    }
+  },
+  "target": "runtime/RP/textures/repair/freezer_blue_dye.png",
+  "reason": "The old blue_dye display used the lapis_lazuli item sprite. Copy the exact official blue_dye sprite for the maintained Minecraft 1.21.1 Java renderer; preserve the existing alpha-tested surface geometry.",
+  "acceptance": {
+    "source": true,
+    "native": false,
+    "client": false
+  }
+}

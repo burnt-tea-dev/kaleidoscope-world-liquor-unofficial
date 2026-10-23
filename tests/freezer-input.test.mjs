@@ -42,3 +42,19 @@ test('commit and write faults restore original input and captured hand',()=>{
 test('a changed captured origin is preserved while machine insertion is restored',()=>{
  const f=fixture(),commit=f.options.commit;f.options.commit=next=>{commit(next);f.slots[4]=new Stack('minecraft:diamond',3);};assert.throws(()=>f.insert(),/FREEZER_INPUT_ORIGIN_CHANGED/);assert.deepEqual(f.state.input,[]);assert.equal(f.slots[4].typeId,'minecraft:diamond');assert.equal(f.slots[4].amount,3);
 });
+class PotionStack extends Stack{
+ constructor(component={potionEffectType:{id:'Healing'},potionDeliveryType:{id:'Consume'}}){super('minecraft:potion');this.maxAmount=1;this.potion=structuredClone(component);}
+ clone(){return new PotionStack(this.potion);}
+ isStackableWith(){return false;}
+ getComponent(id){return id==='minecraft:potion'?this.potion:undefined;}
+}
+for(const changed of ['effect','delivery'])test('potion '+changed+' replacement during storage commit preserves the hand and restores input',()=>{
+ const f=fixture(),commit=f.options.commit,restore=f.options.restore;f.slots[4]=new PotionStack();const replacement=f.slots[4].clone();
+ if(changed==='effect')replacement.potion.potionEffectType.id='Poison';else replacement.potion.potionDeliveryType.id='Splash';
+ let stored=[];
+ f.options.commit=(next,{incoming})=>{commit(next);stored=[incoming.clone()];f.slots[4]=replacement;};
+ f.options.restore=()=>{restore();stored=[];};
+ assert.throws(()=>f.insert(),/FREEZER_INPUT_ORIGIN_CHANGED/);
+ assert.deepEqual(f.state.input,[]);assert.deepEqual(stored,[]);assert.deepEqual(f.slots[4],replacement);
+ assert.deepEqual(f.calls.map(row=>row[0]),['storage','restore']);
+});

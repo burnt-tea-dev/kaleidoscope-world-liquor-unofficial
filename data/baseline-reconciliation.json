@@ -333,12 +333,6 @@
       "reason": "Current author instant-effect LivingEntity/shriek/height/audio and fall class repair; synced T116/L83 identity. Original preimage retained; see host docs/JAVA-INSTANT-EFFECTS-0.6.116.md.",
       "beforeGzipBase64": "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"
     },
-    "runtime/BP/scripts/furniture.js": {
-      "before": "5bf66709339848e84f26e73390fd3ca2f67625d84a5c0c8c18eb25098744cc59",
-      "after": "12833bffad5dcbabf37ed17c9f44359336dd9bf32241240a005c8d7c652f03d1",
-      "reason": "Reviewed 0.1.32 wall-record lifecycle/orientation and multi-jump repair; functional regressions in tests/. Parity 0.1.33; see functional tests and release notes. Parity 0.1.34; see functional tests and release notes. Parity 0.1.35; see functional tests and release notes.",
-      "beforeGzipBase64": "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"
-    },
     "runtime/BP/scripts/record-audio.js": {
       "before": "ef4d168f57be0ec6f3f8ac76d71905e2d4679fb291dff259777d61c621309fbe",
       "after": "cf8508732d975186210e0eaedb7f9b8ec1c39542d49ea4a52f16faabadef0566",
@@ -1739,11 +1733,6 @@
       "after": "b81d00daa43880eff6cf939c7eb892f90172ced89ba61f9229059cf4ab0f7966",
       "reason": "W0.1.96 source input settlement and selected official item-frame feedback audio addition; never historical gameplay restoration."
     },
-    "runtime/BP/scripts/captured-item.js": {
-      "before": null,
-      "after": "a6b91d3223e9697decbdafd9604cb70d2c7dc0d390140890879cb042e6bcf135",
-      "reason": "W0.1.97 owned native four-slot freezer input addition; complete native ItemStacks, no hidden serializer or private integration."
-    },
     "runtime/BP/scripts/freezer-native-storage.js": {
       "before": null,
       "after": "b3139acf519b1bc1c02ee74c40149cc0b4cbe42fa907edae0588a57908bedb3e",
@@ -1817,58 +1806,6 @@
     {
       "release": "0.1.93",
       "files": {
-        "runtime/BP/scripts/furniture.js": {
-          "before": "12833bffad5dcbabf37ed17c9f44359336dd9bf32241240a005c8d7c652f03d1",
-          "after": "8ff3f9e226c826eab5684c8bdbffec4c1cb90df853622a52e987fbdd46463a97",
-          "reverseOps": [
-            [
-              0,
-              1,
-              "import {startFreezerRecipe,freezerPowerTransition} from './freezer-state.js';\n"
-            ],
-            [
-              10,
-              12,
-              ""
-            ],
-            [
-              73,
-              74,
-              " try{save(b,next);if(permutation)scriptedReplace(b,permutation);for(let i=0;i<after.length;i++)inv.setItem(i,after[i]);if(b.typeId===NS+':freezer')try{syncFreezerVisuals(b,next??{},FREEZER_RECIPES);}catch(err){console.warn('[World Liquor visuals] '+err);}return true;}\n"
-            ],
-            [
-              77,
-              78,
-              " if(s.remaining>0){say(p,'remaining',[String(Math.ceil(s.remaining/20))]);return;}\n"
-            ],
-            [
-              85,
-              86,
-              " if(s.output){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe),required=r?.extract_condition?.item;if(!r)return;if(required&&h?.typeId!==required){say(p,'need_item',[required]);return;}s.output--;transaction(p,b,s,{take:required?1:0,give:[[r.result.id,1]]});return;}\n"
-            ],
-            [
-              102,
-              103,
-              "  try{syncFreezerVisuals(block,plan.state,FREEZER_RECIPES);if(plan.open!==open)dimension.playSound(plan.open?'block.barrel.open':'block.barrel.close',center(block));}catch(error){console.warn('[World Liquor freezer visuals] '+error);}\n"
-            ],
-            [
-              110,
-              119,
-              ""
-            ],
-            [
-              146,
-              148,
-              "function tick(b){if(b.typeId.endsWith(':freezer')){const s=read(b);if(s.remaining>0){s.remaining=Math.max(0,s.remaining-80);if(!s.remaining){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);s.output=r?.result.count??1;}save(b,s);}syncFreezerVisuals(b,s,FREEZER_RECIPES);}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){if(b.typeId===WALL_RECORD){breakFeedback.transaction(b,()=>removeWallRecord(b));return;}removeUnsupported(b,b.typeId);}}}\nfunction drops(b,oldType,p){const s=read(b);save(b,undefined);if((!p||!creative(p))&&world.gameRules.doTileDrops!==false){const out=[[oldType.endsWith(':wall_record')?s.record:oldType,1],...(s.slots??[]).filter(Boolean).map(id=>[id,1]),...(s.input??[]).map(id=>[id,1])];if(s.output){const r=FREEZER_RECIPES.find(r=>r.id===s.recipe);if(r)out.push([r.result.id,s.output]);}for(const [id,n] of out)if(id)b.dimension.spawnItem(new ItemStack(id,n),center(b));}\n"
-            ],
-            [
-              154,
-              155,
-              " onTick:e=>{try{if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}tick(e.block);}catch(err){console.warn('[World Liquor] '+err);}},\n"
-            ]
-          ],
-          "reason": "Current NeoForge1.1.11 CF9066406 freezer recipes and loaded-tick/float rendering repair; preserve legacy saved lava output only. See current-freezer-review and native timing scenes."
-        },
         "runtime/BP/scripts/freezer-state.js": {
           "before": "d2bcb23b0a2c353075ac5fcb36e9b1af96d2d07cafbd9ddd8a21dc428f421069",
           "after": "961b7be8c2e8f2c8df39f0651fb638352dfe578604e595ac8a3bf17cf56cf932",
@@ -1940,28 +1877,6 @@
     {
       "release": "0.1.94",
       "files": {
-        "runtime/BP/scripts/furniture.js": {
-          "before": "8ff3f9e226c826eab5684c8bdbffec4c1cb90df853622a52e987fbdd46463a97",
-          "after": "eb7697a1248f19fb5929bcf2a01aca514e3d3b366582e6f9c32f7a826114648c",
-          "reverseOps": [
-            [
-              11,
-              12,
-              ""
-            ],
-            [
-              86,
-              98,
-              " if(s.output){const r=savedFreezerRecipes.find(r=>r.id===s.recipe),required=r?.extract_condition?.item;if(!r)return;if(required&&h?.typeId!==required){say(p,'need_item',[required]);return;}s.output--;transaction(p,b,s,{take:required?1:0,give:[[r.result.id,1]]});return;}\n"
-            ],
-            [
-              155,
-              156,
-              " if(!mutable(p)||!furniture(b.typeId))return;const stamp=p.id+'/'+key(b);if(system.currentTick-(cooldown.get(stamp)??-100)<5)return;cooldown.set(stamp,system.currentTick);\n"
-            ]
-          ],
-          "reason": "Current NeoForge1.1.11 FreezerBlockEntity.extractOutput hand/Creative/inventory/source order; original one-shot block pickup audio; Adventure use; shared existing bottled Inventory.add ordering. See0.1.94 release notes and actual callback regressions."
-        },
         "runtime/BP/scripts/bottled-drink.js": {
           "before": "4d30bc18c7c5307c2d934814f5e8cf9546a09de3a42b89f5887f8c36bf60ad70",
           "after": "46928db9bfb3804149b284730867e92d9006c959828dde1837fc31b87551299f",
@@ -1989,23 +1904,6 @@
     {
       "release": "0.1.95",
       "files": {
-        "runtime/BP/scripts/furniture.js": {
-          "before": "eb7697a1248f19fb5929bcf2a01aca514e3d3b366582e6f9c32f7a826114648c",
-          "after": "39c77b8c3f91f72780ba0d9245778255a781dd82b55558aa3ea66bf196b6e1f9",
-          "reverseOps": [
-            [
-              12,
-              13,
-              ""
-            ],
-            [
-              99,
-              109,
-              " if(h?.typeId in liquids){if(s.fluid)return;s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,give:creative(p)?[]:[['minecraft:bucket',1]]});return;}\n"
-            ]
-          ],
-          "reason": "Current NeoForge1.1.11 FreezerBlock.useItemOn explicit milk fill/Creative/last-hand and ignored-addItem return semantics, original BLOCKS bucket-empty event. See0.1.95 source callback regressions and documented gaps."
-        },
         "runtime/BP/scripts/java-player-inventory.js": {
           "before": "bcfc2a21ffba69a347e500479387f1c5215ca9264f4de0eee4895c2e8bf2fe55",
           "after": "fdc60521400491c25bb499434c24e7cd0df28ad442564e5c848ec9a5d0fb5cfd",
@@ -2026,112 +1924,8 @@
       }
     },
     {
-      "release": "0.1.96",
-      "files": {
-        "runtime/BP/scripts/furniture.js": {
-          "before": "39c77b8c3f91f72780ba0d9245778255a781dd82b55558aa3ea66bf196b6e1f9",
-          "after": "ac544bd0e6e1f95313278b0bfd40b4e6535732a4d2f991771d3732875f412f7a",
-          "reason": "Current CF9066406 input copy-before-unconditional Creative debit, LIFO extraction-before-unchecked addItem, original add/remove audio; compact metadata limitation retained.",
-          "reverseOps": [
-            [
-              13,
-              14,
-              ""
-            ],
-            [
-              111,
-              119,
-              " if(h){if(!plain(h)||s.input.length>=4)return;s.input.push(h.typeId);transaction(p,b,s,{take:1});}\n else if(s.input.length){const id=s.input.pop();transaction(p,b,s,{give:[[id,1]]});}\n"
-            ]
-          ]
-        }
-      }
-    },
-    {
       "release": "0.1.97",
       "files": {
-        "runtime/BP/scripts/furniture.js": {
-          "before": "ac544bd0e6e1f95313278b0bfd40b4e6535732a4d2f991771d3732875f412f7a",
-          "after": "6137ea457f780b04b511690ff5ac71e402e7ec26fdd2d76af24321a605a88df9",
-          "reason": "W0.1.97 complete native freezer inputs, source removal/rollback and intrinsic unstackable captured guard; explicit API limits.",
-          "reverseOps": [
-            [
-              14,
-              15,
-              ""
-            ],
-            [
-              30,
-              31,
-              "const read=(b,permutation=b.permutation)=>{\n"
-            ],
-            [
-              34,
-              37,
-              " return JSON.parse(world.getDynamicProperty(key(b))??'null')??{type:b.typeId,slots:Array(b.typeId.includes('cellar_cabinet')?9:2).fill(null),input:[],fluid:null,recipe:null,remaining:0,output:0};\n"
-            ],
-            [
-              38,
-              49,
-              "const save=(b,s)=>world.setDynamicProperty(key(b),s?JSON.stringify(s):undefined);\n"
-            ],
-            [
-              70,
-              70,
-              "function managedQualityLore(item){\n if(!/^(kaleidoscope_tavern|kaleidoscope_world_liquor):[a-z_]+_q[1-6]$/.test(item?.typeId??''))return false;\n const raw=item.getRawLore?.();if(!Array.isArray(raw)||!raw.length)return false;\n const rows=raw.map(row=>JSON.stringify(row));\n return rows.some(row=>row.includes('tooltip.kaleidoscope_tavern.bottle_block.brew_level'))\n  &&rows.at(-1).includes('item.kaleidoscope_tavern.mod_name');\n}\nfunction plain(item){return !item||!item.nameTag&&(!item.getLore().length||managedQualityLore(item))&&!item.getDynamicPropertyIds().length&&!item.getComponent('minecraft:enchantable')?.getEnchantments().length;}\n"
-            ],
-            [
-              80,
-              83,
-              " const old=world.getDynamicProperty(key(b)),perm=b.permutation;\n try{save(b,next);if(permutation)scriptedReplace(b,permutation);for(let i=0;i<after.length;i++)inv.setItem(i,after[i]);if(b.typeId===NS+':freezer')try{syncFreezerVisuals(b,next??{},savedFreezerRecipes);}catch(err){console.warn('[World Liquor visuals] '+err);}return true;}\n catch(e){pendingBreaks.delete(breakKey(b,perm.type.id));world.setDynamicProperty(key(b),old);b.setPermutation(perm);for(let i=0;i<snapshot.length;i++)inv.setItem(i,snapshot[i]);throw e;}\n"
-            ],
-            [
-              94,
-              96,
-              "  const raw=world.getDynamicProperty(key(b));\n  const result=extractFreezerOutput(p,s,savedFreezerRecipes.find(r=>r.id===s.recipe),{createStack:(id,n)=>new ItemStack(id,n),commit:next=>save(b,next),restore:()=>world.setDynamicProperty(key(b),raw)});\n"
-            ],
-            [
-              106,
-              108,
-              "  const raw=world.getDynamicProperty(key(b));\n  const result=fillFreezerMilk(p,s,{createStack:(id,n)=>new ItemStack(id,n),commit:next=>save(b,next),restore:()=>world.setDynamicProperty(key(b),raw)});\n"
-            ],
-            [
-              116,
-              118,
-              " if(h&&!plain(h))return;\n const raw=world.getDynamicProperty(key(b)),options={createStack:(id,n)=>new ItemStack(id,n),commit:next=>save(b,next),restore:()=>world.setDynamicProperty(key(b),raw)};\n const result=h?insertFreezerInput(p,s,options):extractFreezerInput(p,s,options);\n"
-            ],
-            [
-              129,
-              130,
-              "  const previous=block.permutation,oldRaw=world.getDynamicProperty(key(block));\n"
-            ],
-            [
-              132,
-              135,
-              "  try{save(block,plan.state);if(plan.open!==open)block.setPermutation(previous.withState(NS+':open',plan.open));}\n  catch(error){world.setDynamicProperty(key(block),oldRaw);block.setPermutation(previous);throw error;}\n"
-            ],
-            [
-              180,
-              192,
-              "function tick(b){if(b.typeId.endsWith(':freezer')){const plan=advanceFreezerTick(read(b),savedFreezerRecipes);if(plan.changed)save(b,plan.state);if(plan.refresh||!plan.changed&&system.currentTick%80===0)syncFreezerVisuals(b,plan.state,savedFreezerRecipes);}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){if(b.typeId===WALL_RECORD){breakFeedback.transaction(b,()=>removeWallRecord(b));return;}removeUnsupported(b,b.typeId);}}}\nfunction drops(b,oldType,p){const s=read(b);save(b,undefined);if((!p||!creative(p))&&world.gameRules.doTileDrops!==false){const out=[[oldType.endsWith(':wall_record')?s.record:oldType,1],...(s.slots??[]).filter(Boolean).map(id=>[id,1]),...(s.input??[]).map(id=>[id,1])];if(s.output){const r=savedFreezerRecipes.find(r=>r.id===s.recipe);if(r)out.push([r.result.id,s.output]);}for(const [id,n] of out)if(id)b.dimension.spawnItem(new ItemStack(id,n),center(b));}\n"
-            ],
-            [
-              196,
-              197,
-              " onPlace:e=>{pendingBreaks.delete(breakKey(e.block,e.block.typeId));if(isManagedCabinet(e.block.typeId)){forwardFurnitureTick(system,e.block);return;}if(e.block.typeId===WALL_RECORD){wallRemovalTicks.delete(key(e.block));save(e.block,read(e.block));return;}save(e.block,undefined);},\n"
-            ],
-            [
-              203,
-              204,
-              ""
-            ],
-            [
-              207,
-              208,
-              " world.beforeEvents.playerBreakBlock.subscribe(e=>{if(isManagedCabinet(e.block.typeId)&&!foundationReady()){e.cancel=true;unavailable(e.player);}});\n"
-            ]
-          ]
-        },
         "runtime/BP/scripts/freezer-input.js": {
           "before": "7457afc823aa0585ef88e646ca269c043e234246302d1b3da96783cc30282139",
           "after": "cbd7a578d29eae49b974a699eac3aab24f14ccc9ac2c6838ee35b3f4c688d939",
