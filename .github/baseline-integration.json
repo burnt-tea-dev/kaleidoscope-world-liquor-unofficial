@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "tavern_commit": "63028d0a9d1d0e377bb0ec0b9ac1ed3e4324c9c1",
+  "tavern_commit": "00373ef12b6c860c0d49c4fd2dedc0605d58ff7c",
   "tavern_version": "0.6.181",
   "publication_request": false,
   "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
@@ -11,7 +11,7 @@
     "grilling": "2.8.155"
   },
   "peer_pin_status": "exact_reviewed_source_anchors",
-  "peer_pin_note": "W159 pairs both packs with frozen T181 at source63028d0a for bounded foundation retry, current snapshot coalescing, ACK deduplication and original native owner reload recovery. G155 remains the unchanged optional source-check peer. Native contents stay authoritative; source regression results do not prove full-family saved-world migration, LIVE performance or rendered-client acceptance.",
+  "peer_pin_note": "W159 pairs both packs with frozen T181 at source00373ef1 for bounded foundation retry, current snapshot coalescing, ACK deduplication and original native owner reload recovery. G155 remains the unchanged optional source-check peer. Native contents stay authoritative; source regression results do not prove full-family saved-world migration, LIVE performance or rendered-client acceptance.",
   "predecessor_peer_pins": {
     "tavern_commit": "2544c2418174a8914cf14d3267dd377830365447",
     "tavern_version": "0.6.180",

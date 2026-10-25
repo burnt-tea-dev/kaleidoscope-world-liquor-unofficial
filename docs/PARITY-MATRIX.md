@@ -2,7 +2,7 @@
 
 ## W159／T181 foundation 穩定性來源（2026-10-25）
 
-同步 Tavern 唯一 SDK owner 的失敗快照退避、最新 payload 合併、成功 ACK 背景去重與 loaded-owner／entity-load 恢復。相同 NACK 不再立即重排；變更 raw、正常酒櫃及主體明確刷新仍有效。舊資料僅在相符成功 ACK 後清理，原生庫存仍是物品權威。搭配主體當前原生 store 的來源／API 測試涵蓋故障、恢復、不同位置交接與重載，完整 foundation 127 項通過。這不是新的玩法／視覺內容，也不證明 LIVE actor/index、性能或 rendered client 已通過；來源配對固定於 T181 `63028d0a9d1d0e377bb0ec0b9ac1ed3e4324c9c1`；canonical PR／CI、完整家族存檔門檻及部署另行閉合，尚未正式發布。
+同步 Tavern 唯一 SDK owner 的失敗快照退避、最新 payload 合併、成功 ACK 背景去重與 loaded-owner／entity-load 恢復。相同 NACK 不再立即重排；變更 raw、正常酒櫃及主體明確刷新仍有效。舊資料僅在相符成功 ACK 後清理，原生庫存仍是物品權威。搭配主體當前原生 store 的來源／API 測試涵蓋故障、恢復、不同位置交接與重載，完整 foundation 127 項通過。這不是新的玩法／視覺內容，也不證明 LIVE actor/index、性能或 rendered client 已通過；來源配對固定於 T181 `00373ef12b6c860c0d49c4fd2dedc0605d58ff7c`；canonical PR／CI、完整家族存檔門檻及部署另行閉合，尚未正式發布。
 
 ## W158 dependency companion (2026-10-24)
 
