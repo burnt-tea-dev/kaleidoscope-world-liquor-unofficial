@@ -25,5 +25,6 @@
     "tavern": "0.6.184",
     "grilling": "2.8.157"
   },
-  "peer_pin_note": "The recorded Tavern commit is the prior T183 anchor. Replace it with the real T184 canonical merge only after that source is available; this runtime source anchor does not claim final peer CI or deployment."
+  "peer_pin_note": "The recorded Tavern commit is the prior T183 anchor. Replace it with the real T184 canonical merge only after that source is available; this runtime source anchor does not claim final peer CI or deployment.",
+  "expected_archive_sha256": "383193fd99676d29e506880ff76aeadef3d81501d01a4d4c882d21a4ba661c62"
 }
