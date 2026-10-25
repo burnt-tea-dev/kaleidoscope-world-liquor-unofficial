@@ -20,5 +20,6 @@
   "public_notes_inline": "Pair both packs with Tavern 0.6.182 for shared guide settings navigation and active-language labels. Preserve World Liquor recipes, effects, resources, UUIDs and saved data. Only paired release/dependency and guide payload version identities change. Complete-family saved-world gates and client acceptance remain pending.",
   "peer_pins_final": true,
   "publication_ready": false,
-  "bds": false
+  "bds": false,
+  "expected_archive_sha256": "d78a115e7371675b1773218b27293bde019e9bbd8b0f15e69b9bb74ba5a51ef0"
 }
