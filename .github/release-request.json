@@ -1,7 +1,7 @@
 {
-  "version": "0.1.159",
-  "tag": "v0.1.159",
-  "title": "World Liquor 0.1.159: bound foundation retries and recover native owners",
+  "version": "0.1.160",
+  "tag": "v0.1.160",
+  "title": "World Liquor 0.1.160: pair Tavern guide settings navigation",
   "prerelease": false,
   "validation_evidence": "docs/PARITY-MATRIX.md",
   "client_acceptance": "pending",
@@ -9,17 +9,17 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Foundation SDK repair paired with frozen Tavern 0.6.181 source2f8b9dd5. Existing source/API regressions cover retries, newer snapshots, ACK handling and native owner reload recovery. Complete-family native/saved-world migration, LIVE performance and rendered-client acceptance remain pending.",
+  "native_evidence_scope": "Companion for Tavern 0.6.182 guide settings navigation and active-language labels. World Liquor gameplay, recipes, effects, resources and saved data are unchanged. Source checks are separate from complete-family native/saved-world admission and rendered-client acceptance.",
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
   "status": "reviewed_source_candidate_pending_canonical_ci_and_family_admission",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "2f8b9dd5cce653ba03e9da439168f213e1a603fb",
+  "tavern_commit": "fc60fd01ce591bbfe09cc25dc356b143c5ab4722",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "Bound repeated foundation retries, coalesce newer snapshots and recover the original loaded native owner through the shared Tavern SDK. Pair both packs with Tavern 0.6.181. Native inventories remain authoritative and old data clears only after a matching successful ACK. Complete-family saved-world validation, LIVE performance and client acceptance remain pending.",
+  "public_notes_inline": "Pair both packs with Tavern 0.6.182 for shared guide settings navigation and active-language labels. Preserve World Liquor recipes, effects, resources, UUIDs and saved data. Only paired release/dependency and guide payload version identities change. Complete-family saved-world gates and client acceptance remain pending.",
   "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
-  "expected_archive_sha256": "4cfa17749daeed178c979e865bc6375e144245a060300843e67db22a9c127fe0"
+  "expected_archive_sha256": "d78a115e7371675b1773218b27293bde019e9bbd8b0f15e69b9bb74ba5a51ef0"
 }

@@ -1,22 +1,22 @@
 {
   "schema": 1,
-  "tavern_commit": "2f8b9dd5cce653ba03e9da439168f213e1a603fb",
-  "tavern_version": "0.6.181",
+  "tavern_commit": "fc60fd01ce591bbfe09cc25dc356b143c5ab4722",
+  "tavern_version": "0.6.182",
   "publication_request": false,
   "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
   "grilling_version": "2.8.155",
   "peer_pins_final": true,
   "target_peer_versions": {
-    "tavern": "0.6.181",
+    "tavern": "0.6.182",
     "grilling": "2.8.155"
   },
   "peer_pin_status": "exact_reviewed_source_anchors",
-  "peer_pin_note": "W159 pairs both packs with frozen T181 at source2f8b9dd5 for bounded foundation retry, current snapshot coalescing, ACK deduplication and original native owner reload recovery. G155 remains the unchanged optional source-check peer. Native contents stay authoritative; source regression results do not prove full-family saved-world migration, LIVE performance or rendered-client acceptance.",
+  "peer_pin_note": "W160 pairs both packs with Tavern T182, frozen runtime source6040fad3 and reviewed tooling sourcefc60fd01. The tooling validates the two guide owners against current behavior while retaining the unchanged T182 exports. Only release/module/dependency and guide payload version identities change in World Liquor. G155 remains the unchanged optional source-check peer. Recipes, effects, storage identities and all other runtime bytes remain W159; canonical checks and complete-family saved-world/client acceptance remain separate.",
   "predecessor_peer_pins": {
-    "tavern_commit": "2544c2418174a8914cf14d3267dd377830365447",
-    "tavern_version": "0.6.180",
+    "tavern_commit": "2f8b9dd5cce653ba03e9da439168f213e1a603fb",
+    "tavern_version": "0.6.181",
     "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
     "grilling_version": "2.8.155",
-    "world_liquor_source_commit": "26e59f65aab7c82036e4f1467ac2ca4038f5ee00"
+    "world_liquor_source_commit": "1b0a90bf7e95258fcc1585e886f1bd2ac4e4ea61"
   }
 }
