@@ -1,22 +1,22 @@
 {
   "schema": 1,
-  "tavern_commit": "fc60fd01ce591bbfe09cc25dc356b143c5ab4722",
-  "tavern_version": "0.6.182",
+  "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
+  "tavern_version": "0.6.183",
   "publication_request": false,
-  "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
+  "grilling_commit": "dd3aec4f84b2b39c44574e0b29b8091ff1195efe",
   "grilling_version": "2.8.155",
   "peer_pins_final": true,
   "target_peer_versions": {
-    "tavern": "0.6.182",
+    "tavern": "0.6.183",
     "grilling": "2.8.155"
   },
   "peer_pin_status": "exact_reviewed_source_anchors",
-  "peer_pin_note": "W160 pairs both packs with Tavern T182, frozen runtime source6040fad3 and reviewed tooling sourcefc60fd01. The tooling validates the two guide owners against current behavior while retaining the unchanged T182 exports. Only release/module/dependency and guide payload version identities change in World Liquor. G155 remains the unchanged optional source-check peer. Recipes, effects, storage identities and all other runtime bytes remain W159; canonical checks and complete-family saved-world/client acceptance remain separate.",
+  "peer_pin_note": "W161 pairs both packs with canonical Tavern T183 from merged PR425 for consolidated placed-bottle facing and owner reads. Only World Liquor release/module/dependency and generated guide payload version identities change. G155 uses its current reviewed canonical tools/source with unchanged runtime. Recipes, effects, resources, UUIDs, saved data and all other World Liquor runtime bytes retain W160 behavior. Canonical checks and complete-family saved-world/client acceptance remain separate.",
   "predecessor_peer_pins": {
-    "tavern_commit": "2f8b9dd5cce653ba03e9da439168f213e1a603fb",
-    "tavern_version": "0.6.181",
+    "tavern_commit": "fc60fd01ce591bbfe09cc25dc356b143c5ab4722",
+    "tavern_version": "0.6.182",
     "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
     "grilling_version": "2.8.155",
-    "world_liquor_source_commit": "1b0a90bf7e95258fcc1585e886f1bd2ac4e4ea61"
+    "world_liquor_source_commit": "0b7cb846ff073b69f3bb57e1ae84cd2856357f99"
   }
 }
