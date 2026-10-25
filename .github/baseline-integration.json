@@ -7,11 +7,11 @@
   "grilling_version": "2.8.155",
   "peer_pins_final": false,
   "target_peer_versions": {
-    "tavern": "0.6.184",
+    "tavern": "0.6.185",
     "grilling": "2.8.157"
   },
-  "peer_pin_status": "pending_T184_canonical_source_after_W162_runtime_anchor",
-  "peer_pin_note": "W162 freezes the paired T184 runtime dependency first so Tavern can check out this exact World Liquor source without a source-pin cycle. Existing T183/G155 CI checkout anchors remain explicitly pending until the real T184 canonical merge is available; then a non-runtime follow-up records T184 and canonical G157. World Liquor gameplay, recipes, effects, resources, UUIDs and saved data retain W161 bytes. No final companion CI, native or client acceptance is claimed.",
+  "peer_pin_status": "pending_T185_canonical_source_after_W163_runtime_anchor",
+  "peer_pin_note": "W163 freezes the paired T185 runtime dependency first so Tavern can check out this exact World Liquor source without a source-pin cycle. Existing T183/G155 CI checkout anchors remain explicitly pending until the real T185 canonical merge is available; then a non-runtime follow-up records T185 and canonical G157. World Liquor gameplay, recipes, effects, resources, UUIDs and saved data retain W161 bytes. No final companion CI, native or client acceptance is claimed.",
   "predecessor_peer_pins": {
     "tavern_commit": "fc60fd01ce591bbfe09cc25dc356b143c5ab4722",
     "tavern_version": "0.6.182",

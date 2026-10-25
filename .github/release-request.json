@@ -1,7 +1,7 @@
 {
-  "version": "0.1.162",
-  "tag": "v0.1.162",
-  "title": "World Liquor 0.1.162: pair the fresh-world Tavern source",
+  "version": "0.1.163",
+  "tag": "v0.1.163",
+  "title": "World Liquor 0.1.163: pair the fresh-world Tavern source",
   "prerelease": false,
   "validation_evidence": "docs/PARITY-MATRIX.md",
   "client_acceptance": "pending",
@@ -9,7 +9,7 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Companion source for Tavern 0.6.184 and optional Grilling 2.8.157. Only World Liquor paired release/module/dependency and generated guide payload version identities change. Gameplay, recipes, effects, resources and saved data retain W161 bytes. Canonical peer pins, full-family fresh-world first-load/restart and rendered-client acceptance remain pending.",
+  "native_evidence_scope": "Companion source for Tavern 0.6.185 and optional Grilling 2.8.157. Only World Liquor paired release/module/dependency and generated guide payload version identities change. Gameplay, recipes, effects, resources and saved data retain W161 bytes. Canonical peer pins, full-family fresh-world first-load/restart and rendered-client acceptance remain pending.",
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
@@ -17,14 +17,13 @@
   "public_notes_path": "CHANGELOG.md",
   "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "Pair both World Liquor packs with Tavern 0.6.184 for the fresh-world family source. World Liquor gameplay, recipes, effects, resources, UUIDs and saved data are unchanged. Only paired release/module/dependency and guide payload version identities change. Exact Tavern canonical source pins and complete-family native/client gates remain pending.",
+  "public_notes_inline": "Pair both World Liquor packs with Tavern 0.6.185 for the fresh-world family source. World Liquor gameplay, recipes, effects, resources, UUIDs and saved data are unchanged. Only paired release/module/dependency and guide payload version identities change. Exact Tavern canonical source pins and complete-family native/client gates remain pending.",
   "peer_pins_final": false,
   "publication_ready": false,
   "bds": false,
   "target_peer_versions": {
-    "tavern": "0.6.184",
+    "tavern": "0.6.185",
     "grilling": "2.8.157"
   },
-  "peer_pin_note": "The recorded Tavern commit is the prior T183 anchor. Replace it with the real T184 canonical merge only after that source is available; this runtime source anchor does not claim final peer CI or deployment.",
-  "expected_archive_sha256": "383193fd99676d29e506880ff76aeadef3d81501d01a4d4c882d21a4ba661c62"
+  "peer_pin_note": "The recorded Tavern commit is the prior T183 anchor. Replace it with the real T185 canonical merge only after that source is available; this runtime source anchor does not claim final peer CI or deployment."
 }

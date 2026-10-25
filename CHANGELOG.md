@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.163
+
+Pair both packs with Tavern 0.6.185 after its Java Mead success-feedback correction. Only paired release/module/dependency and generated guide payload version identities change; World Liquor gameplay, recipes, effects, resources, UUIDs and saved data retain W161/W162 bytes. The W162 source and release-history entry remain preserved. Grilling 2.8.157 is the target optional source-check peer. Final canonical peer pins, complete-family fresh-world first-load/restart and client acceptance remain pending.
+
 ## 0.1.162
 
 Pair both packs with Tavern 0.6.184 for the fresh-world family source, with Grilling 2.8.157 as the target optional source-check peer. Only paired release/module/dependency and generated guide payload version identities change; all World Liquor gameplay, recipes, effects, resources, UUIDs and saved data retain W161 bytes. This runtime anchor is frozen before Tavern's final canonical commit to avoid a source-pin cycle. Final peer CI, complete-family fresh-world first-load/restart and client acceptance remain pending.
