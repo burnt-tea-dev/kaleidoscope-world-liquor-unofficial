@@ -15,7 +15,7 @@
   "client": false,
   "status": "reviewed_source_candidate_pending_canonical_ci_and_family_admission",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "f9868583939e9b5f3b302e80ddb3b1cae98d3d7c",
+  "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
   "artifact_suffix": "baseline1",
   "public_notes_inline": "Pair both packs with Tavern 0.6.183 for consolidated placed-bottle facing and owner reads. Preserve World Liquor recipes, effects, resources, UUIDs and saved data. Only paired release/dependency and guide payload version identities change. Complete-family saved-world gates and client acceptance remain pending.",
   "peer_pins_final": true,

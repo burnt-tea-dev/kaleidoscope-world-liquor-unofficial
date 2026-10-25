@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "tavern_commit": "f9868583939e9b5f3b302e80ddb3b1cae98d3d7c",
+  "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
   "tavern_version": "0.6.183",
   "publication_request": false,
   "grilling_commit": "dd3aec4f84b2b39c44574e0b29b8091ff1195efe",
@@ -11,7 +11,7 @@
     "grilling": "2.8.155"
   },
   "peer_pin_status": "exact_reviewed_source_anchors",
-  "peer_pin_note": "W161 pairs both packs with exact frozen Tavern T183 for consolidated placed-bottle facing and owner reads. Only World Liquor release/module/dependency and generated guide payload version identities change. G155 uses its current reviewed canonical tools/source with unchanged runtime. Recipes, effects, resources, UUIDs, saved data and all other World Liquor runtime bytes retain W160 behavior. Canonical checks and complete-family saved-world/client acceptance remain separate.",
+  "peer_pin_note": "W161 pairs both packs with canonical Tavern T183 from merged PR425 for consolidated placed-bottle facing and owner reads. Only World Liquor release/module/dependency and generated guide payload version identities change. G155 uses its current reviewed canonical tools/source with unchanged runtime. Recipes, effects, resources, UUIDs, saved data and all other World Liquor runtime bytes retain W160 behavior. Canonical checks and complete-family saved-world/client acceptance remain separate.",
   "predecessor_peer_pins": {
     "tavern_commit": "fc60fd01ce591bbfe09cc25dc356b143c5ab4722",
     "tavern_version": "0.6.182",
