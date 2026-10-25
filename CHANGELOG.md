@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.159
+
+Bound foundation retries after NACK/timeouts, replace queued snapshots with current data, deduplicate acknowledged background snapshots and recover the original native owner when it loads. Retain native inventory authority and clear legacy data only after its exact successful ACK. Pair both packs with frozen Tavern 0.6.181; full-family saved-world, LIVE performance and client acceptance remain pending.
+
 ## 0.1.158
 
 Pair both packs with Tavern 0.6.180 for its shared potion-bottle liquid tint repair. Retain W157 gameplay, resources, storage identities and the optional Grilling 2.8.155 source-check peer. Only release, module, dependency and guide payload version identities change; complete-family and client acceptance remain pending.

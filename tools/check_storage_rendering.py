@@ -121,6 +121,8 @@ def digest(p):
  return hashlib.sha256(data).hexdigest()
 def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def main():
+ from foundation.source_contract import check as check_foundation_sources
+ foundation_contract=check_foundation_sources(TAV,ROOT)
  # Both reviewed JS bodies are bound even where an older storage guard only
  # checks selected semantics rather than a complete historical file digest.
  for name in PERFORMANCE_PATHS:
@@ -309,7 +311,7 @@ def main():
      delta=max(abs(a-b) for a,b in zip(expected,actual));maximum=max(maximum,delta)
      assert delta<1e-12,(case,model,expected,actual)
      checks+=1
- report={'baselineCommit':baseline['baselineCommit'],'javaReferenceCommit':contract['upstreamCommit'],'cabinetBlockVariants':len(blocks),'helperFamilies':2,'facings':4,'poseCases':len(cases),'vertexComparisons':checks,'maxCoordinateErrorBlocks':maximum,'modelBindings':bindings,'preservedFiles':preserved,'creativeMenuProjectionFiles':len(projection.menus),'currentSourceAssets':current_ingredient_assets,'molotovKind':25,'watermelonKind':44,'playerSimulation':False,'bdsTest':'NOT_RUN','clientVisualTest':'NOT_RUN'}
+ report={'baselineCommit':baseline['baselineCommit'],'javaReferenceCommit':contract['upstreamCommit'],'cabinetBlockVariants':len(blocks),'helperFamilies':2,'facings':4,'poseCases':len(cases),'vertexComparisons':checks,'maxCoordinateErrorBlocks':maximum,'modelBindings':bindings,'preservedFiles':preserved,'creativeMenuProjectionFiles':len(projection.menus),'currentSourceAssets':current_ingredient_assets,'foundation':foundation_contract,'molotovKind':25,'watermelonKind':44,'playerSimulation':False,'bdsTest':'NOT_RUN','clientVisualTest':'NOT_RUN'}
  version='.'.join(map(str,read(ROOT/'runtime/BP/manifest.json')['header']['version']))
  (ROOT/f'docs/STORAGE-VALIDATION-{version}.json').write_text(json.dumps(report,indent=2)+'\n')
  print(json.dumps(report))
