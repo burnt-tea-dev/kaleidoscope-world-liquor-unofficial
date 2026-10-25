@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.162
+
+Pair both packs with Tavern 0.6.184 for the fresh-world family source, with Grilling 2.8.157 as the target optional source-check peer. Only paired release/module/dependency and generated guide payload version identities change; all World Liquor gameplay, recipes, effects, resources, UUIDs and saved data retain W161 bytes. This runtime anchor is frozen before Tavern's final canonical commit to avoid a source-pin cycle. Final peer CI, complete-family fresh-world first-load/restart and client acceptance remain pending.
+
 ## 0.1.161
 
 Pair both packs with Tavern 0.6.183 for consolidated placed-bottle facing and owner reads. Only release/module/dependency and guide payload version identities change in World Liquor; recipes, effects, resources, UUIDs and saved data retain W160 behavior. Grilling 2.8.155 remains the optional source-check peer with its reviewed current canonical tools. Complete-family saved-world gates and rendered-client acceptance remain separate and pending.
