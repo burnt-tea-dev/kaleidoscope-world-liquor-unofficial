@@ -1,5 +1,11 @@
 # World Liquor Java／Bedrock 差距矩陣
 
+## W160／T182 guide settings companion (2026-10-25)
+
+W160 pairs both packs with Tavern 0.6.182 for the shared guide's settings navigation and active-language labels. World Liquor changes only release/module/dependency and generated guide payload version identities. All recipes, effects, resources, pack/module UUIDs and saved data keys retain W159 behavior. Existing Java gameplay and freezer-rendering gaps below remain open. Source guide/dependency checks do not establish complete-family native/saved-world admission or rendered-client acceptance; `publication_request=false`, `client=false`, `production_ready=false`.
+
+The paired guide contract passes against frozen T182 source `6040fad3794b227a18cabb9a8d8599a2424e0827`: 223 combined entries, 31 categories and 216 transport packets, including all 67 World Liquor pages. A direct W159 comparison confirms that only the two manifests and the generated payload version differ within runtime; all other exported bytes and the payload's recipe/content/guide data are unchanged. Canonical CI and complete-family gates remain pending.
+
 ## W159／T181 foundation 穩定性來源（2026-10-25）
 
 同步 Tavern 唯一 SDK owner 的失敗快照退避、最新 payload 合併、成功 ACK 背景去重與 loaded-owner／entity-load 恢復。相同 NACK 不再立即重排；變更 raw、正常酒櫃及主體明確刷新仍有效。舊資料僅在相符成功 ACK 後清理，原生庫存仍是物品權威。搭配主體當前原生 store 的來源／API 測試涵蓋故障、恢復、不同位置交接與重載，完整 foundation 127 項通過。這不是新的玩法／視覺內容，也不證明 LIVE actor/index、性能或 rendered client 已通過；來源配對固定於 T181 `2f8b9dd5cce653ba03e9da439168f213e1a603fb`；canonical PR／CI、完整家族存檔門檻及部署另行閉合，尚未正式發布。

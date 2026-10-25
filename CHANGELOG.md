@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.160
+
+Pair both packs with Tavern 0.6.182 for its shared guide settings navigation and active-language labels. Only release/module/dependency and guide payload version identities change in World Liquor; recipes, effects, resources, UUIDs and saved data retain W159 behavior. Grilling 2.8.155 remains the optional source-check peer. Complete-family saved-world gates and rendered-client acceptance remain separate and pending.
+
 ## 0.1.159
 
 Bound foundation retries after NACK/timeouts, replace queued snapshots with current data, deduplicate acknowledged background snapshots and recover the original native owner when it loads. Retain native inventory authority and clear legacy data only after its exact successful ACK. Pair both packs with frozen Tavern 0.6.181; full-family saved-world, LIVE performance and client acceptance remain pending.
