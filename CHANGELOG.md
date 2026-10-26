@@ -1,5 +1,13 @@
 # Change history
 
+## 0.1.164
+
+Restore the original freezer renderer's position/slot-seeded ingredient placement, independent yaw and dry/wet ordinary-item heights for the existing snowball, blue-dye and slime-ball sprites. Preserve sparse native slot identity, authoritative item storage, result/fluid surfaces and no-repeat movement refresh. Retire this display owner's historical source projections; current behavior is checked against recorded execution of the original Java method. Generic full-stack rendering, block-item models, absolute UV orientation and rendered-client acceptance remain open. Pair with canonical Tavern 0.6.185 and Grilling 2.8.157.
+
+## 0.1.163
+
+Pair both packs with Tavern 0.6.185 after its Java Mead success-feedback correction. Only paired release/module/dependency and generated guide payload version identities change; World Liquor gameplay, recipes, effects, resources, UUIDs and saved data retain W161/W162 bytes. The W162 source and release-history entry remain preserved. Grilling 2.8.157 is the target optional source-check peer. Final canonical peer pins, complete-family fresh-world first-load/restart and client acceptance remain pending.
+
 ## 0.1.162
 
 Pair both packs with Tavern 0.6.184 for the fresh-world family source, with Grilling 2.8.157 as the target optional source-check peer. Only paired release/module/dependency and generated guide payload version identities change; all World Liquor gameplay, recipes, effects, resources, UUIDs and saved data retain W161 bytes. The runtime anchor was frozen before Tavern's canonical merge to avoid a source-pin cycle. The metadata follow-up now pins canonical T184 `79ac1fb82e06ddd07993cf7b9140dfbf1cfd09fc` and G157 `2e3ef63839e38f84b4a0109957077ac00a140697`, preserving the frozen W162 runtime, baseline, release history and archive digest. Current canonical CI, complete-family fresh-world first-load/restart, saved-world admission and client acceptance remain pending. The later W163/T185 source branch is separate and is not promoted by this pairing.

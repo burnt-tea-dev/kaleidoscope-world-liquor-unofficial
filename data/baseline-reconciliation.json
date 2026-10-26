@@ -1848,23 +1848,6 @@
             ]
           ],
           "reason": "Current NeoForge1.1.11 CF9066406 freezer recipes and loaded-tick/float rendering repair; preserve legacy saved lava output only. See current-freezer-review and native timing scenes."
-        },
-        "runtime/BP/scripts/freezer-visuals.js": {
-          "before": "722e469c54b46e74608f490a94f371b5f1a51d5995742471672da7dfd4c0bbef",
-          "after": "e5087ac7ab6c51ab5187f7e03c0145cef66d30a36075269531e1cfa0f97a4602",
-          "reverseOps": [
-            [
-              3,
-              8,
-              ""
-            ],
-            [
-              14,
-              15,
-              "  if(state.output>0){const recipe=recipes.find(r=>r.id===state.recipe),kind=recipe?.texture?.split('/').at(-1);if(['ice','snow','magma'].includes(kind))rows.push({slot:'result',kind,x:0,z:0,y:.75-(5-state.output)*.08});}\n"
-            ]
-          ],
-          "reason": "Current NeoForge1.1.11 CF9066406 freezer recipes and loaded-tick/float rendering repair; preserve legacy saved lava output only. See current-freezer-review and native timing scenes."
         }
       }
     },
@@ -2257,18 +2240,6 @@
               82,
               88,
               "export function tick(){frostAging?.tick();if(system.currentTick%20===0)killCredit.prune();const entities=new Map(world.getAllPlayers().map(p=>[p.id,p]));for(const entity of getTavernEffectEntities(world,NS))entities.set(entity.id,entity);for(const p of entities.values())try{\n"
-            ]
-          ]
-        },
-        "runtime/BP/scripts/freezer-visuals.js": {
-          "reason": "Skip only unchanged native transform teleports while retaining owned visual reconciliation and original result heights.",
-          "before": "e5087ac7ab6c51ab5187f7e03c0145cef66d30a36075269531e1cfa0f97a4602",
-          "after": "b15f6e7a57cbebbfe5f7abb7682723aa234930e8cde5c4231c7d662c9ed17bd8",
-          "reverseOps": [
-            [
-              19,
-              26,
-              "  if(!e){e=block.dimension.spawnEntity(N+':freezer_'+row.kind+'_visual',at,{initialRotation:yaw});e.setDynamicProperty(N+':anchor',anchor);e.setDynamicProperty(N+':position',JSON.stringify(p));e.setDynamicProperty(N+':block',block.typeId);e.setDynamicProperty(N+':visual_slot',row.slot);}else e.teleport(at,{rotation:{x:0,y:yaw}});\n"
             ]
           ]
         }

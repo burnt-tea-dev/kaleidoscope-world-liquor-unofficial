@@ -12,7 +12,6 @@
     "runtime/BP/entities/freezer_snowball_visual.json": "aef0fb476052cfe065237e48f7f77f035ce12b9bf2db119e1443a9776d075854",
     "runtime/BP/entities/freezer_sweet_berries_visual.json": "acf97d1bd92b7deccc5a1dff1bf563b2b19ed37b6bbfe1a91e5e2081339d69f9",
     "runtime/BP/entities/freezer_water_visual.json": "e44db4440a670ef32aeb08f6b92c365f957114d02d3b5f3f9766dfbb5ac08f58",
-    "runtime/BP/scripts/freezer-visuals.js": "722e469c54b46e74608f490a94f371b5f1a51d5995742471672da7dfd4c0bbef",
     "runtime/BP/scripts/record-audio.js": "ef4d168f57be0ec6f3f8ac76d71905e2d4679fb291dff259777d61c621309fbe",
     "runtime/RP/entity/freezer_blue_dye.entity.json": "c96f2939072b896d1321f7ffada8ba443c0754f3dd08ef77dea7d253fd67d95b",
     "runtime/RP/entity/freezer_grape.entity.json": "3651ef54a683251c0a9cb04931564ea9280a39955ffdd05d50417d232d721129",
