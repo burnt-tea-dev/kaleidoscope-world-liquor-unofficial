@@ -9,10 +9,10 @@
   "peer_pin_status": "canonical_merged",
   "peer_pin_note": "W164 pairs the current freezer input placement repair with canonical Tavern PR430 and Grilling PR283. Full-family native/persistence and actual client acceptance remain separate pending gates.",
   "predecessor_peer_pins": {
-    "tavern_commit": "fc60fd01ce591bbfe09cc25dc356b143c5ab4722",
-    "tavern_version": "0.6.182",
-    "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
+    "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
+    "tavern_version": "0.6.183",
+    "grilling_commit": "dd3aec4f84b2b39c44574e0b29b8091ff1195efe",
     "grilling_version": "2.8.155",
-    "world_liquor_source_commit": "0b7cb846ff073b69f3bb57e1ae84cd2856357f99"
+    "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   }
 }

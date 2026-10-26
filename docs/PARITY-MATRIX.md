@@ -1,5 +1,13 @@
 # World Liquor Java／Bedrock 差距矩陣
 
+## W162／T184 canonical source pairing (2026-10-26)
+
+The existing W162 runtime anchor `5f64020d098f99e2da67d241a09991dccbab9bbb` now targets the real canonical Tavern T184 merge `79ac1fb82e06ddd07993cf7b9140dfbf1cfd09fc` (PR428) and optional Grilling G157 `2e3ef63839e38f84b4a0109957077ac00a140697` (PR283). Both World Liquor packs already require Tavern 0.6.184. The former T183/G155 checkout placeholders have been replaced and `peer_pins_final=true`; current canonical paired CI remains required.
+
+The existing paired release checks pass against those exact sources, including 223 guide entries, 31 categories, 216 transport packets, 48 storage poses and 4,992 vertex comparisons. The independent helper-definition check confirms 56 Tavern, 21 World Liquor and 10 Grilling zero-collision helpers. These are source/resource checks; they do not add native, saved-world or rendered-client acceptance. The first local attempt lacked the canonical historical collision commit in a shallow checkout; fetching the preserved public history resolved that missing-input failure without changing the checks or runtime.
+
+This follow-up changes source-check/release metadata and current prose only. Frozen W162 runtime, baseline, append-only release history and archive SHA-256 `383193fd99676d29e506880ff76aeadef3d81501d01a4d4c882d21a4ba661c62` remain unchanged. W162 retains W161 gameplay, recipes, effects, resources, UUIDs and saved data apart from the existing paired release/module/dependency and payload-version identities. The later W163/T185 source branch remains separate. Complete-family native/fresh-world first-load/restart, saved-world migration and rendered-client acceptance remain pending; `publication_request=false`, `bds=false`, `client=false`, `production_ready=false`. Existing Java gameplay and freezer-rendering gaps below remain open.
+
 ## W161／T183 bottle display companion (2026-10-25)
 
 W161 pairs both packs with canonical Tavern 0.6.183 source `afae50c054487d131829bacaedd4e0ea749a26c0` (merged PR425) for consolidated placed-bottle facing and owner reads. World Liquor changes only paired release/module/dependency and generated payload version identities; recipes, effects, resources, UUIDs and saved data retain W160 behavior. The optional G155 source-check peer uses its current reviewed canonical tools with unchanged runtime. Source guide/dependency checks, complete-family native/saved-world admission and rendered-client acceptance remain separate; `publication_request=false`, `bds=false`, `client=false`, `production_ready=false`. Existing Java gameplay and freezer-rendering gaps below remain open.
