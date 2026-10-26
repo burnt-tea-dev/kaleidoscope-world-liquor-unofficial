@@ -1,22 +1,22 @@
 {
   "schema": 1,
-  "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
-  "tavern_version": "0.6.183",
+  "tavern_commit": "79ac1fb82e06ddd07993cf7b9140dfbf1cfd09fc",
+  "tavern_version": "0.6.184",
   "publication_request": false,
-  "grilling_commit": "dd3aec4f84b2b39c44574e0b29b8091ff1195efe",
-  "grilling_version": "2.8.155",
+  "grilling_commit": "2e3ef63839e38f84b4a0109957077ac00a140697",
+  "grilling_version": "2.8.157",
   "peer_pins_final": true,
   "target_peer_versions": {
-    "tavern": "0.6.183",
-    "grilling": "2.8.155"
+    "tavern": "0.6.184",
+    "grilling": "2.8.157"
   },
-  "peer_pin_status": "exact_reviewed_source_anchors",
-  "peer_pin_note": "W161 pairs both packs with canonical Tavern T183 from merged PR425 for consolidated placed-bottle facing and owner reads. Only World Liquor release/module/dependency and generated guide payload version identities change. G155 uses its current reviewed canonical tools/source with unchanged runtime. Recipes, effects, resources, UUIDs, saved data and all other World Liquor runtime bytes retain W160 behavior. Canonical checks and complete-family saved-world/client acceptance remain separate.",
+  "peer_pin_status": "exact_canonical_T184_G157_sources",
+  "peer_pin_note": "Finalize the existing W162 source anchor against canonical Tavern T184 (merged PR428) and Grilling G157 (merged PR283). World Liquor runtime, baseline, release history and archive identity remain byte-for-byte identical to frozen W162 source 5f64020d098f99e2da67d241a09991dccbab9bbb. Current canonical CI, complete-family native/fresh-world and saved-world admission, and rendered-client acceptance remain separate.",
   "predecessor_peer_pins": {
-    "tavern_commit": "fc60fd01ce591bbfe09cc25dc356b143c5ab4722",
-    "tavern_version": "0.6.182",
-    "grilling_commit": "ae4cd8c32eb56170fa7488544c8d94c66fa75346",
+    "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
+    "tavern_version": "0.6.183",
+    "grilling_commit": "dd3aec4f84b2b39c44574e0b29b8091ff1195efe",
     "grilling_version": "2.8.155",
-    "world_liquor_source_commit": "0b7cb846ff073b69f3bb57e1ae84cd2856357f99"
+    "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   }
 }

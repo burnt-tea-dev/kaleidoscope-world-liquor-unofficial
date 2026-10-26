@@ -1,7 +1,7 @@
 {
-  "version": "0.1.161",
-  "tag": "v0.1.161",
-  "title": "World Liquor 0.1.161: pair consolidated Tavern bottle display reads",
+  "version": "0.1.162",
+  "tag": "v0.1.162",
+  "title": "World Liquor 0.1.162: pair the fresh-world Tavern source",
   "prerelease": false,
   "validation_evidence": "docs/PARITY-MATRIX.md",
   "client_acceptance": "pending",
@@ -9,17 +9,22 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Companion for Tavern 0.6.183 consolidated placed-bottle facing and owner reads. World Liquor gameplay, recipes, effects, resources and saved data are unchanged. Source checks are separate from complete-family native/saved-world admission and rendered-client acceptance.",
+  "native_evidence_scope": "Companion source for canonical Tavern 0.6.184 and optional Grilling 2.8.157. World Liquor runtime retains the frozen W162 identity-only pairing of W161 gameplay, recipes, effects, resources and saved data. Source pins are finalized; current canonical CI, complete-family native/fresh-world first-load/restart, saved-world migration and rendered-client acceptance remain pending.",
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
   "status": "reviewed_source_candidate_pending_canonical_ci_and_family_admission",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
+  "tavern_commit": "79ac1fb82e06ddd07993cf7b9140dfbf1cfd09fc",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "Pair both packs with Tavern 0.6.183 for consolidated placed-bottle facing and owner reads. Preserve World Liquor recipes, effects, resources, UUIDs and saved data. Only paired release/dependency and guide payload version identities change. Complete-family saved-world gates and client acceptance remain pending.",
+  "public_notes_inline": "Pair both World Liquor packs with canonical Tavern 0.6.184 and record optional Grilling 2.8.157 source checks. Preserve frozen W162 runtime, release history and archive identity. World Liquor gameplay, recipes, effects, resources, UUIDs and saved data remain unchanged from W161 apart from the previously frozen paired identities. Complete-family native/saved-world gates and client acceptance remain pending.",
   "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
-  "expected_archive_sha256": "38809837a3eede71cd8c69d1ef2f8f832abc428c1a6dca88d10c82acb240f2d1"
+  "target_peer_versions": {
+    "tavern": "0.6.184",
+    "grilling": "2.8.157"
+  },
+  "peer_pin_note": "Exact canonical Tavern T184 and Grilling G157 sources are recorded in baseline-integration.json. This metadata follow-up preserves frozen W162 runtime and its existing archive digest; current canonical CI and complete-family admission remain required.",
+  "expected_archive_sha256": "383193fd99676d29e506880ff76aeadef3d81501d01a4d4c882d21a4ba661c62"
 }
