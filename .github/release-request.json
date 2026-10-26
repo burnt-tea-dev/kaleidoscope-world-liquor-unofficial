@@ -21,5 +21,6 @@
   "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
-  "peer_pin_note": "Canonical Tavern185 and Grilling157 source pins are in .github/baseline-integration.json. The P69 family delivery stays on W164 until its completed installation."
+  "peer_pin_note": "Canonical Tavern185 and Grilling157 source pins are in .github/baseline-integration.json. The P69 family delivery stays on W164 until its completed installation.",
+  "expected_archive_sha256": "c871ad8e387bb16301730e7c69616d806944c0d0120ff535170e97fa8db8e12c"
 }
