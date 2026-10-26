@@ -21,5 +21,6 @@
   "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
-  "peer_pin_note": "Canonical Tavern PR430 and Grilling PR283 are pinned in .github/baseline-integration.json."
+  "peer_pin_note": "Canonical Tavern PR430 and Grilling PR283 are pinned in .github/baseline-integration.json.",
+  "expected_archive_sha256": "60bc5b5732968191b7c2d8e6d65b0a4bc8c6b020169080059da61d6472ab4e15"
 }
