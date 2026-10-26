@@ -1,7 +1,7 @@
 {
-  "version": "0.1.163",
-  "tag": "v0.1.163",
-  "title": "World Liquor 0.1.163: pair the fresh-world Tavern source",
+  "version": "0.1.164",
+  "tag": "v0.1.164",
+  "title": "World Liquor 0.1.164: restore Java freezer ingredient placement",
   "prerelease": false,
   "validation_evidence": "docs/PARITY-MATRIX.md",
   "client_acceptance": "pending",
@@ -9,22 +9,17 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Companion source for Tavern 0.6.185 and optional Grilling 2.8.157. Only World Liquor paired release/module/dependency and generated guide payload version identities change. Gameplay, recipes, effects, resources and saved data retain W161 bytes. Canonical peer pins, full-family fresh-world first-load/restart and rendered-client acceptance remain pending.",
+  "native_evidence_scope": "Current freezer ingredient position, ordinary-item height and yaw match recorded original Java method outputs. Exact canonical Tavern185 and Grilling157 peers are pinned. Complete-family native/persistence and rendered-client acceptance remain pending.",
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
-  "status": "source_anchor_pending_final_peer_pins_and_canonical_ci",
+  "status": "source_candidate_pending_canonical_ci_and_family_admission",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
+  "tavern_commit": "e7a8894b06f521205c6494b0ca6e96f3054babb6",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "Pair both World Liquor packs with Tavern 0.6.185 for the fresh-world family source. World Liquor gameplay, recipes, effects, resources, UUIDs and saved data are unchanged. Only paired release/module/dependency and guide payload version identities change. Exact Tavern canonical source pins and complete-family native/client gates remain pending.",
-  "peer_pins_final": false,
+  "public_notes_inline": "Restore original position/slot-seeded freezer ingredient placement, per-item yaw and dry/wet ordinary-item heights for the three existing supported sprites. Preserve native item ownership, sparse slot identity, result/fluid surfaces and unchanged-transform refresh behavior. Generic ItemStack rendering, block-item models, absolute UV orientation and client visuals remain pending.",
+  "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
-  "target_peer_versions": {
-    "tavern": "0.6.185",
-    "grilling": "2.8.157"
-  },
-  "peer_pin_note": "The recorded Tavern commit is the prior T183 anchor. Replace it with the real T185 canonical merge only after that source is available; this runtime source anchor does not claim final peer CI or deployment.",
-  "expected_archive_sha256": "6093c3a48aa444b160d6a3e39b2b72f0758ec6f680dee56b4fcab02e2c572500"
+  "peer_pin_note": "Canonical Tavern PR430 and Grilling PR283 are pinned in .github/baseline-integration.json."
 }

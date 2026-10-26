@@ -27,7 +27,7 @@ PERFORMANCE_HISTORY_ALIASES={
  PERFORMANCE_PREVIOUS:('9fe8371e27d1537219bcc248c73520325740aae7','a553a3d15bdd877e0ef9117b1e7903a54da195bb'),
  PERFORMANCE_REVIEWED:('8972d98dd488ef9e2a33eb6d7b3779dbd9b475d4','357ec2ff57eec6b6b0630a2cab7fc849b31c222b'),
 }
-PERFORMANCE_PATHS=frozenset({'runtime/BP/scripts/effects.js','runtime/BP/scripts/freezer-visuals.js'})
+PERFORMANCE_PATHS=frozenset({'runtime/BP/scripts/effects.js'})
 def read(p):return json.loads(p.read_text())
 @lru_cache(maxsize=2)
 def performance_sources(name):
@@ -123,6 +123,14 @@ def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_
 def main():
  from foundation.source_contract import check as check_foundation_sources
  foundation_contract=check_foundation_sources(TAV,ROOT)
+ # The display owner is checked through current behavior and the original
+ # Java method's numerical output, rather than reconstructing older code.
+ visual_source='runtime/BP/scripts/freezer-visuals.js'
+ ledger=read(ROOT/'data/baseline-reconciliation.json')
+ assert visual_source not in ledger['files']
+ assert all(visual_source not in layer['files'] for layer in ledger['reviewedFunctionalDeltaLayers'])
+ assert visual_source not in read(ROOT/'data/freezer-visual-additions.json')['files']
+ subprocess.run(['node',str(ROOT/'tests/freezer-result-height.test.mjs')],check=True)
  # Both reviewed JS bodies are bound even where an older storage guard only
  # checks selected semantics rather than a complete historical file digest.
  for name in PERFORMANCE_PATHS:

@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.164
+
+Restore the original freezer renderer's position/slot-seeded ingredient placement, independent yaw and dry/wet ordinary-item heights for the existing snowball, blue-dye and slime-ball sprites. Preserve sparse native slot identity, authoritative item storage, result/fluid surfaces and no-repeat movement refresh. Retire this display owner's historical source projections; current behavior is checked against recorded execution of the original Java method. Generic full-stack rendering, block-item models, absolute UV orientation and rendered-client acceptance remain open. Pair with canonical Tavern 0.6.185 and Grilling 2.8.157.
+
 ## 0.1.163
 
 Pair both packs with Tavern 0.6.185 after its Java Mead success-feedback correction. Only paired release/module/dependency and generated guide payload version identities change; World Liquor gameplay, recipes, effects, resources, UUIDs and saved data retain W161/W162 bytes. The W162 source and release-history entry remain preserved. Grilling 2.8.157 is the target optional source-check peer. Final canonical peer pins, complete-family fresh-world first-load/restart and client acceptance remain pending.

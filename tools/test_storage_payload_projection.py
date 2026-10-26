@@ -45,7 +45,7 @@ class PerformanceProjectionTests(unittest.TestCase):
   m.performance_sources.cache_clear();self.addCleanup(m.performance_sources.cache_clear)
   with patch.dict(m.PERFORMANCE_HISTORY_ALIASES,{m.PERFORMANCE_PREVIOUS:(different,old[1])}):
    with self.assertRaisesRegex(AssertionError,'Historical performance runtime tree differs'):
-    m.performance_sources('runtime/BP/scripts/freezer-visuals.js')
+    m.performance_sources('runtime/BP/scripts/effects.js')
  def test_exact_frozen_sources_reverse_to_immutable_w145_before_old_storage_guards(self):
   self.assertEqual(set(self.layer['files']),m.PERFORMANCE_PATHS)
   for name,row in self.layer['files'].items():
@@ -53,8 +53,6 @@ class PerformanceProjectionTests(unittest.TestCase):
     before,after=m.performance_sources(name)
     self.assertEqual((m.ROOT/name).read_bytes(),after)
     self.assertEqual(m.performance_preimage(name,after,row),before)
-    if name.endswith('/freezer-visuals.js'):
-     self.assertEqual(m.storage_reference_bytes(m.ROOT/name),m.previous_bytes(m.ROOT,m.ROOT/name))
  def test_extra_line_is_rejected_even_with_synchronized_fixture_hash(self):
   for name,row in self.layer['files'].items():
    with self.subTest(path=name):

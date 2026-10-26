@@ -1,17 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
-  "tavern_version": "0.6.183",
+  "tavern_commit": "e7a8894b06f521205c6494b0ca6e96f3054babb6",
+  "tavern_version": "0.6.185",
   "publication_request": false,
-  "grilling_commit": "dd3aec4f84b2b39c44574e0b29b8091ff1195efe",
-  "grilling_version": "2.8.155",
-  "peer_pins_final": false,
-  "target_peer_versions": {
-    "tavern": "0.6.185",
-    "grilling": "2.8.157"
-  },
-  "peer_pin_status": "pending_T185_canonical_source_after_W163_runtime_anchor",
-  "peer_pin_note": "W163 freezes the paired T185 runtime dependency first so Tavern can check out this exact World Liquor source without a source-pin cycle. Existing T183/G155 CI checkout anchors remain explicitly pending until the real T185 canonical merge is available; then a non-runtime follow-up records T185 and canonical G157. World Liquor gameplay, recipes, effects, resources, UUIDs and saved data retain W161 bytes. No final companion CI, native or client acceptance is claimed.",
+  "grilling_commit": "2e3ef63839e38f84b4a0109957077ac00a140697",
+  "grilling_version": "2.8.157",
+  "peer_pins_final": true,
+  "peer_pin_status": "canonical_merged",
+  "peer_pin_note": "W164 pairs the current freezer input placement repair with canonical Tavern PR430 and Grilling PR283. Full-family native/persistence and actual client acceptance remain separate pending gates.",
   "predecessor_peer_pins": {
     "tavern_commit": "fc60fd01ce591bbfe09cc25dc356b143c5ab4722",
     "tavern_version": "0.6.182",
