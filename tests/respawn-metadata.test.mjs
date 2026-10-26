@@ -108,6 +108,31 @@ test('an observed move away invalidates metadata before returning to that point'
   f.setSpawn(block); assert.equal(getRespawnMetadata(f.player, f.player.spawn), undefined);
 });
 
+test('polling skips players without metadata and starts checking a later declaration immediately', () => {
+  const fixtures = Array.from({length: 4}, () => fixture());
+  const calls = fixtures.map(() => 0), first = fixtures[0];
+  for (const [index, f] of fixtures.entries()) {
+    f.player.id = 'p' + index;
+    f.player.getSpawnPoint = () => {calls[index]++; return f.player.spawn;};
+  }
+  first.world.getAllPlayers = () => fixtures.map(f => f.player);
+  installRespawnMetadata(first.world, first.system);
+  for (let tick = 0; tick < 20; tick++) first.intervals[0]();
+  assert.deepEqual(calls, [0, 0, 0, 0]);
+  const block = first.bed(2, 3); first.setSpawn(block);
+  assert.equal(declareRespawnMetadata(first.player, {
+    point: {...block.location, dimensionId: 'minecraft:overworld'}, yaw: 45, forced: true}), true);
+  first.intervals[0]();
+  assert.deepEqual(calls, [1, 0, 0, 0]);
+  for (let tick = 1; tick < 20; tick++) first.intervals[0]();
+  assert.deepEqual(calls, [20, 0, 0, 0]);
+  first.player.spawn = undefined; first.intervals[0]();
+  assert.deepEqual(calls, [21, 0, 0, 0]);
+  first.setSpawn(block); first.intervals[0]();
+  assert.deepEqual(calls, [21, 0, 0, 0]);
+  assert.equal(getRespawnMetadata(first.player, first.player.spawn), undefined);
+});
+
 test('a confirmed changed charged Nether anchor records source zero yaw and nonforced status, surviving a new player handle', () => {
   const f = fixture('minecraft:nether'), block = f.anchor(2, 3);
   f.player.getRotation = () => {throw Error('anchor does not use the player yaw');};

@@ -1,7 +1,7 @@
 {
-  "version": "0.1.164",
-  "tag": "v0.1.164",
-  "title": "World Liquor 0.1.164: restore Java freezer ingredient placement",
+  "version": "0.1.165",
+  "tag": "v0.1.165",
+  "title": "World Liquor 0.1.165: skip unowned respawn queries",
   "prerelease": false,
   "validation_evidence": "docs/PARITY-MATRIX.md",
   "client_acceptance": "pending",
@@ -9,18 +9,17 @@
   "saved_world_migration": "pending",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "Current freezer ingredient position, ordinary-item height and yaw match recorded original Java method outputs. Exact canonical Tavern185 and Grilling157 peers are pinned. Complete-family native/persistence and rendered-client acceptance remain pending.",
+  "native_evidence_scope": "The current respawn metadata tests and direct before/after source callback counts cover skipping unrelated native spawn queries while preserving first-tick stale-record invalidation. Complete-family saved-world and client acceptance remain pending.",
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
   "status": "source_candidate_pending_canonical_ci_and_family_admission",
   "public_notes_path": "CHANGELOG.md",
-  "tavern_commit": "e7a8894b06f521205c6494b0ca6e96f3054babb6",
+  "tavern_commit": "9acda34e1a00a5674d86a233bd1b28ec59ad84dc",
   "artifact_suffix": "baseline1",
-  "public_notes_inline": "Restore original position/slot-seeded freezer ingredient placement, per-item yaw and dry/wet ordinary-item heights for the three existing supported sprites. Preserve native item ownership, sparse slot identity, result/fluid surfaces and unchanged-transform refresh behavior. Generic ItemStack rendering, block-item models, absolute UV orientation and client visuals remain pending.",
+  "public_notes_inline": "Skip native personal-spawn queries for players without confirmed World Liquor respawn metadata. Keep one-tick checking for confirmed records, late declarations and stale-record invalidation. Source call counts establish less API work; CPU, TPS, FPS and rendered-client improvement remain unmeasured.",
   "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
-  "peer_pin_note": "Canonical Tavern PR430 and Grilling PR283 are pinned in .github/baseline-integration.json.",
-  "expected_archive_sha256": "60bc5b5732968191b7c2d8e6d65b0a4bc8c6b020169080059da61d6472ab4e15"
+  "peer_pin_note": "Canonical Tavern185 and Grilling157 source pins are in .github/baseline-integration.json. The P69 family delivery stays on W164 until its completed installation."
 }

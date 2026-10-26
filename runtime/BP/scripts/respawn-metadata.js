@@ -194,8 +194,10 @@ export function installRespawnMetadata(world, system) {
   // require the explicit declaration contract above.
   const interval = system.runInterval(() => {
     for (const player of world.getAllPlayers()) {
-      const metadata = stored(player), current = nativePoint(player);
-      if (metadata && current.known && !equal(metadata.point, current.value)) {
+      const metadata = stored(player);
+      if (!metadata) continue;
+      const current = nativePoint(player);
+      if (current.known && !equal(metadata.point, current.value)) {
         try { player.setDynamicProperty(KEY, undefined); } catch {}
       }
     }
