@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "kind": "scoped_family_deployment_observation",
+  "family_revision": "P70",
+  "observed_at_utc": "2026-10-27T04:39:24.116081+00:00",
+  "scope": "Sanitized observation of one complete-family saved-world update. This is separate from public addon publication and human acceptance.",
+  "public_source_identities": {
+    "tavern": {
+      "repository": "burnt-tea-dev/kaleidoscope-tavern-unofficial",
+      "commit": "fa72ad0bbf31f10c96829fd6e8d4cd3c1b99f349",
+      "git_tree": "c4d1f35d87f2235eb4836ce110dee1ff49a1c124",
+      "version": [
+        0,
+        6,
+        185
+      ],
+      "logical_repository": "casama233/kaleidoscope-tavern-unofficial"
+    },
+    "grilling": {
+      "repository": "burnt-tea-dev/kaleidoscope-grilling-unofficial",
+      "commit": "1e4b46cac3db8608bbf107b6ef08eed6b53281ab",
+      "git_tree": "97e68217d964ecd634f2bafb6164b557dec7af08",
+      "version": [
+        2,
+        8,
+        157
+      ],
+      "logical_repository": "casama233/kaleidoscope-grilling-unofficial"
+    },
+    "world-liquor": {
+      "repository": "burnt-tea-dev/kaleidoscope-world-liquor-unofficial",
+      "commit": "5e1a275fa13800d018f4716cdb88e46182aedd49",
+      "git_tree": "f2ec09b98de90ce529c3e649e6fdd0c8bf0ee2e0",
+      "version": [
+        0,
+        1,
+        165
+      ],
+      "logical_repository": "casama233/kaleidoscope-world-liquor-unofficial"
+    }
+  },
+  "candidate_receipt_sha256": "84ac8f0ca6455edbb991ca6d717f36480e0d59822bcb6f00f66d806d7aa99e0e",
+  "reviewed_receipt_sha256": "32f7d1ab13048236ac4ab49e44a7b66888e1658aa12444508d902d7407b5dc15",
+  "original_report_sha256": {
+    "deployment-result.json": "d111b75b70cd5b05097db3e80ac35691cfa97d36400f589dbedeb33142b123bb",
+    "poststart-verification.json": "72ef6bfaf40ae59d49c39baa4e023a29cbaaff9f5b73a2a88c56d47a2dde0177",
+    "saved-world-report.json": "9c724400e5b897802c19262c32ad05fb73d6f774e2c3714ffdf37595749fcd12",
+    "build-evidence.json": "da4e989c363758d3a724c6c565833176f754635ec32e38cd600ccce569a36b65"
+  },
+  "static_and_admission": {
+    "static_family_assembly": true,
+    "guard_admission_passed": true
+  },
+  "saved_world": {
+    "recorded_at_utc": "2026-10-27T04:37:09.258123+00:00",
+    "fresh_consistent_stopped_backup": true,
+    "existing_world_loaded": true,
+    "new_world_created": false,
+    "same_author_and_owned_uuids": true,
+    "saved_world_migration": true,
+    "bds": true,
+    "test_only_overlays": [],
+    "simulated_players": false,
+    "player_record_count_preserved": 2,
+    "runs": [
+      {
+        "phase": "first",
+        "ok": true,
+        "exit_code": 0,
+        "family_initialized": true,
+        "warning_count": 717,
+        "log_sha256": "c8ebf29cce25a3cf1f2c86e594a06b6fe595737cc057aabd6fce7d4eedd76223",
+        "real_player_connections": 0,
+        "player_records_unchanged": true,
+        "custom_container_count": 0,
+        "native_freezer_input_containers": 0,
+        "error_count": 0
+      },
+      {
+        "phase": "restart",
+        "ok": true,
+        "exit_code": 0,
+        "family_initialized": true,
+        "warning_count": 722,
+        "log_sha256": "50fbf2f4d352fd0e6f8857ac22b97029a553c9bb4a5ac4e99fc89e59c505640e",
+        "real_player_connections": 0,
+        "player_records_unchanged": true,
+        "custom_container_count": 0,
+        "native_freezer_input_containers": 0,
+        "error_count": 0
+      }
+    ]
+  },
+  "installed_readback": {
+    "recorded_at_utc": "2026-10-27T04:39:24.116081+00:00",
+    "native_started": true,
+    "family_initialized": true,
+    "exact_pack_files_and_order": true,
+    "pack_count": 47,
+    "error_count": 0,
+    "warning_count": 664,
+    "original_database_untouched_during_install": true,
+    "original_level_dat_untouched_during_install": true
+  },
+  "limits": [
+    "The saved-world sample contained no custom container inventory or native freezer input container. This run does not validate arbitrary stored ItemStack data or container UI.",
+    "Respawn tests and callback counts establish source API work; native Player bed/anchor lifecycle and CPU/TPS/FPS improvement remain unverified.",
+    "Startup warnings remain, including watchdog and content warnings; zero recorded errors does not mean a warning-free load.",
+    "The public World Liquor addon contains only its owned BP/RP; private family adaptations, including the Dimensions Wine snow repair, are separate.",
+    "No new-world reset or simulated players were used. This update did not enable experimental features.",
+    "Raw reports remain private; this summary omits world, server and player identities and private author file contents."
+  ],
+  "client": false,
+  "production_ready": false,
+  "acceptance_state": "pending_client_acceptance",
+  "publication": {
+    "release_id": 425044489,
+    "url": "https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.165",
+    "tag": "v0.1.165",
+    "source_commit": "5e1a275fa13800d018f4716cdb88e46182aedd49",
+    "published_at_utc": "2026-10-27T04:47:39Z",
+    "draft": false,
+    "prerelease": false,
+    "workflow": {
+      "run_id": 40451637457,
+      "url": "https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/actions/runs/40451637457",
+      "file": "publish-release.yml",
+      "event": "workflow_dispatch",
+      "head_sha": "5e1a275fa13800d018f4716cdb88e46182aedd49",
+      "conclusion": "success",
+      "uploaded_asset_download_equality_passed": true,
+      "tag_and_source_checks_passed": true
+    },
+    "asset_count": 12,
+    "asset_names": [
+      "ARCHIVE-VERIFICATION.json",
+      "BDS-FAMILY-20261001.json",
+      "BDS-FRIEND-MERGE-20261001.json",
+      "BDS-JAVA-PARITY-20261001.json",
+      "BDS-MIXOLOGY-20261001.json",
+      "combined-guide-review.json",
+      "CURRENT-PUBLICATION.json",
+      "guide-navigation-review.json",
+      "Kaleidoscope_World_Liquor_Unofficial_0.1.165_baseline1.mcaddon",
+      "RELEASE-NOTES.md",
+      "SHA256SUMS",
+      "SOURCE_COMMIT"
+    ],
+    "archive": {
+      "name": "Kaleidoscope_World_Liquor_Unofficial_0.1.165_baseline1.mcaddon",
+      "bytes": 7085508,
+      "sha256": "c871ad8e387bb16301730e7c69616d806944c0d0120ff535170e97fa8db8e12c"
+    },
+    "source_commit_asset": {
+      "name": "SOURCE_COMMIT",
+      "bytes": 41,
+      "sha256": "950600d0600bbc63524c39cb030f5d42e5838b3431bba648b00206ac48ad0fe1"
+    },
+    "scope": "The successful manual publication is separate from the earlier push run with publication_request=false. Release assets dated 20261001 retain their historical scope and are not P70 validation. The release publishes only owned World Liquor BP/RP."
+  }
+}
