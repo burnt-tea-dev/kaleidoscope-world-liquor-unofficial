@@ -1,5 +1,9 @@
 # Change history
 
+## 0.1.165
+
+Skip native personal-spawn queries for players without confirmed World Liquor respawn metadata. Confirmed records keep their one-tick check, late declarations become active immediately, and a changed native point still retires stale metadata before that point can be reused. A direct four-player, twenty-callback comparison of the real old/new modules records 80→0 native queries without records and 80→20 with one record. This measures source API work only; CPU, TPS, FPS and rendered-client improvement remain unmeasured. Full-family saved-world validation and deployment remain pending after the first P69 delivery.
+
 ## 0.1.164
 
 Restore the original freezer renderer's position/slot-seeded ingredient placement, independent yaw and dry/wet ordinary-item heights for the existing snowball, blue-dye and slime-ball sprites. Preserve sparse native slot identity, authoritative item storage, result/fluid surfaces and no-repeat movement refresh. Retire this display owner's historical source projections; current behavior is checked against recorded execution of the original Java method. Generic full-stack rendering, block-item models, absolute UV orientation and rendered-client acceptance remain open. Pair with canonical Tavern 0.6.185 and Grilling 2.8.157.
