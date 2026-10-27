@@ -15,6 +15,11 @@ const source=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.
 assert.equal(source.file_id,9066406);
 assert.deepEqual(payload.shakerColors.map(row=>row.color),[8606770,16351261,3847130,15961002]);
 const r=new ExtensionRegistry({recipes:SHAKER_RECIPES,fluids:FLUIDS});r.install(payload);
+// NeoForge1.1.12 / Forge1.1.13 share this updated Maotai table. The actual
+// host matcher must expose it to signatures as well as direct drink consumers.
+const maotai=JSON.parse(fs.readFileSync(new URL('../upstream/data/kaleidoscope_world_liquor/datamap/drink_effect/maotai.json',import.meta.url)));
+for(const content of [CONTENT,payload.content])assert.deepEqual(content.find(row=>row.base===maotai.item).effects,maotai.effects);
+for(const q of [4,5,6])assert.deepEqual(inputSnapshot(maotai.item+'_q'+q,r).effects,maotai.effects[q-1]);
 // Original author data, shared by current Forge1.1.12 and NeoForge1.1.11.
 // Check both direct drink admission and the actual host's mixology projection.
 const dassai=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.1.11/dassai.json',import.meta.url)));

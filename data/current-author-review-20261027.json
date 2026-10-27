@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "reviewed_at": "2026-10-27",
+  "bedrock": {
+    "project_id": 1724286,
+    "file_id": 9317011,
+    "archive_sha256": "5f8466f27d267728b802e8087491ba88871009384174918215b89347358a030a",
+    "decision": "Retain maintained Java port UUIDs, persistence and repairs; do not replace with first author Bedrock release."
+  },
+  "branches": [
+    {
+      "project_id": 1502365,
+      "file_id": 9217896,
+      "loader": "NeoForge",
+      "minecraft": "1.21.1",
+      "author_version": "1.1.12",
+      "archive_sha256": "d963089ad0a7f99a8950171d76913cfeea99a0126ee12b16c72c3162f8545da3",
+      "official_length_and_hashes_verified": true,
+      "selected_member": "data/kaleidoscope_world_liquor/datamap/drink_effect/maotai.json",
+      "selected_member_sha256": "55c82370a2b0a859737cd23c42e576c3dd133f10fbb69437dccedf9be2918e58"
+    },
+    {
+      "project_id": 1502365,
+      "file_id": 9217901,
+      "loader": "Forge",
+      "minecraft": "1.20.1",
+      "author_version": "1.1.13",
+      "archive_sha256": "793f746624a5d9d4a4c50b9ca7d2a756a4aeb91f092f0a1920e98d8fc988898c",
+      "official_length_and_hashes_verified": true,
+      "selected_member": "data/kaleidoscope_world_liquor/datamap/drink_effect/maotai.json",
+      "selected_member_sha256": "55c82370a2b0a859737cd23c42e576c3dd133f10fbb69437dccedf9be2918e58"
+    }
+  ],
+  "adopted_domains": [
+    "Maotai effect rows in direct drinks and signature inputs"
+  ],
+  "pending_domains": [
+    "green and pink two-half pendant lamps and three dye recipes",
+    "custom Luck global loot modifier and Dassai effect conversion",
+    "cabinet model and texture changes",
+    "remaining ExplosionEffect, CaptainGift and client hook/renderer changes"
+  ],
+  "luck_source": {
+    "chance": 0.25,
+    "rolls": "min(amplifier+1,5)",
+    "rule": "Roll original table and retain only initially present item types; requires original loot context. No imitation by cloning nearby items."
+  },
+  "full_branch_adaptation": false,
+  "client": false,
+  "production_ready": false
+}
