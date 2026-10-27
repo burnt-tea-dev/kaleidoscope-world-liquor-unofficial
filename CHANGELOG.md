@@ -1,3 +1,7 @@
+## 0.1.166
+
+Dependency-only pairing with Tavern 0.6.186. Advance World Liquor's paired BP/RP identity, guide payload version and exact Tavern dependencies; preserve all other gameplay, recipes, resources and creative membership. Existing W165 evidence is not transferred to this candidate. Canonical CI and complete-family initialization, saved-world and rendered-client acceptance remain pending.
+
 # Change history
 
 ## 0.1.165

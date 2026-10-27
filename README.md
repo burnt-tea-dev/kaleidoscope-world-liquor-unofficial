@@ -1,6 +1,8 @@
 > **Published-install correction (2026-10-18):** W141 TEST requires **Tavern T163 BP/RP**, despite its historical tag README saying T155. W148 stable requires T170. See [exact published-package guidance](docs/PUBLIC-DOWNLOAD-INSTALLATION-20261018.md); existing assets and historical tags are unchanged.
 
-## Current maintained source: 0.1.165
+## Current maintained source: 0.1.166
+
+W166 is a dependency-only source candidate for Tavern 0.6.186. Its existing gameplay and resources are preserved; release identity, guide payload version and exact BP/RP dependencies advance together. Exact remote candidate peers are pinned; canonical CI and full-family/native/client acceptance remain pending. The W165 publication and deployment evidence below retains its original scope.
 
 W165 skips native personal-spawn queries for players without confirmed respawn metadata. Confirmed records retain their one-tick check and stale-record invalidation; late declarations are observed immediately. W165 is included in the deployed P70 family. Static admission, a consistent stopped-world backup, the same saved-world copy's first load/restart, and exact installed-file/order readback passed on 2026-10-27; see the [scoped deployment observation](docs/evidence/family-w165-deployment-20261027.json). W164's freezer placement and three supported sprites remain intact. The [peer record](.github/baseline-integration.json) pins canonical **Tavern 0.6.185** and optional **Grilling 2.8.157**. Source call counts establish less API work; CPU, TPS and FPS improvement remain unmeasured. Generic ItemStack rendering, block-item models, absolute UV orientation and rendered-client acceptance remain open. Ordinary stone has no general freezer renderer. See [changes](CHANGELOG.md), [validation and limits](docs/PARITY-MATRIX.md), and the [freezer review](docs/audit/FREEZER-VISUAL-REVIEW-20261024.md). `client=false`, `production_ready=false`, `pending_client_acceptance`.
 
