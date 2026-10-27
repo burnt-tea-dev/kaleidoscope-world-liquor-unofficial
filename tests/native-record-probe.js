@@ -27,7 +27,7 @@ world.afterEvents.worldLoad.subscribe(()=>system.runTimeout(async()=>{
   }
   await pause(5);
   for(const {x} of walls)world.setDynamicProperty(key(x),JSON.stringify({record:'minecraft:music_disc_cat'}));
-  // Native production startup scan invoked again over saved rows. This is not a process restart.
+  // Registration is idempotent. This is not a process restart or a fresh scan.
   installRecordCleanup();await pause(30);
   for(const {b,x} of walls){check(b.typeId===N+':wall_record','wall removed before support loss');check(JSON.parse(world.getDynamicProperty(key(x))).record==='minecraft:music_disc_cat','cleanup erased wall record');}
   for(const {x,v} of walls)d.getBlock({x:x+v.x,y:80,z:v.z}).setType('minecraft:air');

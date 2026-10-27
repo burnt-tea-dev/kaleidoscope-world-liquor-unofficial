@@ -2,12 +2,33 @@
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 import bridge_project as guard
 
 class BridgeProjectTests(unittest.TestCase):
     def test_current_project(self):
         self.assertEqual(len(guard.check()['packs']), 2)
+
+    def test_declared_experiments_are_allowed(self):
+        original = guard.load
+        def declared(path):
+            value = original(path)
+            if path.name == 'config.json':
+                value['experimentalGameplay'] = {'enableGameTestFramework': True, 'upcomingCreatorFeatures': False}
+            return value
+        with patch.object(guard, 'load', declared):
+            self.assertEqual(len(guard.check()['packs']), 2)
+
+    def test_experiment_values_must_be_booleans(self):
+        original = guard.load
+        def invalid(path):
+            value = original(path)
+            if path.name == 'config.json':
+                value['experimentalGameplay'] = {'enableGameTestFramework': 'true'}
+            return value
+        with patch.object(guard, 'load', invalid), self.assertRaises(AssertionError):
+            guard.check()
 
     def test_duplicate_json_key(self):
         with self.assertRaises(ValueError):

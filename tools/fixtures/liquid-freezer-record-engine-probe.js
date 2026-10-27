@@ -1,7 +1,7 @@
 import {world,system,BlockPermutation} from '@minecraft/server';
 import {syncFreezerVisuals} from './freezer-visuals.js';
 import {FREEZER_RECIPES} from './freezer-recipes.js';
-import {reserveRecordSound,playRecord,stopRecord} from './record-audio.js';
+import {playRecord,stopRecord} from './record-audio.js';
 const check=(x,m)=>{if(!x)throw Error(m);},N='kaleidoscope_world_liquor';
 // Recorded original FreezerRenderer.drawFloatingItems at (0,64,0).
 // Slot 2's block-item row supplies X/Z/yaw only; dye remains an ordinary item.
@@ -32,6 +32,6 @@ system.runTimeout(async()=>{try{
   b.setPermutation(b.permutation.withState(N+':open',false));syncFreezerVisuals(b,{fluid:'minecraft:water',input:['minecraft:snowball']},FREEZER_RECIPES);check(count()===0,'closed freezer');
  }
  for(const machine of ['barrel','pressing_tub'])for(const liquid of ['water','lava']){const e=d.spawnEntity('kaleidoscope_tavern:rig_liquid_'+machine+'_'+liquid+'_visual',p);for(const amount of [0,500,1000,2000,4000]){e.setProperty('kt_art:amount',amount);await new Promise(resolve=>system.runTimeout(resolve,2));check(e.getProperty('kt_art:amount')===amount,'liquid property '+machine+' '+liquid+' wanted='+amount+' actual='+e.getProperty('kt_art:amount'));}e.remove();}
- b.setType('minecraft:jukebox');const k=N+':storage/overworld/0_64_0',s={record:N+':custom_record',recordSound:reserveRecordSound()};world.setDynamicProperty(k,JSON.stringify(s));check(reserveRecordSound()!==s.recordSound,'audio channel collision');playRecord(b,s);stopRecord(b,s);playRecord(b,s);b.setType('minecraft:air');
- system.runTimeout(()=>{try{check(world.getDynamicProperty(k)===undefined,'record replacement cleanup');console.warn('PARITY_DONE freezer '+cases+' cases; liquid properties 20; independent audio channel and removal cleanup. No client visuals/audio acceptance.');}catch(e){console.warn('PARITY_ERROR '+e+' '+e.stack);}},30);
+ b.setType('minecraft:jukebox');const k=N+':storage/overworld/0_64_0',s={type:'minecraft:jukebox',record:N+':custom_record'};world.setDynamicProperty(k,JSON.stringify(s));const first=playRecord(b,s);stopRecord(b,s);const second=playRecord(b,s);check(first.id!==second.id,'sound instance identity');b.setType('minecraft:air');
+ system.runTimeout(()=>{try{check(world.getDynamicProperty(k)===undefined,'record replacement cleanup');console.warn('PARITY_DONE freezer '+cases+' cases; liquid properties 20; independent sound instances and removal cleanup. No client visuals/audio acceptance.');}catch(e){console.warn('PARITY_ERROR '+e+' '+e.stack);}},30);
 }catch(e){console.warn('PARITY_ERROR '+e+' '+e.stack);}},100);

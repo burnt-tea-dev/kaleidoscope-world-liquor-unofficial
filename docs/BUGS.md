@@ -1,8 +1,8 @@
 # 世界名酒：開放差距與驗收場景
 
-## 當前入口（2026-10-17）
+## 當前入口（2026-10-27）
 
-目前來源 **W151**，固定[b8692380](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/commit/b86923801febbf23a43f36017ad299b28128b029)。來源、公開下載及倉庫最後記錄部署各自的配套只維護在[家族主索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)；每項實作狀態見[PARITY-MATRIX](PARITY-MATRIX.md)，本頁保存具體回報與場景。
+目前來源 **W168** 由 [baseline](../baseline.json) 定義；唱片改為獨立音訊實例，移除 32 渠道及全域停止限制。來源、公開下載及倉庫最後記錄部署各自的配套只維護在[家族主索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)；每項實作狀態見[PARITY-MATRIX](PARITY-MATRIX.md)，本頁保存具體回報與場景。
 
 本次重新列出布丁餘碗差距，並保留使用者指定延後修復的Treasure Guide生物掉落問題。current `effects.js`與W148相同的來源核對沒有新增native重現；已修的冰紅茶matcher、四杯mesh／UV、冰櫃材質及唱片來源修補仍由矩陣承接。全物品Blockbench及完整真人驗收仍未完成。`client=false`、`production_ready=false`。
 
@@ -35,7 +35,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 | 尋寶指南 mob drops | 現行一 tick 鄰近新 item 掃描沒有實際死亡 drops 集合的來源證明 | 兩個 mob 同 tick 死亡、玩家丟物、旁邊新 item；額外物品只能屬於本次死亡 |
 | Elbow | 精確 Java attack attribute／charge／resistance 與原生 buffered knockback 組合尚未接入；固定 extra impulse 不等價 | ground／真正 airborne、任意原速度、resistance、Player charge／mob attack 分別量測 |
 | CaptainGift | 現行 source-water 浮力不能替代原作 12 格 water-fluid／AABB 移動裁切、fallDistance 和 onGround | flowing water、岸邊、sneak、掉入水面、不同生物寬度及其他移動效果 |
-| Creative Flight／outline／Brew Accelerator | 缺原生完整飛行權限、穿牆輪廓或原作 enchantment／operator 入口 | 效果結束／重登後權限、視角遮擋與原作 cooldown；不改正式世界實驗旗標 |
+| Creative Flight／outline／Brew Accelerator | 缺原生完整飛行權限、穿牆輪廓或原作 enchantment／operator 入口 | 效果結束／重登後權限、視角遮擋與原作 cooldown；依能力需求聲明實驗旗標並先在隔離世界驗證 |
 | 自動化與其他模組 | Cabinet transfer／comparator、FluidUtil、Forge event、Create／Jade／SMC 尚未完整適配 | 保留現行容器資料與互動次序，再對每個 hook 單獨比較 |
 
 ## 保留實作，仍待真人或特定生命周期驗收
@@ -43,7 +43,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 - 冰櫃：五個 current recipe、loaded ticks、四槽 native metadata 及來源 height 算術已實作；真玩家插取、offhand、unload／crash、任意 metadata 和完整流體／原料／成品渲染另驗，既有零輸入樣本不證明非空冰櫃內容。
 - 酒櫃與家具：原格位、native item carrier、重啟／回滾修補保留；四向座位、玻璃、觸控／游標點選與實際展示仍待比較。
 - Respawn：87 個精確零碰撞 helper、新確認錨 yaw=0／forced=false 及 repeat／取消防線保留；未知來源不放寬，真 Player 床／錨／重生另驗。
-- 唱片：兩首原音檔、牆掛四向及取回保留；32 station 音訊渠道仍是 adapter 限制，實際聲場、播放／停止／重登 lifecycle 待驗。
+- 唱片：兩首原音檔、牆掛四向及取回保留；W168 已移除 32 station bank，實際聲場、播放／停止、進出與重登 lifecycle 仍待真人驗證。原生 custom record 的 parser compatibility、comparator、hopper 與完整 ItemStack 行為仍開放，見 [可重現證據](RELEASE-NOTES-0.1.168.md)。
 - 指南：67 個 W 商品頁、公開配對 223／完整家族 227 條目及三語接收已通過；玩家實際排版／返回、輸入和兩入口閱讀仍待接受。
 
 ## 分支與歷史

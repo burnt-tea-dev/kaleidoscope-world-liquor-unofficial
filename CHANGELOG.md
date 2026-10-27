@@ -1,3 +1,7 @@
+## 0.1.168 — 2026-10-27
+
+Replace the finite 32-alias jukebox audio bank and global stop commands with individual engine SoundInstance handles. Preserve original audio, legacy/current saved discs and wall-record ownership; expire playback against the selected Java song duration. Declare Script API 2.10.0 and retain canonical T187/G181 pairing. An isolated BDS 1.26.52.3 first load/restart verifies 40 handles and three saved-disc rows. Native custom records still fail the tested engine's parser with Beta APIs and remain a separate reproducible diagnostic. Full native redstone/hopper semantics, actual client sound and complete-family admission remain open. See [the release scope](docs/RELEASE-NOTES-0.1.168.md).
+
 ## 0.1.167 — 2026-10-27
 
 Adopt the Maotai effect table shared by NeoForge1.1.12 CF9217896 and Forge1.1.13 CF9217901 for direct drinks and signature cocktails. All other current source repairs and save identities remain intact. New pendant lamps, custom Luck/global loot, changed cabinet assets and remaining branch changes are reviewed but not implemented in this scoped release.
