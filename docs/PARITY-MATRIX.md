@@ -1,5 +1,11 @@
 # World Liquor Java／Bedrock 差距矩陣
 
+## W164 公開交付與現行範圍（2026-10-27）
+
+[W164 已公開](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.164)。[發布工作](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/actions/runs/40434175508)的 publish job 成功，於 2026-10-27 01:43:16 UTC 將逐項下載核對過的草稿轉為正式 release；tag 指向原來源 `922645eeb852410477034f55a61c61a6064d9287`。精確下載、archive SHA256 及 T185／可選 G157 相依見 [README](../README.md#current-maintained-source-01164)。凍結 request 的 `publication_request=false` 是原來源 metadata；本次明確手動發布已完成，不能再把授權 job 成功但跳過 publish 的舊情況當成當前下載狀態。
+
+本版已對照原 Java 方法的冰櫃逐槽位置、yaw 及普通物品乾濕高度，範圍仍是既有三種 sprite。普通石頭沒有通用 renderer；任意 ItemStack、BlockItem 模型、絕對 UV 及真人畫面仍未完成。公開包、完整家族原生／保存觀察及真人驗收各有自己的證據範圍；`client=false`、`production_ready=false`。以下舊版段落保留原來的日期與來源，不代表 W164 的發布或驗收狀態。
+
 ## W162／T184 canonical source pairing (2026-10-26)
 
 The existing W162 runtime anchor `5f64020d098f99e2da67d241a09991dccbab9bbb` now targets the real canonical Tavern T184 merge `79ac1fb82e06ddd07993cf7b9140dfbf1cfd09fc` (PR428) and optional Grilling G157 `2e3ef63839e38f84b4a0109957077ac00a140697` (PR283). Both World Liquor packs already require Tavern 0.6.184. The former T183/G155 checkout placeholders have been replaced and `peer_pins_final=true`; current canonical paired CI remains required.
