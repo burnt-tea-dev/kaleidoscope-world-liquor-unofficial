@@ -39,7 +39,8 @@ def check(root=ROOT):
     assert REQUIRED <= config.keys(), f'missing project fields: {REQUIRED - config.keys()}'
     assert config['type'] == 'minecraftBedrock'
     assert config['worlds'] == [], 'release project must not include private worlds'
-    assert config['experimentalGameplay'] == {}, 'stable family does not use experimental toggles'
+    experiments = config['experimentalGameplay']
+    assert isinstance(experiments, dict) and all(type(v) is bool for v in experiments.values()), 'experimental gameplay declarations must be booleans'
     assert config['bridge']['formatVersion'] == 1, 'prevent automatic formatVersionCorrection insertion'
     plugins = config['compiler']['plugins']
     assert len(plugins) == 1 and plugins[0][0] == 'simpleRewrite', 'canonical packs must not use gameplay or format transforms'

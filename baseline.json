@@ -5,7 +5,7 @@
   "version": [
     0,
     1,
-    167
+    168
   ],
   "runtime": {
     "BP": "runtime/BP",
@@ -28,12 +28,12 @@
           "version": [
             0,
             1,
-            167
+            168
           ]
         },
         {
           "module_name": "@minecraft/server",
-          "version": "2.7.0"
+          "version": "2.10.0"
         }
       ]
     },
@@ -53,11 +53,11 @@
   },
   "source_trees": {
     "BP": {
-      "sha256": "385173294660bada6c9cf98a709ec5aae30024c1b75bd52821a1eb5f36471614",
+      "sha256": "047c5e398f120c12d9491c684f9e8989dae456305c2993b2726ba861b0872150",
       "files": 341
     },
     "RP": {
-      "sha256": "24d52fe3a898bb78e74552ebf681834e28f8742f77a7b41b05897e9b84cb3b0a",
+      "sha256": "326743bddbdb14bfcd698952b33204a0218089bf388735e2cb420cfe81e4d2d9",
       "files": 552
     }
   },

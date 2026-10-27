@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "engine_version": "1.26.52.3",
+  "selected_candidate": {
+    "version": "0.1.168",
+    "script_api": "2.10.0",
+    "experiments": {},
+    "tavern_version": "0.6.187",
+    "tavern_commit": "4f651f1cf9e960252e378a94b6996b72b67d0b03",
+    "fixture": "tests/native/record-instance-probe.js",
+    "fixture_sha256": "190071122ddccd0a8f445042b6a939901ac0565307482e2125c5008ecd9a1047",
+    "owned_source_files": {
+      "BP": {
+        "manifest.json": "8ecaf2690c7d9a392ed88a5b9349e018db8b70c31ee455c3aa15de307f67a73f",
+        "scripts/furniture.js": "b06aa2740df819399b5f990cfd4dc774ab93d36ef47e67619b4c6a03f7d53900",
+        "scripts/payload.js": "7bceeecc28834446e076e79a2d646bc40c83dc6918853babc2db59085e0cc9ae",
+        "scripts/record-audio.js": "587fb1b527a88ab79ed980eb85aeb8ef825560d46276448cf40b98f01003adab"
+      },
+      "RP": {
+        "manifest.json": "67da109525c11f227355d3a34c85cbe6e4a83f363cac77330d48076cb395229c",
+        "sounds/sound_definitions.json": "1d67fc544b3e939224fcfe0e7409df2b6f7811e1d2cd384306fe664ff8f5fc86"
+      }
+    },
+    "first": {
+      "report_sha256": "b96bc9d7c38d806c7e64e6ac97c0d9614d31a78db787c5456a020e6e131ddabd",
+      "log_sha256": "b53977d4daa78754d659fe5d717aa0935c757f6d27b2a568e8db0dbb7b98c279",
+      "engine_sha256": "0a490c711d4a2ce075debcd979e8862b7eaba008373f9970f0edbb67f98f9207",
+      "exit_code": 0,
+      "duration_seconds": 19.388,
+      "peak_rss_bytes": 584458240,
+      "result": {
+        "phase": "first",
+        "soundInstances": 40,
+        "uniqueIds": 40,
+        "explicitStops": 39,
+        "removedSourceCleaned": true,
+        "savedRows": 3,
+        "client": false
+      }
+    },
+    "restart": {
+      "report_sha256": "4cfe32dacea41ef3c76661d16679914fa0eca242e2e4cab916879f9a6222fd3a",
+      "log_sha256": "80a654c0ac952b839969ebd5718e5925c52fb7ecf23e88e702a05e75a990810e",
+      "engine_sha256": "0a490c711d4a2ce075debcd979e8862b7eaba008373f9970f0edbb67f98f9207",
+      "exit_code": 0,
+      "duration_seconds": 45.034,
+      "peak_rss_bytes": 585134080,
+      "result": {
+        "phase": "restart",
+        "savedRows": 3,
+        "legacyRecord": true,
+        "currentRecord": true,
+        "wallRecord": true,
+        "client": false
+      }
+    },
+    "same_world_output_to_restart_input": true,
+    "restart_input_file_set_sha256": "70d831388fa0a631c9c84ad75102b6f9c910a0a47dd28abe2a7d482e62f2dafe",
+    "startup_warnings": [
+      "Unable to raise local file-descriptor limit",
+      "Two unused Tavern block component registrations"
+    ]
+  },
+  "native_record_capability": {
+    "script_api": "2.11.0-beta",
+    "experiments": {
+      "gametest": true,
+      "upcoming_creator_features": true
+    },
+    "builder": "tools/fixtures/record-capability.py",
+    "probe": "tools/fixtures/record-capability-probe.js",
+    "generated_fixture_sha256": "0630921f5a010bd4f83abf634c3a9267aa8d75e25249924671ba19a092a38d5f",
+    "run": {
+      "report_sha256": "5ed397990f210f8ea4f13f0a2efaecb61e294b31d7c6e4dae62dbdcdbaf4cfc6",
+      "log_sha256": "823eb4536a4f4a5fe3002f7aa19ec1db1abf762ee1308f07cd99d14bbe2a4ead",
+      "engine_sha256": "0a490c711d4a2ce075debcd979e8862b7eaba008373f9970f0edbb67f98f9207",
+      "exit_code": 0,
+      "duration_seconds": 12.324,
+      "peak_rss_bytes": 516214784,
+      "result": {
+        "records": {
+          "record_qa:vanilla": {
+            "stored": "record_qa:vanilla"
+          },
+          "record_qa:custom30": {
+            "error": "Error: Item is not a record."
+          },
+          "record_qa:custom40": {
+            "error": "Error: Item is not a record."
+          },
+          "record_qa:custom50": {
+            "error": "Error: Item is not a record."
+          }
+        },
+        "client": false
+      }
+    },
+    "custom_item_formats": [
+      "1.26.30",
+      "1.26.40",
+      "1.26.50"
+    ],
+    "parser_error": "sound_event remains bound to LevelSoundEvent enum; custom event rejected",
+    "positive_control": "record.cat accepted and stored",
+    "included_in_runtime": false
+  },
+  "client": false,
+  "simulated_players": false,
+  "managed_world_read": false,
+  "full_family_acceptance": false,
+  "production_ready": false,
+  "limits": [
+    "Headless API checks do not establish audible isolation, spatial range, entering/leaving/reconnecting clients or song randomization distribution.",
+    "No 2920-second wall-clock playback; source duration expiry tested through real module callbacks with engine doubles.",
+    "Saved-disc persistence covers three explicit fixture rows, not arbitrary production contents or native Player interaction.",
+    "Native custom record comparator/hopper/full ItemStack lifecycle is not implemented."
+  ]
+}

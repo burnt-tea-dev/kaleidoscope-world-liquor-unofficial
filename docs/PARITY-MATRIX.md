@@ -4,6 +4,12 @@ Adopt the Maotai effect table shared by NeoForge1.1.12 CF9217896 and Forge1.1.13
 
 # World Liquor Java／Bedrock 差距矩陣
 
+## W168 唱片實例音訊（2026-10-27）
+
+唱片改用實際引擎的 `SoundInstance`，移除 32 alias 上限及全域 `stopsound`。各播放、取出、替換、爆炸與清理各持有自己的 handle；原音檔與等權選曲、舊唱片存檔和 wall_record 所有權保留。`@minecraft/server` 2.10.0、T187/W168 在無實驗旗標的 BDS 1.26.52.3 首載取得 40 個獨立 handle，同世界重啟逐字保留 legacy／current／wall 三行。來源、log hashes 和範圍見 [證據](evidence/record-instances-20261027.json)。
+
+Beta API 並未被禁止。原生 `minecraft:record` 自訂音效在該引擎即使啟用 `gametest`、`upcoming_creator_features` 及受支援的 2.11.0-beta，仍遭 enum parser 拒絕；同場 `record.cat` control 成功。可重現小 fixture 留在 tools，未塞入產品 runtime。當前 NeoForge 1.21.1 原作 comparator 為 5，Forge 1.20.1 為 6，分支不可混用。完整 native comparator／hopper／ItemStack、玩家進出／重登聽感和真人聲場仍未完成。詳見 [W168 範圍](RELEASE-NOTES-0.1.168.md)。
+
 ## W165 respawn metadata polling (2026-10-27)
 
 Players without confirmed metadata no longer trigger native personal-spawn queries. Confirmed records still check every tick, late declarations begin checking immediately, and an observed move still clears stale metadata before returning to the old point. The real module regression is in `tests/respawn-metadata.test.mjs`; direct old/new source callback counts are summarized in [the change record](../CHANGELOG.md#01165). This establishes less source API work. The complete P70 family containing W165 passed static admission, consistent stopped-world backup, the same copy's first load/restart, installation and exact readback; the dated [sanitized observation](evidence/family-w165-deployment-20261027.json) owns the identities and result counts. This run retained the sampled player records but contained no custom container inventory or native freezer input container, so it does not establish arbitrary ItemStack/container UI coverage. Startup warnings remain. W165 has also been [published](../README.md#current-maintained-source) through the verified manual publication workflow. CPU/TPS/FPS improvement, native Player respawn lifecycle and human acceptance remain pending. The public W165 BP/RP does not include the private family's separate Dimensions Wine snow repair. `client=false`, `production_ready=false`.
@@ -87,7 +93,7 @@ W146只訪問fresh effect recipients、保留20tick TTL與空snapshot立即撤�
 | Freezer state／storage | 五個 current recipe、loaded tick 時序、四槽完整 native item carrier、rollback／reanchor／legacy adoption 保留；既有有限 L1／L2 見 [W93](RELEASE-NOTES-0.1.93.md)、[W98](RELEASE-NOTES-0.1.98.md) | 任意 callback／流體／metadata／offhand／crash phases 和真玩家；既有零 input 樣本不證明非空冰櫃內容 |
 | Freezer height／frost | source result-height 的 20 個 JVM cases、current freeze selection 和排程老化有有限 L1／L2，見 [W99](RELEASE-NOTES-0.1.99.md)及 [current-freezer-review](../data/current-freezer-review.json) | 原料展示仍僅三種 sprite；目前逐槽位置／yaw／普通物品乾濕高度已對照原方法數值，見 [current-freezer-review](../data/current-freezer-review.json)。任意 ItemStack、BlockItem 模型／scale、絕對 UV／light／lid／動畫、附魔外觀與真人仍待比較 |
 | Cabinet／furniture／wall record | 原 source slots／rotations／native metadata 和牆掛四向、取回、破壞 conservation 保留，見 [wall record](WALL-RECORD-FIX-20260929.md) | 真實點格、四向、透明、seat／waterlogging、models／animation／held view 等 L3 待接受 |
-| Record audio／outlines／accelerator | 兩首原 OGG、equal-weight song 選取及 script audio cleanup adapter；guide 已明列必要平台限制 | 32-channel 限制、實際空間播放／停止；穿牆輪廓、Brew Accelerator enchantment／cooldown／operator 入口未完整適配 |
+| Record audio／outlines／accelerator | 兩首原 OGG、equal-weight song 選取；W168 以獨立 SoundInstance 移除 32-channel bank／global stop，保留已存唱片及牆掛所有權，見上方範圍 | 原生 custom record parser、comparator／hopper／完整 ItemStack；實際空間播放／停止／進出與重登；穿牆輪廓、Brew Accelerator enchantment／cooldown／operator 入口未完整適配 |
 | Guide | W67 頁／三語、七入口、完整 preparations，公開 223／完整家族 227；完整 Cookery receiver 證據見家族索引 | 真人排版、鍵鼠／觸控／手柄、兩入口閱讀仍 pending |
 | Forge／NeoForge26／foreign integration | current selected 18 shaker、5 freezer、25 drink records 和聲畫素材比較有來源記錄；六原 OGG 保留 | Forge event／cabinet automation／Create／Jade／SMC 尚未完整；26.1.2 branch effect registry、Luck、BlockDrops、automation 和配方另列適配 |
 

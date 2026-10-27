@@ -1,5 +1,9 @@
 # File-level verification inventory
 
+## Audio domain update — 2026-10-27
+
+W168 replaces the old record callbacks with actual per-instance lifecycle cases and original Java song/audio resource contracts in `tests/record-audio.test.mjs`. The affected record-script and sound-registry historical projections are retired, rather than supplied with another inverse source patch. `tests/native/record-instance-probe.js` records bounded target-engine handles and same-world saved-disc restart; the separate native-record capability fixture retains the parser failure with a working vanilla positive control. See [the dated scope](../RELEASE-NOTES-0.1.168.md). The inventory below retains its earlier source-reading scope.
+
 This is a source-reading classification, not a successful test-run report. Existing case names describe declared player behavior; they do not certify every assertion. Concrete review findings are in [TEST-FINDINGS.md](TEST-FINDINGS.md). No test or guard was deleted.
 
 | File / kind | Classification and disposition | Player behavior and fault | Oracle and mutation scope |

@@ -3,7 +3,7 @@ import {WALL_RECORD,wallRecordItem} from './wall-record-state.js';
 import {createBreakFeedback} from './sdk/tavern-break-feedback.js';
 import {BREAK_FEEDBACK} from './data/break-feedback.js';
 const breakFeedback=createBreakFeedback(id=>BREAK_FEEDBACK[id]);
-import {reserveRecordSound,playRecord,stopRecord,installRecordCleanup} from './record-audio.js';
+import {playRecord,stopRecord,installRecordCleanup} from './record-audio.js';
 import {syncFreezerVisuals} from './freezer-visuals.js';
 import {isManagedCabinet,foundationReady,forwardFurnitureTick,forwardNativeUse} from './foundation.js';
 import {world,system,ItemStack,BlockPermutation} from '@minecraft/server';
@@ -228,7 +228,7 @@ export function installFurniture(){
  world.beforeEvents.playerInteractWithBlock.subscribe(e=>{
   if(!foundationReady()&&(isManagedCabinet(e.block.typeId)||isManagedCabinet(e.itemStack?.typeId))){e.cancel=true;if(e.isFirstEvent!==false)unavailable(e.player);return;}
   if(e.block.typeId==='minecraft:jukebox'&&(e.itemStack?.typeId===NS+':custom_record'||read(e.block).record)){
-   e.cancel=true;if(e.isFirstEvent===false)return;deferPlayerUse(e,(p,b)=>{if(!mutable(p))return;const h=hand(p),s=read(b);if(s.record&&!h){if(transaction(p,b,undefined,{give:[[s.record,1]]}))stopRecord(b,s);return;}if(h?.typeId!==NS+':custom_record'||s.record||b.getComponent('minecraft:record_player')?.getRecord())return;s.record=h.typeId;s.recordSound=reserveRecordSound();if(transaction(p,b,s,{take:1})){playRecord(b,s);say(p,'now_playing');}});return;
+   e.cancel=true;if(e.isFirstEvent===false)return;deferPlayerUse(e,(p,b)=>{if(!mutable(p))return;const h=hand(p),s=read(b);if(s.record&&!h){if(transaction(p,b,undefined,{give:[[s.record,1]]}))stopRecord(b,s);return;}if(h?.typeId!==NS+':custom_record'||s.record||b.getComponent('minecraft:record_player')?.getRecord())return;s.record=h.typeId;delete s.recordSound;if(transaction(p,b,s,{take:1})){playRecord(b,s);say(p,'now_playing');}});return;
   }
   if(furniture(e.block.typeId)){
    const id=e.block.typeId,held=e.itemStack?.typeId;
