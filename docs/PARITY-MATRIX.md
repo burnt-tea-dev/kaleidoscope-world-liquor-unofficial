@@ -1,3 +1,7 @@
+## Current upstream review — 2026-10-27
+
+Adopt the Maotai effect table shared by NeoForge1.1.12 CF9217896 and Forge1.1.13 CF9217901 for direct drinks and signature cocktails. All other current source repairs and save identities remain intact. New pendant lamps, custom Luck/global loot, changed cabinet assets and remaining branch changes are reviewed but not implemented in this scoped release. See [the source review](../data/current-author-review-20261027.json). Historical sections below retain their original source and test scope.
+
 # World Liquor Java／Bedrock 差距矩陣
 
 ## W165 respawn metadata polling (2026-10-27)

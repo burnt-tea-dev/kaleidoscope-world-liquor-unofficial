@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.166",
+  "version": "0.1.167",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -1820,13 +1820,13 @@ export const payload = {
         },
         {
           "effect": "minecraft:levitation",
-          "duration": 20,
-          "amplifier": 1,
+          "duration": 25,
+          "amplifier": 2,
           "probability": 1.0
         },
         {
           "effect": "minecraft:slow_falling",
-          "duration": 40,
+          "duration": 60,
           "amplifier": 0,
           "probability": 1.0
         }
@@ -1848,13 +1848,13 @@ export const payload = {
         },
         {
           "effect": "minecraft:levitation",
-          "duration": 25,
-          "amplifier": 2,
+          "duration": 35,
+          "amplifier": 3,
           "probability": 1.0
         },
         {
           "effect": "minecraft:slow_falling",
-          "duration": 45,
+          "duration": 80,
           "amplifier": 0,
           "probability": 1.0
         }
@@ -1876,13 +1876,13 @@ export const payload = {
         },
         {
           "effect": "minecraft:levitation",
-          "duration": 30,
-          "amplifier": 3,
+          "duration": 45,
+          "amplifier": 4,
           "probability": 1.0
         },
         {
           "effect": "minecraft:slow_falling",
-          "duration": 50,
+          "duration": 100,
           "amplifier": 0,
           "probability": 1.0
         }
@@ -3593,26 +3593,6 @@ export const payload = {
           {
             "effect": "minecraft:levitation",
             "duration": 15,
-            "amplifier": 0,
-            "probability": 1.0
-          },
-          {
-            "effect": "minecraft:slow_falling",
-            "duration": 35,
-            "amplifier": 0,
-            "probability": 1.0
-          }
-        ],
-        [
-          {
-            "effect": "kaleidoscope_tavern:slightly_tipsy",
-            "duration": 30,
-            "amplifier": 0,
-            "probability": 1.0
-          },
-          {
-            "effect": "minecraft:levitation",
-            "duration": 20,
             "amplifier": 1,
             "probability": 1.0
           },
@@ -3626,7 +3606,7 @@ export const payload = {
         [
           {
             "effect": "kaleidoscope_tavern:slightly_tipsy",
-            "duration": 20,
+            "duration": 30,
             "amplifier": 0,
             "probability": 1.0
           },
@@ -3638,7 +3618,27 @@ export const payload = {
           },
           {
             "effect": "minecraft:slow_falling",
-            "duration": 45,
+            "duration": 60,
+            "amplifier": 0,
+            "probability": 1.0
+          }
+        ],
+        [
+          {
+            "effect": "kaleidoscope_tavern:slightly_tipsy",
+            "duration": 20,
+            "amplifier": 0,
+            "probability": 1.0
+          },
+          {
+            "effect": "minecraft:levitation",
+            "duration": 35,
+            "amplifier": 3,
+            "probability": 1.0
+          },
+          {
+            "effect": "minecraft:slow_falling",
+            "duration": 80,
             "amplifier": 0,
             "probability": 1.0
           }
@@ -3652,13 +3652,13 @@ export const payload = {
           },
           {
             "effect": "minecraft:levitation",
-            "duration": 30,
-            "amplifier": 3,
+            "duration": 45,
+            "amplifier": 4,
             "probability": 1.0
           },
           {
             "effect": "minecraft:slow_falling",
-            "duration": 50,
+            "duration": 100,
             "amplifier": 0,
             "probability": 1.0
           }

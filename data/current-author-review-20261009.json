@@ -189,5 +189,6 @@
     "client": false,
     "production_ready": false,
     "status": "pending_client_acceptance"
-  }
+  },
+  "later_scoped_review": "data/current-author-review-20261027.json"
 }
