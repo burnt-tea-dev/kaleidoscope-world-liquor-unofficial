@@ -55,52 +55,7 @@ def storage_reference_bytes(p):
   assert layer['previousCommit']==PERFORMANCE_PREVIOUS and layer['reviewedCommit']==PERFORMANCE_REVIEWED
   performance_preimage(name,p.read_bytes(),layer['files'][name])
  return previous_bytes(ROOT,p)
-def restore_reviewed_guide(payload,review):
- assert review['schema']==1 and review['test_only'] is True
- current={key:value for key,value in payload.items() if key!='version'}
- assert object_digest(current)==review['after_payload_except_version_sha256'],'Unreviewed guide or gameplay payload change'
- raw=gzip.decompress(base64.b64decode(review['before_pages_gzip_base64'],validate=True))
- assert hashlib.sha256(raw).hexdigest()==review['before_pages_sha256'],'Corrupt guide predecessor'
- pages=json.loads(raw)
- assert len(pages)==len(payload['pages'])==review['page_count']
- restored={**payload,'pages':pages}
- assert object_digest({key:value for key,value in restored.items() if key!='version'})==review['before_payload_except_version_sha256'],'Guide projection changed gameplay records'
- return restored
 def readjs(p):
- if p.name=='payload.js':
-  review=read(ROOT/'data/current-mixology-review.json');assert review['test_only']
-  data=p.read_bytes()
-  guide_review=ROOT/'data/guide-copy-preservation-0.1.113.json'
-  if guide_review.exists():
-   current=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))
-   current=restore_reviewed_guide(current,read(guide_review))
-   data=('export const payload = '+json.dumps(current,ensure_ascii=False,indent=2)+';\n').encode()
-  if review.get('functional_layers'):
-   payload=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))
-   for layer in reversed(review['functional_layers']):
-    if layer['field']=='shakerInput.effects':
-     rows=[row for row in payload['shakerInputs'] if row['item']==layer['item']];field='effects'
-    elif layer['field']=='content.effects':
-     assert layer['base']=='kaleidoscope_world_liquor:dassai','Unknown source effect layer'
-     rows=[row for row in payload['content'] if row.get('base')==layer['base']];field='effects'
-    else:
-     assert layer['field']=='page.body' and layer['id'] in ('kaleidoscope_world_liquor:guide/freezer','kaleidoscope_world_liquor:guide/dassai'),'Unknown functional payload layer'
-     rows=[row for row in payload['pages'] if row['id']==layer['id']];field='body'
-    assert len(rows)==1 and rows[0][field]==layer['after'],'Unreviewed functional payload change'
-    rows[0][field]=layer['before']
-   data=('export const payload = '+json.dumps(payload,ensure_ascii=False,indent=2)+';\n').encode()
-  if 'after_payload_version' in review:
-   current=json.loads(data.decode().split('=',1)[1].strip().rstrip(';'))['version']
-   assert current==read(ROOT/'package.json')['version']
-   assert current=='.'.join(map(str,read(ROOT/'baseline.json')['version']))
-   # Only the explicitly source-reviewed version field can differ.
-   expected=('\"version\": '+json.dumps(current)).encode()
-   replacement=('\"version\": '+json.dumps(review['after_payload_version'])).encode()
-   assert data.count(expected)==1
-   data=data.replace(expected,replacement,1)
-  assert hashlib.sha256(data).hexdigest()==review['after']
-  original=(ROOT/review['previous_payload']).read_bytes();assert hashlib.sha256(original).hexdigest()==review['before']
-  return json.loads(original.decode().split('=',1)[1].strip().rstrip(';'))
  return json.loads(storage_reference_bytes(p).decode().split('=',1)[1].strip().rstrip(';'))
 def compact_preimage(p):
  row=COMPACT_REVIEW['changes'][p.relative_to(ROOT).as_posix()]
@@ -123,6 +78,8 @@ def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_
 def main():
  from foundation.source_contract import check as check_foundation_sources
  foundation_contract=check_foundation_sources(TAV,ROOT)
+ from drink_content_contract import check as check_drink_content, CURRENT_SOURCES
+ drink_contract=check_drink_content(ROOT)
  # The display owner is checked through current behavior and the original
  # Java method's numerical output, rather than reconstructing older code.
  visual_source='runtime/BP/scripts/freezer-visuals.js'
@@ -226,7 +183,7 @@ def main():
  assert not any(i.startswith(KT+':watermelon_juice_q') for i in items)
  # Only effect ownership intentionally changes in this foundation refactor.
  # Keep the historical baseline unchanged and explicitly test its replacement.
- changed={'runtime/BP/scripts/effects.js'}
+ changed={'runtime/BP/scripts/effects.js'} | CURRENT_SOURCES
  for path,h in baseline['files'].items():
   if path not in changed:assert historical_digest(ROOT/path)==h,path
  effects=(ROOT/'runtime/BP/scripts/effects.js').read_text()
@@ -238,28 +195,6 @@ def main():
   assert len(entries)==expected['files'] and actual==expected['sha256'],prefix
   preserved+=len(entries)
  subprocess.run([sys.executable,str(ROOT/'tools/build_drink_colors.py'),'--check'],check=True)
- payload=readjs(ROOT/'runtime/BP/scripts/payload.js');payload.pop('version')
- # Reviewed additive Java tag/tooltip contract; the generator above verifies every value.
- for row in payload['shakerInputs']:row.pop('ingredientTags')
- for row in payload['content']:
-  if row['kind']=='bottle':row.pop('color')
- payload['requires'].remove('shaker_ingredient_tags')
- if not payload['requires']:payload.pop('requires')
- assert object_digest(payload['pages'])==reviewed['pages']['afterSha256'],'Unreviewed preparation change'
- payload['pages']=reviewed['pages']['before']
- for recipe in payload['recipes']:
-  if recipe['kind']=='shaker':
-   source=read(ROOT/'data/java-parity/neoforge-1.1.9/shaker'/(recipe['id'].split('/')[-1]+'.json'))
-   assert recipe.pop('ingredientTags')==[slot.get('tag') for slot in source['ingredients']]
-
- # Reconstruct the historical view only for explicitly reviewed guide paragraphs.
- migration=read(ROOT/'data/guide-shared-usage-migration.json')['pages']
- for page in payload['pages']:
-  for locale,change in migration.get(page['id'],{}).items():
-   assert hashlib.sha256(page['body'][locale].encode()).hexdigest()==change['afterSha256'],('Unreviewed guide change',page['id'],locale)
-   page['body'][locale]=change['before']
- assert object_digest(payload)==baseline['payloadExceptVersionSha256'],'Guide and content changed beyond version'
-
  # Pure exported slot math, not the module which subscribes to engine events.
  node="""
  import {barCabinetVisualPose} from '../tavern-src/runtime/BP/scripts/core/bar-cabinet.js';
