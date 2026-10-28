@@ -4,7 +4,7 @@
 
 目前來源由 [baseline](../baseline.json) 定義；唱片改為獨立音訊實例，移除 32 渠道及全域停止限制。來源、公開下載及倉庫最後記錄部署各自的配套只維護在[家族主索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)；每項實作狀態見[PARITY-MATRIX](PARITY-MATRIX.md)，本頁保存具體回報與場景。
 
-W172 依 `CompatFoodItem.finishUsingItem` 實作布丁餘碗（最後一份換手、其餘與 Creative 原地掉碗），改列入下方保留實作待驗收；Treasure Guide 生物掉落問題仍依使用者指定保留。current `effects.js`與W148相同的來源核對沒有新增native重現；已修的冰紅茶matcher、四杯mesh／UV、冰櫃材質及唱片來源修補仍由矩陣承接。全物品Blockbench及完整真人驗收仍未完成。`client=false`、`production_ready=false`。
+W172 依 `CompatFoodItem.finishUsingItem` 實作布丁餘碗（最後一份換手、其餘與 Creative 原地掉碗），W173 補斬首標記／fallback／去重，W174 依 `onLivingDrops` 以原生掉落清單實作 Treasure Guide 生物掉落（使用者 2026-10-29 指示全部修復，不再延後）；三項改列入下方保留實作待驗收。current `effects.js`與W148相同的來源核對沒有新增native重現；已修的冰紅茶matcher、四杯mesh／UV、冰櫃材質及唱片來源修補仍由矩陣承接。全物品Blockbench及完整真人驗收仍未完成。`client=false`、`production_ready=false`。
 
 目前 LIVE 版本、完整家族部署結果及精確收據統一記錄在 [家族索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)。真人操作及完整 Java 一比一仍未接受；`client=false`、`production_ready=false`。部署成功沒有關閉下列具體玩法差距。
 
@@ -30,7 +30,6 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 | 項目 | 剩餘問題 | 可分辨場景 |
 |---|---|---|
 | Luck | 目前兩條維護分支已使用 custom Luck；原生生物死亡／掉落已適配，完整原始 LootContext、無掉落事件、挖礦／箱子／釣魚仍缺 | 目前來源與原生證據見[矩陣](PARITY-MATRIX.md)；分開記錄原始 context 和真玩家結果 |
-| 尋寶指南 mob drops | 現行一 tick 鄰近新 item 掃描沒有實際死亡 drops 集合的來源證明 | 兩個 mob 同 tick 死亡、玩家丟物、旁邊新 item；額外物品只能屬於本次死亡 |
 | Elbow | 精確 Java attack attribute／charge／resistance 與原生 buffered knockback 組合尚未接入；固定 extra impulse 不等價 | ground／真正 airborne、任意原速度、resistance、Player charge／mob attack 分別量測 |
 | CaptainGift | 現行 source-water 浮力不能替代原作 12 格 water-fluid／AABB 移動裁切、fallDistance 和 onGround | flowing water、岸邊、sneak、掉入水面、不同生物寬度及其他移動效果 |
 | Creative Flight／outline／Brew Accelerator | 缺原生完整飛行權限、穿牆輪廓或原作 enchantment／operator 入口 | 效果結束／重登後權限、視角遮擋與原作 cooldown；依能力需求聲明實驗旗標並先在隔離世界驗證 |
@@ -40,6 +39,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 
 - 布丁餘碗（W172）：`food-remainder.js` 依原作 `CompatFoodItem.finishUsingItem`——效果與原生扣料之後，用到的那格若已空就把新碗放回同一手（`LivingEntity.completeUsingItem` 換手），仍有布丁或 Creative 則在玩家位置 `spawnAtLocation` 一個碗；分支在下一 tick 讀同一格決定，不依賴原生 debit 與回呼的先後；玩家在這一 tick 換走該格的物品時改走 Java `Inventory.add`，不覆寫、不重發。原生 debit 順序、真人最後一份／多份／Creative／取消／換槽及掉落物實際位置仍待驗收；Luck／原作 random draw 不在此項。
 - 斬首與頭顱（W173）：`beheading.js` 依原作 `onLivingIncomingDamage`／`onLivingDropsBeheading`——標記存成目標的 dynamic property（等同 persistent data，圖騰倖存或存檔重啟仍會在下一次死亡掉頭）；命中時在同一個 before-event 上改為攻擊者歸屬的 10000 傷害，下一 tick 若血量未降則依原作設 1、再由攻擊者造成 2 傷害、仍活則歸零；期間以 processing 阻擋重入再抽；死亡後對原生 `entityItemDrop` 掉落清單做 `isSameItemSameComponents` 去重，沒有掉落清單的實體兩 tick 後補發；玩家頭以物品名稱與 lore 記錄 SkullOwner（Bedrock 無法由腳本設定頭顱皮膚）。原生 incoming 取消與另起 playerAttack／mobAttack 傷害來源、圖騰／護甲／Tequila 併發與真人驗收仍待確認。
+- 尋寶指南生物掉落（W174）：`treasure-drops.js` 依原作 `onLivingDrops`——傷害來源的擁有者（箭的射手，不是箭）持有效果時每次死亡擲一次 `0.15+0.05×amplifier`，成功就把原生 `entityItemDrop` 掉落清單的每一項在該物品位置複製一份（快照清單，複製品不再被複製）；取代原本下一 tick 掃附近新物品的作法，不再誤抓同 tick 其他死亡或玩家丟出的物品。沒有掉落清單的死亡兩 tick 後作廢。pickup delay、原生 drop 事件是否含斬首補發的頭、以及真人驗收仍開放。
 - 冰櫃：五個 current recipe、loaded ticks、四槽 native metadata 及來源 height 算術已實作；真玩家插取、offhand、unload／crash、任意 metadata 和完整流體／原料／成品渲染另驗，既有零輸入樣本不證明非空冰櫃內容。
 - 酒櫃與家具：原格位、native item carrier、重啟／回滾修補保留；四向座位、玻璃、觸控／游標點選與實際展示仍待比較。
 - Respawn：87 個精確零碰撞 helper、新確認錨 yaw=0／forced=false 及 repeat／取消防線保留；未知來源不放寬，真 Player 床／錨／重生另驗。

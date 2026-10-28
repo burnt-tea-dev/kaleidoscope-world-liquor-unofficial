@@ -5,6 +5,7 @@
 import {FrostAgingScheduler,setFrostAgingScheduler} from '../runtime/BP/scripts/frost-aging.js';
 import {installLuckLoot} from '../runtime/BP/scripts/luck-loot.js';
 import {installBeheading} from '../runtime/BP/scripts/beheading.js';
+import {installTreasureDrops} from '../runtime/BP/scripts/treasure-drops.js';
 const withDropSignal=world=>({...world,afterEvents:{entityItemDrop:{subscribe(){}},...world.afterEvents}});
 export const frostEffectFixture={
  installLuckLoot(world,...args){
@@ -12,6 +13,7 @@ export const frostEffectFixture={
   return installLuckLoot(withDropSignal(world),...args);
  },
  installBeheading(world,...args){return installBeheading(withDropSignal(world),...args);},
+ installTreasureDrops(world,...args){return installTreasureDrops(withDropSignal(world),...args);},
  FrostAgingScheduler:class extends FrostAgingScheduler {
   constructor(world){super({getDynamicProperty:()=>undefined,getDynamicPropertyIds:()=>[],...world});}
  },

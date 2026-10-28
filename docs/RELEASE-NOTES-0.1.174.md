@@ -1,0 +1,9 @@
+# World Liquor 0.1.174
+
+Treasure Guide mob drops follow Java `EventHandlers.onLivingDrops` (NeoForge 1.21.1 author 1.1.11 / CF9066406, unchanged in 1.1.12): if the damage source's owner entity has the effect, one `RANDOM.nextDouble() < 0.15 + amplifier * 0.05` decides for the whole death, and on success every `ItemEntity` of the drop list is copied into a new `ItemEntity` at the same position with the default pickup delay. Java iterates a snapshot of the list, so the added copies are not copied again.
+
+`runtime/BP/scripts/treasure-drops.js` reads the same list from the native `entityItemDrop` event of the dying entity: `entityDie` rolls once when the source owner (the shooter for projectiles) has the effect and queues the death; the drop list that follows is copied entry by entry at each item's position (the death position when an item has no readable position); a death that produces no drop list expires after two ticks. This replaces the previous one-tick scan for new item entities within 1.5 blocks, which could duplicate another mob's simultaneous drops or a player's thrown items and missed drops that landed outside the radius. Failures are recorded in `treasureDropDiagnostics` and never retried.
+
+`tests/treasure-drops.test.mjs` covers the chance expression, missing owner / missing effect / failed roll, projectile ownership, per-item positions and the snapshot rule, the position fallback, the two-tick expiry with late or unrelated lists, one roll per death and a rejected copy. Treasure Guide block drops (`treasure-block.js`) are unchanged.
+
+Still open: the native pickup delay of spawned copies, whether the native drop list already contains the beheading head when both effects apply, and real-player acceptance. Client acceptance stays pending and `production_ready=false`.
