@@ -1,3 +1,7 @@
+## 0.1.172 — 2026-10-29
+
+Pudding remainder follows Java `CompatFoodItem.finishUsingItem`: after the effects and the native debit, an emptied used slot receives the new bowl in hand, while remaining servings or Creative spawn one bowl at the player instead of inserting it into the inventory. The branch is read from the used slot one tick after completion, so it does not depend on the native debit/callback order; a slot the player changed in that tick goes through Java `Inventory.add`. No other gameplay, recipes, resources or identities change. Native debit order and real-player acceptance remain open.
+
 ## 0.1.170 — 2026-10-28
 
 Complete the current Java content adoption with native waterlogged-eye detection. Preserve the frozen W169 identity as an unpublished predecessor; all adopted lamps, cabinets, Luck+ and current effects carry forward. See [the final release scope](docs/RELEASE-NOTES-0.1.170.md).

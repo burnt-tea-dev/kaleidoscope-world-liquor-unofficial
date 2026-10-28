@@ -8,13 +8,14 @@ import {completeBottledDrink} from './bottled-drink.js';
 import {installEffects} from './effects.js';
 import {installDrinkAudio} from './drink-audio.js';
 import {traceFoodPhase,installFoodPhaseTrace} from './food-phase-trace.js';
-function returnItem(p,id){const inv=p.getComponent('minecraft:inventory').container,left=inv.addItem(new ItemStack(id));if(left)p.dimension.spawnItem(left,p.location);}
-function consume(e){return completeBottledDrink(e,{createStack:(id,amount)=>new ItemStack(id,amount)});}
+import {completeFoodRemainder} from './food-remainder.js';
+const createStack=(id,amount)=>new ItemStack(id,amount);
+function consume(e){return completeBottledDrink(e,{createStack});}
 const foods={liangshan_ice_cone:['fire_resistance','speed'],kita_stuffed_crisp:['saturation'],pochi_pudding:['regeneration'],magic_crispy_corner:['haste']};
 system.beforeEvents.startup.subscribe(e=>{
  registerFurniture(e);
  e.itemComponentRegistry.registerCustomComponent(NS+':consume',{onCompleteUse:consume});
- e.itemComponentRegistry.registerCustomComponent(NS+':food',{onCompleteUse:e=>{traceFoodPhase('complete_before',e);try{const short=e.itemStack.typeId.split(':')[1];for(const effect of foods[short]??[])e.source.addEffect(effect,9600,{amplifier:0});if(short==='pochi_pudding')returnItem(e.source,'minecraft:bowl');}finally{traceFoodPhase('complete_after',e);}},onConsume:e=>traceFoodPhase('consume',e)});
+ e.itemComponentRegistry.registerCustomComponent(NS+':food',{onCompleteUse:e=>{traceFoodPhase('complete_before',e);try{const short=e.itemStack.typeId.split(':')[1];for(const effect of foods[short]??[])e.source.addEffect(effect,9600,{amplifier:0});completeFoodRemainder(e,{createStack,run:fn=>system.run(fn)});}finally{traceFoodPhase('complete_after',e);}},onConsume:e=>traceFoodPhase('consume',e)});
 });
 world.afterEvents.worldLoad.subscribe(()=>{
  installFoodPhaseTrace(system,ScriptEventSource.Server);
