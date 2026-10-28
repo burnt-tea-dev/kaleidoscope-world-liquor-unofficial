@@ -1,77 +1,24 @@
-> **Published-install correction (2026-10-18):** W141 TEST requires **Tavern T163 BP/RP**, despite its historical tag README saying T155. W148 stable requires T170. See [exact published-package guidance](docs/PUBLIC-DOWNLOAD-INSTALLATION-20261018.md); existing assets and historical tags are unchanged.
+# Kaleidoscope World Liquor — Bedrock 移植
 
-## Current maintained source: 0.1.168
+這是 Java「醉世界」的非官方 Bedrock 移植。來源實作、可下載版本、伺服器安裝和真人驗收是不同狀態。
 
-W168 replaces the 32-alias record audio bank and global stop commands with an engine `SoundInstance` for each jukebox. It preserves the original songs, saved discs and wall decorations. Both packs require Tavern **0.6.187**, and the [peer record](.github/baseline-integration.json) pins canonical T187 and optional G181. The new `@minecraft/server` **2.10.0** path passed an isolated BDS 1.26.52.3 first load and the same world's restart, including 40 distinct playback handles and legacy/current/wall saved rows. Native custom `minecraft:record` still fails that engine's parser even with Beta APIs; the small reproducible diagnostic is separate from runtime. See [implementation, Java source and limits](docs/RELEASE-NOTES-0.1.168.md). Audible client behavior, canonical CI and complete-family admission remain separate. The W165 publication and deployment evidence below retains its original scope.
+## 安裝與目前狀態
 
-W165 skips native personal-spawn queries for players without confirmed respawn metadata. Confirmed records retain their one-tick check and stale-record invalidation; late declarations are observed immediately. W165 is included in the deployed P70 family. Static admission, a consistent stopped-world backup, the same saved-world copy's first load/restart, and exact installed-file/order readback passed on 2026-10-27; see the [scoped deployment observation](docs/evidence/family-w165-deployment-20261027.json). W164's freezer placement and three supported sprites remain intact. That observed W165 pairing used **Tavern 0.6.185** and optional **Grilling 2.8.157**. Source call counts establish less API work; CPU, TPS and FPS improvement remain unmeasured. Generic ItemStack rendering, block-item models, absolute UV orientation and rendered-client acceptance remain open. Ordinary stone has no general freezer renderer. See [changes](CHANGELOG.md), [validation and limits](docs/PARITY-MATRIX.md), and the [freezer review](docs/audit/FREEZER-VISUAL-REVIEW-20261024.md). `client=false`, `production_ready=false`, `pending_client_acceptance`.
+- 從 [Releases](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/releases) 取得配對 BP/RP，依該版說明安裝相符的 Tavern。不要混用不同版本的一半。
+- 目前來源身份與依賴以 [baseline.json](baseline.json)／兩側 manifest 為準；精確來源配對見 [.github/baseline-integration.json](.github/baseline-integration.json)。這些檔案不代表某個伺服器已更新。
+- Cookery 與 Grilling 為可選整合；單獨使用限制和既有下載的配對例外見 [安裝說明](docs/PUBLIC-DOWNLOAD-INSTALLATION-20261018.md)。
+- 玩法、聲音、模型與尚未確認的差異見 [PARITY-MATRIX](docs/PARITY-MATRIX.md) 和 [BUGS](docs/BUGS.md)。CI 或 BDS 啟動不能代替真人畫面／聲音驗收。
 
-Previous merged source reviewed on **2026-10-17** at [b8692380](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/commit/b86923801febbf23a43f36017ad299b28128b029). W151 is merged and paired with **Tavern 0.6.173**; it restores Java collision/selection shapes for the freezer, cups, stools and cabinets. See [source scope](docs/evidence/collision-shapes-20261016.md).
+## 開發與匯出
 
-**Public download:** [World Liquor v0.1.165](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.165), published **2026-10-27 04:47:39 UTC**, paired with **Tavern 0.6.185** and optional **Grilling 2.8.157** source checks. The successful [manual publication run](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/actions/runs/40451637457) built source [`5e1a275`](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/commit/5e1a275fa13800d018f4716cdb88e46182aedd49), downloaded and verified all uploaded assets, then published a non-draft, non-prerelease release. The [dated evidence](docs/evidence/family-w165-deployment-20261027.json) records the complete asset inventory, archive SHA256 and source identity. The addon contains only the owned World Liquor BP/RP; third-party dependencies are separate downloads.
-
-**Historical downloads:** [W164](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/releases/tag/v0.1.164) retains its original source, assets and publication evidence in [the historical scope](docs/PARITY-MATRIX.md#w164-公開交付歷史範圍2026-10-27). W148 remains paired with T170/G149. Frozen request settings, including `publication_request=false`, do not override a later verified manual publication.
-
-**Deployment scope:** The [P70 observation](docs/evidence/family-w165-deployment-20261027.json) records the completed native/saved-world gates and installed readback, including the remaining warnings. That saved-world sample contained no custom container inventory or native freezer input container; it does not prove arbitrary ItemStack persistence, container UI, native Player respawn behavior or human acceptance. Actual world/player identifiers and raw production reports remain private. The public addon contains only the owned World Liquor BP/RP; private family adaptations, including the Dimensions Wine snow repair, are separate. Frozen request flags retain their original source-candidate scope and do not override later deployment evidence.
-
-**Remaining work:** current all-item Blockbench first-person/side-texture coverage, general freezer item rendering, paired gameplay/client scenes and the implementation gaps in [PARITY-MATRIX](docs/PARITY-MATRIX.md) / [BUGS](docs/BUGS.md). Treasure Guide mob-drop duplication remains intentionally retained under the owner's existing decision. The known pudding bowl remainder difference is tracked explicitly. `client=false`, `production_ready=false`.
-
-W148's stable-channel publication retains the owner's source/editor/CI/package decision without an added client gate. [Earlier README](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/blob/b86923801febbf23a43f36017ad299b28128b029/README.md), release notes and old observations retain their original scope.
-
-# 森羅酒館：世界名酒（非官方） / Kaleidoscope World Liquor (Unofficial)
-
-A Minecraft Bedrock port of [Kaleidoscope World Liquor](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor). Tavern hosts its brewing, mixology, guide, cabinet and timed-effect contracts; this pack supplies its drinks, recipes, assets and specific adapters.
-
-## Requirements and installation
-
-Current **W168** source requires both **Tavern 0.6.187** packs and Script API **2.10.0**. For the public **W165** download, enable both World Liquor packs with both **Tavern 0.6.185** packs. Historical **W148** requires **Tavern 0.6.170**; the merged **W151** source requires **Tavern 0.6.173**. W152's T175 pairing retains its historical scope. Bedrock/BDS **1.26.50+** and each version's declared API/capability requirements apply; the current audio path was verified on 1.26.52.3. [baseline.json](baseline.json) and the manifests own the current source identities.
-
-Cookery remains optional for standalone World Liquor; its rice ingredients enable Dassai/Maotai preparation. Existing bottles remain drinkable and placeable without it. The historical W148/T170/G149 reference uses Cookery **1.6.0**; the prior W151/T173/G150 source family targets **1.6.1**. The published W165/T185/G157 pairing targets Cookery **1.6.4** under the shared family adaptation. Exact canonical peers are pinned; complete-family native/persistence observations are tracked separately from rendered-client acceptance. W153 retains its historical exact T176 dependency. Grilling is an optional source-check peer, not a World Liquor runtime hard dependency. [.github/baseline-integration.json](.github/baseline-integration.json) records the target source-check peers and whether their exact commits are finalized. Tavern's independent guide and optional Cookery entrance share the seven-section projection.
-
-Back up existing worlds before updating both sides of a package. Use the [current Releases](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/releases) rather than historical archives committed in `downloads/`. Source and release checks do not certify a live installation or client rendering.
-
-## Build
-
-The committed `runtime/BP` and `runtime/RP` are the package source. With Python 3, build a clean reviewed checkout directly:
-
-```sh
-python3 tools/build_release.py
-```
-
-The archive and release integrity checksum are written to `dist/`; its filename uses the manifest version. The exporter verifies the canonical baseline and requires committed source. It does not regenerate textures, guides, recipes or gameplay, and does not need a neighboring Tavern checkout.
-
-`tools/build_port.py`, `build_storage_visuals.py` and `rebuild_guide.py` are source authoring commands that rewrite tracked runtime. Run them only for a reviewed source change, inspect their diffs and freeze a new release identity. They are not prerequisites for packaging an existing baseline.
-
-## Checks
-
-Historical W151 integration checks pinned T173/G150; the [reviewed W151 main CI](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/actions/runs/38930909505) passed. Package, source, full-family migration and human acceptance remain distinct. Historical native and client evidence in the family index keeps its original identity. The published guide, machine metadata, fish gate and confirmed-anchor repairs remain intact. The complete 84-class projection is checked against the paired Tavern source. The public guide remains 223 entries; four AMW producer pages belong to the 227-entry complete-family projection. The [published W113 guide report](docs/GUIDE-VALIDATION-0.1.113.json), published W117 and earlier trial evidence keep their original sources; new-candidate CI, native persistence, saved-world migration and human client acceptance are tracked separately.
-
-Use the exact Tavern and Grilling revisions in [.github/baseline-integration.json](.github/baseline-integration.json), beside this repository as `tavern-src` and `grilling-src`. Python tools also accept `TAVERN_ROOT`; the helper-definition check accepts `TAVERN_SOURCE` and `GRILLING_SOURCE`. Grilling is a source-check peer and remains optional in the installed game. Pillow and Node.js are needed by the existing source checks:
+canonical 來源在 `runtime/BP` 和 `runtime/RP`。於乾淨、已提交的來源執行：
 
 ```sh
 python3 tools/check_release.py
-node tools/check_respawn_helpers.mjs
+python3 tools/build_release.py
 python3 tools/verify_release.py --development
 ```
 
-The verification command reads the archive produced by the build. CI runs the complete required suite once for functional or unknown inputs. Only changes confined to the reviewed `README.md`, `README.zh-TW.md` and `docs/BUGS.md` prose paths can skip bridge/package/wall-record jobs; baseline, release-claim and workflow checks still run. A prose path selected by release metadata is treated as functional. Manual runs, unavailable or empty diffs, and every other path require full validation. The gate uses complete push or PR merge-base diffs, including both sides of renames. The publication workflow always retains its full validation. Local work uses only checks affected by the concrete change; successful evidence for unchanged candidates is reused. See [baseline maintenance](docs/BASELINE-MAINTENANCE.md) and [test audit](docs/audit/TEST-AUDIT.md).
+建置產物在 `dist/`。素材／指南產生器會改寫 canonical 來源，不是匯出前的例行步驟。規則與所需工具見 [BASELINE-MAINTENANCE](docs/BASELINE-MAINTENANCE.md) 和 [AGENTS.md](AGENTS.md)。
 
-Asset/reference checks are build preconditions. Source logic tests, affected native BDS scenes and actual rendered-client/audio acceptance are recorded separately. No simulated-player or full Java parity claim is made by these commands.
-
-## Known limits
-
-- The fish repair changes class admission; later mob kill credit still requires a living owner. Complete native beheading cancellation/reentry/head ownership, Elbow knockback, CaptainGift collision and highball Creative Flight remain incomplete or unverified. Source admission repairs are separate from these event-phase gaps.
-- Shared-spawn Respawn now recognizes 87 source-verified family storage/render helpers with empty collision boxes, including Grilling's ten reviewed zero-collision helper definitions. Unknown entities still require known facts; native Player spawn/bed/anchor lifecycle and client acceptance remain separate.
-- Glass transparency, four-way storage/freezer placement, animation, wall-disc angle and audio still require the current client comparison matrix. Historical scoped observations do not certify every current scene.
-- Through-wall Hostile Detection/Treasure Sense outlines, Brew Accelerator and native Java Luck consequences remain incomplete. Current stable camera animation supports three-axis rotation, but pure gameplay-camera roll preserving aim and held rendering remains unimplemented/unverified.
-- The custom record uses a script jukebox adapter; native playback, tracking and full lifecycle equality remain separate requirements.
-- Freezer timing, current recipes and complete native input-stack preservation have scoped source/engine evidence. Full FluidUtil, hooks, cancellation, offhand, crash/chunk phases, comparator and every rendered interaction remain incomplete.
-- Forge 1.20.1 and NeoForge 26.1.2 are separately tracked author branches. They are not silently treated as the maintained NeoForge 1.21.1 source.
-
-The [Phase 0 audit](docs/audit/AUDIT.md) records known implementation gaps and evidence limits. The current addon remains pending human client acceptance.
-
-## Source, licensing and history
-
-Code and copied Tavern SDK terms are separated in [NOTICE.md](NOTICE.md), [LICENSE-CODE](LICENSE-CODE), [LICENSE-TAVERN-CODE](LICENSE-TAVERN-CODE) and [LICENSE-ASSETS](LICENSE-ASSETS). The BP/RP include the applicable notices; Mojang assets retain their original publisher terms.
-
-[CHANGELOG.md](CHANGELOG.md) points to release history and the archived installation/build descriptions. Historical version numbers are not current requirements. For bridge. authoring, open root `config.json` and read [BRIDGE-WORKFLOW.md](docs/BRIDGE-WORKFLOW.md).
+[變更記錄](CHANGELOG.md)保留各版範圍；[整理前 README](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/blob/1ef4060800d36ed0966925b1655ae823f5591d33/README.md)屬歷史快照。原作與移植的授權、出處以倉庫內 LICENSE 和 attribution 文件為準。
