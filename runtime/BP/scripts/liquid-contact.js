@@ -3,9 +3,10 @@ import {BlockVolume} from '@minecraft/server';
 export function eyesUnderWater(entity){
  const head=entity.getHeadLocation(),at={x:Math.floor(head.x),y:Math.floor(head.y),z:Math.floor(head.z)};
  const block=entity.dimension.getBlock(at);
- if(!block||!['minecraft:water','minecraft:flowing_water'].includes(block.typeId))return false;
+ const water=cell=>cell&&(cell.isWaterlogged||['minecraft:water','minecraft:flowing_water'].includes(cell.typeId));
+ if(!water(block))return false;
  const above=entity.dimension.getBlock({...at,y:at.y+1});
- const full=above&&['minecraft:water','minecraft:flowing_water'].includes(above.typeId),depth=block.permutation.getState('liquid_depth')??0;
+ const full=water(above),depth=block.isWaterlogged?0:block.permutation.getState('liquid_depth')??0;
  return head.y<at.y+(full?1:Math.fround((depth>=8?8:8-depth)/9));
 }
 export function lavaContact(entity){

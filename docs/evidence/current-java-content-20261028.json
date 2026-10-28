@@ -26,7 +26,8 @@
       "luck-loot.js": "ea8a46df3af7a8bc89473daf88b73ed1262881b06647d6b6bb9af726f8ee89fd",
       "combat-source.js": "506846390baa3e790cc2ac28e2370e618c9d015a22cf66b404433d3cbfa7cc75"
     },
-    "raw_log_sha256": "ebabe45ece0775d3e98b054ba74b2cfdc53b557ae2ba6a9d810a2ba37c93acbd"
+    "raw_log_sha256": "ebabe45ece0775d3e98b054ba74b2cfdc53b557ae2ba6a9d810a2ba37c93acbd",
+    "metadata_scope": "The native fixture checks lore and amount. Production uses ItemStack.clone; this probe does not establish arbitrary third-party component or every metadata combination."
   },
   "context_probe": {
     "original_chest_table_or_loot_context_exposed": false,

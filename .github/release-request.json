@@ -1,7 +1,7 @@
 {
-  "version": "0.1.169",
-  "tag": "v0.1.169",
-  "title": "World Liquor 0.1.169: current Java lamps, cabinets and Luck+",
+  "version": "0.1.170",
+  "tag": "v0.1.170",
+  "title": "World Liquor 0.1.170: current Java lamps, cabinets and Luck+",
   "prerelease": false,
   "validation_evidence": "docs/PARITY-MATRIX.md",
   "client_acceptance": "pending",
@@ -14,14 +14,13 @@
   "publication_request": false,
   "client": false,
   "status": "candidate_pending_canonical_ci_and_family_admission",
-  "public_notes_path": "docs/RELEASE-NOTES-0.1.169.md",
-  "tavern_commit": "df8fd19c285280ed0e58da9e9f12ed25b148eb06",
+  "public_notes_path": "docs/RELEASE-NOTES-0.1.170.md",
+  "tavern_commit": "acb4156045c74b1beef090c6c0a761ad185b6d20",
   "artifact_suffix": "baseline1",
   "public_notes_inline": "Adopt NeoForge1.1.12 / Forge1.1.13 pendant lamps, dye recipes, cabinet models/textures, Dassai custom Luck+, Explosion power, underwater CaptainGift exclusion and air-jump velocity. Luck currently rerolls emitted native mob-death loot, adding only previously absent types and preserving full ItemStack metadata; mining/chest/fishing/global Java context and TreasureSense outlines remain open. Requires BDS1.26.60, server2.12.0-beta and Beta APIs experiment. Actual native drops pass in isolated QA; full-family admission and human rendering/audio/gameplay acceptance remain separate.",
   "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
   "peer_pin_note": "Exact Tavern188 source plus canonical Grilling184 source; complete-family admission and client acceptance remain separate.",
-  "peer_pin_status": "exact_reviewed_source_pending_canonical_merge",
-  "expected_archive_sha256": "97c249b2394eec848a143b1a357269f8fdb1fd345e02390b06c7860ba64e7268"
+  "peer_pin_status": "exact_reviewed_source_pending_canonical_merge"
 }

@@ -1,3 +1,7 @@
+## 0.1.170 — 2026-10-28
+
+Complete the current Java content adoption with native waterlogged-eye detection. Preserve the frozen W169 identity as an unpublished predecessor; all adopted lamps, cabinets, Luck+ and current effects carry forward. See [the final release scope](docs/RELEASE-NOTES-0.1.170.md).
+
 ## 0.1.169 — 2026-10-28
 
 Adopt NeoForge1.1.12 / Forge1.1.13 pendant lamps, dye recipes, cabinet models/textures, Dassai custom Luck+, Explosion power, underwater CaptainGift exclusion and air-jump velocity. Luck currently rerolls emitted native mob-death loot, adding only previously absent types and preserving full ItemStack metadata; mining/chest/fishing/global Java context and TreasureSense outlines remain open. Requires BDS1.26.60, server2.12.0-beta and Beta APIs experiment. Actual native drops pass in isolated QA; full-family admission and human rendering/audio/gameplay acceptance remain separate.

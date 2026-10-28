@@ -22,3 +22,13 @@ test('water walking excludes submerged eyes, including flowing water, without re
  depth=0;type='minecraft:flowing_water';headY=10.8;assert.equal(under(entity),true);
  type='minecraft:air';assert.equal(under(entity),false);
 });
+
+test('submersion reads native waterlogged blocks at the eyes and above the water surface',()=>{
+ const source=fs.readFileSync(new URL('../runtime/BP/scripts/liquid-contact.js',import.meta.url),'utf8')
+  .replace(/^import .*;\n/gm,'').replaceAll('export function','function');
+ const context=vm.createContext({});vm.runInContext(source,context);const under=vm.runInContext('eyesUnderWater',context);
+ let eyes=true,above=false,y=10.8;
+ const entity={getHeadLocation:()=>({x:.5,y,z:.5}),dimension:{getBlock:at=>({typeId:'minecraft:oak_fence',isWaterlogged:at.y===10?eyes:above,permutation:{getState:()=>undefined}})}};
+ assert.equal(under(entity),true);y=10.9;assert.equal(under(entity),false);
+ above=true;assert.equal(under(entity),true);eyes=false;assert.equal(under(entity),false);
+});

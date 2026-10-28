@@ -1,6 +1,6 @@
 ## Current upstream review — 2026-10-27
 
-Current source adoption and exact remaining gaps are owned by [the 2026-10-28 review](../data/current-author-review-20261028.json). W169 adds current author pendant lamps/dye recipes, cabinet assets, Dassai/Luck+, Explosion power, underwater water-walk exclusion and air-jump velocity. [Native evidence](evidence/current-java-content-20261028.json) covers exact entity-drop attribution and complete native stack metadata, not global Java LootContext parity or rendered client acceptance. Luck currently affects emitted mob-death loot only. TreasureSense outlines remain absent. Historical sections below keep their original scope.
+Current source adoption and exact remaining gaps are owned by [the 2026-10-28 review](../data/current-author-review-20261028.json). W170 adds current author pendant lamps/dye recipes, cabinet assets, Dassai/Luck+, Explosion power, underwater water-walk exclusion and air-jump velocity. [Native evidence](evidence/current-java-content-20261028.json) covers exact entity-drop attribution and complete native stack metadata, not global Java LootContext parity or rendered client acceptance. Luck currently affects emitted mob-death loot only. TreasureSense outlines remain absent. Historical sections below keep their original scope.
 
 # World Liquor Java／Bedrock 差距矩陣
 
