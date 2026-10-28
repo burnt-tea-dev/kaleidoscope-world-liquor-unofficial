@@ -22,5 +22,6 @@
   "publication_ready": false,
   "bds": false,
   "peer_pin_note": "Exact Tavern188 source plus canonical Grilling184 source; complete-family admission and client acceptance remain separate.",
-  "peer_pin_status": "exact_reviewed_source_pending_canonical_merge"
+  "peer_pin_status": "exact_reviewed_source_pending_canonical_merge",
+  "expected_archive_sha256": "84e96026dbee4c66dd5826148e086e097bb17f31dcfaf98f95ff4e0aa645a285"
 }
