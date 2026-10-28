@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "version": "0.1.170",
+  "reviewed_runtime_source": "ba123792914035200dc1a43400cb6d1cd36fa567",
+  "runtime_changes_since_reviewed_source": false,
+  "family_evidence": "https://github.com/burnt-tea-dev/kaleidoscope-tavern-unofficial/blob/8cb52ddedf7d03e261f5c5cf3950e358623cd760/docs/evidence/family-deployment-20261028.json",
+  "source_review": "data/current-author-review-20261028.json",
+  "archive_identity": ".github/release-request.json#expected_archive_sha256",
+  "client": false,
+  "production_ready": false,
+  "client_acceptance": "pending",
+  "full_java_parity": false,
+  "scope": "Publication index for the verified existing-save family deployment. The linked shared observation owns exact identities, receipt hashes, run results and limits."
+}
