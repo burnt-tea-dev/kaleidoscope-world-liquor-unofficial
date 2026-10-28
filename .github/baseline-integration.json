@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "161ae147c0b4a3831dd735bcc9f683ce3a8b5973",
-  "tavern_version": "0.6.188",
+  "tavern_commit": "f7b6c974685ad3ff95dacbd52f4f55218b80dced",
+  "tavern_version": "0.6.189",
   "publication_request": false,
   "grilling_commit": "322bdf0959248bce2f6cf51461c7f05cbe03f6a9",
   "grilling_version": "2.8.187",
   "peer_pins_final": true,
-  "peer_pin_status": "canonical_deployed_pending_client_acceptance",
-  "peer_pin_note": "Exact canonical Tavern188 and Grilling187 sources used by the verified 47-pack deployment; real-client acceptance remains pending.",
+  "peer_pin_status": "reviewed_source_pending_canonical_merge",
+  "peer_pin_note": "Exact Tavern189 and Grilling187 sources; World Liquor171 changes only paired dependencies and release identity. Family deployment and human acceptance remain pending.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
