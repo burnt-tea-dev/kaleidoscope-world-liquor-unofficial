@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "version": "0.1.171",
+  "reviewed_runtime_source": "0c644ae424b430948b7673360cb2c292494009f0",
+  "runtime_changes_since_reviewed_source": false,
+  "family_evidence": "https://github.com/burnt-tea-dev/kaleidoscope-tavern-unofficial/blob/965ac777/docs/evidence/family-deployment-20261029.json",
+  "source_review": ".github/baseline-integration.json",
+  "archive_identity": ".github/release-request.json#expected_archive_sha256",
+  "client": false,
+  "production_ready": false,
+  "client_acceptance": "pending",
+  "full_java_parity": false,
+  "scope": "Publication index for the actual47-pack existing-save deployment. The shared observation owns receipt identities, first/restart results, live readback and limits."
+}
