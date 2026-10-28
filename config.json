@@ -5,8 +5,11 @@
   "authors": [
     "Unofficial port contributors"
   ],
-  "targetVersion": "1.26.50",
-  "experimentalGameplay": {},
+  "targetVersion": "1.26.60",
+  "experimentalGameplay": {
+    "gametest": true,
+    "upcoming_creator_features": true
+  },
   "namespace": "kaleidoscope_world_liquor",
   "packs": {
     "behaviorPack": "./runtime/BP",

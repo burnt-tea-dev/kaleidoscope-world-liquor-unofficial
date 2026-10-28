@@ -81,7 +81,9 @@ for pack in [bp,rp]:
 recipes=[]
 for p in (bp/'recipes').rglob('*.json'):
  data=read(p);recipe=next(v for k,v in data.items() if k.startswith('minecraft:recipe_'));recipes.append(recipe)
- check((bp/'items'/((recipe['result']['item']).split(':')[1]+'.json')).exists(),p.name+': unknown output item')
+ output=recipe['result']['item'];namespace,short=output.split(':',1)
+ owner=bp if namespace=='kaleidoscope_world_liquor' else tav/'runtime/BP' if namespace=='kaleidoscope_tavern' else None
+ check(owner is not None and (owner/'items'/(short+'.json')).exists(),p.name+': unknown output item')
 content=read(root/'docs/item-inventory.json');check(len(content['bottles'])==18 and len(content['furniture'])==27, 'source content inventory mismatch')
 print('Compiled BP blocks',len(list((bp/'blocks').glob('*.json'))),'items',len(list((bp/'items').glob('*.json'))),'recipes',len(recipes),'models',len(geometry),'errors',len(errors))
 for error in errors[:80]:print('ERROR',error)

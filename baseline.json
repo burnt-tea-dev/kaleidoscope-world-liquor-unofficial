@@ -5,7 +5,7 @@
   "version": [
     0,
     1,
-    168
+    170
   ],
   "runtime": {
     "BP": "runtime/BP",
@@ -20,7 +20,7 @@
           "version": [
             0,
             6,
-            187
+            188
           ]
         },
         {
@@ -28,12 +28,12 @@
           "version": [
             0,
             1,
-            168
+            170
           ]
         },
         {
           "module_name": "@minecraft/server",
-          "version": "2.10.0"
+          "version": "2.12.0-beta"
         }
       ]
     },
@@ -45,7 +45,7 @@
           "version": [
             0,
             6,
-            187
+            188
           ]
         }
       ]
@@ -53,12 +53,12 @@
   },
   "source_trees": {
     "BP": {
-      "sha256": "047c5e398f120c12d9491c684f9e8989dae456305c2993b2726ba861b0872150",
-      "files": 341
+      "sha256": "d25de2066b6f91f3b66b0e37b3a6dd6962af2c38efdd97d5ae4dd49a8c5fc733",
+      "files": 348
     },
     "RP": {
-      "sha256": "326743bddbdb14bfcd698952b33204a0218089bf388735e2cb420cfe81e4d2d9",
-      "files": 552
+      "sha256": "fff4288fbe08c5eb9455d0b9efb3161880eef44a2f0ec55294e286da4f6b74e9",
+      "files": 561
     }
   },
   "policy": {

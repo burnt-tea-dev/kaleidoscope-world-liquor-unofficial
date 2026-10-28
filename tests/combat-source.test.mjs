@@ -1,3 +1,4 @@
+import {frostEffectFixture} from './frost-effect-fixture.mjs';
 import {AcceptedHurtFeedback} from '../runtime/BP/scripts/accepted-hurt-feedback.js';
 import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from '../runtime/BP/scripts/kill-credit.js';
 import test from 'node:test';
@@ -51,7 +52,7 @@ test('production callback applies source conditions and the 0.6-volume elbow sou
  const states=new Map(),sounds=[],pending=[];
  const actor={id:'numeric API fixture',typeId:'minecraft:player',isOnGround:false,isClimbing:true,isInWater:false,getEffect:()=>undefined,getComponent:id=>id==='minecraft:health'?{currentValue:20}:undefined,getVelocity:()=>({y:-.2}),location:{x:1,y:2,z:3},dimension:{playSound:(...args)=>sounds.push(args)}};
  const target={id:'damage API fixture',typeId:'minecraft:player',getComponent:()=>({effectiveMax:20})};states.set(actor,{ground_crit:{amplifier:0},elbow_strike:{amplifier:0}});
- const ctx=vm.createContext({AcceptedHurtFeedback,CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:e=>states.get(e)??{},world:{},system:{run:fn=>pending.push(fn)},EffectTypes:{},ItemStack:class{},Math:Object.assign(Object.create(Math),{random:()=>0})});
+ const ctx=vm.createContext({...frostEffectFixture,AcceptedHurtFeedback,CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:e=>states.get(e)??{},world:{},system:{run:fn=>pending.push(fn)},EffectTypes:{},ItemStack:class{},Math:Object.assign(Object.create(Math),{random:()=>0})});
  vm.runInContext(source,ctx);const event={hurtEntity:target,damage:4,damageSource:{cause:'entityAttack',damagingEntity:actor}};
  ctx.event=event;vm.runInContext('hurt(event)',ctx);assert.equal(event.damage,6);vm.runInContext('acceptedFeedback.applied(event)',ctx);pending.splice(0).forEach(fn=>fn());assert.equal(sounds.length,1);assert.equal(sounds[0][2].volume,.6);assert.equal(sounds[0][2].pitch,1);
  actor.isClimbing=false;event.damage=4;vm.runInContext('hurt(event)',ctx);assert.equal(event.damage,4);
@@ -62,7 +63,7 @@ test('respawn emits its source sound once before searching, including an unavail
  const calls=[];let available=false;
  const dimension={id:'minecraft:nether',playSound:(id,at)=>calls.push(['sound',id,{...at}]),getBlock:at=>{calls.push(['search']);if(!available)return undefined;const anchor=at.x===1&&at.y===10&&at.z===3;return {typeId:anchor?'minecraft:respawn_anchor':at.y<10?'minecraft:stone':'minecraft:air',location:{...at},isWaterlogged:false,permutation:{getAllStates:()=>anchor?{respawn_anchor_charge:2}:{}}};}};
  const actor={id:'respawn API fixture',typeId:'minecraft:player',location:{x:30,y:40,z:50},dimension,getSpawnPoint:()=>({x:1,y:10,z:3,dimension}),teleport:at=>{calls.push(['teleport']);actor.location={...at};},addEffect:(...args)=>calls.push(['effect',...args])};
- const ctx=vm.createContext({applyJavaRespawn,AcceptedHurtFeedback,CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:()=>({}),world:{gameRules:{keepInventory:true}},system:{},EffectTypes:{},ItemStack:class{}});vm.runInContext(source,ctx);ctx.actor=actor;
+ const ctx=vm.createContext({...frostEffectFixture,applyJavaRespawn,AcceptedHurtFeedback,CriticalFeedback:class{queue(){} applied(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:()=>({}),world:{gameRules:{keepInventory:true}},system:{},EffectTypes:{},ItemStack:class{}});vm.runInContext(source,ctx);ctx.actor=actor;
  vm.runInContext("applyEffect(actor,'kaleidoscope_world_liquor:respawn',1)",ctx);
  assert.equal(calls[0][0],'sound');assert.equal(calls.filter(c=>c[0]==='sound').length,1);assert.equal(calls.some(c=>c[0]==='teleport'),false);
  calls.length=0;available=true;vm.runInContext("applyEffect(actor,'kaleidoscope_world_liquor:respawn',1)",ctx);
@@ -70,7 +71,7 @@ test('respawn emits its source sound once before searching, including an unavail
 });
 test('actual fall callback follows Player-only reverse gravity and LivingEntity multi-jump sources',()=>{
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
- const states=new Map(),ctx=vm.createContext({AcceptedHurtFeedback,CriticalFeedback:class{},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:e=>states.get(e)??{},world:{},system:{run(){}},EffectTypes:{},ItemStack:class{}});vm.runInContext(source,ctx);
+ const states=new Map(),ctx=vm.createContext({...frostEffectFixture,AcceptedHurtFeedback,CriticalFeedback:class{},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,readTavernEffects:e=>states.get(e)??{},world:{},system:{run(){}},EffectTypes:{},ItemStack:class{}});vm.runInContext(source,ctx);
  for(const type of ['minecraft:player','minecraft:zombie'])for(const effect of ['reverse_gravity','multi_jump']){
   const entity={id:type,typeId:type,getComponent:id=>id==='minecraft:health'?{currentValue:20,effectiveMax:20}:id==='minecraft:type_family'?{hasTypeFamily:family=>family==='mob'}:undefined};states.set(entity,{[effect]:{amplifier:0}});
   const event={hurtEntity:entity,damage:4,damageSource:{cause:'fall'}};ctx.event=event;vm.runInContext('hurt(event)',ctx);assert.equal(event.cancel===true,type==='minecraft:player'||effect==='multi_jump',type+'/'+effect);
@@ -87,7 +88,7 @@ function installedEffectsFixture(entities){
  const world={getEntity:id=>byId.get(id),gameRules:{tntExplodes:true},beforeEvents:{entityHurt:beforeHurt},afterEvents:{entityHurt:afterHurt,entityRemove:signal(),playerSpawn:signal(),playerLeave:signal(),playerButtonInput:signal(),entityDie:signal(),playerBreakBlock:signal()}};
  const system={currentTick:0,run:fn=>pending.push(fn),runInterval(){},afterEvents:{scriptEventReceive:scriptEvent}};
  const source=fs.readFileSync(new URL('../runtime/BP/scripts/effects.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export const','const').replaceAll('export function','function');
- const ctx=vm.createContext({AcceptedHurtFeedback,CriticalFeedback:class{queue(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,world,system,readTavernEffects:entity=>states.get(entity)??{},FrostAgingScheduler:class{},setFrostAgingScheduler(){},installJavaRespawn(){},Math:Object.assign(Object.create(Math),{random:()=>0})});
+ const ctx=vm.createContext({...frostEffectFixture,AcceptedHurtFeedback,CriticalFeedback:class{queue(){}},MolangVariableMap:class{},JavaKillCredit,damageCreditMutation,isLivingCombatEntity,...rules,world,system,readTavernEffects:entity=>states.get(entity)??{},FrostAgingScheduler:class{},setFrostAgingScheduler(){},installJavaRespawn(){},Math:Object.assign(Object.create(Math),{random:()=>0})});
  vm.runInContext(source+'\ninstallEffects();',ctx);
  return {states,explosions,sounds,system,flush:()=>pending.splice(0).forEach(fn=>fn()),before:event=>beforeHurt.callback(event),after:event=>afterHurt.callback(event),script:event=>scriptEvent.callback(event)};
 }
@@ -119,7 +120,7 @@ test('registered instant-effect routing admits a familyless fish without admitti
  const cod=familylessEntity('instant-cod'),boat=familylessEntity('instant-boat','minecraft:boat'),helper=familylessEntity('instant-helper','kaleidoscope_tavern:effect_anchor'),removed=familylessEntity('instant-removed');removed.isValid=false;
  const f=installedEffectsFixture([cod,boat,helper,removed]);
  const send=(entity,sourceType='Server')=>f.script({sourceType,id:'kaleidoscope_world_liquor:apply_effect',message:JSON.stringify({entity:entity.id,effect:'kaleidoscope_world_liquor:explosion',duration:1,amplifier:2})});
- send(cod);assert.equal(f.explosions.length,1);assert.equal(f.explosions[0][1],5);assert.equal(f.explosions[0][2].source,cod);assert.equal(f.explosions[0][2].breaksBlocks,true);
+ send(cod);assert.equal(f.explosions.length,1);assert.equal(f.explosions[0][1],7);assert.equal(f.explosions[0][2].source,cod);assert.equal(f.explosions[0][2].breaksBlocks,true);
  for(const entity of [boat,helper,removed])send(entity);
  send(cod,'Entity');
  assert.equal(f.explosions.length,1,'nonliving, invalid and non-Server inputs must not execute instant effects');

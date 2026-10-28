@@ -1,6 +1,6 @@
 ## Current upstream review — 2026-10-27
 
-Adopt the Maotai effect table shared by NeoForge1.1.12 CF9217896 and Forge1.1.13 CF9217901 for direct drinks and signature cocktails. All other current source repairs and save identities remain intact. New pendant lamps, custom Luck/global loot, changed cabinet assets and remaining branch changes are reviewed but not implemented in this scoped release. See [the source review](../data/current-author-review-20261027.json). Historical sections below retain their original source and test scope.
+Current source adoption and exact remaining gaps are owned by [the 2026-10-28 review](../data/current-author-review-20261028.json). W170 adds current author pendant lamps/dye recipes, cabinet assets, Dassai/Luck+, Explosion power, underwater water-walk exclusion and air-jump velocity. [Native evidence](evidence/current-java-content-20261028.json) covers exact entity-drop attribution and complete native stack metadata, not global Java LootContext parity or rendered client acceptance. Luck currently affects emitted mob-death loot only. TreasureSense outlines remain absent. Historical sections below keep their original scope.
 
 # World Liquor Java／Bedrock 差距矩陣
 
@@ -76,7 +76,7 @@ W131針對profile所見的傳輸CPU熱點，讓foundation receiver先篩選三�
 
 W146只訪問fresh effect recipients、保留20tick TTL與空snapshot立即撤銷，並略過被動效果的velocity讀取及冰櫃未變transform的teleport。每tick玩法、存檔倒數、native物品保全與原作聲畫資料保留；[定向操作數與邊界案例](evidence/performance-20261015.md)不冒充實際高延遲／FPS驗收。
 
-玩法 authority 為 NeoForge 1.21.1／World Liquor 1.1.11／CF9066406，Forge 1.20.1／1.1.12／CF9066402 的差異分開核對。[current-author-review](../data/current-author-review-20261009.json)記錄來源；26.1.2／CF9087098 是另行待適配分支，custom Luck／BlockDrops copying 不能替換 1.21.1 的 vanilla Luck／block reroll。L0 為來源檢視，L1 為執行的 source／API／JVM 案例，L2 為明列來源的 native 引擎場景，L3 為真人客戶端比較。舊 L2／L3 保留其原版本，不改標成當前接受。
+玩法依據與本次採用範圍見[目前來源覆核](../data/current-author-review-20261028.json)。NeoForge 1.21.1／1.1.12／CF9217896 與 Forge 1.20.1／1.1.13／CF9217901 分開追蹤；本次採用兩條維護分支的新 custom Luck，不把另行待適配的26.1.2／CF9087098整條分支當作完成。L0 為來源檢視，L1 為執行的 source／API／JVM 案例，L2 為明列來源的 native 引擎場景，L3 為真人客戶端比較。舊 L2／L3 保留其原版本，不改標成當前接受。
 
 | 項目 | 已完成與證據 | 剩餘範圍 |
 |---|---|---|
@@ -84,7 +84,7 @@ W146只訪問fresh effect recipients、保留20tick TTL與空snapshot立即撤�
 | 戰鬥入口（W120） | 斬首／Elbow 分開 direct LivingEntity，斬首要求目標存活；ground-crit melee 規則不變。16 個定向案例通過。見 [來源核對](../data/combat-admission-review-20261009.json) | 不是原生 DamageSource／Incoming／Pre 的完整等價；取消、重入、fallback、marker、causal heads 與 SkullOwner 仍未完成 |
 | Use／crit／Tequila／Crazy／ContinuousHeal | 原 sound cadence、float damage／chance、Tequila cap、Crazy source selection 和每 tick amp+1 heal 保留。見 [use/combat](JAVA-USE-COMBAT-0.1.74.md)、既有 combat／crazy 案例 | 原生來源／護甲／absorption／cooldown、缺失 vanilla effects、實際聲場和原生 Player；不誤把原作 heal 改慢 |
 | 布丁餘碗／食物完成 | W92已記錄原作last-serving hand replacement及非空／Creative掉碗；[當前main.js](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/blob/b86923801febbf23a43f36017ad299b28128b029/runtime/BP/scripts/main.js)仍inventory.addItem | 真正尚未對齊的實作；先核原生debit／callback順序，驗最後一份／多份／Creative、取消與換槽；Luck及random draw另保留 |
-| Luck／SkullOwner | Dassai Q3–Q6 的 Luck amplifier 1／3／5／7 資料正確；一般 head registry candidate 順序已實作 | 穩定 API 缺完整 Java Luck loot attribute/context 與原生 Player head owner；資料正確不等於掉落／頭像還原 |
+| Luck／SkullOwner | Dassai Q3–Q6 已改為當前 custom Luck amplifier1／2／3／4；生物原生掉落重抽、種類去重與 metadata 已有隔離BDS證據；一般 head registry candidate 順序保留 | 完整 Java LootContext、無掉落事件、挖礦／箱子／釣魚與原生 Player head owner仍待適配；不稱全域 Luck 已完成 |
 | Treasure Guide | source crop／ore 選取、原 block state／工具 reroll 和掉落中心已有 L1，見 [block source](JAVA-TREASURE-BLOCK-20261007.md) | mob one-tick nearby scan 缺本次死亡drops cohort／跨回呼去重；W148已公開source mock風險，W151同檔未改，依使用者決定保留／延後修復。方塊線仍缺player/block-entity/global loot-modifier context與pickup delay |
 | Elbow | 原作 ATTACK_KNOCKBACK 和 float／LUT／ground／resistance 已有獨立 JVM 數值；已有真 airborne、buffered force 能力 L2。見 [development scope](../development/elbow/README.md) | Production attribute／charge／enchantment 與原力合成尚未接入；既有能力證據否定固定 extra impulse，不作平台完成豁免 |
 | CaptainGift／movement／flight | Boating、reverse-gravity、MultiJump 有來源算術與有限 native adapter；CaptainGift 現僅 source-water 浮力 | 原作 12 格 water-fluid／AABB movement clipping、ground/fallDistance、原生 collision/input 和 Creative Flight 仍有差距 |

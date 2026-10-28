@@ -45,6 +45,8 @@ terms={
  'minecraft:snowball':('Snowball','雪球','雪球'),
  'minecraft:slime_ball':('Slimeball','黏液球','史萊姆球'),
  'minecraft:blue_dye':('Blue Dye','蓝色染料','藍色染料'),
+ 'minecraft:lime_dye':('Lime Dye','黄绿色染料','淺綠色染料'),
+ 'minecraft:pink_dye':('Pink Dye','粉红色染料','粉紅色染料'),
  'minecraft:bowl':('Bowl','碗','碗'),
  'kaleidoscope_cookery:rice_panicle':('Rice Panicle','稻穗','稻穗'),
  NS+':milk_still':('Milk','牛奶','牛奶'),
@@ -82,9 +84,9 @@ def main(*,write_audit=True):
  out=[];audits=[]
  for old in payload['pages']:
   short=old['id'].split('/')[-1];base=NS+':'+short;content=content_by_base.get(base)
-  kind='bottle' if content and content['kind']=='bottle' else 'cocktail' if content else 'freezer' if short=='freezer' else 'cabinet' if 'cabinet' in short else 'stool' if short.startswith('bar_stool_') else 'painting' if short.endswith('_painting') else 'mixer' if short in ('cola','tonic_water') else 'record' if short=='custom_record' else 'food'
-  item=base+'_q1' if kind=='bottle' else base
-  category={'bottle':'barrel','cocktail':'cocktail','freezer':'equipment','cabinet':'storage','stool':'furniture','painting':'art','record':'art','mixer':'ingredients','food':'food'}[kind]
+  kind='bottle' if content and content['kind']=='bottle' else 'cocktail' if content else 'freezer' if short=='freezer' else 'lamp' if short.endswith('_pendant_lamp') else 'cabinet' if 'cabinet' in short else 'stool' if short.startswith('bar_stool_') else 'painting' if short.endswith('_painting') else 'mixer' if short in ('cola','tonic_water') else 'record' if short=='custom_record' else 'food'
+  item=base+'_q1' if kind=='bottle' else KT+':'+short if short=='blue_pendant_lamp' else base
+  category={'bottle':'barrel','cocktail':'cocktail','freezer':'equipment','cabinet':'storage','lamp':'lighting','stool':'furniture','painting':'art','record':'art','mixer':'ingredients','food':'food'}[kind]
   linked=[r for r in payload['recipes'] if r.get('output',{}).get('item')==item or item in r.get('output',{}).get('byQuality',[])]
   freezing=[r for r in freezers if r['result']['id']==item]
   crafting=[];craftrows={lc:[] for lc in LOCALES}
@@ -112,7 +114,7 @@ def main(*,write_audit=True):
    rows=[row for row in prose.split('\n') if row]
    if len(rows)>8 or any(len(row)>512 for row in rows):raise ValueError('Guide transport limit '+lc+' '+old['id'])
   preparations=[{'method':'Freezer','ingredients':[next((i for i,fluid in {'minecraft:water_bucket':'minecraft:water','minecraft:milk_bucket':NS+':milk_still',KT+':grape_bucket':KT+':grape_juice',KT+':sweet_berries_bucket':KT+':sweet_berries_juice'}.items() if fluid==r['fluid']),r['fluid']),*row],'result':item,'count':r['result'].get('count',1),'time':r['craft_time']} for r in freezing for row in __import__('itertools').product(*r['ingredients'])]
-  out.append({**{k:v for k,v in old.items() if k not in ('crafting','preparations')},'item':item,'category':category,'title':{lc:label(item,lc) for lc in LOCALES},'body':body,'recipeIds':[r['id'] for r in linked],**({'preparations':preparations or crafting} if kind in ('food','mixer') and (preparations or crafting) else {})})
+  out.append({**{k:v for k,v in old.items() if k not in ('crafting','preparations')},'item':item,'category':category,'title':{lc:label(item,lc) for lc in LOCALES},'body':body,'recipeIds':[r['id'] for r in linked],**({'preparations':preparations or crafting} if kind in ('food','mixer','lamp') and (preparations or crafting) else {})})
   audits.append({'id':old['id'],'item':item,'category':category,'recipeIds':[r['id']for r in linked],'crafting':len(crafting),'freezerRecipes':[r['id']for r in freezing]})
  payload['pages']=out;writejs(ROOT/'runtime/BP/scripts/payload.js','payload',payload)
  audit={'guideVersion':2,'pageCount':len(out),'categories':dict(collections.Counter(p['category']for p in out)),'registeredRecipes':dict(collections.Counter(r['kind']for r in payload['recipes'])),'recipeSource':'canonical runtime registry','freezerRecipes':len(freezers),'nativeCraftingRecipes':sum(len(p.get('crafting',[]))for p in out),'pages':audits}

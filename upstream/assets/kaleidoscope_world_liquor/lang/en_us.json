@@ -85,6 +85,9 @@
   "block.kaleidoscope_world_liquor.dark_oak_cellar_cabinet": "Spruce Bar Cabinet",
   "block.kaleidoscope_world_liquor.cherry_cellar_cabinet": "Cherry Cellar Cabinet",
 
+  "block.kaleidoscope_world_liquor.green_pendant_lamp": "Green Pendant Lamp",
+  "block.kaleidoscope_world_liquor.pink_pendant_lamp": "Pink Pendant Lamp",
+
   "enchantment.kaleidoscope_world_liquor.brew_accelerator": "Refined Brew",
   "enchantment.kaleidoscope_world_liquor.brew_accelerator.desc": "Right-click a brewing barrel to increase its brew level by one",
 
@@ -164,6 +167,8 @@
   "effect.kaleidoscope_world_liquor.ground_crit.description": "Melee hit have a chance to crit without the need to jump",
   "effect.kaleidoscope_world_liquor.level_boost": "Brewed from scarlet lake water, carries a peculiar briny, sweet scent",
   "effect.kaleidoscope_world_liquor.level_boost.description": "Increases XP gain",
+  "effect.kaleidoscope_world_liquor.luck": "Luck+",
+  "effect.kaleidoscope_world_liquor.luck.description": "Chance to gain items that did not drop, higher levels grant higher chance",
   "effect.kaleidoscope_world_liquor.explosion": "Explosion",
   "effect.kaleidoscope_world_liquor.crazy": "INSANITY!!!",
   "effect.kaleidoscope_world_liquor.respawn": "You wake up in a familiar dwelling...",
@@ -186,10 +191,5 @@
   "advancements.kaleidoscope_world_liquor.collect_all_liquor.description": "Collect all liquors",
   "advancements.kaleidoscope_twilight.collect_all_twilight_snack.title": "Bocchi the Rock!",
   "advancements.kaleidoscope_twilight.collect_all_twilight_snack.description": "Collect Bocchi Pudding, Kita Stuffed Crisp, Yamada Ryō Cone, and Magical Crispy Horn!",
-  "config.jade.plugin_kaleidoscope_world_liquor.freezer_fluid": "Freezer Tank Fluid Render",
-  "potion.potency.5": "VI",
-  "potion.potency.6": "VII",
-  "potion.potency.7": "VIII",
-  "potion.potency.8": "IX",
-  "potion.potency.9": "X"
+  "config.jade.plugin_kaleidoscope_world_liquor.freezer_fluid": "Freezer Tank Fluid Render"
 }

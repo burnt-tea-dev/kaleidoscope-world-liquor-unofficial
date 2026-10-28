@@ -135,6 +135,9 @@
   "kaleidoscope_world_liquor:cup_gin_tonic": {
     "sound": "glass"
   },
+  "kaleidoscope_world_liquor:cup_highball": {
+    "sound": "glass"
+  },
   "kaleidoscope_world_liquor:cup_jerk": {
     "sound": "glass"
   },
@@ -159,11 +162,17 @@
   "kaleidoscope_world_liquor:freezer": {
     "sound": "iron"
   },
+  "kaleidoscope_world_liquor:green_pendant_lamp": {
+    "sound": "chain"
+  },
   "kaleidoscope_world_liquor:oak_bar_cabinet": {
     "sound": "wood"
   },
   "kaleidoscope_world_liquor:oak_cellar_cabinet": {
     "sound": "wood"
+  },
+  "kaleidoscope_world_liquor:pink_pendant_lamp": {
+    "sound": "chain"
   },
   "kaleidoscope_world_liquor:qxxy_painting": {
     "sound": "wood"

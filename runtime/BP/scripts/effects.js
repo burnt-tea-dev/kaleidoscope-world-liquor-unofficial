@@ -1,9 +1,10 @@
+import {installLuckLoot} from './luck-loot.js';
 import {FrostAgingScheduler,setFrostAgingScheduler} from './frost-aging.js';
 import {readTavernEffects,getTavernEffectEntities} from './sdk/tavern-effects.js';
 import {isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequilaDamageCap,isMeleeSource} from './combat-source.js';
 import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from './kill-credit.js';
-import {boatingVelocity,reverseGravityImpulse,multiJumpStep,sourceJumpVelocity,nativeJumpImpulse} from './motion-source.js';
-import {lavaContact} from './liquid-contact.js';
+import {boatingVelocity,reverseGravityImpulse,multiJumpStep,sourceJumpVelocity,sourceMultiJumpVelocity,nativeJumpImpulse} from './motion-source.js';
+import {lavaContact,eyesUnderWater} from './liquid-contact.js';
 import {CriticalFeedback} from './critical-feedback.js';
 import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
 import {freezeWater} from './frost-water.js';
@@ -17,7 +18,7 @@ import {applyJavaRespawn,installJavaRespawn} from './respawn-adapter.js';
 import {world,system,EffectTypes,ItemStack,ItemTypes,MolangVariableMap} from '@minecraft/server';
 export const NS='kaleidoscope_world_liquor';
 const jumps=new Map(),headDrops=new Map();
-let frostAging;
+let frostAging,luckLoot;
 const killCredit=new JavaKillCredit({now:()=>system.currentTick,resolve:id=>{try{return world.getEntity(id);}catch{return undefined;}}});
 const acceptedFeedback=new AcceptedHurtFeedback(system);
 const criticalFeedback=new CriticalFeedback(system,{delivery:acceptedFeedback,variables:()=>new MolangVariableMap()});
@@ -33,7 +34,7 @@ function safeRespawn(p){return applyJavaRespawn(p,world,NS+'.java.respawn');}
 export function applyEffect(p,effect,duration,amplifier=0){
  const name=effect.split(':')[1];if(!Number.isFinite(duration)||duration<0||duration>1e6||!Number.isInteger(amplifier)||amplifier<0||amplifier>255)return;
  switch(name){
- case 'explosion':p.dimension.createExplosion(p.location,3+amplifier,{breaksBlocks:world.gameRules.tntExplodes!==false,causesFire:false,source:p});return;
+ case 'explosion':p.dimension.createExplosion(p.location,5+amplifier,{breaksBlocks:world.gameRules.tntExplodes!==false,causesFire:false,source:p});return;
  case 'level_boost':if(p.typeId==='minecraft:player')p.addLevels(3+amplifier*3);return;
  case 'respawn':if(p.typeId==='minecraft:player')safeRespawn(p);return;
  case 'crazy':for(const {type} of selectCrazyEffects(EffectTypes.getAll()).effects)try{p.addEffect(type,200,{amplifier,showParticles:false});}catch{}play(p,NS+'.java.crazy',{volume:1,pitch:1.5});return;
@@ -71,14 +72,14 @@ function motion(p,state){
  if(!state.multi_jump&&!state.reverse_gravity&&!state.captain_gift&&!state.boating_master)return;
  const v=p.getVelocity(),lava=(state.reverse_gravity||state.multi_jump)?lavaContact(p):false;
  let jumped=false;
- if(state.multi_jump){const row=multiJumpStep(jumps.get(p.id),{effect:true,amplifier:state.multi_jump.amplifier,ground:p.isOnGround,climbing:p.isClimbing,elytra:wearingUsableElytra(p),gliding:p.isGliding,riding:!!p.getComponent('minecraft:riding')?.entityRidingOn,water:p.isInWater,levitation:!!p.getEffect('levitation'),reverse:!!state.reverse_gravity,velocityY:v.y,pressed:p.inputInfo.getButtonState('Jump')==='Pressed',flying:p.isFlying});jumps.set(p.id,row);if(row.jump){jump(p,!!state.reverse_gravity,lava);jumped=true;}}
+ if(state.multi_jump){const row=multiJumpStep(jumps.get(p.id),{effect:true,amplifier:state.multi_jump.amplifier,ground:p.isOnGround,climbing:p.isClimbing,elytra:wearingUsableElytra(p),gliding:p.isGliding,riding:!!p.getComponent('minecraft:riding')?.entityRidingOn,water:p.isInWater,levitation:!!p.getEffect('levitation'),reverse:!!state.reverse_gravity,velocityY:v.y,pressed:p.inputInfo.getButtonState('Jump')==='Pressed',flying:p.isFlying});jumps.set(p.id,row);if(row.jump){jump(p,!!state.reverse_gravity,lava,true);jumped=true;}}
  if(state.reverse_gravity&&!jumped){const impulse=reverseGravityImpulse({velocityY:v.y,flying:p.isFlying,water:p.isInWater,lava,levitation:p.getEffect('levitation')?.amplifier,slowFalling:!!p.getEffect('slow_falling')});if(impulse!==undefined)p.applyImpulse({x:0,y:impulse,z:0});}
- if(state.captain_gift&&!p.isSneaking&&v.y<=0){const y=Math.floor(p.location.y),b=p.dimension.getBlock({x:Math.floor(p.location.x),y:y-1,z:Math.floor(p.location.z)});if(b?.typeId==='minecraft:water'&&(b.permutation.getState('liquid_depth')??0)===0&&p.location.y-y<.3)p.applyImpulse({x:0,y:-v.y+.08,z:0});}
+ if(state.captain_gift&&!p.isSneaking&&!eyesUnderWater(p)&&v.y<=0){const y=Math.floor(p.location.y),b=p.dimension.getBlock({x:Math.floor(p.location.x),y:y-1,z:Math.floor(p.location.z)});if(b?.typeId==='minecraft:water'&&(b.permutation.getState('liquid_depth')??0)===0&&p.location.y-y<.3)p.applyImpulse({x:0,y:-v.y+.08,z:0});}
  if(state.boating_master){const boat=p.getComponent('minecraft:riding')?.entityRidingOn,ride=boat?.getComponent('minecraft:rideable');if(boat?.getComponent('minecraft:type_family')?.hasTypeFamily('boat')&&ride?.getRiders()[ride.controllingSeat]?.id===p.id){const velocity=boat.getVelocity(),next=boatingVelocity(velocity,state.boating_master.amplifier,p.inputInfo.getMovementVector().y>0);boat.applyImpulse({x:next.x-velocity.x,y:0,z:next.z-velocity.z});}}
 }
-function jump(p,reverse,lava=lavaContact(p)){
+function jump(p,reverse,lava=lavaContact(p),air=false){
  const at={x:Math.floor(p.location.x),y:Math.floor(p.location.y),z:Math.floor(p.location.z)},factor=b=>b?.typeId==='minecraft:honey_block'?.5:1,foot=factor(p.dimension.getBlock(at)),other=factor(p.dimension.getBlock({...at,y:reverse?at.y+1:Math.floor(p.location.y-.2)}));
- const target=sourceJumpVelocity({reverse,jumpFactor:foot===1?other:foot,jumpBoost:p.getEffect('jump_boost')?.amplifier,sprinting:p.isSprinting,yaw:p.getRotation().y}),velocity=p.getVelocity();p.applyImpulse(nativeJumpImpulse(velocity,target,{slowFalling:!!p.getEffect('slow_falling'),lava}));
+ const target=air?sourceMultiJumpVelocity({reverse,jumpBoost:p.getEffect('jump_boost')?.amplifier}):sourceJumpVelocity({reverse,jumpFactor:foot===1?other:foot,jumpBoost:p.getEffect('jump_boost')?.amplifier,sprinting:p.isSprinting,yaw:p.getRotation().y}),velocity=p.getVelocity();p.applyImpulse(nativeJumpImpulse(velocity,target,{slowFalling:!!p.getEffect('slow_falling'),lava}));
 }
 export function tick(){frostAging?.tick();if(system.currentTick%20===0)killCredit.prune();
  // Fresh host snapshots already identify every player/mob this pack can affect.
@@ -101,6 +102,7 @@ function wearingUsableElytra(p){
 export function installEffects(){
  frostAging=new FrostAgingScheduler(world);setFrostAgingScheduler(frostAging);
  installJavaRespawn(world,system);
+ luckLoot=installLuckLoot(world,system,read,killCredit);
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(isLivingCombatEntity(p)&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
  world.afterEvents.entityHurt.subscribe(e=>{killCredit.applied(e);acceptedFeedback.applied(e);});
@@ -108,7 +110,7 @@ export function installEffects(){
  world.afterEvents.playerSpawn.subscribe(({player})=>{jumps.delete(player.id);killCredit.forget(player.id);});
  world.afterEvents.playerLeave.subscribe(e=>{jumps.delete(e.playerId);killCredit.forget(e.playerId);});
  world.afterEvents.playerButtonInput.subscribe(e=>{if(e.button==='Jump'&&e.newButtonState==='Pressed'&&active(e.player,'reverse_gravity')&&e.player.isOnGround)jump(e.player,true);});
- world.afterEvents.entityDie.subscribe(e=>{if(headDrops.delete(e.deadEntity.id)){const id=beheadingHeadId(e.deadEntity.typeId,id=>ItemTypes.get(id));if(id)try{e.deadEntity.dimension.spawnItem(new ItemStack(id),e.deadEntity.location);}catch{}}
+ world.afterEvents.entityDie.subscribe(e=>{luckLoot.death(e);if(headDrops.delete(e.deadEntity.id)){const id=beheadingHeadId(e.deadEntity.typeId,id=>ItemTypes.get(id));if(id)try{e.deadEntity.dimension.spawnItem(new ItemStack(id),e.deadEntity.location);}catch{}}
   const attacker=e.damageSource?.damagingEntity,row=attacker&&active(attacker,'treasure_guide');if(row)doubleFreshDrops(e.deadEntity.dimension,e.deadEntity.location,.15+.05*row.amplifier);
  });
  world.afterEvents.playerBreakBlock.subscribe(e=>{if(e.brokenBlockPermutation.type.id==='minecraft:frosted_ice')frostAging.removed(e.dimension,e.block.location);const row=active(e.player,'treasure_guide');if(!row)return;try{addTreasureBlockDrops(e,row.amplifier,world.getLootTableManager());}catch(error){console.warn('[World Liquor treasure block] '+error);}});

@@ -20,15 +20,15 @@ const r=new ExtensionRegistry({recipes:SHAKER_RECIPES,fluids:FLUIDS});r.install(
 const maotai=JSON.parse(fs.readFileSync(new URL('../upstream/data/kaleidoscope_world_liquor/datamap/drink_effect/maotai.json',import.meta.url)));
 for(const content of [CONTENT,payload.content])assert.deepEqual(content.find(row=>row.base===maotai.item).effects,maotai.effects);
 for(const q of [4,5,6])assert.deepEqual(inputSnapshot(maotai.item+'_q'+q,r).effects,maotai.effects[q-1]);
-// Original author data, shared by current Forge1.1.12 and NeoForge1.1.11.
+// Current author data, shared by Forge1.1.13 and NeoForge1.1.12.
 // Check both direct drink admission and the actual host's mixology projection.
-const dassai=JSON.parse(fs.readFileSync(new URL('../data/java-parity/neoforge-1.1.11/dassai.json',import.meta.url)));
+const dassai=JSON.parse(fs.readFileSync(new URL('../upstream/data/kaleidoscope_world_liquor/datamap/drink_effect/dassai.json',import.meta.url)));
 for(const content of [CONTENT,payload.content])assert.deepEqual(content.find(row=>row.base===dassai.item).effects,dassai.effects);
 for(const q of [4,5,6]){
  const input=inputSnapshot(dassai.item+'_q'+q,r);
  assert.deepEqual(input.effects,dassai.effects[q-1]);
- const expected=dassai.effects[q-1].find(effect=>effect.effect==='minecraft:luck');
- assert.equal(signaturePayload([input,input,input]).effects.find(effect=>effect.effect==='minecraft:luck').amplifier,expected.amplifier);
+ const expected=dassai.effects[q-1].find(effect=>effect.effect==='kaleidoscope_world_liquor:luck');
+ assert.equal(signaturePayload([input,input,input]).effects.find(effect=>effect.effect==='kaleidoscope_world_liquor:luck').amplifier,expected.amplifier);
 }
 const recipes=payload.recipes.filter(row=>row.kind==='shaker');assert.equal(recipes.length,18);
 let cases=0;
@@ -51,4 +51,4 @@ assert.deepEqual(signature.effects,[
  {effect:'minecraft:haste',duration:54,amplifier:0,probability:1},
  {effect:'minecraft:speed',duration:54,amplifier:0,probability:1},
 ]);
-console.log(JSON.stringify({currentJavaVersion:'NeoForge 1.1.11',recipes:18,recipeOrderCases:cases,extraColors:4,coreReclassification:true,highballSourceEffectData:true,actualFlightImplemented:false,simulatedPlayers:false}));
+console.log(JSON.stringify({currentJavaVersion:'NeoForge1.1.12 selected changes; inherited1.1.11 recipes',recipes:18,recipeOrderCases:cases,extraColors:4,coreReclassification:true,highballSourceEffectData:true,actualFlightImplemented:false,simulatedPlayers:false}));

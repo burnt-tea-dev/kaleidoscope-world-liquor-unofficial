@@ -49,6 +49,11 @@ export function sourceJumpVelocity({reverse,jumpFactor=1,jumpBoost,sprinting,yaw
  const sprintFactor=reverse?Math.fround(.2):.2;
  return {x:sprinting?(reverse?Math.fround(-sin(angle)*sprintFactor):-sin(angle)*sprintFactor):0,y:reverse?-power:power,z:sprinting?(reverse?Math.fround(cos(angle)*sprintFactor):cos(angle)*sprintFactor):0};
 }
+/** Current author's air jump replaces only Y; ground friction/sprint are irrelevant. */
+export function sourceMultiJumpVelocity({reverse,jumpBoost}){
+ const power=.5+(jumpBoost===undefined?0:.1*(jumpBoost+1));
+ return {x:0,y:reverse?-power:power,z:0};
+}
 export function nativeJumpImpulse(velocity,target,{slowFalling=false,lava=false}={}){
  const nativeGravity=slowFalling&&velocity.y<0?.01:.08;
  const sourceGravity=slowFalling&&target.y<=0?.01:.08;

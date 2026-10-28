@@ -472,6 +472,12 @@
     },
     "kwl_highball": {
       "textures": "textures/kwl/items/highball"
+    },
+    "kwl_green_pendant_lamp": {
+      "textures": "textures/kwl/items/green_pendant_lamp"
+    },
+    "kwl_pink_pendant_lamp": {
+      "textures": "textures/kwl/items/pink_pendant_lamp"
     }
   }
 }

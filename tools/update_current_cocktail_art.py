@@ -26,6 +26,9 @@ def planned(out):
  from repair_drink_planes import repair_geometry
  review=json.loads((ROOT/'data/current-author-review-20261009.json').read_text())
  for name,digest in review['selected_source_members'].items():
+  # This converter owns art. Current drink tables are checked against their
+  # current Java sources by drink_content_contract, not the old art review.
+  if not name.startswith('assets/'):continue
   assert hashlib.sha256((ROOT/'upstream'/name).read_bytes()).hexdigest()==digest,('Author source changed',name)
  files={};rows=[]
  for name,identity in ART.items():

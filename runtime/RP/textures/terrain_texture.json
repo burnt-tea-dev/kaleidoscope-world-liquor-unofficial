@@ -511,6 +511,15 @@
     },
     "kwl_kaleidoscope_world_liquor__block__mixology__highball": {
       "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__mixology__highball"
+    },
+    "kwl_green_pendant_lamp": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__deco__green_pendant_lamp__bottom"
+    },
+    "kwl_pink_pendant_lamp": {
+      "textures": "textures/kwl/generated/kaleidoscope_world_liquor__block__deco__pink_pendant_lamp__bottom"
+    },
+    "kwl_pendant_lamp_top": {
+      "textures": "textures/kwl/generated/kaleidoscope_tavern__block__deco__yellow_pendant_lamp__top"
     }
   }
 }

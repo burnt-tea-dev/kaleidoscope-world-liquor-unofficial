@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:geometry": [
     {
       "description": {
@@ -55,20 +55,31 @@
                   ],
                   "material_instance": "default"
                 },
+                "east": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
                 "south": {
                   "uv": [
-                    16.0,
+                    0.0,
                     16.0
                   ],
                   "uv_size": [
-                    -16.0,
-                    -16.0
+                    16.0,
+                    16.0
                   ],
                   "material_instance": "default"
                 },
                 "west": {
                   "uv": [
-                    15.0,
+                    0.0,
                     0.0
                   ],
                   "uv_size": [
@@ -90,12 +101,12 @@
                 },
                 "down": {
                   "uv": [
-                    31.0,
-                    8.5
+                    32.0,
+                    15.0
                   ],
                   "uv_size": [
-                    -0.5,
-                    -0.5
+                    -16.0,
+                    1.0
                   ],
                   "material_instance": "default"
                 }
@@ -146,14 +157,47 @@
                   ],
                   "material_instance": "default"
                 },
-                "west": {
+                "south": {
                   "uv": [
                     0.0,
-                    17.0
+                    0.0
                   ],
                   "uv_size": [
-                    15.0,
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    16.0,
+                    1.0
+                  ],
+                  "uv_size": [
+                    -15.0,
                     14.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
                   ],
                   "material_instance": "default"
                 }
@@ -193,13 +237,35 @@
                   ],
                   "material_instance": "default"
                 },
-                "west": {
+                "east": {
                   "uv": [
                     0.0,
                     0.0
                   ],
                   "uv_size": [
-                    15.0,
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    16.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -15.0,
                     1.0
                   ],
                   "material_instance": "default"
@@ -262,13 +328,35 @@
                   ],
                   "material_instance": "default"
                 },
-                "west": {
+                "east": {
                   "uv": [
                     0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    16.0,
                     15.0
                   ],
                   "uv_size": [
-                    15.0,
+                    -15.0,
                     1.0
                   ],
                   "material_instance": "default"
