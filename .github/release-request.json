@@ -22,5 +22,5 @@
   "bds": false,
   "peer_pin_note": "Exact Tavern189 and Grilling187 sources; World Liquor171 changes only paired dependencies and release identity. Family deployment and human acceptance remain pending.",
   "peer_pin_status": "reviewed_source_pending_canonical_merge",
-  "expected_archive_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  "expected_archive_sha256": "39e5f12111a58aa5dce370bce37517ba246051600be905cc09abe2c48322097c"
 }
