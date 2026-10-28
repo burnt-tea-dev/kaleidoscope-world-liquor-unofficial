@@ -15,7 +15,7 @@
   "client": false,
   "status": "candidate_pending_canonical_ci_and_family_admission",
   "public_notes_path": "docs/RELEASE-NOTES-0.1.171.md",
-  "tavern_commit": "f7b6c974685ad3ff95dacbd52f4f55218b80dced",
+  "tavern_commit": "4b86ceeaf75416cac7a0cbcdde9da54a1bdfaddc",
   "artifact_suffix": "baseline1",
   "peer_pins_final": true,
   "publication_ready": false,
