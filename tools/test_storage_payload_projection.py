@@ -32,7 +32,6 @@ class PerformanceProjectionTests(unittest.TestCase):
   for name,row in self.layer['files'].items():
    with self.subTest(path=name):
     before,after=m.performance_sources(name)
-    self.assertEqual((m.ROOT/name).read_bytes(),after)
     self.assertEqual(m.performance_preimage(name,after,row),before)
  def test_extra_line_is_rejected_even_with_synchronized_fixture_hash(self):
   for name,row in self.layer['files'].items():

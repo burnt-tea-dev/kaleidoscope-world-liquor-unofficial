@@ -1,7 +1,7 @@
 export const payload = {
   "api": 1,
   "source": "kaleidoscope_world_liquor",
-  "version": "0.1.168",
+  "version": "0.1.169",
   "title": {
     "en_US": "World Liquor",
     "zh_CN": "世界名酒",
@@ -1123,9 +1123,9 @@ export const payload = {
           "probability": 1.0
         },
         {
-          "effect": "minecraft:luck",
+          "effect": "kaleidoscope_world_liquor:luck",
           "duration": 240,
-          "amplifier": 3,
+          "amplifier": 2,
           "probability": 1.0
         }
       ],
@@ -1145,9 +1145,9 @@ export const payload = {
           "probability": 1.0
         },
         {
-          "effect": "minecraft:luck",
+          "effect": "kaleidoscope_world_liquor:luck",
           "duration": 720,
-          "amplifier": 5,
+          "amplifier": 3,
           "probability": 1.0
         }
       ],
@@ -1167,9 +1167,9 @@ export const payload = {
           "probability": 1.0
         },
         {
-          "effect": "minecraft:luck",
+          "effect": "kaleidoscope_world_liquor:luck",
           "duration": 2160,
-          "amplifier": 7,
+          "amplifier": 4,
           "probability": 1.0
         }
       ],
@@ -2943,7 +2943,7 @@ export const payload = {
             "probability": 1.0
           },
           {
-            "effect": "minecraft:luck",
+            "effect": "kaleidoscope_world_liquor:luck",
             "duration": 80,
             "amplifier": 1,
             "probability": 1.0
@@ -2957,9 +2957,9 @@ export const payload = {
             "probability": 1.0
           },
           {
-            "effect": "minecraft:luck",
+            "effect": "kaleidoscope_world_liquor:luck",
             "duration": 240,
-            "amplifier": 3,
+            "amplifier": 2,
             "probability": 1.0
           }
         ],
@@ -2971,9 +2971,9 @@ export const payload = {
             "probability": 1.0
           },
           {
-            "effect": "minecraft:luck",
+            "effect": "kaleidoscope_world_liquor:luck",
             "duration": 720,
-            "amplifier": 5,
+            "amplifier": 3,
             "probability": 1.0
           }
         ],
@@ -2985,9 +2985,9 @@ export const payload = {
             "probability": 1.0
           },
           {
-            "effect": "minecraft:luck",
+            "effect": "kaleidoscope_world_liquor:luck",
             "duration": 2160,
-            "amplifier": 7,
+            "amplifier": 4,
             "probability": 1.0
           }
         ]
@@ -4509,9 +4509,9 @@ export const payload = {
         "zh_TW": "獺祭"
       },
       "body": {
-        "en_US": "Character\nLuck is its signature effect from quality 3, but it currently does not improve loot. Do not rely on it for better drops.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
-        "zh_CN": "饮用特点\n品质 3 起以幸运为特色，但目前不会改善战利品；别依赖它提高掉落。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
-        "zh_TW": "飲用特色\n品質 3 起以幸運為特色，但目前不會改善戰利品；別依賴它提高掉落。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
+        "en_US": "Character\nFrom quality 3, Luck+ can add new item types to mob drops. Each extra roll has a 25% chance; higher quality gives more rolls, up to five. It currently does not affect mining, chests or fishing.\n\nServing\nLow quality can cause Nausea or Tipsiness. For cocktails, age it to quality 4 or higher.",
+        "zh_CN": "饮用特点\n品质 3 起，幸运+有机会为生物掉落增加新物品种类。每次额外重抽有25%机会；品质越高次数越多，最多五次。目前不影响挖矿、箱子或钓鱼。\n\n取用\n低品质容易恶心或微醺。 调酒前须熟成至品质 4 以上。",
+        "zh_TW": "飲用特色\n品質 3 起，幸運+有機會為生物掉落增加新物品種類。每次額外重抽有25%機會；品質越高次數越多，最多五次。目前不影響挖礦、箱子或釣魚。\n\n取用\n低品質容易噁心或微醺。 調酒前須熟成至品質 4 以上。"
       },
       "recipeIds": [
         "kaleidoscope_world_liquor:barrel/dassai"
@@ -5678,6 +5678,70 @@ export const payload = {
         "kaleidoscope_world_liquor:shaker/highball1"
       ],
       "icon": "textures/kwl/items/highball"
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/green_pendant_lamp",
+      "item": "kaleidoscope_world_liquor:green_pendant_lamp",
+      "category": "lighting",
+      "title": {
+        "en_US": "Green Pendant Lamp",
+        "zh_CN": "绿色垂灯",
+        "zh_TW": "綠色垂燈"
+      },
+      "body": {
+        "en_US": "Placement\nUses two vertically adjacent air blocks. Place with the shared furniture interaction; breaking either half returns one lamp.\nDye recipe\nFour yellow pendant lamps and one matching dye make four lamps.",
+        "zh_CN": "摆放\n需要上下两格空位，按家具方式摆放；破坏任一半只返还一盏灯。\n染色配方\n四盏黄色垂灯加一份对应染料，合成四盏灯。",
+        "zh_TW": "擺放\n需要上下兩格空位，按家具方式擺放；破壞任一半只返還一盞燈。\n染色配方\n四盞黃色垂燈加一份對應染料，合成四盞燈。"
+      },
+      "recipeIds": [],
+      "icon": "textures/kwl/items/green_pendant_lamp",
+      "preparations": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "kaleidoscope_tavern:yellow_pendant_lamp",
+            "kaleidoscope_tavern:yellow_pendant_lamp",
+            "minecraft:lime_dye",
+            "kaleidoscope_tavern:yellow_pendant_lamp",
+            "kaleidoscope_tavern:yellow_pendant_lamp"
+          ],
+          "count": 4,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:green_pendant_lamp"
+        }
+      ]
+    },
+    {
+      "id": "kaleidoscope_world_liquor:guide/pink_pendant_lamp",
+      "item": "kaleidoscope_world_liquor:pink_pendant_lamp",
+      "category": "lighting",
+      "title": {
+        "en_US": "Pink Pendant Lamp",
+        "zh_CN": "粉色垂灯",
+        "zh_TW": "粉色垂燈"
+      },
+      "body": {
+        "en_US": "Placement\nUses two vertically adjacent air blocks. Place with the shared furniture interaction; breaking either half returns one lamp.\nDye recipe\nFour yellow pendant lamps and one matching dye make four lamps.",
+        "zh_CN": "摆放\n需要上下两格空位，按家具方式摆放；破坏任一半只返还一盏灯。\n染色配方\n四盏黄色垂灯加一份对应染料，合成四盏灯。",
+        "zh_TW": "擺放\n需要上下兩格空位，按家具方式擺放；破壞任一半只返還一盞燈。\n染色配方\n四盞黃色垂燈加一份對應染料，合成四盞燈。"
+      },
+      "recipeIds": [],
+      "icon": "textures/kwl/items/pink_pendant_lamp",
+      "preparations": [
+        {
+          "method": "Crafting Table",
+          "ingredients": [
+            "kaleidoscope_tavern:yellow_pendant_lamp",
+            "kaleidoscope_tavern:yellow_pendant_lamp",
+            "minecraft:pink_dye",
+            "kaleidoscope_tavern:yellow_pendant_lamp",
+            "kaleidoscope_tavern:yellow_pendant_lamp"
+          ],
+          "count": 4,
+          "time": 0,
+          "result": "kaleidoscope_world_liquor:pink_pendant_lamp"
+        }
+      ]
     }
   ],
   "requires": [
@@ -6760,6 +6824,16 @@ export const payload = {
         "kaleidoscope_tavern:cocktail_ingredient_yellow"
       ],
       "remove": []
+    }
+  ],
+  "furniture": [
+    {
+      "block": "kaleidoscope_world_liquor:green_pendant_lamp",
+      "kind": "pendant_lamp"
+    },
+    {
+      "block": "kaleidoscope_world_liquor:pink_pendant_lamp",
+      "kind": "pendant_lamp"
     }
   ]
 };

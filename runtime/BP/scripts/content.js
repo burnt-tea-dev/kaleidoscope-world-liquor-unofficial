@@ -580,7 +580,7 @@ export const CONTENT = [
           "probability": 1.0
         },
         {
-          "effect": "minecraft:luck",
+          "effect": "kaleidoscope_world_liquor:luck",
           "duration": 80,
           "amplifier": 1,
           "probability": 1.0
@@ -594,9 +594,9 @@ export const CONTENT = [
           "probability": 1.0
         },
         {
-          "effect": "minecraft:luck",
+          "effect": "kaleidoscope_world_liquor:luck",
           "duration": 240,
-          "amplifier": 3,
+          "amplifier": 2,
           "probability": 1.0
         }
       ],
@@ -608,9 +608,9 @@ export const CONTENT = [
           "probability": 1.0
         },
         {
-          "effect": "minecraft:luck",
+          "effect": "kaleidoscope_world_liquor:luck",
           "duration": 720,
-          "amplifier": 5,
+          "amplifier": 3,
           "probability": 1.0
         }
       ],
@@ -622,9 +622,9 @@ export const CONTENT = [
           "probability": 1.0
         },
         {
-          "effect": "minecraft:luck",
+          "effect": "kaleidoscope_world_liquor:luck",
           "duration": 2160,
-          "amplifier": 7,
+          "amplifier": 4,
           "probability": 1.0
         }
       ]

@@ -1,0 +1,41 @@
+{
+  "observed_at": "2026-10-28",
+  "engine_version": "1.26.60.6",
+  "engine_sha256": "ea16b541a448e07c337848d2c5f37321b706554b5216dd942f3f11e7a8ed2bad",
+  "api": "2.12.0-beta",
+  "experiments": [
+    "gametest",
+    "upcoming_creator_features"
+  ],
+  "native_luck": {
+    "exit_code": 0,
+    "error_lines": [],
+    "result": {
+      "kind": "done",
+      "players": 0,
+      "originalEvents": 10,
+      "rareStacks": 20,
+      "unrelatedStackAmount": 7,
+      "completeMetadataRetained": true
+    },
+    "chance_control": "Injected random=0 forces successful 25% gates; loot draws remain native engine RNG.",
+    "probe": "../../tests/native/luck-loot-probe.js",
+    "fixture_entity": "../../tests/native/luck-loot-mob.json",
+    "fixture_table": "../../tests/native/luck-loot-table.json",
+    "production_sha256": {
+      "luck-loot.js": "ea8a46df3af7a8bc89473daf88b73ed1262881b06647d6b6bb9af726f8ee89fd",
+      "combat-source.js": "506846390baa3e790cc2ac28e2370e618c9d015a22cf66b404433d3cbfa7cc75"
+    },
+    "raw_log_sha256": "ebabe45ece0775d3e98b054ba74b2cfdc53b557ae2ba6a9d810a2ba37c93acbd"
+  },
+  "context_probe": {
+    "original_chest_table_or_loot_context_exposed": false,
+    "container_open_event_observed": true,
+    "simulated_break_dispatched_playerBreakBlock": false,
+    "scope": "The simulated break is not evidence about normal player mining events. Fishing not tested."
+  },
+  "isolated_world": true,
+  "live_modified": false,
+  "client": false,
+  "production_ready": false
+}

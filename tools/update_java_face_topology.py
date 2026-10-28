@@ -1,5 +1,6 @@
 """Remove only faces absent in pinned Java1.1.9; never rebuild world geometries."""
 import argparse,copy,hashlib,json
+from pathlib import Path
 from update_freezer_java_art import ROOT,SOURCE,verify_source
 
 def read(p):return json.loads(p.read_text())
@@ -11,7 +12,10 @@ def non_face_digest(j):
  return hashlib.sha256(json.dumps(masked,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def planned():
  verify_source();out={}
+ from current_author_art import cabinet_geometries
+ current=cabinet_geometries()
  for row in read(SOURCE/'face-pruning.json')['entries']:
+  if 'geometry.kwl.'+Path(row['runtime']).stem.removeprefix('kwl_').removesuffix('.geo') in current:continue
   path=ROOT/row['runtime'];doc=read(path);assert non_face_digest(doc)==row['non_face_sha256'],('Unrelated geometry mutation',row['runtime'])
   model=read(SOURCE/row['source']);g=doc['minecraft:geometry'][0];cubes=[c for b in g['bones'] for c in b.get('cubes',[])]
   assert len(cubes)==len(model['elements'])
@@ -37,6 +41,6 @@ def check(write=False):
  for p,j in files.items():
   if write:p.write_text(json.dumps(j,ensure_ascii=False,indent=2)+'\n')
   else:assert read(p)==j,('Outdated Java face inventory',p)
- print('11 latest-Java geometry masks verified;150 obsolete faces removed; other fields preserved')
+ print('Historical stool/record face masks verified; cabinets are owned by the current author resource contract')
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--write',action='store_true');a=p.parse_args();check(a.write)

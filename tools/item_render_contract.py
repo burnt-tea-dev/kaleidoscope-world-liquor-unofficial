@@ -40,6 +40,8 @@ def run(write=False):
  from update_freezer_java_art import check as freezer_art_check, SOURCE
  from update_java_face_topology import check as topology_check
  freezer_art_check();topology_check()
+ from current_author_art import check as current_art_check
+ current_art_check()
  reviewed={x['runtime'] for x in read(SOURCE/'face-pruning.json')['entries']}
  reviewed.add('runtime/RP/models/entity/kwl_g_5b611b0754ffa64d.geo.json')
  for name,digest in read(ROOT/'data/item-display-original-bones.json').items():
@@ -50,12 +52,12 @@ def run(write=False):
    if write:p.write_text(json.dumps(j,ensure_ascii=False,indent=2)+'\n')
    else:drift.append(str(p.relative_to(ROOT)))
  assert not drift,('Native furniture item context drift',drift)
- # All129 generated sprite routes remain registered and textured.
+ # The current generated sprite routes remain registered and textured.
  ids={'kaleidoscope_world_liquor:'+x for x in read(ROOT/'docs/item-inventory.json')['furniture']};sprites=0
  for p in (ROOT/'runtime/BP/items').glob('*.json'):
   i=read(p)['minecraft:item']
   if i['description']['identifier'] not in ids:assert 'minecraft:icon' in i['components'];sprites+=1
- expected=129+int((ROOT/'runtime/BP/items/highball.json').exists());assert sprites==expected,sprites
+ expected=131+int((ROOT/'runtime/BP/items/highball.json').exists());assert sprites==expected,sprites
  print(f'27 geometric furniture routes;{expected} sprite routes; client acceptance pending')
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--write',action='store_true');a=p.parse_args();run(a.write)

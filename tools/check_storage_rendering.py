@@ -9,6 +9,8 @@ import sys
 import os
 import base64
 import gzip
+import io
+import tarfile
 from functools import lru_cache
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -88,11 +90,26 @@ def main():
  assert all(visual_source not in layer['files'] for layer in ledger['reviewedFunctionalDeltaLayers'])
  assert visual_source not in read(ROOT/'data/freezer-visual-additions.json')['files']
  subprocess.run(['node',str(ROOT/'tests/freezer-result-height.test.mjs')],check=True)
- # Both reviewed JS bodies are bound even where an older storage guard only
- # checks selected semantics rather than a complete historical file digest.
+ # Preserve the W146 historical evidence. Current effects are exercised by
+ # combat-source/multi-jump/current-java-effects/luck-loot tests instead of
+ # requiring today's file to be byte-identical to the historical W146 body.
  for name in PERFORMANCE_PATHS:
   layer=next(x for x in read(ROOT/'data/baseline-reconciliation.json')['reviewedFunctionalDeltaLayers'] if x['release']=='0.1.146')
-  performance_preimage(name,(ROOT/name).read_bytes(),layer['files'][name])
+  _,reviewed_source=performance_sources(name)
+  performance_preimage(name,reviewed_source,layer['files'][name])
+ # Source ownership moves only for the new lamps and changed cabinet art.
+ # Keep all historical JSON records intact and compare the remaining files
+ # against their original inventory below. No old hashes are re-authored.
+ from current_author_art import check as check_current_art, planned
+ check_current_art()
+ current_resources={path.relative_to(ROOT).as_posix() for path in planned()}
+ current_resources.add('runtime/RP/textures/kaleidoscope_world_liquor/mob_effect/luck.png')
+ current_resources.update('runtime/BP/recipes/'+color+'_pendant_lamp.json' for color in ('green','pink'))
+ feedback_spec=importlib.util.spec_from_file_location('world_liquor_break_feedback',ROOT/'tools/build_break_feedback.py')
+ feedback=importlib.util.module_from_spec(feedback_spec);feedback_spec.loader.exec_module(feedback)
+ feedback.build(ROOT,check=True)
+ feedback_resources={'runtime/BP/scripts/data/break-feedback.js','runtime/RP/blocks.json','runtime/RP/particles/block_fragments.json','runtime/RP/textures/kaleidoscope_world_liquor/break_fragments.png'}
+ current_resources.update(feedback_resources)
  spec=importlib.util.spec_from_file_location('creative_history',TAV/'tools/creative/historical.py')
  history=importlib.util.module_from_spec(spec);spec.loader.exec_module(history)
  projection=history.LegacyMenuProjection(ROOT)
@@ -100,7 +117,8 @@ def main():
  assert COMPACT_REVIEW['test_only'] is True
  assert COMPACT_REVIEW['renames']=={'runtime/RP/'+new+'.png':'runtime/RP/'+old+'.png' for old,new in PATHS.items()}
  check_texture_paths(ROOT/'runtime/RP')
- for name in COMPACT_REVIEW['changes']:compact_preimage(ROOT/name)
+ for name in COMPACT_REVIEW['changes']:
+  if name not in current_resources:compact_preimage(ROOT/name)
  reviewed=read(ROOT/'data/guide-destruction-review.json')
  plane_review=read(ROOT/'data/drink-plane-review.json')['files']
  additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
@@ -148,6 +166,7 @@ def main():
   name='runtime/RP/'+row['runtime'];assert name not in additions;additions[name]=row['sha256']
  break_review=read(ROOT/'data/break-feedback-review.json')
  for path,h in break_review['additions'].items():
+  if path in feedback_resources:continue
   assert path not in additions,('Duplicate reviewed addition',path);additions[path]=h
  for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed runtime addition',path)
  def historical_digest(p,raw=None):
@@ -189,10 +208,16 @@ def main():
  effects=(ROOT/'runtime/BP/scripts/effects.js').read_text()
  assert 'readTavernEffects' in effects and 'setDynamicProperty' not in effects and 'world.getAbsoluteTime' not in effects
  preserved=len(baseline['files'])-len(changed)
+ archive=subprocess.check_output(['git','archive',baseline['baselineCommit'],*[prefix for prefix,row in baseline['trees'].items() if row['files']]],cwd=ROOT)
+ with tarfile.open(fileobj=io.BytesIO(archive)) as tar:
+  historical={member.name:hashlib.sha256(tar.extractfile(member).read()).hexdigest() for member in tar.getmembers() if member.isfile()}
  for prefix,expected in baseline['trees'].items():
-  entries={COMPACT_REVIEW['renames'].get(p.relative_to(ROOT).as_posix(),p.relative_to(ROOT).as_posix()):historical_digest(p,historical_block_bytes(p)) for p in (ROOT/prefix).rglob('*') if p.is_file() and p.relative_to(ROOT).as_posix() not in additions}
-  actual=hashlib.sha256(''.join(k+'\0'+v+'\n' for k,v in sorted(entries.items())).encode()).hexdigest()
-  assert len(entries)==expected['files'] and actual==expected['sha256'],prefix
+  original={name:digest for name,digest in historical.items() if name.startswith(prefix)}
+  witness=hashlib.sha256(''.join(k+'\0'+v+'\n' for k,v in sorted(original.items())).encode()).hexdigest()
+  assert len(original)==expected['files'] and witness==expected['sha256'],('Original storage witness differs',prefix)
+  retired={COMPACT_REVIEW['renames'].get(name,name) for name in current_resources}
+  entries={COMPACT_REVIEW['renames'].get(p.relative_to(ROOT).as_posix(),p.relative_to(ROOT).as_posix()):historical_digest(p,historical_block_bytes(p)) for p in (ROOT/prefix).rglob('*') if p.is_file() and p.relative_to(ROOT).as_posix() not in additions and p.relative_to(ROOT).as_posix() not in current_resources}
+  assert entries=={name:digest for name,digest in original.items() if name not in retired},prefix
   preserved+=len(entries)
  subprocess.run([sys.executable,str(ROOT/'tools/build_drink_colors.py'),'--check'],check=True)
  # Pure exported slot math, not the module which subscribes to engine events.

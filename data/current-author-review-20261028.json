@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "reviewed_at": "2026-10-28",
+  "bedrock": {
+    "project_id": 1724286,
+    "file_id": 9317011,
+    "archive_sha256": "5f8466f27d267728b802e8087491ba88871009384174918215b89347358a030a",
+    "decision": "Retain maintained Java port UUIDs, persistence and repairs; do not replace with first author Bedrock release."
+  },
+  "branches": [
+    {
+      "project_id": 1502365,
+      "file_id": 9217896,
+      "loader": "NeoForge",
+      "minecraft": "1.21.1",
+      "author_version": "1.1.12",
+      "archive_sha256": "d963089ad0a7f99a8950171d76913cfeea99a0126ee12b16c72c3162f8545da3",
+      "official_length_and_hashes_verified": true,
+      "selected_member": "data/kaleidoscope_world_liquor/datamap/drink_effect/maotai.json",
+      "selected_member_sha256": "55c82370a2b0a859737cd23c42e576c3dd133f10fbb69437dccedf9be2918e58"
+    },
+    {
+      "project_id": 1502365,
+      "file_id": 9217901,
+      "loader": "Forge",
+      "minecraft": "1.20.1",
+      "author_version": "1.1.13",
+      "archive_sha256": "793f746624a5d9d4a4c50b9ca7d2a756a4aeb91f092f0a1920e98d8fc988898c",
+      "official_length_and_hashes_verified": true,
+      "selected_member": "data/kaleidoscope_world_liquor/datamap/drink_effect/maotai.json",
+      "selected_member_sha256": "55c82370a2b0a859737cd23c42e576c3dd133f10fbb69437dccedf9be2918e58"
+    }
+  ],
+  "adopted_domains": [
+    "Maotai and Dassai effect rows in direct drinks and signature inputs",
+    "green/pink two-half pendant lamps; blue/green/pink dye recipes",
+    "current cabinet models and textures, preserving IDs and storage",
+    "Explosion base power 5; submerged-eye CaptainGift exclusion; 0.5-base air multi-jump velocity",
+    "Luck+ native entity-death/drop adapter and appended optional HUD icon"
+  ],
+  "pending_domains": [
+    "Luck global original-context dispatch for mining, chests and fishing; native death events without an emitted item cohort",
+    "TreasureSense per-viewer outlines and Java team ownership/color renderer; no Bedrock outline currently shipped",
+    "Full Forge/NeoForge branch parity and human rendering/audio/gameplay acceptance"
+  ],
+  "luck_source": {
+    "chance": 0.25,
+    "rolls": "min(amplifier+1,5)",
+    "rule": "Reroll the original table, adding only item types not already present in the initial drops or previous extra rolls. Preserve complete native stack metadata.",
+    "holder_priority": [
+      "last damage player",
+      "attacking entity",
+      "direct attacking entity",
+      "this entity or fishing-hook player owner"
+    ],
+    "correction": "The 2026-10-27 review incorrectly said retain initially present types. Verified current LuckLootModifier bytecode uses Set.add true, which adds previously absent types."
+  },
+  "full_branch_adaptation": false,
+  "client": false,
+  "production_ready": false,
+  "previous_review": "current-author-review-20261027.json",
+  "bedrock_adaptations": {
+    "luck": "Native entityDie/entityItemDrop identifies the exact original drop cohort. LootTableManager rerolls that same dead actor with the captured tool. Bedrock does not expose the complete Java LootContext, original chest loot-table ID or a global loot modifier callback in the selected API; no nearby-drop cloning or independent fake baseline is used.",
+    "native_array": "BDS1.26.60 native EntityItemDrop items is array-shaped without Symbol.iterator; capture once and read by index.",
+    "lamp": "Shared Tavern optional vertical-double lifecycle; source item sprites and per-face UVs, including green model using the pink atlas, retained.",
+    "cabinet": "Current Java resource conversion replaces retired cabinet-only topology projections; IDs/states/storage and item display transforms remain.",
+    "blue_recipe": "The blue product already belongs to Tavern. Its dye recipe and guide preparation are delivered by Tavern, avoiding a foreign-owned guide item or duplicate recipe. Green/pink recipes and pages remain optional World Liquor content."
+  },
+  "runtime_requirements": {
+    "bds_tested": "1.26.60.6",
+    "minimum_engine": [
+      1,
+      26,
+      60
+    ],
+    "minecraft_server": "2.12.0-beta",
+    "npm_types": "2.12.0-beta.1.26.60-stable",
+    "experiments": [
+      "gametest"
+    ],
+    "probe_world_experiments": [
+      "gametest",
+      "upcoming_creator_features"
+    ]
+  },
+  "evidence": "../docs/evidence/current-java-content-20261028.json"
+}

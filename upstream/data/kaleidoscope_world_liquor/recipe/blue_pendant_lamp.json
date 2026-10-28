@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " L ",
+    "LGL",
+    " L "
+  ],
+  "key": {
+    "G": {"item":"minecraft:blue_dye"},
+    "L": {"item":"kaleidoscope_tavern:yellow_pendant_lamp"}
+  },
+  "result": {
+    "id": "kaleidoscope_tavern:blue_pendant_lamp",
+    "count": 4
+  }
+}

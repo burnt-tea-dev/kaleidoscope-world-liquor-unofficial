@@ -87,6 +87,9 @@
   "block.kaleidoscope_world_liquor.spruce_cellar_cabinet": "深色橡木窖藏酒柜",
   "block.kaleidoscope_world_liquor.dark_oak_cellar_cabinet": "云杉木窖藏酒柜",
   "block.kaleidoscope_world_liquor.cherry_cellar_cabinet": "樱花木窖藏酒柜",
+  
+  "block.kaleidoscope_world_liquor.green_pendant_lamp": "绿色垂灯",
+  "block.kaleidoscope_world_liquor.pink_pendant_lamp": "粉色垂灯",
 
   "enchantment.kaleidoscope_world_liquor.brew_accelerator": "臻酿",
   "enchantment.kaleidoscope_world_liquor.brew_accelerator.desc": "右键点击正在酿造的酒桶，可直接提升一级酿造等级",
@@ -159,6 +162,8 @@
   "effect.kaleidoscope_world_liquor.ground_crit.description": "平地挥击有概率打出暴击伤害",
   "effect.kaleidoscope_world_liquor.level_boost": "取自泛红湖水，泛着诡异虾腥甜香",
   "effect.kaleidoscope_world_liquor.level_boost.description": "经验提升",
+  "effect.kaleidoscope_world_liquor.luck": "幸运+",
+  "effect.kaleidoscope_world_liquor.luck.description": "提升开箱、挖掘、钓鱼、打怪时获取更多种类稀有战利品的概率",
   "effect.kaleidoscope_world_liquor.explosion": "爆炸",
   "effect.kaleidoscope_world_liquor.crazy": "疯狂！！！",
   "effect.kaleidoscope_world_liquor.respawn": "宿命之海",
@@ -191,10 +196,5 @@
   "advancements.kaleidoscope_world_liquor.collect_all_liquor.description": "收集全部名酒",
   "advancements.kaleidoscope_twilight.collect_all_twilight_snack.title": "孤独摇滚",
   "advancements.kaleidoscope_twilight.collect_all_twilight_snack.description": "集齐波奇布丁、喜多夹心脆、凉山田筒、妙脆角！",
-  "config.jade.plugin_kaleidoscope_world_liquor.freezer_fluid": "冰柜牛奶流体渲染",
-  "potion.potency.5": "VI",
-  "potion.potency.6": "VII",
-  "potion.potency.7": "VIII",
-  "potion.potency.8": "IX",
-  "potion.potency.9": "X"
+  "config.jade.plugin_kaleidoscope_world_liquor.freezer_fluid": "冰柜牛奶流体渲染"
 }

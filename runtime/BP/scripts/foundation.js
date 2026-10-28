@@ -20,7 +20,7 @@ export function withFoundation(payload){
  return {...payload,modNameKey:`item.${NS}.mod_name`,breakFeedback:Object.values(BREAK_FEEDBACK),pickBlocks:[{block:NS+':wall_record',variants:[
   ...Object.entries(RECORD_MODELS).map(([item,index])=>({item,states:{[NS+':model_group']:Math.floor(index/5),[NS+':model_variant']:index%5}})),
   ...Array.from({length:6},(_,i)=>({item:NS+':custom_record',states:{[NS+':model_group']:Math.floor((19+i)/5),[NS+':model_variant']:(19+i)%5}}))
- ]}],requires:[...new Set([...(payload.requires??[]),'furniture_storage','external_effect_lifecycle','destruction_feedback','drink_source_labels'])],furniture,
+ ]}],requires:[...new Set([...(payload.requires??[]),'furniture_storage','vertical_double_furniture','external_effect_lifecycle','destruction_feedback','drink_source_labels'])],furniture:[...furniture,...(payload.furniture??[])],
   effects:[...names].sort().map(id=>({id,mode:instant.has(id.split(':')[1])?'instant':'timed'})),legacyEffectKey:NS+':effects'};
 }
 export function forwardFurnitureTick(system,block){

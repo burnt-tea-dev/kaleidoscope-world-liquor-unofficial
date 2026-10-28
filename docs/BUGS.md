@@ -2,7 +2,7 @@
 
 ## 當前入口（2026-10-27）
 
-目前來源 **W168** 由 [baseline](../baseline.json) 定義；唱片改為獨立音訊實例，移除 32 渠道及全域停止限制。來源、公開下載及倉庫最後記錄部署各自的配套只維護在[家族主索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)；每項實作狀態見[PARITY-MATRIX](PARITY-MATRIX.md)，本頁保存具體回報與場景。
+目前來源由 [baseline](../baseline.json) 定義；唱片改為獨立音訊實例，移除 32 渠道及全域停止限制。來源、公開下載及倉庫最後記錄部署各自的配套只維護在[家族主索引](https://github.com/casama233/kaleidoscope-tavern-unofficial/blob/main/family/BASELINE-STATUS.md)；每項實作狀態見[PARITY-MATRIX](PARITY-MATRIX.md)，本頁保存具體回報與場景。
 
 本次重新列出布丁餘碗差距，並保留使用者指定延後修復的Treasure Guide生物掉落問題。current `effects.js`與W148相同的來源核對沒有新增native重現；已修的冰紅茶matcher、四杯mesh／UV、冰櫃材質及唱片來源修補仍由矩陣承接。全物品Blockbench及完整真人驗收仍未完成。`client=false`、`production_ready=false`。
 
@@ -30,7 +30,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 | 項目 | 剩餘問題 | 可分辨場景 |
 |---|---|---|
 | 布丁餘碗／食物完成 | 仍統一插入inventory；原作最後一份回傳新碗供hand replacement，非空／Creative則spawnAtLocation；Luck／原作random draw亦未完整適配 | Survival最後一份／多份及Creative各自核對碗去向與真實debit順序，並驗取消／換槽；不重啟已停用探針 |
-| Luck | 1.21.1 的 vanilla Luck attribute／loot context 尚無完整 native adapter；26.1.2 的 custom reroll 是另一套玩法 | 同工具、loot table 與 Luck 等級比較 Java／Bedrock，分開記資料等級和實際掉落 |
+| Luck | 目前兩條維護分支已使用 custom Luck；原生生物死亡／掉落已適配，完整原始 LootContext、無掉落事件、挖礦／箱子／釣魚仍缺 | 目前來源與原生證據見[矩陣](PARITY-MATRIX.md)；分開記錄原始 context 和真玩家結果 |
 | 斬首與頭顱 | Incoming cancellation、owner-attributed 重入、blocked fallback、marker 保存、同次 drops 去重及玩家頭 owner 未完成 | 取消／護甲／Tequila／圖騰、已死目標、原本已掉頭、玩家頭與重啟後標記各自對照 |
 | 尋寶指南 mob drops | 現行一 tick 鄰近新 item 掃描沒有實際死亡 drops 集合的來源證明 | 兩個 mob 同 tick 死亡、玩家丟物、旁邊新 item；額外物品只能屬於本次死亡 |
 | Elbow | 精確 Java attack attribute／charge／resistance 與原生 buffered knockback 組合尚未接入；固定 extra impulse 不等價 | ground／真正 airborne、任意原速度、resistance、Player charge／mob attack 分別量測 |
@@ -48,4 +48,4 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 
 ## 分支與歷史
 
-NeoForge 1.21.1／CF9066406 是目前玩法 authority；Forge 1.20.1／CF9066402 分開追蹤。[current-author-review](../data/current-author-review-20261009.json)保留選定資料／素材核對。26.1.2／CF9087098 的 Luck、BlockDrops、配方、註冊及 automation 差異仍須分支適配，不能只換 pin 或混入 1.21.1。完整已完成／剩餘範圍見矩陣；[Phase 0](audit/AUDIT.md)與歷史 release notes 保留當時來源及驗收界線。
+目前維護分支及這次採用範圍見[來源覆核](../data/current-author-review-20261028.json)。26.1.2仍是另行待適配分支。完整已完成／剩餘範圍見矩陣；[Phase 0](audit/AUDIT.md)與歷史 release notes 保留當時來源及驗收界線。

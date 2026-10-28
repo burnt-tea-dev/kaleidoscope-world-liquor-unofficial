@@ -11,6 +11,11 @@ for row in source['unchanged_pngs']:
  assert hashlib.sha256(path.read_bytes()).hexdigest()==row['sha256'],path
  assert Image.open(path).size==tuple(row['size'])==(18,18),path
 print('15 original World Liquor effect sprites verified unchanged; client rendering not tested')
+current=json.loads((root/'data/current-author-assets.json').read_text())
+luck_source='assets/kaleidoscope_world_liquor/textures/mob_effect/luck.png'
+luck=root/'runtime/RP/textures/kaleidoscope_world_liquor/mob_effect/luck.png'
+assert hashlib.sha256(luck.read_bytes()).hexdigest()==current['files'][luck_source]
+assert Image.open(luck).size==(18,18)
 tavern=Path(os.environ.get('TAVERN_ROOT',str(root.parent/'tavern-src')))
 subprocess.run(['node',str(tavern/'tools/build_effect_icon_hud.mjs'),'--world-liquor',str(root),'--check'],check=True)
 hud=json.loads((root/'runtime/RP/ui/kt_world_liquor_effects.json').read_text(encoding='utf-8'))
@@ -19,7 +24,7 @@ assert hud['namespace']=='kaleidoscope_world_liquor_effects'
 assert set(hud)=={'namespace','effect_panel'}
 assert json.loads((root/'runtime/RP/ui/_ui_defs.json').read_text(encoding='utf-8'))=={'ui_defs':['ui/kt_world_liquor_effects.json']}
 assert json.loads((root/'runtime/RP/ui/_global_variables.json').read_text(encoding='utf-8'))=={'$kt_world_liquor_effect_panel':'kaleidoscope_world_liquor_effects.effect_panel'}
-controls=hud['effect_panel']['controls'];assert len(controls)==1+32*15
+controls=hud['effect_panel']['controls'];assert len(controls)==1+32*(len(source['unchanged_pngs'])+1)
 for control in controls[1:]:
  image=next(iter(control.values()))
  assert (root/'runtime/RP'/(image['texture']+'.png')).is_file()

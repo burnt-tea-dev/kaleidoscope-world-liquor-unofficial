@@ -1,3 +1,7 @@
+## 0.1.169 — 2026-10-28
+
+Adopt NeoForge1.1.12 / Forge1.1.13 pendant lamps, dye recipes, cabinet models/textures, Dassai custom Luck+, Explosion power, underwater CaptainGift exclusion and air-jump velocity. Luck currently rerolls emitted native mob-death loot, adding only previously absent types and preserving full ItemStack metadata; mining/chest/fishing/global Java context and TreasureSense outlines remain open. Requires BDS1.26.60, server2.12.0-beta and Beta APIs experiment. Actual native drops pass in isolated QA; full-family admission and human rendering/audio/gameplay acceptance remain separate.
+
 ## 0.1.168 — 2026-10-27
 
 Replace the finite 32-alias jukebox audio bank and global stop commands with individual engine SoundInstance handles. Preserve original audio, legacy/current saved discs and wall-record ownership; expire playback against the selected Java song duration. Declare Script API 2.10.0 and retain canonical T187/G181 pairing. An isolated BDS 1.26.52.3 first load/restart verifies 40 handles and three saved-disc rows. Native custom records still fail the tested engine's parser with Beta APIs and remain a separate reproducible diagnostic. Full native redstone/hopper semantics, actual client sound and complete-family admission remain open. See [the release scope](docs/RELEASE-NOTES-0.1.168.md).

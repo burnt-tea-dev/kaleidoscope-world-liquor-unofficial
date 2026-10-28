@@ -36,9 +36,9 @@ DRINK_NOTES = {
         '品质 3 起具有缓降与冰霜行者；较高品质还会增加抗火与抗性。',
         '品質 3 起具有緩降與冰霜行者；較高品質還會增加抗火與抗性。'),
     'dassai': triple(
-        'Luck is its signature effect from quality 3, but it currently does not improve loot. Do not rely on it for better drops.',
-        '品质 3 起以幸运为特色，但目前不会改善战利品；别依赖它提高掉落。',
-        '品質 3 起以幸運為特色，但目前不會改善戰利品；別依賴它提高掉落。'),
+        'From quality 3, Luck+ can add new item types to mob drops. Each extra roll has a 25% chance; higher quality gives more rolls, up to five. It currently does not affect mining, chests or fishing.',
+        '品质 3 起，幸运+有机会为生物掉落增加新物品种类。每次额外重抽有25%机会；品质越高次数越多，最多五次。目前不影响挖矿、箱子或钓鱼。',
+        '品質 3 起，幸運+有機會為生物掉落增加新物品種類。每次額外重抽有25%機會；品質越高次數越多，最多五次。目前不影響挖礦、箱子或釣魚。'),
     'ice_tea': triple(
         'From quality 3, it grants Slow Falling; higher qualities add Fire Resistance and Resistance. Elbow Strike currently plays its sound without an extra attack.',
         '品质 3 起具有缓降；较高品质还有抗火与抗性。肘击目前只有音效，不会追加攻击。',
@@ -172,6 +172,11 @@ def guide_body(short, kind, locale, *, mixable=False):
             notes.append(section(triple('Serve', '盛装', '盛裝'), triple('Use a Bowl to take the finished pudding from the freezer; do not add the Bowl as an ingredient.', '用碗从冰柜盛出成品；碗用于取出，不要作为材料放入。', '用碗從冰櫃盛出成品；碗用於取出，不要作為材料放入。')))
         return '\n\n'.join(notes)
 
+    if kind == 'lamp':
+        return triple(
+            'Placement\nUses two vertically adjacent air blocks. Place with the shared furniture interaction; breaking either half returns one lamp.\nDye recipe\nFour yellow pendant lamps and one matching dye make four lamps.',
+            '摆放\n需要上下两格空位，按家具方式摆放；破坏任一半只返还一盏灯。\n染色配方\n四盏黄色垂灯加一份对应染料，合成四盏灯。',
+            '擺放\n需要上下兩格空位，按家具方式擺放；破壞任一半只返還一盞燈。\n染色配方\n四盞黃色垂燈加一份對應染料，合成四盞燈。')[locale]
     if kind == 'cabinet':
         capacity = triple('Nine slots for compact bottles.', '九格收纳小型酒瓶。', '九格收納小型酒瓶。') if 'cellar' in short else triple('Two slots; a wide bottle occupies both.', '两格收纳酒瓶，宽瓶会独占两格。', '兩格收納酒瓶，寬瓶會獨佔兩格。')
         return '\n\n'.join([

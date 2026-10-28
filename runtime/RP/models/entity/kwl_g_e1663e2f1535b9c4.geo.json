@@ -157,6 +157,17 @@
                   ],
                   "material_instance": "default"
                 },
+                "south": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
                 "west": {
                   "uv": [
                     0.0,
@@ -165,6 +176,28 @@
                   "uv_size": [
                     15.0,
                     14.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
                   ],
                   "material_instance": "default"
                 }
@@ -215,6 +248,17 @@
                   ],
                   "material_instance": "default"
                 },
+                "south": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
                 "west": {
                   "uv": [
                     0.0,
@@ -223,6 +267,28 @@
                   "uv_size": [
                     15.0,
                     14.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
                   ],
                   "material_instance": "default"
                 }
@@ -273,6 +339,17 @@
                   ],
                   "material_instance": "default"
                 },
+                "south": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
                 "west": {
                   "uv": [
                     0.0,
@@ -281,6 +358,28 @@
                   "uv_size": [
                     15.0,
                     14.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
                   ],
                   "material_instance": "default"
                 }
@@ -331,6 +430,17 @@
                   ],
                   "material_instance": "default"
                 },
+                "south": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
                 "west": {
                   "uv": [
                     0.0,
@@ -339,6 +449,28 @@
                   "uv_size": [
                     15.0,
                     14.0
+                  ],
+                  "material_instance": "default"
+                },
+                "up": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
+                  ],
+                  "material_instance": "default"
+                },
+                "down": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    0.0,
+                    0.0
                   ],
                   "material_instance": "default"
                 }
@@ -386,6 +518,17 @@
                   "uv_size": [
                     -15.0,
                     -1.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    31.5,
+                    8.0
+                  ],
+                  "uv_size": [
+                    0.5,
+                    0.5
                   ],
                   "material_instance": "default"
                 },
@@ -458,6 +601,39 @@
                   ],
                   "material_instance": "default"
                 },
+                "east": {
+                  "uv": [
+                    15.0,
+                    1.0
+                  ],
+                  "uv_size": [
+                    -15.0,
+                    -1.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    31.5,
+                    8.0
+                  ],
+                  "uv_size": [
+                    0.5,
+                    0.5
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    15.0,
+                    1.0
+                  ],
+                  "material_instance": "default"
+                },
                 "up": {
                   "uv": [
                     17.0,
@@ -513,6 +689,39 @@
                   "uv_size": [
                     14.0,
                     -1.0
+                  ],
+                  "material_instance": "default"
+                },
+                "east": {
+                  "uv": [
+                    15.0,
+                    1.0
+                  ],
+                  "uv_size": [
+                    -15.0,
+                    -1.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    31.5,
+                    8.0
+                  ],
+                  "uv_size": [
+                    0.5,
+                    0.5
+                  ],
+                  "material_instance": "default"
+                },
+                "west": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    15.0,
+                    1.0
                   ],
                   "material_instance": "default"
                 },
@@ -582,6 +791,17 @@
                   "uv_size": [
                     -15.0,
                     -1.0
+                  ],
+                  "material_instance": "default"
+                },
+                "south": {
+                  "uv": [
+                    31.5,
+                    8.0
+                  ],
+                  "uv_size": [
+                    0.5,
+                    0.5
                   ],
                   "material_instance": "default"
                 },
