@@ -208,7 +208,11 @@ def main():
  effects=(ROOT/'runtime/BP/scripts/effects.js').read_text()
  assert 'readTavernEffects' in effects and 'setDynamicProperty' not in effects and 'world.getAbsoluteTime' not in effects
  preserved=len(baseline['files'])-len(changed)
- archive=subprocess.check_output(['git','archive',baseline['baselineCommit'],*[prefix for prefix,row in baseline['trees'].items() if row['files']]],cwd=ROOT)
+ # The public history transfer retained this exact runtime tree under a new
+ # commit. Bind that immutable tree before reading; keep the original witness.
+ public_baseline='86c9d8fd8374ae7d5e5b89ee2dbb444650620b2b'
+ assert subprocess.check_output(['git','rev-parse',public_baseline+':runtime'],cwd=ROOT,text=True).strip()=='1e5e8c9195ae6d5b41644a12810b68b936ec4e79'
+ archive=subprocess.check_output(['git','archive',public_baseline,*[prefix for prefix,row in baseline['trees'].items() if row['files']]],cwd=ROOT)
  with tarfile.open(fileobj=io.BytesIO(archive)) as tar:
   historical={member.name:hashlib.sha256(tar.extractfile(member).read()).hexdigest() for member in tar.getmembers() if member.isfile()}
  for prefix,expected in baseline['trees'].items():
