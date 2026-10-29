@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "c4aa7a1b7c8ae67649ed5cf35b334b3b8c6ded86",
-  "tavern_version": "0.6.190",
+  "tavern_commit": "61e097dff55c8b6ebca07ea9290a4c9a113b7c6c",
+  "tavern_version": "0.6.191",
   "publication_request": false,
   "grilling_commit": "322bdf0959248bce2f6cf51461c7f05cbe03f6a9",
   "grilling_version": "2.8.187",
   "peer_pins_final": false,
   "peer_pin_status": "reviewed_source_pending_canonical_merge",
-  "peer_pin_note": "Exact Tavern190 (effect-icon dimension refresh, PR #492) and Grilling187 sources; World Liquor175 changes only paired dependencies and release identity. Family deployment and human acceptance remain pending.",
+  "peer_pin_note": "World Liquor 0.1.177 pairs with Tavern 0.6.191 from PR #501 head 61e097dff55c8b6ebca07ea9290a4c9a113b7c6c; Grilling 2.8.194 remains an optional source-check peer. No gameplay changes.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
