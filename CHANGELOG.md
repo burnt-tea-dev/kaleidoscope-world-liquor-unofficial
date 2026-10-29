@@ -1,3 +1,9 @@
+## 0.1.177
+
+- Pair both packs with Tavern 0.6.191 for the T191 family catalog dependency.
+- No World Liquor gameplay or translation changes.
+- BDS, saved-world migration, deployment, and client acceptance remain unverified for this candidate.
+
 ## 0.1.176 — 2026-10-29
 
 Restore English, Simplified Chinese and Traditional Chinese tooltip names for the guaranteed Crazy, Explosion, Respawn and Level Boost cocktail effects. Preserve the author's original names, including flavor text. The existing mixology check now exercises the actual shared Tavern tooltip and verifies every emitted World Liquor effect key in all three locales. No effect mechanics, recipes, item identities or dependencies change; full-family deployment and rendered-client acceptance remain pending.
