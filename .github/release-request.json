@@ -15,7 +15,7 @@
   "client": false,
   "status": "candidate_pending_family_admission",
   "public_notes_path": "docs/RELEASE-NOTES-0.1.175.md",
-  "tavern_commit": "bd60a2a0f3ad83c6e3885dc32589f2705e6653a2",
+  "tavern_commit": "c4aa7a1b7c8ae67649ed5cf35b334b3b8c6ded86",
   "artifact_suffix": "baseline1",
   "peer_pins_final": true,
   "publication_ready": false,
