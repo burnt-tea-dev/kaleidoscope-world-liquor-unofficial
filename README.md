@@ -1,17 +1,33 @@
-# Kaleidoscope World Liquor — Bedrock 移植
+# 森羅物語：醉世界 — 非官方 Bedrock 移植
 
-這是 Java「醉世界」的非官方 Bedrock 移植。來源實作、可下載版本、伺服器安裝和真人驗收是不同狀態。
+Kaleidoscope World Liquor 的 Minecraft 基岩版移植，為酒館加入更多酒品、配方、飲用效果與陳列家具。
 
-## 安裝與目前狀態
+[下載 / Downloads](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/releases) · [更新紀錄](CHANGELOG.md)
 
-- 從 [Releases](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/releases) 取得配對 BP/RP，依該版說明安裝相符的 Tavern。不要混用不同版本的一半。
-- 目前來源身份與依賴以 [baseline.json](baseline.json)／兩側 manifest 為準；精確來源配對見 [.github/baseline-integration.json](.github/baseline-integration.json)。這些檔案不代表某個伺服器已更新。
-- Cookery 與 Grilling 為可選整合；單獨使用限制和既有下載的配對例外見 [安裝說明](docs/PUBLIC-DOWNLOAD-INSTALLATION-20261018.md)。
-- 玩法、聲音、模型與尚未確認的差異見 [PARITY-MATRIX](docs/PARITY-MATRIX.md) 和 [BUGS](docs/BUGS.md)。CI 或 BDS 啟動不能代替真人畫面／聲音驗收。
+## 功能
 
-## 開發與匯出
+- 製作與品飲各地酒款，擴充 Tavern 的釀造與調酒內容。
+- 使用酒瓶、酒櫃與燈具布置空間。
+- 在酒館指南查閱產品配方、器具用法與效果說明。
+- 可選擇搭配 Cookery，取得部分酒品配方需要的食材。
 
-canonical 來源在 `runtime/BP` 和 `runtime/RP`。於乾淨、已提交的來源執行：
+這是仍在開發的非官方移植。Java Luck 的全域戰利品作用、TreasureSense 輪廓及部分客戶端效果仍有差距；見[功能對照](docs/PARITY-MATRIX.md)。來源或載入測試不代表所有畫面、音效與操作已通過真人驗證。
+
+## 安裝
+
+1. 備份世界，從 **Releases** 下載 `.mcaddon`，不要將原始碼 ZIP 當作安裝包。
+2. 安裝該版指定的 **Tavern 精確版本**，並同時啟用兩個 addon 的 BP／RP；不能任意混搭各庫最新版。
+3. 使用所選版本要求的 Minecraft 版本與實驗設定。開發主線使用 26.60 Beta APIs，較舊公開包的要求可能不同。
+
+**Tavern 是必要相依；Cookery 與 Grilling 不是。** 沒有 Cookery 時，依賴它的食材配方不可完成，但既有酒瓶仍可飲用、放置，指南亦可使用。第三方包須另行取得，本下載不包含它們或私有整合。[舊版下載相依更正](docs/PUBLIC-DOWNLOAD-INSTALLATION-20261018.md)僅供使用歷史版本時查閱。
+
+## 語言
+
+資源包文字跟隨 Minecraft 客戶端語言；配方與產品說明使用 Tavern 的共用指南。語言檔覆蓋、指南選擇與尚未翻譯文字分開追蹤，不將英文回退視為完整翻譯。
+
+## 開發
+
+需要 Python 3 與 Node.js。正式來源在 [`runtime/BP`](runtime/BP/) 和 [`runtime/RP`](runtime/RP/)。在乾淨、已提交的 checkout 執行：
 
 ```sh
 python3 tools/check_release.py
@@ -19,6 +35,14 @@ python3 tools/build_release.py
 python3 tools/verify_release.py --development
 ```
 
-建置產物在 `dist/`。素材／指南產生器會改寫 canonical 來源，不是匯出前的例行步驟。規則與所需工具見 [BASELINE-MAINTENANCE](docs/BASELINE-MAINTENANCE.md) 和 [AGENTS.md](AGENTS.md)。
+產物在 `dist/`。[`baseline.json`](baseline.json) 記錄來源身份與相依；開發主線可能比下載版本更新。參與修改請先讀 [AGENTS.md](AGENTS.md) 與[基線維護](docs/BASELINE-MAINTENANCE.md)。素材／指南產生器會修改來源，不是每次打包前都要執行。
 
-[變更記錄](CHANGELOG.md)保留各版範圍；[整理前 README](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/blob/1ef4060800d36ed0966925b1655ae823f5591d33/README.md)屬歷史快照。原作與移植的授權、出處以倉庫內 LICENSE 和 attribution 文件為準。
+## 問題回報
+
+請提供醉世界／Tavern／Minecraft 版本、可選配套、實驗設定及重現步驟，並說明預期與實際結果。畫面、音效問題請附截圖或短片；先查看[已知問題](docs/BUGS.md)，不要公開私人世界或第三方完整包。
+
+## 鳴謝與授權
+
+原作：**ChenjdyUltra、bf_meow 與貢獻者**的 [Kaleidoscope World Liquor](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor)。感謝 Tavern 的 Kaleidoscope Official Production Team／YSBB；本移植不代表原作者或 Minecraft 官方。
+
+移植程式碼採 [MIT](LICENSE-CODE)，重用的 Tavern 程式碼採 [BSD-3-Clause](LICENSE-TAVERN-CODE)，原始及衍生美術採 [CC BY-NC-SA 4.0](LICENSE-ASSETS)。其他資產保留各自條款，詳見[出處與聲明](NOTICE.md)。
