@@ -1,3 +1,7 @@
+## 0.1.174 — 2026-10-29
+
+Treasure Guide mob drops follow Java `onLivingDrops`: the damage source's owner (the shooter, not the arrow) with the effect rolls once per death against 0.15 + 0.05 × amplifier, and on success every entry of the native `entityItemDrop` list is copied at that item's position from a snapshot of the list. This replaces the one-tick nearby-item scan that could duplicate unrelated drops or thrown items. No other gameplay, recipes, resources or identities change.
+
 ## 0.1.173 — 2026-10-29
 
 Beheading follows Java `EventHandlers.onLivingIncomingDamage` / `onLivingDropsBeheading` more closely: the beheaded marker is a persistent entity property instead of a per-session map, a blocked kill falls back to set-1 / hurt-2 / set-0 with the attacker attributed and re-entry suppressed, the head is deduplicated against the native death-drop list (an entity without drops gets it two ticks later), and a player head carries its owner as name and lore. The hit itself is unchanged (attacker-attributed 10000 on the direct hit, bosses tag, chance 0.04 + 0.03 × amplifier). No other gameplay, recipes, resources or identities change.

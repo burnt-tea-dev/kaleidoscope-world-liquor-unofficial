@@ -9,6 +9,7 @@ import {CriticalFeedback} from './critical-feedback.js';
 import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
 import {freezeWater} from './frost-water.js';
 import {installBeheading} from './beheading.js';
+import {installTreasureDrops} from './treasure-drops.js';
 import {addTreasureBlockDrops} from './treasure-block.js';
 import {selectCrazyEffects} from './crazy-source.js';
 import {applyJavaRespawn,installJavaRespawn} from './respawn-adapter.js';
@@ -18,7 +19,7 @@ import {applyJavaRespawn,installJavaRespawn} from './respawn-adapter.js';
 import {world,system,EffectTypes,ItemStack,ItemTypes,MolangVariableMap} from '@minecraft/server';
 export const NS='kaleidoscope_world_liquor';
 const jumps=new Map();
-let frostAging,luckLoot,beheading;
+let frostAging,luckLoot,beheading,treasureDrops;
 const killCredit=new JavaKillCredit({now:()=>system.currentTick,resolve:id=>{try{return world.getEntity(id);}catch{return undefined;}}});
 const acceptedFeedback=new AcceptedHurtFeedback(system);
 const criticalFeedback=new CriticalFeedback(system,{delivery:acceptedFeedback,variables:()=>new MolangVariableMap()});
@@ -60,14 +61,6 @@ function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntit
  const pending=killCredit.begin(target.id,e,damageCreditMutation(e.damageSource));
  if(pending)system.run(()=>killCredit.complete(pending));
 }
-function doubleFreshDrops(dimension,position,chance){
- if(Math.random()>=chance)return;
- const options={type:'minecraft:item',location:position,maxDistance:1.5},before=new Set(dimension.getEntities(options).map(e=>e.id));
- system.runTimeout(()=>{try{for(const entity of dimension.getEntities(options)){
-  if(before.has(entity.id))continue;
-  const stack=entity.getComponent('minecraft:item')?.itemStack;if(stack)dimension.spawnItem(stack.clone(),entity.location);
- }}catch(e){console.warn('[World Liquor treasure guide] '+e);}},1);
-}
 function motion(p,state){
  if(!state.multi_jump&&!state.reverse_gravity&&!state.captain_gift&&!state.boating_master)return;
  const v=p.getVelocity(),lava=(state.reverse_gravity||state.multi_jump)?lavaContact(p):false;
@@ -104,6 +97,7 @@ export function installEffects(){
  installJavaRespawn(world,system);
  luckLoot=installLuckLoot(world,system,read,killCredit);
  beheading=installBeheading(world,system,{createStack:(id,amount)=>new ItemStack(id,amount),lookup:id=>ItemTypes.get(id),random:()=>Math.random()});
+ treasureDrops=installTreasureDrops(world,system,{read,random:()=>Math.random()});
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(isLivingCombatEntity(p)&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
  world.afterEvents.entityHurt.subscribe(e=>{killCredit.applied(e);acceptedFeedback.applied(e);});
@@ -111,9 +105,7 @@ export function installEffects(){
  world.afterEvents.playerSpawn.subscribe(({player})=>{jumps.delete(player.id);killCredit.forget(player.id);});
  world.afterEvents.playerLeave.subscribe(e=>{jumps.delete(e.playerId);killCredit.forget(e.playerId);});
  world.afterEvents.playerButtonInput.subscribe(e=>{if(e.button==='Jump'&&e.newButtonState==='Pressed'&&active(e.player,'reverse_gravity')&&e.player.isOnGround)jump(e.player,true);});
- world.afterEvents.entityDie.subscribe(e=>{luckLoot.death(e);beheading.death(e);
-  const attacker=e.damageSource?.damagingEntity,row=attacker&&active(attacker,'treasure_guide');if(row)doubleFreshDrops(e.deadEntity.dimension,e.deadEntity.location,.15+.05*row.amplifier);
- });
+ world.afterEvents.entityDie.subscribe(e=>{luckLoot.death(e);beheading.death(e);treasureDrops.death(e);});
  world.afterEvents.playerBreakBlock.subscribe(e=>{if(e.brokenBlockPermutation.type.id==='minecraft:frosted_ice')frostAging.removed(e.dimension,e.block.location);const row=active(e.player,'treasure_guide');if(!row)return;try{addTreasureBlockDrops(e,row.amplifier,world.getLootTableManager());}catch(error){console.warn('[World Liquor treasure block] '+error);}});
  system.runInterval(tick,1);
 }
