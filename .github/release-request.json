@@ -1,7 +1,7 @@
 {
-  "version": "0.1.174",
-  "tag": "v0.1.174",
-  "title": "World Liquor 0.1.174: Java parity repair candidate (owner-requested family gap fixes)",
+  "version": "0.1.175",
+  "tag": "v0.1.175",
+  "title": "World Liquor 0.1.175: Java parity repair candidate (owner-requested family gap fixes)",
   "prerelease": false,
   "validation_evidence": "docs/PUBLICATION-VALIDATION-0.1.171.json",
   "client_acceptance": "pending",
@@ -14,7 +14,7 @@
   "publication_request": false,
   "client": false,
   "status": "candidate_pending_family_admission",
-  "public_notes_path": "docs/RELEASE-NOTES-0.1.174.md",
+  "public_notes_path": "docs/RELEASE-NOTES-0.1.175.md",
   "tavern_commit": "bd60a2a0f3ad83c6e3885dc32589f2705e6653a2",
   "artifact_suffix": "baseline1",
   "peer_pins_final": true,
@@ -22,5 +22,5 @@
   "bds": false,
   "peer_pin_note": "Canonical merged Tavern189 and Grilling187 sources, verified full-family existing-save deployment; client acceptance pending.",
   "peer_pin_status": "canonical_merged",
-  "expected_archive_sha256": "38e741d027707577c269d84ade9c0290dddee1fd6fef350698ef4f73b71f2f00"
+  "expected_archive_sha256": "9832b260fcf4e21ba9a532d5fc7ab12b236540307e3832806c89b6a4df8f47b3"
 }

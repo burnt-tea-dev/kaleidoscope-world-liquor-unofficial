@@ -1,3 +1,7 @@
+## 0.1.175
+
+Dependency-only pairing with Tavern 0.6.190; gameplay unchanged from 0.1.174.
+
 ## 0.1.174 — 2026-10-29
 
 Treasure Guide mob drops follow Java `onLivingDrops`: the damage source's owner (the shooter, not the arrow) with the effect rolls once per death against 0.15 + 0.05 × amplifier, and on success every entry of the native `entityItemDrop` list is copied at that item's position from a snapshot of the list. This replaces the one-tick nearby-item scan that could duplicate unrelated drops or thrown items. No other gameplay, recipes, resources or identities change.
