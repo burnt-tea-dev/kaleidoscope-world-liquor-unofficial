@@ -45,4 +45,6 @@ python3 tools/verify_release.py --development
 
 原作：**ChenjdyUltra、bf_meow 與貢獻者**的 [Kaleidoscope World Liquor](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor)。感謝 Tavern 的 Kaleidoscope Official Production Team／YSBB；本移植不代表原作者或 Minecraft 官方。
 
-移植程式碼採 [MIT](LICENSE-CODE)，重用的 Tavern 程式碼採 [BSD-3-Clause](LICENSE-TAVERN-CODE)，原始及衍生美術採 [CC BY-NC-SA 4.0](LICENSE-ASSETS)。其他資產保留各自條款，詳見[出處與聲明](NOTICE.md)。
+移植程式碼採 [MIT](LICENSE-CODE)，重用的 Tavern 程式碼採 [BSD-3-Clause](LICENSE-TAVERN-CODE)。既有素材授權與個別例外見 [LICENSE-ASSETS](LICENSE-ASSETS) 及[出處聲明](NOTICE.md)，不會因程式碼開源而一併改變。
+
+最新 Java 1.1.13 Forge／1.1.12 NeoForge 封包另標示 **CC BY-NC-ND 4.0**；新增素材不能直接沿用較早的 CC BY-NC-SA 條款，須另核適用授權或作者許可。
