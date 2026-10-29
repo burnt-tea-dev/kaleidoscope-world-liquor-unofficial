@@ -51,4 +51,18 @@ assert.deepEqual(signature.effects,[
  {effect:'minecraft:haste',duration:54,amplifier:0,probability:1},
  {effect:'minecraft:speed',duration:54,amplifier:0,probability:1},
 ]);
-console.log(JSON.stringify({currentJavaVersion:'NeoForge1.1.12 selected changes; inherited1.1.11 recipes',recipes:18,recipeOrderCases:cases,extraColors:4,coreReclassification:true,highballSourceEffectData:true,actualFlightImplemented:false,simulatedPlayers:false}));
+const {installContent}=await import(new URL('runtime/BP/scripts/core/extension-content.js',host));
+const {cocktailLore}=await import(new URL('runtime/BP/scripts/core/cocktail-tooltip.js',host));
+installContent('kaleidoscope_world_liquor',payload.content);
+const cocktailNames=payload.content.filter(row=>row.kind==='cocktail').flatMap(row=>
+ cocktailLore({typeId:row.item}).flatMap(line=>line.rawtext)
+  .filter(message=>message.translate?.startsWith('effect.kaleidoscope_world_liquor.'))
+  .map(message=>({item:row.item,key:message.translate})));
+assert(cocktailNames.length>0,'no World Liquor cocktail effect names were exercised');
+for(const locale of ['en_US','zh_CN','zh_TW']){
+ const lines=fs.readFileSync(new URL(`../runtime/RP/texts/${locale}.lang`,import.meta.url),'utf8').split(/\r?\n/);
+ const names=new Map(lines.filter(line=>!line.startsWith('#')&&line.includes('='))
+  .map(line=>[line.slice(0,line.indexOf('=')),line.slice(line.indexOf('=')+1)]));
+ for(const {item,key} of cocktailNames)assert(names.get(key)?.trim(),`${locale}: ${item} tooltip has no translation for ${key}`);
+}
+console.log(JSON.stringify({currentJavaVersion:'NeoForge1.1.12 selected changes; inherited1.1.11 recipes',recipes:18,recipeOrderCases:cases,extraColors:4,coreReclassification:true,highballSourceEffectData:true,localizedCocktailEffects:cocktailNames.length,actualFlightImplemented:false,simulatedPlayers:false}));

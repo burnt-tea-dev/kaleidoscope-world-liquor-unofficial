@@ -18,7 +18,8 @@ TRADITIONAL = {
     'hostile_detection': '冥視', 'multi_jump': '多段跳',
     'reverse_gravity': '反重力', 'tequila': '龍舌蘭',
     'treasure_guide': '淘金熱', 'treasure_sense': '寶藏感知',
-    'luck': '幸運+',
+    'luck': '幸運+', 'crazy': '瘋狂！！！', 'explosion': '爆炸',
+    'respawn': '宿命之海', 'level_boost': '取自泛紅湖水，泛著詭異蝦腥甜香',
 }
 
 def render_names(old, rows):
