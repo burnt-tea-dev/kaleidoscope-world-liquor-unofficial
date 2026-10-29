@@ -30,7 +30,6 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 | 項目 | 剩餘問題 | 可分辨場景 |
 |---|---|---|
 | Luck | 目前兩條維護分支已使用 custom Luck；原生生物死亡／掉落已適配，完整原始 LootContext、無掉落事件、挖礦／箱子／釣魚仍缺 | 目前來源與原生證據見[矩陣](PARITY-MATRIX.md)；分開記錄原始 context 和真玩家結果 |
-| 斬首與頭顱 | Incoming cancellation、owner-attributed 重入、blocked fallback、marker 保存、同次 drops 去重及玩家頭 owner 未完成 | 取消／護甲／Tequila／圖騰、已死目標、原本已掉頭、玩家頭與重啟後標記各自對照 |
 | 尋寶指南 mob drops | 現行一 tick 鄰近新 item 掃描沒有實際死亡 drops 集合的來源證明 | 兩個 mob 同 tick 死亡、玩家丟物、旁邊新 item；額外物品只能屬於本次死亡 |
 | Elbow | 精確 Java attack attribute／charge／resistance 與原生 buffered knockback 組合尚未接入；固定 extra impulse 不等價 | ground／真正 airborne、任意原速度、resistance、Player charge／mob attack 分別量測 |
 | CaptainGift | 現行 source-water 浮力不能替代原作 12 格 water-fluid／AABB 移動裁切、fallDistance 和 onGround | flowing water、岸邊、sneak、掉入水面、不同生物寬度及其他移動效果 |
@@ -40,6 +39,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 ## 保留實作，仍待真人或特定生命周期驗收
 
 - 布丁餘碗（W172）：`food-remainder.js` 依原作 `CompatFoodItem.finishUsingItem`——效果與原生扣料之後，用到的那格若已空就把新碗放回同一手（`LivingEntity.completeUsingItem` 換手），仍有布丁或 Creative 則在玩家位置 `spawnAtLocation` 一個碗；分支在下一 tick 讀同一格決定，不依賴原生 debit 與回呼的先後；玩家在這一 tick 換走該格的物品時改走 Java `Inventory.add`，不覆寫、不重發。原生 debit 順序、真人最後一份／多份／Creative／取消／換槽及掉落物實際位置仍待驗收；Luck／原作 random draw 不在此項。
+- 斬首與頭顱（W173）：`beheading.js` 依原作 `onLivingIncomingDamage`／`onLivingDropsBeheading`——標記存成目標的 dynamic property（等同 persistent data，圖騰倖存或存檔重啟仍會在下一次死亡掉頭）；命中時在同一個 before-event 上改為攻擊者歸屬的 10000 傷害，下一 tick 若血量未降則依原作設 1、再由攻擊者造成 2 傷害、仍活則歸零；期間以 processing 阻擋重入再抽；死亡後對原生 `entityItemDrop` 掉落清單做 `isSameItemSameComponents` 去重，沒有掉落清單的實體兩 tick 後補發；玩家頭以物品名稱與 lore 記錄 SkullOwner（Bedrock 無法由腳本設定頭顱皮膚）。原生 incoming 取消與另起 playerAttack／mobAttack 傷害來源、圖騰／護甲／Tequila 併發與真人驗收仍待確認。
 - 冰櫃：五個 current recipe、loaded ticks、四槽 native metadata 及來源 height 算術已實作；真玩家插取、offhand、unload／crash、任意 metadata 和完整流體／原料／成品渲染另驗，既有零輸入樣本不證明非空冰櫃內容。
 - 酒櫃與家具：原格位、native item carrier、重啟／回滾修補保留；四向座位、玻璃、觸控／游標點選與實際展示仍待比較。
 - Respawn：87 個精確零碰撞 helper、新確認錨 yaw=0／forced=false 及 repeat／取消防線保留；未知來源不放寬，真 Player 床／錨／重生另驗。

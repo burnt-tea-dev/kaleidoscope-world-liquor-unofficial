@@ -1,3 +1,7 @@
+## 0.1.173 — 2026-10-29
+
+Beheading follows Java `EventHandlers.onLivingIncomingDamage` / `onLivingDropsBeheading` more closely: the beheaded marker is a persistent entity property instead of a per-session map, a blocked kill falls back to set-1 / hurt-2 / set-0 with the attacker attributed and re-entry suppressed, the head is deduplicated against the native death-drop list (an entity without drops gets it two ticks later), and a player head carries its owner as name and lore. The hit itself is unchanged (attacker-attributed 10000 on the direct hit, bosses tag, chance 0.04 + 0.03 × amplifier). No other gameplay, recipes, resources or identities change.
+
 ## 0.1.172 — 2026-10-29
 
 Pudding remainder follows Java `CompatFoodItem.finishUsingItem`: after the effects and the native debit, an emptied used slot receives the new bowl in hand, while remaining servings or Creative spawn one bowl at the player instead of inserting it into the inventory. The branch is read from the used slot one tick after completion, so it does not depend on the native debit/callback order; a slot the player changed in that tick goes through Java `Inventory.add`. No other gameplay, recipes, resources or identities change. Native debit order and real-player acceptance remain open.

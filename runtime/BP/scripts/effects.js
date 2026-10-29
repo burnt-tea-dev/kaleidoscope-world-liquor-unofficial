@@ -8,7 +8,7 @@ import {lavaContact,eyesUnderWater} from './liquid-contact.js';
 import {CriticalFeedback} from './critical-feedback.js';
 import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
 import {freezeWater} from './frost-water.js';
-import {beheadingHeadId} from './beheading-head.js';
+import {installBeheading} from './beheading.js';
 import {addTreasureBlockDrops} from './treasure-block.js';
 import {selectCrazyEffects} from './crazy-source.js';
 import {applyJavaRespawn,installJavaRespawn} from './respawn-adapter.js';
@@ -17,8 +17,8 @@ import {applyJavaRespawn,installJavaRespawn} from './respawn-adapter.js';
  */
 import {world,system,EffectTypes,ItemStack,ItemTypes,MolangVariableMap} from '@minecraft/server';
 export const NS='kaleidoscope_world_liquor';
-const jumps=new Map(),headDrops=new Map();
-let frostAging,luckLoot;
+const jumps=new Map();
+let frostAging,luckLoot,beheading;
 const killCredit=new JavaKillCredit({now:()=>system.currentTick,resolve:id=>{try{return world.getEntity(id);}catch{return undefined;}}});
 const acceptedFeedback=new AcceptedHurtFeedback(system);
 const criticalFeedback=new CriticalFeedback(system,{delivery:acceptedFeedback,variables:()=>new MolangVariableMap()});
@@ -53,7 +53,7 @@ function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntit
  if(double&&javaFloatRoll(Math.random())<doubleDamageChance(double.amplifier)){e.damage=javaDamageProduct(e.damage,2);combatSound(e,credited,NS+'.java.critical',{volume:1,pitch:1.5});if(credited.typeId==='minecraft:player')criticalFeedback.queue(e,credited);}
  if(attacker){
   const crit=active(attacker,'ground_crit');if(melee&&attacker.typeId==='minecraft:player'&&crit&&!isVanillaCrit(attacker)&&Math.random()<.2+.1*crit.amplifier){e.damage=javaDamageProduct(e.damage,1.5);criticalFeedback.queue(e,attacker);}
-  const behead=active(attacker,'beheading');if(directLiving&&behead&&target.getComponent('minecraft:health').currentValue>0&&!['minecraft:ender_dragon','minecraft:wither','minecraft:warden'].includes(target.typeId)&&Math.random()<.04+.03*behead.amplifier){e.damage=10000;headDrops.set(target.id,true);}
+  const behead=active(attacker,'beheading');if(directLiving&&behead)beheading.incoming(e,attacker,target,behead);
   if(directLiving&&active(attacker,'elbow_strike'))combatSound(e,attacker,NS+'.ice_tea_eat',{volume:.6,pitch:1});
  }
  const tequila=active(target,'tequila');if(tequila)e.damage=Math.min(e.damage,tequilaDamageCap(target.getComponent('minecraft:health')?.effectiveMax??20,tequila.amplifier));
@@ -103,6 +103,7 @@ export function installEffects(){
  frostAging=new FrostAgingScheduler(world);setFrostAgingScheduler(frostAging);
  installJavaRespawn(world,system);
  luckLoot=installLuckLoot(world,system,read,killCredit);
+ beheading=installBeheading(world,system,{createStack:(id,amount)=>new ItemStack(id,amount),lookup:id=>ItemTypes.get(id),random:()=>Math.random()});
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(isLivingCombatEntity(p)&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
  world.afterEvents.entityHurt.subscribe(e=>{killCredit.applied(e);acceptedFeedback.applied(e);});
@@ -110,7 +111,7 @@ export function installEffects(){
  world.afterEvents.playerSpawn.subscribe(({player})=>{jumps.delete(player.id);killCredit.forget(player.id);});
  world.afterEvents.playerLeave.subscribe(e=>{jumps.delete(e.playerId);killCredit.forget(e.playerId);});
  world.afterEvents.playerButtonInput.subscribe(e=>{if(e.button==='Jump'&&e.newButtonState==='Pressed'&&active(e.player,'reverse_gravity')&&e.player.isOnGround)jump(e.player,true);});
- world.afterEvents.entityDie.subscribe(e=>{luckLoot.death(e);if(headDrops.delete(e.deadEntity.id)){const id=beheadingHeadId(e.deadEntity.typeId,id=>ItemTypes.get(id));if(id)try{e.deadEntity.dimension.spawnItem(new ItemStack(id),e.deadEntity.location);}catch{}}
+ world.afterEvents.entityDie.subscribe(e=>{luckLoot.death(e);beheading.death(e);
   const attacker=e.damageSource?.damagingEntity,row=attacker&&active(attacker,'treasure_guide');if(row)doubleFreshDrops(e.deadEntity.dimension,e.deadEntity.location,.15+.05*row.amplifier);
  });
  world.afterEvents.playerBreakBlock.subscribe(e=>{if(e.brokenBlockPermutation.type.id==='minecraft:frosted_ice')frostAging.removed(e.dimension,e.block.location);const row=active(e.player,'treasure_guide');if(!row)return;try{addTreasureBlockDrops(e,row.amplifier,world.getLootTableManager());}catch(error){console.warn('[World Liquor treasure block] '+error);}});
