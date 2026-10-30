@@ -1,18 +1,29 @@
 {
   "schema": 1,
-  "tavern_commit": "f73b54b7c1790b243f1abcdf8ef2d87b27e470d0",
-  "tavern_version": "0.6.193",
+  "tavern_commit": "2ffce62b6b11a36206fe942d8dd5f99c313e9940",
+  "tavern_version": "0.6.194",
   "publication_request": false,
   "grilling_commit": "cae1ad19c8e89877f2e1face8f2e3178ed48aacf",
   "grilling_version": "2.8.200",
   "peer_pins_final": true,
-  "peer_pin_status": "canonical_merged_exact_sources",
-  "peer_pin_note": "W179 pairs with canonical Tavern193 f73b54b7c1790b243f1abcdf8ef2d87b27e470d0 (PR505, all13 exact-head CI success) and optional canonical Grilling200 cae1ad19c8e89877f2e1face8f2e3178ed48aacf (PR311, all5 CI success). Complete-family native, saved-world and client acceptance remain separate.",
+  "peer_pin_status": "exact_local_t194_source_pinned_publication_pending",
+  "peer_pin_note": "World Liquor 0.1.180 is pinned to exact local Tavern T194 source 2ffce62b6b11a36206fe942d8dd5f99c313e9940 (tree b806a9a5ac9be4a39cf87cf52338d52a67276309), version 0.6.194, source trees recorded here. The T194 commit is awaiting upstream push; publication, full-family BDS, saved-world and client acceptance remain separate.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
     "grilling_commit": "dd3aec4f84b2b39c44574e0b29b8091ff1195efe",
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
+  },
+  "tavern_tree": "b806a9a5ac9be4a39cf87cf52338d52a67276309",
+  "tavern_source_trees": {
+    "BP": {
+      "sha256": "c84e992dfc22145797bd3904a641fee82e592aedd9f8c96242ca9fc9fa18d23e",
+      "files": 835
+    },
+    "RP": {
+      "sha256": "8ac176b7e8321f724c952bc788e3fee87816cbac8d97405f52bcdc9923558035",
+      "files": 3232
+    }
   }
 }
