@@ -15,11 +15,11 @@
   "status": "candidate_pending_checks",
   "public_notes_path": "CHANGELOG.md",
   "public_notes_inline": "Pair both packs with Tavern 0.6.193. World Liquor gameplay and translations are retained; family and client acceptance remain separate.",
-  "tavern_commit": "b36d37e19fac9a8b2a006d4777de5c9d79a8e288",
+  "tavern_commit": "f73b54b7c1790b243f1abcdf8ef2d87b27e470d0",
   "artifact_suffix": "baseline1",
-  "peer_pins_final": false,
+  "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
-  "peer_pin_note": "W179 pairs with reviewed Tavern193 PR505 source b36d37e19fac9a8b2a006d4777de5c9d79a8e288; final canonical merge pin follows exact CI. Optional Grilling source peer is canonical G200 cae1ad19c8e89877f2e1face8f2e3178ed48aacf. World Liquor gameplay is unchanged.",
-  "peer_pin_status": "reviewed_source_pending_canonical_merge"
+  "peer_pin_note": "W179 pairs with canonical Tavern193 f73b54b7c1790b243f1abcdf8ef2d87b27e470d0 (PR505, all13 exact-head CI success) and optional canonical Grilling200 cae1ad19c8e89877f2e1face8f2e3178ed48aacf (PR311, all5 CI success). Complete-family native, saved-world and client acceptance remain separate.",
+  "peer_pin_status": "canonical_merged_exact_sources"
 }
