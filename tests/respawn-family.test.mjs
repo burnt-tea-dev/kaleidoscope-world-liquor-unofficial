@@ -9,7 +9,7 @@ import {applyJavaRespawn,setJavaRespawnContextProvider} from '../runtime/BP/scri
 import {peerSources,checkRespawnHelperDefinitions} from '../tools/check_respawn_helpers.mjs';
 
 const tavern=await import(pathToFileURL(path.join(peerSources.tavern,'runtime/BP/scripts/core/native-item-storage.js')));
-const grilling=await import(pathToFileURL(path.join(peerSources.grilling,'projects/grilling/gameplay_core/behavior_pack/scripts/family_station_storage.js')));
+const grilling=await import(pathToFileURL(path.join(peerSources.grilling,'projects/grilling/gameplay_core/behavior_pack/scripts/core/storage.js')));
 
 function fixture(){
  reset();setJavaRespawnContextProvider(undefined);
