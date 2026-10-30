@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "2ffce62b6b11a36206fe942d8dd5f99c313e9940",
+  "tavern_commit": "91d0039bc864494ab0b8e31de385ab9022a006b5",
   "tavern_version": "0.6.194",
   "publication_request": false,
-  "grilling_commit": "cae1ad19c8e89877f2e1face8f2e3178ed48aacf",
-  "grilling_version": "2.8.200",
+  "grilling_commit": "61864d017a1e4e9847325cd7313098b4379dc2e9",
+  "grilling_version": "2.8.201",
   "peer_pins_final": true,
-  "peer_pin_status": "exact_local_t194_source_pinned_publication_pending",
-  "peer_pin_note": "World Liquor 0.1.180 is pinned to exact local Tavern T194 source 2ffce62b6b11a36206fe942d8dd5f99c313e9940 (tree b806a9a5ac9be4a39cf87cf52338d52a67276309), version 0.6.194, source trees recorded here. The T194 commit is awaiting upstream push; publication, full-family BDS, saved-world and client acceptance remain separate.",
+  "peer_pin_status": "exact_pushed_public_peers_pending_canonical_ci",
+  "peer_pin_note": "Tavern 0.6.194 and Grilling 2.8.201 are pinned to exact pushed public source commits. Current board/mixology behavior replaces obsolete source projections. Complete-family BDS, stopped-save and client acceptance remain separate.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
@@ -15,7 +15,7 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "b806a9a5ac9be4a39cf87cf52338d52a67276309",
+  "tavern_tree": "d0b69fdc7ca1cbf43fd024c099634dab1bff92a0",
   "tavern_source_trees": {
     "BP": {
       "sha256": "c84e992dfc22145797bd3904a641fee82e592aedd9f8c96242ca9fc9fa18d23e",

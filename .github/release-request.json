@@ -12,7 +12,7 @@
   "new_bds_test": false,
   "publication_request": false,
   "client": false,
-  "status": "candidate_pending_checks",
+  "status": "source_candidate_pending_canonical_ci_family_gates_and_client_acceptance",
   "public_notes_path": "CHANGELOG.md",
   "public_notes_inline": "Pair both packs with Tavern 0.6.194. World Liquor gameplay and translations are retained; family and client acceptance remain separate.",
   "tavern_commit": "2ffce62b6b11a36206fe942d8dd5f99c313e9940",
