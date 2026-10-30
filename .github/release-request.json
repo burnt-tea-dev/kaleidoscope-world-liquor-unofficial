@@ -15,11 +15,13 @@
   "status": "source_candidate_pending_canonical_ci_family_gates_and_client_acceptance",
   "public_notes_path": "CHANGELOG.md",
   "public_notes_inline": "Pair both packs with Tavern 0.6.194. World Liquor gameplay and translations are retained; family and client acceptance remain separate.",
-  "tavern_commit": "2ffce62b6b11a36206fe942d8dd5f99c313e9940",
+  "tavern_commit": "916af68b4fdf56a3a868bf1296cec022ec6cdc2b",
   "artifact_suffix": "baseline1",
   "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
-  "peer_pin_note": "Pinned to exact local Tavern T194 commit 2ffce62b6b11a36206fe942d8dd5f99c313e9940 (tree b806a9a5ac9be4a39cf87cf52338d52a67276309), version 0.6.194. Awaiting upstream push; full-family BDS, saved-world and client acceptance remain separate.",
-  "peer_pin_status": "exact_local_t194_source_pinned_publication_pending"
+  "peer_pin_note": "Pinned to exact pushed public Tavern 0.6.194 source commit 916af68b4fdf56a3a868bf1296cec022ec6cdc2b (tree 204d2596bd2e12c53f74de707912f1613fee68f3). Its BP/RP runtime matches the already reviewed baseline-integration pin 91d0039bc864494ab0b8e31de385ab9022a006b5; publication and full-family BDS, saved-world and client acceptance remain pending.",
+  "peer_pin_status": "exact_pushed_public_t194_source_pinned_publication_pending",
+  "expected_archive_sha256": "979b9b89702fa809053a20138cca30dc72ca511aa2a49bcfa5d052f761087498",
+  "expected_archive_bytes": 7108640
 }
