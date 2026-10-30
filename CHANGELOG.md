@@ -1,3 +1,11 @@
+## 0.1.179 — 2026-10-30
+
+Pair both packs with Tavern 0.6.193 for its guide and extension startup fixes. World Liquor gameplay and translated content remain unchanged. Full-family native and client acceptance remain separate.
+
+## 0.1.178 — 2026-10-30
+
+Pair both packs with Tavern 0.6.192, which avoids repeated transmission of unchanged guide chapters. World Liquor gameplay and translations are retained. Family deployment and client evidence remain separate.
+
 ## 0.1.177
 
 - Pair both packs with Tavern 0.6.191 for the T191 family catalog dependency.
