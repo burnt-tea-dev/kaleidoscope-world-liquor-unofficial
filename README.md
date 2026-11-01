@@ -48,3 +48,7 @@ python3 tools/verify_release.py --development
 移植程式碼採 [MIT](LICENSE-CODE)，重用的 Tavern 程式碼採 [BSD-3-Clause](LICENSE-TAVERN-CODE)。既有素材授權與個別例外見 [LICENSE-ASSETS](LICENSE-ASSETS) 及[出處聲明](NOTICE.md)，不會因程式碼開源而一併改變。
 
 最新 Java 1.1.13 Forge／1.1.12 NeoForge 封包另標示 **CC BY-NC-ND 4.0**；新增素材不能直接沿用較早的 CC BY-NC-SA 條款，須另核適用授權或作者許可。
+
+## 2026-11-01 限定客戶端 checkpoint
+
+[ T194 / W180 四側結果 ](docs/CLIENT-CHECKPOINT-T194-W180-20261101.md)：16項有界通過、第一人稱右下裁切FAIL、2項NOT-RUN及1項尚未核實。不是完整家族、全部裝置或Java等價驗收；歷史結果保持原樣。
