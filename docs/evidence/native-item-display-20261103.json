@@ -1,0 +1,728 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-11-03 Asia/Hong_Kong",
+  "scope": "Isolated zero-player equipment API and inventory-slot control; no family or rendering acceptance",
+  "engine": {
+    "version": "1.26.60.6",
+    "archive_sha256": "cbbd5414fa6a310353ed1fc76a0ba691c3fd1ea852fd04bb76764ee4c1afdb98",
+    "executable_sha256": "ea16b541a448e07c337848d2c5f37321b706554b5216dd942f3f11e7a8ed2bad"
+  },
+  "script_api": "2.12.0-beta",
+  "experiments": {
+    "gametest": 1,
+    "upcoming_creator_features": 1,
+    "experiments_ever_used": 1,
+    "saved_with_toggled_experiments": 1
+  },
+  "fixture": "../../tests/native/item-display/behavior_pack",
+  "fixture_files": {
+    "manifest.json": "86e2ef6601dc868a950c43acf009da872c8e02c5822af8433c68e0dcc13292e3",
+    "entities/armor_runtime.json": "793b08faf8ab23fd437106315a83229a55a90e85ac40093c711c4ea6f96e3d10",
+    "entities/zombie_runtime.json": "45e2202a59714c100232027ec53632e81d06553d8512119392bf879ecfeb0ce0",
+    "entities/equipment.json": "b2d7a378fdf770288bc5c4b7add5c23381f84157eb1a6f4b277cc3eaba974f96",
+    "entities/allay_runtime.json": "064d16a833bda3731710e31d8f87ce0bcc98ed3500e4b2d75d4f75b6dac87ce4",
+    "entities/inventory.json": "13f6f6d6d4931a61c642ccba02612f5defdab865f30677207171f63c47ecb56e",
+    "entities/equippable.json": "a958c56c99e89117d122b5daad6828a123d88b1bb17acd45668360e3c17002f3",
+    "scripts/main.js": "bdcf128387bb8c2ebb441e793d141e80429477cef1cb452891194f2c632127f3",
+    "loot_tables/hand_control.json": "d898d28d3b291ebbd0574114d8cfc17ccdf319a34c2e8f2e293bd7793c335973",
+    "loot_tables/empty.json": "af73bfdbddd392cbfcf94acfc3638cdeb8cc8f69f70341727b8e174504a838d3"
+  },
+  "world": "Fresh LevelDB with metadata from a prior isolated probe; no production save",
+  "normal_stop": true,
+  "engine_errors": [],
+  "issues": [],
+  "cases": [
+    {
+      "type": "minecraft:armor_stand",
+      "role": "vanilla_previous_negative_control",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": false
+      },
+      "equipmentTransfer": "not_attempted_without_component"
+    },
+    {
+      "type": "minecraft:zombie",
+      "role": "vanilla_mob_control",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": false
+      },
+      "equipmentTransfer": "not_attempted_without_component"
+    },
+    {
+      "type": "minecraft:husk",
+      "role": "vanilla_mob_no_sunlight_control",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": false
+      },
+      "equipmentTransfer": "not_attempted_without_component"
+    },
+    {
+      "type": "minecraft:piglin",
+      "role": "vanilla_native_equipment_control",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": true
+      },
+      "equipmentTransfer": "not_attempted_without_component",
+      "inventorySize": {
+        "ok": true,
+        "value": 8
+      },
+      "inventoryBefore": [
+        {
+          "slot": 0,
+          "type": null
+        },
+        {
+          "slot": 1,
+          "type": null
+        },
+        {
+          "slot": 2,
+          "type": null
+        },
+        {
+          "slot": 3,
+          "type": null
+        },
+        {
+          "slot": 4,
+          "type": null
+        },
+        {
+          "slot": 5,
+          "type": null
+        },
+        {
+          "slot": 6,
+          "type": null
+        },
+        {
+          "slot": 7,
+          "type": null
+        }
+      ],
+      "mainhandQueryControl": {
+        "ok": true,
+        "value": 1
+      },
+      "mainhandAfterInventoryWrite": {
+        "ok": true,
+        "value": 0
+      },
+      "mainhandAfterInventoryClear": {
+        "ok": true,
+        "value": 1
+      },
+      "inventoryTransfer": {
+        "status": "observed_roundtrip",
+        "cloneExact": true,
+        "metadataEqual": true,
+        "cleanupOk": true,
+        "sourceFields": {
+          "typeId": "minecraft:iron_sword",
+          "amount": 1,
+          "nameTag": "minecraft:piglin:inventory0",
+          "lore": [
+            "Native clone sentinel",
+            "Metadata must survive unchanged"
+          ],
+          "canPlaceOn": [
+            "coarse_dirt",
+            "dirt"
+          ],
+          "canDestroy": [
+            "andesite",
+            "diorite",
+            "granite",
+            "polished_andesite",
+            "polished_diorite",
+            "polished_granite",
+            "stone"
+          ],
+          "components": [
+            "minecraft:block_actor_dynamic_properties",
+            "minecraft:durability",
+            "minecraft:enchantable"
+          ],
+          "dynamicProperties": [
+            [
+              "senluo_probe:boolean",
+              true
+            ],
+            [
+              "senluo_probe:marker",
+              "minecraft:piglin:inventory0"
+            ],
+            [
+              "senluo_probe:number",
+              41
+            ]
+          ],
+          "durability": {
+            "damage": 41,
+            "maxDurability": 250
+          },
+          "enchantments": [
+            {
+              "id": "unbreaking",
+              "level": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "senluo_probe:equippable",
+      "role": "nonempty_accepted_item_list",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": false
+      },
+      "equipmentTransfer": "not_attempted_without_component"
+    },
+    {
+      "type": "senluo_probe:equipment",
+      "role": "nonempty_equipment_table",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": false
+      },
+      "equipmentTransfer": "not_attempted_without_component"
+    },
+    {
+      "type": "senluo_probe:zombie_runtime",
+      "role": "mob_runtime_with_equipment_table",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": true
+      },
+      "equipmentTransfer": "not_attempted_without_component",
+      "inventorySize": {
+        "ok": true,
+        "value": 2
+      },
+      "inventoryBefore": [
+        {
+          "slot": 0,
+          "type": null
+        },
+        {
+          "slot": 1,
+          "type": null
+        }
+      ],
+      "mainhandQueryControl": {
+        "ok": true,
+        "value": 1
+      },
+      "mainhandAfterInventoryWrite": {
+        "ok": true,
+        "value": 0
+      },
+      "mainhandAfterInventoryClear": {
+        "ok": true,
+        "value": 1
+      },
+      "inventoryTransfer": {
+        "status": "observed_roundtrip",
+        "cloneExact": true,
+        "metadataEqual": true,
+        "cleanupOk": true,
+        "sourceFields": {
+          "typeId": "minecraft:iron_sword",
+          "amount": 1,
+          "nameTag": "senluo_probe:zombie_runtime:inventory0",
+          "lore": [
+            "Native clone sentinel",
+            "Metadata must survive unchanged"
+          ],
+          "canPlaceOn": [
+            "coarse_dirt",
+            "dirt"
+          ],
+          "canDestroy": [
+            "andesite",
+            "diorite",
+            "granite",
+            "polished_andesite",
+            "polished_diorite",
+            "polished_granite",
+            "stone"
+          ],
+          "components": [
+            "minecraft:block_actor_dynamic_properties",
+            "minecraft:durability",
+            "minecraft:enchantable"
+          ],
+          "dynamicProperties": [
+            [
+              "senluo_probe:boolean",
+              true
+            ],
+            [
+              "senluo_probe:marker",
+              "senluo_probe:zombie_runtime:inventory0"
+            ],
+            [
+              "senluo_probe:number",
+              41
+            ]
+          ],
+          "durability": {
+            "damage": 41,
+            "maxDurability": 250
+          },
+          "enchantments": [
+            {
+              "id": "unbreaking",
+              "level": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "senluo_probe:inventory",
+      "role": "private_inventory_metadata_control",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": true
+      },
+      "equipmentTransfer": "not_attempted_without_component",
+      "inventorySize": {
+        "ok": true,
+        "value": 1
+      },
+      "inventoryBefore": [
+        {
+          "slot": 0,
+          "type": null
+        }
+      ],
+      "mainhandQueryControl": {
+        "ok": true,
+        "value": 1
+      },
+      "mainhandAfterInventoryWrite": {
+        "ok": true,
+        "value": 0
+      },
+      "mainhandAfterInventoryClear": {
+        "ok": true,
+        "value": 1
+      },
+      "inventoryTransfer": {
+        "status": "observed_roundtrip",
+        "cloneExact": true,
+        "metadataEqual": true,
+        "cleanupOk": true,
+        "sourceFields": {
+          "typeId": "minecraft:iron_sword",
+          "amount": 1,
+          "nameTag": "senluo_probe:inventory:inventory0",
+          "lore": [
+            "Native clone sentinel",
+            "Metadata must survive unchanged"
+          ],
+          "canPlaceOn": [
+            "coarse_dirt",
+            "dirt"
+          ],
+          "canDestroy": [
+            "andesite",
+            "diorite",
+            "granite",
+            "polished_andesite",
+            "polished_diorite",
+            "polished_granite",
+            "stone"
+          ],
+          "components": [
+            "minecraft:block_actor_dynamic_properties",
+            "minecraft:durability",
+            "minecraft:enchantable"
+          ],
+          "dynamicProperties": [
+            [
+              "senluo_probe:boolean",
+              true
+            ],
+            [
+              "senluo_probe:marker",
+              "senluo_probe:inventory:inventory0"
+            ],
+            [
+              "senluo_probe:number",
+              41
+            ]
+          ],
+          "durability": {
+            "damage": 41,
+            "maxDurability": 250
+          },
+          "enchantments": [
+            {
+              "id": "unbreaking",
+              "level": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "minecraft:allay",
+      "role": "vanilla_single_slot_inventory_control",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": true
+      },
+      "equipmentTransfer": "not_attempted_without_component",
+      "inventorySize": {
+        "ok": true,
+        "value": 1
+      },
+      "inventoryBefore": [
+        {
+          "slot": 0,
+          "type": null
+        }
+      ],
+      "mainhandQueryControl": {
+        "ok": true,
+        "value": 1
+      },
+      "mainhandAfterInventoryWrite": {
+        "ok": true,
+        "value": 0
+      },
+      "mainhandAfterInventoryClear": {
+        "ok": true,
+        "value": 1
+      },
+      "inventoryTransfer": {
+        "status": "observed_roundtrip",
+        "cloneExact": true,
+        "metadataEqual": true,
+        "cleanupOk": true,
+        "sourceFields": {
+          "typeId": "minecraft:iron_sword",
+          "amount": 1,
+          "nameTag": "minecraft:allay:inventory0",
+          "lore": [
+            "Native clone sentinel",
+            "Metadata must survive unchanged"
+          ],
+          "canPlaceOn": [
+            "coarse_dirt",
+            "dirt"
+          ],
+          "canDestroy": [
+            "andesite",
+            "diorite",
+            "granite",
+            "polished_andesite",
+            "polished_diorite",
+            "polished_granite",
+            "stone"
+          ],
+          "components": [
+            "minecraft:block_actor_dynamic_properties",
+            "minecraft:durability",
+            "minecraft:enchantable"
+          ],
+          "dynamicProperties": [
+            [
+              "senluo_probe:boolean",
+              true
+            ],
+            [
+              "senluo_probe:marker",
+              "minecraft:allay:inventory0"
+            ],
+            [
+              "senluo_probe:number",
+              41
+            ]
+          ],
+          "durability": {
+            "damage": 41,
+            "maxDurability": 250
+          },
+          "enchantments": [
+            {
+              "id": "unbreaking",
+              "level": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "senluo_probe:allay_runtime",
+      "role": "native_allay_inventory_slot_mapping",
+      "beforeCommand": {
+        "ok": true,
+        "value": false
+      },
+      "nativeMainhand": {
+        "ok": true,
+        "value": 1
+      },
+      "nativeOffhand": {
+        "ok": true,
+        "value": 1
+      },
+      "equippable": {
+        "ok": true,
+        "available": false
+      },
+      "inventory": {
+        "ok": true,
+        "available": true
+      },
+      "equipmentTransfer": "not_attempted_without_component",
+      "inventorySize": {
+        "ok": true,
+        "value": 1
+      },
+      "inventoryBefore": [
+        {
+          "slot": 0,
+          "type": null
+        }
+      ],
+      "mainhandQueryControl": {
+        "ok": true,
+        "value": 1
+      },
+      "mainhandAfterInventoryWrite": {
+        "ok": true,
+        "value": 0
+      },
+      "mainhandAfterInventoryClear": {
+        "ok": true,
+        "value": 1
+      },
+      "inventoryTransfer": {
+        "status": "observed_roundtrip",
+        "cloneExact": true,
+        "metadataEqual": true,
+        "cleanupOk": true,
+        "sourceFields": {
+          "typeId": "minecraft:iron_sword",
+          "amount": 1,
+          "nameTag": "senluo_probe:allay_runtime:inventory0",
+          "lore": [
+            "Native clone sentinel",
+            "Metadata must survive unchanged"
+          ],
+          "canPlaceOn": [
+            "coarse_dirt",
+            "dirt"
+          ],
+          "canDestroy": [
+            "andesite",
+            "diorite",
+            "granite",
+            "polished_andesite",
+            "polished_diorite",
+            "polished_granite",
+            "stone"
+          ],
+          "components": [
+            "minecraft:block_actor_dynamic_properties",
+            "minecraft:durability",
+            "minecraft:enchantable"
+          ],
+          "dynamicProperties": [
+            [
+              "senluo_probe:boolean",
+              true
+            ],
+            [
+              "senluo_probe:marker",
+              "senluo_probe:allay_runtime:inventory0"
+            ],
+            [
+              "senluo_probe:number",
+              41
+            ]
+          ],
+          "durability": {
+            "damage": 41,
+            "maxDurability": 250
+          },
+          "enchantments": [
+            {
+              "id": "unbreaking",
+              "level": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "memory_events": {
+    "low": 0,
+    "high": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0,
+    "sock_throttled": 0
+  },
+  "memory_peak_bytes": 513540096,
+  "player_sessions": 0,
+  "client": false,
+  "rendering_accepted": false,
+  "production_modified": false,
+  "conclusion": "On these ten entities in this exact engine, native command equipment succeeds but Script API equippable is absent. On the five entities with inventory, slot 0 preserves the tested metadata but is separate from the native mainhand. This does not establish a generic ItemStack renderer or rule out other routes/engines."
+}
