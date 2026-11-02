@@ -1,6 +1,8 @@
-# 森羅物語：醉世界 — 非官方 Bedrock 移植
+# 森羅物語：世界名酒 — 非官方 Bedrock 移植
 
 Kaleidoscope World Liquor 的 Minecraft 基岩版移植，為酒館加入更多酒品、配方、飲用效果與陳列家具。
+
+**繁體中文** · [简体中文](README.zh-CN.md) · [English](README.en.md)
 
 [下載 / Downloads](https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial/releases) · [更新紀錄](CHANGELOG.md)
 
@@ -39,7 +41,7 @@ python3 tools/verify_release.py --development
 
 ## 問題回報
 
-請提供醉世界／Tavern／Minecraft 版本、可選配套、實驗設定及重現步驟，並說明預期與實際結果。畫面、音效問題請附截圖或短片；先查看[已知問題](docs/BUGS.md)，不要公開私人世界或第三方完整包。
+請提供世界名酒／Tavern／Minecraft 版本、可選配套、實驗設定及重現步驟，並說明預期與實際結果。畫面、音效問題請附截圖或短片；先查看[已知問題](docs/BUGS.md)，不要公開私人世界或第三方完整包。
 
 ## 鳴謝與授權
 
