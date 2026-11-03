@@ -1,7 +1,7 @@
 {
-  "version": "0.1.180",
-  "tag": "v0.1.180",
-  "title": "World Liquor 0.1.180: pair with Tavern 0.6.194",
+  "version": "0.1.182",
+  "tag": "v0.1.182",
+  "title": "World Liquor 0.1.182: pair with Tavern 0.6.197",
   "prerelease": false,
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
@@ -14,14 +14,12 @@
   "client": false,
   "status": "source_candidate_pending_canonical_ci_family_gates_and_client_acceptance",
   "public_notes_path": "CHANGELOG.md",
-  "public_notes_inline": "Pair both packs with Tavern 0.6.194. World Liquor gameplay and translations are retained; family and client acceptance remain separate.",
-  "tavern_commit": "916af68b4fdf56a3a868bf1296cec022ec6cdc2b",
+  "public_notes_inline": "Pair both packs with Tavern 0.6.197. Existing World Liquor mechanics and content are retained. Family saved-world and client acceptance remain separate.",
+  "tavern_commit": "50a49f8d3de5fa4d62049862fcbcdf884621c7e4",
   "artifact_suffix": "baseline1",
   "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
-  "peer_pin_note": "Pinned to exact pushed public Tavern 0.6.194 source commit 916af68b4fdf56a3a868bf1296cec022ec6cdc2b (tree 204d2596bd2e12c53f74de707912f1613fee68f3). Its BP/RP runtime matches the already reviewed baseline-integration pin 91d0039bc864494ab0b8e31de385ab9022a006b5; publication and full-family BDS, saved-world and client acceptance remain pending.",
-  "peer_pin_status": "exact_pushed_public_t194_source_pinned_publication_pending",
-  "expected_archive_sha256": "979b9b89702fa809053a20138cca30dc72ca511aa2a49bcfa5d052f761087498",
-  "expected_archive_bytes": 7108640
+  "peer_pin_note": "Exact pushed public Tavern 0.6.197 source is selected; source runtime matches its frozen paired baseline. Canonical CI, full-family save/rollback and human client evidence remain separate.",
+  "peer_pin_status": "exact_pushed_public_t197_source_pinned_publication_pending"
 }
