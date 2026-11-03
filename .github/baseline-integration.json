@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "91d0039bc864494ab0b8e31de385ab9022a006b5",
-  "tavern_version": "0.6.194",
+  "tavern_commit": "ec51b43b720851e927556d295cfaa1af4f605dad",
+  "tavern_version": "0.6.197",
   "publication_request": false,
-  "grilling_commit": "61864d017a1e4e9847325cd7313098b4379dc2e9",
-  "grilling_version": "2.8.201",
+  "grilling_commit": "aa8a07ad223c993c05b0d356615d38e990148588",
+  "grilling_version": "2.8.212",
   "peer_pins_final": true,
   "peer_pin_status": "exact_pushed_public_peers_pending_canonical_ci",
-  "peer_pin_note": "Tavern 0.6.194 and Grilling 2.8.201 are pinned to exact pushed public source commits. Current board/mixology behavior replaces obsolete source projections. Complete-family BDS, stopped-save and client acceptance remain separate.",
+  "peer_pin_note": "Exact public Tavern 0.6.197 preserves owner native board UI fix; Grilling 2.8.212 retains current merged oil POI behavior. Full family/save/rollback gates precede deployment; client remains pending.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
@@ -15,14 +15,14 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "d0b69fdc7ca1cbf43fd024c099634dab1bff92a0",
+  "tavern_tree": "f6a300f83bd8e876daa67c3a80cafc0fac17189a",
   "tavern_source_trees": {
     "BP": {
-      "sha256": "c84e992dfc22145797bd3904a641fee82e592aedd9f8c96242ca9fc9fa18d23e",
+      "sha256": "b5a4f65db11dc19fb09b8bc490eab14f934d997e961b94790238217f1f20d319",
       "files": 835
     },
     "RP": {
-      "sha256": "8ac176b7e8321f724c952bc788e3fee87816cbac8d97405f52bcdc9923558035",
+      "sha256": "67da4f5d57cf529ea24fbd3e5c1fb513c7b40da69a52263076d221a237fe97b2",
       "files": 3232
     }
   }
