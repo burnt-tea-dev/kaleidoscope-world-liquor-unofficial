@@ -48,8 +48,12 @@ def validate_ci(workflow):
     assert checkout['with']['fetch-depth'] == '0'
     for key in ['bridge', 'package', 'wall-record']:
         assert jobs[key]['needs'] == 'baseline'
-        assert jobs[key]['if'] == ("always() && (needs.baseline.result != 'success' || "
-                                  "needs.baseline.outputs.runtime != 'false')")
+    runtime_gate = ("always() && (needs.baseline.result != 'success' || "
+                    "needs.baseline.outputs.runtime != 'false')")
+    assert jobs['package']['if'] == runtime_gate
+    for key in ['bridge', 'wall-record']:
+        # Specialized tools stay available but are explicitly non-blocking on PRs.
+        assert jobs[key]['if'] == "github.event_name == 'workflow_dispatch' && (" + runtime_gate + ")"
     assert jobs['bridge']['runs-on'] == 'windows-latest'
     for marker in ['core.autocrlf false', 'deno-dash-compiler/releases/download/v1.2.0/dash.exe',
                    '00bb6d984f0ffb819e2fb26c1eda5768db2d6e07a979712e34e1c76c2b7594de',

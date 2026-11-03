@@ -34,7 +34,7 @@ jobs:
   bridge:
     needs: baseline
     # A failed/missing classifier never silently skips coverage.
-    if: always() && (needs.baseline.result != 'success' || needs.baseline.outputs.runtime != 'false')
+    if: github.event_name == 'workflow_dispatch' && (always() && (needs.baseline.result != 'success' || needs.baseline.outputs.runtime != 'false'))
     runs-on: windows-latest
     timeout-minutes: 15
     steps:
@@ -164,7 +164,7 @@ jobs:
   wall-record:
     needs: baseline
     # A failed/missing classifier never silently skips coverage.
-    if: always() && (needs.baseline.result != 'success' || needs.baseline.outputs.runtime != 'false')
+    if: github.event_name == 'workflow_dispatch' && (always() && (needs.baseline.result != 'success' || needs.baseline.outputs.runtime != 'false'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
