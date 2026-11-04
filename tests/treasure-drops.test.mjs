@@ -9,7 +9,7 @@ function harness({effects=new Map(),random=()=>0,reroll}={}){
  const world={afterEvents:{entityItemDrop:{subscribe:fn=>signals.drop=fn},entityRemove:{subscribe:fn=>signals.remove=fn}},getLootTableManager:()=>({generateLootFromEntity:reroll})};
  const system={runTimeout:(fn,ticks)=>timeouts.push({fn,ticks})};
  const runtime=installDeathDrops(world,system,{read:entity=>effects.get(entity)??{},killCredit:{state:()=>({})},random});
- const actor=id=>({id,typeId:'minecraft:zombie',dimension,location:{x:1,y:2,z:3}});
+ const actor=id=>({id,typeId:'minecraft:zombie',getDynamicProperty:()=>undefined,dimension,location:{x:1,y:2,z:3}});
  const item=(typeId,amount,location,metadata)=>({location,getComponent:key=>key==='minecraft:item'?{itemStack:new Stack(typeId,amount,metadata)}:undefined});
  return {runtime,timeouts,spawned,dimension,effects,actor,item,fire:()=>timeouts.splice(0).forEach(row=>row.fn()),drop:(entity,items)=>signals.drop({entity,items})};
 }

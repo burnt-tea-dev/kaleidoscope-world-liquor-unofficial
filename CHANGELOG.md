@@ -1,3 +1,9 @@
+## 0.1.186 — 2026-11-05
+
+Beheading now deduplicates against the complete native-plus-Luck cohort. A default skull already added by Luck prevents another beheading skull; renamed/lore-bearing heads remain distinct. The shared death-drop owner consumes the existing marker and preserves its two-tick no-list fallback. The old standalone beheading drop subscriber is removed.
+
+The unspecified Java ordering between two NORMAL LivingDrops listeners remains explicit. When neither the original list nor Luck contains a matching head, the existing adaptation still adds one after the Treasure snapshot. No new persisted keys, formats or identities. See [source, counterexample and validation scope](docs/JAVA-DEATH-DROPS.md). This is a separate batch; W185 stays fixed in its coordinated deployment.
+
 ## 0.1.185 — 2026-11-05
 
 Luck-added item types now enter the same death-drop snapshot as the original native items before Treasure Guide copies it. One owner handles both effects, preserves complete stack data and source positions, and consumes the cohort before spawning extras to prevent repeated callbacks from multiplying it again. The old independent Luck subscriber is removed. See [source and validation scope](docs/JAVA-DEATH-DROPS.md).

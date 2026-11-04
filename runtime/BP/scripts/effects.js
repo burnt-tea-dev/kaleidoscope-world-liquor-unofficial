@@ -7,12 +7,12 @@ import {lavaContact,eyesUnderWater} from './liquid-contact.js';
 import {CriticalFeedback} from './critical-feedback.js';
 import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
 import {freezeWater} from './frost-water.js';
-import {installBeheading} from './beheading.js';
+import {createBeheading} from './beheading.js';
 import {installDeathDrops} from './treasure-drops.js';
 import {addTreasureBlockDrops} from './treasure-block.js';
 import {selectCrazyEffects} from './crazy-source.js';
 import {applyJavaRespawn,installJavaRespawn} from './respawn-adapter.js';
-/** World Liquor effect rules, with current Java 1.1.11 repairs.
+/** World Liquor effect rules for the maintained Java gameplay reference.
  * Tavern owns persistent online time; this module supplies effect behaviour only.
  */
 import {world,system,EffectTypes,ItemStack,ItemTypes,MolangVariableMap} from '@minecraft/server';
@@ -94,8 +94,8 @@ function wearingUsableElytra(p){
 export function installEffects(){
  frostAging=new FrostAgingScheduler(world);setFrostAgingScheduler(frostAging);
  installJavaRespawn(world,system);
- beheading=installBeheading(world,system,{createStack:(id,amount)=>new ItemStack(id,amount),lookup:id=>ItemTypes.get(id),random:()=>Math.random()});
- deathDrops=installDeathDrops(world,system,{read,killCredit,random:()=>Math.random()});
+ beheading=createBeheading(system,{random:()=>Math.random()});
+ deathDrops=installDeathDrops(world,system,{read,killCredit,createStack:(id,amount)=>new ItemStack(id,amount),lookup:id=>ItemTypes.get(id),random:()=>Math.random()});
  system.afterEvents.scriptEventReceive.subscribe(e=>{if(e.sourceType!=='Server'||e.id!==NS+':apply_effect')return;try{const row=JSON.parse(e.message),p=world.getEntity(row.entity);if(isLivingCombatEntity(p)&&[NS+':explosion',NS+':level_boost',NS+':respawn',NS+':crazy'].includes(row.effect))applyEffect(p,row.effect,row.duration,row.amplifier);}catch(e){console.warn('[World Liquor effects] '+e);}},{namespaces:[NS]});
  world.beforeEvents.entityHurt.subscribe(hurt);
  world.afterEvents.entityHurt.subscribe(e=>{killCredit.applied(e);acceptedFeedback.applied(e);});
@@ -103,7 +103,7 @@ export function installEffects(){
  world.afterEvents.playerSpawn.subscribe(({player})=>{jumps.delete(player.id);killCredit.forget(player.id);});
  world.afterEvents.playerLeave.subscribe(e=>{jumps.delete(e.playerId);killCredit.forget(e.playerId);});
  world.afterEvents.playerButtonInput.subscribe(e=>{if(e.button==='Jump'&&e.newButtonState==='Pressed'&&active(e.player,'reverse_gravity')&&e.player.isOnGround)jump(e.player,true);});
- world.afterEvents.entityDie.subscribe(e=>{beheading.death(e);deathDrops.death(e);});
+ world.afterEvents.entityDie.subscribe(e=>deathDrops.death(e));
  world.afterEvents.playerBreakBlock.subscribe(e=>{if(e.brokenBlockPermutation.type.id==='minecraft:frosted_ice')frostAging.removed(e.dimension,e.block.location);const row=active(e.player,'treasure_guide');if(!row)return;try{addTreasureBlockDrops(e,row.amplifier,world.getLootTableManager());}catch(error){console.warn('[World Liquor treasure block] '+error);}});
  system.runInterval(tick,1);
 }

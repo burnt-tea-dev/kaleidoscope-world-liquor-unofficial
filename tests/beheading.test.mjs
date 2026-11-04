@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {installBeheading,beheadingChance,sameHead,headFor,BEHEADED_MARKER,BOSSES,beheadingDiagnostics} from '../runtime/BP/scripts/beheading.js';
+import {createBeheading,beheadingChance,sameHead,headFor,BEHEADED_MARKER,BOSSES,beheadingDiagnostics} from '../runtime/BP/scripts/beheading.js';
+import {installDeathDrops} from '../runtime/BP/scripts/treasure-drops.js';
 
 class Stack{
  constructor(typeId,amount=1){this.typeId=typeId;this.amount=amount;this.nameTag=undefined;this.lore=[];}
@@ -22,10 +23,11 @@ function entity(id,typeId,health=20,{name}={}){
 }
 function harness(random=()=>0){
  const runs=[],timeouts=[],signals={};
- const world={afterEvents:{entityItemDrop:{subscribe:fn=>signals.drop=fn}}};
+ const world={afterEvents:{entityItemDrop:{subscribe:fn=>signals.drop=fn},entityRemove:{subscribe:fn=>signals.remove=fn}}};
  const system={run:fn=>runs.push(fn),runTimeout:(fn,ticks)=>timeouts.push({fn,ticks})};
- const beheading=installBeheading(world,system,{createStack,lookup,random});
- return {beheading,runs,timeouts,signals,flush:()=>runs.splice(0).forEach(fn=>fn()),fire:()=>timeouts.splice(0).forEach(row=>row.fn()),drop:(actor,items)=>signals.drop({entity:actor,items:items.map(stack=>({getComponent:key=>key==='minecraft:item'?{itemStack:stack}:undefined}))})};
+ const beheading=createBeheading(system,{random});
+ const drops=installDeathDrops(world,system,{createStack,lookup,read:()=>({}),killCredit:{state:()=>({})}});
+ return {beheading,drops,runs,timeouts,signals,flush:()=>runs.splice(0).forEach(fn=>fn()),fire:()=>timeouts.splice(0).forEach(row=>row.fn()),drop:(actor,items)=>signals.drop({entity:actor,items:items.map(stack=>({getComponent:key=>key==='minecraft:item'?{itemStack:stack}:undefined}))})};
 }
 const reset=()=>{Object.assign(beheadingDiagnostics,{beheaded:0,forced:0,heads:0,deduplicated:0});beheadingDiagnostics.errors.length=0;};
 const hit=(h,attacker,target,amplifier=0)=>{const event={damage:4,damageSource:{cause:'entityAttack',damagingEntity:attacker}};const beheaded=h.beheading.incoming(event,attacker,target,{amplifier});return {event,beheaded};};
@@ -71,48 +73,53 @@ test('fallback: the inner hurt cannot roll a second beheading on the same target
 });
 test('death without the marker does nothing; a marked death clears the marker and waits for the native drop list',()=>{
  reset();const h=harness(),plain=entity('p','minecraft:zombie');
- assert.equal(h.beheading.death({deadEntity:plain}),false);assert.equal(h.timeouts.length,0);
+ assert.equal(h.drops.death({deadEntity:plain}),false);assert.equal(h.timeouts.length,0);
  const marked=entity('m','minecraft:zombie');marked.props.set(BEHEADED_MARKER,true);
- assert.equal(h.beheading.death({deadEntity:marked}),true);assert.equal(marked.props.has(BEHEADED_MARKER),false);
+ assert.equal(h.drops.death({deadEntity:marked}),true);assert.equal(marked.props.has(BEHEADED_MARKER),false);
  assert.equal(h.timeouts.length,1);assert.equal(h.timeouts[0].ticks,2);assert.equal(marked.calls.length,0);
 });
 test('drop list without a head: one head is spawned at the death position; the later timeout does not add another',()=>{
- reset();const h=harness(),m=entity('m','minecraft:zombie');m.props.set(BEHEADED_MARKER,true);h.beheading.death({deadEntity:m});m.location={x:9,y:9,z:9};
+ reset();const h=harness(),m=entity('m','minecraft:zombie');m.props.set(BEHEADED_MARKER,true);h.drops.death({deadEntity:m});m.location={x:9,y:9,z:9};
  h.drop(m,[new Stack('minecraft:rotten_flesh',2)]);
  assert.deepEqual(m.calls,[['spawn','minecraft:zombie_head',1,{x:1,y:2,z:3}]]);
  h.fire();assert.equal(m.calls.length,1);assert.equal(beheadingDiagnostics.heads,1);
 });
 test('drop list already holding the same head: nothing is added (isSameItemSameComponents); a renamed head does not count',()=>{
- reset();const h=harness(),m=entity('m','minecraft:wither_skeleton');m.props.set(BEHEADED_MARKER,true);h.beheading.death({deadEntity:m});
+ reset();const h=harness(),m=entity('m','minecraft:wither_skeleton');m.props.set(BEHEADED_MARKER,true);h.drops.death({deadEntity:m});
  h.drop(m,[new Stack('minecraft:bone'),new Stack('minecraft:wither_skeleton_skull')]);h.fire();
  assert.equal(m.calls.length,0);assert.equal(beheadingDiagnostics.deduplicated,1);
- const r=entity('r','minecraft:wither_skeleton');r.props.set(BEHEADED_MARKER,true);h.beheading.death({deadEntity:r});
+ const r=entity('r','minecraft:wither_skeleton');r.props.set(BEHEADED_MARKER,true);h.drops.death({deadEntity:r});
  const renamed=new Stack('minecraft:wither_skeleton_skull');renamed.nameTag='trophy';h.drop(r,[renamed]);
  assert.equal(r.calls.length,1);assert.equal(sameHead(renamed,new Stack('minecraft:wither_skeleton_skull')),false);
 });
 test('no drop list at all (entity with no drops): the head is spawned two ticks later; a late drop list is ignored',()=>{
- reset();const h=harness(),m=entity('m','minecraft:zombie');m.props.set(BEHEADED_MARKER,true);h.beheading.death({deadEntity:m});
+ reset();const h=harness(),m=entity('m','minecraft:zombie');m.props.set(BEHEADED_MARKER,true);h.drops.death({deadEntity:m});
  h.fire();assert.equal(m.calls.length,1);
  h.drop(m,[new Stack('minecraft:rotten_flesh')]);assert.equal(m.calls.length,1);
  h.drop(entity('x','minecraft:zombie'),[]);assert.equal(m.calls.length,1,'unrelated drop lists are ignored');
 });
 test('player victims drop a player head carrying the owner as name and lore; mobs without any head drop nothing',()=>{
  const h=harness(),player=entity('p','minecraft:player',20,{name:'Steve'});player.props.set(BEHEADED_MARKER,true);
- assert.equal(h.beheading.death({deadEntity:player}),true);h.fire();
+ assert.equal(h.drops.death({deadEntity:player}),true);h.fire();
  const [,typeId]=player.calls[0];assert.equal(typeId,'minecraft:player_head');
  const head=headFor(player,{createStack,lookup});assert.equal(head.nameTag,"Steve's Head");assert.deepEqual(head.getLore(),['SkullOwner: Steve']);
  const pig=entity('pig','minecraft:pig');pig.props.set(BEHEADED_MARKER,true);
- assert.equal(h.beheading.death({deadEntity:pig}),false);assert.equal(pig.props.has(BEHEADED_MARKER),false);h.fire();assert.equal(pig.calls.length,0);
- const otter=entity('o','beasts:otter');otter.props.set(BEHEADED_MARKER,true);assert.equal(h.beheading.death({deadEntity:otter}),true);h.fire();assert.equal(otter.calls[0][1],'beasts:otter_head');
+ assert.equal(h.drops.death({deadEntity:pig}),false);assert.equal(pig.props.has(BEHEADED_MARKER),false);h.fire();assert.equal(pig.calls.length,0);
+ const otter=entity('o','beasts:otter');otter.props.set(BEHEADED_MARKER,true);assert.equal(h.drops.death({deadEntity:otter}),true);h.fire();assert.equal(otter.calls[0][1],'beasts:otter_head');
 });
 test('the marker survives a restart: a fresh install still drops the head for an entity marked earlier',()=>{
  const attacker=entity('a','minecraft:player'),target=entity('t','minecraft:creeper'),first=harness();
  hit(first,attacker,target);target.isValid=false;first.flush();
- const later=harness();later.beheading.death({deadEntity:target});later.drop(target,[new Stack('minecraft:gunpowder')]);
+ const later=harness();later.drops.death({deadEntity:target});later.drop(target,[new Stack('minecraft:gunpowder')]);
  assert.deepEqual(target.calls.at(-1),['spawn','minecraft:creeper_head',1,{x:1,y:2,z:3}]);
+});
+test('actor removal retains the captured head for the existing no-list fallback',()=>{
+ const h=harness(),m=entity('removed','minecraft:zombie');m.props.set(BEHEADED_MARKER,true);
+ h.drops.death({deadEntity:m});h.signals.remove({removedEntityId:m.id});m.isValid=false;h.fire();h.fire();
+ assert.deepEqual(m.calls,[['spawn','minecraft:zombie_head',1,{x:1,y:2,z:3}]]);
 });
 test('a rejected head spawn is recorded once and never retried',()=>{
  reset();const h=harness(),m=entity('m','minecraft:zombie');m.props.set(BEHEADED_MARKER,true);m.dimension.spawnItem=()=>undefined;
- h.beheading.death({deadEntity:m});h.drop(m,[]);h.fire();
+ h.drops.death({deadEntity:m});h.drop(m,[]);h.fire();
  assert.equal(beheadingDiagnostics.errors.length,1);assert.match(beheadingDiagnostics.errors[0].error,/HEAD_DROP_REJECTED/);assert.equal(beheadingDiagnostics.heads,0);
 });

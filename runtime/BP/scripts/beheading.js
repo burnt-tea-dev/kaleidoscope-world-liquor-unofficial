@@ -31,25 +31,31 @@ function failure(stage,error){
  if(beheadingDiagnostics.errors.length>16)beheadingDiagnostics.errors.shift();
 }
 
-/** Java EventHandlers beheading, in event order.
- * onLivingIncomingDamage: direct LivingEntity attacker with the effect, target not
- * in the bosses tag and alive, RANDOM.nextDouble() < chance => mark the target,
- * cancel the incoming damage and hurt it for 10000 with a player/mob attack source
- * attributed to the attacker. If the health did not drop (blocked), set 1, hurt 2,
- * and if still alive set 0 and die. BEHEADING_PROCESSING suppresses the roll
- * during that inner hurt. onLivingDropsBeheading: a marked entity's drop list
- * gets the head unless an identical head is already in it; the marker is cleared.
- * Bedrock keeps the attacker-attributed damage on the same before-event (10000 on
- * the direct hit), runs the blocked fallback on the next tick, and deduplicates
- * against the native death-drop list (entityItemDrop), spawning the head two ticks
- * after death when no drop list arrives (an entity with no drops).
+/** Consume the saved marker once; its head keeps the victim's identity data. */
+export function takeBeheadingHead(actor,items){
+ let marked=false;
+ try{marked=actor.getDynamicProperty(BEHEADED_MARKER)===true;}catch(error){failure('marker',error);}
+ if(!marked)return undefined;
+ try{actor.setDynamicProperty(BEHEADED_MARKER,undefined);}catch{}
+ try{return headFor(actor,items);}catch(error){failure('head',error);return undefined;}
+}
+
+/** The complete loot cohort includes Luck. Empty/no-event deaths use the same
+ * settlement with an empty list, preserving the existing delayed head fallback.
  */
-export function installBeheading(world,system,{createStack,lookup,random=Math.random}){
- const processing=new Set(),pending=new Map();
- const spawn=context=>{
-  try{const entity=context.dimension.spawnItem(context.head,context.location);if(!entity)throw Error('HEAD_DROP_REJECTED');beheadingDiagnostics.heads++;}
-  catch(error){failure('spawn',error);}
- };
+export function finishBeheadingDrops(context,stacks=[]){
+ if(!context.head)return;
+ try{if(stacks.some(stack=>sameHead(stack,context.head))){beheadingDiagnostics.deduplicated++;return;}}
+ catch(error){failure('drops',error);}
+ try{const entity=context.dimension.spawnItem(context.head,context.location);if(!entity)throw Error('HEAD_DROP_REJECTED');beheadingDiagnostics.heads++;}
+ catch(error){failure('spawn',error);}
+}
+
+/** Source beheading damage/blocked fallback. The death-drop owner handles the
+ * saved marker, complete-cohort head deduplication and no-list fallback.
+ */
+export function createBeheading(system,{random=Math.random}={}){
+ const processing=new Set();
  const fallback=(target,attacker,before)=>{
   try{
    if(target.isValid===false)return;
@@ -65,18 +71,6 @@ export function installBeheading(world,system,{createStack,lookup,random=Math.ra
    }finally{processing.delete(target.id);}
   }catch(error){failure('fallback',error);}
  };
- world.afterEvents.entityItemDrop.subscribe(event=>{
-  const context=pending.get(event.entity.id);
-  if(!context)return;
-  pending.delete(event.entity.id);
-  try{
-   const items=event.items;
-   for(let index=0;index<items.length;index++){
-    if(sameHead(items[index].getComponent('minecraft:item')?.itemStack,context.head)){beheadingDiagnostics.deduplicated++;return;}
-   }
-  }catch(error){failure('drops',error);}
-  spawn(context);
- });
  return {
   /** The before-hurt branch. `effect` is the attacker's active beheading effect.
    * Returns true when this hit beheads (the event damage was raised to 10000). */
@@ -90,21 +84,6 @@ export function installBeheading(world,system,{createStack,lookup,random=Math.ra
    event.damage=10000;
    beheadingDiagnostics.beheaded++;
    system.run(()=>fallback(target,attacker,before));
-   return true;
-  },
-  /** entityDie: resolve and queue the head for the native drop list. */
-  death(event){
-   const actor=event.deadEntity;
-   let marked=false;
-   try{marked=actor.getDynamicProperty(BEHEADED_MARKER)===true;}catch(error){failure('marker',error);}
-   if(!marked)return false;
-   try{actor.setDynamicProperty(BEHEADED_MARKER,undefined);}catch{}
-   let head;
-   try{head=headFor(actor,{createStack,lookup});}catch(error){failure('head',error);return false;}
-   if(!head)return false;
-   const context={head,dimension:actor.dimension,location:{...actor.location}};
-   pending.set(actor.id,context);
-   system.runTimeout(()=>{if(pending.get(actor.id)===context){pending.delete(actor.id);spawn(context);}},2);
    return true;
   },
  };

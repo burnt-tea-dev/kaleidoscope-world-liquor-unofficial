@@ -1,6 +1,6 @@
-/** Current NeoForge 1.1.11 EventHandlers.getEntityHead registry resolution.
+/** Java EventHandlers.getEntityHead registry resolution.
  * Resolve on death, so other addons' registered items need no local allowlist.
- * Player SkullOwner data and native death-drop deduplication are separate gaps.
+ * Player SkullOwner rendering remains a separate platform adaptation.
  */
 const vanillaHeads = Object.freeze({
  'minecraft:zombie':'minecraft:zombie_head',
