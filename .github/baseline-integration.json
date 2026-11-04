@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "e0c4ba0957ad4af0f31364361be2e21e3e301f1b",
-  "tavern_version": "0.6.198",
+  "tavern_commit": "ad62e124fd00009e749c6bdd96a2afd2b634a67e",
+  "tavern_version": "0.6.199",
   "publication_request": false,
   "grilling_commit": "53a5dea20e777367fe2d11137b07085ba9e752ef",
   "grilling_version": "2.8.219",
   "peer_pins_final": true,
-  "peer_pin_status": "exact_pushed_public_peers_pending_canonical_ci",
-  "peer_pin_note": "Exact T198 native input fallback and G219 public gameplay integration. Full family save/rollback precedes LIVE; client false.",
+  "peer_pin_status": "exact_merged_t199_source",
+  "peer_pin_note": "T199 PR555 merged source; World Liquor death-drop order repair uses unchanged external effect APIs. Full-family saved-world validation and deployment are coordinated separately.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
@@ -15,14 +15,14 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "691c50287e144de41711bb8b728c1d0c22d3f25b",
+  "tavern_tree": "c013c6c335000468c8c76d1bfe157549a3984570",
   "tavern_source_trees": {
     "BP": {
-      "sha256": "e800f5335030a6a47eaf58ff8f04695234e9140fd5537ad5ce41d2a0f76a97f7",
+      "sha256": "ccd6384076957f7ae4e3498f6333e56d01520c4fbf50fdd115372274ee1a4615",
       "files": 835
     },
     "RP": {
-      "sha256": "94ddcb809595c176a75c363c1bb0e1f6e44ddc716683ff6d6b94662e7afa095f",
+      "sha256": "b56533ecb428716e3d8bc37fd6606f6fac2bce5dbb26e1f48d6c14522d84b725",
       "files": 3232
     }
   }

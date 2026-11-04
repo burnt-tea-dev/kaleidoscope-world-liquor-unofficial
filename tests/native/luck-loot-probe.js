@@ -1,10 +1,10 @@
 import {world,system,EntityDamageCause,ItemStack} from '@minecraft/server';
-import {installLuckLoot} from './luck-loot.js';
+import {installDeathDrops} from './treasure-drops.js';
 const emit=row=>console.warn('[LUCK_RUNTIME] '+JSON.stringify(row));
 world.afterEvents.worldLoad.subscribe(()=>{
  const dimension=world.getDimension('overworld'),originals=new Map(),lucky=new Set(),before=new Set();let emitted=0;
  dimension.runCommand('tickingarea add circle 0 80 0 2 luck_runtime');
- const luck=installLuckLoot(world,system,actor=>lucky.has(actor.id)?{luck:{amplifier:4}}:{},{state:()=>({})},{random:()=>0});
+ const luck=installDeathDrops(world,system,{read:actor=>lucky.has(actor.id)?{luck:{amplifier:4}}:{},killCredit:{state:()=>({})},random:()=>0});
  world.afterEvents.entityDie.subscribe(event=>luck.death(event));
  world.afterEvents.entityItemDrop.subscribe(event=>{
   if(event.entity.typeId!=='senluo_cap:loot_mob')return;

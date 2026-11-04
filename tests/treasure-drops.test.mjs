@@ -1,22 +1,22 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {installTreasureDrops,treasureDropChance,treasureDropDiagnostics} from '../runtime/BP/scripts/treasure-drops.js';
+import {installDeathDrops,treasureDropChance,treasureDropDiagnostics} from '../runtime/BP/scripts/treasure-drops.js';
 
-class Stack{constructor(typeId,amount=1){this.typeId=typeId;this.amount=amount;} clone(){return new Stack(this.typeId,this.amount);}}
-function harness({effects=new Map(),random=()=>0}={}){
+class Stack{constructor(typeId,amount=1,metadata={}){this.typeId=typeId;this.amount=amount;this.metadata=metadata;} clone(){return new Stack(this.typeId,this.amount,structuredClone(this.metadata));}}
+function harness({effects=new Map(),random=()=>0,reroll}={}){
  const timeouts=[],signals={},spawned=[];
  const dimension={spawnItem(stack,at){spawned.push([stack.typeId,stack.amount,{...at}]);return {id:'copy'};}};
- const world={afterEvents:{entityItemDrop:{subscribe:fn=>signals.drop=fn}}};
+ const world={afterEvents:{entityItemDrop:{subscribe:fn=>signals.drop=fn},entityRemove:{subscribe:fn=>signals.remove=fn}},getLootTableManager:()=>({generateLootFromEntity:reroll})};
  const system={runTimeout:(fn,ticks)=>timeouts.push({fn,ticks})};
- const runtime=installTreasureDrops(world,system,{read:entity=>effects.get(entity)??{},random});
+ const runtime=installDeathDrops(world,system,{read:entity=>effects.get(entity)??{},killCredit:{state:()=>({})},random});
  const actor=id=>({id,typeId:'minecraft:zombie',dimension,location:{x:1,y:2,z:3}});
- const item=(typeId,amount,location)=>({location,getComponent:key=>key==='minecraft:item'?{itemStack:new Stack(typeId,amount)}:undefined});
+ const item=(typeId,amount,location,metadata)=>({location,getComponent:key=>key==='minecraft:item'?{itemStack:new Stack(typeId,amount,metadata)}:undefined});
  return {runtime,timeouts,spawned,dimension,effects,actor,item,fire:()=>timeouts.splice(0).forEach(row=>row.fn()),drop:(entity,items)=>signals.drop({entity,items})};
 }
 const reset=()=>{Object.assign(treasureDropDiagnostics,{deaths:0,duplicated:0});treasureDropDiagnostics.errors.length=0;};
 
-test('chance is the Java double expression without a cap',()=>{
- for(const amplifier of [0,1,5,17,255])assert.equal(treasureDropChance(amplifier),.15+amplifier*.05);
+test('chance follows the current Java double expression capped at one',()=>{
+ for(const [amplifier,chance] of [[0,.15],[1,.2],[5,.4],[17,1],[255,1]])assert.equal(treasureDropChance(amplifier),chance);
 });
 test('death without a source owner, without the effect, or with a failed roll schedules nothing',()=>{
  reset();const attacker={id:'a'},h=harness({random:()=>.15});h.effects.set(attacker,{treasure_guide:{amplifier:0}});
@@ -58,4 +58,38 @@ test('a rejected copy stops the list, is recorded once and is never retried',()=
  h.drop(m,[h.item('minecraft:a',1,{x:0,y:0,z:0}),h.item('minecraft:b',1,{x:0,y:0,z:0})]);
  assert.equal(treasureDropDiagnostics.errors.length,1);assert.match(treasureDropDiagnostics.errors[0].error,/TREASURE_DROP_REJECTED/);
  h.fire();h.drop(m,[h.item('minecraft:a',1,{x:0,y:0,z:0})]);assert.equal(treasureDropDiagnostics.errors.length,1);
+});
+
+test('Luck extends the same death list before Treasure snapshots it, including complete metadata and each original position',()=>{
+ reset();const attacker={id:'both-effects',getComponent:()=>undefined},originalAt={x:1.2,y:2.3,z:3.4},spawned=[];
+ let draws=0,rolls=0;
+ const h=harness({random:()=>{draws++;return 0;},reroll:source=>{
+  assert.equal(source,m);rolls++;
+  return {0:new Stack('minecraft:diamond',64),1:new Stack('minecraft:emerald',3,{name:'Luck item',lore:['opaque data'],custom:{bytes:[0,255]}}),length:2};
+ }}),m=h.actor('combined');
+ h.effects.set(attacker,{luck:{amplifier:4},treasure_guide:{amplifier:0}});
+ const original=h.item('minecraft:diamond',2,originalAt,{lore:['original data']}),native={0:original,length:1};
+ h.dimension.spawnItem=(stack,at)=>{
+  spawned.push({stack,at:{...at}});
+  // A synchronous nested drop event must not reroll or double this death again.
+  h.drop(m,native);return {id:'copy'};
+ };
+ assert.equal(h.runtime.death({deadEntity:m,damageSource:{damagingEntity:attacker}}),true);
+ h.drop(m,native);h.drop(m,native);h.fire();
+ assert.equal(draws,6,'one Treasure chance plus five capped Luck chances');assert.equal(rolls,5);
+ assert.deepEqual(spawned.map(({stack,at})=>[stack.typeId,stack.amount,at]),[
+  ['minecraft:emerald',3,m.location],['minecraft:diamond',2,originalAt],['minecraft:emerald',3,m.location],
+ ]);
+ assert.deepEqual(spawned[1].stack.metadata,{lore:['original data']});
+ assert.deepEqual(spawned[2].stack.metadata,spawned[0].stack.metadata);assert.notEqual(spawned[2].stack,spawned[0].stack);
+ assert.equal(treasureDropDiagnostics.duplicated,2);assert.deepEqual(treasureDropDiagnostics.errors,[]);
+});
+
+test('a rejected Luck draw still lets Treasure copy the original cohort once',()=>{
+ reset();const attacker={id:'both-effects',getComponent:()=>undefined},h=harness({reroll:()=>{throw Error('Native loot unavailable');}}),m=h.actor('luck-failure');
+ h.effects.set(attacker,{luck:{amplifier:0},treasure_guide:{amplifier:0}});
+ h.runtime.death({deadEntity:m,damageSource:{damagingEntity:attacker}});
+ h.drop(m,[h.item('minecraft:bone',2,{x:2,y:3,z:4})]);
+ assert.deepEqual(h.spawned,[['minecraft:bone',2,{x:2,y:3,z:4}]]);
+ assert.equal(treasureDropDiagnostics.errors.length,1);assert.match(treasureDropDiagnostics.errors[0].error,/Native loot unavailable/);
 });
