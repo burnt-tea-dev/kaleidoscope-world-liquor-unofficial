@@ -1,7 +1,7 @@
 {
-  "version": "0.1.183",
-  "tag": "v0.1.183",
-  "title": "World Liquor 0.1.183: pair with Tavern 0.6.197",
+  "version": "0.1.184",
+  "tag": "v0.1.184",
+  "title": "World Liquor 0.1.184: pair with Tavern 0.6.198",
   "prerelease": false,
   "client_acceptance": "pending",
   "full_client_acceptance": "pending",
@@ -14,12 +14,12 @@
   "client": false,
   "status": "source_candidate_pending_canonical_ci_family_gates_and_client_acceptance",
   "public_notes_path": "CHANGELOG.md",
-  "public_notes_inline": "Pair both packs with Tavern 0.6.197. Existing World Liquor mechanics and content are retained. Family saved-world and client acceptance remain separate.",
-  "tavern_commit": "ec51b43b720851e927556d295cfaa1af4f605dad",
+  "public_notes_inline": "Pair with Tavern0.6.198 and its preserved native foreign-form fallback. Existing mechanics and persistence are retained. Full-family saved-world and human acceptance remain separate.",
+  "tavern_commit": "e0c4ba0957ad4af0f31364361be2e21e3e301f1b",
   "artifact_suffix": "baseline1",
   "peer_pins_final": true,
   "publication_ready": false,
   "bds": false,
   "peer_pin_note": "Exact pushed public Tavern 0.6.197 source is selected; source runtime matches its frozen paired baseline. Canonical CI, full-family save/rollback and human client evidence remain separate.",
-  "peer_pin_status": "exact_pushed_public_t197_source_pinned_publication_pending"
+  "peer_pin_status": "exact_public_t198_source_pending_canonical_ci"
 }
