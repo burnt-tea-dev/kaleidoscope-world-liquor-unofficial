@@ -16,7 +16,7 @@ Java 的 Luck 先在原掉落表階段加入未出現過的物品種類；淘金
 
 兩個 Java LivingDrops listener 都沒有指定priority。[NeoForge Bus8.x](https://github.com/NeoForged/Bus/blob/8.0/src/main/java/net/neoforged/bus/EventBus.java) 與 [Forge EventBus6.x](https://github.com/MinecraftForge/EventBus/blob/6.0/src/main/java/net/minecraftforge/eventbus/EventBus.java) 以reflection註冊，不能由class內方法排列推定兩者總先後。本次只修不依賴那個未知順序的Luck頭顱去重。原清單／Luck都無相同頭時仍在淘金熱快照後補1顆，明列為延續既有適配，沒有新增版本或包組合例外；不聲稱Java一定如此排序。
 
-本次受影響的持久化僅是既有 `BEHEADED_MARKER` 在正常死亡時被同一BP owner讀取並消費一次；沒有新key、格式、UUID或逐ID相容鎖。[既有斬首回歸](../tests/beheading.test.mjs) 保留原marker重載、無清單補頭、移除actor、頭顱資料和失敗不重試的行為。[原生頭顱場景](../tests/native/beheading-loot-probe.js) 與 [fixture](../tests/native/beheading-loot-fixtures.json) 準備了Luck／Luck+淘金熱的真實掉落反例、不同name/lore控制，以及同一QA世界正常重啟後的marker結算。這是已標記存活生物的死亡掉落線，不把測試fixture標記當作原生IncomingDamage／圖騰完整流程證據；原生執行結果尚待排程。
+本次受影響的持久化僅是既有 `BEHEADED_MARKER` 在正常死亡時被同一BP owner讀取並消費一次；沒有新key、格式、UUID或逐ID相容鎖。[既有斬首回歸](../tests/beheading.test.mjs) 保留原marker重載、無清單補頭、移除actor、頭顱資料和失敗不重試的行為。[原生頭顱場景](../tests/native/beheading-loot-probe.js) 與 [fixture](../tests/native/beheading-loot-fixtures.json) 準備了Luck／Luck+淘金熱的真實掉落反例、不同name/lore控制，以及同一QA世界正常重啟後的marker結算。這是已標記存活生物的死亡掉落線，不把測試fixture標記當作原生IncomingDamage／圖騰完整流程證據；2026-11-05 01:13 HKT 實際完成18個真掉落案例：Luck／Luck+淘金熱各取得3個「初始無頭、Luck抽出同款頭」反例，分別只留1／2顆原型頭；兩個改名head控制保留名稱/lore，另補的預設頭仍是獨立物品。隨後同一QA世界正常stop/restart，1個存活標記生物重載讀回marker，再死亡時清除一次並只結算一份頭顱。兩phase均players0、errors[]、BDS exit0／Quit correctly；測試世界清除。W185的舊12案沒有用作這次W186通過。
 
 ## W185原有驗證範圍
 
