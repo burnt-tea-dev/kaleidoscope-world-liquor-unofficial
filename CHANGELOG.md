@@ -1,3 +1,9 @@
+## 0.1.187 — 2026-11-05
+
+Dependency-only pairing with Tavern 0.6.200 and the frozen Grilling 2.8.220 optional source-check peer. Paired manifests, modules, dependencies, generated guide version and release baseline advance together. World Liquor gameplay, recipes, resources, UUIDs and saved data retain 0.1.186 behavior.
+
+Reuse the unchanged targeted death-drop, head/marker and native beheading-entry evidence at its original scope; this release does not rerun or relabel those observations. Complete-family saved-world first-load/restart and deployment are coordinated separately.
+
 ## 0.1.186 — 2026-11-05
 
 Beheading now deduplicates against the complete native-plus-Luck cohort. A default skull already added by Luck prevents another beheading skull; renamed/lore-bearing heads remain distinct. The shared death-drop owner consumes the existing marker and preserves its two-tick no-list fallback. The old standalone beheading drop subscriber is removed.
