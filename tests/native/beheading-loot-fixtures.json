@@ -1,0 +1,112 @@
+{
+  "test_only": true,
+  "entity_template": "tests/native/luck-loot-mob.json",
+  "files": {
+    "items/loot_mob_head.json": {
+      "format_version": "1.26.60",
+      "minecraft:item": {
+        "description": {
+          "identifier": "senluo_cap:loot_mob_head"
+        },
+        "components": {
+          "minecraft:display_name": {
+            "value": "Head fixture"
+          },
+          "minecraft:icon": "stick",
+          "minecraft:max_stack_size": 64
+        }
+      }
+    },
+    "items/named_mob_head.json": {
+      "format_version": "1.26.60",
+      "minecraft:item": {
+        "description": {
+          "identifier": "senluo_cap:named_mob_head"
+        },
+        "components": {
+          "minecraft:display_name": {
+            "value": "Head fixture"
+          },
+          "minecraft:icon": "stick",
+          "minecraft:max_stack_size": 64
+        }
+      }
+    },
+    "entities/named_mob.json": {
+      "format_version": "1.26.60",
+      "minecraft:entity": {
+        "description": {
+          "identifier": "senluo_cap:named_mob",
+          "is_spawnable": false,
+          "is_summonable": true
+        },
+        "components": {
+          "minecraft:health": {
+            "value": 1,
+            "max": 1
+          },
+          "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 1
+          },
+          "minecraft:loot": {
+            "table": "loot_tables/named-head.json"
+          },
+          "minecraft:physics": {
+            "has_gravity": false
+          }
+        }
+      }
+    },
+    "loot_tables/luck-capability.json": {
+      "pools": [
+        {
+          "rolls": 1,
+          "entries": [
+            {
+              "type": "item",
+              "name": "minecraft:bone",
+              "functions": [
+                {
+                  "function": "set_lore",
+                  "lore": [
+                    "original metadata"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "name": "senluo_cap:loot_mob_head"
+            }
+          ]
+        }
+      ]
+    },
+    "loot_tables/named-head.json": {
+      "pools": [
+        {
+          "rolls": 1,
+          "entries": [
+            {
+              "type": "item",
+              "name": "senluo_cap:named_mob_head",
+              "functions": [
+                {
+                  "function": "set_name",
+                  "name": "Native trophy"
+                },
+                {
+                  "function": "set_lore",
+                  "lore": [
+                    "owner metadata"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

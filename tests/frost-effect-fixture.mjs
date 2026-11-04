@@ -3,11 +3,11 @@
  * Native block/queue acceptance is provided by the independent BDS probe.
  */
 import {FrostAgingScheduler,setFrostAgingScheduler} from '../runtime/BP/scripts/frost-aging.js';
-import {installBeheading} from '../runtime/BP/scripts/beheading.js';
+import {createBeheading} from '../runtime/BP/scripts/beheading.js';
 import {installDeathDrops} from '../runtime/BP/scripts/treasure-drops.js';
 const withDropSignal=world=>({...world,afterEvents:{entityItemDrop:{subscribe(){}},...world.afterEvents}});
 export const frostEffectFixture={
- installBeheading(world,...args){return installBeheading(withDropSignal(world),...args);},
+ createBeheading,
  installDeathDrops(world,...args){return installDeathDrops(withDropSignal(world),...args);},
  FrostAgingScheduler:class extends FrostAgingScheduler {
   constructor(world){super({getDynamicProperty:()=>undefined,getDynamicPropertyIds:()=>[],...world});}

@@ -36,7 +36,7 @@ test('the runtime binds exact native death drops, never a nearby player drop or 
  const events={},scheduled=[],spawned=[],tool=stack('minecraft:iron_sword',1,{enchantments:['looting:3']});
  const signal=name=>({subscribe:handler=>events[name]=handler});
  const attacker={id:'player',getComponent:()=>({getEquipment:()=>tool})};
- const actor={id:'mob',location:{x:1,y:2,z:3},dimension:{spawnItem:(item,at)=>spawned.push({item,at})}};
+ const actor={id:'mob',getDynamicProperty:()=>undefined,location:{x:1,y:2,z:3},dimension:{spawnItem:(item,at)=>spawned.push({item,at})}};
  const world={afterEvents:{entityItemDrop:signal('drop'),entityRemove:signal('remove')},getEntity:()=>attacker,
   getLootTableManager:()=>({generateLootFromEntity:(source,held)=>{
    assert.equal(source,actor);assert.deepEqual(held.metadata,tool.metadata);

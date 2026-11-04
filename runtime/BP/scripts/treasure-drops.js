@@ -1,4 +1,5 @@
 import {luckBonus,luckHolder} from './luck-loot.js';
+import {takeBeheadingHead,finishBeheadingDrops} from './beheading.js';
 
 /** Java EventHandlers.onLivingDrops (NeoForge 1.21.1 author 1.1.12): when the
  * damage source's owner entity has Treasure Guide, one nextDouble() against
@@ -16,15 +17,16 @@ function failure(error){
  * once, so Treasure Guide also copies those new types without copying copies.
  * Mining, chest and fishing contexts are not inferred from this death event.
  */
-export function installDeathDrops(world,system,{read,killCredit,random=Math.random}){
+export function installDeathDrops(world,system,{read,killCredit,createStack,lookup,random=Math.random}){
  const pending=new Map();
  world.afterEvents.entityItemDrop.subscribe(event=>{
   const context=pending.get(event.entity.id);
   if(!context)return;
   pending.delete(event.entity.id);
+  const drops=[];
   try{
    // Java copies a snapshot of the list, so the added copies are not copied again.
-   const items=event.items,drops=[],extra=[];
+   const items=event.items,extra=[];
    for(let index=0;index<items.length;index++){
     const stack=items[index].getComponent('minecraft:item')?.itemStack;
     if(!stack||stack.amount<=0||stack.typeId==='minecraft:air')continue;
@@ -45,25 +47,27 @@ export function installDeathDrops(world,system,{read,killCredit,random=Math.rand
     if(copy.treasure)treasureDropDiagnostics.duplicated++;
    }
   }catch(error){failure(error);}
+  finally{finishBeheadingDrops(context,drops.map(drop=>drop.stack));}
  });
- world.afterEvents.entityRemove.subscribe(event=>pending.delete(event.removedEntityId));
+ // A removed actor may still owe the existing no-list head fallback.
+ world.afterEvents.entityRemove.subscribe(event=>{if(!pending.get(event.removedEntityId)?.head)pending.delete(event.removedEntityId);});
  return {
   /** Capture both effects for one death; Treasure rolls once for the whole list. */
   death(event){
-   const actor=event.deadEntity,source=event.damageSource??{},attacker=source.damagingEntity;
+   const actor=event.deadEntity,source=event.damageSource??{},attacker=source.damagingEntity,head=takeBeheadingHead(actor,{createStack,lookup});
    let holder,row;
    try{
     const credit=killCredit.state(actor.id);
     const lastDamagePlayer=credit.player&&system.currentTick-credit.playerTick<=100?world.getEntity(credit.player):undefined;
     holder=luckHolder({lastDamagePlayer,attackingEntity:attacker,directAttackingEntity:source.damagingProjectile??attacker,thisEntity:actor},read);
     if(attacker)row=read(attacker).treasure_guide;
-   }catch(error){failure(error);return false;}
+   }catch(error){failure(error);}
    const treasure=!!row&&random()<treasureDropChance(row.amplifier);
-   if(!holder&&!treasure)return false;
-   const context={dimension:actor.dimension,location:{...actor.location},luckAmplifier:holder?.effect.amplifier,treasure};
+   if(!holder&&!treasure&&!head)return false;
+   const context={dimension:actor.dimension,location:{...actor.location},luckAmplifier:holder?.effect.amplifier,treasure,head};
    if(holder)context.tool=attacker?.getComponent('minecraft:equippable')?.getEquipment('Mainhand')?.clone();
    pending.set(actor.id,context);if(treasure)treasureDropDiagnostics.deaths++;
-   system.runTimeout(()=>{if(pending.get(actor.id)===context)pending.delete(actor.id);},2);
+   system.runTimeout(()=>{if(pending.get(actor.id)===context){pending.delete(actor.id);finishBeheadingDrops(context);}},2);
    return true;
   },
  };
