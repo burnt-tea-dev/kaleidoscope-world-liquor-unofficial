@@ -1,3 +1,9 @@
+## 0.1.185 — 2026-11-05
+
+Luck-added item types now enter the same death-drop snapshot as the original native items before Treasure Guide copies it. One owner handles both effects, preserves complete stack data and source positions, and consumes the cohort before spawning extras to prevent repeated callbacks from multiplying it again. The old independent Luck subscriber is removed. See [source and validation scope](docs/JAVA-DEATH-DROPS.md).
+
+No persistence format changes. Mining, chest/fishing LootContext, pickup delay, beheading-listener ordering and rendered/audio fidelity remain explicit gaps. Human acceptance is optional; no deferred acceptance registration is required.
+
 ## 0.1.180 — 2026-10-30
 
 Pair both packs with Tavern 0.6.194. World Liquor gameplay and translated content remain unchanged. The exact Tavern source pin, family gates and client acceptance remain pending.

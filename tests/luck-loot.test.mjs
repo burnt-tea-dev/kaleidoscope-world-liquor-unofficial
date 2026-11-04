@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {luckBonus,luckHolder,installLuckLoot} from '../runtime/BP/scripts/luck-loot.js';
+import {luckBonus,luckHolder} from '../runtime/BP/scripts/luck-loot.js';
+import {installDeathDrops} from '../runtime/BP/scripts/treasure-drops.js';
 
 const stack=(typeId,amount=1,metadata={})=>({typeId,amount,metadata,
  clone(){return stack(this.typeId,this.amount,structuredClone(this.metadata));}});
@@ -42,7 +43,7 @@ test('the runtime binds exact native death drops, never a nearby player drop or 
    return {0:stack('minecraft:diamond'),1:stack('minecraft:emerald',2,{lore:['native']}),length:2};
   }})};
  const system={currentTick:50,runTimeout:fn=>scheduled.push(fn)};
- const runtime=installLuckLoot(world,system,p=>p===attacker?{luck:{amplifier:0}}:{},{state:()=>({})},{random:()=>0});
+ const runtime=installDeathDrops(world,system,{read:p=>p===attacker?{luck:{amplifier:0}}:{},killCredit:{state:()=>({})},random:()=>0});
  events.drop({entity:{id:'foreign'}});assert.equal(spawned.length,0);
  runtime.death({deadEntity:actor,damageSource:{damagingEntity:attacker}});
  const initial={getComponent:()=>({itemStack:stack('minecraft:diamond')})};
