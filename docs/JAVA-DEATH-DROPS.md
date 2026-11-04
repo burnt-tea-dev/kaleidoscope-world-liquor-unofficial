@@ -18,6 +18,14 @@ Java 的 Luck 先在原掉落表階段加入未出現過的物品種類；淘金
 
 本次受影響的持久化僅是既有 `BEHEADED_MARKER` 在正常死亡時被同一BP owner讀取並消費一次；沒有新key、格式、UUID或逐ID相容鎖。[既有斬首回歸](../tests/beheading.test.mjs) 保留原marker重載、無清單補頭、移除actor、頭顱資料和失敗不重試的行為。[原生頭顱場景](../tests/native/beheading-loot-probe.js) 與 [fixture](../tests/native/beheading-loot-fixtures.json) 準備了Luck／Luck+淘金熱的真實掉落反例、不同name/lore控制，以及同一QA世界正常重啟後的marker結算。這是已標記存活生物的死亡掉落線，不把測試fixture標記當作原生IncomingDamage／圖騰完整流程證據；2026-11-05 01:13 HKT 實際完成18個真掉落案例：Luck／Luck+淘金熱各取得3個「初始無頭、Luck抽出同款頭」反例，分別只留1／2顆原型頭；兩個改名head控制保留名稱/lore，另補的預設頭仍是獨立物品。隨後同一QA世界正常stop/restart，1個存活標記生物重載讀回marker，再死亡時清除一次並只結算一份頭顱。兩phase均players0、errors[]、BDS exit0／Quit correctly；測試世界清除。W185的舊12案沒有用作這次W186通過。
 
+## W186實際斬首入口窄觀察
+
+2026-11-05 01:35 HKT，BDS1.26.60.6／API2.12.0-beta完成[一個真AI攻擊場景](../tests/native/beheading-entry-probe.js)，使用[獨立fixture](../tests/native/beheading-entry-fixtures.json)。未預寫marker，也沒有用測試`applyDamage`扣血。原樣production `installEffects`及SDK consumer接收QA按既有protocol送出的effect snapshot；這不是完整Tavern publisher驗證。支援的amplifier255只保證斬首chance觸發，沒有替換原作算法。
+
+真實事件為：普通近戰輸入4／marker=false → W beforeHurt輸出10000／marker=true → native afterHurt及自然死亡保留原攻擊者 → W死亡入口清除marker → 原生bone1與補head1。before enter/exit、afterHurt、melee hit、die enter/exit及原生drop各一次；beheaded1、forced0、heads1、errors[]，players0。正常stop0／Quit correctly、unit MainPID0後刪除QA世界；運行中2.5GiB／Swap0限制實讀。本場景沒有restart，也未重跑前述19案。Runtime沒有變動，無需新配對版本。
+
+此觀察補上普通直接近戰的實際入口接線，仍不等於Java取消原傷害再另起攻擊的完整階段。護甲、吸收、圖騰、其他addon取消／競合、玩家頭皮膚和完整Tavern效果producer仍是各自未證範圍。
+
 ## W185原有驗證範圍
 
 [來源回歸](../tests/treasure-drops.test.mjs) 用真實 production handler 覆蓋同時生效、原生 array-like 清單、相同種類去重、原位置、metadata、五次 Luck 與一次淘金熱抽籤、重入及重複事件。Luck query 失敗時仍只複製原清單一次。
