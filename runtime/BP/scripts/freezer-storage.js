@@ -1,5 +1,5 @@
 import {world,system,ItemStack} from '@minecraft/server';
-import {NativeItemStorage,NATIVE_ITEM_ENTITY,NATIVE_STORAGE_OWNER,nativeItemKey} from './freezer-native-storage.js';
+import {NativeItemStorage,NATIVE_ITEM_ENTITY,NATIVE_STORAGE_OWNER,nativeItemKey,nativeStorageAnchor} from './freezer-native-storage.js';
 export const freezerStorageKey=b=>`kaleidoscope_world_liquor:storage/${b.dimension.id.split(':')[1]}/${b.location.x}_${b.location.y}_${b.location.z}`;
 const check=(ok,code)=>{if(!ok)throw Error(code);};
 let serial=0;
@@ -25,13 +25,18 @@ export function installFreezerStoragePinning(){
  const remember=e=>{if(e?.isValid&&e.typeId===NATIVE_ITEM_ENTITY)carriers.set(e.id,e);};
  const recover=e=>{
   check(e?.isValid&&e.typeId===NATIVE_ITEM_ENTITY,'FREEZER_STORAGE_UNAVAILABLE');
-  const key=e.getDynamicProperty(NATIVE_STORAGE_OWNER),m=/^kaleidoscope_world_liquor:storage\/(overworld|nether|the_end)\/(-?\d+)_(-?\d+)_(-?\d+)$/.exec(key??'');check(m,'FREEZER_STORAGE_ANCHOR');
-  const d=world.getDimension(m[1]),position={x:Number(m[2]),y:Number(m[3]),z:Number(m[4])},b=d.getBlock(position);check(b?.typeId==='kaleidoscope_world_liquor:freezer','FREEZER_STORAGE_OWNER_BLOCK');
-  const raw=world.getDynamicProperty(key),state=JSON.parse(raw??'null');check(state?.input?.length>0,'FREEZER_STORAGE_STATE');
-  const proof=freezerNativeItems.inspectForReanchor({key,dimension:d,position,entity:e});check(proof.ids.every((id,i)=>id===(state.input[i]??null)),'FREEZER_STORAGE_CONTENT_MISMATCH');
+  const key=e.getDynamicProperty(NATIVE_STORAGE_OWNER),anchor=nativeStorageAnchor(key);check(anchor,'FREEZER_STORAGE_ANCHOR');
+  const {position}=anchor,d=world.getDimension(anchor.dimension),b=d.getBlock(position);check(b,'FREEZER_STORAGE_OWNER_BLOCK');
+  // A record's native inventory remains authoritative after its jukebox is
+  // replaced. Its separate key must never read a replacement freezer's row.
+  const rowKey=anchor.record?nativeItemKey(key):key,raw=world.getDynamicProperty(rowKey),state=JSON.parse(raw??'null');
+  if(!anchor.record){check(b.typeId==='kaleidoscope_world_liquor:freezer','FREEZER_STORAGE_OWNER_BLOCK');check(state?.input?.length>0,'FREEZER_STORAGE_STATE');}
+  const proof=freezerNativeItems.inspectForReanchor({key,dimension:d,position,entity:e});
+  if(anchor.record)check(proof.ids[0]&&!proof.ids.slice(1).some(Boolean),'RECORD_STORAGE_CONTENT_MISMATCH');
+  else check(proof.ids.every((id,i)=>id===(state.input[i]??null)),'FREEZER_STORAGE_CONTENT_MISMATCH');
   const center={x:position.x+.5,y:position.y+.5,z:position.z+.5};if(['x','y','z'].every(k=>Math.abs(e.location[k]-center[k])<.1))return;
   check(e.tryTeleport(center,{dimension:d,checkForBlocks:false,keepVelocity:false})===true,'FREEZER_STORAGE_TELEPORT_REJECTED');
-  check(world.getDynamicProperty(key)===raw,'FREEZER_STORAGE_STATE_CONFLICT');const after=freezerNativeItems.readAdopted({key,dimension:d,position});check(after?.entity.id===e.id&&after.raw===proof.raw,'FREEZER_STORAGE_CONFLICT');
+  check(world.getDynamicProperty(rowKey)===raw,'FREEZER_STORAGE_STATE_CONFLICT');const after=freezerNativeItems.readAdopted({key,dimension:d,position});check(after?.entity.id===e.id&&after.raw===proof.raw,'FREEZER_STORAGE_CONFLICT');
  };
  const attempt=e=>{try{recover(e);}catch(error){console.warn('[World Liquor freezer storage] '+error);}};
  freezerNativeItems.requestReanchor=key=>{

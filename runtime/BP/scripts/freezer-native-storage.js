@@ -7,13 +7,22 @@ const check=(ok,code)=>{if(!ok)throw Error(code);};
 // or corrupt native inventory. No ItemStack metadata is serialized into JSON.
 export const NATIVE_ITEM_ENTITY='kaleidoscope_world_liquor:freezer_inputs';
 export const NATIVE_STORAGE_OWNER='kaleidoscope_world_liquor:input_owner';
+export const RECORD_ITEM_PREFIX='kaleidoscope_world_liquor:record_items/';
+export function nativeStorageAnchor(key){
+ if(typeof key!=='string')return;
+ const prefix=key.startsWith(RECORD_ITEM_PREFIX)?RECORD_ITEM_PREFIX:'kaleidoscope_world_liquor:storage/';
+ if(!key.startsWith(prefix))return;
+ const m=/^(overworld|nether|the_end)\/(-?\d+)_(-?\d+)_(-?\d+)$/.exec(key.slice(prefix.length));
+ if(m)return {record:prefix===RECORD_ITEM_PREFIX,dimension:m[1],position:{x:Number(m[2]),y:Number(m[3]),z:Number(m[4])}};
+}
 const OWNER=NATIVE_STORAGE_OWNER,TOKEN='kaleidoscope_world_liquor:input_token';
 const SIZE=4;
 const padded=ids=>{check(Array.isArray(ids)&&ids.length<=SIZE&&ids.every(id=>id===null||typeof id==='string'&&id.length>0),'NATIVE_STORAGE_IDS');return Array.from({length:SIZE},(_,i)=>ids[i]??null);};
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 const one=item=>{const stack=item.clone();stack.amount=1;return stack;};
 export const nativeItemKey=key=>'kwl:native_items/'+key;
-const requiredKey=key=>'kwl:native_required/'+key;
+export const nativeItemRequiredKey=key=>'kwl:native_required/'+key;
+const requiredKey=nativeItemRequiredKey;
 export class NativeItemStorage {
  constructor({backend,findEntity,createEntity,makeStack,token=()=>Math.random().toString(36).slice(2)}){Object.assign(this,{backend,findEntity,createEntity,makeStack,token});}
  read(input){return this.#read(input,true);}

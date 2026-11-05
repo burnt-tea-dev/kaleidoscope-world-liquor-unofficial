@@ -55,3 +55,19 @@ W193最後一次精確配T202與G237，只改發布身份、依賴及本說明�
 首次setup將offline搭配allow-list=true，被BDS在進probe前拒絕，原失敗log/report保留。只把allow-list改為false，在同一engine／同一QA世界重續兩階段，沒有改runtime或probe。成功原始位於主機維護證據`java-parity-20261105/native/world-liquor-replacement-194/config-r2/`的first/restart logs、reports、alive讀回及unit journal；上層first-report仍是setup失敗，不將它改成pass。
 
 兩次均正常stop／Quit correctly／engine exit0、playersAfter0、errors空、OOM0。執行中實讀MemoryMax2684354560／High2147483648／Swap0及獨立network namespace，服務啟動使用IPAddressDeny=any，保留2GiB主機餘裕；peak408604672 bytes。成功unit正常結束，MainPID0；transient unit卸載後的預設show值不作運行限制證據。已確認idle並清除本次QA世界／包／引擎連結與暫存peer輸入，原始報告／日誌／腳本保留，shared slot已交還。未改LIVE，W194最終peer配對及完整家族部署另由共同持有人收斂。
+
+## W196：保存接收的完整原生唱片
+
+W195仍只把插入唱片的typeId寫入machine row，再以new ItemStack(id)取出。正式before-interact→延後插入→空手取出的來源反例，已確認名稱、lore與公開dynamic property全被清掉；這是實際支援的改名／其他addon資料，不是未知NBT的假設。修正前的原始反例保留於本機維護進度，現回歸位於[`record-storage.test.mjs`](../tests/record-storage.test.mjs)。
+
+`record-storage.js`沿既有NativeItemStorage保存原生ItemStack clone。歷史`freezer_inputs`實體名稱與四槽定義保留，不替換既有身份；唱片只使用第一槽，其餘保持空。唱片自己的`record_items/<dimension>/<position>`索引與冰櫃索引分開，machine row的record ID只作播放索引，不能用來重建已採原生保存的物品。metadata沒有JSON序列化副本，也沒有逐ID退休表、版本例外或私有玩法。
+
+正式插入交易先準備完整stack及背包快照，再一起提交保存／支付；machine row或背包寫入失敗會回復原物品與資料。手動、破壞、爆炸及定時回收仍共用ejectRecord：讀取同一原生stack，spawn成功後才消耗保存列並停止自己的音訊，停止／提交失敗時撤銷暫時掉落並恢復原容器。同位置換成真冰櫃時，回收只消耗唱片自己的索引，不刪新的machine row或冰櫃容器；重載也會從唱片索引發現尚未回收的物品。共用pinning仍嚴格核對原容器／owner／token／位置，新增唱片owner沿同一核心處理。
+
+舊plain-ID列仍由既有NativeItemStorage的單一舊列讀取邊界歸還一個普通唱片；沒有批量改世界，也不從舊列假造已丟失的名稱或其他metadata。已採原生保存後，索引／容器缺失或內容不符會保留資料並拒絕取出，不退回ID重造。回退程式與世界資料須沿既有完整備份流程一起處理，舊W195程式不認識新唱片索引，不能宣稱它能保存新資料。
+
+來源回歸直接執行正式插入／支付／取出／破壞／爆炸回呼，以及真storage adapter與cleanup，覆蓋Survival／Creative、支付及保存失敗、metadata完整歸還、缺失原生索引、legacy plain-ID、替換家具、script重載與同carrier回復。音訊測試不再把storage作stub，而是載入正式NativeItemStorage及record adapter；引擎物件仍是fixture，不冒充原生結果。既有聲音檔、SoundInstance owner、Java落點／float spread、pickup delay限制不變。
+
+新的QA-only [`record-metadata-probe.js`](../tests/native/record-metadata-probe.js)尚未執行，由root另排唯一native槽。它import正式main，使用真native accepted stack與storage owner；來源回呼負責支付測試，probe不聲稱觀察到自然玩家插入／支付。固定BDS1.26.60.6／server2.12.0-beta及本版T203配套，沿既有實驗，無GameTest模組或模擬玩家；四個空位為事件位置、X+4／8／12並提供足夠石地／載入chunk。送`/scriptevent record_metadata_qa:run {"x":8,"y":81,"z":8}`，first觀察具名stack取出、定時替換回收且真冰櫃資料保留，再留下具名唱片／plain-ID待保存；正常stop、同一QA世界restart後送相同事件，核對原carrier與metadata、回收一次、舊列歸還及自身資料清理。保留兩個RECORD_METADATA_QA_RESULT與正常stop／players／errors／OOM／清理結果。
+
+W194的23項只保留其原T202與舊cleanup範圍，不改稱W196完整保存通過；原生custom-sound enum失敗沿原版本證據重用，不重跑。2026-11-06核對的[官方RecordPlayer API](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/blockrecordplayercomponent?view=minecraft-bedrock-stable)仍只有ItemType|string setter，沒有已證實的新full-stack寫入入口；一般BlockInventory文件不證明這個block具備container。原生唱片機自動化／comparator／hopper、初速／pickup delay與聲畫差距保留。

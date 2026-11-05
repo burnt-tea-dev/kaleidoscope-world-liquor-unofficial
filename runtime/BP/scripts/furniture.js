@@ -4,6 +4,7 @@ import {createBreakFeedback} from './sdk/tavern-break-feedback.js';
 import {BREAK_FEEDBACK} from './data/break-feedback.js';
 const breakFeedback=createBreakFeedback(id=>BREAK_FEEDBACK[id]);
 import {playRecord,ejectRecord,installRecordCleanup} from './record-audio.js';
+import {planRecordStorage,hasStoredRecord} from './record-storage.js';
 import {syncFreezerVisuals} from './freezer-visuals.js';
 import {isManagedCabinet,foundationReady,forwardFurnitureTick,forwardNativeUse} from './foundation.js';
 import {world,system,ItemStack,BlockPermutation} from '@minecraft/server';
@@ -89,7 +90,7 @@ function removeUnsupported(b,item){
 function say(p,key,args=[]){p.onScreenDisplay.setActionBar({translate:'kwl.'+key,with:args});}
 // Plan inventory changes on copies, then commit storage and inventory together.
 // A full inventory leaves the machine and held item untouched.
-function transaction(p,b,next,{take=0,give=[],permutation}={}){
+function transaction(p,b,next,{take=0,give=[],permutation,storage}={}){
  const inv=container(p),snapshot=Array.from({length:inv.size},(_,i)=>inv.getItem(i)),after=snapshot.map(x=>x?.clone()),slot=p.selectedSlotIndex,held=after[slot];
  if(take&&!creative(p)){if(!held||held.amount<take)throw Error('Missing held item');if(held.amount===take)after[slot]=undefined;else held.amount-=take;}
  for(const [id,count] of give){let amount=count;const sample=new ItemStack(id);
@@ -97,7 +98,7 @@ function transaction(p,b,next,{take=0,give=[],permutation}={}){
   for(let i=0;i<after.length&&amount;i++)if(!after[i]){const n=Math.min(amount,sample.maxAmount);after[i]=new ItemStack(id,n);amount-=n;}
   if(amount){say(p,'inventory_full');return false;}
  }
- const old=world.getDynamicProperty(key(b)),perm=b.permutation,mutation=b.typeId===NS+':freezer'?planFreezerStorage(b,next):undefined;
+ const old=world.getDynamicProperty(key(b)),perm=b.permutation,mutation=storage??(b.typeId===NS+':freezer'?planFreezerStorage(b,next):undefined);
  try{if(mutation)mutation.apply();else save(b,next);if(permutation)scriptedReplace(b,permutation);for(let i=0;i<after.length;i++)inv.setItem(i,after[i]);mutation?.finish();if(b.typeId===NS+':freezer')try{syncFreezerVisuals(b,next??{},savedFreezerRecipes);}catch(err){console.warn('[World Liquor visuals] '+err);}return true;}
  catch(e){pendingBreaks.delete(breakKey(b,perm.type.id));if(mutation)mutation.rollback();else world.setDynamicProperty(key(b),old);b.setPermutation(perm);for(let i=0;i<snapshot.length;i++)inv.setItem(i,snapshot[i]);throw e;}
 }
@@ -227,17 +228,17 @@ export function installFurniture(){
  world.beforeEvents.playerBreakBlock.subscribe(e=>{if(e.block.typeId===NS+':freezer'){try{read(e.block);}catch(error){e.cancel=true;console.warn('[World Liquor freezer storage] '+error);}}if(isManagedCabinet(e.block.typeId)&&!foundationReady()){e.cancel=true;unavailable(e.player);}});
  world.beforeEvents.playerInteractWithBlock.subscribe(e=>{
   if(!foundationReady()&&(isManagedCabinet(e.block.typeId)||isManagedCabinet(e.itemStack?.typeId))){e.cancel=true;if(e.isFirstEvent!==false)unavailable(e.player);return;}
-  if(e.block.typeId==='minecraft:jukebox'&&(e.itemStack?.typeId===NS+':custom_record'||read(e.block).record)&&!(e.player.isSneaking&&(e.itemStack||e.player.getComponent('minecraft:equippable')?.getEquipment('Offhand')))){
+  if(e.block.typeId==='minecraft:jukebox'&&(e.itemStack?.typeId===NS+':custom_record'||hasStoredRecord(e.block,read(e.block)))&&!(e.player.isSneaking&&(e.itemStack||e.player.getComponent('minecraft:equippable')?.getEquipment('Offhand')))){
    e.cancel=true;if(e.isFirstEvent===false)return;
    deferPlayerUse(e,(p,b)=>{
     const h=hand(p),s=read(b);
-    if(s.record){
+    if(hasStoredRecord(b,s)){
      if(String(p.getGameMode()).toLowerCase()!=='spectator')ejectRecord(b,s);
      return;
     }
     if(!mutable(p)||h?.typeId!==NS+':custom_record'||b.getComponent('minecraft:record_player')?.getRecord())return;
-    s.record=h.typeId;delete s.recordSound;
-    if(transaction(p,b,s,{take:1})){playRecord(b,s);say(p,'now_playing');}
+    s.record=h.typeId;s.type='minecraft:jukebox';delete s.recordSound;
+    if(transaction(p,b,s,{take:1,storage:planRecordStorage(b,s,{incoming:h})})){playRecord(b,s);say(p,'now_playing');}
    });return;
   }
   if(furniture(e.block.typeId)){
@@ -263,6 +264,6 @@ export function installFurniture(){
  });
  const clean=e=>{try{if(!e.typeId.startsWith(NS+':')||!e.getDynamicProperty(NS+':position'))return;const b=safeBlock(e.dimension,JSON.parse(e.getDynamicProperty(NS+':position')));if(b&&b.typeId!==e.getDynamicProperty(NS+':block'))e.remove();}catch{}};
  world.afterEvents.entityLoad.subscribe(e=>system.run(()=>clean(e.entity)));
- world.afterEvents.playerBreakBlock.subscribe(e=>{invalidateUses(e.block);if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!s.record)return;ejectRecord(e.block,s);});
+ world.afterEvents.playerBreakBlock.subscribe(e=>{invalidateUses(e.block);if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!hasStoredRecord(e.block,s))return;ejectRecord(e.block,s);});
  system.runInterval(()=>{cooldown.clear();for(const [k,t] of wallRemovalTicks)if(system.currentTick-t>2)wallRemovalTicks.delete(k);for(const p of world.getAllPlayers())for(const e of p.dimension.getEntities({families:['kwl_visual'],location:p.location,maxDistance:24}))clean(e);},600);
 }
