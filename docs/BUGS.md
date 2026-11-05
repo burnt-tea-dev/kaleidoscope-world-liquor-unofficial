@@ -31,7 +31,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 |---|---|---|
 | Luck | 目前兩條維護分支已使用 custom Luck；原生生物死亡／掉落已適配，完整原始 LootContext、無掉落事件、挖礦／箱子／釣魚仍缺 | 目前來源與原生證據見[矩陣](PARITY-MATRIX.md)；分開記錄原始 context 和真玩家結果 |
 | Elbow | 精確 Java attack attribute／charge／resistance 與原生 buffered knockback 組合尚未接入；固定 extra impulse 不等價 | ground／真正 airborne、任意原速度、resistance、Player charge／mob attack 分別量測 |
-| CaptainGift | 現行 source-water 浮力不能替代原作 12 格 water-fluid／AABB 移動裁切、fallDistance 和 onGround | flowing water、岸邊、sneak、掉入水面、不同生物寬度及其他移動效果 |
+| CaptainGift | 原12格流體／AABB水面已接入；fallDistance／onGround、普通跳躍及外部待提交力道仍未等價（見[範圍](CAPTAIN-GIFT.md)） | flowing water、岸邊、sneak、掉入水面、不同生物寬度及其他移動效果 |
 | Creative Flight／outline／Brew Accelerator | 缺原生完整飛行權限、穿牆輪廓或原作 enchantment／operator 入口 | 效果結束／重登後權限、視角遮擋與原作 cooldown；依能力需求聲明實驗旗標並先在隔離世界驗證 |
 | 自動化與其他模組 | Cabinet transfer／comparator、FluidUtil、Forge event、Create／Jade／SMC 尚未完整適配 | 保留現行容器資料與互動次序，再對每個 hook 單獨比較 |
 

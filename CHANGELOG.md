@@ -1,3 +1,9 @@
+## 0.1.188 — 2026-11-05
+
+Captain Gift now clips descending movement using the original twelve water-fluid cells, Java float surface heights and inflated entity bounds. This replaces the one-source-block buoyancy shortcut, admits the original LivingEntity recipients, and preserves horizontal motion while composing this pack's jump/reverse-gravity impulses. Ordinary bodies and native Players use their measured liquid-gravity compensation. Targeted source, native source/flow/shore, stop/reacquisition and same-world restart scopes are documented in [Captain Gift](docs/CAPTAIN-GIFT.md); native ground/fallDistance flags and full movement parity remain incomplete.
+
+Paired packs/modules/payload advance together; Tavern remains0.6.200. UUIDs and saved formats stay unchanged. Full-family admission and deployment are separate.
+
 ## 0.1.187 — 2026-11-05
 
 Dependency-only pairing with Tavern 0.6.200 and the frozen Grilling 2.8.220 optional source-check peer. Paired manifests, modules, dependencies, generated guide version and release baseline advance together. World Liquor gameplay, recipes, resources, UUIDs and saved data retain 0.1.186 behavior.
