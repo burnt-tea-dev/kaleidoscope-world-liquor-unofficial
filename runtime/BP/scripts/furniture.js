@@ -3,7 +3,7 @@ import {WALL_RECORD,wallRecordItem} from './wall-record-state.js';
 import {createBreakFeedback} from './sdk/tavern-break-feedback.js';
 import {BREAK_FEEDBACK} from './data/break-feedback.js';
 const breakFeedback=createBreakFeedback(id=>BREAK_FEEDBACK[id]);
-import {playRecord,stopRecord,installRecordCleanup} from './record-audio.js';
+import {playRecord,ejectRecord,installRecordCleanup} from './record-audio.js';
 import {syncFreezerVisuals} from './freezer-visuals.js';
 import {isManagedCabinet,foundationReady,forwardFurnitureTick,forwardNativeUse} from './foundation.js';
 import {world,system,ItemStack,BlockPermutation} from '@minecraft/server';
@@ -227,8 +227,18 @@ export function installFurniture(){
  world.beforeEvents.playerBreakBlock.subscribe(e=>{if(e.block.typeId===NS+':freezer'){try{read(e.block);}catch(error){e.cancel=true;console.warn('[World Liquor freezer storage] '+error);}}if(isManagedCabinet(e.block.typeId)&&!foundationReady()){e.cancel=true;unavailable(e.player);}});
  world.beforeEvents.playerInteractWithBlock.subscribe(e=>{
   if(!foundationReady()&&(isManagedCabinet(e.block.typeId)||isManagedCabinet(e.itemStack?.typeId))){e.cancel=true;if(e.isFirstEvent!==false)unavailable(e.player);return;}
-  if(e.block.typeId==='minecraft:jukebox'&&(e.itemStack?.typeId===NS+':custom_record'||read(e.block).record)){
-   e.cancel=true;if(e.isFirstEvent===false)return;deferPlayerUse(e,(p,b)=>{if(!mutable(p))return;const h=hand(p),s=read(b);if(s.record&&!h){if(transaction(p,b,undefined,{give:[[s.record,1]]}))stopRecord(b,s);return;}if(h?.typeId!==NS+':custom_record'||s.record||b.getComponent('minecraft:record_player')?.getRecord())return;s.record=h.typeId;delete s.recordSound;if(transaction(p,b,s,{take:1})){playRecord(b,s);say(p,'now_playing');}});return;
+  if(e.block.typeId==='minecraft:jukebox'&&(e.itemStack?.typeId===NS+':custom_record'||read(e.block).record)&&!(e.player.isSneaking&&(e.itemStack||e.player.getComponent('minecraft:equippable')?.getEquipment('Offhand')))){
+   e.cancel=true;if(e.isFirstEvent===false)return;
+   deferPlayerUse(e,(p,b)=>{
+    const h=hand(p),s=read(b);
+    if(s.record){
+     if(String(p.getGameMode()).toLowerCase()!=='spectator')ejectRecord(b,s);
+     return;
+    }
+    if(!mutable(p)||h?.typeId!==NS+':custom_record'||b.getComponent('minecraft:record_player')?.getRecord())return;
+    s.record=h.typeId;delete s.recordSound;
+    if(transaction(p,b,s,{take:1})){playRecord(b,s);say(p,'now_playing');}
+   });return;
   }
   if(furniture(e.block.typeId)){
    const id=e.block.typeId,held=e.itemStack?.typeId;
@@ -253,6 +263,6 @@ export function installFurniture(){
  });
  const clean=e=>{try{if(!e.typeId.startsWith(NS+':')||!e.getDynamicProperty(NS+':position'))return;const b=safeBlock(e.dimension,JSON.parse(e.getDynamicProperty(NS+':position')));if(b&&b.typeId!==e.getDynamicProperty(NS+':block'))e.remove();}catch{}};
  world.afterEvents.entityLoad.subscribe(e=>system.run(()=>clean(e.entity)));
- world.afterEvents.playerBreakBlock.subscribe(e=>{invalidateUses(e.block);if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!s.record)return;stopRecord(e.block,s);save(e.block,undefined);e.dimension.spawnItem(new ItemStack(s.record),center(e.block));});
+ world.afterEvents.playerBreakBlock.subscribe(e=>{invalidateUses(e.block);if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!s.record)return;ejectRecord(e.block,s);});
  system.runInterval(()=>{cooldown.clear();for(const [k,t] of wallRemovalTicks)if(system.currentTick-t>2)wallRemovalTicks.delete(k);for(const p of world.getAllPlayers())for(const e of p.dimension.getEntities({families:['kwl_visual'],location:p.location,maxDistance:24}))clean(e);},600);
 }

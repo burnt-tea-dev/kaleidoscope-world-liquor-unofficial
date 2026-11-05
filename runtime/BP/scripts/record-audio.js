@@ -1,4 +1,5 @@
 import {world,system,ItemStack} from '@minecraft/server';
+import {javaFloatRoll} from './combat-source.js';
 const N='kaleidoscope_world_liquor',BASE=N+'.music_disc.random_disc',PREFIX=N+':storage/',active=new Map();
 // Current NeoForge jukebox_song/random_disc.json. Sound handles are transient;
 // the existing saved disc remains retrievable after script/world reload.
@@ -18,6 +19,17 @@ export function playRecord(b,s){
  return handle;
 }
 export function stopRecord(b,s){active.get(key(b))?.handle?.stop();active.delete(key(b));}
+/** JukeboxBlockEntity.popOutTheItem: world item, never Inventory.add.
+ * Keep the saved disc recoverable if native spawning or the final write fails.
+ */
+export function ejectRecord(b,s,random=Math.random){
+ const offset=()=>Math.fround(Math.fround(javaFloatRoll(random())-.5)*Math.fround(.7));
+ const drop=b.dimension.spawnItem(new ItemStack(s.record),{x:b.location.x+.5+offset(),y:b.location.y+1.01+offset(),z:b.location.z+.5+offset()});
+ if(!drop)throw Error('JUKEBOX_RECORD_DROP_REJECTED');
+ try{stopRecord(b,s);world.setDynamicProperty(key(b),undefined);}
+ catch(error){try{drop.remove();}catch{}throw error;}
+ return drop;
+}
 export function installRecordCleanup(){
  if(installed)return;installed=true;
  for(const k of world.getDynamicPropertyIds())if(k.startsWith(PREFIX)){try{const s=JSON.parse(world.getDynamicProperty(k));if(!audioRecord(s))continue;const [dim,pos]=k.slice(PREFIX.length).split('/'),[x,y,z]=pos.split('_').map(Number);active.set(k,{dimension:world.getDimension(dim),location:{x,y,z}});}catch{}}
@@ -30,5 +42,5 @@ export function installRecordCleanup(){
  }catch{}}},10);
  // Java JukeboxBlockEntity.popOutTheItem returns container contents independently
  // of Creative mode and doTileDrops; block-item loot has its own rules.
- world.afterEvents.explosion.subscribe(e=>{for(const b of e.getImpactedBlocks()){const s=load(b);if(!audioRecord(s)||b.typeId===N+':wall_record')continue;stopRecord(b,s);world.setDynamicProperty(key(b),undefined);b.dimension.spawnItem(new ItemStack(s.record),b.location);}});
+ world.afterEvents.explosion.subscribe(e=>{for(const b of e.getImpactedBlocks()){const s=load(b);if(!audioRecord(s)||b.typeId===N+':wall_record')continue;ejectRecord(b,s);}});
 }

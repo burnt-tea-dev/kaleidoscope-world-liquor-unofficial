@@ -2,17 +2,17 @@
 class Signal{handlers=[];subscribe(f){this.handlers.push(f);}emit(e){for(const f of this.handlers)f(e);}}
 const dynamic=new Map(),queue=[],entities=new Map(),dimensions=new Map();let entitySerial=0;
 export const system={currentTick:0,run:f=>queue.push(f),runInterval(){},runTimeout(f){queue.push(f);},flush(){while(queue.length)queue.shift()();}};
-export const world={beforeEvents:{playerBreakBlock:new Signal(),playerInteractWithBlock:new Signal()},afterEvents:{entityLoad:new Signal(),entitySpawn:new Signal(),entityRemove:new Signal(),playerBreakBlock:new Signal()},gameRules:{doTileDrops:true},getDimension:id=>dimensions.get(id.startsWith('minecraft:')?id:'minecraft:'+id)??{getEntities:()=>[]},getEntity:id=>entities.get(id),getDynamicProperty:k=>dynamic.get(k),setDynamicProperty(k,v){if(this.failSave){this.failSave=false;throw Error('injected save failure');}if(v===undefined)dynamic.delete(k);else dynamic.set(k,v);},getAllPlayers:()=>[]};
+export const world={beforeEvents:{playerBreakBlock:new Signal(),playerInteractWithBlock:new Signal()},afterEvents:{explosion:new Signal(),entityLoad:new Signal(),entitySpawn:new Signal(),entityRemove:new Signal(),playerBreakBlock:new Signal()},gameRules:{doTileDrops:true},getDimension:id=>dimensions.get(id.startsWith('minecraft:')?id:'minecraft:'+id)??{getEntities:()=>[]},getEntity:id=>entities.get(id),getDynamicPropertyIds:()=>[...dynamic.keys()],getDynamicProperty:k=>dynamic.get(k),setDynamicProperty(k,v){if(this.failSave){this.failSave=false;throw Error('injected save failure');}if(v===undefined)dynamic.delete(k);else dynamic.set(k,v);},getAllPlayers:()=>[]};
 export class BlockPermutation{constructor(id,states={}){this.type={id};this.states={...states};}static resolve(id,s){return new this(id,s);}getState(k){return this.states[k];}getAllStates(){return {...this.states};}withState(k,v){return new BlockPermutation(this.type.id,{...this.states,[k]:v});}}
 export class ItemStack{constructor(id,amount=1){this.typeId=id;this.amount=amount;this.maxAmount=['minecraft:milk_bucket','minecraft:diamond_sword','minecraft:potion'].includes(id)?1:64;}clone(){return Object.assign(new ItemStack(this.typeId,this.amount),JSON.parse(JSON.stringify(this)));}isStackableWith(x){return this.maxAmount>1&&x?.typeId===this.typeId&&x.nameTag===this.nameTag&&JSON.stringify(x.lore)===JSON.stringify(this.lore)&&JSON.stringify(x.data)===JSON.stringify(this.data);}getLore(){return this.lore??[];}getDynamicPropertyIds(){return Object.keys(this.data??{});}getDynamicProperty(key){return this.data?.[key];}getComponent(id){if(id==='minecraft:potion'){if(this.potionThrows)throw Error('injected potion identity failure');return this.potion;}}}
 let handler,placeMode='none';
 export function setup(h){handler=h;}
 export function placements(mode){placeMode=mode;}
 export class Dimension{
- id='minecraft:overworld';blocks=new Map();drops=[];sounds=[];failSpawn=false;failSet=false;
+ id='minecraft:overworld';blocks=new Map();drops=[];sounds=[];handles=[];failSpawn=false;failSet=false;
  constructor(){dimensions.set(this.id,this);}
  getBlock(p){const k=JSON.stringify(p);if(!this.blocks.has(k))this.blocks.set(k,new Block(this,{...p}));return this.blocks.get(k);}
- getEntities(){return [];}playSound(s){this.sounds.push(s);}
+ getEntities(){return [];}playSound(s){this.sounds.push(s);const handle={stops:0,stop(){this.stops++;}};this.handles.push(handle);return handle;}
  spawnItem(item,position){if(this.failSpawn)throw Error('injected drop failure');const e={item:item.clone(),position,removed:false,remove(){this.removed=true;}};this.drops.push(e);return e;}
  spawnEntity(typeId,position){
   const slots=Array(4),data=new Map(),e={id:'carrier'+(++entitySerial),typeId,dimension:this,location:{...position},isValid:true,getDynamicProperty:k=>data.get(k),setDynamicProperty:(k,v)=>data.set(k,v),getComponent:()=>({container:{size:4,getItem:i=>slots[i]?.clone(),setItem:(i,v)=>{slots[i]=v?.clone();}}}),remove(){this.isValid=false;entities.delete(this.id);},tryTeleport(p){this.location={...p};return true;}};entities.set(e.id,e);return e;

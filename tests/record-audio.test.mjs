@@ -5,7 +5,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import vm from 'node:vm';
-const source=fs.readFileSync(new URL('../runtime/BP/scripts/record-audio.js',import.meta.url),'utf8').replace(/^import .*;\n/,'').replaceAll('export function','function');
+import {javaFloatRoll} from '../runtime/BP/scripts/combat-source.js';
+const source=fs.readFileSync(new URL('../runtime/BP/scripts/record-audio.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export function','function');
 const N='kaleidoscope_world_liquor',prefix=N+':storage/overworld/',BASE=N+'.music_disc.random_disc',legacySound=BASE+'.station_0';
 const state=()=>({type:'minecraft:jukebox',record:N+':custom_record'});
 const song=JSON.parse(fs.readFileSync(new URL('../upstream/data/kaleidoscope_world_liquor/jukebox_song/random_disc.json',import.meta.url)));
@@ -22,18 +23,18 @@ test('the original Java equal-weight streamed tracks and their exact audio bytes
  assert.deepEqual(Object.keys(definitions).filter(id=>id===BASE||id.startsWith(BASE+'.')),[BASE]);
 });
 function fixture(saved){
- const rows=new Map(saved),blocks=new Map(),timers=[],sounds=[],drops=[];let explosion,idScans=0,playFailure=false,subscriptions=0;
+ const rows=new Map(saved),blocks=new Map(),timers=[],sounds=[],drops=[],positions=[];let explosion,idScans=0,playFailure=false,subscriptions=0;
  const system={currentTick:0,runInterval:(f,n)=>timers.push({f,n})};
- const dim={id:'minecraft:overworld',getBlock:p=>{const b=blocks.get(p.x);if(b==='unloaded')throw Error('unloaded');return b;},spawnItem:i=>drops.push(i),playSound:(event,location,options)=>{
+ const dim={id:'minecraft:overworld',getBlock:p=>{const b=blocks.get(p.x);if(b==='unloaded')throw Error('unloaded');return b;},spawnItem:(i,position)=>{positions.push({...position});drops.push(i);return {remove(){const index=drops.indexOf(i);if(index>=0)drops.splice(index,1);}};},playSound:(event,location,options)=>{
   if(playFailure)throw Error('play failure');
   const handle={id:'sound-'+sounds.length,soundEventId:event,stopCalls:0,stopped:false,stop(){this.stopCalls++;if(this.failStop)throw Error('stop failure');this.stopped=true;}};
   sounds.push({event,location,options,handle});return handle;
  }};
  const world={gameRules:{doTileDrops:true},getDynamicPropertyIds:()=>{idScans++;return [...rows.keys()];},getDynamicProperty:k=>rows.get(k),setDynamicProperty:(k,v)=>v===undefined?rows.delete(k):rows.set(k,v),getDimension:()=>dim,afterEvents:{explosion:{subscribe:f=>{subscriptions++;explosion=f;}}}};
- const ctx=vm.createContext({world,system,ItemStack:class{constructor(id){this.typeId=id;}}});vm.runInContext(source,ctx);
- const api=vm.runInContext('({playRecord,stopRecord,installRecordCleanup})',ctx);
+ const ctx=vm.createContext({world,system,javaFloatRoll,ItemStack:class{constructor(id,amount=1){this.typeId=id;this.amount=amount;}}});vm.runInContext(source,ctx);
+ const api=vm.runInContext('({playRecord,stopRecord,ejectRecord,installRecordCleanup})',ctx);
  const add=(x,type,s=state())=>{const b={typeId:type,dimension:dim,location:{x,y:64,z:0}};blocks.set(x,b);rows.set(prefix+x+'_64_0',typeof s==='string'?s:JSON.stringify(s));return b;};
- return {rows,blocks,timers,sounds,drops,world,system,add,...api,start:api.installRecordCleanup,tick:()=>timers.forEach(t=>t.f()),explode:bs=>explosion({getImpactedBlocks:()=>bs}),get idScans(){return idScans;},get subscriptions(){return subscriptions;},set playFailure(v){playFailure=v;}};
+ return {rows,blocks,timers,sounds,drops,positions,world,system,add,...api,start:api.installRecordCleanup,tick:()=>timers.forEach(t=>t.f()),explode:bs=>explosion({getImpactedBlocks:()=>bs}),get idScans(){return idScans;},get subscriptions(){return subscriptions;},set playFailure(v){playFailure=v;}};
 }
 test('forty concurrent jukeboxes have independent instances without alias allocation or saved-row scans',()=>{
  const f=fixture();f.start();const initialScans=f.idScans,handles=[];
@@ -108,4 +109,21 @@ test('failed previous-instance stop cancels the replacement and keeps a retryabl
 });
 test('transient cleanup stop failure retains the saved disc until a successful retry',()=>{
  const f=fixture(),b=f.add(0,'minecraft:jukebox');f.start();const h=f.playRecord(b,state());h.failStop=true;b.typeId='minecraft:air';f.tick();assert.equal(f.rows.size,1);h.failStop=false;f.tick();assert.equal(f.rows.size,0);assert.equal(h.stopCalls,2);
+});
+
+test('ejectRecord uses the Java world origin and three float random offsets',()=>{
+ const f=fixture(),b=f.add(-2,'minecraft:jukebox');b.location.z=3;f.rows.delete(prefix+'-2_64_0');f.rows.set(prefix+'-2_64_3',JSON.stringify(state()));
+ const draws=[0,.5,16777215/16777216];let index=0;f.ejectRecord(b,state(),()=>draws[index++]);
+ // Independent Minecraft1.21.1 Vec3.offsetRandom float arithmetic in a JVM.
+ assert.deepEqual(f.positions,[{x:-1.8499999940395355,y:65.01,z:3.849999964237213}]);
+ assert.equal(index,3);assert.equal(f.drops[0].amount,1);assert.equal(f.rows.size,0);
+});
+test('ejectRecord keeps the saved disc and playing handle when native spawn fails',()=>{
+ const f=fixture(),b=f.add(0,'minecraft:jukebox'),sound=f.playRecord(b,state()),before=[...f.rows];
+ b.dimension.spawnItem=()=>undefined;assert.throws(()=>f.ejectRecord(b,state()),/JUKEBOX_RECORD_DROP_REJECTED/);
+ assert.deepEqual([...f.rows],before);assert.equal(sound.stopCalls,0);assert.equal(f.drops.length,0);
+});
+test('ejectRecord removes its provisional drop if consuming the saved row fails',()=>{
+ const f=fixture(),b=f.add(0,'minecraft:jukebox'),before=[...f.rows];f.world.setDynamicProperty=()=>{throw Error('save failure');};
+ assert.throws(()=>f.ejectRecord(b,state()),/save failure/);assert.deepEqual([...f.rows],before);assert.equal(f.drops.length,0);
 });
