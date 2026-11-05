@@ -1,3 +1,7 @@
+## 0.1.193 — 2026-11-06
+
+Pair the unchanged W192 gameplay with the fixed merged T202 and G237 sources. Keep the embedded SDK, UUIDs and saved formats. Native jukebox I/O passed 14 checks; the separate simulated interaction entry returned false without delivering a before event. The [jukebox scope](docs/JUKEBOX-REMOVAL.md) distinguishes those results. This is not a native-click or client parity claim.
+
 ## 0.1.192 — 2026-11-06
 
 Eject a jukebox disc into the world rather than inserting it into the player inventory. Normal held-item interaction can eject from a full inventory; sneaking with an occupied hand leaves native block interaction available. Manual, break and explosion ejection share one owner with the Java drop origin/float spread and recoverable saved state on delivery failure. See [source and validation scope](docs/JUKEBOX-REMOVAL.md).

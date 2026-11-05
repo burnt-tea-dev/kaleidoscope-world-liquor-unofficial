@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "d68a6dd51cee64481387ab62bb18efa96aea956c",
-  "tavern_version": "0.6.201",
+  "tavern_commit": "59e18b9330590912e3ce6b5a00fc0f004bb3ae21",
+  "tavern_version": "0.6.202",
   "publication_request": false,
-  "grilling_commit": "e9d495816dc8961fd86071016a797185f55c7473",
-  "grilling_version": "2.8.234",
+  "grilling_commit": "f4b05f04052dfb786f7021cf15790ab605f6bf3e",
+  "grilling_version": "2.8.237",
   "peer_pins_final": true,
-  "peer_pin_status": "exact_merged_t201_g234_sources",
-  "peer_pin_note": "Final T201/G234 pair. Embed the reviewed multipart snapshot SDK from Tavern PR567; preserve all W190 gameplay. Complete-family saved-world validation and deployment remain separate.",
+  "peer_pin_status": "exact_merged_t202_g237_sources",
+  "peer_pin_note": "Final T202/G237 pair; preserve W192 gameplay and the unchanged embedded SDK. Native I/O and simulated-input observations are distinguished in docs/JUKEBOX-REMOVAL.md.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
@@ -15,14 +15,14 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "92041e1018ee42f691f2b26207217b60087fa7b7",
+  "tavern_tree": "b5c36b304213001d6d3b44a3530a594089ec77d1",
   "tavern_source_trees": {
     "BP": {
-      "sha256": "965c784b817e3a4b62b6ef0ba42ea181a2ba78de4566c1faf9314d0f6e74301f",
+      "sha256": "a858b3d8cd0f6ba44c44c04709fa6347d1e109872ae0dff4c7acbd2b31f557b6",
       "files": 835
     },
     "RP": {
-      "sha256": "7a96d7f32030c723b7fb991b39063cdb52884c7d51bf9d5b3c9ff3157c17e8e7",
+      "sha256": "501ece6bdbb0795e86d6e902a486920becd1e113777a83efef749a7207158273",
       "files": 3232
     }
   }

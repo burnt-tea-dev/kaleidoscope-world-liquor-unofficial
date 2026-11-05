@@ -22,6 +22,10 @@ W192移除該唱片機背包歸還路徑，手動、拆除與爆炸皆呼叫`rec
 
 來源回歸先重現兩案失敗；現在直接執行正式互動回呼與真實音訊owner，覆蓋空手／持物滿包、Adventure／Creative／Spectator、蹲下主／副手、已接受手持物變更、重複事件、float落點與失敗回復。既有掛牆回歸使用同一真實音訊模組，不再以空函式代替它。
 
-窄原生observer在`tests/native/jukebox-eject-probe.js`，尚未執行。僅供共同持有人在隔離QA的同一正式來源包中加test-only import、QA manifest加gametest1.0.0-beta，沿既有BDS1.26.60.6/server2.12-beta與實驗旗標。先準備無玩家、載入完成的空區域，唱片機位置與X+3位置下方須有實心地板；呼叫`/scriptevent jukebox_qa:eject {"x":40,"y":81,"z":0}`。它透過SimulatedPlayer實際插入／點擊，核對事件、保存列、掉落及背包，最後斷線。若模擬入口未送事件，保留失敗和平台限制，不可直接呼叫產品函式冒充原生輸入通過。不得加入LIVE或自行啟動BDS。
+## 2026-11-06 原生觀察與 W193 配對
 
-本批P131固定T201/G234/W191的來源不切換；W192交共同持有人後續選入與排程。
+`tests/native/jukebox-eject-probe.js`已在隔離BDS1.26.60.6／server2.12-beta執行。最初插入沒有送出before事件；補上spawn後20tick等待及lookAtBlock後仍是`interactWithBlock=false`，保存列未產生。observer記錄API回值、玩家位置與視線，最後斷線。這個模擬輸入結果保持失敗，不是產品點擊已通過，也不繼續重試相同入口。
+
+另一個明確分開的原生I/O觀察直接呼叫正式`record-audio.ejectRecord`，使用真Native唱片機、world dynamic property、掉落物及SimulatedPlayer背包。14項檢查通過：空包／滿包Survival與滿包Creative＋doTileDrops=false，均掉出一個世界唱片、消耗保存列且背包不變。這證明正式owner的原生讀寫，不證明原生點擊事件。正式互動回呼仍由W192的實作測試與canonical CI覆蓋。各觀察均正常stop／Quit correctly／engine exit0，errors空、playersAfter0；測試世界與引擎已清除，沒有進入LIVE。
+
+W193最後一次精確配T202與G237，只改發布身份、依賴及本說明；W192玩法與嵌入SDK不變。完整家族保存驗證與部署由共同維護流程執行。完整ItemStack metadata、初速、pickup delay與未觀察的客戶端聲畫仍未等價。
