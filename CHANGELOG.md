@@ -1,3 +1,9 @@
+## 0.1.196 — 2026-11-06
+
+Preserve the inserted native ItemStack instead of rebuilding a jukebox record from its type ID. Named discs retain lore and public dynamic properties through payment, ejection and storage reload. Record and freezer indexes stay separate when another block replaces the jukebox; failure recovery keeps the original stack and carrier. Legacy plain-ID rows still return a bare disc, with no invented restoration of metadata already lost. See [storage and validation scope](docs/JUKEBOX-REMOVAL.md).
+
+Keep fixed T203/G237, existing UUIDs, carrier identity, original audio and SoundInstance playback. The new narrow native metadata/restart observer is supplied but has not run; previous native evidence retains its original scope. This is separate from the fixed W195/P133 batch.
+
 ## 0.1.195 — 2026-11-06
 
 Pair W194 recovery with the fixed merged T203 and G237 sources. Preserve gameplay, the embedded SDK, UUIDs and saved formats; synchronize both manifests, modules, dependencies, guide version and release baseline. Reuse W194's 23 replacement and saved-freezer native checks at their original T202 scope. Complete jukebox ItemStack metadata preservation is a separate follow-up, with no new storage migration in this pair.

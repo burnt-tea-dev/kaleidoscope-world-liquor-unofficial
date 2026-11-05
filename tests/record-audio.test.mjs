@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import vm from 'node:vm';
 import {javaFloatRoll} from '../runtime/BP/scripts/combat-source.js';
+import {nativeItemKey} from '../runtime/BP/scripts/freezer-native-storage.js';
 const source=fs.readFileSync(new URL('../runtime/BP/scripts/record-audio.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export function','function');
 const N='kaleidoscope_world_liquor',prefix=N+':storage/overworld/',BASE=N+'.music_disc.random_disc',legacySound=BASE+'.station_0';
 const state=()=>({type:'minecraft:jukebox',record:N+':custom_record'});
@@ -22,19 +23,29 @@ test('the original Java equal-weight streamed tracks and their exact audio bytes
  }
  assert.deepEqual(Object.keys(definitions).filter(id=>id===BASE||id.startsWith(BASE+'.')),[BASE]);
 });
-function fixture(saved){
+let nativeSerial=0;
+function fixture(saved,entities=new Map()){
  const rows=new Map(saved),blocks=new Map(),timers=[],sounds=[],drops=[],positions=[];let explosion,idScans=0,playFailure=false,subscriptions=0;
  const system={currentTick:0,runInterval:(f,n)=>timers.push({f,n})};
+ class ItemStack{constructor(id,amount=1){this.typeId=id;this.amount=amount;}clone(){return Object.assign(new ItemStack(this.typeId,this.amount),JSON.parse(JSON.stringify(this)));}}
  const dim={id:'minecraft:overworld',getBlock:p=>{const b=blocks.get(p.x);if(b==='unloaded')throw Error('unloaded');return b;},spawnItem:(i,position)=>{positions.push({...position});drops.push(i);return {remove(){const index=drops.indexOf(i);if(index>=0)drops.splice(index,1);}};},playSound:(event,location,options)=>{
   if(playFailure)throw Error('play failure');
   const handle={id:'sound-'+sounds.length,soundEventId:event,stopCalls:0,stopped:false,stop(){this.stopCalls++;if(this.failStop)throw Error('stop failure');this.stopped=true;}};
   sounds.push({event,location,options,handle});return handle;
  }};
- const world={gameRules:{doTileDrops:true},getDynamicPropertyIds:()=>{idScans++;return [...rows.keys()];},getDynamicProperty:k=>rows.get(k),setDynamicProperty:(k,v)=>v===undefined?rows.delete(k):rows.set(k,v),getDimension:()=>dim,afterEvents:{explosion:{subscribe:f=>{subscriptions++;explosion=f;}}}};
- const ctx=vm.createContext({world,system,javaFloatRoll,ItemStack:class{constructor(id,amount=1){this.typeId=id;this.amount=amount;}}});vm.runInContext(source,ctx);
+ dim.spawnEntity=(typeId,location)=>{const slots=[],props=new Map(),entity={typeId,id:'native-'+(++nativeSerial),dimension:dim,location,isValid:true,getDynamicProperty:k=>props.get(k),setDynamicProperty:(k,v)=>props.set(k,v),getComponent:()=>({container:{size:4,getItem:i=>slots[i]?.clone(),setItem:(i,v)=>slots[i]=v?.clone()}}),remove(){this.isValid=false;entities.delete(this.id);}};entities.set(entity.id,entity);return entity;};
+ const world={gameRules:{doTileDrops:true},getEntity:id=>entities.get(id),getDynamicPropertyIds:()=>{idScans++;return [...rows.keys()];},getDynamicProperty:k=>rows.get(k),setDynamicProperty:(k,v)=>v===undefined?rows.delete(k):rows.set(k,v),getDimension:()=>dim,afterEvents:{explosion:{subscribe:f=>{subscriptions++;explosion=f;}}}};
+ const ctx=vm.createContext({world,system,javaFloatRoll,ItemStack});
+ // Execute the real shared storage implementation and adapter in module scopes.
+ // Only engine objects are doubles; metadata settlement is never a stub.
+ const module=(file,names)=>{const code=fs.readFileSync(new URL('../runtime/BP/scripts/'+file,import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll('export ','');const api=vm.runInContext('(function(){'+code+';return {'+names.join(',')+'};})()',ctx);Object.assign(ctx,api);return api;};
+ module('freezer-native-storage.js',['NativeItemStorage','NATIVE_ITEM_ENTITY','NATIVE_STORAGE_OWNER','nativeItemKey','nativeItemRequiredKey','RECORD_ITEM_PREFIX','nativeStorageAnchor']);
+ module('freezer-storage.js',['freezerNativeItems','freezerStorageKey','planFreezerStorage']);
+ const storage=module('record-storage.js',['planRecordStorage','hasNativeRecord','savedRecord','recordStorageKey']);
+ vm.runInContext(source,ctx);
  const api=vm.runInContext('({playRecord,stopRecord,ejectRecord,installRecordCleanup})',ctx);
  const add=(x,type,s=state())=>{const b={typeId:type,dimension:dim,location:{x,y:64,z:0}};blocks.set(x,b);rows.set(prefix+x+'_64_0',typeof s==='string'?s:JSON.stringify(s));return b;};
- return {rows,blocks,timers,sounds,drops,positions,world,system,add,...api,start:api.installRecordCleanup,tick:()=>timers.forEach(t=>t.f()),explode:bs=>explosion({getImpactedBlocks:()=>bs}),get idScans(){return idScans;},get subscriptions(){return subscriptions;},set playFailure(v){playFailure=v;}};
+ return {rows,blocks,timers,sounds,drops,positions,entities,ItemStack,world,system,add,...api,...storage,planFreezerStorage:ctx.planFreezerStorage,start:api.installRecordCleanup,tick:()=>timers.forEach(t=>t.f()),explode:bs=>explosion({getImpactedBlocks:()=>bs}),get idScans(){return idScans;},get subscriptions(){return subscriptions;},set playFailure(v){playFailure=v;}};
 }
 test('forty concurrent jukeboxes have independent instances without alias allocation or saved-row scans',()=>{
  const f=fixture();f.start();const initialScans=f.idScans,handles=[];
@@ -135,5 +146,30 @@ test('ejectRecord keeps the saved disc and playing handle when native spawn fail
 });
 test('ejectRecord removes its provisional drop if consuming the saved row fails',()=>{
  const f=fixture(),b=f.add(0,'minecraft:jukebox'),before=[...f.rows];f.world.setDynamicProperty=()=>{throw Error('save failure');};
- assert.throws(()=>f.ejectRecord(b,state()),/save failure/);assert.deepEqual([...f.rows],before);assert.equal(f.drops.length,0);
+ assert.throws(()=>f.ejectRecord(b,state()));assert.deepEqual([...f.rows],before);assert.equal(f.drops.length,0);
+});
+
+function adoptedRecord(){
+ const f=fixture();f.start();const b=f.add(0,'minecraft:jukebox',{type:'minecraft:jukebox'}),item=new f.ItemStack(N+':custom_record');item.nameTag='kept original';item.lore=['native lore'];item.data={serial:42};
+ const mutation=f.planRecordStorage(b,state(),{incoming:item});mutation.apply();mutation.finish();const sound=f.playRecord(b,state());return {f,b,item,sound,index:nativeItemKey(f.recordStorageKey(b))};
+}
+test('periodic cleanup returns the native record while preserving a replacement freezer and its native contents',()=>{
+ const {f,b,item,index}=adoptedRecord();b.typeId=N+':freezer';const diamond=new f.ItemStack('minecraft:diamond');diamond.nameTag='new freezer item';
+ const replacement={type:b.typeId,input:[diamond.typeId]},mutation=f.planFreezerStorage(b,replacement,{incoming:diamond});mutation.apply();mutation.finish();
+ const row=f.rows.get(prefix+'0_64_0'),freezerIndex=nativeItemKey(prefix+'0_64_0'),native=f.rows.get(freezerIndex);f.tick();f.tick();
+ assert.deepEqual(f.drops,[item]);assert.equal(f.rows.get(prefix+'0_64_0'),row);assert.equal(f.rows.get(freezerIndex),native);assert.equal(f.rows.get(index),undefined);
+ assert.equal(f.entities.get(JSON.parse(native).entity).getComponent().container.getItem(0).nameTag,diamond.nameTag);
+});
+test('script reload discovers an adopted disc after replacement has overwritten the playback row',()=>{
+ const {f,b,item}=adoptedRecord();b.typeId=N+':freezer';const replacement={type:b.typeId,input:['minecraft:diamond']};f.rows.set(prefix+'0_64_0',JSON.stringify(replacement));
+ const restarted=fixture(f.rows,f.entities);restarted.add(0,N+':freezer',replacement);restarted.start();restarted.tick();restarted.tick();
+ assert.deepEqual(restarted.drops,[item]);assert.equal(restarted.rows.get(prefix+'0_64_0'),JSON.stringify(replacement));assert.equal(restarted.sounds.length,0);
+});
+test('failed stop restores the same adopted carrier and metadata before successful retry',()=>{
+ const {f,b,item,sound,index}=adoptedRecord(),before=new Map(f.rows),id=JSON.parse(f.rows.get(index)).entity;sound.failStop=true;
+ assert.throws(()=>f.ejectRecord(b,state()),/stop failure/);assert.equal(f.drops.length,0);assert.deepEqual(f.rows,before);assert.equal(f.entities.get(id).getComponent().container.getItem(0).nameTag,item.nameTag);
+ sound.failStop=false;f.ejectRecord(b,state());assert.deepEqual(f.drops,[item]);assert.equal(f.entities.has(id),false);
+});
+test('the saved playback ID cannot replace the adopted native disc',()=>{
+ const {f,b,item}=adoptedRecord();f.rows.set(prefix+'0_64_0',JSON.stringify({...state(),record:'minecraft:music_disc_cat'}));f.ejectRecord(b,state());assert.deepEqual(f.drops,[item]);
 });
