@@ -37,6 +37,25 @@ function recipientFixture(){
  const snapshot=(entity,rows,sequence=system.currentTick,packSource=source)=>system.afterEvents.scriptEventReceive.emit({sourceType:'Server',id:'kaleidoscope_tavern:effect_snapshot',message:JSON.stringify({source:packSource,entity:entity.id,sequence,part:0,parts:1,rows:rows.map(name=>({id:packSource+':'+name,ticks:100,amplifier:0}))})});
  return {world,system,operations,actor,snapshot,tick(n){system.currentTick=n;vm.runInContext('tick()',context);},jumpCount:()=>vm.runInContext('jumps.size',context),jumpRemaining:id=>vm.runInContext('jumps.get('+JSON.stringify(id)+')?.remaining',context),warnings};
 }
+test('embedded SDK accepts all parts of a valid snapshot with more than 32 amplifier rows',()=>{
+ const f=recipientFixture(),player=f.actor('multipart-capacity-recipient');
+ const rows=Array.from({length:33},(_,amplifier)=>({id:source+':continuous_heal',ticks:100,amplifier}));
+ const parts=[rows.slice(0,12),rows.slice(12,24),rows.slice(24)];
+ const part=index=>{
+  const message=JSON.stringify({source,entity:player.id,sequence:f.system.currentTick,part:index,parts:parts.length,rows:parts[index]});
+  assert.ok(Buffer.byteLength(message)<=1900,'each fixture packet must fit the real transport limit');
+  f.system.afterEvents.scriptEventReceive.emit({sourceType:'Server',id:'kaleidoscope_tavern:effect_snapshot',message});
+ };
+ part(0);
+ assert.equal(readTavernEffects(player,source).continuous_heal,undefined,'incomplete snapshots must not replace current effects');
+ part(1);part(2);
+ assert.equal(readTavernEffects(player,source).continuous_heal?.amplifier,32);
+ f.tick(26);
+ assert.equal(readTavernEffects(player,source).continuous_heal,undefined,'unrenewed snapshots must still expire');
+ part(0);part(1);part(2);
+ assert.equal(readTavernEffects(player,source).continuous_heal?.amplifier,32,'a full renewal must restore the strongest effect');
+ f.world.afterEvents.entityRemove.emit({removedEntityId:player.id});
+});
 test('production tick scales with fresh effect recipients, not 200 idle players; passive effects do not read velocity',()=>{
  const f=recipientFixture();for(let i=1;i<=20;i++)f.tick(i);
  assert.deepEqual(f.operations,{allPlayers:0,resolve:0,velocity:0});
