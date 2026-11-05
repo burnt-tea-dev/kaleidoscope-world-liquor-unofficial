@@ -253,6 +253,6 @@ export function installFurniture(){
  });
  const clean=e=>{try{if(!e.typeId.startsWith(NS+':')||!e.getDynamicProperty(NS+':position'))return;const b=safeBlock(e.dimension,JSON.parse(e.getDynamicProperty(NS+':position')));if(b&&b.typeId!==e.getDynamicProperty(NS+':block'))e.remove();}catch{}};
  world.afterEvents.entityLoad.subscribe(e=>system.run(()=>clean(e.entity)));
- world.afterEvents.playerBreakBlock.subscribe(e=>{invalidateUses(e.block);if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!s.record)return;stopRecord(e.block,s);save(e.block,undefined);if(e.player.getGameMode()!=='Creative')e.dimension.spawnItem(new ItemStack(s.record),center(e.block));});
+ world.afterEvents.playerBreakBlock.subscribe(e=>{invalidateUses(e.block);if(e.brokenBlockPermutation.type.id!=='minecraft:jukebox')return;const s=read(e.block);if(!s.record)return;stopRecord(e.block,s);save(e.block,undefined);e.dimension.spawnItem(new ItemStack(s.record),center(e.block));});
  system.runInterval(()=>{cooldown.clear();for(const [k,t] of wallRemovalTicks)if(system.currentTick-t>2)wallRemovalTicks.delete(k);for(const p of world.getAllPlayers())for(const e of p.dimension.getEntities({families:['kwl_visual'],location:p.location,maxDistance:24}))clean(e);},600);
 }

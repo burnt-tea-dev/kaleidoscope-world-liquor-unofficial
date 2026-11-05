@@ -28,5 +28,7 @@ export function installRecordCleanup(){
   if(b.typeId==='minecraft:jukebox'&&audioRecord(load(b)))continue;
   stopRecord(b);if(b.typeId!=='minecraft:jukebox')world.setDynamicProperty(k,undefined);
  }catch{}}},10);
- world.afterEvents.explosion.subscribe(e=>{for(const b of e.getImpactedBlocks()){const s=load(b);if(!audioRecord(s)||b.typeId===N+':wall_record')continue;stopRecord(b,s);world.setDynamicProperty(key(b),undefined);if(world.gameRules.doTileDrops)b.dimension.spawnItem(new ItemStack(s.record),b.location);}});
+ // Java JukeboxBlockEntity.popOutTheItem returns container contents independently
+ // of Creative mode and doTileDrops; block-item loot has its own rules.
+ world.afterEvents.explosion.subscribe(e=>{for(const b of e.getImpactedBlocks()){const s=load(b);if(!audioRecord(s)||b.typeId===N+':wall_record')continue;stopRecord(b,s);world.setDynamicProperty(key(b),undefined);b.dimension.spawnItem(new ItemStack(s.record),b.location);}});
 }
