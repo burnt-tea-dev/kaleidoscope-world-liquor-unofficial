@@ -4,6 +4,7 @@ import {isVanillaCrit,doubleDamageChance,javaFloatRoll,javaDamageProduct,tequila
 import {JavaKillCredit,damageCreditMutation,isLivingCombatEntity} from './kill-credit.js';
 import {boatingVelocity,reverseGravityImpulse,multiJumpStep,sourceJumpVelocity,sourceMultiJumpVelocity,nativeJumpImpulse} from './motion-source.js';
 import {lavaContact,eyesUnderWater} from './liquid-contact.js';
+import {applyCaptainWaterStep} from './captain-gift.js';
 import {CriticalFeedback} from './critical-feedback.js';
 import {AcceptedHurtFeedback} from './accepted-hurt-feedback.js';
 import {freezeWater} from './frost-water.js';
@@ -61,17 +62,17 @@ function hurt(e){const target=e.hurtEntity,attacker=e.damageSource.damagingEntit
  if(pending)system.run(()=>killCredit.complete(pending));
 }
 function motion(p,state){
- if(!state.multi_jump&&!state.reverse_gravity&&!state.captain_gift&&!state.boating_master)return;
+ if(!state.multi_jump&&!state.reverse_gravity&&!state.boating_master)return 0;
  const v=p.getVelocity(),lava=(state.reverse_gravity||state.multi_jump)?lavaContact(p):false;
- let jumped=false;
- if(state.multi_jump){const row=multiJumpStep(jumps.get(p.id),{effect:true,amplifier:state.multi_jump.amplifier,ground:p.isOnGround,climbing:p.isClimbing,elytra:wearingUsableElytra(p),gliding:p.isGliding,riding:!!p.getComponent('minecraft:riding')?.entityRidingOn,water:p.isInWater,levitation:!!p.getEffect('levitation'),reverse:!!state.reverse_gravity,velocityY:v.y,pressed:p.inputInfo.getButtonState('Jump')==='Pressed',flying:p.isFlying});jumps.set(p.id,row);if(row.jump){jump(p,!!state.reverse_gravity,lava,true);jumped=true;}}
- if(state.reverse_gravity&&!jumped){const impulse=reverseGravityImpulse({velocityY:v.y,flying:p.isFlying,water:p.isInWater,lava,levitation:p.getEffect('levitation')?.amplifier,slowFalling:!!p.getEffect('slow_falling')});if(impulse!==undefined)p.applyImpulse({x:0,y:impulse,z:0});}
- if(state.captain_gift&&!p.isSneaking&&!eyesUnderWater(p)&&v.y<=0){const y=Math.floor(p.location.y),b=p.dimension.getBlock({x:Math.floor(p.location.x),y:y-1,z:Math.floor(p.location.z)});if(b?.typeId==='minecraft:water'&&(b.permutation.getState('liquid_depth')??0)===0&&p.location.y-y<.3)p.applyImpulse({x:0,y:-v.y+.08,z:0});}
+ let jumped=false,pendingImpulseY=0;
+ if(state.multi_jump){const row=multiJumpStep(jumps.get(p.id),{effect:true,amplifier:state.multi_jump.amplifier,ground:p.isOnGround,climbing:p.isClimbing,elytra:wearingUsableElytra(p),gliding:p.isGliding,riding:!!p.getComponent('minecraft:riding')?.entityRidingOn,water:p.isInWater,levitation:!!p.getEffect('levitation'),reverse:!!state.reverse_gravity,velocityY:v.y,pressed:p.inputInfo.getButtonState('Jump')==='Pressed',flying:p.isFlying});jumps.set(p.id,row);if(row.jump){pendingImpulseY+=jump(p,!!state.reverse_gravity,lava,true);jumped=true;}}
+ if(state.reverse_gravity&&!jumped){const impulse=reverseGravityImpulse({velocityY:v.y,flying:p.isFlying,water:p.isInWater,lava,levitation:p.getEffect('levitation')?.amplifier,slowFalling:!!p.getEffect('slow_falling')});if(impulse!==undefined){p.applyImpulse({x:0,y:impulse,z:0});pendingImpulseY+=impulse;}}
  if(state.boating_master){const boat=p.getComponent('minecraft:riding')?.entityRidingOn,ride=boat?.getComponent('minecraft:rideable');if(boat?.getComponent('minecraft:type_family')?.hasTypeFamily('boat')&&ride?.getRiders()[ride.controllingSeat]?.id===p.id){const velocity=boat.getVelocity(),next=boatingVelocity(velocity,state.boating_master.amplifier,p.inputInfo.getMovementVector().y>0);boat.applyImpulse({x:next.x-velocity.x,y:0,z:next.z-velocity.z});}}
+ return pendingImpulseY;
 }
 function jump(p,reverse,lava=lavaContact(p),air=false){
  const at={x:Math.floor(p.location.x),y:Math.floor(p.location.y),z:Math.floor(p.location.z)},factor=b=>b?.typeId==='minecraft:honey_block'?.5:1,foot=factor(p.dimension.getBlock(at)),other=factor(p.dimension.getBlock({...at,y:reverse?at.y+1:Math.floor(p.location.y-.2)}));
- const target=air?sourceMultiJumpVelocity({reverse,jumpBoost:p.getEffect('jump_boost')?.amplifier}):sourceJumpVelocity({reverse,jumpFactor:foot===1?other:foot,jumpBoost:p.getEffect('jump_boost')?.amplifier,sprinting:p.isSprinting,yaw:p.getRotation().y}),velocity=p.getVelocity();p.applyImpulse(nativeJumpImpulse(velocity,target,{slowFalling:!!p.getEffect('slow_falling'),lava}));
+ const target=air?sourceMultiJumpVelocity({reverse,jumpBoost:p.getEffect('jump_boost')?.amplifier}):sourceJumpVelocity({reverse,jumpFactor:foot===1?other:foot,jumpBoost:p.getEffect('jump_boost')?.amplifier,sprinting:p.isSprinting,yaw:p.getRotation().y}),velocity=p.getVelocity();const impulse=nativeJumpImpulse(velocity,target,{slowFalling:!!p.getEffect('slow_falling'),lava});p.applyImpulse(impulse);return impulse.y;
 }
 export function tick(){frostAging?.tick();if(system.currentTick%20===0)killCredit.prune();
  // Fresh host snapshots already identify every player/mob this pack can affect.
@@ -82,7 +83,9 @@ export function tick(){frostAging?.tick();if(system.currentTick%20===0)killCredi
  const state=read(p);if(!state.multi_jump)jumps.delete(p.id);
  if(!Object.keys(state).length)continue;
  const heal=state.continuous_heal;if(heal){const h=p.getComponent('minecraft:health');if(h&&h.currentValue>0&&h.currentValue<h.effectiveMax)h.setCurrentValue(Math.min(h.effectiveMax,Math.fround(Math.fround(h.currentValue)+Math.fround(heal.amplifier+1))));}
- if(p.typeId==='minecraft:player'){motion(p,state);if(state.frost_walker)freezeWater(p,state.frost_walker.amplifier);}
+ const pendingImpulseY=p.typeId==='minecraft:player'?motion(p,state):0;
+ if(state.captain_gift)applyCaptainWaterStep(p,{underWater:eyesUnderWater(p),pendingImpulseY});
+ if(p.typeId==='minecraft:player'&&state.frost_walker)freezeWater(p,state.frost_walker.amplifier);
  }catch(e){console.warn('[World Liquor effect behaviour] '+e);}
 }
 function wearingUsableElytra(p){
