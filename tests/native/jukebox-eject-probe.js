@@ -27,10 +27,10 @@ async function observe(message){
    block.setType('minecraft:jukebox');
    for(let i=0;i<inventory.size;i++)inventory.setItem(i,undefined);
    inventory.setItem(0,new ItemStack(RECORD));
-   player.interactWithBlock(at,Direction.Up);await wait(3);
+   player.interactWithBlock(at,Direction.Up);await wait(3);player.stopInteracting();await wait(1);
    check(`full=${full}: native insertion reached the production path`,entries.at(-1)?.item===RECORD&&JSON.parse(world.getDynamicProperty(key)??'null')?.record===RECORD);
    for(let i=0;i<inventory.size;i++)inventory.setItem(i,full?new ItemStack('minecraft:stone',64):undefined);
-   const before=entries.length;player.interactWithBlock(at,Direction.Up);await wait(2);
+   const before=entries.length;player.interactWithBlock(at,Direction.Up);await wait(2);player.stopInteracting();
    check(`full=${full}: actual interaction event observed`,entries.length>before);
    const drops=dimension.getEntities({type:'minecraft:item',location:at,maxDistance:2}).filter(entity=>entity.getComponent('minecraft:item')?.itemStack.typeId===RECORD);
    check(`full=${full}: exactly one world disc and consumed saved row`,drops.length===1&&world.getDynamicProperty(key)===undefined);
