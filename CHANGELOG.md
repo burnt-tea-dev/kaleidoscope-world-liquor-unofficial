@@ -4,6 +4,10 @@ Return the stored custom disc when a jukebox is broken in Creative mode or destr
 
 Saved formats, UUIDs, track selection and existing sound instances are unchanged. No new native run or complete jukebox metadata/automation parity is claimed. Tavern remains 0.6.200.
 
+## 0.1.191 — 2026-11-05
+
+Pair with Tavern 0.6.201 and the fixed G234 source. Refresh the embedded foundation SDK from Tavern PR567 so complete multipart effect snapshots above 32 rows are accepted; per-part bounds, expiry and renewal remain active. Preserve W190 jukebox disc recovery, W189 water-eye precision and all saved formats and UUIDs.
+
 ## 0.1.189 — 2026-11-05
 
 Match Java float addition when comparing the water surface to eye height. Eyes exactly at the original surface no longer incorrectly suppress Captain Gift; negative-Y and flowing-water boundaries follow the same rule. The regression calls the real liquid-contact and water-step functions. See [source and evidence scope](docs/CAPTAIN-GIFT.md).

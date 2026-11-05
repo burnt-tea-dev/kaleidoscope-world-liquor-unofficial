@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "8c1909e49f6bcd10f33514d07c0f22bc0755a291",
-  "tavern_version": "0.6.200",
+  "tavern_commit": "d68a6dd51cee64481387ab62bb18efa96aea956c",
+  "tavern_version": "0.6.201",
   "publication_request": false,
-  "grilling_commit": "4b206eeb93e76b0fe82fd75c4ab148512817ebad",
-  "grilling_version": "2.8.220",
+  "grilling_commit": "e9d495816dc8961fd86071016a797185f55c7473",
+  "grilling_version": "2.8.234",
   "peer_pins_final": true,
-  "peer_pin_status": "exact_merged_t200_g220_sources",
-  "peer_pin_note": "Final coordinated T200/G220 source pair. Tavern external effect APIs and World Liquor gameplay are unchanged; complete-family saved-world validation and deployment are coordinated separately.",
+  "peer_pin_status": "exact_merged_t201_g234_sources",
+  "peer_pin_note": "Final T201/G234 pair. Embed the reviewed multipart snapshot SDK from Tavern PR567; preserve all W190 gameplay. Complete-family saved-world validation and deployment remain separate.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
@@ -15,14 +15,14 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "8014fabf2eff827dfa0488de8c47221227c5aa63",
+  "tavern_tree": "92041e1018ee42f691f2b26207217b60087fa7b7",
   "tavern_source_trees": {
     "BP": {
-      "sha256": "4b3311906f9134fe36731d47889f0d923edcbc52ecf7f1fd2b03567b6f0901e0",
+      "sha256": "965c784b817e3a4b62b6ef0ba42ea181a2ba78de4566c1faf9314d0f6e74301f",
       "files": 835
     },
     "RP": {
-      "sha256": "30f032c22370510dbd9707dff976b3372bd7d1874cae5cbe5c0299793857d8a1",
+      "sha256": "7a96d7f32030c723b7fb991b39063cdb52884c7d51bf9d5b3c9ff3157c17e8e7",
       "files": 3232
     }
   }
