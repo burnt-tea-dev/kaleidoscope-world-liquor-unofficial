@@ -79,7 +79,7 @@ Native permutation 與 Java properties 的已知對應逐欄限制可能 states�
 | dynamic shapes | Dismount EMPTY context 的 powder snow／scaffolding 具有確定來源；default living context 不套用 EMPTY 觀測。Bamboo/dripstone offsets、piston progress、shulker block entity 要 source facts/provider |
 | source pose／實體 bounds | default ordinary Native standing 由穩定 flags 對應；非站立或自訂來源幾何需 provider。Native crouching/crawling/scale 與 Java pose 尚未完整真人驗證 |
 | Native RNG | 預設 Native Math.random 均勻索引，沒有和 Java world RandomSource 共用種子／序列；source traversal及 draw 次數保留，跨平台相同随机世界序列仍未實現 |
-| fallDistance／封包 | stable Native 無可寫 fallDistance；不以清速度假裝重置。`keepVelocity:true` 保留 source server velocity，client packet/movement phase 尚未驗證 |
+| fallDistance／封包 | 現有adapter傳`keepVelocity:true`，但BDS1.26.60.6／server2.12-beta的原生模擬Player對此參數拋UnsupportedFunctionalityError，不能宣稱保速已驗。見[同位置傳送能力範圍](CAPTAIN-GIFT.md#同位置保速傳送2026-11-06原生反證)：該QA未執行正式Respawn回呼；此可達API限制仍需另行處理，client packet/movement phase也未驗證 |
 | 音效／畫面 | 使用原作已收錄的 chorus fruit 樣本與 source volume/pitch/order；client 順序、畫面與真人移動不因純 JS fixture 通過就算驗收 |
 
 真人對照場景：Nether 相同位置有電量錨＋keepInventory=true，喝 Respawn 酒；比較第一 North 落點、看向錨的方向、起點／終點音效與 Hunger。再 keepInventory=false 重新建立已宣告的 nonforced 點，確認只扣一次電量。Overworld 床朝北，分別以 +90/−90 設點後轉身喝酒，應採不同 source 第一側；舊床點沒有 metadata 時要保留 unknown。最後新世界 default spawn radius=0 的普通石地與有水表面，分別確認 column 成功與 sentinel fallback 未假造。

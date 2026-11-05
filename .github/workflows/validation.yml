@@ -124,6 +124,7 @@ jobs:
           node --check tests/native/jukebox-replacement-probe.js
           node --check tests/native/record-metadata-probe.js
           node --check tests/native/captain-gift-probe.js
+          node --check tests/native/captain-fall-teleport-probe.js
           node --check tests/native/beheading-entry-probe.js
           node --check tests/native/beheading-loot-probe.js
           node --check tests/native/death-drops-probe.js
