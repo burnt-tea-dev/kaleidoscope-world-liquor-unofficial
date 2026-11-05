@@ -68,6 +68,14 @@ W195仍只把插入唱片的typeId寫入machine row，再以new ItemStack(id)取
 
 來源回歸直接執行正式插入／支付／取出／破壞／爆炸回呼，以及真storage adapter與cleanup，覆蓋Survival／Creative、支付及保存失敗、metadata完整歸還、缺失原生索引、legacy plain-ID、替換家具、script重載與同carrier回復。音訊測試不再把storage作stub，而是載入正式NativeItemStorage及record adapter；引擎物件仍是fixture，不冒充原生結果。既有聲音檔、SoundInstance owner、Java落點／float spread、pickup delay限制不變。
 
-新的QA-only [`record-metadata-probe.js`](../tests/native/record-metadata-probe.js)尚未執行，由root另排唯一native槽。它import正式main，使用真native accepted stack與storage owner；來源回呼負責支付測試，probe不聲稱觀察到自然玩家插入／支付。固定BDS1.26.60.6／server2.12.0-beta及本版T203配套，沿既有實驗，無GameTest模組或模擬玩家；四個空位為事件位置、X+4／8／12並提供足夠石地／載入chunk。送`/scriptevent record_metadata_qa:run {"x":8,"y":81,"z":8}`，first觀察具名stack取出、定時替換回收且真冰櫃資料保留，再留下具名唱片／plain-ID待保存；正常stop、同一QA世界restart後送相同事件，核對原carrier與metadata、回收一次、舊列歸還及自身資料清理。保留兩個RECORD_METADATA_QA_RESULT與正常stop／players／errors／OOM／清理結果。
+QA-only [`record-metadata-probe.js`](../tests/native/record-metadata-probe.js)已按下方範圍執行。它import正式main，使用真native accepted stack與storage owner；來源回呼負責支付測試，probe不聲稱觀察到自然玩家插入／支付。固定BDS1.26.60.6／server2.12.0-beta及本版T203配套，沿既有實驗，無GameTest模組或模擬玩家；四個空位為事件位置、X+4／8／12並提供足夠石地／載入chunk。送`/scriptevent record_metadata_qa:run {"x":8,"y":81,"z":8}`，first觀察具名stack取出、定時替換回收且真冰櫃資料保留，再留下具名唱片／plain-ID待保存；正常stop、同一QA世界restart後送相同事件，核對原carrier與metadata、回收一次、舊列歸還及自身資料清理。保留兩個RECORD_METADATA_QA_RESULT與正常stop／players／errors／OOM／清理結果。
 
 W194的23項只保留其原T202與舊cleanup範圍，不改稱W196完整保存通過；原生custom-sound enum失敗沿原版本證據重用，不重跑。2026-11-06核對的[官方RecordPlayer API](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/blockrecordplayercomponent?view=minecraft-bedrock-stable)仍只有ItemType|string setter，沒有已證實的新full-stack寫入入口；一般BlockInventory文件不證明這個block具備container。原生唱片機自動化／comparator／hopper、初速／pickup delay與聲畫差距保留。
+
+### W196 原生結果（2026-11-06）
+
+固定W196 source/runtime `b786c706b9c8c21f01943d2eb4b1366b7a655249`、BP/RP0.1.196與T203 `6c7539689664b87f3f66ef0e93d99f2d4bd1be69`／0.6.203，官方BDS1.26.60.6、W server2.12-beta，沿原gametest／upcoming_creator_features。first11項、同一QA世界正常restart14項，共25項通過：A正式native storage接受的具名唱片由ejectRecord歸還一次；B正式cleanup在同位置換成非空freezer後歸還舊具名唱片且保留新machine row／native容器及metadata；C原carrier/index及具名唱片資料經重啟仍一致，Block.setType觸發正式cleanup回收一次；D舊plain-ID歸還一個bare disc，沒有假造歷史metadata。
+
+實際比對的樣本包含名稱、raw lore、字串／Vector3 dynamic property、keepOnDeath及原生正規化後的canDestroy清單，唱片與新freezer物品均保留。這是QA producer送入真原生stack後，執行正式storage／eject／cleanup及持久化的觀察；接受手持物與支付回復仍屬來源正式callback測試，不冒稱玩家點擊或原生付款。完整家族保存演練、最終選包與LIVE部署另由共同流程負責。
+
+兩次均正常stop／Quit correctly／engine exit0、playersAfter0、errors空、OOM0。實讀運行MemoryMax2684354560／High2147483648／Swap0、PrivateNetwork，服務啟動宣告IPAddressDeny=any並保留2GiB主機餘裕；peak958263296 bytes。成功unit正常結束、MainPID0，原始證據在主機維護的`java-parity-20261105/native/world-liquor-record-metadata-196/{report.json,first-report.json,restart-report.json}`及logs／alive／unit journal，清理入口為同目錄cleanup.json。自己的QA世界／包／engine links及peer-input已確認idle後刪除，raw證據與腳本保留，槽已交還root。沒有runtime修正、版本重用或新增玩法，也沒有重跑舊W19423／Jukebox14／水面／enum，P133／LIVE未改。
