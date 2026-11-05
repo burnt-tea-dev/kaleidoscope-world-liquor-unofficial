@@ -37,8 +37,12 @@ export function installRecordCleanup(){
   if(row.handle&&system.currentTick>=row.expires){row.handle.stop();row.handle=undefined;row.expires=undefined;}
   const b=row.dimension.getBlock(row.location);if(!b)continue;
   if(b.typeId===N+':wall_record'){row.handle?.stop();active.delete(k);continue;}
-  if(b.typeId==='minecraft:jukebox'&&audioRecord(load(b)))continue;
-  stopRecord(b);if(b.typeId!=='minecraft:jukebox')world.setDynamicProperty(k,undefined);
+  const s=load(b);
+  if(b.typeId==='minecraft:jukebox'&&audioRecord(s))continue;
+  // Commands and other scripts can replace a block without our break events.
+  // Return only an owned disc; a replacement's saved furniture is not ours.
+  if(b.typeId!=='minecraft:jukebox'&&audioRecord(s))ejectRecord(b,s);
+  else stopRecord(b);
  }catch{}}},10);
  // Java JukeboxBlockEntity.popOutTheItem returns container contents independently
  // of Creative mode and doTileDrops; block-item loot has its own rules.

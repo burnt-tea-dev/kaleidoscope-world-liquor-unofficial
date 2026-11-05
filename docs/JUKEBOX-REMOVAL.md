@@ -29,3 +29,13 @@ W192移除該唱片機背包歸還路徑，手動、拆除與爆炸皆呼叫`rec
 另一個明確分開的原生I/O觀察直接呼叫正式`record-audio.ejectRecord`，使用真Native唱片機、world dynamic property、掉落物及SimulatedPlayer背包。14項檢查通過：空包／滿包Survival與滿包Creative＋doTileDrops=false，均掉出一個世界唱片、消耗保存列且背包不變。這證明正式owner的原生讀寫，不證明原生點擊事件。正式互動回呼仍由W192的實作測試與canonical CI覆蓋。各觀察均正常stop／Quit correctly／engine exit0，errors空、playersAfter0；測試世界與引擎已清除，沒有進入LIVE。
 
 W193最後一次精確配T202與G237，只改發布身份、依賴及本說明；W192玩法與嵌入SDK不變。完整家族保存驗證與部署由共同維護流程執行。完整ItemStack metadata、初速、pickup delay與未觀察的客戶端聲畫仍未等價。
+
+## W194：指令／腳本替換方塊
+
+同一官方Minecraft1.21.1的`JukeboxBlock.onRemove`只檢查新舊方塊類型是否相同；不同就呼叫`popOutTheItem`，不要求玩家破壞或爆炸事件。兩個維護作者archive沒有另行覆寫原版唱片機。W193的定時清理卻只停音與刪除保存列，指令`setblock ... air`或其他addon替換唱片機會吞掉保存唱片。同一位置若已有新家具資料，清理還會刪除那份新資料。兩個正式清理回呼案例在修正前均失敗。
+
+現在清理讀取當前保存列：仍是自己的唱片機記錄才呼叫既有`ejectRecord`，不再直接刪除該位置的任意資料。新家具／牆掛唱片的資料保留。無法讀取區塊時保留唱片，掉落或停止失敗時沿用既有回復與重試；後續清理不重發。讀回舊保存列的新script instance亦覆蓋，沒有新欄位或保存格式。延遲仍沿既有10tick清理排程，並非Java的同步`onRemove`。
+
+26個音訊來源案例通過，包括替換回收、保護新家具資料、舊列重載及暫時停止失敗後只回收一次。這些直接執行正式清理回呼，不冒充原生觀察。W192原生14項只重用未變`ejectRecord`的原生I/O範圍，不改標為本次替換入口通過。
+
+窄原生fixture在[`jukebox-replacement-probe.js`](../tests/native/jukebox-replacement-probe.js)。共同持有人在無玩家的隔離QA包用它覆蓋entrypoint，放到scripts目錄並保留正式`record-audio.js`／`combat-source.js`；使用BDS1.26.60.6及server2.12.0-beta，沿原包所需實驗，不需GameTest或模擬玩家。提供空的整數座標及下方足夠寬的石地，以`/scriptevent jukebox_qa:replacement {"x":8,"y":81,"z":8}`執行；第一輪觀察原生`Block.setType`替換與新資料保留，並留下待保存唱片。正常停止、同一世界重啟後送相同事件，觀察啟動讀回的唱片能掉回一次。保留兩個`JUKEBOX_REPLACEMENT_QA_RESULT`、正常停止及清理結果；此fixture尚未執行，不重試已失敗的SimulatedPlayer點擊，也不重跑既有音訊／水面矩陣。

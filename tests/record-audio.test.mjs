@@ -74,8 +74,18 @@ test('stale audio metadata never makes a valid wall decoration disposable',()=>{
 test('a former jukebox replaced by a wall record stops its own sound and preserves the wall item',()=>{
  const f=fixture(),b=f.add(0,'minecraft:jukebox');f.start();const h=f.playRecord(b,state());b.typeId=N+':wall_record';f.rows.set(prefix+'0_64_0',JSON.stringify({record:'minecraft:music_disc_cat'}));const before=[...f.rows];f.tick();assert.equal(h.stopCalls,1);assert.deepEqual([...f.rows],before);
 });
-test('removed jukebox stops its own audio and clears only its own payload',()=>{
- const f=fixture();f.add(0,N+':wall_record',{record:'minecraft:music_disc_cat'});const b=f.add(1,'minecraft:jukebox'),other=f.add(2,'minecraft:jukebox');f.start();const removed=f.playRecord(b,state()),retained=f.playRecord(other,state());b.typeId='minecraft:air';f.tick();assert.equal(f.rows.size,2);assert.equal(removed.stopCalls,1);assert.equal(retained.stopCalls,0);
+test('a jukebox replaced outside player and explosion events returns its disc only once',()=>{
+ const f=fixture();f.add(0,N+':wall_record',{record:'minecraft:music_disc_cat'});const b=f.add(1,'minecraft:jukebox'),other=f.add(2,'minecraft:jukebox');f.start();const removed=f.playRecord(b,state()),retained=f.playRecord(other,state());b.typeId='minecraft:air';f.tick();f.tick();assert.deepEqual(f.drops.map(i=>i.typeId),[N+':custom_record']);assert.equal(f.rows.size,2);assert.equal(removed.stopCalls,1);assert.equal(retained.stopCalls,0);
+});
+test('cleanup leaves a replacement furniture payload intact after retiring the old jukebox sound',()=>{
+ const f=fixture(),b=f.add(0,'minecraft:jukebox');f.start();const h=f.playRecord(b,state());
+ b.typeId=N+':freezer';const replacement=JSON.stringify({type:b.typeId,input:['minecraft:diamond']});f.rows.set(prefix+'0_64_0',replacement);
+ f.tick();assert.equal(f.rows.get(prefix+'0_64_0'),replacement);assert.equal(f.drops.length,0);assert.equal(h.stopCalls,1);
+});
+test('a reloaded legacy disc survives block replacement without a transient sound handle',()=>{
+ const saved={record:N+':custom_record',recordSound:legacySound},first=fixture();first.add(0,'minecraft:jukebox',saved);
+ const restarted=fixture(first.rows);restarted.add(0,'minecraft:stone',saved);restarted.start();restarted.tick();restarted.tick();
+ assert.deepEqual(restarted.drops.map(i=>i.typeId),[N+':custom_record']);assert.equal(restarted.rows.size,0);assert.equal(restarted.sounds.length,0);
 });
 test('unloaded chunks preserve saved discs and do not restart or globally stop audio',()=>{
  const f=fixture(),b=f.add(0,'minecraft:jukebox');f.start();const h=f.playRecord(b,state()),before=[...f.rows];f.blocks.set(0,'unloaded');f.tick();f.blocks.delete(0);f.tick();assert.deepEqual([...f.rows],before);assert.equal(h.stopCalls,0);assert.equal(f.sounds.length,1);f.blocks.set(0,b);f.tick();assert.equal(f.sounds.length,1);
@@ -108,7 +118,7 @@ test('failed previous-instance stop cancels the replacement and keeps a retryabl
  const f=fixture(),b=f.add(0,'minecraft:jukebox'),h=f.playRecord(b,state());h.failStop=true;assert.throws(()=>f.playRecord(b,state()),/stop failure/);assert.equal(f.sounds[1].handle.stopCalls,1);h.failStop=false;f.stopRecord(b);assert.equal(h.stopCalls,2);
 });
 test('transient cleanup stop failure retains the saved disc until a successful retry',()=>{
- const f=fixture(),b=f.add(0,'minecraft:jukebox');f.start();const h=f.playRecord(b,state());h.failStop=true;b.typeId='minecraft:air';f.tick();assert.equal(f.rows.size,1);h.failStop=false;f.tick();assert.equal(f.rows.size,0);assert.equal(h.stopCalls,2);
+ const f=fixture(),b=f.add(0,'minecraft:jukebox');f.start();const h=f.playRecord(b,state());h.failStop=true;b.typeId='minecraft:air';f.tick();assert.equal(f.rows.size,1);assert.equal(f.drops.length,0);h.failStop=false;f.tick();f.tick();assert.equal(f.rows.size,0);assert.equal(f.drops.length,1);assert.equal(h.stopCalls,2);
 });
 
 test('ejectRecord uses the Java world origin and three float random offsets',()=>{
