@@ -1,3 +1,7 @@
+## 0.1.197 — 2026-11-06
+
+Pair W196 native record storage with the final merged T203 and G238 sources. Preserve gameplay, the embedded SDK, UUIDs and saved formats; synchronize paired manifests/modules, guide version and the release baseline. Reuse W196's 25 native ItemStack, replacement-freezer and same-world reload checks at their original frozen peer scope. Acceptance/payment retain source callback coverage; legacy records cannot recover metadata already lost. No new small native cycle or client acceptance is claimed.
+
 ## 0.1.196 — 2026-11-06
 
 Preserve the inserted native ItemStack instead of rebuilding a jukebox record from its type ID. Named discs retain lore and public dynamic properties through payment, ejection and storage reload. Record and freezer indexes stay separate when another block replaces the jukebox; failure recovery keeps the original stack and carrier. Legacy plain-ID rows still return a bare disc, with no invented restoration of metadata already lost. See [storage and validation scope](docs/JUKEBOX-REMOVAL.md).
