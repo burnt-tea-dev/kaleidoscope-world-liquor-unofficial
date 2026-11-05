@@ -120,6 +120,7 @@ jobs:
           git diff --exit-code -- runtime/
           node --experimental-loader ./tests/wall-record-loader.mjs --test tests/jukebox-removal.test.mjs tests/freezer-callback.test.mjs tests/freezer-storage.test.mjs tests/respawn-freezer.test.mjs tests/respawn-family.test.mjs
           node --test tests/captain-gift.test.mjs tests/startup-sdk.test.mjs tests/record-audio.test.mjs tests/luck-loot.test.mjs tests/treasure-drops.test.mjs tests/beheading.test.mjs tests/death-head-order.test.mjs tests/current-java-effects.test.mjs tests/multi-jump.test.mjs tests/freezer-state.test.mjs tests/drink-audio.test.mjs tests/combat-source.test.mjs tests/kill-credit.test.mjs tests/motion-source.test.mjs tests/critical-feedback.test.mjs tests/accepted-hurt-feedback.test.mjs tests/frost-water.test.mjs tests/frost-aging.test.mjs tests/treasure-block.test.mjs tests/crazy-source.test.mjs tests/respawn-source.test.mjs tests/respawn-runtime.test.mjs tests/respawn-metadata.test.mjs tests/respawn-native-evidence.test.mjs tests/elbow-source.test.mjs tests/elbow-native-evidence.test.mjs tests/elbow-velocity-control.test.mjs tests/player-charge-source.test.mjs
+          node --check tests/native/jukebox-eject-probe.js
           node --check tests/native/captain-gift-probe.js
           node --check tests/native/beheading-entry-probe.js
           node --check tests/native/beheading-loot-probe.js

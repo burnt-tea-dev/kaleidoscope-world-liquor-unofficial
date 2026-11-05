@@ -1,3 +1,9 @@
+## 0.1.192 — 2026-11-06
+
+Eject a jukebox disc into the world rather than inserting it into the player inventory. Normal held-item interaction can eject from a full inventory; sneaking with an occupied hand leaves native block interaction available. Manual, break and explosion ejection share one owner with the Java drop origin/float spread and recoverable saved state on delivery failure. See [source and validation scope](docs/JUKEBOX-REMOVAL.md).
+
+Save formats, UUIDs, embedded SDK and T201/G234 pairing remain unchanged. The QA-only real interaction observer is supplied for the common slot and has not run. Existing native evidence keeps its original scope.
+
 ## 0.1.190 — 2026-11-05
 
 Return the stored custom disc when a jukebox is broken in Creative mode or destroyed by an explosion with `doTileDrops=false`. Java returns the container content independently of block-item loot. Both destruction paths now follow that rule, consume the saved disc once and stop only their own sound instance. See [source and validation scope](docs/JUKEBOX-REMOVAL.md).
