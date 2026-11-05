@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "59e18b9330590912e3ce6b5a00fc0f004bb3ae21",
-  "tavern_version": "0.6.202",
+  "tavern_commit": "6c7539689664b87f3f66ef0e93d99f2d4bd1be69",
+  "tavern_version": "0.6.203",
   "publication_request": false,
   "grilling_commit": "f4b05f04052dfb786f7021cf15790ab605f6bf3e",
   "grilling_version": "2.8.237",
   "peer_pins_final": true,
-  "peer_pin_status": "exact_merged_t202_g237_sources",
-  "peer_pin_note": "Final T202/G237 pair; preserve W192 gameplay and the unchanged embedded SDK. Native I/O and simulated-input observations are distinguished in docs/JUKEBOX-REMOVAL.md.",
+  "peer_pin_status": "exact_merged_t203_g237_sources",
+  "peer_pin_note": "Final T203/G237 pair. Preserve W194 gameplay and unchanged embedded SDK; W194 native replacement/freezer checks keep their original T202 scope. Full ItemStack metadata preservation is a separate follow-up.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
@@ -15,14 +15,14 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "b5c36b304213001d6d3b44a3530a594089ec77d1",
+  "tavern_tree": "3dc7117c77ec14e4db18bb87b152c4f5b8c2dea6",
   "tavern_source_trees": {
     "BP": {
-      "sha256": "a858b3d8cd0f6ba44c44c04709fa6347d1e109872ae0dff4c7acbd2b31f557b6",
-      "files": 835
+      "sha256": "a712e69889b48d0df1293c835cc90f6ebc2fb759322e8d068efeeecbb4f410ec",
+      "files": 838
     },
     "RP": {
-      "sha256": "501ece6bdbb0795e86d6e902a486920becd1e113777a83efef749a7207158273",
+      "sha256": "c6a3b3c459075092db900233bc53723359fee11afde187c74b6083e9f599f302",
       "files": 3232
     }
   }

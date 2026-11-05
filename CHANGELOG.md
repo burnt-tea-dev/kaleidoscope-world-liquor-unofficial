@@ -1,3 +1,7 @@
+## 0.1.195 — 2026-11-06
+
+Pair W194 recovery with the fixed merged T203 and G237 sources. Preserve gameplay, the embedded SDK, UUIDs and saved formats; synchronize both manifests, modules, dependencies, guide version and release baseline. Reuse W194's 23 replacement and saved-freezer native checks at their original T202 scope. Complete jukebox ItemStack metadata preservation is a separate follow-up, with no new storage migration in this pair.
+
 ## 0.1.194 — 2026-11-06
 
 Return the saved disc when commands or scripts replace a jukebox outside player-break and explosion events. Periodic cleanup now uses the existing disc-ejection owner and preserves a replacement furniture record. Old saved rows and failed-stop retries return a disc once; the existing ten-tick cleanup delay remains. See [source and validation scope](docs/JUKEBOX-REMOVAL.md).
