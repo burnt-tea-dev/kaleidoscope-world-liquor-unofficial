@@ -7,7 +7,9 @@ export function eyesUnderWater(entity){
  if(!water(block))return false;
  const above=entity.dimension.getBlock({...at,y:at.y+1});
  const full=water(above),depth=block.isWaterlogged?0:block.permutation.getState('liquid_depth')??0;
- return head.y<at.y+(full?1:Math.fround((depth>=8?8:8-depth)/9));
+ // Entity.updateFluidOnEyes adds block Y and fluid height as Java float.
+ const surface=Math.fround(Math.fround(at.y)+(full?1:Math.fround((depth>=8?8:8-depth)/9)));
+ return head.y<surface;
 }
 export function lavaContact(entity){
  const box=entity.getAABB(),min={x:box.center.x-box.extent.x+.001,y:box.center.y-box.extent.y+.001,z:box.center.z-box.extent.z+.001},max={x:box.center.x+box.extent.x-.001,y:box.center.y+box.extent.y-.001,z:box.center.z+box.extent.z-.001};

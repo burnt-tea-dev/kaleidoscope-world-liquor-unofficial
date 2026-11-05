@@ -8,6 +8,10 @@
 
 ## 實際驗證
 
+W189另修正眼睛入水的水面精度。[NeoForge 1.21.1的`Entity.updateFluidOnEyes`](https://github.com/neoforged/NeoForge/blob/624c929f49920c250166e2a8df7af87f16d220ef/patches/net/minecraft/world/entity/Entity.java.patch#L151-L154)先以Java float相加block Y與流體高度，再與眼睛的double高度作嚴格比較。舊`eyesUnderWater`保留double加法，源水Y80的水面被算為80.888888895，而原作為80.888885498。眼睛恰好在原作水面時，舊判定會誤擋Captain Gift；負Y邊界亦可能反向誤判。現由入水判定本身完成同樣的float相加，沒有新增另一條水面或效果路徑。
+
+新增來源回歸直接執行`eyesUnderWater`與`applyCaptainWaterStep`，覆蓋源水／流動水的精確邊界、負Y及恰在水面的效果接線。原31項／flow6項／restart3項維持原W188範圍，不重跑、不改標為W189原生證據；這次微小邊界的實際引擎觀察仍未新增。
+
 - 31項定向測試通過，執行真實水面函式與effects.tick；覆蓋原12格、Java float水高、流動／下落／水浸狀態、岸邊寬度、不可讀區塊、停止條件、效果到期及自有跳躍／反重力合成。
 - BDS1.26.60.6／server2.12.0-beta，QA專用gametest1.0.0-beta，開啟gametest及upcoming_creator_features。源水實際位置80.888885498，寬體同高，窄體落到80；原生Player亦停在源水原高度。這些取自首輪實際樣本；該輪隨後因流動水的空氣補償錯誤而整體失敗，不把整輪改成pass。
 - 第一次定向修正後，普通生物流動水已停到80.444442749，Player仍高約0.015格。改用完全無效果的Player控制場景，明確teleport讀回小數位置，量出其液體重力；首個控制因GameTest生成位置取整而站在底部，不拿來判定液體公式。

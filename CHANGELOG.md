@@ -1,3 +1,9 @@
+## 0.1.189 — 2026-11-05
+
+Match Java float addition when comparing the water surface to eye height. Eyes exactly at the original surface no longer incorrectly suppress Captain Gift; negative-Y and flowing-water boundaries follow the same rule. The regression calls the real liquid-contact and water-step functions. See [source and evidence scope](docs/CAPTAIN-GIFT.md).
+
+Water-walking geometry and physics, saved formats and UUIDs remain unchanged. Existing W188 native evidence keeps its original scope; no new native run or full movement parity is claimed. Tavern remains 0.6.200.
+
 ## 0.1.188 — 2026-11-05
 
 Captain Gift now clips descending movement using the original twelve water-fluid cells, Java float surface heights and inflated entity bounds. This replaces the one-source-block buoyancy shortcut, admits the original LivingEntity recipients, and preserves horizontal motion while composing this pack's jump/reverse-gravity impulses. Ordinary bodies and native Players use their measured liquid-gravity compensation. Targeted source, native source/flow/shore, stop/reacquisition and same-world restart scopes are documented in [Captain Gift](docs/CAPTAIN-GIFT.md); native ground/fallDistance flags and full movement parity remain incomplete.
