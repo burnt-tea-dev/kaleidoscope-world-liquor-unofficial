@@ -44,4 +44,14 @@ W193最後一次精確配T202與G237，只改發布身份、依賴及本說明�
 
 第一輪成功後保留原位置的待保存唱片及第二位置的非空冰櫃。正常停止、同一世界重啟，送相同事件：先確認冰櫃／索引／原carrier ID與物品metadata，再替換啟動讀回的唱片機並觀察一次世界掉落，最後再次核對冰櫃，經正式storage mutation清除自己的QA carrier。原版fixture的「石頭＋QA字串」只驗raw world DP保留，已由這個實際家具／物品場景取代，不能引用為真冰櫃結果。
 
-保留兩個`JUKEBOX_REPLACEMENT_QA_RESULT`的checks／observations、同QA世界身份、正常停止、players／content errors／OOM及清理結果。此fixture尚未執行；不重試已失敗的SimulatedPlayer點擊，也不重跑既有Jukebox14 I/O、冰櫃全矩陣或水面。W194 runtime、發布身份及peer pins不因QA／說明補強而再改。
+保留兩個`JUKEBOX_REPLACEMENT_QA_RESULT`的checks／observations、同QA世界身份、正常停止、players／content errors／OOM及清理結果。不重試已失敗的SimulatedPlayer點擊，也不重跑既有Jukebox14 I/O、冰櫃全矩陣或水面。W194 runtime、發布身份及peer pins不因QA／說明補強而再改。
+
+## W194 原生替換與保存結果（2026-11-06）
+
+已在官方BDS1.26.60.6完成first11項／同QA世界restart12項。QA來源為PR193 `ebf734c50734f40b6c21524cabbde6714fe9b884`，W194 runtime與PR192 `f2964c7ff430208c951c0a7b711709ab72e4aa15`相同；完整W194 BP/RP均0.1.194，固定T202 `59e18b9330590912e3ce6b5a00fc0f004bb3ae21`／0.6.202。W使用server2.12.0-beta，T202沿其2.7.0／server-ui2.0.0；world experiments為gametest與upcoming_creator_features。沒有混入Preview1.26.70／API2.13或T203。
+
+正式main在worldLoad安裝定時cleanup。QA只種真world保存列、呼叫正式播放及原生Block.setType；觀察到定時回呼自行產生一個native世界唱片、消耗該列，後續tick不重發。另一位置由唱片機改成真freezer後，正式planFreezerStorage建立非空原生四槽容器；機器列、native索引與同一carrier ID，在正常停止及同世界重啟後均保留。劍的名稱、raw lore、自訂DP及damage23由正式readFreezerItems讀回一致。最後透過正式storage mutation清除自己的QA容器。這證明受影響的清理／保存路徑；不是玩家插入／自然點擊或完整ItemStack／聲畫驗收。
+
+首次setup將offline搭配allow-list=true，被BDS在進probe前拒絕，原失敗log/report保留。只把allow-list改為false，在同一engine／同一QA世界重續兩階段，沒有改runtime或probe。成功原始位於主機維護證據`java-parity-20261105/native/world-liquor-replacement-194/config-r2/`的first/restart logs、reports、alive讀回及unit journal；上層first-report仍是setup失敗，不將它改成pass。
+
+兩次均正常stop／Quit correctly／engine exit0、playersAfter0、errors空、OOM0。執行中實讀MemoryMax2684354560／High2147483648／Swap0及獨立network namespace，服務啟動使用IPAddressDeny=any，保留2GiB主機餘裕；peak408604672 bytes。成功unit正常結束，MainPID0；transient unit卸載後的預設show值不作運行限制證據。已確認idle並清除本次QA世界／包／引擎連結與暫存peer輸入，原始報告／日誌／腳本保留，shared slot已交還。未改LIVE，W194最終peer配對及完整家族部署另由共同持有人收斂。
