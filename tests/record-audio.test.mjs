@@ -94,8 +94,8 @@ test('a missing live payload retires only its sound without inventing a disc',()
 test('explosion ownership leaves wall drops to furniture and handles the jukebox only once',()=>{
  const f=fixture(),wall=f.add(0,N+':wall_record',{record:'minecraft:music_disc_cat'}),box=f.add(1,'minecraft:jukebox'),other=f.add(2,'minecraft:jukebox');f.start();const removed=f.playRecord(box,state()),retained=f.playRecord(other,state());box.typeId='minecraft:air';f.explode([wall,box]);f.explode([wall,box]);assert.equal(f.rows.size,2);assert.deepEqual(f.drops.map(x=>x.typeId),[N+':custom_record']);assert.equal(removed.stopCalls,1);assert.equal(retained.stopCalls,0);
 });
-test('doTileDrops=false suppresses jukebox explosion drops while stopping playback',()=>{
- const f=fixture();f.world.gameRules.doTileDrops=false;const b=f.add(0,'minecraft:jukebox');f.start();const h=f.playRecord(b,state());b.typeId='minecraft:air';f.explode([b]);assert.equal(f.drops.length,0);assert.equal(f.rows.size,0);assert.equal(h.stopCalls,1);
+test('doTileDrops=false still returns the stored jukebox disc when an explosion removes it',()=>{
+ const f=fixture();f.world.gameRules.doTileDrops=false;const b=f.add(0,'minecraft:jukebox');f.start();const h=f.playRecord(b,state());b.typeId='minecraft:air';f.explode([b]);assert.equal(f.drops.length,1);assert.equal(f.drops[0].typeId,N+':custom_record');assert.equal(f.rows.size,0);assert.equal(h.stopCalls,1);f.explode([b]);assert.equal(f.drops.length,1);
 });
 test('installing cleanup twice does not duplicate subscriptions or reset active handles',()=>{
  const f=fixture();f.start();const b=f.add(0,'minecraft:jukebox'),h=f.playRecord(b,state());f.start();assert.equal(f.timers.length,1);assert.equal(f.subscriptions,1);f.stopRecord(b);assert.equal(h.stopCalls,1);

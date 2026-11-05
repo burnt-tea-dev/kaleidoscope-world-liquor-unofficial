@@ -1,3 +1,9 @@
+## 0.1.190 — 2026-11-05
+
+Return the stored custom disc when a jukebox is broken in Creative mode or destroyed by an explosion with `doTileDrops=false`. Java returns the container content independently of block-item loot. Both destruction paths now follow that rule, consume the saved disc once and stop only their own sound instance. See [source and validation scope](docs/JUKEBOX-REMOVAL.md).
+
+Saved formats, UUIDs, track selection and existing sound instances are unchanged. No new native run or complete jukebox metadata/automation parity is claimed. Tavern remains 0.6.200.
+
 ## 0.1.189 — 2026-11-05
 
 Match Java float addition when comparing the water surface to eye height. Eyes exactly at the original surface no longer incorrectly suppress Captain Gift; negative-Y and flowing-water boundaries follow the same rule. The regression calls the real liquid-contact and water-step functions. See [source and evidence scope](docs/CAPTAIN-GIFT.md).
