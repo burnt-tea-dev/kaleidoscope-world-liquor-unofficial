@@ -38,4 +38,10 @@ W193最後一次精確配T202與G237，只改發布身份、依賴及本說明�
 
 26個音訊來源案例通過，包括替換回收、保護新家具資料、舊列重載及暫時停止失敗後只回收一次。這些直接執行正式清理回呼，不冒充原生觀察。W192原生14項只重用未變`ejectRecord`的原生I/O範圍，不改標為本次替換入口通過。
 
-窄原生fixture在[`jukebox-replacement-probe.js`](../tests/native/jukebox-replacement-probe.js)。共同持有人在無玩家的隔離QA包用它覆蓋entrypoint，放到scripts目錄並保留正式`record-audio.js`／`combat-source.js`；使用BDS1.26.60.6及server2.12.0-beta，沿原包所需實驗，不需GameTest或模擬玩家。提供空的整數座標及下方足夠寬的石地，以`/scriptevent jukebox_qa:replacement {"x":8,"y":81,"z":8}`執行；第一輪觀察原生`Block.setType`替換與新資料保留，並留下待保存唱片。正常停止、同一世界重啟後送相同事件，觀察啟動讀回的唱片能掉回一次。保留兩個`JUKEBOX_REPLACEMENT_QA_RESULT`、正常停止及清理結果；此fixture尚未執行，不重試已失敗的SimulatedPlayer點擊，也不重跑既有音訊／水面矩陣。
+窄原生fixture在[`jukebox-replacement-probe.js`](../tests/native/jukebox-replacement-probe.js)。使用完整W194與固定T202配套的隔離QA包：把fixture放進scripts目錄，僅在QA manifest將entrypoint指向它。它先import未修改的正式`main.js`，沿startup註冊真方塊元件，再由正式worldLoad→installFurniture→installRecordCleanup註冊10tick清理；沒有測試版cleanup、假world或直接呼叫清理。BDS1.26.60.6／server2.12.0-beta沿原包實驗，不需GameTest或模擬玩家。
+
+提供兩個空位：事件指定位置與X+4，兩者下方均有足夠寬的石地且保持chunk載入。以`/scriptevent jukebox_qa:replacement {"x":8,"y":81,"z":8}`開始。第一位置由QA寫入真world保存列與啟用正式播放，再用原生`Block.setType`換成空氣；等待正式定時回呼讀列、原生spawnItem並清列，之後再等一次以排除重發。第二位置也從有音訊的唱片機換成真冰櫃，透過正式`planFreezerStorage`建立原生四槽carrier，放入帶名稱、raw lore、dynamic property與damage的劍；觀察清理沒有刪其機器列／carrier索引，且`readFreezerItems`能取回同一原生物品資料。QAproducer不是完整玩家插入入口，沒有把它宣稱為自然點擊。
+
+第一輪成功後保留原位置的待保存唱片及第二位置的非空冰櫃。正常停止、同一世界重啟，送相同事件：先確認冰櫃／索引／原carrier ID與物品metadata，再替換啟動讀回的唱片機並觀察一次世界掉落，最後再次核對冰櫃，經正式storage mutation清除自己的QA carrier。原版fixture的「石頭＋QA字串」只驗raw world DP保留，已由這個實際家具／物品場景取代，不能引用為真冰櫃結果。
+
+保留兩個`JUKEBOX_REPLACEMENT_QA_RESULT`的checks／observations、同QA世界身份、正常停止、players／content errors／OOM及清理結果。此fixture尚未執行；不重試已失敗的SimulatedPlayer點擊，也不重跑既有Jukebox14 I/O、冰櫃全矩陣或水面。W194 runtime、發布身份及peer pins不因QA／說明補強而再改。
