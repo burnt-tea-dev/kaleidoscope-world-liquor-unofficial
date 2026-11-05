@@ -21,6 +21,16 @@ W189另修正眼睛入水的水面精度。[NeoForge 1.21.1的`Entity.updateFlui
 
 ## 仍未等價
 
-原作另外清零fallDistance並寫入onGround；本版沒有已驗證的原生寫入入口。地面旗標、普通跳躍、離開水面後摔落結算、其他addon尚未提交的力道、不同生物AI／流體物理及實際客戶端輸入仍有差距。不把水面高度通過當作完整movement／fall parity。
+原作另外清零fallDistance並寫入onGround；本版尚無保持原生動作、可採用的寫入方式。地面旗標、普通跳躍、離開水面後摔落結算、其他addon尚未提交的力道、不同生物AI／流體物理及實際客戶端輸入仍有差距。不把水面高度通過當作完整movement／fall parity。
+
+### 同位置保速傳送：2026-11-06原生反證
+
+[窄探針](../tests/native/captain-fall-teleport-probe.js)在官方BDS1.26.60.6／server2.12.0-beta、QA gametest1.0.0-beta及原實驗下比較真墜落control、teleport、tryTeleport。它只載獨立QA，沒有正式效果、beforeHurt攔截、HP修改或手算fallDistance。舊Elbow測的是keepVelocity=false的待提交近戰速度，並非這個入口的相同反證。
+
+[原生樣本](evidence/captain-fall-teleport-20261106.json)中，mover control實際fall傷害7；同位置keepVelocity=true的兩種傳送各為1，當刻位置／速度／離地狀態不變且isFalling由true變false。然而下一tick位置完全停住、速度為0，再下一tick才恢復control第一個後續tick的動作；排隊的水平力道也延後一tick出現。它減少了原生摔傷，卻改變運動時序，不能直接放進每tick的Captain水面owner。
+
+Survival原生模擬Player control亦收到7點真fall傷害；其teleport使用keepVelocity=true時直接拋`UnsupportedFunctionalityError: Unsupported functionality: keepVelocity is not supported for player teleportation.`。因此原定6案只完成4案，第5案拋錯後停止，第6案Player tryTeleport未跑，不宣稱它也已測過。引擎正常stop／exit0、players0、內容errors[]／OOM0；runner因partial回exit1，QA已清理／還槽。
+
+此路線不採用，不改runtime或升版本；不再掃其他方法。普通跳躍／多段跳充能及正式Captain／Respawn回呼沒有在本次執行，不能由這份能力反證宣稱相關玩法已修或完整Player／client已驗。
 
 沒有新存檔欄位或格式；沿原效果快照及到期清理。完整家族候選、停服存檔驗證與LIVE部署各走既有流程，來源測試不等於已部署。

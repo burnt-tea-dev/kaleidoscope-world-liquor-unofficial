@@ -1,0 +1,431 @@
+{
+  "schema": 1,
+  "observed_date": "2026-11-06",
+  "probe_input_commit": "8e74784756bc8c3a5fb2291b74ed6bc5198bf485",
+  "engine": "1.26.60.6",
+  "api": "@minecraft/server 2.12.0-beta",
+  "qa_api": "@minecraft/server-gametest 1.0.0-beta",
+  "experiments": [
+    "gametest",
+    "upcoming_creator_features"
+  ],
+  "planned_cases": 6,
+  "completed_cases": 4,
+  "collection_complete": false,
+  "stopped_case": "player/teleport",
+  "not_executed": [
+    "player/tryTeleport"
+  ],
+  "native_error": "UnsupportedFunctionalityError: Unsupported functionality: keepVelocity is not supported for player teleportation.",
+  "setup": {
+    "spawn_y": 91.25,
+    "floor_top_y": 81,
+    "gate_y_at_or_below": 85.5,
+    "same_position": true,
+    "keep_velocity": true,
+    "pending_horizontal_impulse": {
+      "x": 0.08,
+      "y": 0,
+      "z": 0.03
+    }
+  },
+  "observations": [
+    {
+      "kind": "mob",
+      "method": "control",
+      "fall_damage": 7,
+      "health_lost": 7,
+      "teleport_accepted": null,
+      "before": {
+        "tick_offset": 0,
+        "position": {
+          "z": 0.6516093611717224,
+          "y": 84.65618133544922,
+          "x": 0.9548279643058777
+        },
+        "velocity": {
+          "z": 0.004225730895996094,
+          "y": -0.9054336547851562,
+          "x": 0.012677192687988281
+        },
+        "rotation": {
+          "y": 0,
+          "x": 0
+        },
+        "ground": false,
+        "falling": true,
+        "health": 20
+      },
+      "after": {
+        "tick_offset": 0,
+        "position": {
+          "z": 0.6516093611717224,
+          "y": 84.65618133544922,
+          "x": 0.9548279643058777
+        },
+        "velocity": {
+          "z": 0.004225730895996094,
+          "y": -0.9054336547851562,
+          "x": 0.012677192687988281
+        },
+        "rotation": {
+          "y": 0,
+          "x": 0
+        },
+        "ground": false,
+        "falling": true,
+        "health": 20
+      },
+      "following": [
+        {
+          "tick_offset": 1,
+          "position": {
+            "z": 0.6854547262191772,
+            "y": 83.69046020507812,
+            "x": 1.046364188194275
+          },
+          "velocity": {
+            "z": 0.033845365047454834,
+            "y": -0.9657211303710938,
+            "x": 0.09153622388839722
+          },
+          "rotation": {
+            "y": 0,
+            "x": 0
+          },
+          "ground": false,
+          "falling": true,
+          "health": 20
+        },
+        {
+          "tick_offset": 2,
+          "position": {
+            "z": 0.7162540555000305,
+            "y": 82.6656494140625,
+            "x": 1.1296621561050415
+          },
+          "velocity": {
+            "z": 0.03079932928085327,
+            "y": -1.024810791015625,
+            "x": 0.0832979679107666
+          },
+          "rotation": {
+            "y": 0,
+            "x": 0
+          },
+          "ground": false,
+          "falling": true,
+          "health": 20
+        }
+      ],
+      "fall_events": [
+        {
+          "tick_offset": 4,
+          "cause": "fall",
+          "damage": 7
+        }
+      ]
+    },
+    {
+      "kind": "mob",
+      "method": "teleport",
+      "fall_damage": 1,
+      "health_lost": 1,
+      "teleport_accepted": null,
+      "before": {
+        "tick_offset": 0,
+        "position": {
+          "z": 0.6516093611717224,
+          "y": 84.65618133544922,
+          "x": 0.9548279643058777
+        },
+        "velocity": {
+          "z": 0.004225730895996094,
+          "y": -0.9054336547851562,
+          "x": 0.012677192687988281
+        },
+        "rotation": {
+          "y": 0,
+          "x": 0
+        },
+        "ground": false,
+        "falling": true,
+        "health": 20
+      },
+      "after": {
+        "tick_offset": 0,
+        "position": {
+          "z": 0.6516093611717224,
+          "y": 84.65618133544922,
+          "x": 0.9548279643058777
+        },
+        "velocity": {
+          "z": 0.004225730895996094,
+          "y": -0.9054336547851562,
+          "x": 0.012677192687988281
+        },
+        "rotation": {
+          "y": 0,
+          "x": 0
+        },
+        "ground": false,
+        "falling": false,
+        "health": 20
+      },
+      "following": [
+        {
+          "tick_offset": 1,
+          "position": {
+            "z": 0.6516093611717224,
+            "y": 84.65618133544922,
+            "x": 0.9548279643058777
+          },
+          "velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "rotation": {
+            "y": 0,
+            "x": 0
+          },
+          "ground": false,
+          "falling": false,
+          "health": 20
+        },
+        {
+          "tick_offset": 2,
+          "position": {
+            "z": 0.685454785823822,
+            "y": 83.69046020507812,
+            "x": 1.046364188194275
+          },
+          "velocity": {
+            "z": 0.03384542465209961,
+            "y": -0.9657211303710938,
+            "x": 0.09153622388839722
+          },
+          "rotation": {
+            "y": 0,
+            "x": 0
+          },
+          "ground": false,
+          "falling": true,
+          "health": 20
+        }
+      ],
+      "fall_events": [
+        {
+          "tick_offset": 5,
+          "cause": "fall",
+          "damage": 1
+        }
+      ]
+    },
+    {
+      "kind": "mob",
+      "method": "tryTeleport",
+      "fall_damage": 1,
+      "health_lost": 1,
+      "teleport_accepted": true,
+      "before": {
+        "tick_offset": 0,
+        "position": {
+          "z": 0.6516093611717224,
+          "y": 84.65618133544922,
+          "x": 0.9548279643058777
+        },
+        "velocity": {
+          "z": 0.004225730895996094,
+          "y": -0.9054336547851562,
+          "x": 0.012677192687988281
+        },
+        "rotation": {
+          "y": 0,
+          "x": 0
+        },
+        "ground": false,
+        "falling": true,
+        "health": 20
+      },
+      "after": {
+        "tick_offset": 0,
+        "position": {
+          "z": 0.6516093611717224,
+          "y": 84.65618133544922,
+          "x": 0.9548279643058777
+        },
+        "velocity": {
+          "z": 0.004225730895996094,
+          "y": -0.9054336547851562,
+          "x": 0.012677192687988281
+        },
+        "rotation": {
+          "y": 0,
+          "x": 0
+        },
+        "ground": false,
+        "falling": false,
+        "health": 20
+      },
+      "following": [
+        {
+          "tick_offset": 1,
+          "position": {
+            "z": 0.6516093611717224,
+            "y": 84.65618133544922,
+            "x": 0.9548279643058777
+          },
+          "velocity": {
+            "z": 0,
+            "y": 0,
+            "x": 0
+          },
+          "rotation": {
+            "y": 0,
+            "x": 0
+          },
+          "ground": false,
+          "falling": false,
+          "health": 20
+        },
+        {
+          "tick_offset": 2,
+          "position": {
+            "z": 0.685454785823822,
+            "y": 83.69046020507812,
+            "x": 1.046364188194275
+          },
+          "velocity": {
+            "z": 0.03384542465209961,
+            "y": -0.9657211303710938,
+            "x": 0.09153622388839722
+          },
+          "rotation": {
+            "y": 0,
+            "x": 0
+          },
+          "ground": false,
+          "falling": true,
+          "health": 20
+        }
+      ],
+      "fall_events": [
+        {
+          "tick_offset": 5,
+          "cause": "fall",
+          "damage": 1
+        }
+      ]
+    },
+    {
+      "kind": "player",
+      "method": "control",
+      "fall_damage": 7,
+      "health_lost": 7,
+      "teleport_accepted": null,
+      "before": {
+        "tick_offset": 0,
+        "position": {
+          "z": 0.5,
+          "y": 84.65618133544922,
+          "x": 0.5
+        },
+        "velocity": {
+          "z": 0,
+          "y": -0.9054336547851562,
+          "x": 0
+        },
+        "rotation": {
+          "y": 0,
+          "x": 0
+        },
+        "ground": false,
+        "falling": true,
+        "health": 20
+      },
+      "after": {
+        "tick_offset": 0,
+        "position": {
+          "z": 0.5,
+          "y": 84.65618133544922,
+          "x": 0.5
+        },
+        "velocity": {
+          "z": 0,
+          "y": -0.9054336547851562,
+          "x": 0
+        },
+        "rotation": {
+          "y": 0,
+          "x": 0
+        },
+        "ground": false,
+        "falling": true,
+        "health": 20
+      },
+      "following": [
+        {
+          "tick_offset": 1,
+          "position": {
+            "z": 0.5299999713897705,
+            "y": 83.69046020507812,
+            "x": 0.5799999833106995
+          },
+          "velocity": {
+            "z": 0.029999971389770508,
+            "y": -0.9657211303710938,
+            "x": 0.07999998331069946
+          },
+          "rotation": {
+            "y": 0,
+            "x": 0
+          },
+          "ground": false,
+          "falling": true,
+          "health": 20
+        },
+        {
+          "tick_offset": 2,
+          "position": {
+            "z": 0.5572999715805054,
+            "y": 82.6656494140625,
+            "x": 0.6527999639511108
+          },
+          "velocity": {
+            "z": 0.027300000190734863,
+            "y": -1.024810791015625,
+            "x": 0.07279998064041138
+          },
+          "rotation": {
+            "y": 0,
+            "x": 0
+          },
+          "ground": false,
+          "falling": true,
+          "health": 20
+        }
+      ],
+      "fall_events": [
+        {
+          "tick_offset": 4,
+          "cause": "fall",
+          "damage": 7
+        }
+      ]
+    }
+  ],
+  "conclusion": "Do not adopt for Captain Gift. The sampled mob resets the native isFalling flag and takes less real fall damage, but loses one movement tick before resuming. The sampled native simulated Player rejects keepVelocity on teleport. The Player tryTeleport case was not run after the rejection.",
+  "scope": "Isolated native mover and Survival simulated Player only. No production Captain or Respawn callback, jump input or charge-state test, real client, Player tryTeleport result, full-family or LIVE claim.",
+  "engine_normal_stop": true,
+  "engine_exit_code": 0,
+  "runner_exit_code": 1,
+  "runner_exit_reason": "partial native capability collection",
+  "players_after": 0,
+  "content_errors": [],
+  "oom": 0,
+  "qa_removed": true,
+  "runtime_changed": false,
+  "production_runtime_loaded": false,
+  "client": false
+}
