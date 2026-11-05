@@ -1,3 +1,9 @@
+## 0.1.194 — 2026-11-06
+
+Return the saved disc when commands or scripts replace a jukebox outside player-break and explosion events. Periodic cleanup now uses the existing disc-ejection owner and preserves a replacement furniture record. Old saved rows and failed-stop retries return a disc once; the existing ten-tick cleanup delay remains. See [source and validation scope](docs/JUKEBOX-REMOVAL.md).
+
+Keep the W193 T202/G237 pair, SDK, save formats and UUIDs. The narrow native replacement/restart observer is supplied but has not run. Existing native evidence retains its original scope; no new native-input or complete jukebox parity claim.
+
 ## 0.1.193 — 2026-11-06
 
 Pair the unchanged W192 gameplay with the fixed merged T202 and G237 sources. Keep the embedded SDK, UUIDs and saved formats. Native jukebox I/O passed 14 checks; the separate simulated interaction entry returned false without delivering a before event. The [jukebox scope](docs/JUKEBOX-REMOVAL.md) distinguishes those results. This is not a native-click or client parity claim.
