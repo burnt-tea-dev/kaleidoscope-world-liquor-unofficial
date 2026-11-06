@@ -1,0 +1,5 @@
+# World Liquor 0.1.200 — Creative fluid transfer preserves inventory
+
+Creative empty-bucket transfer now drains the freezer tank while leaving the complete held stack and inventory unchanged. It creates no additional filled bucket and succeeds with a full inventory, matching both maintained loader FluidUtil branches. The existing Creative tank-fill branch was already correct; W199 failed-transfer ordinary input still consumes one bucket. Reuse the existing transaction and recovery; no registry, UI or saved-format changes.
+
+Ten callback counterexamples now pass and eight tank-fill controls already matched Java; the affected source suite passes64. Targeted native Creative Player inventory/component-callback checks passed first13 and same-QA restart7: free/full inventories remain unchanged while the tank drains, and the drained tanks persist. Resolved QA setup failures retain their logs; previous unrelated native evidence was not replayed. This is not native-click or Player-inventory reconnect evidence. Preserve exact T203/G238 CI pins, SDK and UUIDs. See [source rules and scope](FREEZER-FLUID-INPUT.md#w200creative成功流體轉移).

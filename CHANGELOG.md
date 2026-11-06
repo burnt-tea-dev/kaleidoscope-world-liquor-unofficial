@@ -1,3 +1,7 @@
+## 0.1.200 — 2026-11-06
+
+Creative freezer fluid extraction drains the tank without producing a filled bucket or altering the complete inventory, including when full. Both maintained loader branches keep the original Creative container; current Creative tank-fill already matched them. Preserve W199's unconditional ordinary input debit when fluid transfer fails. Ten source counterexamples now pass within64 affected callback checks. Targeted native Player inventory/component-callback checks pass first13/same-QA restart7, preserving free/full inventories and the saved drained tank; see [scope and resolved QA prerequisites](docs/FREEZER-FLUID-INPUT.md#w200creative成功流體轉移). Paired versions advance together; exact T203/G238 CI inputs, SDK, UUIDs and save formats remain.
+
 ## 0.1.199 — 2026-11-06
 
 Let a filled bucket enter an ordinary freezer input when a full tank rejects fluid transfer, matching both maintained Java branches. Reuse the existing complete native-stack storage and unconditional input debit, including Creative; leave the tank and save format unchanged. Eight source callback counterexamples now pass within the 46-check affected suite; native Player inventory/component-callback and same-QA persisted readback pass first17/restart13. Failed QA prerequisites remain documented and first17 was reused without replay; see [scope](docs/FREEZER-FLUID-INPUT.md). Paired pack/module/guide versions advance together; exact T203/G238 CI pins and SDK remain unchanged.

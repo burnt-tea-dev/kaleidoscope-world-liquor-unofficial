@@ -1,6 +1,6 @@
-# 滿槽冰櫃的桶原料（W199）
+# 冰櫃桶原料與Creative流體轉移
 
-2026-11-06核對當前NeoForge1.21.1作者1.1.12／CF9217896與Forge1.20.1作者1.1.13／CF9217901。這次只修「流體轉移失敗後，整桶仍可放進原料格」的分流。
+2026-11-06核對當前NeoForge1.21.1作者1.1.12／CF9217896與Forge1.20.1作者1.1.13／CF9217901。W199修「流體轉移失敗後，整桶仍可放進原料格」；W200只修Creative成功取槽液時的庫存副作用。兩條路徑的Creative扣料規則不同。
 
 ## Java來源與已重現的差異
 
@@ -21,3 +21,20 @@ W198的`furniture.js`對非牛奶滿桶先按ID分流，遇到`s.fluid`就直接
 成功兩phase均normal stop／Quit correctly／engine exit0，players0、errors[]／OOM0。最終service成功退出；自己的QA／peer payload已在真host及共享鎖內assert_idle後清理、時段歸還。布丁、重生傳送、舊完整storage矩陣與完整家族保存循環均未重跑。
 
 offhand、任意流體容器／addon capability、完整自動化、掉落物物理及真人畫面仍保留原範圍。共同完整家族保存／部署依其當前入口，來源修復不等於已安裝。
+
+## W200：Creative成功流體轉移
+
+上列兩個loader的`tryFillContainerAndStow`／`tryEmptyContainerAndStow`均在`instabuild`分支執行真正的槽液轉移，成功後回傳原container；不產生額外物品，也不查庫存是否能收另一個桶。這與後續普通`insertItem`沒有Creative豁免，是兩個不同語義，沒有查到owner另定相反規則。此處依官方程式控制流程核對，不宣稱跑過完整Java遊戲。
+
+| Creative情境 | 手持與庫存 | 槽液 | 本次結論 |
+| --- | --- | --- | --- |
+| 非牛奶滿桶→空槽，轉移成功 | 完整原桶不變，不另給空桶 | 變成該液體 | 現來源正確；8個正式回呼控制通過，不修此分支 |
+| 空桶→滿槽，轉移成功 | 完整原空桶不變，不另給滿桶；背包滿也可成功 | 清空 | W199有空位會多給滿桶，背包滿會拒絕清槽；W200修此分支 |
+| 滿槽已無法轉移，落到普通入料 | 扣1個完整桶存進原料格 | 不變 | 保留W199，不能套用成功轉移的免扣料規則 |
+| 牛奶桶特殊加槽 | 原牛奶桶不變，不另給空桶 | 變成milk | 保留既有獨立路徑，不混作FluidUtil新證據 |
+
+正式before-interact→deferred回呼在既有水／岩漿／兩果汁／milk別名，以空位和滿背包各一案重現10個取液失敗；另8個非牛奶加槽控制原已符合規則。修復只讓取液的`transaction.give`在Creative為空，沿用現有不扣Creative手持及槽／庫存回復；不新增registry、UI、保存格式或另一個交易owner。受影響的來源callback套件64項通過，包含W199滿槽普通入料仍扣一個。
+
+[新窄QA observer](../tests/native/freezer-creative-fluid-probe.js)已完成真正改動的兩案。[實際結果](evidence/creative-freezer-fluid-20261106.json)為首次13／同一QA重啟7項PASS：Creative持3個具名空桶、庫存有空位／36格全滿，真Native Player完整取樣庫存經正式元件回呼保持相同、槽液清空、不產滿桶；同一QA正常重啟兩槽仍空、沒有原料或carrier。固定runtime2f2ca054，實測observer/source fadecaee；回呼是fixture呼叫，不稱native click，不宣稱模擬玩家庫存跨重登保存。W19917＋13、布丁或Respawn均未重跑。
+
+兩次QA前提失敗保留原始資料：此選定引擎拒絕在可堆疊空桶寫DP，故只使用原生支援的name／lore／keepOnDeath／canDestroy；另一場新方塊初始化清掉預填槽液，回呼實際走普通入料，離線停服DB與block-state已釐清。只將QA滿槽／開蓋宣告移到初始化後並加前提witness；未因fixture失敗再改runtime。成功兩phase均正常stop／Quit correctly／engine exit0、players0、errors[]／OOM0；最終service成功退出，自己的QA／peer已在真host及共享鎖內assert_idle後清理並還槽，raw／logs／JSON保留。
