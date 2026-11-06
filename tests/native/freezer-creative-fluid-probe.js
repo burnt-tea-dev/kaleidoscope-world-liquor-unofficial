@@ -42,7 +42,9 @@ async function observe(){
     player=gt.spawnSimulatedPlayer({dimension,x:position.x,y:81,z:10},'CreativeFluidQA',GameMode.Creative);await wait(2);
     const inventory=player.getComponent('minecraft:inventory').container;
     for(let slot=0;slot<inventory.size;slot++)inventory.setItem(slot,full?new ItemStack('minecraft:stone',64):undefined);
-    const bucket=new ItemStack('minecraft:bucket',3);bucket.nameTag='original empty buckets';bucket.setLore(['Creative fluid transfer']);bucket.setDynamicProperty('creative_fluid_qa:serial',full?2:1);bucket.setDynamicProperty('creative_fluid_qa:vector',{x:1,y:2,z:3});bucket.keepOnDeath=true;bucket.setCanDestroy(['minecraft:stone']);
+    // This engine rejects dynamic-property writes on stackable empty buckets.
+    // Keep the fixture within the native fields this item actually supports.
+    const bucket=new ItemStack('minecraft:bucket',3);bucket.nameTag='original empty buckets';bucket.setLore(['Creative fluid transfer']);bucket.keepOnDeath=true;bucket.setCanDestroy(['minecraft:stone']);
     inventory.setItem(4,bucket);player.selectedSlotIndex=4;
     check('native Creative mode and declared inventory capacity',player.getGameMode()===GameMode.Creative&&inventory.getItem(4)?.typeId==='minecraft:bucket'&&inventory.getItem(4)?.amount===3&&inventorySnapshot(inventory).filter(Boolean).length===(full?inventory.size:1));
     const before=inventorySnapshot(inventory);callbacks.onPlayerInteract({block,player});
