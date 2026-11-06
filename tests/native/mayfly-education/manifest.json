@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Native mayfly education-profile QA only",
+    "description": "One retail BDS capability profile; no gameplay adapter or player override.",
+    "uuid": "c505cd47-a650-45bd-9ccd-a2425d84c637",
+    "version": [0, 0, 1],
+    "min_engine_version": [1, 26, 60]
+  },
+  "modules": [
+    {"type": "data", "uuid": "36f36897-08ed-427f-8cd9-c748fd5f1abc", "version": [0, 0, 1]},
+    {"type": "script", "language": "javascript", "entry": "scripts/main.js", "uuid": "e0946f06-2257-4d79-b3d4-ed31b7b65c69", "version": [0, 0, 1]}
+  ],
+  "dependencies": [
+    {"module_name": "@minecraft/server", "version": "2.12.0-beta"},
+    {"module_name": "@minecraft/server-gametest", "version": "1.0.0-beta"}
+  ]
+}
