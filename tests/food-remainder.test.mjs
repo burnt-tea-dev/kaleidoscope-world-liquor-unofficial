@@ -93,9 +93,10 @@ test('a rejected drop or a failed read is recorded, never retried, and never fal
  assert.equal(completeFoodRemainder(hand.event,hand.options).status,'UNRESOLVED_HAND');assert.equal(hand.queued.length,0);
  assert.equal(foodRemainderDiagnostics.errors.length,3);
 });
-test('settle is pure with respect to the captured arguments: a second settle of the same use is a plain no-op write-free call when the slot already holds the bowl',()=>{
+test('one scheduled completion writes one bowl; duplicate-settlement idempotence is not established',()=>{
  const f=fixture(1);completeFoodRemainder(f.event,f.options);f.nativeDebit();f.settle();
- // A duplicate schedule would see a bowl (a different item) in the slot and relocate another bowl; the callback schedules exactly once, which the previous tests pin.
+ // Settlement is invoked once. Duplicate callback delivery remains an engine
+ // question; this case does not justify a runtime retry or identity registry.
  assert.equal(f.calls.length,1);
 });
 test('registered food callback applies the Java effects, then schedules the remainder through system.run with the real ItemStack factory',()=>{

@@ -1,0 +1,513 @@
+{
+  "schema": 1,
+  "observed_date": "2026-11-06",
+  "source_input_commit": "c28be256c385eb79de9b5666c6fbfdba2d7b5330",
+  "runtime_commit": "a1579c0fc39477ca4ff55b6c8901ceae4288d909",
+  "world_liquor_version": "0.1.198",
+  "tavern_commit": "6c7539689664b87f3f66ef0e93d99f2d4bd1be69",
+  "tavern_version": "0.6.203",
+  "engine": "1.26.60.6",
+  "api": "@minecraft/server 2.12.0-beta",
+  "qa_api": "@minecraft/server-gametest 1.0.0-beta",
+  "experiments": [
+    "gametest",
+    "upcoming_creator_features"
+  ],
+  "passed": true,
+  "cases": [
+    {
+      "name": "survival_last",
+      "accepted": true,
+      "before": {
+        "mode": "Survival",
+        "foods": 1,
+        "bowls": 0,
+        "worldBowls": 0,
+        "hand": {
+          "type": "kaleidoscope_world_liquor:pochi_pudding",
+          "amount": 1
+        },
+        "completed": 0,
+        "dropped": 0,
+        "handDeliveries": 0,
+        "unresolved": 0,
+        "regeneration": 0
+      },
+      "after": {
+        "mode": "Survival",
+        "foods": 0,
+        "bowls": 1,
+        "worldBowls": 0,
+        "hand": {
+          "type": "minecraft:bowl",
+          "amount": 1
+        },
+        "completed": 1,
+        "dropped": 0,
+        "handDeliveries": 1,
+        "unresolved": 0,
+        "regeneration": 9588
+      },
+      "nativeCompletions": 1,
+      "productionCompletions": 1,
+      "witnessed": true,
+      "oneRemainder": true,
+      "matchesJava": true,
+      "native_events": [
+        {
+          "event": "itemStartUse",
+          "item": "kaleidoscope_world_liquor:pochi_pudding",
+          "elapsed": 0,
+          "remaining": 32,
+          "mode": "Survival",
+          "foods": 1,
+          "bowls": 0,
+          "worldBowls": 0,
+          "hand": {
+            "type": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "completed": 0,
+          "dropped": 0,
+          "handDeliveries": 0,
+          "unresolved": 0,
+          "regeneration": 0
+        },
+        {
+          "event": "itemCompleteUse",
+          "item": "kaleidoscope_world_liquor:pochi_pudding",
+          "elapsed": 32,
+          "remaining": 0,
+          "mode": "Survival",
+          "foods": 0,
+          "bowls": 0,
+          "worldBowls": 0,
+          "hand": null,
+          "completed": 0,
+          "dropped": 0,
+          "handDeliveries": 0,
+          "unresolved": 0,
+          "regeneration": 9600
+        },
+        {
+          "event": "itemStopUse",
+          "item": "kaleidoscope_world_liquor:pochi_pudding",
+          "elapsed": 32,
+          "remaining": 0,
+          "mode": "Survival",
+          "foods": 0,
+          "bowls": 0,
+          "worldBowls": 0,
+          "hand": null,
+          "completed": 0,
+          "dropped": 0,
+          "handDeliveries": 0,
+          "unresolved": 0,
+          "regeneration": 9600
+        }
+      ],
+      "custom_phases": [
+        {
+          "phase": "complete_before",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "selected": 4,
+          "hand": null,
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Survival",
+          "tick_offset": 0
+        },
+        {
+          "phase": "complete_after",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "selected": 4,
+          "hand": null,
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Survival",
+          "tick_offset": 0
+        },
+        {
+          "phase": "consume",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "selected": 4,
+          "hand": null,
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Survival",
+          "tick_offset": 0
+        },
+        {
+          "phase": "consume_next_tick",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "selected": 4,
+          "hand": {
+            "kind": "minecraft:bowl",
+            "amount": 1
+          },
+          "bowls": 1,
+          "offhand": null,
+          "mode": "Survival",
+          "tick_offset": 0
+        }
+      ],
+      "sampled_world_bowls_max": 0
+    },
+    {
+      "name": "survival_stack",
+      "accepted": true,
+      "before": {
+        "mode": "Survival",
+        "foods": 3,
+        "bowls": 0,
+        "worldBowls": 0,
+        "hand": {
+          "type": "kaleidoscope_world_liquor:pochi_pudding",
+          "amount": 3
+        },
+        "completed": 1,
+        "dropped": 0,
+        "handDeliveries": 1,
+        "unresolved": 0,
+        "regeneration": 0
+      },
+      "after": {
+        "mode": "Survival",
+        "foods": 2,
+        "bowls": 1,
+        "worldBowls": 0,
+        "hand": {
+          "type": "kaleidoscope_world_liquor:pochi_pudding",
+          "amount": 2
+        },
+        "completed": 2,
+        "dropped": 1,
+        "handDeliveries": 1,
+        "unresolved": 0,
+        "regeneration": 9588
+      },
+      "nativeCompletions": 1,
+      "productionCompletions": 1,
+      "witnessed": true,
+      "oneRemainder": true,
+      "matchesJava": true,
+      "native_events": [
+        {
+          "event": "itemStartUse",
+          "item": "kaleidoscope_world_liquor:pochi_pudding",
+          "elapsed": 0,
+          "remaining": 32,
+          "mode": "Survival",
+          "foods": 3,
+          "bowls": 0,
+          "worldBowls": 0,
+          "hand": {
+            "type": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 3
+          },
+          "completed": 1,
+          "dropped": 0,
+          "handDeliveries": 1,
+          "unresolved": 0,
+          "regeneration": 0
+        },
+        {
+          "event": "itemCompleteUse",
+          "item": "kaleidoscope_world_liquor:pochi_pudding",
+          "elapsed": 32,
+          "remaining": 0,
+          "mode": "Survival",
+          "foods": 2,
+          "bowls": 0,
+          "worldBowls": 0,
+          "hand": {
+            "type": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 2
+          },
+          "completed": 1,
+          "dropped": 0,
+          "handDeliveries": 1,
+          "unresolved": 0,
+          "regeneration": 9600
+        },
+        {
+          "event": "itemStopUse",
+          "item": "kaleidoscope_world_liquor:pochi_pudding",
+          "elapsed": 32,
+          "remaining": 0,
+          "mode": "Survival",
+          "foods": 2,
+          "bowls": 0,
+          "worldBowls": 0,
+          "hand": {
+            "type": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 2
+          },
+          "completed": 1,
+          "dropped": 0,
+          "handDeliveries": 1,
+          "unresolved": 0,
+          "regeneration": 9600
+        }
+      ],
+      "custom_phases": [
+        {
+          "phase": "complete_before",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 3
+          },
+          "selected": 4,
+          "hand": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 2
+          },
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Survival",
+          "tick_offset": 0
+        },
+        {
+          "phase": "complete_after",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 3
+          },
+          "selected": 4,
+          "hand": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 2
+          },
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Survival",
+          "tick_offset": 0
+        },
+        {
+          "phase": "consume",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 3
+          },
+          "selected": 4,
+          "hand": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 2
+          },
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Survival",
+          "tick_offset": 0
+        },
+        {
+          "phase": "consume_next_tick",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 3
+          },
+          "selected": 4,
+          "hand": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 2
+          },
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Survival",
+          "tick_offset": 0
+        }
+      ],
+      "sampled_world_bowls_max": 0
+    },
+    {
+      "name": "creative",
+      "accepted": true,
+      "before": {
+        "mode": "Creative",
+        "foods": 1,
+        "bowls": 0,
+        "worldBowls": 0,
+        "hand": {
+          "type": "kaleidoscope_world_liquor:pochi_pudding",
+          "amount": 1
+        },
+        "completed": 2,
+        "dropped": 1,
+        "handDeliveries": 1,
+        "unresolved": 0,
+        "regeneration": 0
+      },
+      "after": {
+        "mode": "Creative",
+        "foods": 1,
+        "bowls": 1,
+        "worldBowls": 0,
+        "hand": {
+          "type": "kaleidoscope_world_liquor:pochi_pudding",
+          "amount": 1
+        },
+        "completed": 3,
+        "dropped": 2,
+        "handDeliveries": 1,
+        "unresolved": 0,
+        "regeneration": 9588
+      },
+      "nativeCompletions": 1,
+      "productionCompletions": 1,
+      "witnessed": true,
+      "oneRemainder": true,
+      "matchesJava": true,
+      "native_events": [
+        {
+          "event": "itemStartUse",
+          "item": "kaleidoscope_world_liquor:pochi_pudding",
+          "elapsed": 0,
+          "remaining": 32,
+          "mode": "Creative",
+          "foods": 1,
+          "bowls": 0,
+          "worldBowls": 0,
+          "hand": {
+            "type": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "completed": 2,
+          "dropped": 1,
+          "handDeliveries": 1,
+          "unresolved": 0,
+          "regeneration": 0
+        },
+        {
+          "event": "itemCompleteUse",
+          "item": "kaleidoscope_world_liquor:pochi_pudding",
+          "elapsed": 32,
+          "remaining": 0,
+          "mode": "Creative",
+          "foods": 1,
+          "bowls": 0,
+          "worldBowls": 0,
+          "hand": {
+            "type": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "completed": 2,
+          "dropped": 1,
+          "handDeliveries": 1,
+          "unresolved": 0,
+          "regeneration": 9600
+        },
+        {
+          "event": "itemStopUse",
+          "item": "kaleidoscope_world_liquor:pochi_pudding",
+          "elapsed": 32,
+          "remaining": 0,
+          "mode": "Creative",
+          "foods": 1,
+          "bowls": 0,
+          "worldBowls": 0,
+          "hand": {
+            "type": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "completed": 2,
+          "dropped": 1,
+          "handDeliveries": 1,
+          "unresolved": 0,
+          "regeneration": 9600
+        }
+      ],
+      "custom_phases": [
+        {
+          "phase": "complete_before",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "selected": 4,
+          "hand": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Creative",
+          "tick_offset": 0
+        },
+        {
+          "phase": "complete_after",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "selected": 4,
+          "hand": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Creative",
+          "tick_offset": 0
+        },
+        {
+          "phase": "consume",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "selected": 4,
+          "hand": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Creative",
+          "tick_offset": 0
+        },
+        {
+          "phase": "consume_next_tick",
+          "event": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "selected": 4,
+          "hand": {
+            "kind": "kaleidoscope_world_liquor:pochi_pudding",
+            "amount": 1
+          },
+          "bowls": 0,
+          "offhand": null,
+          "mode": "Creative",
+          "tick_offset": 0
+        }
+      ],
+      "sampled_world_bowls_max": 0
+    }
+  ],
+  "observed_phase_order": "complete_before -> complete_after -> consume -> deferred consume_next_tick label; all four share the same actual tick in each case",
+  "single_qa_run": true,
+  "restart": false,
+  "engine_normal_stop": true,
+  "engine_exit_code": 0,
+  "players_after": 0,
+  "content_errors": [],
+  "oom": 0,
+  "qa_removed": true,
+  "native_slot_returned": true,
+  "runtime_changed": false,
+  "live_modified": false,
+  "client": false,
+  "scope": "Actual native simulated-Player pudding use, production callbacks and native debit in three specified cases only. No synthetic completion or scripted food debit. No cancellation, slot switch, disconnect, offhand, heard sound, full drop physics or real-client claim."
+}

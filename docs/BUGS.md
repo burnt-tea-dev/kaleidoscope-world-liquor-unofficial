@@ -37,7 +37,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 
 ## 保留實作，仍待真人或特定生命周期驗收
 
-- 布丁餘碗（W172）：`food-remainder.js` 依原作 `CompatFoodItem.finishUsingItem`——效果與原生扣料之後，用到的那格若已空就把新碗放回同一手（`LivingEntity.completeUsingItem` 換手），仍有布丁或 Creative 則在玩家位置 `spawnAtLocation` 一個碗；分支在下一 tick 讀同一格決定，不依賴原生 debit 與回呼的先後；玩家在這一 tick 換走該格的物品時改走 Java `Inventory.add`，不覆寫、不重發。原生 debit 順序、真人最後一份／多份／Creative／取消／換槽及掉落物實際位置仍待驗收；Luck／原作 random draw 不在此項。
+- 布丁餘碗（W172）：既有13項來源案例與W198的最後一份／多份／Creative三案真Native完成／扣料已通過，沒有漏碗或多碗，不改runtime或升版本。兩作者、實際同tick階段與其餘未驗範圍只查[布丁餘碗](FOOD-REMAINDER.md)，不宣稱固定下一tick或完整真人／掉落物物理已驗。
 - 斬首與頭顱（W173）：`beheading.js` 依原作 `onLivingIncomingDamage`／`onLivingDropsBeheading`——標記存成目標的 dynamic property（等同 persistent data，圖騰倖存或存檔重啟仍會在下一次死亡掉頭）；命中時在同一個 before-event 上改為攻擊者歸屬的 10000 傷害，下一 tick 若血量未降則依原作設 1、再由攻擊者造成 2 傷害、仍活則歸零；期間以 processing 阻擋重入再抽；死亡後對原生 `entityItemDrop` 掉落清單做 `isSameItemSameComponents` 去重，沒有掉落清單的實體兩 tick 後補發；玩家頭以物品名稱與 lore 記錄 SkullOwner（Bedrock 無法由腳本設定頭顱皮膚）。原生 incoming 取消與另起 playerAttack／mobAttack 傷害來源、圖騰／護甲／Tequila 併發與真人驗收仍待確認。
 - 尋寶指南生物掉落（W174）：`treasure-drops.js` 依原作 `onLivingDrops`——傷害來源的擁有者（箭的射手，不是箭）持有效果時每次死亡擲一次 `0.15+0.05×amplifier`，成功就把原生 `entityItemDrop` 掉落清單的每一項在該物品位置複製一份（快照清單，複製品不再被複製）；取代原本下一 tick 掃附近新物品的作法，不再誤抓同 tick 其他死亡或玩家丟出的物品。沒有掉落清單的死亡兩 tick 後作廢。pickup delay、原生 drop 事件是否含斬首補發的頭、以及真人驗收仍開放。
 - 冰櫃：五個 current recipe、loaded ticks、四槽 native metadata 及來源 height 算術已實作；真玩家插取、offhand、unload／crash、任意 metadata 和完整流體／原料／成品渲染另驗，既有零輸入樣本不證明非空冰櫃內容。
