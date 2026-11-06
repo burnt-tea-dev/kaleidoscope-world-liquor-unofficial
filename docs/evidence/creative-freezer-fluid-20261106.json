@@ -1,0 +1,266 @@
+{
+  "schema": 1,
+  "observed_date": "2026-11-06",
+  "runtime_commit": "2f2ca0546c6c5e6f0d8ff06e5f36c84238ace554",
+  "observer_source": "fadecaee7988c78d0e1b50a9e088e54ccf37200c",
+  "world_liquor_version": "0.1.200",
+  "tavern_commit": "6c7539689664b87f3f66ef0e93d99f2d4bd1be69",
+  "tavern_version": "0.6.203",
+  "engine": "1.26.60.6",
+  "api": "@minecraft/server 2.12.0-beta",
+  "qa_api": "@minecraft/server-gametest 1.0.0-beta",
+  "experiments": [
+    "gametest",
+    "upcoming_creator_features"
+  ],
+  "passed": true,
+  "same_qa_world": true,
+  "native_click_proven": false,
+  "player_inventory_restart_claim": false,
+  "live_modified": false,
+  "client": false,
+  "phases": [
+    {
+      "phase": "first",
+      "passed": true,
+      "checks": [
+        {
+          "name": "empty isolated QA",
+          "passed": true
+        },
+        {
+          "name": "new readable QA position",
+          "passed": true
+        },
+        {
+          "name": "native Creative mode and declared inventory capacity",
+          "passed": true
+        },
+        {
+          "name": "open full tank before the tested callback",
+          "passed": true
+        },
+        {
+          "name": "tank drained without ingredient insertion",
+          "passed": true
+        },
+        {
+          "name": "native complete inventory unchanged and no filled bucket produced",
+          "passed": true
+        },
+        {
+          "name": "QA Player disconnected",
+          "passed": true
+        },
+        {
+          "name": "new readable QA position",
+          "passed": true
+        },
+        {
+          "name": "native Creative mode and declared inventory capacity",
+          "passed": true
+        },
+        {
+          "name": "open full tank before the tested callback",
+          "passed": true
+        },
+        {
+          "name": "tank drained without ingredient insertion",
+          "passed": true
+        },
+        {
+          "name": "native complete inventory unchanged and no filled bucket produced",
+          "passed": true
+        },
+        {
+          "name": "QA Player disconnected",
+          "passed": true
+        }
+      ],
+      "observations": [
+        {
+          "full": false,
+          "beforeHand": {
+            "type": "minecraft:bucket",
+            "amount": 3,
+            "name": "original empty buckets",
+            "lore": [
+              {
+                "text": "Creative fluid transfer"
+              }
+            ],
+            "properties": [],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "afterHand": {
+            "type": "minecraft:bucket",
+            "amount": 3,
+            "name": "original empty buckets",
+            "lore": [
+              {
+                "text": "Creative fluid transfer"
+              }
+            ],
+            "properties": [],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "inventorySlots": 36,
+          "occupiedBefore": 1,
+          "occupiedAfter": 1,
+          "completeInventoryEqual": true,
+          "fluid": null
+        },
+        {
+          "full": true,
+          "beforeHand": {
+            "type": "minecraft:bucket",
+            "amount": 3,
+            "name": "original empty buckets",
+            "lore": [
+              {
+                "text": "Creative fluid transfer"
+              }
+            ],
+            "properties": [],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "afterHand": {
+            "type": "minecraft:bucket",
+            "amount": 3,
+            "name": "original empty buckets",
+            "lore": [
+              {
+                "text": "Creative fluid transfer"
+              }
+            ],
+            "properties": [],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "inventorySlots": 36,
+          "occupiedBefore": 36,
+          "occupiedAfter": 36,
+          "completeInventoryEqual": true,
+          "fluid": null
+        }
+      ],
+      "players_after": 0,
+      "normal_stop": true,
+      "quit_correctly": true,
+      "engine_exit": 0,
+      "errors": [],
+      "memory_peak_bytes": 537337856,
+      "oom_events": {
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      }
+    },
+    {
+      "phase": "restart",
+      "passed": true,
+      "checks": [
+        {
+          "name": "empty isolated QA",
+          "passed": true
+        },
+        {
+          "name": "same saved freezer present",
+          "passed": true
+        },
+        {
+          "name": "drained tank and empty input persist",
+          "passed": true
+        },
+        {
+          "name": "no native input carrier introduced",
+          "passed": true
+        },
+        {
+          "name": "same saved freezer present",
+          "passed": true
+        },
+        {
+          "name": "drained tank and empty input persist",
+          "passed": true
+        },
+        {
+          "name": "no native input carrier introduced",
+          "passed": true
+        }
+      ],
+      "observations": [
+        {
+          "position": {
+            "x": 8,
+            "y": 81,
+            "z": 8
+          },
+          "fluid": null,
+          "input": []
+        },
+        {
+          "position": {
+            "x": 12,
+            "y": 81,
+            "z": 8
+          },
+          "fluid": null,
+          "input": []
+        }
+      ],
+      "players_after": 0,
+      "normal_stop": true,
+      "quit_correctly": true,
+      "engine_exit": 0,
+      "errors": [],
+      "memory_peak_bytes": 542035968,
+      "oom_events": {
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      }
+    }
+  ],
+  "resolved_qa_failures": [
+    "The selected engine rejects dynamic-property writes on stackable empty buckets. The fixture now uses supported name, lore, keepOnDeath and canDestroy fields; no production callback ran in this attempt.",
+    "Native block placement initialization cleared the fixture tank before the tested callback. Offline stopped-DB and block-state inspection established ordinary input instead of fluid transfer; the fixture now establishes and witnesses an open full tank after placement initialization."
+  ],
+  "scope": "Real simulated Creative Player inventories through fixture-invoked production component callbacks. Free and full 36-slot inventories retain complete sampled native stacks, including three named empty buckets, while the tank drains and no filled bucket is produced. Normal restart reads the same two drained tanks. No native click, player inventory across reconnect, arbitrary fluid capability or client claim.",
+  "cleanup_complete": true
+}

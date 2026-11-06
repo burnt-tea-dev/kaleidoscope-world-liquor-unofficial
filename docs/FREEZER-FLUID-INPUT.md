@@ -35,4 +35,6 @@ offhand、任意流體容器／addon capability、完整自動化、掉落物物
 
 正式before-interact→deferred回呼在既有水／岩漿／兩果汁／milk別名，以空位和滿背包各一案重現10個取液失敗；另8個非牛奶加槽控制原已符合規則。修復只讓取液的`transaction.give`在Creative為空，沿用現有不扣Creative手持及槽／庫存回復；不新增registry、UI、保存格式或另一個交易owner。受影響的來源callback套件64項通過，包含W199滿槽普通入料仍扣一個。
 
-[新窄QA observer](../tests/native/freezer-creative-fluid-probe.js)只準備真正改動的兩案：Creative持3個具名空桶、庫存有空位／全滿，真Native Player完整庫存經正式元件回呼保持相同、槽液清空；同一QA正常重啟只讀回已清槽狀態。尚未執行。回呼是fixture呼叫，不稱native click；不宣稱模擬玩家庫存跨重登保存，也不重跑W19917＋13、布丁或Respawn。
+[新窄QA observer](../tests/native/freezer-creative-fluid-probe.js)已完成真正改動的兩案。[實際結果](evidence/creative-freezer-fluid-20261106.json)為首次13／同一QA重啟7項PASS：Creative持3個具名空桶、庫存有空位／36格全滿，真Native Player完整取樣庫存經正式元件回呼保持相同、槽液清空、不產滿桶；同一QA正常重啟兩槽仍空、沒有原料或carrier。固定runtime2f2ca054，實測observer/source fadecaee；回呼是fixture呼叫，不稱native click，不宣稱模擬玩家庫存跨重登保存。W19917＋13、布丁或Respawn均未重跑。
+
+兩次QA前提失敗保留原始資料：此選定引擎拒絕在可堆疊空桶寫DP，故只使用原生支援的name／lore／keepOnDeath／canDestroy；另一場新方塊初始化清掉預填槽液，回呼實際走普通入料，離線停服DB與block-state已釐清。只將QA滿槽／開蓋宣告移到初始化後並加前提witness；未因fixture失敗再改runtime。成功兩phase均正常stop／Quit correctly／engine exit0、players0、errors[]／OOM0；最終service成功退出，自己的QA／peer已在真host及共享鎖內assert_idle後清理並還槽，raw／logs／JSON保留。
