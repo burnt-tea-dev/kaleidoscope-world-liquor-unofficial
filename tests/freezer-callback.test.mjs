@@ -59,6 +59,19 @@ function deferredInput(item=new ItemStack('minecraft:sugar',2),mode='survival',f
  world.beforeEvents.playerInteractWithBlock.emit(event);assert.equal(event.cancel,true);
  return {b,d,p,raw:world.getDynamicProperty(key)};
 }
+const fluidBucketCases=[['minecraft:water_bucket','minecraft:water'],['minecraft:lava_bucket','minecraft:lava'],['kaleidoscope_tavern:grape_bucket','kaleidoscope_tavern:grape_juice'],['kaleidoscope_tavern:sweet_berries_bucket','kaleidoscope_tavern:sweet_berries_juice'],['minecraft:milk_bucket',N+':milk_still']];
+for(const [id,fluid] of fluidBucketCases)for(const full of [false,true])test('Creative fluid drain '+fluid+' preserves the complete inventory with '+(full?'full':'free')+' slots',()=>{
+ const item=new ItemStack('minecraft:bucket',3);item.nameTag='original empty buckets';item.lore=['unchanged Creative container'];item.data={owner:'fluid-drain'};
+ const {p}=deferredInput(item,'creative',fluid);if(full)for(let slot=1;slot<p.inv.size;slot++)p.inv.setItem(slot,new ItemStack('minecraft:stone',64));
+ const before=Array.from({length:p.inv.size},(_,slot)=>p.inv.getItem(slot));system.flush();
+ assert.equal(JSON.parse(world.getDynamicProperty(key)).fluid,null);assert.deepEqual(JSON.parse(world.getDynamicProperty(key)).input,[]);assert.deepEqual(Array.from({length:p.inv.size},(_,slot)=>p.inv.getItem(slot)),before);
+});
+for(const [id,fluid] of fluidBucketCases.filter(([id])=>id!=='minecraft:milk_bucket'))for(const full of [false,true])test('Creative fluid fill '+id+' already preserves the complete inventory with '+(full?'full':'free')+' slots',()=>{
+ const item=new ItemStack(id);item.nameTag='original full bucket';item.lore=['unchanged Creative container'];item.data={owner:'fluid-fill'};
+ const {p}=deferredInput(item,'creative');if(full)for(let slot=1;slot<p.inv.size;slot++)p.inv.setItem(slot,new ItemStack('minecraft:stone',64));
+ const before=Array.from({length:p.inv.size},(_,slot)=>p.inv.getItem(slot));system.flush();
+ assert.equal(JSON.parse(world.getDynamicProperty(key)).fluid,fluid);assert.deepEqual(JSON.parse(world.getDynamicProperty(key)).input,[]);assert.deepEqual(Array.from({length:p.inv.size},(_,slot)=>p.inv.getItem(slot)),before);
+});
 for(const id of ['minecraft:water_bucket','minecraft:lava_bucket','kaleidoscope_tavern:grape_bucket','kaleidoscope_tavern:sweet_berries_bucket'])for(const mode of ['survival','creative'])test(mode+' full-tank '+id+' falls through to complete-stack input',()=>{
  const item=new ItemStack(id);item.nameTag='stored full bucket';item.lore=['keep the filled contents'];item.data={owner:'bucket-input'};
  const {b,d,p}=deferredInput(item,mode,'minecraft:water');system.flush();
