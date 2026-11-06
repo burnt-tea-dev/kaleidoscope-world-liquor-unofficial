@@ -134,6 +134,7 @@ jobs:
           node --check tests/native/frost-aging-probe.js
           node --check tests/native/freezer-tick-probe.js
           node --check tests/native/freezer-storage-probe.js
+          node --check tests/native/freezer-full-tank-probe.js
           node --check tests/native/hurt-correlation-probe.js
           node --check tests/native/hurt-correlation-variants-probe.js
           node --check tests/native/elbow-velocity-control.js

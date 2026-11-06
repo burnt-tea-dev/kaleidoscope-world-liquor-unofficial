@@ -132,7 +132,9 @@ function freezer(p,b,s,h){
   }
   return;
  }
- if(h?.typeId in liquids&&h.typeId!=='minecraft:milk_bucket'){if(s.fluid)return;s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,give:creative(p)?[]:[['minecraft:bucket',1]]});return;}
+ // A full tank rejects FluidUtil transfer; Java then stores the filled bucket
+ // as an ordinary input, including its metadata and Creative hand debit.
+ if(h?.typeId in liquids&&h.typeId!=='minecraft:milk_bucket'&&!s.fluid){s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,give:creative(p)?[]:[['minecraft:bucket',1]]});return;}
  if(h?.typeId==='minecraft:bucket'&&s.fluid){const filled=Object.keys(liquids).find(x=>liquids[x]===s.fluid);if(filled){s.fluid=null;transaction(p,b,s,{take:1,give:[[filled,1]]});}return;}
  const options=freezerSettlement(b,s);
  const result=h?insertFreezerInput(p,s,options):extractFreezerInput(p,s,options);options.finish();
