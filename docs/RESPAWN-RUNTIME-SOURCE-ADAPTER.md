@@ -1,10 +1,10 @@
 # Respawn：Java 1.21.1 resolver 與 Native adapter
 
-這批把真正的 `effects.js` Respawn 入口接到原作 resolver，取代 Native 不支援的 `Block.isSolid` 與原本半徑 3／向上 6 格的替代搜尋。0.1.87 是開發版本，真人客戶端驗收仍未完成；不是完整 Java 還原聲明。
+真正的 `effects.js` Player Respawn入口已接到原作resolver。W198另修合法ready路徑的原生Player傳送拒絕與失敗扣錨：使用正常Player teleport參數，若傳送拋錯就恢復剛扣的原生anchor permutation。新Player效果／落地及同QA兩錨重啟共23項原生檢查通過，範圍見下節；不是完整Java或client還原聲明。
 
 ## 來源
 
-作者基準是 World Liquor 1.1.11、Minecraft 1.21.1／NeoForge，CurseForge file 9066406。2026-10-07 10:23 UTC 的家族作者查核仍將此分支列為最新參照；其他 Minecraft／Forge 分支另外追蹤，沒有拿它們替換此分支。作者 `RespawnEffect.performEffect` 的操作順序是起點 chorus fruit 音效、讀 keepInventory、原生重生 resolver（可能扣錨）、傳送與轉向、清 fallDistance、終點音效、Hunger 300 tick／0。
+當前兩個作者分支、實際呼叫／相對旗標與client清速度依據只維護在[Java來源與傳送](JAVA-RESPAWN-SOURCE-20261007.md)。1.21.1仍是本resolver的選定來源，其他Minecraft／Forge fallback不混用；歷史數值fixtures保留原範圍。
 
 原生規則取自未修改的 [Mojang 1.21.1 client JAR](https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar) 與[官方 mappings](https://piston-data.mojang.com/v1/objects/2244b6f072256667bcd9a73df124d6c58de77992/client.txt)。公開 runtime 放數值事實和本專案實作，沒有放 JAR 或第三方完整程式。
 
@@ -67,6 +67,18 @@ Native permutation 與 Java properties 的已知對應逐欄限制可能 states�
 
 實體判定只列官方 Native 同名且 Java `canBeCollidedWith=false` 的 97 個 counterparts；有實際 `minecraft:item` component 的掉落物另有明確映射。牛、玩家及普通 minecart 等不會因出現在遠處而阻擋 default。Boat／ChestBoat 的 bounds 由來源固定 1.375F×.5625F 算，共乘樹用穩定 Native riding relation 對應；不讀 Native getAABB。Shulker 先用 source scale≤3／physicalPeek 0..1 的所有可能 bounds 證明遠處不相關，重疊時缺少 peek/alive/vehicle 資料仍要求 provider，沒有把 union 本身當成碰撞。未知 addon 類別需宣告 source bounds／排除事實，無法用名稱或健康值猜它的 Java class。
 
+## W198正式Player傳送與失敗回復
+
+修前兩個來源反例直接執行`effects.js applyEffect → safeRespawn → applyJavaRespawn`：合法ready路徑遇到已原生確認的Player keepVelocity拒絕；另一個傳送例外使anchor charge2→1而玩家未移動。immutable原生permutation的來源fixture現在能觀察扣次及回復，不只記錄setter呼叫。來源回歸驗證正常參數與傳送失敗後charge恢復2、原錯重拋，且沒有目的地音效或Hunger；其他既有resolver／metadata／family案例沿實際受影響範圍通過。
+
+[原生probe](../tests/native/respawn-player-probe.js)在官方BDS1.26.60.6／server2.12.0-beta、QA gametest1.0.0-beta、原實驗與完整W198＋固定T203上執行。first18／同QA restart5通過，[實際樣本](evidence/respawn-player-20261106.json)保留相對tick：
+
+- 正常Player傳送前Y速度約−0.9054、XZ非零、原生falling=true；傳送後位置正確、XYZ速度0／falling=false，後兩tick也為0。之後真落地只受1點新fall傷害；未重跑的原Player控制為7點，沒有取消hurt、改血量或手算fallDistance。
+- 正式applyEffect在合法declared anchor context中完成同維度keepInventory=true不扣次、跨維度keepInventory=false扣一次；目的地、Hunger300／amp0及血量20保留。跨維度同tick getter仍顯示先前速度，下1／2tick才全0；不冒稱所有維度的即時getter時序相同。
+- 同一世界正常stop後restart，兩個真Nether anchor的charge2／1仍在。兩次engine exit0／Quit correctly、players0、內容errors[]／OOM0；自己的QA世界／包／引擎連結已清，時段歸還。
+
+傳送例外回復是正式來源故障測試；本輪Native成功路徑沒有注入失敗傳送。QA直接呼叫正式Player效果入口，沒有真人喝酒或客戶端；音效保持來源呼叫／參數／成功順序並被API接受，不等於聽感與封包時序已驗。完整家族保存／部署仍交共同流程。
+
 ## 平台缺口與客戶端對照
 
 | 狀況 | 保留的限制 |
@@ -79,7 +91,7 @@ Native permutation 與 Java properties 的已知對應逐欄限制可能 states�
 | dynamic shapes | Dismount EMPTY context 的 powder snow／scaffolding 具有確定來源；default living context 不套用 EMPTY 觀測。Bamboo/dripstone offsets、piston progress、shulker block entity 要 source facts/provider |
 | source pose／實體 bounds | default ordinary Native standing 由穩定 flags 對應；非站立或自訂來源幾何需 provider。Native crouching/crawling/scale 與 Java pose 尚未完整真人驗證 |
 | Native RNG | 預設 Native Math.random 均勻索引，沒有和 Java world RandomSource 共用種子／序列；source traversal及 draw 次數保留，跨平台相同随机世界序列仍未實現 |
-| fallDistance／封包 | 現有adapter傳`keepVelocity:true`，但BDS1.26.60.6／server2.12-beta的原生模擬Player對此參數拋UnsupportedFunctionalityError，不能宣稱保速已驗。見[同位置傳送能力範圍](CAPTAIN-GIFT.md#同位置保速傳送2026-11-06原生反證)：該QA未執行正式Respawn回呼；此可達API限制仍需另行處理，client packet/movement phase也未驗證 |
+| fallDistance／封包 | W198移除Player不支援的keepVelocity；Java client的原absolute XYZ packet會清XYZ速度，不能把server暫存delta誤當保速要求。正常原生teleport的Player前後／下2tick與真落地已在上節通過；無clearVelocity／補力或假fallDistance，實際client封包階段仍未驗證 |
 | 音效／畫面 | 使用原作已收錄的 chorus fruit 樣本與 source volume/pitch/order；client 順序、畫面與真人移動不因純 JS fixture 通過就算驗收 |
 
 真人對照場景：Nether 相同位置有電量錨＋keepInventory=true，喝 Respawn 酒；比較第一 North 落點、看向錨的方向、起點／終點音效與 Hunger。再 keepInventory=false 重新建立已宣告的 nonforced 點，確認只扣一次電量。Overworld 床朝北，分別以 +90/−90 設點後轉身喝酒，應採不同 source 第一側；舊床點沒有 metadata 時要保留 unknown。最後新世界 default spawn radius=0 的普通石地與有水表面，分別確認 column 成功與 sentinel fallback 未假造。
