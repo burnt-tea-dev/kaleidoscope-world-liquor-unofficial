@@ -65,3 +65,13 @@ migration or client input. Owner/filter/API/event failures must remain distinct;
 an unread property is unknown, not permission false. Use the existing narrow
 runner/resource/shared-lock/NBT-readback/cleanup path; return the slot immediately
 after normal stop. Do not replay PR205 or rewrite its original observations.
+
+## Fixture correction
+
+The first run of source `2e16af1166a9358c55e053cbaf8dc218b71500dc` observed both
+owner-specific value transitions and positive ownership controls, but BDS
+1.26.60.6 logged a tame_event JSON schema error for the documented string
+shorthand. That run is retained and is not a clean pass. The fixture now uses
+the official sample's full `{event, target}` actor-definition-trigger object.
+Only this changed QA fixture needs another native observation; PR205 and other
+successful tests remain unchanged and are not replayed.

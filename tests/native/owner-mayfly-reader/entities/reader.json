@@ -17,7 +17,7 @@
       "minecraft:collision_box": {"width": 0, "height": 0},
       "minecraft:physics": {"has_gravity": false, "has_collision": false},
       "minecraft:persistent": {},
-      "minecraft:tameable": {"probability": 1, "tame_items": ["minecraft:bone"], "tame_event": "ability_reader:tamed"},
+      "minecraft:tameable": {"probability": 1, "tame_items": ["minecraft:bone"], "tame_event": {"event": "ability_reader:tamed", "target": "self"}},
       "minecraft:entity_sensor": {
         "find_players_only": true,
         "relative_range": false,
