@@ -1,0 +1,481 @@
+{
+  "schema": 1,
+  "observed_date": "2026-11-06",
+  "runtime_commit": "7d12d524ae790d1b56a7be30020e79a268eac5b7",
+  "world_liquor_version": "0.1.199",
+  "tavern_commit": "6c7539689664b87f3f66ef0e93d99f2d4bd1be69",
+  "tavern_version": "0.6.203",
+  "engine": "1.26.60.6",
+  "api": "@minecraft/server 2.12.0-beta",
+  "qa_api": "@minecraft/server-gametest 1.0.0-beta",
+  "experiments": [
+    "gametest",
+    "upcoming_creator_features"
+  ],
+  "first_observer_source": "7d12d524ae790d1b56a7be30020e79a268eac5b7",
+  "restart_observer_source": "f2ab0db38d0253906276dbd4dcd19db81e983df0",
+  "passed": true,
+  "same_qa_world": true,
+  "first_reused_without_replay": true,
+  "native_click_proven": false,
+  "live_modified": false,
+  "client": false,
+  "phases": [
+    {
+      "phase": "first",
+      "passed": true,
+      "checks": [
+        {
+          "name": "empty isolated QA",
+          "passed": true
+        },
+        {
+          "name": "QA block readable",
+          "passed": true
+        },
+        {
+          "name": "new position has no machine row",
+          "passed": true
+        },
+        {
+          "name": "native mode matches fixture",
+          "passed": true
+        },
+        {
+          "name": "filled tank preserved",
+          "passed": true
+        },
+        {
+          "name": "one complete bucket stored",
+          "passed": true
+        },
+        {
+          "name": "production debits native hand in both modes",
+          "passed": true
+        },
+        {
+          "name": "native carrier created",
+          "passed": true
+        },
+        {
+          "name": "QA Player disconnected",
+          "passed": true
+        },
+        {
+          "name": "QA block readable",
+          "passed": true
+        },
+        {
+          "name": "new position has no machine row",
+          "passed": true
+        },
+        {
+          "name": "native mode matches fixture",
+          "passed": true
+        },
+        {
+          "name": "filled tank preserved",
+          "passed": true
+        },
+        {
+          "name": "one complete bucket stored",
+          "passed": true
+        },
+        {
+          "name": "production debits native hand in both modes",
+          "passed": true
+        },
+        {
+          "name": "native carrier created",
+          "passed": true
+        },
+        {
+          "name": "QA Player disconnected",
+          "passed": true
+        }
+      ],
+      "observations": [
+        {
+          "mode": "Survival",
+          "before": {
+            "type": "minecraft:water_bucket",
+            "amount": 1,
+            "name": "complete minecraft:water_bucket",
+            "lore": [
+              {
+                "text": "full tank fallback"
+              }
+            ],
+            "properties": [
+              [
+                "freezer_full_tank_qa:serial",
+                1
+              ],
+              [
+                "freezer_full_tank_qa:vector",
+                {
+                  "z": 3,
+                  "y": 2,
+                  "x": 1
+                }
+              ]
+            ],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "stored": {
+            "type": "minecraft:water_bucket",
+            "amount": 1,
+            "name": "complete minecraft:water_bucket",
+            "lore": [
+              {
+                "text": "full tank fallback"
+              }
+            ],
+            "properties": [
+              [
+                "freezer_full_tank_qa:serial",
+                1
+              ],
+              [
+                "freezer_full_tank_qa:vector",
+                {
+                  "z": 3,
+                  "y": 2,
+                  "x": 1
+                }
+              ]
+            ],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "tank": "minecraft:water"
+        },
+        {
+          "mode": "Creative",
+          "before": {
+            "type": "minecraft:lava_bucket",
+            "amount": 1,
+            "name": "complete minecraft:lava_bucket",
+            "lore": [
+              {
+                "text": "full tank fallback"
+              }
+            ],
+            "properties": [
+              [
+                "freezer_full_tank_qa:serial",
+                2
+              ],
+              [
+                "freezer_full_tank_qa:vector",
+                {
+                  "z": 3,
+                  "y": 2,
+                  "x": 1
+                }
+              ]
+            ],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "stored": {
+            "type": "minecraft:lava_bucket",
+            "amount": 1,
+            "name": "complete minecraft:lava_bucket",
+            "lore": [
+              {
+                "text": "full tank fallback"
+              }
+            ],
+            "properties": [
+              [
+                "freezer_full_tank_qa:serial",
+                2
+              ],
+              [
+                "freezer_full_tank_qa:vector",
+                {
+                  "z": 3,
+                  "y": 2,
+                  "x": 1
+                }
+              ]
+            ],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "tank": "minecraft:water"
+        }
+      ],
+      "players_after": 0,
+      "normal_stop": true,
+      "quit_correctly": true,
+      "engine_exit": 0,
+      "errors": [],
+      "memory_peak_bytes": 536137728,
+      "oom_events": {
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      }
+    },
+    {
+      "phase": "restart",
+      "passed": true,
+      "checks": [
+        {
+          "name": "empty isolated QA",
+          "passed": true
+        },
+        {
+          "name": "QA block readable",
+          "passed": true
+        },
+        {
+          "name": "same saved native carrier",
+          "passed": true
+        },
+        {
+          "name": "same bucket metadata and full tank after restart",
+          "passed": true
+        },
+        {
+          "name": "empty hand retrieves exactly the saved bucket",
+          "passed": true
+        },
+        {
+          "name": "input retired without draining tank",
+          "passed": true
+        },
+        {
+          "name": "QA Player disconnected",
+          "passed": true
+        },
+        {
+          "name": "QA block readable",
+          "passed": true
+        },
+        {
+          "name": "same saved native carrier",
+          "passed": true
+        },
+        {
+          "name": "same bucket metadata and full tank after restart",
+          "passed": true
+        },
+        {
+          "name": "empty hand retrieves exactly the saved bucket",
+          "passed": true
+        },
+        {
+          "name": "input retired without draining tank",
+          "passed": true
+        },
+        {
+          "name": "QA Player disconnected",
+          "passed": true
+        }
+      ],
+      "observations": [
+        {
+          "mode": "Survival",
+          "restored": {
+            "type": "minecraft:water_bucket",
+            "amount": 1,
+            "name": "complete minecraft:water_bucket",
+            "lore": [
+              {
+                "text": "full tank fallback"
+              }
+            ],
+            "properties": [
+              [
+                "freezer_full_tank_qa:serial",
+                1
+              ],
+              [
+                "freezer_full_tank_qa:vector",
+                {
+                  "z": 3,
+                  "y": 2,
+                  "x": 1
+                }
+              ]
+            ],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "returned": {
+            "type": "minecraft:water_bucket",
+            "amount": 1,
+            "name": "complete minecraft:water_bucket",
+            "lore": [
+              {
+                "text": "full tank fallback"
+              }
+            ],
+            "properties": [
+              [
+                "freezer_full_tank_qa:serial",
+                1
+              ],
+              [
+                "freezer_full_tank_qa:vector",
+                {
+                  "z": 3,
+                  "y": 2,
+                  "x": 1
+                }
+              ]
+            ],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "tank": "minecraft:water",
+          "lidBefore": false
+        },
+        {
+          "mode": "Creative",
+          "restored": {
+            "type": "minecraft:lava_bucket",
+            "amount": 1,
+            "name": "complete minecraft:lava_bucket",
+            "lore": [
+              {
+                "text": "full tank fallback"
+              }
+            ],
+            "properties": [
+              [
+                "freezer_full_tank_qa:serial",
+                2
+              ],
+              [
+                "freezer_full_tank_qa:vector",
+                {
+                  "z": 3,
+                  "y": 2,
+                  "x": 1
+                }
+              ]
+            ],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "returned": {
+            "type": "minecraft:lava_bucket",
+            "amount": 1,
+            "name": "complete minecraft:lava_bucket",
+            "lore": [
+              {
+                "text": "full tank fallback"
+              }
+            ],
+            "properties": [
+              [
+                "freezer_full_tank_qa:serial",
+                2
+              ],
+              [
+                "freezer_full_tank_qa:vector",
+                {
+                  "z": 3,
+                  "y": 2,
+                  "x": 1
+                }
+              ]
+            ],
+            "keepOnDeath": true,
+            "canDestroy": [
+              "andesite",
+              "polished_diorite",
+              "stone",
+              "diorite",
+              "granite",
+              "polished_andesite",
+              "polished_granite"
+            ]
+          },
+          "tank": "minecraft:water",
+          "lidBefore": false
+        }
+      ],
+      "players_after": 0,
+      "normal_stop": true,
+      "quit_correctly": true,
+      "engine_exit": 0,
+      "errors": [],
+      "memory_peak_bytes": 413151232,
+      "oom_events": {
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      }
+    }
+  ],
+  "resolved_qa_failures": [
+    "Initial floor commands preceded chunk readiness; no case result.",
+    "Redundant air clear returned 0 blocks filled and triggered the unchanged error gate; no complete case result.",
+    "Restart fixture compared the entire row, although native load legitimately added redstonePowered=false; stopped-DB inspection established unchanged affected state.",
+    "Restart extraction fixture omitted the open-lid prerequisite; stopped-DB palette indices established both lids closed. Only the affected restart observation was resumed after fixing the fixture."
+  ],
+  "scope": "Real simulated Player inventories and native ItemStacks through fixture-invoked production component callbacks; complete sampled metadata and the same native carrier survive normal restart, then both buckets are returned once while the tank remains water. No native click, redstone/lid lifecycle, arbitrary fluid capability, offhand or client claim.",
+  "cleanup_complete": true
+}

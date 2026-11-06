@@ -1,0 +1,5 @@
+# World Liquor 0.1.199 — full-tank buckets remain valid freezer inputs
+
+When the freezer tank is full, failed fluid transfer now falls through to the existing ordinary input owner. Store one complete water/lava/grape/berry bucket, debit it even in Creative, and retain the tank contents and native ItemStack metadata. The former ID shortcut returned early instead. Both maintained Java branches follow the transfer-then-input order; see [source, counterexample and validation scope](FREEZER-FLUID-INPUT.md).
+
+The registered source callback suite passes 46 checks, including eight formerly failing full-tank cases. Targeted native Player inventory/component-callback checks passed first17 and a resumed restart13 in the same QA, retaining the native carrier and complete sampled metadata, then returning each bucket once with the full tank unchanged. QA setup and prerequisite failures remain recorded; the successful first17 was not replayed. Prior unrelated native observations retain their original scope. Keep T203/G238 CI pins, SDK, UUIDs, native storage and save formats. This is not complete FluidUtil/native-click/lid/client parity or a LIVE deployment claim.

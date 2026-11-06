@@ -40,11 +40,11 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 - 布丁餘碗（W172）：既有13項來源案例與W198的最後一份／多份／Creative三案真Native完成／扣料已通過，沒有漏碗或多碗，不改runtime或升版本。兩作者、實際同tick階段與其餘未驗範圍只查[布丁餘碗](FOOD-REMAINDER.md)，不宣稱固定下一tick或完整真人／掉落物物理已驗。
 - 斬首與頭顱（W173）：`beheading.js` 依原作 `onLivingIncomingDamage`／`onLivingDropsBeheading`——標記存成目標的 dynamic property（等同 persistent data，圖騰倖存或存檔重啟仍會在下一次死亡掉頭）；命中時在同一個 before-event 上改為攻擊者歸屬的 10000 傷害，下一 tick 若血量未降則依原作設 1、再由攻擊者造成 2 傷害、仍活則歸零；期間以 processing 阻擋重入再抽；死亡後對原生 `entityItemDrop` 掉落清單做 `isSameItemSameComponents` 去重，沒有掉落清單的實體兩 tick 後補發；玩家頭以物品名稱與 lore 記錄 SkullOwner（Bedrock 無法由腳本設定頭顱皮膚）。原生 incoming 取消與另起 playerAttack／mobAttack 傷害來源、圖騰／護甲／Tequila 併發與真人驗收仍待確認。
 - 尋寶指南生物掉落（W174）：`treasure-drops.js` 依原作 `onLivingDrops`——傷害來源的擁有者（箭的射手，不是箭）持有效果時每次死亡擲一次 `0.15+0.05×amplifier`，成功就把原生 `entityItemDrop` 掉落清單的每一項在該物品位置複製一份（快照清單，複製品不再被複製）；取代原本下一 tick 掃附近新物品的作法，不再誤抓同 tick 其他死亡或玩家丟出的物品。沒有掉落清單的死亡兩 tick 後作廢。pickup delay、原生 drop 事件是否含斬首補發的頭、以及真人驗收仍開放。
-- 冰櫃：五個 current recipe、loaded ticks、四槽 native metadata 及來源 height 算術已實作；真玩家插取、offhand、unload／crash、任意 metadata 和完整流體／原料／成品渲染另驗，既有零輸入樣本不證明非空冰櫃內容。
+- 冰櫃：五個 current recipe、loaded ticks、四槽 native metadata 及來源 height 算術已實作；W199修滿槽非牛奶桶提前退出，改依Java落到普通原料格，來源反例／native範圍只查[滿槽桶原料](FREEZER-FLUID-INPUT.md)。真玩家插取、offhand、unload／crash、任意 metadata 和完整流體／原料／成品渲染另驗，既有零輸入樣本不證明非空冰櫃內容。
 - 酒櫃與家具：原格位、native item carrier、重啟／回滾修補保留；四向座位、玻璃、觸控／游標點選與實際展示仍待比較。
 - Respawn：87 個精確零碰撞 helper、新確認錨 yaw=0／forced=false 及 repeat／取消防線保留；未知來源不放寬，真 Player 床／錨／重生另驗。
 - 唱片：兩首原音檔、牆掛四向及取回保留；W168 已移除 32 station bank，實際聲場、播放／停止、進出與重登 lifecycle 仍待真人驗證。原生 custom record 的 parser compatibility、comparator、hopper 與完整 ItemStack 行為仍開放，見 [可重現證據](RELEASE-NOTES-0.1.168.md)。
-- 指南：67 個 W 商品頁、公開配對 223／完整家族 227 條目及三語接收已通過；玩家實際排版／返回、輸入和兩入口閱讀仍待接受。
+- 指南：商品頁與三語製作資料只查[當前payload](../runtime/BP/scripts/payload.js)，合併條目與七入口依[配對指南檢查](../tools/check_guide.mjs)，不沿用舊頁數／條目快照；玩家實際排版／返回、輸入和兩入口閱讀未觀察，不另設交付等待。
 
 ## 分支與歷史
 

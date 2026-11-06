@@ -51,14 +51,21 @@ test('registered intrinsic maxAmount1 input is accepted and restored with its or
  const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));const p=player(d);p.isSneaking=false;const item=new ItemStack('minecraft:diamond_sword');item.nameTag='intrinsic';item.lore=['kept'];item.data={custom:17};assert.equal(item.isStackableWith(item.clone()),false);p.inv.setItem(0,item);furniture.onPlayerInteract({block:b,player:p});assert.equal(p.inv.getItem(0),undefined);system.currentTick+=5;furniture.onPlayerInteract({block:b,player:p});assert.deepEqual(p.inv.getItem(0),item);
 });
 
-function deferredInput(item=new ItemStack('minecraft:sugar',2),mode='survival'){
+function deferredInput(item=new ItemStack('minecraft:sugar',2),mode='survival',fluid=null){
  const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));
- world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid:null,remaining:0,output:0}));
+ world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid,remaining:0,output:0}));
  const p=player(d,mode);p.isSneaking=false;p.inv.setItem(0,item);
  const event={block:b,player:p,blockFace:'north',itemStack:p.inv.getItem(0),isFirstEvent:true};
  world.beforeEvents.playerInteractWithBlock.emit(event);assert.equal(event.cancel,true);
  return {b,d,p,raw:world.getDynamicProperty(key)};
 }
+for(const id of ['minecraft:water_bucket','minecraft:lava_bucket','kaleidoscope_tavern:grape_bucket','kaleidoscope_tavern:sweet_berries_bucket'])for(const mode of ['survival','creative'])test(mode+' full-tank '+id+' falls through to complete-stack input',()=>{
+ const item=new ItemStack(id);item.nameTag='stored full bucket';item.lore=['keep the filled contents'];item.data={owner:'bucket-input'};
+ const {b,d,p}=deferredInput(item,mode,'minecraft:water');system.flush();
+ assert.deepEqual(JSON.parse(world.getDynamicProperty(key)).input,[id]);assert.equal(JSON.parse(world.getDynamicProperty(key)).fluid,'minecraft:water');assert.equal(p.inv.getItem(0),undefined);assert.equal(d.sounds.at(-1),N+'.java.freezer_input_add');
+ system.currentTick+=5;world.beforeEvents.playerInteractWithBlock.emit({block:b,player:p,blockFace:'north',isFirstEvent:true});system.flush();
+ assert.deepEqual(p.inv.getItem(0),item);assert.deepEqual(JSON.parse(world.getDynamicProperty(key)).input,[]);assert.equal(JSON.parse(world.getDynamicProperty(key)).fluid,'minecraft:water');
+});
 for(const mode of ['survival','adventure','creative'])test(mode+' deferred freezer input keeps the original accepted stack',()=>{
  const {p}=deferredInput(new ItemStack('minecraft:sugar',2),mode);system.flush();
  assert.deepEqual(JSON.parse(world.getDynamicProperty(key)).input,['minecraft:sugar']);assert.equal(p.inv.getItem(0).amount,1);
