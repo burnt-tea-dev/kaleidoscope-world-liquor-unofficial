@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "6c7539689664b87f3f66ef0e93d99f2d4bd1be69",
-  "tavern_version": "0.6.203",
+  "tavern_commit": "9f4c97826a8773039e14f46c58b2776de644ac5f",
+  "tavern_version": "0.6.205",
   "publication_request": false,
   "grilling_commit": "7c2d3c0afcb39db314a1f95fa7f0276272b27eb1",
   "grilling_version": "2.8.238",
   "peer_pins_final": true,
-  "peer_pin_status": "exact_merged_t203_g238_sources",
-  "peer_pin_note": "Final merged T203/G238 pair. Preserve W196 native record storage, SDK, UUIDs and saved formats. W196 native25 retains its original frozen peer scope.",
+  "peer_pin_status": "exact_merged_t205_g238_sources",
+  "peer_pin_note": "Pair merged T205 recipient-session publisher repair with unchanged W200 gameplay. Preserve SDK, UUIDs and saved formats; G238 remains the unchanged optional CI peer. Highball Creative Flight is not included.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
@@ -15,14 +15,14 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "3dc7117c77ec14e4db18bb87b152c4f5b8c2dea6",
+  "tavern_tree": "ec483ee12f9435bce27ee6dee2adb7ea040e84e4",
   "tavern_source_trees": {
     "BP": {
-      "sha256": "a712e69889b48d0df1293c835cc90f6ebc2fb759322e8d068efeeecbb4f410ec",
+      "sha256": "fb0fbdefb2b75be410f16c50a99dbe17e02d18ad98aa2efb81dd98b2255468cb",
       "files": 838
     },
     "RP": {
-      "sha256": "c6a3b3c459075092db900233bc53723359fee11afde187c74b6083e9f599f302",
+      "sha256": "d9ae53ec37cad5180b2f9fe89e2252ddc647952cb20c71436bbb0c71b2c634e9",
       "files": 3232
     }
   }
