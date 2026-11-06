@@ -1,0 +1,56 @@
+{
+  "format_version": "1.26.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "ability_reader:probe",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "properties": {
+        "ability_reader:owner_seen": {"type": "bool", "default": false},
+        "ability_reader:mayfly": {"type": "int", "range": [-1, 1], "default": -1}
+      }
+    },
+    "component_groups": {"ability_reader:tamed": {"minecraft:is_tamed": {}}},
+    "components": {
+      "minecraft:type_family": {"family": ["mob", "ability_reader_probe"]},
+      "minecraft:health": {"value": 20, "max": 20},
+      "minecraft:collision_box": {"width": 0, "height": 0},
+      "minecraft:physics": {"has_gravity": false, "has_collision": false},
+      "minecraft:persistent": {},
+      "minecraft:tameable": {"probability": 1, "tame_items": ["minecraft:bone"], "tame_event": "ability_reader:tamed"},
+      "minecraft:entity_sensor": {
+        "find_players_only": true,
+        "relative_range": false,
+        "subsensors": [
+          {
+            "range": [4, 4], "minimum_count": 1, "cooldown": 0.1,
+            "event_filters": {"test": "is_owner", "subject": "other", "value": true},
+            "event": "ability_reader:owner_seen"
+          },
+          {
+            "range": [4, 4], "minimum_count": 1, "cooldown": 0.1,
+            "event_filters": {"all_of": [
+              {"test": "is_owner", "subject": "other", "value": true},
+              {"test": "has_ability", "subject": "other", "value": "mayfly"}
+            ]},
+            "event": "ability_reader:mayfly_yes"
+          },
+          {
+            "range": [4, 4], "minimum_count": 1, "cooldown": 0.1,
+            "event_filters": {"all_of": [
+              {"test": "is_owner", "subject": "other", "value": true},
+              {"test": "has_ability", "subject": "other", "operator": "!=", "value": "mayfly"}
+            ]},
+            "event": "ability_reader:mayfly_no"
+          }
+        ]
+      }
+    },
+    "events": {
+      "ability_reader:tamed": {"add": {"component_groups": ["ability_reader:tamed"]}},
+      "ability_reader:owner_seen": {"set_property": {"ability_reader:owner_seen": true}},
+      "ability_reader:mayfly_yes": {"set_property": {"ability_reader:mayfly": 1}},
+      "ability_reader:mayfly_no": {"set_property": {"ability_reader:mayfly": 0}}
+    }
+  }
+}
