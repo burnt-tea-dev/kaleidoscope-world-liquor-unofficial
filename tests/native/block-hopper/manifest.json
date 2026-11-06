@@ -1,0 +1,15 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Native block container hopper QA only",
+    "description": "Standalone capability observation; no W/T runtime or save migration.",
+    "uuid": "22c6401c-45de-44f6-a59b-e350e57f87f7",
+    "version": [0, 0, 1],
+    "min_engine_version": [1, 26, 60]
+  },
+  "modules": [
+    {"type": "data", "uuid": "10008e19-7066-43f5-ace1-7d3265377640", "version": [0, 0, 1]},
+    {"type": "script", "language": "javascript", "entry": "scripts/main.js", "uuid": "a3b631d4-2eba-424e-9015-dadbc045726a", "version": [0, 0, 1]}
+  ],
+  "dependencies": [{"module_name": "@minecraft/server", "version": "2.12.0-beta"}]
+}
