@@ -1,0 +1,11 @@
+{
+  "format_version": "1.26.60",
+  "minecraft:block": {
+    "description": {"identifier": "hopper_capability:container"},
+    "components": {
+      "minecraft:geometry": "geometry.full_block",
+      "minecraft:material_instances": {"*": {"texture": "stone", "render_method": "opaque"}},
+      "minecraft:block_entity": {"container": {"slot_count": 2}}
+    }
+  }
+}
