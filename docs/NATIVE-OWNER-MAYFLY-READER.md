@@ -75,3 +75,36 @@ shorthand. That run is retained and is not a clean pass. The fixture now uses
 the official sample's full `{event, target}` actor-definition-trigger object.
 Only this changed QA fixture needs another native observation; PR205 and other
 successful tests remain unchanged and are not replayed.
+
+## Observed on 2026-11-06
+
+The corrected fixture at source `af4a80e9ddf639fb821ff2a914e9f5c22a1c51ce`
+completed one clean load on the fixed retail BDS/profile/modules above. Both
+native tame calls succeeded; each helper's tamedToPlayerId and resolved Player
+matched its exact expected owner. Both co-located helpers independently
+received the native owner_seen event.
+
+| Phase | Both Players inside both sensors | Helper HA / HB at ticks 20 and 30 |
+| --- | --- | --- |
+| A mayfly=false, B=true | Yes | 0 / 1 in both samples |
+| A mayfly=true, B=false | Yes; same helpers and owner bindings | 1 / 0 in both samples |
+
+The native predicate/event/property path therefore read the particular owner's
+current mayfly value despite the overlapping non-owner's opposite value. The
+reversal establishes fresh output. Script never wrote those result properties
+or triggered their result events. All sampled Player modes remained Survival.
+
+The script reports completed=true, controlsPassed=true and getterProven=true,
+with zero Players/helpers after cleanup. The host observation also completed
+successfully; normal stop / Quit correctly / engine exit 0, no content errors
+or OOM. The stopped QA NBT retained commandsEnabled Byte 1, cheatsEnabled Byte
+0, eduOffer Int 0 and educationFeaturesEnabled Byte 1. Its temporary engine/world
+was removed under the existing idle/shared-lock check and the slot returned.
+
+The first fixture's schema-error run remains a separate failed validation;
+its positive samples are not substituted for this clean run. PR205's count and
+fly-helper observations were not replayed. This establishes a native readback
+primitive for this profile, not a formal flight lease, owner lifetime,
+disconnected-player behavior, expiry/mode-transition policy, saved-world
+migration or human/client flight acceptance. Raw run/configuration/cleanup
+evidence stays in the owning host's existing World Liquor progress record.

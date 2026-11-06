@@ -32,7 +32,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 | Luck | 目前兩條維護分支已使用 custom Luck；原生生物死亡／掉落已適配，完整原始 LootContext、無掉落事件、挖礦／箱子／釣魚仍缺 | 目前來源與原生證據見[矩陣](PARITY-MATRIX.md)；分開記錄原始 context 和真玩家結果 |
 | Elbow | 精確 Java attack attribute／charge／resistance 與原生 buffered knockback 組合尚未接入；固定 extra impulse 不等價 | ground／真正 airborne、任意原速度、resistance、Player charge／mob attack 分別量測 |
 | CaptainGift | 原12格流體／AABB水面已接入；fallDistance／onGround、普通跳躍及外部待提交力道仍未等價（見[範圍](CAPTAIN-GIFT.md)） | flowing water、岸邊、sneak、掉入水面、不同生物寬度及其他移動效果 |
-| Creative Flight／outline／Brew Accelerator | 飛行仍缺可讀原權限與安全收回；穿牆輪廓、原作 enchantment／operator 入口亦未完整 | selected60.6的單一Education-world profile已接受mayfly query/set，但CommandResult不回傳權限布林，fly測試helper在false對照也能飛；範圍只查[能力觀察](NATIVE-MAYFLY-EDUCATION.md#observed-on-2026-11-06)。不以到期一律關飛代替；效果結束／重登、視角遮擋及cooldown仍分開驗證 |
+| Creative Flight／outline／Brew Accelerator | 原生owner-bound mayfly讀回primitive已窄驗；正式飛行授權保留／收回與重登入口仍未接。穿牆輪廓、原作 enchantment／operator 入口亦未完整 | 同範圍兩Player相反權限及反轉、原生owner/filter/event/property的clean結果只查[讀回能力](NATIVE-OWNER-MAYFLY-READER.md#observed-on-2026-11-06)。CommandResult計數與fly helper限制保持原範圍，不以到期一律關飛代替；正式生命週期、視角遮擋及cooldown仍分開驗證 |
 | 自動化與其他模組 | Cabinet transfer／comparator、FluidUtil、Forge event、Create／Jade／SMC 尚未完整適配 | 普通漏斗的兩分支 Java 契約已核實；獨立 block_entity 容器在 BDS1.26.60.6 正確 flags 下有 2 格原生 inventory，但同場箱子正控制搬完、custom 推入／抽出 160tick 均不搬，見[有界原生結果](NATIVE-BLOCK-HOPPER.md#observed-on-2026-11-06)。不外推所有引擎，不繞過現行 storage owner |
 
 ## 保留實作，仍待真人或特定生命周期驗收
