@@ -79,3 +79,10 @@ W194的23項只保留其原T202與舊cleanup範圍，不改稱W196完整保存�
 實際比對的樣本包含名稱、raw lore、字串／Vector3 dynamic property、keepOnDeath及原生正規化後的canDestroy清單，唱片與新freezer物品均保留。這是QA producer送入真原生stack後，執行正式storage／eject／cleanup及持久化的觀察；接受手持物與支付回復仍屬來源正式callback測試，不冒稱玩家點擊或原生付款。完整家族保存演練、最終選包與LIVE部署另由共同流程負責。
 
 兩次均正常stop／Quit correctly／engine exit0、playersAfter0、errors空、OOM0。實讀運行MemoryMax2684354560／High2147483648／Swap0、PrivateNetwork，服務啟動宣告IPAddressDeny=any並保留2GiB主機餘裕；peak958263296 bytes。成功unit正常結束、MainPID0，原始證據在主機維護的`java-parity-20261105/native/world-liquor-record-metadata-196/{report.json,first-report.json,restart-report.json}`及logs／alive／unit journal，清理入口為同目錄cleanup.json。自己的QA世界／包／engine links及peer-input已確認idle後刪除，raw證據與腳本保留，槽已交還root。沒有runtime修正、版本重用或新增玩法，也沒有重跑舊W19423／Jukebox14／水面／enum，P133／LIVE未改。
+
+## 真network Player插入入口（來源準備，2026-11-07）
+
+現有23／25項仍無完整載入network Player的自然插入／付款證據，不重跑。
+單一Survival具名／lore／DP唱片、原版唱片機的QA-only observer及root正常協定
+接線契約見[固定入口與期望](NATIVE-RECORD-NETWORK-CLICK.md)。此準備不改runtime、
+配對版本或保存格式；block-click協定輸入與原生實跑尚未完成。
