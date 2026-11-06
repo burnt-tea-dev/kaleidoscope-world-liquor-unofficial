@@ -59,3 +59,41 @@ observe whether a destination slot accumulates more than one.
 Keep the raw `BLOCK_HOPPER_QA_RESULT` and engine logs, record the exact source,
 engine/modules/experiments, and normally stop/clean up immediately. A completed
 observation and a supported hopper capability are separate report fields.
+
+## Observed on 2026-11-06
+
+One load of the selected configuration above completed at 16:21 HKT using
+probe source `8966df7e8d9afb3dba7fdd53909f1a50ede6c6d6`. The custom block loaded
+as `hopper_capability:container`, exposed `minecraft:inventory`, and actually
+had two slots. The saved experiment flags read back as enabled. This is a
+native transfer observation, separate from the source-only Java contract.
+
+| Lane | Native result after 160 ticks |
+| --- | --- |
+| Chest push | All 3 named bottles moved from hopper to chest; reported metadata preserved. |
+| Chest pull | All 3 named bottles moved from chest to hopper; reported metadata preserved. |
+| Chest stacking | All 3 cobblestone moved into one chest slot. |
+| Custom push | All 3 named bottles remained in the hopper; custom inventory stayed empty. |
+| Custom pull | All 3 seeded named bottles remained in custom slot 0; hopper stayed empty. |
+| Custom stacking | All 3 cobblestone remained in the hopper; custom inventory stayed empty. |
+
+The bottle checks include actual nameTag, lore, keepOnDeath, canDestroy,
+canPlaceOn, maxAmount and the empty dynamic-property list reported by the
+engine. They do not establish preservation of arbitrary unobserved metadata.
+Snapshots at 8, 32, 80 and 160 ticks retain the custom-lane source contents;
+the vanilla controls establish that the scene's hoppers did run.
+
+The custom stacking destination never received anything. Its empty array and
+`exceedsOnePerSlot: false` therefore **do not prove a per-slot limit of one**.
+The custom pull source accepted the setup stack of 3 through Script, but that
+is an initial seed, not a native hopper transfer or filter test.
+
+This is a bounded negative for ordinary hopper push/pull on this BDS build,
+fixture and flags. It is not evidence that every engine, Preview, transfer
+direction or future native API is unsupported. No formal cabinet storage,
+carrier flag, release identity or LIVE pack changed. There was no restart or
+saved-world migration test. The zero-player engine stopped normally with exit
+0 and no content errors/OOM; its temporary engine/world was removed after the
+existing idle check, and the shared slot was returned immediately. Raw host
+logs, snapshots and cleanup evidence remain in the owning host's existing
+World Liquor progress record.

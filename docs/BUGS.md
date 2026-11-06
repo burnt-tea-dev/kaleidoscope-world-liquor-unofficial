@@ -33,7 +33,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 | Elbow | 精確 Java attack attribute／charge／resistance 與原生 buffered knockback 組合尚未接入；固定 extra impulse 不等價 | ground／真正 airborne、任意原速度、resistance、Player charge／mob attack 分別量測 |
 | CaptainGift | 原12格流體／AABB水面已接入；fallDistance／onGround、普通跳躍及外部待提交力道仍未等價（見[範圍](CAPTAIN-GIFT.md)） | flowing water、岸邊、sneak、掉入水面、不同生物寬度及其他移動效果 |
 | Creative Flight／outline／Brew Accelerator | 缺原生完整飛行權限、穿牆輪廓或原作 enchantment／operator 入口 | 效果結束／重登後權限、視角遮擋與原作 cooldown；依能力需求聲明實驗旗標並先在隔離世界驗證 |
-| 自動化與其他模組 | Cabinet transfer／comparator、FluidUtil、Forge event、Create／Jade／SMC 尚未完整適配 | 保留現行容器資料與互動次序，再對每個 hook 單獨比較 |
+| 自動化與其他模組 | Cabinet transfer／comparator、FluidUtil、Forge event、Create／Jade／SMC 尚未完整適配 | 普通漏斗的兩分支 Java 契約已核實；獨立 block_entity 容器在 BDS1.26.60.6 正確 flags 下有 2 格原生 inventory，但同場箱子正控制搬完、custom 推入／抽出 160tick 均不搬，見[有界原生結果](NATIVE-BLOCK-HOPPER.md#observed-on-2026-11-06)。不外推所有引擎，不繞過現行 storage owner |
 
 ## 保留實作，仍待真人或特定生命周期驗收
 
