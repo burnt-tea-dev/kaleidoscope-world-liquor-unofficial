@@ -14,6 +14,10 @@ W198的`furniture.js`對非牛奶滿桶先按ID分流，遇到`s.fluid`就直接
 
 [正式回呼回歸](../tests/freezer-callback.test.mjs)的八案檢查原料列、手持扣料、槽液不變、原料音效及取回後的名稱／lore／自訂資料。修復後該套件46項通過。指南由固定T203生成並檢查，內容只需版本同步。
 
-[定向QA observer](../tests/native/freezer-full-tank-probe.js)只準備兩案：Survival水桶與Creative岩漿桶，用實際Native Player庫存／ItemStack呼叫正式元件回呼，保存後在同一QA正常重啟、取回，核對同carrier／metadata與槽液。它明示回呼由fixture呼叫，不冒稱原生玩家點擊。尚未執行；不重跑布丁、重生傳送或舊完整storage矩陣。
+[定向QA observer](../tests/native/freezer-full-tank-probe.js)已完成Survival水桶與Creative岩漿桶兩案。[實際結果](evidence/freezer-full-tank-20261106.json)的首次17項及同一QA續驗重啟13項通過：實際Native Player庫存／ItemStack走正式元件回呼，手持扣一、完整取樣metadata入carrier；正常保存後核同carrier／metadata並各取回一次，槽液仍water。回呼由fixture呼叫，不冒稱原生玩家點擊。runtime固定7d12d524，首次observer亦7d12d524，重啟observer為f2ab0db3；只有QA前提與比較範圍修正，沒有為此改runtime。
+
+前兩場在chunk未載入／多餘air-clear指令時停止，沒有完整玩法結果。首次17項有效後，重啟fixture先因整列比較包含正常新增的redstonePowered=false失敗；離線讀停服DB核對受影響資料未變，改只比較桶／槽／製作欄位，保留完整metadata比較。隨後取回前未恢復開蓋前提，離線讀實際座標palette證實兩蓋均關；恢復QA開蓋前提後只續驗原QA的restart13，沒有重跑first17。紅石／蓋子生命周期不在本次通過範圍；失敗log與原始報告保留。
+
+成功兩phase均normal stop／Quit correctly／engine exit0，players0、errors[]／OOM0。最終service成功退出；自己的QA／peer payload已在真host及共享鎖內assert_idle後清理、時段歸還。布丁、重生傳送、舊完整storage矩陣與完整家族保存循環均未重跑。
 
 offhand、任意流體容器／addon capability、完整自動化、掉落物物理及真人畫面仍保留原範圍。共同完整家族保存／部署依其當前入口，來源修復不等於已安裝。

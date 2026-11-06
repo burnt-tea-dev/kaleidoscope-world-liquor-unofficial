@@ -8,7 +8,7 @@
   "saved_world_migration": "not_run",
   "production_ready": false,
   "live_deployment": false,
-  "native_evidence_scope": "W199 source callback counterexample and regression cover full-tank water/lava/grape/berry buckets in Survival and Creative. Narrow native callback/Player inventory/storage and same-QA restart observer is prepared, not run. Earlier W198 Respawn/pudding and W196 storage observations retain their exact unchanged-input scope; no new native-click/client/full-family/LIVE claim.",
+  "native_evidence_scope": "W199 runtime7d12d524 with T203 on official BDS1.26.60.6/server2.12-beta: first17 and same-QA resumed restart13 passed. Real Native Player inventories/ItemStacks through fixture-invoked production component callbacks preserve complete sampled bucket metadata/carrier and return each bucket once without changing the full tank. First17 reused without replay; QA setup/redstone-field/open-lid fixture failures remain recorded. Successful phases normal stop/Quit/engine exit0, players/errors/OOM0; own QA/peer payloads cleaned and slot returned. Not native-click/lid lifecycle/client/full-family/LIVE evidence. Previous W198 and W196 observations retain their unchanged-input scope.",
   "new_bds_test": true,
   "publication_request": false,
   "client": false,
