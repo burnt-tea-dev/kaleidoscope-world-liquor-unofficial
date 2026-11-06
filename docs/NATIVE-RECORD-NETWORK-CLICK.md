@@ -94,8 +94,20 @@ RESULT includes the real before-event hand/target/face/position, inventory befor
 and after, production row/index/carrier ID and all four actual native slots.
 Pass requires one first event with the seeded hand, slot 0 empty afterwards,
 all other inventory unchanged, an owned production carrier and the full sampled
-disc in slot 0 with the other three slots empty. Metadata includes raw lore,
-all public DP, keepOnDeath/lockMode and canDestroy/canPlaceOn.
+disc in slot 0 with the other three slots empty. The before-event hand includes
+type/count/name/raw lore/all public DP/keepOnDeath/lockMode, explicitly marked
+`heldScope` as the before-safe fields. It does not read or invent placement data.
+The seed and all native container slots are read in prepare/read's server script
+event context, including actual `canDestroy` and `canPlaceOn`. The full native
+stack comparison still requires both fields to match the original seed.
+
+The selected 2.12-beta ItemStack API declares `getCanDestroy` and `getCanPlaceOn`
+as unavailable in restricted execution. PR208's original before snapshot called
+them anyway; an existing real network-food observation confirmed the getter
+exception in that context. That history remains a source-fixture defect, not a
+failed World Liquor click run or a new gameplay result. The follow-up separates
+safe before fields from full prepare/read snapshots. No empty-value fallback,
+timer, event imitation or weaker event/debit/storage requirement is added.
 
 The script cannot identify network versus simulated provenance from `Player`
 alone. Attach root's actual initialized-connection and received block-use trace

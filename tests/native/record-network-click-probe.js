@@ -8,10 +8,15 @@ import {nativeItemKey,nativeItemRequiredKey,NATIVE_ITEM_ENTITY,NATIVE_STORAGE_OW
 
 const ID='kaleidoscope_world_liquor:custom_record';
 const PREFIX='RECORD_NETWORK_CLICK_QA';
-const snapshot=item=>item?{
+// Placement getters are forbidden in restricted before-event execution.
+// These fields can be read there; their absence is never a full-stack claim.
+const beforeSnapshot=item=>item?{
  type:item.typeId,amount:item.amount,name:item.nameTag,lore:item.getRawLore(),
  properties:item.getDynamicPropertyIds().sort().map(key=>[key,item.getDynamicProperty(key)]),
- keepOnDeath:item.keepOnDeath,lockMode:item.lockMode,
+ keepOnDeath:item.keepOnDeath,lockMode:item.lockMode
+}:null;
+const snapshot=item=>item?{
+ ...beforeSnapshot(item),
  canDestroy:item.getCanDestroy(),canPlaceOn:item.getCanPlaceOn()
 }:null;
 const inventory=p=>p.getComponent('minecraft:inventory').container;
@@ -75,7 +80,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
  try{
   s.acceptedEvent={tick:system.currentTick,block:event.block.typeId,face:String(event.blockFace),
    faceLocation:point(event.faceLocation),first:event.isFirstEvent,selectedSlot:event.player.selectedSlotIndex,
-   sneaking:event.player.isSneaking,held:snapshot(event.itemStack),
+   sneaking:event.player.isSneaking,held:beforeSnapshot(event.itemStack),heldScope:'before-safe fields; placement not read',
    position:point(event.player.location),head:point(event.player.getHeadLocation()),
    view:point(event.player.getViewDirection())};
   report('EVENT',s.acceptedEvent);
@@ -97,9 +102,12 @@ function read(){
  const carrier=index?.entity&&world.getEntity(index.entity),container=carrier?.getComponent('minecraft:inventory')?.container;
  // Read the actual native container, never reconstruct an item from row.record.
  const stored=container&&contents(container),after=contents(inventory(player)),event=s.acceptedEvent;
+ // Seed placement was read in prepare; stored placement is read above in this
+ // server script event. The before witness compares only its actual fields.
+ const {canDestroy,canPlaceOn,...expectedBefore}=s.expected;
  const checks={
   one_real_before_event:s.firstEvents===1&&!s.observerError&&!!event,
-  accepted_original_hand:!!event&&event.first!==false&&event.selectedSlot===0&&!event.sneaking&&same(event.held,s.expected),
+  accepted_original_hand:!!event&&event.first!==false&&event.selectedSlot===0&&!event.sneaking&&same(event.held,expectedBefore),
   vanilla_jukebox_route:event?.block==='minecraft:jukebox'&&block?.typeId==='minecraft:jukebox',
   north_face:event?.face.toLowerCase()==='north',
   selected_disc_paid:after[0]===null,
@@ -112,7 +120,7 @@ function read(){
  report('RESULT',{passed:Object.values(checks).every(Boolean),checks,preparedTick:s.preparedTick,
   observedTick:system.currentTick,firstEvents:s.firstEvents,repeatEvents:s.repeatEvents,
   observerError:s.observerError,acceptedEvent:event??null,inventoryBefore:s.before,inventoryAfter:after,
-  row,index,carrierId:carrier?.id,stored:stored??null,
+  row,index,carrierId:carrier?.id,stored:stored??null,seedPlacement:{canDestroy,canPlaceOn},
   scope:'Native event/debit/storage observations only; attach root network initialization and block-use trace to establish the network Player origin'});
 }
 
