@@ -98,7 +98,7 @@ W146只訪問fresh effect recipients、保留20tick TTL與空snapshot立即撤�
 | Freezer height／frost | source result-height 的 20 個 JVM cases、current freeze selection 和排程老化有有限 L1／L2，見 [W99](RELEASE-NOTES-0.1.99.md)及 [current-freezer-review](../data/current-freezer-review.json) | 原料展示仍僅三種 sprite；目前逐槽位置／yaw／普通物品乾濕高度已對照原方法數值，見 [current-freezer-review](../data/current-freezer-review.json)。任意 ItemStack、BlockItem 模型／scale、絕對 UV／light／lid／動畫、附魔外觀與真人仍待比較 |
 | Cabinet／furniture／wall record | 原 source slots／rotations／native metadata 和牆掛四向、取回、破壞 conservation 保留，見 [wall record](WALL-RECORD-FIX-20260929.md) | 真實點格、四向、透明、seat／waterlogging、models／animation／held view 等 L3 待接受 |
 | Record audio／outlines／accelerator | W190／W192／W194修正唱片歸還與方塊替換；W196改用既有原生storage保留接收的完整stack，修復改名／lore／DP丟失，插入支付／回復及各回收入口共用owner；新具名stack／替換／同世界保存有定向原生觀察，範圍見[取出與保存](JUKEBOX-REMOVAL.md)。兩首原OGG、equal-weight選曲及SoundInstance owner／牆掛所有權保留 | 接受手持物／支付回復仍屬來源callback測試，自然點擊未證實；舊列已丟metadata無法還原；原生custom record parser／自動化／comparator／hopper、初速／pickup delay，替換回收仍可延遲10tick；實際空間播放／停止／進出與重登；穿牆輪廓、Brew Accelerator取得／附魔書互動／cooldown仍未完整適配 |
-| Guide | W67 頁／三語、七入口、完整 preparations，公開 223／完整家族 227；完整 Cookery receiver 證據見家族索引 | 真人排版、鍵鼠／觸控／手柄、兩入口閱讀仍 pending |
+| Guide | 商品頁、三語與製作資料只查[當前payload](../runtime/BP/scripts/payload.js)；七入口及合併條目由[配對指南檢查](../tools/check_guide.mjs)核對，不沿用舊67／223／227統計。完整 Cookery receiver 證據見家族索引 | 真人排版、鍵鼠／觸控／手柄、兩入口閱讀未觀察，不另設交付等待 |
 | Forge／NeoForge26／foreign integration | current selected 18 shaker、5 freezer、25 drink records 和聲畫素材比較有來源記錄；六原 OGG 保留 | Forge event／cabinet automation／Create／Jade／SMC 尚未完整；26.1.2 branch effect registry、Luck、BlockDrops、automation 和配方另列適配 |
 
 ## 冗餘處理與歷史證據

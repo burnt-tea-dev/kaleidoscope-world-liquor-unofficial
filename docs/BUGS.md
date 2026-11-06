@@ -44,7 +44,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 - 酒櫃與家具：原格位、native item carrier、重啟／回滾修補保留；四向座位、玻璃、觸控／游標點選與實際展示仍待比較。
 - Respawn：87 個精確零碰撞 helper、新確認錨 yaw=0／forced=false 及 repeat／取消防線保留；未知來源不放寬，真 Player 床／錨／重生另驗。
 - 唱片：兩首原音檔、牆掛四向及取回保留；W168 已移除 32 station bank，實際聲場、播放／停止、進出與重登 lifecycle 仍待真人驗證。原生 custom record 的 parser compatibility、comparator、hopper 與完整 ItemStack 行為仍開放，見 [可重現證據](RELEASE-NOTES-0.1.168.md)。
-- 指南：67 個 W 商品頁、公開配對 223／完整家族 227 條目及三語接收已通過；玩家實際排版／返回、輸入和兩入口閱讀仍待接受。
+- 指南：商品頁與三語製作資料只查[當前payload](../runtime/BP/scripts/payload.js)，合併條目與七入口依[配對指南檢查](../tools/check_guide.mjs)，不沿用舊頁數／條目快照；玩家實際排版／返回、輸入和兩入口閱讀未觀察，不另設交付等待。
 
 ## 分支與歷史
 
