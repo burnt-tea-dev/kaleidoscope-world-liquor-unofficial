@@ -70,3 +70,47 @@ never native-revocation evidence. Never set Creative mode or add flight forces.
   types, engine/modules/flags, source, full raw logs and cleanup evidence. Remove
   only the temporary QA engine/world under the existing idle/flock checks and
   return the slot immediately. No restart, migration or full-family cycle.
+
+## Observed on 2026-11-06
+
+Probe source `30818d71f226bb4a24f93de44c666ef7ea7386a8` ran once on the exact
+candidate above. The stopped QA level.dat retained the four field values and
+types: commandsEnabled Byte 1, cheatsEnabled Byte 0, eduOffer Int 0 and
+educationFeaturesEnabled Byte 1. This proves retention of this profile; it does
+not equate it to every client Education setting.
+
+| Observation | Native result |
+| --- | --- |
+| Console cheat/context | `time add 1` succeeded; `help ability` returned ability syntax. The empty-selector query reported no targets. |
+| Script API cheat/context | `time add 1` succeeded; help succeeded. Empty-selector ability query returned successCount 0 without throwing. |
+| Player context | One native simulated Player stayed Survival; `testfor @s` returned successCount 1. |
+| Query false / true / false | Each query was accepted and returned successCount 1, without a readable permission value. |
+| Set false / repeat false | Each write was accepted and returned successCount 1. |
+| Set true / repeat true | Each write was accepted and returned successCount 1. |
+| Final set false | Accepted with successCount 1. |
+| Actual CommandResult shape | No own keys. Prototype keys were constructor and successCount; the only readable result field was numeric successCount. |
+| fly helper with false baseline | It set isFlying=true while mode remained Survival. The helper therefore cannot establish that mayfly was granted. The true-input stage was skipped. |
+| Revocation observation | isFlying was already false after the diagnostic reset. Its later false values are not proof of native revocation. |
+
+The commands are available and accept writes in this retail BDS profile. The
+reported query/count fields do not distinguish false from true, and repeated
+writes do not identify an earlier grant. No original-permission readback or safe
+ownership rule has been established. The simulated input tool also bypassed
+the tested false baseline. These are distinct limits; this is not a finding
+that retail BDS lacks the ability command or that Creative Flight is repaired.
+
+The script completed all 14 command observations, passed its cheat and Player
+context controls, and disconnected the QA Player. The engine stopped normally,
+exit 0, with no OOM, and the temporary engine/world was removed under the
+existing idle/shared-lock checks before the slot was returned. There was no
+restart, saved-world migration, formal runtime change or LIVE write.
+
+The outer host runner incorrectly classified the expected console message
+`No targets matched selector` from its initial empty-selector query as an
+engine error. Its preserved report therefore has observation_completed=false
+and the wrapper service exited 1, while the native script reports completed=true
+and the engine exited 0. Do not relabel that wrapper result as a clean pass.
+The owning host retained the original report/log and corrected the local
+runner's expected-command classification for future use, without another BDS
+run or rewriting the original evidence. The observed command/field and helper
+results above come from that same raw run.
