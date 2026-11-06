@@ -94,10 +94,12 @@ not equate it to every client Education setting.
 
 The commands are available and accept writes in this retail BDS profile. The
 reported query/count fields do not distinguish false from true, and repeated
-writes do not identify an earlier grant. No original-permission readback or safe
-ownership rule has been established. The simulated input tool also bypassed
-the tested false baseline. These are distinct limits; this is not a finding
-that retail BDS lacks the ability command or that Creative Flight is repaired.
+writes do not identify an earlier grant. This CommandResult/input probe did
+not establish original-permission readback or a safe ownership rule. The
+simulated input tool also bypassed the tested false baseline. These are distinct
+limits, not a finding that every native getter is absent. The later, separate
+[owner-bound native predicate probe](NATIVE-OWNER-MAYFLY-READER.md#observed-on-2026-11-06)
+is authoritative for that readback path; neither probe implements Creative Flight.
 
 The script completed all 14 command observations, passed its cheat and Player
 context controls, and disconnected the QA Player. The engine stopped normally,
