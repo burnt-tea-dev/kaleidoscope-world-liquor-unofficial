@@ -1,0 +1,498 @@
+{
+  "schema": 1,
+  "observed_date": "2026-11-06",
+  "native_input_commit": "41308d29d2d69cccb7597a8a18f5fe5691d9f543",
+  "world_liquor_version": "0.1.198",
+  "tavern_commit": "6c7539689664b87f3f66ef0e93d99f2d4bd1be69",
+  "tavern_version": "0.6.203",
+  "engine": "1.26.60.6",
+  "api": "@minecraft/server 2.12.0-beta",
+  "qa_api": "@minecraft/server-gametest 1.0.0-beta",
+  "experiments": [
+    "gametest",
+    "upcoming_creator_features"
+  ],
+  "passed": true,
+  "phases": [
+    {
+      "phase": "first",
+      "passed": true,
+      "checks": [
+        {
+          "name": "no real or leftover QA Players",
+          "passed": true
+        },
+        {
+          "name": "normal teleport begins during a real accumulated fall",
+          "passed": true
+        },
+        {
+          "name": "normal Player teleport reaches the absolute target",
+          "passed": true
+        },
+        {
+          "name": "normal teleport clears native falling flag",
+          "passed": true
+        },
+        {
+          "name": "normal teleport clears horizontal motion across two native ticks",
+          "passed": true
+        },
+        {
+          "name": "old downward velocity is not carried into the next two ticks",
+          "passed": true
+        },
+        {
+          "name": "native Player lands with only the new fall damage",
+          "passed": true
+        },
+        {
+          "name": "same_dimension_keep_inventory resolves a supported anchor",
+          "passed": true
+        },
+        {
+          "name": "same_dimension_keep_inventory uses the real production effect and native destination",
+          "passed": true
+        },
+        {
+          "name": "same_dimension_keep_inventory applies Hunger 300 tick amplifier zero",
+          "passed": true
+        },
+        {
+          "name": "same_dimension_keep_inventory preserves health and clears old motion",
+          "passed": true
+        },
+        {
+          "name": "same_dimension_keep_inventory consumes only the required charge",
+          "passed": true
+        },
+        {
+          "name": "cross_dimension_consume_anchor resolves a supported anchor",
+          "passed": true
+        },
+        {
+          "name": "cross_dimension_consume_anchor uses the real production effect and native destination",
+          "passed": true
+        },
+        {
+          "name": "cross_dimension_consume_anchor applies Hunger 300 tick amplifier zero",
+          "passed": true
+        },
+        {
+          "name": "cross_dimension_consume_anchor preserves health and clears old motion",
+          "passed": true
+        },
+        {
+          "name": "cross_dimension_consume_anchor consumes only the required charge",
+          "passed": true
+        },
+        {
+          "name": "no QA Player remains",
+          "passed": true
+        }
+      ],
+      "observations": [
+        {
+          "kind": "normal_teleport",
+          "before": {
+            "dimension": "minecraft:overworld",
+            "position": {
+              "z": 0.8140210509300232,
+              "y": 84.65618133544922,
+              "x": 1.4420632123947144
+            },
+            "velocity": {
+              "z": 0.012899041175842285,
+              "y": -0.9054336547851562,
+              "x": 0.038697123527526855
+            },
+            "ground": false,
+            "falling": true,
+            "rotation": {
+              "y": 0,
+              "x": 0
+            },
+            "health": 20,
+            "hunger": null,
+            "tick_offset": 0
+          },
+          "after": {
+            "dimension": "minecraft:overworld",
+            "position": {
+              "z": 0.5,
+              "y": 84.65618133544922,
+              "x": 4.5
+            },
+            "velocity": {
+              "z": 0,
+              "y": 0,
+              "x": 0
+            },
+            "ground": false,
+            "falling": false,
+            "rotation": {
+              "y": 90,
+              "x": 0
+            },
+            "health": 20,
+            "hunger": null,
+            "tick_offset": 0
+          },
+          "following": [
+            {
+              "dimension": "minecraft:overworld",
+              "position": {
+                "z": 0.5,
+                "y": 84.65618133544922,
+                "x": 4.5
+              },
+              "velocity": {
+                "z": 0,
+                "y": 0,
+                "x": 0
+              },
+              "ground": false,
+              "falling": false,
+              "rotation": {
+                "y": 90,
+                "x": 0
+              },
+              "health": 20,
+              "hunger": null,
+              "tick_offset": 1
+            },
+            {
+              "dimension": "minecraft:overworld",
+              "position": {
+                "z": 0.5,
+                "y": 84.65618133544922,
+                "x": 4.5
+              },
+              "velocity": {
+                "z": 0,
+                "y": 0,
+                "x": 0
+              },
+              "ground": false,
+              "falling": false,
+              "rotation": {
+                "y": 90,
+                "x": 0
+              },
+              "health": 20,
+              "hunger": null,
+              "tick_offset": 2
+            }
+          ],
+          "final": {
+            "dimension": "minecraft:overworld",
+            "position": {
+              "z": 0.5,
+              "y": 81,
+              "x": 4.5
+            },
+            "velocity": {
+              "z": 0,
+              "y": 0,
+              "x": 0
+            },
+            "ground": true,
+            "falling": false,
+            "rotation": {
+              "y": 90,
+              "x": 0
+            },
+            "health": 19,
+            "hunger": null,
+            "tick_offset": 15
+          },
+          "hurt": [
+            {
+              "cause": "fall",
+              "damage": 1,
+              "tick_offset": 12
+            }
+          ],
+          "referenceControlDamage": 7
+        },
+        {
+          "kind": "same_dimension_keep_inventory",
+          "plan": {
+            "position": {
+              "x": 10.5,
+              "y": 80,
+              "z": 9.5
+            },
+            "yaw": -4.9415598368796054e-06,
+            "pitch": 0
+          },
+          "before": {
+            "dimension": "minecraft:nether",
+            "position": {
+              "z": 0.5400000214576721,
+              "y": 80.27159881591797,
+              "x": 0.6200000047683716
+            },
+            "velocity": {
+              "z": 0.04000002145767212,
+              "y": 0.02159881591796875,
+              "x": 0.12000000476837158
+            },
+            "ground": false,
+            "falling": false,
+            "rotation": {
+              "y": 0,
+              "x": 0
+            },
+            "health": 20,
+            "hunger": null,
+            "tick_offset": 0
+          },
+          "after": {
+            "dimension": "minecraft:nether",
+            "position": {
+              "z": 9.5,
+              "y": 80,
+              "x": 10.5
+            },
+            "velocity": {
+              "z": 0,
+              "y": 0,
+              "x": 0
+            },
+            "ground": false,
+            "falling": false,
+            "rotation": {
+              "y": 0,
+              "x": 0
+            },
+            "health": 20,
+            "hunger": {
+              "amplifier": 0,
+              "duration": 300
+            },
+            "tick_offset": 0
+          },
+          "following": [
+            {
+              "dimension": "minecraft:nether",
+              "position": {
+                "z": 9.5,
+                "y": 80,
+                "x": 10.5
+              },
+              "velocity": {
+                "z": 0,
+                "y": 0,
+                "x": 0
+              },
+              "ground": false,
+              "falling": false,
+              "rotation": {
+                "y": 0,
+                "x": 0
+              },
+              "health": 20,
+              "hunger": {
+                "amplifier": 0,
+                "duration": 299
+              },
+              "tick_offset": 1
+            },
+            {
+              "dimension": "minecraft:nether",
+              "position": {
+                "z": 9.5,
+                "y": 80,
+                "x": 10.5
+              },
+              "velocity": {
+                "z": 0,
+                "y": 0,
+                "x": 0
+              },
+              "ground": false,
+              "falling": false,
+              "rotation": {
+                "y": 0,
+                "x": 0
+              },
+              "health": 20,
+              "hunger": {
+                "amplifier": 0,
+                "duration": 298
+              },
+              "tick_offset": 2
+            }
+          ],
+          "hurt": [],
+          "anchorRemaining": 2
+        },
+        {
+          "kind": "cross_dimension_consume_anchor",
+          "plan": {
+            "position": {
+              "x": 14.5,
+              "y": 80,
+              "z": 9.5
+            },
+            "yaw": -4.9415598368796054e-06,
+            "pitch": 0
+          },
+          "before": {
+            "dimension": "minecraft:overworld",
+            "position": {
+              "z": 0.5400000214576721,
+              "y": 81.27159881591797,
+              "x": 0.6200000047683716
+            },
+            "velocity": {
+              "z": 0.04000002145767212,
+              "y": 0.02159881591796875,
+              "x": 0.12000000476837158
+            },
+            "ground": false,
+            "falling": false,
+            "rotation": {
+              "y": 0,
+              "x": 0
+            },
+            "health": 20,
+            "hunger": null,
+            "tick_offset": 0
+          },
+          "after": {
+            "dimension": "minecraft:nether",
+            "position": {
+              "z": 9.5,
+              "y": 80,
+              "x": 14.5
+            },
+            "velocity": {
+              "z": 0.04000002145767212,
+              "y": 0.02159881591796875,
+              "x": 0.12000000476837158
+            },
+            "ground": false,
+            "falling": false,
+            "rotation": {
+              "y": 0,
+              "x": 0
+            },
+            "health": 20,
+            "hunger": {
+              "amplifier": 0,
+              "duration": 300
+            },
+            "tick_offset": 0
+          },
+          "following": [
+            {
+              "dimension": "minecraft:nether",
+              "position": {
+                "z": 9.5,
+                "y": 80,
+                "x": 14.5
+              },
+              "velocity": {
+                "z": 0,
+                "y": 0,
+                "x": 0
+              },
+              "ground": false,
+              "falling": false,
+              "rotation": {
+                "y": 0,
+                "x": 0
+              },
+              "health": 20,
+              "hunger": {
+                "amplifier": 0,
+                "duration": 299
+              },
+              "tick_offset": 1
+            },
+            {
+              "dimension": "minecraft:nether",
+              "position": {
+                "z": 9.5,
+                "y": 80,
+                "x": 14.5
+              },
+              "velocity": {
+                "z": 0,
+                "y": 0,
+                "x": 0
+              },
+              "ground": false,
+              "falling": false,
+              "rotation": {
+                "y": 0,
+                "x": 0
+              },
+              "health": 20,
+              "hunger": {
+                "amplifier": 0,
+                "duration": 298
+              },
+              "tick_offset": 2
+            }
+          ],
+          "hurt": [],
+          "anchorRemaining": 1
+        }
+      ],
+      "normal_stop": true,
+      "quit_correctly": true,
+      "engine_exit_code": 0,
+      "players_after": 0,
+      "content_errors": [],
+      "oom": 0
+    },
+    {
+      "phase": "restart",
+      "passed": true,
+      "checks": [
+        {
+          "name": "no real or leftover QA Players",
+          "passed": true
+        },
+        {
+          "name": "same QA marker and anchors restored",
+          "passed": true
+        },
+        {
+          "name": "keepInventory anchor retained two charges after restart",
+          "passed": true
+        },
+        {
+          "name": "consumed anchor retained one charge after restart",
+          "passed": true
+        },
+        {
+          "name": "no QA Player remains",
+          "passed": true
+        }
+      ],
+      "observations": [],
+      "normal_stop": true,
+      "quit_correctly": true,
+      "engine_exit_code": 0,
+      "players_after": 0,
+      "content_errors": [],
+      "oom": 0
+    }
+  ],
+  "reference_control": {
+    "evidence": "captain-fall-teleport-20261106.json",
+    "case": "player/control",
+    "fall_damage": 7,
+    "rerun": false
+  },
+  "anchor_rollback": "Production source callback fault regression; no failed native teleport was injected in this Player QA.",
+  "scope": "Native Survival simulated Players, normal transport and actual production applyEffect using a declared supported anchor context. One QA world saved and normally restarted to read the actual anchor charges 2 and 1. No drink input, heard sound, real client packet phase, full-family migration or LIVE claim.",
+  "qa_removed": true,
+  "native_slot_returned": true,
+  "client": false,
+  "live_modified": false
+}

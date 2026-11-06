@@ -73,8 +73,10 @@ permutation and rethrows; destination sound/Hunger are only after success.
 
 Official artifacts used for this review: [Minecraft 1.21.1 client](https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar)
 and [mappings](https://piston-data.mojang.com/v1/objects/2244b6f072256667bcd9a73df124d6c58de77992/client.txt).
-The matching 1.20.1 artifacts are selected by Mojang's fixed-version metadata;
-both downloads were verified against its published SHA-1. No third-party JAR,
+[Minecraft 1.20.1 client](https://piston-data.mojang.com/v1/objects/0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838/client.jar)
+and [mappings](https://piston-data.mojang.com/v1/objects/6c48521eed01fe2e8ecdadbd5ae348415f3c47da/client.txt)
+were selected by Mojang's fixed-version metadata; both versions' downloads
+were verified against its published SHA-1. No third-party JAR,
 full class body or private world is included in this repository.
 
 `JavaRespawnOracle.java` executes the reviewed numeric expressions independently

@@ -1,6 +1,6 @@
 ## 0.1.198 — 2026-11-06
 
-Use the supported normal Player teleport path for Respawn. Both maintained Java clients clear XYZ motion for the author effect’s absolute-position packet; do not pass the unsupported Player keepVelocity option or invent replacement motion. Restore the original consumed-anchor permutation when teleport throws, and only give destination feedback and Hunger after success. Resolver, saved metadata, UUIDs and exact T203/G238 peers remain unchanged. Targeted Player transport/effect and affected-anchor reload evidence is pending.
+Use the supported normal Player teleport path for Respawn. Both maintained Java clients clear XYZ motion for the author effect’s absolute-position packet; do not pass the unsupported Player keepVelocity option or invent replacement motion. Restore the original consumed-anchor permutation when teleport throws, and only give destination feedback and Hunger after success. Resolver, saved metadata, UUIDs and exact T203/G238 peers remain unchanged. Targeted native Player transport/effect and same-QA anchor reload checks passed (first18/restart5). Source fault coverage verifies anchor recovery on a transport exception. Client packet phases, drink input, heard sound and complete-family deployment remain outside this evidence; see docs/RESPAWN-RUNTIME-SOURCE-ADAPTER.md.
 
 ## 0.1.197 — 2026-11-06
 

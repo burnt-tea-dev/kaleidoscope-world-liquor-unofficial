@@ -1,6 +1,6 @@
 # Respawn：Java 1.21.1 resolver 與 Native adapter
 
-真正的 `effects.js` Player Respawn入口已接到原作resolver。W198另修合法ready路徑的原生Player傳送拒絕與失敗扣錨：使用正常Player teleport參數，若傳送拋錯就恢復剛扣的原生anchor permutation。新的Player效果／落地及同QA兩錨重啟觀察尚待執行；不是完整Java或client還原聲明。
+真正的 `effects.js` Player Respawn入口已接到原作resolver。W198另修合法ready路徑的原生Player傳送拒絕與失敗扣錨：使用正常Player teleport參數，若傳送拋錯就恢復剛扣的原生anchor permutation。新Player效果／落地及同QA兩錨重啟共23項原生檢查通過，範圍見下節；不是完整Java或client還原聲明。
 
 ## 來源
 
@@ -67,6 +67,18 @@ Native permutation 與 Java properties 的已知對應逐欄限制可能 states�
 
 實體判定只列官方 Native 同名且 Java `canBeCollidedWith=false` 的 97 個 counterparts；有實際 `minecraft:item` component 的掉落物另有明確映射。牛、玩家及普通 minecart 等不會因出現在遠處而阻擋 default。Boat／ChestBoat 的 bounds 由來源固定 1.375F×.5625F 算，共乘樹用穩定 Native riding relation 對應；不讀 Native getAABB。Shulker 先用 source scale≤3／physicalPeek 0..1 的所有可能 bounds 證明遠處不相關，重疊時缺少 peek/alive/vehicle 資料仍要求 provider，沒有把 union 本身當成碰撞。未知 addon 類別需宣告 source bounds／排除事實，無法用名稱或健康值猜它的 Java class。
 
+## W198正式Player傳送與失敗回復
+
+修前兩個來源反例直接執行`effects.js applyEffect → safeRespawn → applyJavaRespawn`：合法ready路徑遇到已原生確認的Player keepVelocity拒絕；另一個傳送例外使anchor charge2→1而玩家未移動。immutable原生permutation的來源fixture現在能觀察扣次及回復，不只記錄setter呼叫。來源回歸驗證正常參數與傳送失敗後charge恢復2、原錯重拋，且沒有目的地音效或Hunger；其他既有resolver／metadata／family案例沿實際受影響範圍通過。
+
+[原生probe](../tests/native/respawn-player-probe.js)在官方BDS1.26.60.6／server2.12.0-beta、QA gametest1.0.0-beta、原實驗與完整W198＋固定T203上執行。first18／同QA restart5通過，[實際樣本](evidence/respawn-player-20261106.json)保留相對tick：
+
+- 正常Player傳送前Y速度約−0.9054、XZ非零、原生falling=true；傳送後位置正確、XYZ速度0／falling=false，後兩tick也為0。之後真落地只受1點新fall傷害；未重跑的原Player控制為7點，沒有取消hurt、改血量或手算fallDistance。
+- 正式applyEffect在合法declared anchor context中完成同維度keepInventory=true不扣次、跨維度keepInventory=false扣一次；目的地、Hunger300／amp0及血量20保留。跨維度同tick getter仍顯示先前速度，下1／2tick才全0；不冒稱所有維度的即時getter時序相同。
+- 同一世界正常stop後restart，兩個真Nether anchor的charge2／1仍在。兩次engine exit0／Quit correctly、players0、內容errors[]／OOM0；自己的QA世界／包／引擎連結已清，時段歸還。
+
+傳送例外回復是正式來源故障測試；本輪Native成功路徑沒有注入失敗傳送。QA直接呼叫正式Player效果入口，沒有真人喝酒或客戶端；音效保持來源呼叫／參數／成功順序並被API接受，不等於聽感與封包時序已驗。完整家族保存／部署仍交共同流程。
+
 ## 平台缺口與客戶端對照
 
 | 狀況 | 保留的限制 |
@@ -79,7 +91,7 @@ Native permutation 與 Java properties 的已知對應逐欄限制可能 states�
 | dynamic shapes | Dismount EMPTY context 的 powder snow／scaffolding 具有確定來源；default living context 不套用 EMPTY 觀測。Bamboo/dripstone offsets、piston progress、shulker block entity 要 source facts/provider |
 | source pose／實體 bounds | default ordinary Native standing 由穩定 flags 對應；非站立或自訂來源幾何需 provider。Native crouching/crawling/scale 與 Java pose 尚未完整真人驗證 |
 | Native RNG | 預設 Native Math.random 均勻索引，沒有和 Java world RandomSource 共用種子／序列；source traversal及 draw 次數保留，跨平台相同随机世界序列仍未實現 |
-| fallDistance／封包 | W198移除Player不支援的keepVelocity；Java client的原absolute XYZ packet會清XYZ速度，不能把server暫存delta誤當保速要求。使用正常原生teleport，不加clearVelocity／補力或假fallDistance；新的Native Player前後／下2tick與真落地觀察待完成，實際client封包階段仍未驗證 |
+| fallDistance／封包 | W198移除Player不支援的keepVelocity；Java client的原absolute XYZ packet會清XYZ速度，不能把server暫存delta誤當保速要求。正常原生teleport的Player前後／下2tick與真落地已在上節通過；無clearVelocity／補力或假fallDistance，實際client封包階段仍未驗證 |
 | 音效／畫面 | 使用原作已收錄的 chorus fruit 樣本與 source volume/pitch/order；client 順序、畫面與真人移動不因純 JS fixture 通過就算驗收 |
 
 真人對照場景：Nether 相同位置有電量錨＋keepInventory=true，喝 Respawn 酒；比較第一 North 落點、看向錨的方向、起點／終點音效與 Hunger。再 keepInventory=false 重新建立已宣告的 nonforced 點，確認只扣一次電量。Overworld 床朝北，分別以 +90/−90 設點後轉身喝酒，應採不同 source 第一側；舊床點沒有 metadata 時要保留 unknown。最後新世界 default spawn radius=0 的普通石地與有水表面，分別確認 column 成功與 sentinel fallback 未假造。
