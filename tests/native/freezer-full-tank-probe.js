@@ -33,7 +33,7 @@ async function observe(){
    if(!expected){
     check('new position has no machine row',world.getDynamicProperty(key)===undefined);
     b.setPermutation(BlockPermutation.resolve(N+':freezer',{[N+':open']:true}));
-    world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid:'minecraft:water',remaining:0,output:0}));
+    world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid:'minecraft:water',remaining:0,output:0,redstonePowered:false}));
     const item=new ItemStack(config.id);item.nameTag='complete '+config.id;item.setLore(['full tank fallback']);item.setDynamicProperty('freezer_full_tank_qa:serial',index+1);item.setDynamicProperty('freezer_full_tank_qa:vector',{x:1,y:2,z:3});item.keepOnDeath=true;item.setCanDestroy(['minecraft:stone']);
     inventory.setItem(4,item);const before=snapshot(inventory.getItem(4));
     check('native mode matches fixture',player.getGameMode()===config.mode);
@@ -52,12 +52,15 @@ async function observe(){
     // Native chunk initialization may add the independent redstone latch.
     // Compare the affected input/tank/craft state, not unrelated row fields.
     check('same bucket metadata and full tank after restart',['type','input','fluid','remaining','output'].every(field=>JSON.stringify(state[field])===JSON.stringify(old.state[field]))&&JSON.stringify(actual)===JSON.stringify(old.metadata));
+    // Restore the fixture's open-lid prerequisite after native load handling.
+    // Lid/redstone lifecycle is outside this bucket-admission observation.
+    const lidBefore=b.permutation.getState(N+':open');b.setPermutation(b.permutation.withState(N+':open',true));
     callbacks.onPlayerInteract({block:b,player});
     const items=[];for(let slot=0;slot<inventory.size;slot++){const item=inventory.getItem(slot);if(item)items.push(snapshot(item));}
     const after=JSON.parse(world.getDynamicProperty(key));
     check('empty hand retrieves exactly the saved bucket',items.length===1&&JSON.stringify(items[0])===JSON.stringify(old.metadata));
     check('input retired without draining tank',after.input.length===0&&after.fluid==='minecraft:water'&&world.getDynamicProperty(nativeItemKey(key))===undefined);
-    observations.push({mode:String(config.mode),restored:actual,returned:items[0],tank:after.fluid});
+    observations.push({mode:String(config.mode),restored:actual,returned:items[0],tank:after.fluid,lidBefore});
    }
    player.disconnect();player=undefined;await wait(2);check('QA Player disconnected',world.getAllPlayers().length===0);
   }
