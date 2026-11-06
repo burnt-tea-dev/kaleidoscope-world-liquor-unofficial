@@ -37,7 +37,7 @@ for(const invalidPersonalSpawn of [false,true])test(`production freezer input ca
  assert.equal(result.status,'ready');assert.equal(result.branch,'shared-column');
  assert.deepEqual(result.position,{x:.5,y:64,z:.5});
  assert.deepEqual(f.calls.map(row=>row[0]),['teleport','effect']);
- assert.equal(f.calls[0][2].keepVelocity,true);
+ assert.equal('keepVelocity' in f.calls[0][2],false);
  assert.deepEqual(f.calls[1],['effect','hunger',300,{amplifier:0}]);
  assert.equal(f.dimension.sounds.length,2);
  assert.equal(world.getDynamicProperty(nativeItemKey(f.key)),before);

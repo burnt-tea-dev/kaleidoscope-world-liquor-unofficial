@@ -139,6 +139,7 @@ jobs:
           node --check tests/native/elbow-velocity-control.js
           node --check tests/native/elbow-source-velocity.js
           node --check tests/native/respawn-block-probe.js
+          node --check tests/native/respawn-player-probe.js
           node tools/respawn/check_numeric_catalog.mjs
           python tools/check_release.py
           python tools/build_release.py

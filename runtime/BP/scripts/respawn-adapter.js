@@ -417,12 +417,20 @@ export function applyJavaRespawn(player,world,sound='kaleidoscope_world_liquor.j
  player.dimension.playSound(sound,player.location,{volume:1,pitch:1});
  const keepInventory=world.gameRules?.keepInventory;
  const result=resolveJavaRespawn(player,world,undefined,keepInventory);if(result.status!=='ready')return result;
- if(result.consumeAnchor){const {block,charges}=result.consumeAnchor;block.setPermutation(block.permutation.withState('respawn_anchor_charge',charges-1));}
- player.teleport(result.position,{dimension:result.dimension,rotation:{x:result.pitch,y:result.yaw},keepVelocity:true});
+ const anchor=result.consumeAnchor,previousAnchor=anchor?.block.permutation;
+ if(anchor)anchor.block.setPermutation(previousAnchor.withState('respawn_anchor_charge',anchor.charges-1));
+ try{
+  // Both Java clients clear XYZ motion for these absolute-position packets.
+  // Bedrock Player teleportation rejects keepVelocity; use its normal path.
+  player.teleport(result.position,{dimension:result.dimension,rotation:{x:result.pitch,y:result.yaw}});
+ }catch(error){
+  if(anchor)anchor.block.setPermutation(previousAnchor);
+  throw error;
+ }
  player.dimension.playSound(sound,player.location,{volume:1,pitch:1});
  player.addEffect('hunger',300,{amplifier:0});
- // Stable Native exposes no writable fallDistance. Do not clear velocity to
- // pretend this source field reset, or label packets/client visuals verified.
+ // Native fall-reset and movement phases require the targeted Player probe;
+ // no synthetic velocity or fall-distance replacement is applied here.
  return result;
 }
 const installedRespawn=new WeakMap();

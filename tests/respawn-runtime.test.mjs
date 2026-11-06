@@ -9,7 +9,10 @@ import {AcceptedHurtFeedback} from '../runtime/BP/scripts/accepted-hurt-feedback
 import {JavaKillCredit} from '../runtime/BP/scripts/kill-credit.js';
 function fixture({dimension='nether',keepInventory=true,spawn=true}={}){
  const calls=[],overrides=new Map(),key=p=>[p.x,p.y,p.z].join(',');
- const makeBlock=(id,p,states={})=>({typeId:id,location:{...p},dimension:d,isWaterlogged:false,permutation:{getAllStates:()=>({...states}),getState:name=>states[name],withState:(name,value)=>{calls.push(['charge-state',name,value]);return {name,value};}},setPermutation:value=>calls.push(['charge',value])});
+ const makeBlock=(id,p,states={})=>{
+  const permutation=values=>({getAllStates:()=>({...values}),getState:name=>values[name],withState:(name,value)=>{calls.push(['charge-state',name,value]);return {...permutation({...values,[name]:value}),name,value};}});
+  const block={typeId:id,location:{...p},dimension:d,isWaterlogged:false,permutation:permutation(states),setPermutation:value=>{calls.push(['charge',value]);block.permutation=value;}};return block;
+ };
  const d={id:'minecraft:'+dimension,getBlock:p=>overrides.get(key(p))??makeBlock(p.y<=63?'minecraft:stone':'minecraft:air',p),getEntities:()=>[player],playSound:(id,at,options)=>calls.push(['sound',d.id,id,{...at},{...options}])};
  const source={id:'minecraft:overworld',playSound:(id,at,options)=>calls.push(['sound',source.id,id,{...at},{...options}])};
  const anchor=makeBlock('minecraft:respawn_anchor',{x:10,y:64,z:10},{respawn_anchor_charge:2});overrides.set('10,64,10',anchor);
@@ -39,7 +42,7 @@ function registeredProduction(f){
 test('actual production Respawn uses the first Java anchor candidate without forced/yaw/provider and preserves source sound/Hunger order',()=>{
  setJavaRespawnContextProvider(undefined);const f=fixture();production(f);
  assert.deepEqual(f.calls.map(row=>row[0]),['sound','teleport','sound','effect']);
- assert.deepEqual(f.calls[1][1],{x:10.5,y:64,z:9.5});assert.equal(f.calls[1][2].keepVelocity,true);
+ assert.deepEqual(f.calls[1][1],{x:10.5,y:64,z:9.5});assert.equal('keepVelocity' in f.calls[1][2],false);
  assert.equal(f.calls[1][2].rotation.x,0);assert.ok(Number.isFinite(f.calls[1][2].rotation.y));
  assert.equal(f.calls[0][1],'minecraft:overworld');assert.equal(f.calls[2][1],'minecraft:nether');
  assert.deepEqual(f.calls[3],['effect','hunger',300,{amplifier:0}]);
@@ -54,6 +57,26 @@ test('known nonforced charged anchor consumes once after resolution and before t
  const f=fixture({keepInventory:false});assert.equal(resolveJavaRespawn(f.player,f.world).status,'unknown');assert.equal(f.calls.length,0);
  setJavaRespawnContextProvider(()=>({metadata:()=>({forced:false})}));production(f);setJavaRespawnContextProvider(undefined);
  assert.deepEqual(f.calls.map(row=>row[0]),['sound','charge-state','charge','teleport','sound','effect']);assert.deepEqual(f.calls[1],['charge-state','respawn_anchor_charge',1]);
+});
+test('supported production Respawn accepts the native Player teleport boundary',()=>{
+ setJavaRespawnContextProvider(undefined);const f=fixture(),teleport=f.player.teleport;
+ f.player.teleport=(position,options)=>{
+  if(options.keepVelocity===true){const error=new Error('Unsupported functionality: keepVelocity is not supported for player teleportation.');error.name='UnsupportedFunctionalityError';throw error;}
+  return teleport(position,options);
+ };
+ assert.doesNotThrow(()=>production(f));
+ assert.deepEqual(f.calls.map(row=>row[0]),['sound','teleport','sound','effect']);
+ assert.deepEqual(f.player.location,{x:10.5,y:64,z:9.5});
+});
+test('supported production Respawn restores a consumed anchor if native teleport throws',()=>{
+ const f=fixture({keepInventory:false}),failure=new Error('native teleport failure');
+ setJavaRespawnContextProvider(()=>({metadata:()=>({forced:false})}));
+ f.player.teleport=()=>{assert.equal(f.anchor.permutation.getState('respawn_anchor_charge'),1);throw failure;};
+ try{assert.throws(()=>production(f),error=>error===failure);}finally{setJavaRespawnContextProvider(undefined);}
+ assert.equal(f.anchor.permutation.getState('respawn_anchor_charge'),2);
+ assert.deepEqual(f.player.location,{x:100,y:80,z:100});
+ assert.equal(f.calls.filter(row=>row[0]==='sound').length,1);
+ assert.equal(f.calls.some(row=>row[0]==='effect'),false);
 });
 test('a production observed anchor set enables Respawn without an external declaration when keepInventory is false',()=>{
  setJavaRespawnContextProvider(undefined);const f=fixture({keepInventory:false}),anchorPoint=f.player.getSpawnPoint();let point;

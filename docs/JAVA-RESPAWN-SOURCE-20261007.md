@@ -1,16 +1,11 @@
 # Respawn source selection core
 
-Authority: current World Liquor **NeoForge 1.21.1 1.1.11 / CurseForge file
-9066406**, `RespawnEffect.performEffect`, and official Mojang Minecraft 1.21.1
-`ServerPlayer`, `RespawnPosAngle`, `BedBlock`, `RespawnAnchorBlock`,
-`DismountHelper`, `BlockGetter`, `PlayerRespawnLogic` and `DimensionTransition`.
-The reviewed local author decompilation is under
-`full-java-parity-20261006/neoforge-111`; the official game archive and mappings
-are in that evidence directory. Source provenance is already recorded in
-`data/java-parity/neoforge-1.1.11/reference.json` and the acquisition metadata.
-The Java branch check from 2026-10-07 04:23 UTC still identifies that NeoForge
-release as current. Forge 1.20.1 1.1.12 uses a different fallback and must not
-be substituted for this branch.
+Authority reviewed 2026-11-06: maintained World Liquor **NeoForge 1.21.1
+1.1.12 / CurseForge file 9217896** and **Forge 1.20.1 1.1.13 / file 9217901**,
+each archive's `RespawnEffect.performEffect`, and the corresponding official
+Mojang game bytecode and mappings. The selected resolver follows 1.21.1;
+the Forge default-spawn fallback remains a separate source branch. Historical
+1.1.11 numeric fixtures retain their original provenance and scope.
 
 The author effect requires ServerPlayer. It plays the source chorus-fruit sound
 at volume/pitch 1, reads source-level keepInventory, obtains the native respawn
@@ -51,12 +46,36 @@ world border and actual player lifecycle. The stable Bedrock
 exposes only DimensionLocation through getSpawnPoint; it does not expose the
 Java forced flag or saved respawn angle. These facts must not be fabricated.
 
-Although the source transition's speed field is ZERO, ServerPlayer's reviewed
-changeDimension implementation does not apply that field to server velocity.
-Same-dimension teleportTo also preserves server deltaMovement. The original
-client absolute-position packet clears velocity components; client/server
-phase fidelity needs separate evidence. Do not equate transition speed ZERO
-with proof that a Bedrock clearVelocity call exactly reproduces the effect.
+## Actual transport and client motion
+
+Both maintained author branches use `ServerPlayer.teleportTo(x,y,z)` in the
+same dimension, then set server yaw/pitch. Minecraft 1.20.1 and 1.21.1 forward
+that call to the connection with `RelativeMovement.ROTATION`; X/Y/Z are absent.
+Forge's cross-dimension `teleportTo(ServerLevel,...)` and NeoForge's
+`changeDimension(DimensionTransition)` send an absolute-position packet without
+relative X/Y/Z flags. Both clients' `ClientPacketListener.handleMovePlayer`
+set each missing-axis velocity to zero before `setDeltaMovement`.
+
+The reviewed server methods do retain their temporary deltaMovement, and the
+1.21.1 transition speed field is ZERO without being applied by this server
+method. That is not a requirement to keep the player's old client velocity.
+The packet's verified client behavior is to clear XYZ motion. Exact network
+arrival, server/client tick phases and camera feedback remain separate from
+this bytecode fact; no real client run is claimed.
+
+W198 therefore uses normal native Player teleport options, without the
+unsupported `keepVelocity` field and without synthetic impulses. The native
+Player motion/fall-reset probe supplies the selected-engine evidence. Both
+author branches explicitly clear fallDistance after transport, play the
+destination chorus-fruit sound and apply Hunger 300 ticks at amplifier zero.
+On a native transport exception, the adapter restores a just-consumed anchor
+permutation and rethrows; destination sound/Hunger are only after success.
+
+Official artifacts used for this review: [Minecraft 1.21.1 client](https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar)
+and [mappings](https://piston-data.mojang.com/v1/objects/2244b6f072256667bcd9a73df124d6c58de77992/client.txt).
+The matching 1.20.1 artifacts are selected by Mojang's fixed-version metadata;
+both downloads were verified against its published SHA-1. No third-party JAR,
+full class body or private world is included in this repository.
 
 `JavaRespawnOracle.java` executes the reviewed numeric expressions independently
 in Java, including float trigonometry, atan approximation, integer overflow and
@@ -64,4 +83,8 @@ radius-zero/border cases. Its 60 recorded rows and selection regressions test
 the pure rules. They do not run a Minecraft player or verify real collision,
 drink entry, client visuals/audio, or complete Respawn parity.
 
-This is preparatory source logic under development/respawn, not wired into the production effect. The existing safeRespawn still requires the complete shape/metadata/chunk adapter. Do not describe this foundation or the Crazy fix as a working Respawn repair.
+The production `effects.js` Player-only Respawn branch calls
+`respawn-adapter.js.applyJavaRespawn`; the numeric foundation is no longer an
+unwired development-only route. Unknown shape/metadata/chunk facts still stop
+resolution. Actual transport validation and remaining scope belong to
+[the runtime adapter](RESPAWN-RUNTIME-SOURCE-ADAPTER.md).
