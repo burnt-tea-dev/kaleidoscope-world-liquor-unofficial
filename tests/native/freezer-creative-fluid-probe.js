@@ -38,7 +38,6 @@ async function observe(){
     const position={x:full?12:8,y:81,z:8},block=dimension.getBlock(position),key=freezerStorageKey(block);
     check('new readable QA position',!!block&&world.getDynamicProperty(key)===undefined);
     block.setPermutation(BlockPermutation.resolve(N+':freezer',{[N+':open']:true}));
-    world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid:'minecraft:water',remaining:0,output:0,redstonePowered:false}));
     player=gt.spawnSimulatedPlayer({dimension,x:position.x,y:81,z:10},'CreativeFluidQA',GameMode.Creative);await wait(2);
     const inventory=player.getComponent('minecraft:inventory').container;
     for(let slot=0;slot<inventory.size;slot++)inventory.setItem(slot,full?new ItemStack('minecraft:stone',64):undefined);
@@ -47,6 +46,11 @@ async function observe(){
     const bucket=new ItemStack('minecraft:bucket',3);bucket.nameTag='original empty buckets';bucket.setLore(['Creative fluid transfer']);bucket.keepOnDeath=true;bucket.setCanDestroy(['minecraft:stone']);
     inventory.setItem(4,bucket);player.selectedSlotIndex=4;
     check('native Creative mode and declared inventory capacity',player.getGameMode()===GameMode.Creative&&inventory.getItem(4)?.typeId==='minecraft:bucket'&&inventory.getItem(4)?.amount===3&&inventorySnapshot(inventory).filter(Boolean).length===(full?inventory.size:1));
+    // Native placement callbacks initialize the new machine during the wait.
+    // Establish the declared tank/lid only after that initialization finishes.
+    block.setPermutation(block.permutation.withState(N+':open',true));
+    world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid:'minecraft:water',remaining:0,output:0,redstonePowered:false}));
+    check('open full tank before the tested callback',block.permutation.getState(N+':open')===true&&JSON.parse(world.getDynamicProperty(key)).fluid==='minecraft:water');
     const before=inventorySnapshot(inventory);callbacks.onPlayerInteract({block,player});
     const after=inventorySnapshot(inventory),state=JSON.parse(world.getDynamicProperty(key));
     check('tank drained without ingredient insertion',state.fluid===null&&state.input.length===0);
