@@ -1,0 +1,53 @@
+{
+  "base_commit": "20cfe4169c5a1a95ff3e02940605b5af7aa6af77",
+  "runtime": "0.1.201",
+  "tavern_dependency": "0.6.205",
+  "tool": "Official Blockbench 5.2.2 Linux desktop",
+  "observed_at_utc": "2026-11-08",
+  "scope": "Editor preview only. No Minecraft client, local user computer, BDS, LIVE or runtime modification.",
+  "source_limit": "Official CF9217896 metadata read succeeded; download/9217896/file returned HTTP403. No new archive or current renderer comparison is claimed.",
+  "uuid_note": "The initial review scenes used random UUIDs. The committed generator uses deterministic UUIDs; all scene data is equal after UUID normalization.",
+  "scenes": [
+    {
+      "scene": "closed-occlusion.bbmodel",
+      "observed_scene_sha256": "c9857e12fbe258baf256432af17fe2cc11ab58bf412fbba83bc3112900c36460",
+      "reproducible_scene_sha256": "11aa8977db0ca028b3d34928e0464cee2e2805df9948c0d14bac7f1379197f33",
+      "equal_except_uuid": true
+    },
+    {
+      "scene": "dry-four-facings.bbmodel",
+      "observed_scene_sha256": "2425dbb058e7489760995a3e826e72c8fbf571f6cad1cb6f6ff48c92c5da0229",
+      "reproducible_scene_sha256": "e10be47b1b24b9314168a36ffdece8851656f3ec41d219021ae2925eadfb799b",
+      "equal_except_uuid": true
+    },
+    {
+      "scene": "pair-close.bbmodel",
+      "observed_scene_sha256": "879eb8e2dc58453bc92b99c0b626f1fcf9a820b8ea77a00435a2f70e66b2f3fd",
+      "reproducible_scene_sha256": "241f60ebc318e0d70478deed34ddd6fda37ab9e4725876c7ccbb3ce720429f1c",
+      "equal_except_uuid": true
+    },
+    {
+      "scene": "pair-open.bbmodel",
+      "observed_scene_sha256": "997e47b9df61e2dc5f6b45e6d557be02c7066c20ada832bf5f6d25b175ba8f4c",
+      "reproducible_scene_sha256": "41cda0964aeb296f490ec6f0a2384e0f72d216fa0b0015e87b121e8d80febb69",
+      "equal_except_uuid": true
+    },
+    {
+      "scene": "wet-four-facings.bbmodel",
+      "observed_scene_sha256": "78e98de81a272d8c240236c49f0dcb239961e66d10bb0aea1603e724366a3385",
+      "reproducible_scene_sha256": "352e7f7a25d6849c6d5ad7a9cd9919a7ad1d8c3d04792c79f66478c2b3a0b2d9",
+      "equal_except_uuid": true
+    }
+  ],
+  "screenshots": {
+    "closed-retained-contents-occluded.jpg": "6adfd993aedcf0f6836bd9a2231eb47f37e6d34c1aae9c0d635ab27c1115187f",
+    "closed-retained-contents-shell-hidden.jpg": "16aa35e0bcf39005228f597f3101b3df4572ffb7f64a0f356979062d75b0de56",
+    "dry-four-facings-isometric.jpg": "3fee9af291a8905dfb35697e7f1da375a1349de92ba1602cfe7de126bc859b51",
+    "dry-four-facings-top.jpg": "fe9431a384403817bf6fcad484e847ab9d821e58ba9d982f6483a710da2d58c7",
+    "pair-close-isometric.jpg": "ca545fbee8e1238db1acb2a1cc7c2cd04a3b251e47ff28a414d463b032e201f9",
+    "pair-open-south.jpg": "71cb1fed1118cd0988455da34e926caf6847be766951a98122bce0ec211d16aa",
+    "pair-open-top.jpg": "9bdb580dc2325ab34441d44e79fd5f1b5263ff0aca85d24feba327223cdb303f",
+    "wet-four-facings-isometric.jpg": "c620243560ba4cfbe72818b2500dc669bce555c4e1bd439cd4b54b798eefcc31",
+    "wet-four-facings-top.jpg": "d4022b1a8a793dac07d4345bb859763ea84d589048570926c5882d7e63b2011f"
+  }
+}

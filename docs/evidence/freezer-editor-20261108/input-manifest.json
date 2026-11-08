@@ -1,0 +1,37 @@
+{
+  "scope": "Editor-only source-derived composites; not Minecraft client rendering",
+  "coordinate": [
+    0,
+    64,
+    0
+  ],
+  "body_source": "Pinned NeoForge 1.1.9 fridge models and exact 128px texture",
+  "placement": "Current syncFreezerVisuals, separately tested against CF9066406 original-method oracle",
+  "inputs": {
+    "data/java-parity/neoforge-1.1.9/assets/kaleidoscope_world_liquor/models/block/fridge_close.json": "18dcb49c782fc6f49f5538058f9ebe275eca83b1bac71dd09b916a3bfd557554",
+    "data/java-parity/neoforge-1.1.9/assets/kaleidoscope_world_liquor/models/block/fridge_open.json": "281839ce3280f39ad091ee7022001dd10da1fec46a21cf0c1c5244ebdf421da0",
+    "data/java-parity/neoforge-1.1.9/assets/kaleidoscope_world_liquor/textures/block/fridge.png": "d748ad292210d515e570b272703316f4c823bad5e786b13ca7824a12215c58dc",
+    "runtime/BP/scripts/freezer-visuals.js": "3abf762fa1284a1c20c348bd688298cbf26eeb3cf8b9a11c61b32b802318f23d",
+    "runtime/RP/models/entity/freezer_blue_dye.geo.json": "952270b1a7415a4f2e7942d4595fd79dfaa761200e707ffe8c1cfe8c499e78ad",
+    "runtime/RP/models/entity/freezer_slime_ball.geo.json": "22f02461f9a4adcebe1e0bbcfd9605e46180ebe3479591a63e0421348b61aeb7",
+    "runtime/RP/models/entity/freezer_snowball.geo.json": "a67a9c29137e30556b100b69b0a6620917f0c2c96b040073d62cc03557339eee",
+    "runtime/RP/models/entity/freezer_water.geo.json": "7621edad84484ca0ca45abba9a003a12bf447fc6b30d602601e67170d4a20516",
+    "runtime/RP/models/entity/kwl_g_5b611b0754ffa64d.geo.json": "50ffdfcc9da7b56d0666f009a38dd3778ba95e66cacf0a648118e7f7c005f2d5",
+    "runtime/RP/models/entity/kwl_g_7c341bb644967296.geo.json": "b115cefd92e02bc78f9d2ed14109f4c88f6eba1282e03a109374491055f1d2a6",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__fridge_close.png": "d748ad292210d515e570b272703316f4c823bad5e786b13ca7824a12215c58dc",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__fridge_open.png": "d748ad292210d515e570b272703316f4c823bad5e786b13ca7824a12215c58dc",
+    "runtime/RP/textures/repair/freezer_blue_dye.png": "6cf7ce48373b5e4d1b42c36abdff0abc847eef2dd10c9886bc1a77903b66617d",
+    "runtime/RP/textures/repair/freezer_slime_ball.png": "206d06850fe5572fd5eda272ec25d92f67fe7cd8ec0a6d4b774b2af94f32b1d8",
+    "runtime/RP/textures/repair/freezer_snowball.png": "b65ca1f336576ed3e7bdbbe1aa8d802531a473aaa9770d009b1c3428ec5f44a5",
+    "runtime/RP/textures/repair/freezer_water.png": "5843e8826507c484dfc15d5d255843d041804bcaa2036ed137320610d7fb9af7",
+    "tools/freezer_editor_poses.mjs": "7fcfd0d36077e4fb30b4cb96b8e070342efa3d3343a84f46c90e98e7da2b4b8d",
+    "tools/freezer_editor_review.py": "162469eda3c4b729003a8186b0e4f7ad48cd586d54483dfc8e034e0b33783c14"
+  },
+  "outputs": {
+    "closed-occlusion.bbmodel": "11aa8977db0ca028b3d34928e0464cee2e2805df9948c0d14bac7f1379197f33",
+    "dry-four-facings.bbmodel": "e10be47b1b24b9314168a36ffdece8851656f3ec41d219021ae2925eadfb799b",
+    "pair-close.bbmodel": "241f60ebc318e0d70478deed34ddd6fda37ab9e4725876c7ccbb3ce720429f1c",
+    "pair-open.bbmodel": "41cda0964aeb296f490ec6f0a2384e0f72d216fa0b0015e87b121e8d80febb69",
+    "wet-four-facings.bbmodel": "352e7f7a25d6849c6d5ad7a9cd9919a7ad1d8c3d04792c79f66478c2b3a0b2d9"
+  }
+}
