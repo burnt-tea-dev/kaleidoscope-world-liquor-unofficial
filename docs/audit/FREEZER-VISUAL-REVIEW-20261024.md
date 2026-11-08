@@ -1,5 +1,7 @@
 # Freezer ingredient rendering review
 
+This is the October 24 source review. The [November 8 editor comparison](../evidence/freezer-editor-20261108/README.md) adds actual Blockbench screenshots for body UV, four-slot/four-facing dry/wet samples and closed-shell occlusion. It preserves the source-version and client-rendering limits below; it does not close the arbitrary-item display gap.
+
 The maintained Java authority is World Liquor NeoForge 1.1.11, CurseForge file 9066406, on Minecraft 1.21.1. The October 17 successor archives remain unavailable through the official download API; this review does not claim to adopt those releases. Source/package checks do not establish rendered-client parity.
 
 ## What Java renders
