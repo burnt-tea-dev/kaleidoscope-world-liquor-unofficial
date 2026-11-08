@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "date": "2026-11-08",
+  "application": "Blockbench 5.2.2 official Linux desktop",
+  "evidence_kind": "Native application screenshots of review-only source/canonical composites",
+  "minecraft_client_verified": false,
+  "runtime_changed": false,
+  "source_comparison": "40 cabinets and four lamp halves: zero-angle cube bounds, normalized UV half-turns, face presence, and RGBA texture pixels equal. Shared pendant top is counted twice.",
+  "screenshots": {
+    "birch-bar_cabinet.jpg": {
+      "sha256": "56b0f65abbb162e82c49a99b56793ff151e1cfe11bb154ad312b409f2eedd141",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "birch-bar_cabinet.bbmodel"
+    },
+    "birch-cellar_cabinet.jpg": {
+      "sha256": "64bebd1c52cf2ca3f616be0054f19a044d9937ebd9ff64032db2c0037a145258",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "birch-cellar_cabinet.bbmodel"
+    },
+    "cherry-bar_cabinet.jpg": {
+      "sha256": "1e58cb3d5d5ec562335d608d8f70b9d35a57ee4e87c7f0bf8a063b1048416efe",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "cherry-bar_cabinet.bbmodel"
+    },
+    "cherry-cellar_cabinet.jpg": {
+      "sha256": "c5f2da3c6f2176363fb1093f7331acf9a5cf759fd58fb6826f4b4ece64841fbe",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "cherry-cellar_cabinet.bbmodel"
+    },
+    "dark_oak-bar_cabinet.jpg": {
+      "sha256": "59837541ade64a2091459b8fa3d378898d14088e5e324459e5b705b0cf04b6cc",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "dark_oak-bar_cabinet.bbmodel"
+    },
+    "dark_oak-cellar_cabinet.jpg": {
+      "sha256": "5086f7c866d58c370b1626958e2f24ecc220e316d875de96c54f644e114c8320",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "dark_oak-cellar_cabinet.bbmodel"
+    },
+    "green-pendant.jpg": {
+      "sha256": "c243c4f98205b71ffef4d4ed94f905ca5e5430f3e5d1a24f17f3ee73c8a51c2a",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "green-pendant.bbmodel"
+    },
+    "oak-bar_cabinet.jpg": {
+      "sha256": "868c2fb3f903b254f55deb3c814d427e1d692bbed1691d43383aeeb2be0bff2b",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "oak-bar_cabinet.bbmodel"
+    },
+    "oak-cellar_cabinet.jpg": {
+      "sha256": "e73ae0469cf94b8829924518fe83cbe030bc91381026b63f07c95d24a3876d49",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "oak-cellar_cabinet.bbmodel"
+    },
+    "pink-pendant.jpg": {
+      "sha256": "a22d778770ccee2c9b13884373759b0f4db9b160cbb2462e5a20a85d49b8d722",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "pink-pendant.bbmodel"
+    },
+    "spruce-bar_cabinet.jpg": {
+      "sha256": "b2eff8cba6ede9d6e713f1d2625f8b83a5814e02aa188c71e7a36b1a44283405",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "spruce-bar_cabinet.bbmodel"
+    },
+    "spruce-cellar_cabinet.jpg": {
+      "sha256": "63c3cffc1a851b07db0161aa0649cdc5d4bf93999f5cafd8b4069f0cf1c319e6",
+      "dimensions": [
+        1188,
+        848
+      ],
+      "project": "spruce-cellar_cabinet.bbmodel"
+    }
+  },
+  "project_archive_sha256": "a09f9091714086d5d0fdb43a48e1b754e571177642f0508032a6feb9cbefab80",
+  "limitations": [
+    "Static isometric editor views only; not all possible viewpoints.",
+    "Java shade=false, cullface, translucent/emissive lighting and engine material behavior are not reproduced by the free-model review composites.",
+    "No Minecraft client, game-world interaction, content rendering, storage migration or LIVE validation was performed."
+  ]
+}
