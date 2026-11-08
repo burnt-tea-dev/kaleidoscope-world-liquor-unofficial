@@ -1,0 +1,310 @@
+[
+  {
+    "scene": "birch-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/single",
+    "cubes": 5,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "birch-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/left",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "birch-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/middle",
+    "cubes": 3,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "birch-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/right",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "birch-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/single",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "birch-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/left",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "birch-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/middle",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "birch-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/right",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "cherry-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/single",
+    "cubes": 5,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "cherry-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/left",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "cherry-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/middle",
+    "cubes": 3,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "cherry-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/right",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "cherry-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/single",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "cherry-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/left",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "cherry-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/middle",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "cherry-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/right",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "dark_oak-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/single",
+    "cubes": 5,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "dark_oak-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/left",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "dark_oak-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/middle",
+    "cubes": 3,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "dark_oak-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/right",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "dark_oak-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/single",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "dark_oak-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/left",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "dark_oak-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/middle",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "dark_oak-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/right",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "green-pendant.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/deco/green_pendant_lamp/bottom",
+    "canonical": "CANONICAL bottom",
+    "cubes": 8,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "green-pendant.bbmodel",
+    "source": "JAVA kaleidoscope_tavern:block/deco/yellow_pendant_lamp/top",
+    "canonical": "CANONICAL top",
+    "cubes": 6,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "oak-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/single",
+    "cubes": 5,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "oak-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/left",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "oak-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/middle",
+    "cubes": 3,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "oak-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/right",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "oak-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/single",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "oak-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/left",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "oak-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/middle",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "oak-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/right",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "pink-pendant.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/deco/pink_pendant_lamp/bottom",
+    "canonical": "CANONICAL bottom",
+    "cubes": 8,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "pink-pendant.bbmodel",
+    "source": "JAVA kaleidoscope_tavern:block/deco/yellow_pendant_lamp/top",
+    "canonical": "CANONICAL top",
+    "cubes": 6,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "spruce-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/single",
+    "cubes": 5,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "spruce-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/left",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "spruce-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/middle",
+    "cubes": 3,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "spruce-bar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/right",
+    "cubes": 4,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "spruce-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/single",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/single",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "spruce-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/left",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/left",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "spruce-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/middle",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/middle",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  },
+  {
+    "scene": "spruce-cellar_cabinet.bbmodel",
+    "source": "JAVA kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/right",
+    "canonical": "CANONICAL kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/right",
+    "cubes": 9,
+    "geometry_uv_texture_pixels_equal": true
+  }
+]

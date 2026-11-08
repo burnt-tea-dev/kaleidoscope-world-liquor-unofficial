@@ -1,0 +1,370 @@
+{
+  "schema": 1,
+  "source_commit": "e66a4540e04e29f68f3673ebb9c59b53e8868543",
+  "runtime_version": "0.1.201",
+  "host_dependency": "0.6.205",
+  "source_selection": {
+    "author_file_id": 9217896,
+    "archive_sha256": "d963089ad0a7f99a8950171d76913cfeea99a0126ee12b16c72c3162f8545da3",
+    "note": "Selected current-author fixtures already in the repository. Full current archive was not freshly downloaded; inherited unchanged model fixtures are hashed individually below."
+  },
+  "inputs": {
+    "data/current-author-assets.json": "f551424a6be821421c95b6a9b670f3800ecdbf75e10498caae0263c47b9be470",
+    "runtime/BP/blocks/birch_bar_cabinet.json": "f1d5214fee25514ad60368fdd48de2a8734c40511e95c6d76baf0128e659233f",
+    "runtime/BP/blocks/birch_cellar_cabinet.json": "cc64ad78eac2d09f12042d695f0ce538b196cb9139ffa1c925b3997cc27297c0",
+    "runtime/BP/blocks/cherry_bar_cabinet.json": "23f6740c47c9abb1c6ef35fe90e82f6681593083a65af108801645a6fcdb5dad",
+    "runtime/BP/blocks/cherry_cellar_cabinet.json": "fee1c2fcb7f8d56878b0a710c83ded778cccf0e6e5f9eac84f501c6874b7b5bc",
+    "runtime/BP/blocks/dark_oak_bar_cabinet.json": "d3de933909a61271a64a9d5e0f050d292284a4d1fe8af11b32cb4ebf9db1eb38",
+    "runtime/BP/blocks/dark_oak_cellar_cabinet.json": "76e030244b26d11958dc36cf2337d7cb1ff7215151d72c7f93c2d8df2d646670",
+    "runtime/BP/blocks/green_pendant_lamp.json": "d8e13d3cce4a25ebb50f8709ac38fb74a53adfed852c78d104a818d4d32e58af",
+    "runtime/BP/blocks/oak_bar_cabinet.json": "45974ce29e1fd1357af12503c19cd3ce405224dc91fbe55e62cc94dd247cbb27",
+    "runtime/BP/blocks/oak_cellar_cabinet.json": "4da99892456daa51c57c42c05071dc642bd49a4d55832957d98deddd60e38f53",
+    "runtime/BP/blocks/pink_pendant_lamp.json": "40856a7dfa8dd7b66fb474378f4ddb803a5bd85c6c740993d7c94b50c8545da8",
+    "runtime/BP/blocks/spruce_bar_cabinet.json": "ac3ceebd2fecd88126c8a68061db3b85195969628845dedfae44e8c4e5d09447",
+    "runtime/BP/blocks/spruce_cellar_cabinet.json": "a8b5175fe8be37233bb6eb5d4e007e3d2b97972c5be239262042c22558bc0f8f",
+    "runtime/RP/models/entity/kwl.green_pendant_lamp_bottom.geo.json": "d508353cd8fdc355c98005043445b815fa648f2e9c705d651cda51baba9ac6c8",
+    "runtime/RP/models/entity/kwl.pendant_lamp_top.geo.json": "07dfea8873a76c8e93dacdabd5541c0e7b01ec424d1e9dc7e06c1e3629a2003e",
+    "runtime/RP/models/entity/kwl.pink_pendant_lamp_bottom.geo.json": "f445ef357c07edcbd27dccad6ba8a74201219308de5856c9076a3ae1b387db32",
+    "runtime/RP/models/entity/kwl_g_1e3ca522ce764b79.geo.json": "317c96b377ab6c5888275342f282c1a7b25de0f8992ec9694fd467b595097a4b",
+    "runtime/RP/models/entity/kwl_g_3c908a89764781f8.geo.json": "ebad323ee1df700e4762f365853ec46446090f084cef902baf66a5e6f57a320c",
+    "runtime/RP/models/entity/kwl_g_682fa9a149814d9a.geo.json": "e44c16237650ea582adec99304d41bc5f08698c5ab3261e8f513fe3fa7462096",
+    "runtime/RP/models/entity/kwl_g_749eae98236d676e.geo.json": "f84204b624410d013626f7bb3ebf4174f0797f99bcf42e26e71de70f63ca4e63",
+    "runtime/RP/models/entity/kwl_g_ad5da8558c3bd3ea.geo.json": "08a3bf91788d261ddb2ddb06603340f2cb47cac1f1332b963d364caba6a228c8",
+    "runtime/RP/models/entity/kwl_g_bf5e1b33950f0930.geo.json": "c382e23d8bc2e3c1e0ab6e38c29b69ddcafcb08ca3b5da081374943c0eef613e",
+    "runtime/RP/models/entity/kwl_g_e1663e2f1535b9c4.geo.json": "b6cc655a390895bbec2e87e47c93f29f93c91176b83e74f6b6341fe48a57c852",
+    "runtime/RP/models/entity/kwl_g_e58e1d36a18fe571.geo.json": "beec8a6b22c3ab22194b06d94a634f1c8dfb3881361960e1532ea8d94b1e0206",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_tavern__block__deco__yellow_pendant_lamp__top.png": "0a34768a99db3b11396de32704604d6d146181b54792e8a59c6bfc010ca9f887",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__left.png": "5e36521d0798e4f16d53c997c2d0d7f18933f2799ae6a58c9c1ef4b44343f125",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__middle.png": "2c9b3fce40485f388fd0914efa3c752ba527bb111411558c7827daada440eaab",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__right.png": "be8acc0087bcc8eca1ae6e271b00b36371da956ef8e40b6ba07d3c88aa3e0ee2",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__single.png": "061be814d643a75bb3509dfe295dec4b0e4d348b7b349aebfcb40b9bbe0956dc",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__left.png": "5e36521d0798e4f16d53c997c2d0d7f18933f2799ae6a58c9c1ef4b44343f125",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__middle.png": "2c9b3fce40485f388fd0914efa3c752ba527bb111411558c7827daada440eaab",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__right.png": "be8acc0087bcc8eca1ae6e271b00b36371da956ef8e40b6ba07d3c88aa3e0ee2",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__single.png": "061be814d643a75bb3509dfe295dec4b0e4d348b7b349aebfcb40b9bbe0956dc",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__left.png": "e672a50bdf3821d28bbbc0eb5a5e890e44b49e78fc4eac73c8d2f97ebcfee505",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__middle.png": "34a6a059221c22e31de528bbc4c905110a12806d8f177afcee78c24c8f7edffe",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__right.png": "66b2aa601fa53764ec93b27fdec2b0a95cae036ba3055ac0ba0fedda935a1044",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__single.png": "f15dd72310fa583f2dabcebe9b8eb7115f2d3705eca373569eb453d98af2f4fa",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__left.png": "e672a50bdf3821d28bbbc0eb5a5e890e44b49e78fc4eac73c8d2f97ebcfee505",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__middle.png": "34a6a059221c22e31de528bbc4c905110a12806d8f177afcee78c24c8f7edffe",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__right.png": "66b2aa601fa53764ec93b27fdec2b0a95cae036ba3055ac0ba0fedda935a1044",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__single.png": "f15dd72310fa583f2dabcebe9b8eb7115f2d3705eca373569eb453d98af2f4fa",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__left.png": "e2d89c8d7afd68dd731a89a949d94ea944652b2fc8468f1132b055ff72635bb3",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__middle.png": "83ad8475efa5e6fdd7187fa885310d48385d0aff15661fb36089967104c724df",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__right.png": "8e153351a3d1bafc6698abcd9382b8cc26dabbeaea3ddec4be6e1f6bdb991c24",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__single.png": "4abe4af7a2caffdd80e3342c8c51b51edffa01102372a658593a633c636fb253",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__left.png": "e2d89c8d7afd68dd731a89a949d94ea944652b2fc8468f1132b055ff72635bb3",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__middle.png": "83ad8475efa5e6fdd7187fa885310d48385d0aff15661fb36089967104c724df",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__right.png": "8e153351a3d1bafc6698abcd9382b8cc26dabbeaea3ddec4be6e1f6bdb991c24",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__single.png": "4abe4af7a2caffdd80e3342c8c51b51edffa01102372a658593a633c636fb253",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__left.png": "7d9f0583e059196ebe8e3eb12b7871450ace2ca8ec556366c7cb93655323d392",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__middle.png": "ad955b6c8e9557c7402474b7c763a1367c8035fa6d2fd110c55a68a0a4b3434a",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__right.png": "8d840ac880b53c8284ea6abab1bb05b6f803348ca031bc7468751f2ccfb64e1f",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__single.png": "571e10f72c2aae5abe7e9aa0abadbdce48726db58a2320107385420ac2e65f44",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__left.png": "7d9f0583e059196ebe8e3eb12b7871450ace2ca8ec556366c7cb93655323d392",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__middle.png": "ad955b6c8e9557c7402474b7c763a1367c8035fa6d2fd110c55a68a0a4b3434a",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__right.png": "8d840ac880b53c8284ea6abab1bb05b6f803348ca031bc7468751f2ccfb64e1f",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__single.png": "571e10f72c2aae5abe7e9aa0abadbdce48726db58a2320107385420ac2e65f44",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__left.png": "5740d7fd2a1a00a50245376d41bcd79a68de7cd2198672a6453fb4ce48b3baad",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__middle.png": "0fd7812bcd0b230445839cc39b3d47b032bbbd7fc07b6da7d5a3a2ef82ad49ee",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__right.png": "362c03dc58a065b25176b8e0965d9d99e22a4d264c7260e71e1822d0ca4afb83",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__single.png": "335f3adb0769e6f7a2dcbe3c47803f81014d3eb404abb3274be910c870380749",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__left.png": "5740d7fd2a1a00a50245376d41bcd79a68de7cd2198672a6453fb4ce48b3baad",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__middle.png": "0fd7812bcd0b230445839cc39b3d47b032bbbd7fc07b6da7d5a3a2ef82ad49ee",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__right.png": "362c03dc58a065b25176b8e0965d9d99e22a4d264c7260e71e1822d0ca4afb83",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__single.png": "335f3adb0769e6f7a2dcbe3c47803f81014d3eb404abb3274be910c870380749",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__deco__green_pendant_lamp__bottom.png": "11f9c4012d5d93cdbc8ce19c9f8adfaa135db69ffbafde3ecd0c391c5c29c53a",
+    "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__deco__pink_pendant_lamp__bottom.png": "11f9c4012d5d93cdbc8ce19c9f8adfaa135db69ffbafde3ecd0c391c5c29c53a",
+    "runtime/RP/textures/terrain_texture.json": "53bc24710aaf4c322c42363a3c3843338e05a8e63ad4bb99f767133610362bcb",
+    "upstream/assets/kaleidoscope_tavern/models/block/deco/yellow_pendant_lamp/top.json": "634f1b0ad43b3afc86ee980e56b9945a3d1192a4230dd25b2a5d39b26e009ec9",
+    "upstream/assets/kaleidoscope_tavern/textures/block/deco/yellow_pendant_lamp.png": "f91925bb23b139477dda23ad4a0bb44df1f8230975fcb0858d4a6306c6bcfe0e",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/left.json": "a72f144f55debd17a046eb94d9cfb69d2eb965258626ffbb0f63e379c4cf665f",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/middle.json": "f448953c03624c4e185406f4b7309e53987203904d23f5baea09178c44f2f61a",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/right.json": "5360483edc49f88d4f9ee41eed65924eb04f7d6f75ff079a5d2d526f0678e407",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/base_bar_cabinet/single.json": "0d39b2a26007c6c79df911c4b392da58f7c34d5d3050200f32c641af8c763262",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/left.json": "cf26ae00d3db1747769a721af19dbd9ed40fc817fbcc64ab4055748c5ec72dce",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/middle.json": "c4de1abdf962f14ee97de3176bd997cf21a97833e70370574b495e1eb0fa665e",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/right.json": "e95f2e6a0bef4991170cf99dfa5d05c8cdf55c4c354f252c785987eab1e5828c",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/base_cellar_cabinet/single.json": "2be3dcbb6a1a02ec92c3befb361c42a11770cf42190d7a4484a782bc429542a7",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/birch_bar_cabinet/left.json": "e1853e1cff4c2c49b7c6e70b43a85161afa9b675c92bbcbbef3bbff7b6248649",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/birch_bar_cabinet/middle.json": "7e658686f46dff28fe0d6cadc19caccf02ee57a37cbe729ecb77c1d5f404c17e",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/birch_bar_cabinet/right.json": "e524b6b8a8a84c447331ce2d1af45c377fdf408485eb15973b68b90a292eda45",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/birch_bar_cabinet/single.json": "3751aa9f07319c346336bdbe80b4bff2f4702f2c9438baa82f27243643aa9e57",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/birch_cellar_cabinet/left.json": "d03821fd4d8bda83258b5ef324ec378c67c5290292ceee5fac8802824e7d3605",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/birch_cellar_cabinet/middle.json": "425db77894ac5f56000f0a1d939ae20f52b8f90d96fcb72481c541154d47f6c5",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/birch_cellar_cabinet/right.json": "6c6e1e880a00bb686cca673063becd159460eb32b7cabecf2dde44e1b21870b1",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/birch_cellar_cabinet/single.json": "4253cccb816098a6d0795af96e5b86df453e009afcf8262978541a0aff9db1c8",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/cherry_bar_cabinet/left.json": "5ef72cfd5f9385252fa56119e06736867c6d6c3fc50ea2cbb93d5da1fe991d40",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/cherry_bar_cabinet/middle.json": "23f0766f3c948a926be35837ddc9392b7286c37e649328a3b67593f393644435",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/cherry_bar_cabinet/right.json": "60d2aa0cae1c00221591b11f45d68ee6c9b0a0cbd61a57f026dd7443c8c1a1b1",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/cherry_bar_cabinet/single.json": "e13ce7f6444a22b6e8e7e430c9781346d9ce1c9e8c74a2e4a860b7859d361cc3",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/cherry_cellar_cabinet/left.json": "f44b7cfbdcc9441b3c5fbd8087601a4eb3b0577afdb833a46b4f275963e19971",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/cherry_cellar_cabinet/middle.json": "3f32e7d4aac4e8a6bac24499eb7c70041f8f7a36af573964bea13d49685e30ce",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/cherry_cellar_cabinet/right.json": "d63bef80e6ff08bcdcf9bda083a39a4e879aadfb382f7db889370ccf71e7d8c6",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/cherry_cellar_cabinet/single.json": "08f405050c81f2c5f011d5d9819ebb872ef161ee8e953c656afea9e44bcb2c33",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/dark_oak_bar_cabinet/left.json": "3ce71f8a66994a9260b5c5e2b53352b2712e7b339dfc08f4f92cae39fd85ed94",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/dark_oak_bar_cabinet/middle.json": "cd6eab24e4d15dd16f43f761fdb99a7782c779fdb30c2770f73dd2ce9fabf162",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/dark_oak_bar_cabinet/right.json": "d1abd4dcb8d3129ec7466684e5eb7919a586ea4c32dc81c2ae7967f6f9b53a69",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/dark_oak_bar_cabinet/single.json": "9a270ec52776fc2f032a6a7885b54b7d798b520f86d501dc3b42e4e8fa03fde9",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/dark_oak_cellar_cabinet/left.json": "8594f75bafc1ffa24b457627eb8898d701ed93cc670c0e161f43279aa9ef3367",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/dark_oak_cellar_cabinet/middle.json": "3f14c9d77d8fe96850f1dc896bcda47603694937ba52db1b8b3a901f65d963a5",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/dark_oak_cellar_cabinet/right.json": "bb46393caad7b7545c8a5fbee5a49f0d06cf28e1b0c5b9577ffd06e8b49067e9",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/dark_oak_cellar_cabinet/single.json": "97ca0302b2361f9a480b9afcd6540f1965b15c453c5f8ad0d12761e7aa9491a6",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/oak_bar_cabinet/left.json": "12483b44b692bf05c1dc02649f1988b334b2e05ace07c8427e6286fda00ebd8a",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/oak_bar_cabinet/middle.json": "11c249b337880fd7edfc4e2737579e8661cba91096fc62b0e1fe1d58a3aa0aae",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/oak_bar_cabinet/right.json": "5c79bf77f9a8348865e13472b1c0d4fcfa269143d9efa91fa425302454e1a404",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/oak_bar_cabinet/single.json": "4dbfce1e906519315329503e5d0c93e6bf509d64d68c0812b3149cbaa4c5e312",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/oak_cellar_cabinet/left.json": "083a96785964fe6775754a58c6dbf42103de7aad6fc356b4915a0b3021696a48",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/oak_cellar_cabinet/middle.json": "ae663a73332577371ac2833d0206b60ef80160641561e3845df4ed8cfabdecb8",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/oak_cellar_cabinet/right.json": "299a5133f5a65f224662e396c51124a6d76e93f72f5a74f06ba03e82046fae2f",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/oak_cellar_cabinet/single.json": "1c976ef3f1f9885d2cc1864cb0d74f981815303dda5208bd6aafc759a94537c8",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/spruce_bar_cabinet/left.json": "f4feafb2aa3462c701dcd3f6dc6759b21e9af0389c94ab2a4eac23b9382066e7",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/spruce_bar_cabinet/middle.json": "7fb86217c54484948f562f5b0bcba05d6ccccc60e8fd506850f46912721e5df8",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/spruce_bar_cabinet/right.json": "8045a69df5ea89c41867436bb2db4e1e3be0cbc167c965795157cc122bcaa33b",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/spruce_bar_cabinet/single.json": "d059225233aa5f90bc1bedee062cb5a8d385618a0a8aa6acbf77b72c1677da4b",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/spruce_cellar_cabinet/left.json": "6b88ca5a9d2bacb246f518899e1f77554449c30fda4544489f012c12a8bb8397",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/spruce_cellar_cabinet/middle.json": "c2f71d919b7c8eab9e124c05f6c77ded54b372e7de37e67b37a0eed6cbb6ab57",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/spruce_cellar_cabinet/right.json": "0d02a651346541f111a1a8bd3d3c30775863066ddc66fa146a573ea7e366fa96",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/brew/spruce_cellar_cabinet/single.json": "ffec71cef96061cefc59732ac7482af8d4ee0a1d5c3baab87628f4c67d76cfdc",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/deco/green_pendant_lamp/bottom.json": "b89e72e9ca616a221e13a4d29e28b94c1856412bcca18a65b1993426a9cb2d90",
+    "upstream/assets/kaleidoscope_world_liquor/models/block/deco/pink_pendant_lamp/bottom.json": "2534cadf98b718d627bb3f0401d8cc7f7f36734ec724f2d3f07e744310ed4456",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/birch_bar_cabinet_left.png": "01d590b963428321e5a107d40dc5d1735c2a7b3b6d27e33792155d8dd0f26f37",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/birch_bar_cabinet_middle.png": "09f7f4cd5deb3ec55c8702662486b6718054bf5ec6073037b58b5a30763fbf73",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/birch_bar_cabinet_right.png": "5930968c363a8886ca342da78f5b058e8acfe2c1342b57def78897a67a7e2078",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/birch_bar_cabinet_single.png": "38d76713be2a167bcb8c1743c11470103de6e8e8aa8616063552286d15cb2dcd",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/cherry_bar_cabinet_left.png": "3cec3961469ee6faed0f7aff1701fa5165953c59648bf46926298422c0243518",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/cherry_bar_cabinet_middle.png": "c1aabe5b9624c5769481072f4daf1c9655bccca66ff13af07b55a83a01cdde13",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/cherry_bar_cabinet_right.png": "190b294f3cf0690d47e7da079fa36fd1cefc0bdbfdbb71c1fd2ed5eb255be19d",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/cherry_bar_cabinet_single.png": "0921e11b8b48689cb78710b4f1647c6ec3d3aa5d15cf29c1dd40a96d16d58a30",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/dark_oak_bar_cabinet_left.png": "7ddf022c0f81ba77e743f746332a5633b55dfcd4799771626a5e870cf2b39430",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/dark_oak_bar_cabinet_middle.png": "e4664f4e30ef7ff75af413fb445cb731dc12a2aef08704b30d4e5c62f7ecd16e",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/dark_oak_bar_cabinet_right.png": "f4d78929d9aa02c63f2775092d1a0a5e48ce378990fac5695e09cc6e98ec7a36",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/dark_oak_bar_cabinet_single.png": "fe6e9a462fd3757edd82b66b5e279b5bcee06417aba8ada4a7f7f9c877428ae3",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/oak_bar_cabinet_left.png": "3e8b443f9a5c8bb7376bd9279a3db95b5e314be34e59dbb3680daa68ab8b1940",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/oak_bar_cabinet_middle.png": "54bf7b639273ea87d16c628532f09911d7356a04e539c40cb85720f210b62628",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/oak_bar_cabinet_right.png": "5c671f8a77d7d1b20c2d519241b1ec8b5b73191c763cef978889071604301296",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/oak_bar_cabinet_single.png": "240f9865e6f84d403aac121d0b99e747491e69b833cdc9fa6c912c4364cfc408",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/pink_pendant_lamp.png": "85b1635f635558007c5cd66134b6ce963a72d2a689451f820467ddd1a38da97f",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/spruce_bar_cabinet_left.png": "6faa6a412e21cfdc9fa388d8c8337e766e0a05afecc7aec04c30f5a58bdbbba1",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/spruce_bar_cabinet_middle.png": "081863a349bf27a5931b4a4841c34873c115385ddc5dbf183f12212cc9ec4221",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/spruce_bar_cabinet_right.png": "fc0687bdc4235fe6994b8ee45403782b71726919f6ad058845bc0f7802e93999",
+    "upstream/assets/kaleidoscope_world_liquor/textures/block/spruce_bar_cabinet_single.png": "2bb72eb1b62bcd5699c02d7b189131304a8b3719993e147d1b35749ec8a44d3c"
+  },
+  "projects": {
+    "birch-bar_cabinet.bbmodel": "5a48baf0425cf7558d5ec82dbf2490388ad96cee4ee009bae0a6ad787080e1ed",
+    "birch-cellar_cabinet.bbmodel": "360bbb6f4b22c01be6b1796868faf311f78ef7d54cafd3ddeaaa641d3ca6d4aa",
+    "cherry-bar_cabinet.bbmodel": "3559f036fe636de13cdcbd806c29c4c9a7c646648f8b4ff4e6cc2d687b5003a9",
+    "cherry-cellar_cabinet.bbmodel": "7d4b17f51dfdc064228465fb6874d63e9884e0ba07f4507b92bd5959fcd12d8f",
+    "dark_oak-bar_cabinet.bbmodel": "e8ee37e29d4c91b13616b803bbe8cd589af3d3a976156fc9b521889b2787c3a9",
+    "dark_oak-cellar_cabinet.bbmodel": "ea39ab277b9a5ac3b32590ab5aaf16b39eed240ef2f131dd1309626bd9eb2a42",
+    "green-pendant.bbmodel": "c93c1ef884b7f5c3f2bd4b26fd148baf0635aa375bedd68c4dc2dc081781977f",
+    "oak-bar_cabinet.bbmodel": "2a9f93fd3ccb4f1e0e5a8571cda3953791a1bb164a00ff28840a3cbd8bad6ed3",
+    "oak-cellar_cabinet.bbmodel": "0cdf30276ae7aefb6d55df68c1b9f6fe870c0ddf6c4d808ae6f9a1435390c43f",
+    "pink-pendant.bbmodel": "e4bb34460ef8756b4c8e35438109d3f1b358596b57ab0e032fa3b73fb51b60ab",
+    "spruce-bar_cabinet.bbmodel": "f6a56da0aab3ebb8cd7b0755d339b4360231beb9f0d2cd8c35479522b328c636",
+    "spruce-cellar_cabinet.bbmodel": "f668d4a2c727445f6094b0512fb2bb8a4092414ff1a3cf406f67a977e85766ed"
+  },
+  "cabinet_bindings": [
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_3c908a89764781f8.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_bf5e1b33950f0930.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_e58e1d36a18fe571.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/oak_bar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_ad5da8558c3bd3ea.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_bar_cabinet__right.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_e1663e2f1535b9c4.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_682fa9a149814d9a.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_749eae98236d676e.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/oak_cellar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_1e3ca522ce764b79.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__oak_cellar_cabinet__right.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_3c908a89764781f8.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_bf5e1b33950f0930.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_e58e1d36a18fe571.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/birch_bar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_ad5da8558c3bd3ea.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_bar_cabinet__right.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_e1663e2f1535b9c4.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_682fa9a149814d9a.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_749eae98236d676e.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/birch_cellar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_1e3ca522ce764b79.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__birch_cellar_cabinet__right.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_3c908a89764781f8.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_bf5e1b33950f0930.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_e58e1d36a18fe571.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/spruce_bar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_ad5da8558c3bd3ea.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_bar_cabinet__right.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_e1663e2f1535b9c4.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_682fa9a149814d9a.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_749eae98236d676e.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/spruce_cellar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_1e3ca522ce764b79.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__spruce_cellar_cabinet__right.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_3c908a89764781f8.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_bf5e1b33950f0930.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_e58e1d36a18fe571.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/dark_oak_bar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_ad5da8558c3bd3ea.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_bar_cabinet__right.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_e1663e2f1535b9c4.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_682fa9a149814d9a.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_749eae98236d676e.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/dark_oak_cellar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_1e3ca522ce764b79.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__dark_oak_cellar_cabinet__right.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_3c908a89764781f8.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_bf5e1b33950f0930.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_e58e1d36a18fe571.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/cherry_bar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_ad5da8558c3bd3ea.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_bar_cabinet__right.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/single",
+      "geometry": "runtime/RP/models/entity/kwl_g_e1663e2f1535b9c4.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__single.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/left",
+      "geometry": "runtime/RP/models/entity/kwl_g_682fa9a149814d9a.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__left.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/middle",
+      "geometry": "runtime/RP/models/entity/kwl_g_749eae98236d676e.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__middle.png"
+    },
+    {
+      "model": "kaleidoscope_world_liquor:block/brew/cherry_cellar_cabinet/right",
+      "geometry": "runtime/RP/models/entity/kwl_g_1e3ca522ce764b79.geo.json",
+      "texture": "runtime/RP/textures/kwl/generated/kaleidoscope_world_liquor__block__brew__cherry_cellar_cabinet__right.png"
+    }
+  ]
+}
