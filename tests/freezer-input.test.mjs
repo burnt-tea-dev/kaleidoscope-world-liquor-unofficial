@@ -11,7 +11,7 @@ function fixture(input=[],amount=2){
  let state={input:input.slice(),remaining:0,output:0,fluid:null},original=state;
  const inventory={size:9,getItem:i=>slots[i]?.clone(),setItem(i,value){calls.push(['write',i]);slots[i]=value?.clone();}};
  const equipment={value:undefined,getEquipment:()=>equipment.value?.clone(),setEquipment(slot,value){calls.push(['offhand']);equipment.value=value?.clone();return true;}};
- const player={selectedSlotIndex:4,getGameMode(){throw Error('INPUT_HAS_NO_CREATIVE_GATE');},getComponent:id=>id==='minecraft:inventory'?{container:inventory}:equipment,dimension:{spawnItem(){throw Error('SOURCE_INPUT_MUST_NOT_DROP');}}};
+ const player={selectedSlotIndex:4,mode:'survival',getGameMode(){calls.push(['mode']);return this.mode;},getComponent:id=>id==='minecraft:inventory'?{container:inventory}:equipment,dimension:{spawnItem(){throw Error('SOURCE_INPUT_MUST_NOT_DROP');}}};
  const options={createStack:(id,n)=>new Stack(id,n),commit:next=>{calls.push(['storage']);state=next;},restore:()=>{calls.push(['restore']);state=original;}};
  return {slots,calls,inventory,equipment,player,options,get state(){return state;},insert:()=>insertFreezerInput(player,state,options),extract:()=>extractFreezerInput(player,state,options)};
 }
@@ -28,7 +28,7 @@ test('extraction commits last-slot removal first then follows Java inventory pri
  const offhand=fixture(['minecraft:ice'],0);offhand.equipment.value=new Stack('minecraft:ice',2);assert.equal(offhand.extract().delivery,'OFFHAND');assert.equal(offhand.equipment.value.amount,3);
 });
 test('full inventory ignores false addItem, removes source slot, emits no drop',()=>{
- const f=fixture(['minecraft:ice'],0);for(let i=0;i<9;i++)f.slots[i]=new Stack('minecraft:stone',64);assert.equal(f.extract().delivery,'UNINSERTED');assert.deepEqual(f.state.input,[]);assert.deepEqual(f.calls,[['storage']]);assert.equal(f.slots[4].typeId,'minecraft:stone');
+ const f=fixture(['minecraft:ice'],0);for(let i=0;i<9;i++)f.slots[i]=new Stack('minecraft:stone',64);assert.equal(f.extract().delivery,'UNINSERTED');assert.deepEqual(f.state.input,[]);assert.deepEqual(f.calls,[['storage'],['mode']]);assert.equal(f.slots[4].typeId,'minecraft:stone');
 });
 test('empty extraction changes neither storage nor inventory',()=>{const f=fixture([],0);assert.equal(f.extract().status,'EMPTY');assert.deepEqual(f.calls,[]);});
 test('commit and write faults restore original input and captured hand',()=>{
@@ -57,4 +57,9 @@ for(const changed of ['effect','delivery'])test('potion '+changed+' replacement 
  assert.throws(()=>f.insert(),/FREEZER_INPUT_ORIGIN_CHANGED/);
  assert.deepEqual(f.state.input,[]);assert.deepEqual(stored,[]);assert.deepEqual(f.slots[4],replacement);
  assert.deepEqual(f.calls.map(row=>row[0]),['storage','restore']);
+});
+
+test('full Creative input extraction uses the shared successful discard without a drop',()=>{
+ const f=fixture(['minecraft:ice'],0);f.player.mode='creative';for(let i=0;i<9;i++)f.slots[i]=new Stack('minecraft:stone',64);const before=Array.from(f.slots,s=>s.clone());
+ assert.equal(f.extract().delivery,'CREATIVE_DISCARDED');assert.deepEqual(f.state.input,[]);assert.deepEqual(f.slots,before);assert.deepEqual(f.calls,[['storage'],['mode']]);
 });
