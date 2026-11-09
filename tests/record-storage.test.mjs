@@ -14,9 +14,13 @@ function fixture(mode='Survival'){
  return {d,b,p,input,use,nativeKey:nativeItemKey(recordStorageKey(b))};
 }
 const metadata=item=>({id:item.typeId,amount:item.amount,name:item.nameTag,lore:item.getLore(),properties:item.getDynamicPropertyIds().map(k=>[k,item.getDynamicProperty(k)])});
-for(const mode of ['Survival','Creative'])test(`production insert/payment/eject preserves the complete named disc: ${mode}`,()=>{
+for(const mode of ['Survival','Adventure','Creative'])test(`production insert/payment/eject preserves the complete named disc: ${mode}`,()=>{
  const f=fixture(mode);f.use();assert.equal(!!f.p.inv.getItem(0),mode==='Creative');assert.ok(world.getDynamicProperty(f.nativeKey));
  f.p.inv.setItem(0,undefined);f.use();assert.deepEqual(f.d.drops[0].item,f.input);assert.equal(world.getDynamicProperty(key),undefined);assert.equal(world.getDynamicProperty(f.nativeKey),undefined);
+});
+test('spectator cannot insert a custom disc or debit the inventory',()=>{
+ const f=fixture('Spectator');f.use();assert.deepEqual(f.p.inv.getItem(0),f.input);
+ assert.equal(world.getDynamicProperty(key),undefined);assert.equal(world.getDynamicProperty(f.nativeKey),undefined);assert.equal(f.d.drops.length,0);
 });
 for(const cause of ['break','explosion'])test(`the ${cause} subscriber returns the same adopted metadata`,()=>{
  const f=fixture();f.use();f.b.setType('minecraft:air');

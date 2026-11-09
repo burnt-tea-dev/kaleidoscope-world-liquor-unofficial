@@ -1,3 +1,7 @@
+## 0.1.208 — 2026-11-09
+
+Allow the reviewed NeoForge Adventure-mode jukebox insertion without admitting Spectator. Preserve the existing one-disc transaction and complete native stack storage. Pair BP/RP with the actual Tavern 0.6.217 manifests; SDK, UUIDs and saved formats are unchanged. Source callback checks do not establish native Adventure input or client audio/rendering.
+
 ## 0.1.207 — 2026-11-09
 
 Correct the shared Java inventory owner when Creative has no room: discard the temporary product without a ground drop, while decrementing the freezer batch once. Keep normal insertion/merge priority, Survival drops, ordinary input debit, metadata, UUIDs, saved formats and exact T205/G238 peers. Five source counterexamples fail before the repair and pass afterward; the affected 119 source/API cases pass. [Official vanilla bytecode, scope and limits](docs/JAVA-INVENTORY-SETTLEMENT.md). No new BDS, saved-world, client or LIVE acceptance is claimed.

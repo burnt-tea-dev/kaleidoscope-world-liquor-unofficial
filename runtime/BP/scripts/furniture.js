@@ -240,7 +240,7 @@ export function installFurniture(){
      if(String(p.getGameMode()).toLowerCase()!=='spectator')ejectRecord(b,s);
      return;
     }
-    if(!mutable(p)||h?.typeId!==NS+':custom_record'||b.getComponent('minecraft:record_player')?.getRecord())return;
+    if(String(p.getGameMode()).toLowerCase()==='spectator'||h?.typeId!==NS+':custom_record'||b.getComponent('minecraft:record_player')?.getRecord())return;
     s.record=h.typeId;s.type='minecraft:jukebox';delete s.recordSound;
     if(transaction(p,b,s,{take:1,storage:planRecordStorage(b,s,{incoming:h})})){playRecord(b,s);say(p,'now_playing');}
    });return;
