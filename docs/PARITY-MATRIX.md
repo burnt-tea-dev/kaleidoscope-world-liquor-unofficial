@@ -4,6 +4,10 @@ Current source adoption and exact remaining gaps are owned by [the 2026-10-28 re
 
 # World Liquor Java／Bedrock 差距矩陣
 
+## W207 Creative 滿庫存結算（2026-11-09）
+
+共用 Java inventory owner 修正冰櫃成品在 Creative 滿庫存時錯誤掉地：普通插入／合併失敗後依原版 `Inventory.add` 成功消耗暫時結果，機器扣一份，原庫存不改；Survival 滿庫存仍掉一份。原版 bytecode、5 個修前反例、119 項來源／API 回歸及獨立覆核見[結算範圍](JAVA-INVENTORY-SETTLEMENT.md)。這不是新版作者 JAR、BDS、存檔或客戶端驗收。
+
 ## C04 原生裝備入口覆核（2026-11-03）
 
 [實際隔離觀察](evidence/native-item-display-20261103.json)與[可重現 fixture](../tests/native/item-display/README.md)補上一般原版 mob、非空裝備表、指令正向控制及背包／手持欄對照。BDS 1.26.60.6／2.12.0-beta 的 10 案均能用指令裝備，但沒有 Script API equippable；5 案背包完整保留本次附魔等 metadata，但第 0 格並非原生手持欄。此結論只涵蓋指定實體與引擎，不代表全部原生路線均不可用。任意 ItemStack／BlockItem 顯示、畫面與安全仍未通過；W180 runtime 不變。

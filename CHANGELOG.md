@@ -1,3 +1,7 @@
+## 0.1.207 — 2026-11-09
+
+Correct the shared Java inventory owner when Creative has no room: discard the temporary product without a ground drop, while decrementing the freezer batch once. Keep normal insertion/merge priority, Survival drops, ordinary input debit, metadata, UUIDs, saved formats and exact T205/G238 peers. Five source counterexamples fail before the repair and pass afterward; the affected 119 source/API cases pass. [Official vanilla bytecode, scope and limits](docs/JAVA-INVENTORY-SETTLEMENT.md). No new BDS, saved-world, client or LIVE acceptance is claimed.
+
 ## 0.1.201 — 2026-11-06
 
 Pair with merged Tavern 0.6.205 so W uses the corrected authoritative recipient-session publisher. This is a dependency-only release: retain W200 gameplay, resources, SDK, UUIDs and saved formats. The existing W200 native results retain their original scope; the changed T205 behavior and family saved-world validation belong to the coordinated candidate.

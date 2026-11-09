@@ -17,6 +17,10 @@ export function giveJavaInventoryItem(player,item,{writeInventory,writeEquipment
  }
  for(let slot=0;slot<inventory.size;slot++)if(merge(slot))return 'INVENTORY';
  for(let slot=0;slot<inventory.size;slot++)if(!inventory.getItem(slot)){write(slot,undefined,item);return 'INVENTORY';}
+ // Java Inventory.add handles an uninserted item as success for instabuild:
+ // discard the temporary result, not a stored stack, and do not call Player.drop.
+ // Read the current mode only after all ordinary insertion routes fail.
+ if(String(player.getGameMode()).toLowerCase()==='creative')return 'CREATIVE_DISCARDED';
  if(!allowDrop)return 'UNINSERTED';
  // Item count is preserved; exact Player.drop(false) physics/eye position,
  // thrower, packet and pickup delay remain explicit platform gaps.
