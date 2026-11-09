@@ -25,11 +25,27 @@ test('Creative requires the bowl but neither consumes it nor replaces the hand',
  const f=fixture(1,'Creative');assert.equal(f.extract().delivery,'INVENTORY');assert.equal(f.slots[4].typeId,'minecraft:bowl');assert.equal(f.slots[4].amount,1);assert.equal(f.slots[0].typeId,recipe.result.id);assert.equal(f.state.output,0);
  const absent=fixture(1,'Creative');absent.slots[4]=undefined;assert.equal(absent.extract().status,'NEED_ITEM');assert.equal(absent.calls.length,0);assert.equal(absent.state.output,1);
 });
-test('full inventory drops exactly one output after stacked debit or Creative no debit',()=>{
- for(const mode of ['Survival','Creative']){
-  const f=fixture(2,mode);for(let i=0;i<9;i++)if(i!==4)f.slots[i]=new Stack('minecraft:stone',64);
-  assert.equal(f.extract().delivery,'DROP');assert.equal(f.drops.length,1);assert.equal(f.drops[0].stack.amount,1);assert.equal(f.slots[4].amount,mode==='Creative'?2:1);assert.equal(f.state.output,0);assert.equal(f.calls.at(-1)[0],'commit');
+test('full Survival inventory drops exactly one output after the stacked bowl debit',()=>{
+ const f=fixture(2);for(let i=0;i<9;i++)if(i!==4)f.slots[i]=new Stack('minecraft:stone',64);
+ assert.equal(f.extract().delivery,'DROP');assert.equal(f.drops.length,1);assert.equal(f.drops[0].stack.amount,1);assert.equal(f.slots[4].amount,1);assert.equal(f.state.output,0);assert.equal(f.calls.at(-1)[0],'commit');
+});
+for(const r of [recipe,{result:{id:'minecraft:ice'}}])test('full Creative inventory accepts '+r.result.id+' without a fabricated drop',()=>{
+ const f=fixture(2,'Creative');for(let i=0;i<9;i++)if(i!==4)f.slots[i]=new Stack('minecraft:stone',64);
+ const before=Array.from(f.slots,s=>s?.clone());
+ assert.equal(f.extract(r).delivery,'CREATIVE_DISCARDED');assert.deepEqual(f.slots,before);assert.equal(f.drops.length,0);assert.equal(f.state.output,0);assert.deepEqual(f.calls,[['commit']]);
+ assert.equal(f.extract(r).status,'NO_OUTPUT');assert.deepEqual(f.calls,[['commit']]);
+});
+test('Creative still uses matching offhand/main stacks before the full-inventory branch',()=>{
+ for(const target of ['offhand','main']){
+  const f=fixture(2,'Creative');for(let i=0;i<9;i++)if(i!==4)f.slots[i]=new Stack('minecraft:stone',64);
+  if(target==='offhand')f.equipment.value=new Stack(recipe.result.id,63);else f.slots[7]=new Stack(recipe.result.id,63);
+  assert.equal(f.extract().delivery,target==='offhand'?'OFFHAND':'INVENTORY');assert.equal((target==='offhand'?f.equipment.value:f.slots[7]).amount,64);assert.equal(f.slots[4].amount,2);assert.equal(f.drops.length,0);assert.equal(f.state.output,0);
  }
+});
+test('full Creative settlement failure restores the batch without touching inventory or dropping output',()=>{
+ const f=fixture(2,'Creative');for(let i=0;i<9;i++)if(i!==4)f.slots[i]=new Stack('minecraft:stone',64);
+ const before=Array.from(f.slots,s=>s?.clone());f.options.commit=()=>{throw Error('SAVE_FAILED');};
+ assert.throws(()=>f.extract(),/SAVE_FAILED/);assert.deepEqual(f.slots,before);assert.equal(f.state.output,1);assert.equal(f.drops.length,0);assert.deepEqual(f.calls,[['restore']]);
 });
 test('unconditional outputs follow selected then offhand then main merge before free slots',()=>{
  const r={result:{id:'minecraft:ice'}};

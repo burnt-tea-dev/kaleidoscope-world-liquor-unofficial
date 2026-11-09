@@ -7,7 +7,7 @@
   "grilling_version": "2.8.238",
   "peer_pins_final": true,
   "peer_pin_status": "exact_merged_t205_g238_sources",
-  "peer_pin_note": "Pair merged T205 recipient-session publisher repair with unchanged W200 gameplay. Preserve SDK, UUIDs and saved formats; G238 remains the unchanged optional CI peer. Highball Creative Flight is not included.",
+  "peer_pin_note": "Preserve exact merged T205/G238 source dependencies while correcting the shared World Liquor Creative full-inventory fallback. Keep SDK, UUIDs and saved formats; no new native or family acceptance.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",

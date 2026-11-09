@@ -111,3 +111,14 @@ for(const change of ['effect','delivery','missing-id','missing-component','read-
  if(change==='read-error')replacement.potionThrows=true;
  p.inv.setItem(0,replacement);system.flush();assert.equal(world.getDynamicProperty(key),raw);assert.deepEqual(p.inv.getItem(0),replacement);
 });
+
+// Official Java Inventory.add succeeds without a drop when Creative has no room.
+for(const product of ['pochi_pudding','ice'])test('registered Creative full-inventory '+product+' output decrements once without a drop',()=>{
+ const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));const p=player(d,'creative');p.isSneaking=false;
+ for(let slot=0;slot<p.inv.size;slot++)p.inv.setItem(slot,new ItemStack('minecraft:stone',64));
+ if(product==='pochi_pudding'){const bowl=new ItemStack('minecraft:bowl',2);bowl.nameTag='kept bowl';bowl.lore=['unchanged'];bowl.data={owner:'output'};p.inv.setItem(0,bowl);}
+ world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid:null,remaining:0,output:1,recipe:N+':freezer/'+product}));
+ const before=Array.from({length:p.inv.size},(_,slot)=>p.inv.getItem(slot));
+ world.beforeEvents.playerInteractWithBlock.emit({block:b,player:p,blockFace:'north',itemStack:p.inv.getItem(0),isFirstEvent:true});system.flush();
+ assert.equal(JSON.parse(world.getDynamicProperty(key)).output,0);assert.deepEqual(Array.from({length:p.inv.size},(_,slot)=>p.inv.getItem(slot)),before);assert.equal(d.drops.length,0);assert.equal(d.sounds.at(-1),N+'.java.freezer_pickup');
+});
