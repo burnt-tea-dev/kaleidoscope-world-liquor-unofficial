@@ -4,6 +4,12 @@ Current source adoption and exact remaining gaps are owned by [the 2026-10-28 re
 
 # World Liquor Java／Bedrock 差距矩陣
 
+## Adventure 唱片插入與現行相依（2026-11-09，W208）
+
+原原版唱機入口把 Adventure 與 Spectator 一同交給通用家具 mutable guard，錯擋已核 NeoForge 1.21.1 的 block-use 路徑。現在只在該唱機插入入口拒絕 Spectator；其他家具權限不變。既有真 production callback 測試涵蓋 Survival／Adventure／Creative 的扣手持、原 metadata 保存及取出，另驗 Spectator 不扣物、不建立 storage。沒有直接呼叫 accept 或另造 storage owner。
+
+BP／RP 以現行 Tavern 0.6.217 真 manifest UUID／版本配對，SDK、保存格式與 UUID 不變。舊公開 W201／W207 仍依 T205，不把新版來源修復當成舊下載已更新。原 network Survival 場與保存結果沿原範圍；本次沒有新增 Native Adventure、聲畫或 FPS 證據，Forge 1.20.1 的 item-use 路徑亦不冒稱相同。
+
 ## W207 Creative 滿庫存結算（2026-11-09）
 
 共用 Java inventory owner 修正冰櫃成品在 Creative 滿庫存時錯誤掉地：普通插入／合併失敗後依原版 `Inventory.add` 成功消耗暫時結果，機器扣一份，原庫存不改；Survival 滿庫存仍掉一份。原版 bytecode、5 個修前反例、119 項來源／API 回歸及獨立覆核見[結算範圍](JAVA-INVENTORY-SETTLEMENT.md)。這不是新版作者 JAR、BDS、存檔或客戶端驗收。
