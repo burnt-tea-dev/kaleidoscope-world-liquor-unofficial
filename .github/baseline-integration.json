@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "tavern_commit": "77df01a77b8cd649788cfd17a9dc782717e5455f",
+  "tavern_commit": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
   "tavern_version": "0.6.221",
   "publication_request": false,
   "grilling_commit": "7c2d3c0afcb39db314a1f95fa7f0276272b27eb1",
@@ -15,7 +15,7 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "11a628b06e9aec900f316c326672f4a61ec5e160",
+  "tavern_tree": "8deec4f9af28cac86748ff816fc4c8d72d2be651",
   "tavern_source_trees": {
     "BP": {
       "sha256": "5772b83adf530665b596f63b26f88c68824e7cd97d932f521506fa1dd29a6491",

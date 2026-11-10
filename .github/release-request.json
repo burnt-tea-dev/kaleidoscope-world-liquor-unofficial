@@ -15,7 +15,7 @@
   "status": "source_classification_candidate",
   "public_notes_path": "CHANGELOG.md",
   "public_notes_inline": "Organize drinks, food, storage, furniture, lighting and art by use in the native creative tabs. Restore green/pink pendant lamps already visible in their real definitions to the catalog. Preserve Java drink order, hidden variants, IDs, SDK, recipes and saved formats. Pair both packs with the exact Tavern 0.6.221 source; no new native/client/FPS or saved-world result is claimed.",
-  "tavern_commit": "77df01a77b8cd649788cfd17a9dc782717e5455f",
+  "tavern_commit": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
   "artifact_suffix": "baseline1",
   "peer_pins_final": true,
   "publication_ready": false,
