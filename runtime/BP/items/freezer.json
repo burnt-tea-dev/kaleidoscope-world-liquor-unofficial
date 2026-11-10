@@ -4,8 +4,8 @@
     "description": {
       "identifier": "kaleidoscope_world_liquor:freezer",
       "menu_category": {
-        "category": "equipment",
-        "group": "kaleidoscope_tavern:itemGroup.name.tavern_brewing"
+        "category": "items",
+        "group": "kaleidoscope_tavern:itemGroup.name.appliances"
       }
     },
     "components": {

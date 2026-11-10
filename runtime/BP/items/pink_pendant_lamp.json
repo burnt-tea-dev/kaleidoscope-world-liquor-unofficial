@@ -4,7 +4,7 @@
     "description": {
       "identifier": "kaleidoscope_world_liquor:pink_pendant_lamp",
       "menu_category": {
-        "category": "equipment",
+        "category": "construction",
         "group": "kaleidoscope_tavern:itemGroup.name.lighting"
       }
     },
