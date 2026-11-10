@@ -4,7 +4,7 @@
     "description": {
       "identifier": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
       "menu_category": {
-        "category": "equipment",
+        "category": "construction",
         "group": "kaleidoscope_tavern:itemGroup.name.storage"
       }
     },

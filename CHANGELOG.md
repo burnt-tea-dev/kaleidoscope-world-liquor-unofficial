@@ -1,3 +1,7 @@
+## 0.1.209 — 2026-11-10
+
+Group drinks, food and furniture by use in the native creative inventory with short labels and shared icons. Restore the two already-visible green/pink pendant lamps to the catalog; keep every hidden variant and Java drink order. Pair both packs with the exact Tavern 0.6.221 source. Existing gameplay, SDK, item identities and saved formats remain unchanged; no new native/client result is claimed.
+
 ## 0.1.208 — 2026-11-09
 
 Allow the reviewed NeoForge Adventure-mode jukebox insertion without admitting Spectator. Preserve the existing one-disc transaction and complete native stack storage. Pair BP/RP with the actual Tavern 0.6.217 manifests; SDK, UUIDs and saved formats are unchanged. Source callback checks do not establish native Adventure input or client audio/rendering.

@@ -110,9 +110,12 @@ def main():
  feedback.build(ROOT,check=True)
  feedback_resources={'runtime/BP/scripts/data/break-feedback.js','runtime/RP/blocks.json','runtime/RP/particles/block_fragments.json','runtime/RP/textures/kaleidoscope_world_liquor/break_fragments.png'}
  current_resources.update(feedback_resources)
+ from creative.catalog import apply as check_creative, runtime_sources as creative_sources
+ check_creative(ROOT)
+ current_resources.update(creative_sources(ROOT))
  spec=importlib.util.spec_from_file_location('creative_history',TAV/'tools/creative/historical.py')
  history=importlib.util.module_from_spec(spec);spec.loader.exec_module(history)
- projection=history.LegacyMenuProjection(ROOT)
+ projection=history.LegacyMenuProjection(ROOT,current_metadata=True)
  baseline=read(ROOT/'data/storage-preserved-0.1.4.json')
  assert COMPACT_REVIEW['test_only'] is True
  assert COMPACT_REVIEW['renames']=={'runtime/RP/'+new+'.png':'runtime/RP/'+old+'.png' for old,new in PATHS.items()}

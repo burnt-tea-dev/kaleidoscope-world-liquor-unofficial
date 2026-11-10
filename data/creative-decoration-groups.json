@@ -2,9 +2,6 @@
   "schema": 1,
   "namespace": "kaleidoscope_world_liquor",
   "groups": {
-    "brewing": [
-      "freezer"
-    ],
     "cabinets": [
       "oak_bar_cabinet",
       "spruce_bar_cabinet",
@@ -79,6 +76,19 @@
     "ingredients": [
       "cola",
       "tonic_water"
+    ],
+    "appliances": [
+      "freezer"
+    ],
+    "foods": [
+      "kita_stuffed_crisp",
+      "liangshan_ice_cone",
+      "magic_crispy_corner",
+      "pochi_pudding"
+    ],
+    "pendant_lamps": [
+      "green_pendant_lamp",
+      "pink_pendant_lamp"
     ]
   }
 }

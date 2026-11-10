@@ -17,6 +17,7 @@ NS = 'kaleidoscope_world_liquor'
 RP = ROOT / 'runtime/RP'
 BP = ROOT / 'runtime/BP'
 SOURCE = ROOT / 'upstream/assets'
+LIGHTING_MENU = {'category': 'construction', 'group': 'kaleidoscope_tavern:itemGroup.name.lighting'}
 
 
 def read(path):
@@ -105,6 +106,7 @@ def planned():
         block = copy.deepcopy(template)
         data = block['minecraft:block']
         data['description']['identifier'] = NS + ':' + short
+        data['description']['menu_category'] = dict(LIGHTING_MENU)
         # The author's item is a generated sprite; do not substitute a 3D held model.
         data['components'].pop('minecraft:item_visual', None)
         data['components']['minecraft:geometry'] = {'identifier': top_id}
@@ -122,8 +124,7 @@ def planned():
         data['components']['kaleidoscope_tavern:natural_break'] = {'drop': NS + ':' + short}
         outputs[BP / 'blocks' / (short + '.json')] = encoded(block)
         item = {'format_version': '1.26.50', 'minecraft:item': {
-            'description': {'identifier': NS + ':' + short, 'menu_category': {
-                'category': 'equipment', 'group': 'kaleidoscope_tavern:itemGroup.name.lighting'}},
+            'description': {'identifier': NS + ':' + short, 'menu_category': dict(LIGHTING_MENU)},
             'components': {'minecraft:display_name': {'value': 'item.' + NS + ':' + short + '.name'},
                            'minecraft:icon': alias, 'minecraft:max_stack_size': 64,
                            'minecraft:block_placer': {'block': NS + ':' + short, 'replace_block_item': True}}}}

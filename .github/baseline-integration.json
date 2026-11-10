@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "26485c710f96612881f2a6c1bbfa9033d62d144b",
-  "tavern_version": "0.6.217",
+  "tavern_commit": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
+  "tavern_version": "0.6.221",
   "publication_request": false,
   "grilling_commit": "7c2d3c0afcb39db314a1f95fa7f0276272b27eb1",
   "grilling_version": "2.8.238",
   "peer_pins_final": true,
-  "peer_pin_status": "exact_merged_t217_g238_sources",
-  "peer_pin_note": "Pair with merged Tavern 0.6.217. Preserve SDK, UUIDs and saved formats; optional Grilling CI peer is unchanged. Includes the reviewed NeoForge Adventure jukebox permission repair; Highball remains unresolved.",
+  "peer_pin_status": "exact_source_t221_g238_pair",
+  "peer_pin_note": "Exact immutable Tavern 0.6.221 classification source; BP/RP UUIDs and SDK retained. This source PR depends on the Tavern source PR. Optional Grilling CI peer remains unchanged. No Native/client or saved-world result is added.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
@@ -15,15 +15,15 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "27ab800c62dd5e00f36bb547b5c48580c160ef46",
+  "tavern_tree": "8deec4f9af28cac86748ff816fc4c8d72d2be651",
   "tavern_source_trees": {
     "BP": {
-      "sha256": "7c5b1f7bece231d59b7f76697ba478a2008eaf44f4214d6904619a077dcddcb3",
+      "sha256": "5772b83adf530665b596f63b26f88c68824e7cd97d932f521506fa1dd29a6491",
       "files": 838
     },
     "RP": {
-      "sha256": "1a31d6b6a21fdd89f2508c8d97b23431a361d16c75e8b6deb7bfd3913f35d53d",
-      "files": 3232
+      "sha256": "523594798852f8c1ee7efc39258a6f4ca0bbe0dc94a95578e77beb9d621b6e6b",
+      "files": 3200
     }
   }
 }

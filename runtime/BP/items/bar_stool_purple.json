@@ -4,7 +4,7 @@
     "description": {
       "identifier": "kaleidoscope_world_liquor:bar_stool_purple",
       "menu_category": {
-        "category": "equipment",
+        "category": "construction",
         "group": "kaleidoscope_tavern:itemGroup.name.furniture"
       }
     },
