@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check current source cups and retain every unrelated historical surface guard.
+"""Check all model depths, current cups and retained historical surface guards.
 
 The four reviewed source updates supersede their old UV/geometry witnesses.
 Those immutable witnesses remain intact. All cups still use the host's actual
@@ -27,11 +27,17 @@ def check():
     assert expected.size==actual.size and expected.tobytes()==actual.tobytes(),('Current source pixels changed',path)
    else:assert json.loads(path.read_bytes())==json.loads(data),('Current source geometry/UV changed',path)
   host.fixture_checks();ids=host.geometry_ids(root);count=0;face_count=0
+  all_count=0;all_face_count=0
   for path in (root/'runtime/RP/models').rglob('*.json'):
-   doc=json.loads(path.read_text());selected=[g for g in doc.get('minecraft:geometry',[]) if g['description']['identifier'] in ids]
+   doc=json.loads(path.read_text());geometries=doc.get('minecraft:geometry',[])
+   # The same source-independent depth check also guards furniture and freezer
+   # helpers. Opposite-facing joins are not z-fighting in the one-sided routes.
+   # This static check cannot certify client alpha sorting or animated playback.
+   all_count+=len(geometries);all_face_count+=sum(len(host.faces(g)) for g in geometries)
+   assert not any(host.conflicts(g) for g in geometries),('Competing same-facing model surfaces',path)
+   selected=[g for g in geometries if g['description']['identifier'] in ids]
    if not selected:continue
    count+=len(selected);face_count+=sum(len(host.faces(g)) for g in selected)
-   assert not any(host.conflicts(g) for g in selected),path
    assert host.repair_geometry(copy.deepcopy(doc))==0,('Unstable drink sheet repair',path)
    name=path.relative_to(root).as_posix();old=history['files'].get(name)
    if path in files:
@@ -51,6 +57,6 @@ def check():
   if all(path.exists() for path in pair):
    combined={'bones':[bone for path in pair for bone in json.loads(path.read_text())['minecraft:geometry'][0]['bones']]}
    assert not host.conflicts(combined),'Signature glass/liquid render passes overlap'
- print(json.dumps({'current_source_cups':len(rows),'authored_inventory_icons':2,'geometriesChecked':count,'renderedFacesChecked':face_count,'remainingSameFacingDepthConflicts':0,'idempotent':True,'historical_witnesses_preserved':True,'clientTest':False}))
+ print(json.dumps({'allGeometriesChecked':all_count,'allRenderedFacesChecked':all_face_count,'current_source_cups':len(rows),'authored_inventory_icons':2,'geometriesChecked':count,'renderedFacesChecked':face_count,'remainingSameFacingDepthConflicts':0,'idempotent':True,'historical_witnesses_preserved':True,'clientTest':False}))
 
 if __name__=='__main__':check()
