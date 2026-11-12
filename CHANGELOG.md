@@ -1,3 +1,7 @@
+## 0.1.221 — 2026-11-12
+
+Restore per-tick ice replacement detection and immediate paused-chunk recovery. Cache chunk availability for one tick only and omit confirmed-unloaded paused rows from sorting and block reads. Preserve original timing, neighbor behavior, IDs and saved data. The earlier 0.1.220 candidate changed these behaviors and is superseded; its original regression has been restored. Offline operation counts are not RAM/FPS or native acceptance.
+
 ## 0.1.220 — 2026-11-12
 
 Group frost-aging work by chunk. Check chunk availability once for active rows, defer individual block reads until scheduled due time, and recheck paused chunks with a bounded per-tick budget. Preserve vanilla frosted-ice identity, persisted remaining delay and ordering. Focused source/API-double regressions cover operation counts; no new BDS, client, RAM/FPS or LIVE result is claimed.

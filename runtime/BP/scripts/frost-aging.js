@@ -8,8 +8,6 @@ const DIRECTIONS=[[0,-1,0],[0,1,0],[0,0,-1],[0,0,1],[-1,0,0],[1,0,0]];
 const OUTSIDE_AIR=Object.freeze({typeId:'minecraft:air',isAir:true});
 export function frostBlock(dimension,p){const h=dimension.heightRange;if(h&&(p.y<h.min||p.y>=h.max))return OUTSIDE_AIR;return dimension.getBlock(p);}
 const key=(dimension,p)=>`${dimension}/${p.x},${p.y},${p.z}`;
-const chunkKey=row=>`${row.dimension}/${Math.floor(row.p.x/16)},${Math.floor(row.p.z/16)}`;
-const PAUSED_CHUNK_RECHECK_TICKS=20,MAX_PAUSED_CHUNK_PROBES_PER_TICK=4;
 const at=(p,d)=>({x:p.x+d[0],y:p.y+d[1],z:p.z+d[2]});
 const roll=(random,n)=>Math.floor(random()*n);
 export const frostDelay=(random,min,max)=>min+roll(random,max-min+1);
@@ -20,7 +18,7 @@ export function flushFrostedIce(){installed?.flush();}
 
 export class FrostAgingScheduler {
  constructor(world,{random=Math.random}={}){
-  this.world=world;this.random=random;this.rows=new Map();this.shards=new Map();this.watched=new Map();this.dirty=new Set();this.activeChunks=new Map();this.pausedChunks=new Map();this.pausedChunkLastProbe=new Map();
+  this.world=world;this.random=random;this.rows=new Map();this.shards=new Map();this.watched=new Map();this.dirty=new Set();
   this.clock=world.getDynamicProperty(CLOCK)??0;
   this.order=world.getDynamicProperty(ORDER)??0;
   if(!Number.isSafeInteger(this.order)||this.order<0)throw Error('Invalid frost order');
@@ -39,11 +37,9 @@ export class FrostAgingScheduler {
     this.remember({dimension,p,due,paused,order});
    }
   }
-  // A persisted paused chunk gets one immediate load-state probe after restart.
-  for(const chunk of this.pausedChunkLastProbe.keys())this.pausedChunkLastProbe.set(chunk,this.clock-PAUSED_CHUNK_RECHECK_TICKS);
  }
  shard(row){const {x,y,z}=row.p,index=(x&15)|((z&15)<<4)|((y&15)<<8);return {name:PREFIX+encodeURIComponent(row.dimension)+'/'+Math.floor(x/16)+'/'+Math.floor(y/16)+'/'+Math.floor(z/16)+'/'+Math.floor(index/512),index};}
- remember(row){const id=key(row.dimension,row.p),name=this.shard(row).name,chunk=chunkKey(row);this.rows.set(id,row);if(!this.shards.has(name))this.shards.set(name,new Map());this.shards.get(name).set(id,row);const target=row.due===null?this.pausedChunks:this.activeChunks;if(!target.has(chunk))target.set(chunk,new Map());target.get(chunk).set(id,row);if(row.due===null&&!this.pausedChunkLastProbe.has(chunk))this.pausedChunkLastProbe.set(chunk,this.clock);}
+ remember(row){const id=key(row.dimension,row.p),name=this.shard(row).name;this.rows.set(id,row);if(!this.shards.has(name))this.shards.set(name,new Map());this.shards.get(name).set(id,row);}
  mark(row){this.dirty.add(this.shard(row).name);}
  block(row){return frostBlock(this.world.getDimension(row.dimension),row.p);}
  schedule(dimension,p,delay){
@@ -55,11 +51,7 @@ export class FrostAgingScheduler {
   this.schedule(dimension.id,p,frostDelay(this.random,60,120));
   try{this.neighbors({dimension:dimension.id,p});}catch{/* Unavailable boundaries do not suppress reachable ice. */}
  }
- forget(row){const id=key(row.dimension,row.p),name=this.shard(row).name,chunk=chunkKey(row);this.rows.delete(id);this.shards.get(name)?.delete(id);for(const target of [this.activeChunks,this.pausedChunks]){const group=target.get(chunk);group?.delete(id);if(group&&!group.size)target.delete(chunk);}if(!this.pausedChunks.has(chunk))this.pausedChunkLastProbe.delete(chunk);this.mark(row);}
- pause(row,remaining){const id=key(row.dimension,row.p),chunk=chunkKey(row),active=this.activeChunks.get(chunk);active?.delete(id);if(active&&!active.size)this.activeChunks.delete(chunk);row.due=null;row.paused=remaining;if(!this.pausedChunks.has(chunk))this.pausedChunks.set(chunk,new Map());this.pausedChunks.get(chunk).set(id,row);this.mark(row);this.pausedChunkLastProbe.set(chunk,this.clock);}
- resumeChunk(chunk,rows){this.pausedChunks.delete(chunk);this.pausedChunkLastProbe.delete(chunk);for(const [id,row]of rows){if(this.rows.get(id)!==row||row.due!==null)continue;row.due=this.clock+row.paused;row.paused=null;if(!this.activeChunks.has(chunk))this.activeChunks.set(chunk,new Map());this.activeChunks.get(chunk).set(id,row);this.mark(row);}}
- probeActiveChunks(){for(const [chunk,rows]of [...this.activeChunks]){if(!rows.size){this.activeChunks.delete(chunk);continue;}const row=rows.values().next().value;try{const dimension=this.world.getDimension(row.dimension);if(typeof dimension.isChunkLoaded==='function'){if(!dimension.isChunkLoaded(row.p))for(const [id,pending]of [...rows])if(this.rows.get(id)===pending&&pending.due!==null)this.pause(pending,Math.max(0,pending.due-this.clock+1));}else{for(const [id,pending]of [...rows])if(this.rows.get(id)===pending&&pending.due!==null){const block=this.block(pending);if(!block)throw Error('Unloaded');}}}catch{for(const [id,pending]of [...rows])if(this.rows.get(id)===pending&&pending.due!==null)this.pause(pending,Math.max(0,pending.due-this.clock+1));}}}
- probePausedChunks(){let visited=0;const budget=Math.min(MAX_PAUSED_CHUNK_PROBES_PER_TICK,this.pausedChunks.size);while(visited<budget&&this.pausedChunks.size){const entry=this.pausedChunks.entries().next().value;if(!entry)break;const [chunk,rows]=entry;this.pausedChunks.delete(chunk);this.pausedChunks.set(chunk,rows);visited++;if(!rows.size){this.pausedChunks.delete(chunk);this.pausedChunkLastProbe.delete(chunk);continue;}if(this.clock-(this.pausedChunkLastProbe.get(chunk)??-Infinity)<PAUSED_CHUNK_RECHECK_TICKS)continue;this.pausedChunkLastProbe.set(chunk,this.clock);const row=rows.values().next().value;try{const dimension=this.world.getDimension(row.dimension);const loaded=typeof dimension.isChunkLoaded==='function'?dimension.isChunkLoaded(row.p):!!this.block(row);if(loaded)this.resumeChunk(chunk,[...rows]);}catch{/* Keep paused rows and retry this chunk after the bounded interval. */}}}
+ forget(row){const id=key(row.dimension,row.p),name=this.shard(row).name;this.rows.delete(id);this.shards.get(name)?.delete(id);this.mark(row);}
  neighbors(row){
   const dimension=this.world.getDimension(row.dimension),found=[];
   for(const d of DIRECTIONS){const p=at(row.p,d),b=frostBlock(dimension,p);if(!b)throw Error('Frost neighbor unavailable');if(b.typeId===FROST){found.push({dimension:row.dimension,p,block:b});const id=key(row.dimension,p);if(!this.rows.has(id))this.watched.set(id,{dimension:row.dimension,p});}}
@@ -98,22 +90,36 @@ export class FrostAgingScheduler {
  tick(){
   if(!this.rows.size&&!this.watched.size)return;
   this.clock++;this.world.setDynamicProperty(CLOCK,this.clock);
-  // One chunk-loaded check replaces per-row native reads while a chunk is unloaded.
-  this.probeActiveChunks();
-  // Only due rows need a native block read. Future scheduled rows are unchanged
-  // until their deadline; unloaded rows are grouped and rechecked per chunk.
-  const due=[...this.rows.values()].filter(row=>row.due!==null&&row.due<=this.clock).sort((a,b)=>a.due-b.due||a.order-b.order);
-  for(const row of due){
+  // Only confirmed-unloaded, already-paused rows can skip this frame. Keep
+  // active block reads: random ticks and commands can replace ice before due.
+  // The cache expires each tick so reloading never adds a polling delay.
+  const chunks=new Map(),frame=[];
+  for(const row of this.rows.values()){
+   if(row.due===null){
+    const chunk=JSON.stringify([row.dimension,Math.floor(row.p.x/16),Math.floor(row.p.z/16)]);
+    if(!chunks.has(chunk)){
+     let state={};
+     try{const d=this.world.getDimension(row.dimension);state={height:d.heightRange,loaded:d.isChunkLoaded?.(row.p)};}catch{/* Unknown availability retains the original per-row read. */}
+     chunks.set(chunk,state);
+    }
+    const {height,loaded}=chunks.get(chunk);
+    if(loaded===false&&(!height||row.p.y>=height.min&&row.p.y<height.max))continue;
+   }
+   frame.push(row);
+  }
+  // Take a fixed frame snapshot; newly placed/notified work runs next frame.
+  for(const row of frame.sort((a,b)=>(a.due??Infinity)-(b.due??Infinity)||a.order-b.order)){
    if(this.rows.get(key(row.dimension,row.p))!==row)continue;
    let block;
    try{block=this.block(row);if(!block)throw Error('Unloaded');}
-   catch{if(row.due!==null)this.pause(row,Math.max(0,row.due-this.clock+1));continue;}
+   catch{if(row.due!==null){row.paused=Math.max(0,row.due-this.clock+1);row.due=null;this.mark(row);}continue;}
    if(block.typeId!==FROST){this.forget(row);this.notify(row);continue;}
+   if(row.due===null){row.due=this.clock+row.paused;row.paused=null;this.mark(row);}
+   if(row.due>this.clock)continue;
    // Consume before invoking tick, as LevelChunkTicks removes the due entry.
    this.forget(row);
    try{this.scheduled(row,block);}catch(error){this.remember(row);this.mark(row);if(error.name==='LocationInUnloadedChunkError'||error.message==='Frost neighbor unavailable')continue;throw error;}
   }
-  this.probePausedChunks();
   for(const [id,row]of [...this.watched]){
    if(!DIRECTIONS.some(d=>this.rows.has(key(row.dimension,at(row.p,d))))){this.watched.delete(id);continue;}
    try{if(this.block(row)?.typeId!==FROST){this.watched.delete(id);this.notify(row);}}catch{}

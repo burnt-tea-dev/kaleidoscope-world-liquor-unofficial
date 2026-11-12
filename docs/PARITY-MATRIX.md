@@ -1,3 +1,34 @@
+## Frost scheduler review correction — 2026-11-12 (0.1.221)
+
+PR #220's first 0.1.220 candidate deferred block reads until due and probed paused
+chunks every 20 ticks with a four-chunk budget. This changed command/random-tick
+replacement detection and reload timing. Its changed orphan-cleanup test masked
+one regression. The original test is restored, not reinterpreted as a missing hook.
+
+The corrected owner retains main's active per-block checks, immediate reload,
+remaining-delay calculation, due/order sequence, neighbor processing and storage.
+Only already-paused rows in a chunk confirmed unavailable by `isChunkLoaded` skip
+the frame. Availability is cached for this tick only. Missing/throwing/unknown API
+results fall back to the original per-row path; out-of-height synthetic air remains.
+No new timer, persistent index, migration, actor, gameplay ID or API version.
+
+Official [Dimension API](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/dimension?view=minecraft-bedrock-stable)
+and [changelog](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/changelog?view=minecraft-bedrock-stable)
+place `isChunkLoaded` in stable 2.3.0, before the declared 2.12.0-beta target.
+
+Offline comparison against main c5984d46: 4,096 already-paused rows in one chunk,
+20 subsequent ticks: getBlock attempts 81,920 -> 0; chunk queries 0 -> 20; all
+4,096 saved rows retained. Confirmed-unloaded rows no longer enter the frame sort.
+20 deterministic seeds x 250 frames (5,000 frames) matched full cells, rows,
+watchers, clock/order and saved properties, including unload/reload, replacements
+and restart. The existing suite plus focused regressions is 17 cases. Prior frozen
+0.1.220 remains historical and is not the corrected source.
+
+This is production-JavaScript/API-double evidence, not BDS, device memory, FPS,
+client rendering, saved-world acceptance or deployment. Work still scales with
+paused row enumeration and distinct chunks; there is no four-probe global cap,
+which would change reload timing. Active/world and watcher costs remain.
+
 ## Current upstream review — 2026-10-27
 
 Current source adoption and exact remaining gaps are owned by [the 2026-10-28 review](../data/current-author-review-20261028.json). W170 adds current author pendant lamps/dye recipes, cabinet assets, Dassai/Luck+, Explosion power, underwater water-walk exclusion and air-jump velocity. [Native evidence](evidence/current-java-content-20261028.json) covers exact entity-drop attribution and complete native stack metadata, not global Java LootContext parity or rendered client acceptance. Luck currently affects emitted mob-death loot only. TreasureSense outlines remain absent. Historical sections below keep their original scope.
