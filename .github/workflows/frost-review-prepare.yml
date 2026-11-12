@@ -1,0 +1,90 @@
+name: Prepare reviewed frost correction
+on:
+  push:
+    branches: ['audit/frost-paused-chunk-budget-20261112']
+    paths: ['.github/workflows/frost-review-prepare.yml']
+permissions:
+  contents: write
+jobs:
+  prepare:
+    if: github.repository_id == '1385218112'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test and prepare Git objects without updating any ref
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import base64,hashlib,json,os,subprocess,urllib.request
+          from pathlib import Path
+          R=Path('.')
+          def git(*args):return subprocess.check_output(['git',*args],text=True).strip()
+          def blob(data):return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+          assert os.environ['GITHUB_REPOSITORY']=='burnt-tea-dev/kaleidoscope-world-liquor-unofficial'
+          assert git('rev-parse','HEAD^')=='341b98eba1cf9026fdb24424bf7a7257df53e2a9'
+          source_path='runtime/BP/scripts/frost-aging.js'
+          test_path='tests/frost-aging.test.mjs'
+          source=subprocess.check_output(['git','show','c5984d46f4df4b120be72f0b7e229922f95509d4:'+source_path]).decode()
+          assert blob(R.joinpath(source_path).read_bytes())=='e556ee8e14ff771a8f2b99f3b5c5cc6583080655'
+          old='  // Take a fixed frame snapshot; newly placed/notified work runs next frame.\n  for(const row of [...this.rows.values()].sort((a,b)=>(a.due??Infinity)-(b.due??Infinity)||a.order-b.order)){\n'
+          new='  // Only confirmed-unloaded, already-paused rows can skip this frame. Keep\n  // active block reads: random ticks and commands can replace ice before due.\n  // The cache expires each tick so reloading never adds a polling delay.\n  const chunks=new Map(),frame=[];\n  for(const row of this.rows.values()){\n   if(row.due===null){\n    const chunk=JSON.stringify([row.dimension,Math.floor(row.p.x/16),Math.floor(row.p.z/16)]);\n    if(!chunks.has(chunk)){\n     let state={};\n     try{const d=this.world.getDimension(row.dimension);state={height:d.heightRange,loaded:d.isChunkLoaded?.(row.p)};}catch{/* Unknown availability retains the original per-row read. */}\n     chunks.set(chunk,state);\n    }\n    const {height,loaded}=chunks.get(chunk);\n    if(loaded===false&&(!height||row.p.y>=height.min&&row.p.y<height.max))continue;\n   }\n   frame.push(row);\n  }\n  // Take a fixed frame snapshot; newly placed/notified work runs next frame.\n  for(const row of frame.sort((a,b)=>(a.due??Infinity)-(b.due??Infinity)||a.order-b.order)){\n'
+          assert source.count(old)==1
+          R.joinpath(source_path).write_text(source.replace(old,new),encoding='utf-8')
+          tests=subprocess.check_output(['git','show','c5984d46f4df4b120be72f0b7e229922f95509d4:'+test_path]).decode()
+          R.joinpath(test_path).write_text(tests+"\ntest('paused chunks resume on the first loaded tick without restart or a retry budget',()=>{\n const f=fixture(),s=new FrostAgingScheduler(f.world,{random:()=>0});let loaded=false;\n f.dimension.isChunkLoaded=()=>loaded;\n // More than four chunks; include negative coordinates and a zero remainder.\n for(let i=-5;i<7;i++){const p=loc(i*16);f.ice(p);s.schedule(f.dimension.id,p,60);}\n f.setLoaded(false);s.tick();\n for(const row of s.rows.values())assert.equal(row.paused,60);\n loaded=true;f.setLoaded(true);s.tick();\n for(const row of s.rows.values()){assert.equal(row.due,62);assert.equal(row.paused,null);}\n const order=[];s.scheduled=row=>order.push(row.p.x);\n for(let i=0;i<60;i++)s.tick();assert.deepEqual(order,Array.from({length:12},(_,i)=>(i-5)*16));\n});\ntest('dense paused ice uses one load query per chunk per tick without sorting or reading its blocks',()=>{\n const f=fixture(),s=new FrostAgingScheduler(f.world,{random:()=>0});let checks=0,reads=0;\n f.dimension.isChunkLoaded=()=>{checks++;return false;};\n const get=f.dimension.getBlock;f.dimension.getBlock=p=>{reads++;return get(p);};\n for(let x=0;x<16;x++)for(let y=80;y<96;y++)for(let z=0;z<16;z++)s.schedule(f.dimension.id,loc(x,y,z),60);\n f.setLoaded(false);s.tick();reads=0;checks=0;\n const original=Array.prototype.sort,sizes=[];\n Array.prototype.sort=function(...args){sizes.push(this.length);return original.apply(this,args);};\n try{for(let i=0;i<20;i++)s.tick();}finally{Array.prototype.sort=original;}\n assert.equal(reads,0);assert.equal(checks,20);assert.equal(s.rows.size,4096);\n assert.ok(sizes.every(n=>n===0));\n for(const row of s.rows.values()){assert.equal(row.due,null);assert.equal(row.paused,60);}\n});\ntest('paused chunk keys distinguish dimensions and negative X/Z; loaded rows retain global order',()=>{\n const f=fixture(),checks=[],loaded=new Set(['minecraft:nether/-1/-1','minecraft:overworld/0/0']);\n f.world.getDimension=id=>({id,getBlock:p=>{if(!loaded.has(`${id}/${Math.floor(p.x/16)}/${Math.floor(p.z/16)}`))return undefined;return {typeId:FROST};},isChunkLoaded:p=>{const key=`${id}/${Math.floor(p.x/16)}/${Math.floor(p.z/16)}`;checks.push(key);return loaded.has(key);}});\n const s=new FrostAgingScheduler(f.world),rows=[\n  ['minecraft:overworld',loc(-1,80,-1)],['minecraft:nether',loc(-1,80,-1)],\n  ['minecraft:overworld',loc(0,80,0)],['minecraft:nether',loc(0,80,0)],\n  ['minecraft:overworld',loc(-2,90,-2)]\n ];\n for(const [id,p]of rows){s.schedule(id,p,60);const row=[...s.rows.values()].at(-1);row.due=null;row.paused=0;}\n const order=[];s.scheduled=row=>order.push(row.order);s.tick();\n assert.deepEqual(order,[1,2]);assert.equal(checks.length,4);assert.equal(s.rows.size,3);\n loaded.add('minecraft:overworld/-1/-1');loaded.add('minecraft:nether/0/0');s.tick();\n assert.deepEqual(order,[1,2,0,3,4]);assert.equal(s.rows.size,0);\n});\ntest('missing, throwing or inconclusive chunk API falls back; known-loaded block errors remain per-row',()=>{\n for(const probe of [undefined,()=>{throw Error('probe unavailable');},()=>undefined,()=>true]){\n  const f=fixture(),s=new FrostAgingScheduler(f.world);f.dimension.isChunkLoaded=probe;\n  for(let x=0;x<2;x++){f.ice(loc(x));s.schedule(f.dimension.id,loc(x),60);}\n  f.setLoaded(false);s.tick();f.setLoaded(true);\n  const get=f.dimension.getBlock;f.dimension.getBlock=p=>p.x===0?undefined:get(p);\n  s.tick();const rows=[...s.rows.values()];\n  assert.equal(rows[0].due,null);assert.equal(rows[0].paused,60);\n  assert.equal(rows[1].due,62);assert.equal(rows[1].paused,null);\n }\n});\ntest('out-of-height paused rows keep the original synthetic-air cleanup',()=>{\n const f=fixture(),s=new FrostAgingScheduler(f.world);f.dimension.heightRange={min:-64,max:320};f.dimension.isChunkLoaded=()=>false;f.setLoaded(false);\n s.schedule(f.dimension.id,loc(0,80),60);s.schedule(f.dimension.id,loc(0,400),60);\n for(const row of s.rows.values()){row.due=null;row.paused=60;}\n s.tick();assert.equal(s.rows.size,1);assert.equal([...s.rows.values()][0].p.y,80);\n});\n",encoding='utf-8')
+          assert blob(R.joinpath(source_path).read_bytes())=='37127de053b557e21bb82c36166f82357f69b0dd'
+          assert blob(R.joinpath(test_path).read_bytes())=='a95f69a2b94995e0f0bf799a636b37495a72612d'
+          subprocess.run(['node','--test',test_path],check=True)
+          version=[0,1,221];text='0.1.221'
+          def load(path):return json.loads(R.joinpath(path).read_text())
+          def write(path,value):R.joinpath(path).write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8')
+          baseline=load('baseline.json');assert baseline['version']==[0,1,220]
+          for side in ('BP','RP'):
+           path=f'runtime/{side}/manifest.json';data=load(path);data['header']['version']=version
+           for mod in data['modules']:mod['version']=version
+           for dep in data.get('dependencies',[]):
+            if dep.get('uuid') in (baseline['packs']['BP']['uuid'],baseline['packs']['RP']['uuid']):dep['version']=version
+           write(path,data);baseline['packs'][side]['dependencies']=data.get('dependencies',[])
+          baseline['version']=version;write('baseline.json',baseline)
+          package=load('package.json');package['version']=text;write('package.json',package)
+          p=R/'runtime/BP/scripts/payload.js';data=p.read_text();assert data.count('"version": "0.1.220"')==1;p.write_text(data.replace('"version": "0.1.220"','"version": "0.1.221"',1),encoding='utf-8')
+          notes='Restore per-tick ice replacement detection and immediate paused-chunk recovery. Cache chunk availability for one tick only and omit confirmed-unloaded paused rows from sorting and block reads. Preserve original timing, neighbor behavior, IDs and saved data. The earlier 0.1.220 candidate changed these behaviors and is superseded; its original regression has been restored. Offline operation counts are not RAM/FPS or native acceptance.'
+          request=load('.github/release-request.json');request.update(version=text,tag='v'+text,title='World Liquor '+text+': preserve frost timing while reducing paused work',status='source_performance_candidate',native_evidence_scope='Source/API-double validation only; no new BDS, client, saved-world or LIVE result.',public_notes_inline=notes,publication_request=False,publication_ready=False);write('.github/release-request.json',request)
+          p=R/'CHANGELOG.md';p.write_text('## '+text+' — 2026-11-12\n\n'+notes+'\n\n'+p.read_text(),encoding='utf-8')
+          p=R/'docs/PARITY-MATRIX.md';p.write_text("## Frost scheduler review correction — 2026-11-12 (0.1.221)\n\nPR #220's first 0.1.220 candidate deferred block reads until due and probed paused\nchunks every 20 ticks with a four-chunk budget. This changed command/random-tick\nreplacement detection and reload timing. Its changed orphan-cleanup test masked\none regression. The original test is restored, not reinterpreted as a missing hook.\n\nThe corrected owner retains main's active per-block checks, immediate reload,\nremaining-delay calculation, due/order sequence, neighbor processing and storage.\nOnly already-paused rows in a chunk confirmed unavailable by `isChunkLoaded` skip\nthe frame. Availability is cached for this tick only. Missing/throwing/unknown API\nresults fall back to the original per-row path; out-of-height synthetic air remains.\nNo new timer, persistent index, migration, actor, gameplay ID or API version.\n\nOfficial [Dimension API](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/dimension?view=minecraft-bedrock-stable)\nand [changelog](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/changelog?view=minecraft-bedrock-stable)\nplace `isChunkLoaded` in stable 2.3.0, before the declared 2.12.0-beta target.\n\nOffline comparison against main c5984d46: 4,096 already-paused rows in one chunk,\n20 subsequent ticks: getBlock attempts 81,920 -> 0; chunk queries 0 -> 20; all\n4,096 saved rows retained. Confirmed-unloaded rows no longer enter the frame sort.\n20 deterministic seeds x 250 frames (5,000 frames) matched full cells, rows,\nwatchers, clock/order and saved properties, including unload/reload, replacements\nand restart. The existing suite plus focused regressions is 17 cases. Prior frozen\n0.1.220 remains historical and is not the corrected source.\n\nThis is production-JavaScript/API-double evidence, not BDS, device memory, FPS,\nclient rendering, saved-world acceptance or deployment. Work still scales with\npaused row enumeration and distinct chunks; there is no four-probe global cap,\nwhich would change reload timing. Active/world and watcher costs remain.\n\n"+p.read_text(),encoding='utf-8')
+          old_history=load('release-history.json')
+          subprocess.run(['python','tools/baseline_gate.py','freeze'],check=True)
+          baseline=load('baseline.json');history=load('release-history.json')
+          assert all(history[k]==v for k,v in old_history.items())
+          assert baseline['source_trees']=={'BP': {'sha256': 'c7dbe4e16eaa4ed1a5c68f659aeba6f52a79a2596612a1e375f56c6f5b49fe4c', 'files': 353}, 'RP': {'sha256': 'b5a5bef6be7a18faa53e8b6ba5d27d2514c393d3f3f074c65142c7a89e572a03', 'files': 561}}
+          subprocess.run(['git','diff','--check'],check=True)
+          paths=['.github/release-request.json','CHANGELOG.md','baseline.json','package.json','release-history.json','runtime/BP/manifest.json','runtime/RP/manifest.json','runtime/BP/scripts/payload.js',source_path,test_path,'docs/PARITY-MATRIX.md']
+          assert set(git('diff','--name-only').splitlines())==set(paths)
+          def api(endpoint,payload):
+           req=urllib.request.Request('https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/git/'+endpoint,data=json.dumps(payload).encode(),headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'},method='POST')
+           with urllib.request.urlopen(req) as response:return json.load(response)
+          elements=[]
+          for path in paths:
+           data=R.joinpath(path).read_bytes();sha=api('blobs',{'content':base64.b64encode(data).decode(),'encoding':'base64'})['sha'];assert sha==blob(data)
+           elements.append({'path':path,'mode':'100644','type':'blob','sha':sha})
+          elements.append({'path':'.github/workflows/frost-review-prepare.yml','mode':'100644','type':'blob','sha':None})
+          tree=api('trees',{'base_tree':git('rev-parse','HEAD^{tree}'),'tree':elements})['sha']
+          result={'parent':git('rev-parse','HEAD'),'tree':tree,'version':text,'source_trees':baseline['source_trees'],'changed_files':elements,'focused_tests':17,'native_tests':False,'refs_changed':False}
+          Path('frost-review-prepared.json').write_text(json.dumps(result,indent=2)+'\n')
+          print('PREPARED_REVIEW_TREE '+json.dumps(result))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: frost-review-prepared
+          path: frost-review-prepared.json
