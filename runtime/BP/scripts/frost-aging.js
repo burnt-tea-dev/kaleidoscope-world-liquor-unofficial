@@ -90,8 +90,25 @@ export class FrostAgingScheduler {
  tick(){
   if(!this.rows.size&&!this.watched.size)return;
   this.clock++;this.world.setDynamicProperty(CLOCK,this.clock);
+  // Only confirmed-unloaded, already-paused rows can skip this frame. Keep
+  // active block reads: random ticks and commands can replace ice before due.
+  // The cache expires each tick so reloading never adds a polling delay.
+  const chunks=new Map(),frame=[];
+  for(const row of this.rows.values()){
+   if(row.due===null){
+    const chunk=JSON.stringify([row.dimension,Math.floor(row.p.x/16),Math.floor(row.p.z/16)]);
+    if(!chunks.has(chunk)){
+     let state={};
+     try{const d=this.world.getDimension(row.dimension);state={height:d.heightRange,loaded:d.isChunkLoaded?.(row.p)};}catch{/* Unknown availability retains the original per-row read. */}
+     chunks.set(chunk,state);
+    }
+    const {height,loaded}=chunks.get(chunk);
+    if(loaded===false&&(!height||row.p.y>=height.min&&row.p.y<height.max))continue;
+   }
+   frame.push(row);
+  }
   // Take a fixed frame snapshot; newly placed/notified work runs next frame.
-  for(const row of [...this.rows.values()].sort((a,b)=>(a.due??Infinity)-(b.due??Infinity)||a.order-b.order)){
+  for(const row of frame.sort((a,b)=>(a.due??Infinity)-(b.due??Infinity)||a.order-b.order)){
    if(this.rows.get(key(row.dimension,row.p))!==row)continue;
    let block;
    try{block=this.block(row);if(!block)throw Error('Unloaded');}
