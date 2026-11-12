@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "kaleidoscope_world_liquor:freezer_sugar_visual",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/repair/freezer_sugar"
+      },
+      "geometry": {
+        "default": "geometry.kwl.freezer_sugar"
+      },
+      "render_controllers": [
+        "controller.render.kwl.freezer_sugar"
+      ]
+    }
+  }
+}
