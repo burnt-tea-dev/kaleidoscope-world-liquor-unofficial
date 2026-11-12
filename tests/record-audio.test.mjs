@@ -221,7 +221,10 @@ test('the current 1.26.60.6 fixture uses server 2.12 and tests the 1.26.60 recor
   assert.equal(custom.format_version,'1.26.60');
   assert.equal(custom['minecraft:item'].components['minecraft:record'].sound_event,'record.record_capability_probe');
   assert.equal(fixture.probe_script,'record-capability-probe-260.js');
-  assert.equal(fs.readFileSync(output+'/BP/scripts/main.js','utf8'),fs.readFileSync(new URL('../tools/fixtures/record-capability-probe-260.js',import.meta.url),'utf8'));
+  const probePath=new URL('../tools/fixtures/record-capability-probe-260.js',import.meta.url).pathname;
+  const syntax=spawnSync('node',['--check',probePath],{encoding:'utf8'});
+  assert.equal(syntax.status,0,syntax.stderr||syntax.stdout);
+  assert.equal(fs.readFileSync(output+'/BP/scripts/main.js','utf8'),fs.readFileSync(probePath,'utf8'));
   assert.ok(definitions['record.record_capability_probe']);
   assert.ok(fs.existsSync(output+'/RP/sounds/kwl/custom_music_1.ogg'));
  }finally{fs.rmSync(temp,{recursive:true,force:true})}
