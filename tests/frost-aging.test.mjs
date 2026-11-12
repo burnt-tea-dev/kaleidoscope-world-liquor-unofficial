@@ -4,13 +4,13 @@ import {FROST,FrostAgingScheduler,frostDelay,setFrostAgingScheduler} from '../ru
 import {freezeWater} from '../runtime/BP/scripts/frost-water.js';
 const loc=(x=0,y=80,z=0)=>({x,y,z});
 function fixture(){
- const cells=new Map(),properties=new Map(),queries=[],writes=[];let loaded=true;
+ const cells=new Map(),properties=new Map(),queries=[],writes=[],chunkChecks=[];let loaded=true;
  const id=p=>`${p.x},${p.y},${p.z}`;
  function block(p){const k=id(p);if(!cells.has(k))cells.set(k,{typeId:'minecraft:air',age:0,light:15});const row=cells.get(k);return {get typeId(){return row.typeId;},permutation:{getState:()=>row.age,withState:(name,value)=>({age:value})},getLightLevel(){queries.push('light');return row.light;},setType(v){row.typeId=v;},setPermutation(v){row.age=v.age;}};}
- const dimension={id:'minecraft:overworld',getBlock(p){if(!loaded)throw Error('unloaded');queries.push(id(p));return block(p);}};
+ const dimension={id:'minecraft:overworld',isChunkLoaded(p){chunkChecks.push(`${Math.floor(p.x/16)},${Math.floor(p.z/16)}`);return loaded;},getBlock(p){if(!loaded)throw Error('unloaded');queries.push(id(p));return block(p);}};
  const world={getDynamicProperty:k=>properties.get(k),getDynamicPropertyIds:()=>[...properties.keys()],setDynamicProperty(k,v){writes.push(k);if(v===undefined)properties.delete(k);else properties.set(k,v);},getDimension:()=>dimension};
  const ice=(p,age=0,light=15)=>cells.set(id(p),{typeId:FROST,age,light});
- return {world,dimension,cells,properties,queries,writes,block,ice,setLoaded:v=>{loaded=v;}};
+ return {world,dimension,cells,properties,queries,writes,chunkChecks,block,ice,setLoaded:v=>{loaded=v;}};
 }
 test('source nextInt delay endpoints',()=>{
  assert.equal(frostDelay(()=>0,60,120),60);assert.equal(frostDelay(()=>1-Number.EPSILON,60,120),120);
@@ -31,6 +31,28 @@ test('darkness reschedules without a guessed lifetime; restart and /time indepen
 test('unloaded work preserves remaining delay rather than aging or being forgotten',()=>{
  const f=fixture();f.ice(loc());let s=new FrostAgingScheduler(f.world,{random:()=>0});s.place(f.dimension,loc());s.flush();for(let i=0;i<30;i++)s.tick();f.setLoaded(false);for(let i=0;i<200;i++)s.tick();s=new FrostAgingScheduler(f.world,{random:()=>0});f.setLoaded(true);s.tick();for(let i=0;i<29;i++)s.tick();assert.equal(f.block(loc()).permutation.getState('age'),0);s.tick();assert.equal(f.block(loc()).permutation.getState('age'),1);
 });
+
+test('future rows check chunk state once and defer per-block reads until their due tick',()=>{
+ const f=fixture(),s=new FrostAgingScheduler(f.world,{random:()=>0});
+ for(let x=0;x<12;x++){const p=loc(x,80,0);f.ice(p);s.schedule(f.dimension.id,p,60);}
+ s.tick();
+ assert.equal(f.chunkChecks.length,1);
+ assert.equal(f.queries.length,0);
+});
+test('paused rows are grouped by chunk and rechecked within a four-chunk per-tick budget',()=>{
+ const f=fixture(),s=new FrostAgingScheduler(f.world,{random:()=>0});
+ for(let x=0;x<12;x++){const p=loc(x*16,80,0);f.ice(p);s.schedule(f.dimension.id,p,1);}
+ f.setLoaded(false);s.tick();
+ assert.equal(s.pausedChunks.size,12);
+ assert.equal(f.chunkChecks.length,12);
+ f.chunkChecks.length=0;
+ for(let i=0;i<19;i++)s.tick();
+ assert.equal(f.chunkChecks.length,0);
+ s.tick();
+ assert.equal(f.chunkChecks.length,4);
+ assert.equal(s.pausedChunks.size,12);
+});
+
 test('removing tracked ice notifies adjacent ice and refuses to replace a foreign solid block',()=>{
  const f=fixture(),s=new FrostAgingScheduler(f.world,{random:()=>0});for(let x=0;x<3;x++)f.ice(loc(x));for(let x=0;x<3;x++)s.place(f.dimension,loc(x));f.block(loc(1)).setType('minecraft:stone');s.removed(f.dimension,loc(1));assert.equal(f.block(loc()).typeId,'minecraft:water');assert.equal(f.block(loc(2)).typeId,'minecraft:water');assert.equal(f.block(loc(1)).typeId,'minecraft:stone');assert.equal(s.rows.size,0);
 });
