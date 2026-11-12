@@ -66,7 +66,7 @@ test('sampled placement matches original Java float operations, including signed
  }
 });
 test('unsupported and empty inputs keep original slot numbers; reopening restores the same pose',()=>{
- const f=visualFixture(),state={input:['minecraft:sugar','minecraft:blue_dye',null,'minecraft:blue_dye']};
+ const f=visualFixture(),state={input:['minecraft:potion','minecraft:blue_dye',null,'minecraft:blue_dye']};
  f.sync(state);let inputs=f.entities.filter(e=>!e.removed);assert.deepEqual(inputs.map(e=>e.getDynamicProperty(f.N+':visual_slot')),['input1','input3']);
  const before=inputs.map(e=>({location:{...e.location},rotation:e.getRotation()}));
  f.sync({...state,fluid:'other_pack:fluid'});assert.equal(f.operations.spawn,2);

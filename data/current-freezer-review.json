@@ -72,7 +72,8 @@
     "source_method_oracle_sha256": "b97f7d7d1367c5578c5b0776217db5147dbd73f4325759261735f4e37fc82ccb",
     "client": false,
     "sprite_sources": {
-      "minecraft:sugar": "data/freezer-sugar-source.json (pinned 1.21.1 generated asset mirror; not direct official-client archive re-hash)"
-    }
+      "minecraft:sugar": "data/freezer-sugar-source.json (exact official Mojang 1.21.1 client PNG; original mirror receipt retained)"
+    },
+    "current_renderer_recheck": "data/freezer-sugar-source.json: NeoForge 1.1.12 CF9217896 FreezerRenderer and FreezerBlockEntity class bytes equal the recorded 1.1.11 source; read-only recheck on 2026-11-12"
   }
 }

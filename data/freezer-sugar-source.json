@@ -13,8 +13,86 @@
     "commit": "6c571b0825ee27b81f01127c2bd0d4ba2c89abb9",
     "path": "data/1.21.1/items/sugar.png",
     "blob": "ab9f1478a59529a0984e76542fda79d116a4c7fa",
-    "note": "Generated Minecraft version asset mirror; this change does not claim a direct re-hash from the official Mojang client JAR."
+    "note": "Original generated-asset mirror receipt retained. On 2026-11-12 its PNG was independently verified byte-for-byte against the pinned official Mojang 1.21.1 client archive below."
   },
   "renderer": "Existing 4x4 flat freezer item surface; Java-seeded slot placement/yaw and dry/filled height path unchanged.",
-  "client": false
+  "client": false,
+  "official_client_verification": {
+    "checked_on": "2026-11-12",
+    "client_url": "https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar",
+    "client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+    "client_sha256": "499f6897d1837516680f3114072d8106e11c9adcd933fe5cf051b551089b0c99",
+    "assets": {
+      "assets/minecraft/textures/item/sugar.png": {
+        "sha256": "978323ef2f75967c503f533cd55fcac6a2733cb2c2f9d19857c6a49bb4a1c4c6",
+        "bytes": 171
+      },
+      "assets/minecraft/models/item/sugar.json": {
+        "sha256": "3c06bb39adb96025078855e5a2da4f48b6b1e9979c761405d26e56dda061a283",
+        "bytes": 100
+      },
+      "assets/minecraft/models/item/generated.json": {
+        "sha256": "63190611202e75ad7b812bc9a4b31bd53f3e186895d7b53e5e280b0d1e30a67a",
+        "bytes": 813
+      }
+    },
+    "texture_bytes_equal": true,
+    "model_parent": "minecraft:item/generated",
+    "generated_parent": "builtin/generated",
+    "fixed_transform": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "scope": "Exact original PNG and generated-model source only. The existing Bedrock flat surface is not an extruded generated item model or proof of absolute UV orientation, thickness, occlusion or client rendering."
+  },
+  "java_renderer_recheck": {
+    "checked_on": "2026-11-12",
+    "listing_url": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/all",
+    "latest_listed": [
+      {
+        "minecraft": "1.21.1",
+        "loader": "NeoForge",
+        "version": "1.1.12",
+        "file_id": 9217896
+      },
+      {
+        "minecraft": "1.20.1",
+        "loader": "Forge",
+        "version": "1.1.13",
+        "file_id": 9217901
+      },
+      {
+        "minecraft": "26.1.2",
+        "loader": "NeoForge",
+        "version": "1.1.6",
+        "file_id": 9087098
+      }
+    ],
+    "inspected": {
+      "minecraft": "1.21.1",
+      "loader": "NeoForge",
+      "version": "1.1.12",
+      "file_id": 9217896,
+      "url": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/9217896",
+      "archive_sha256": "d963089ad0a7f99a8950171d76913cfeea99a0126ee12b16c72c3162f8545da3"
+    },
+    "prior": {
+      "version": "1.1.11",
+      "file_id": 9066406,
+      "archive_sha256": "e1f51736138bfe65ac1ce2aae2f2f3bd292dce71e2b8d2f18580a68bdea807cc"
+    },
+    "unchanged_class_sha256": {
+      "com/bmt/kaleidoscope_world_liquor/client/renderer/FreezerRenderer.class": "4b0075ef9ef8c53f3f1e26b7fc3c5690af4f087732114c351961e69b855a947f",
+      "com/bmt/kaleidoscope_world_liquor/block/entity/FreezerBlockEntity.class": "efc56d9bdcdc5efbb242786ae267ea983a370414df0b07a2c4783b68f85fbcf8"
+    },
+    "scope": "Read-only archive and bytecode comparison. Both listed freezer classes are byte-identical between the inspected 1.1.11 and 1.1.12 NeoForge archives; existing input and renderer contracts are retained. Other loader branches were listed, not bytecode-reviewed in this sugar repair."
+  }
 }
