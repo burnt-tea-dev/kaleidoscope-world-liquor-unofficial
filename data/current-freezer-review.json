@@ -58,9 +58,10 @@
     "supported_sprites": [
       "minecraft:snowball",
       "minecraft:blue_dye",
-      "minecraft:slime_ball"
+      "minecraft:slime_ball",
+      "minecraft:sugar"
     ],
-    "implemented": "Position/slot-seeded placement and per-item yaw, original dry/wet ordinary-item height; original native input slot numbers retained. No persistent random state.",
+    "implemented": "Position/slot-seeded placement and per-item yaw for four flat sprites (snowball, blue dye, slime ball, sugar); original dry/wet ordinary-item height and native input slot numbers retained. No persistent random state.",
     "pending": [
       "arbitrary full ItemStack renderer",
       "block-item scale and height route",
@@ -69,6 +70,9 @@
       "actual client rendering"
     ],
     "source_method_oracle_sha256": "b97f7d7d1367c5578c5b0776217db5147dbd73f4325759261735f4e37fc82ccb",
-    "client": false
+    "client": false,
+    "sprite_sources": {
+      "minecraft:sugar": "data/freezer-sugar-source.json (pinned 1.21.1 generated asset mirror; not direct official-client archive re-hash)"
+    }
   }
 }
