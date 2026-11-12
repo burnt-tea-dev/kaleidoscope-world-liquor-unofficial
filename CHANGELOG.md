@@ -1,3 +1,7 @@
+## 0.1.220 — 2026-11-12
+
+Group frost-aging work by chunk. Check chunk availability once for active rows, defer individual block reads until scheduled due time, and recheck paused chunks with a bounded per-tick budget. Preserve vanilla frosted-ice identity, persisted remaining delay and ordering. Focused source/API-double regressions cover operation counts; no new BDS, client, RAM/FPS or LIVE result is claimed.
+
 ## 0.1.209 — 2026-11-10
 
 Group drinks, food and furniture by use in the native creative inventory with short labels and shared icons. Restore the two already-visible green/pink pendant lamps to the catalog; keep every hidden variant and Java drink order. Pair both packs with the exact Tavern 0.6.221 source. Existing gameplay, SDK, item identities and saved formats remain unchanged; no new native/client result is claimed.
