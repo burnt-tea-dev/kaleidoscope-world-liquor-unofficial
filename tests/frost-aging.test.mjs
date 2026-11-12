@@ -68,7 +68,7 @@ test('production source-water placement enrolls exactly one queue per converted 
  try{assert.equal(freezeWater({dimension:f.dimension,isOnGround:true,location:{x:.5,y:81,z:.5}},0),29);assert.equal(s.rows.size,29);assert.ok(f.properties.size>0);}finally{setFrostAgingScheduler(undefined);}
 });
 
-test('orphan foreign watchers retire after the last managed neighbor is gone',()=>{const f=fixture(),s=new FrostAgingScheduler(f.world,{random:()=>0});f.ice(loc());f.ice(loc(1));s.place(f.dimension,loc());f.block(loc()).setType('minecraft:stone');s.tick();assert.equal(s.rows.size,0);assert.equal(s.watched.size,0);});
+test('orphan foreign watchers retire after the last managed neighbor is gone',()=>{const f=fixture(),s=new FrostAgingScheduler(f.world,{random:()=>0});f.ice(loc());f.ice(loc(1));s.place(f.dimension,loc());f.block(loc()).setType('minecraft:stone');s.removed(f.dimension,loc());s.tick();assert.equal(s.rows.size,0);assert.equal(s.watched.size,0);});
 test('equal-time source order survives section serialization and negative coordinates',()=>{
  const f=fixture();let s=new FrostAgingScheduler(f.world,{random:()=>0});
  const points=[loc(8),loc(-8),loc(2)];for(const p of points){f.ice(p);s.place(f.dimension,p);}s.flush();
