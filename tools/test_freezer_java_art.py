@@ -45,5 +45,28 @@ class FreezerJavaArt(unittest.TestCase):
     return j
    with self.subTest(field=field),patch.object(converter,'read',altered):
     with self.assertRaises(AssertionError):converter.check()
+ def test_sugar_flat_sprite_is_pinned_and_wired(self):
+  source=json.loads((ROOT/'data/freezer-sugar-source.json').read_text())
+  texture=ROOT/'runtime/RP/textures/repair/freezer_sugar.png'
+  data=texture.read_bytes()
+  self.assertEqual(source['sha256'],hashlib.sha256(data).hexdigest())
+  with Image.open(texture) as image:self.assertEqual((16,16),image.size)
+  self.assertEqual('6c571b0825ee27b81f01127c2bd0d4ba2c89abb9',source['source']['commit'])
+  self.assertEqual('ab9f1478a59529a0984e76542fda79d116a4c7fa',source['source']['blob'])
+  bp=json.loads((ROOT/'runtime/BP/entities/freezer_sugar_visual.json').read_text())['minecraft:entity']['description']
+  client=json.loads((ROOT/'runtime/RP/entity/freezer_sugar.entity.json').read_text())['minecraft:client_entity']['description']
+  geometry=json.loads((ROOT/'runtime/RP/models/entity/freezer_sugar.geo.json').read_text())['minecraft:geometry'][0]
+  controller=json.loads((ROOT/'runtime/RP/render_controllers/freezer_sugar.json').read_text())['render_controllers']
+  self.assertEqual('kaleidoscope_world_liquor:freezer_sugar_visual',bp['identifier'])
+  self.assertEqual('textures/repair/freezer_sugar',client['textures']['default'])
+  self.assertEqual('geometry.kwl.freezer_sugar',client['geometry']['default'])
+  self.assertIn('controller.render.kwl.freezer_sugar',controller)
+  cube=geometry['bones'][0]['cubes'][0]
+  self.assertEqual([4,0,4],cube['size'])
+  self.assertEqual({'uv':[0,0],'uv_size':[16,16]},cube['uv']['up'])
+  runtime=(ROOT/'runtime/BP/scripts/freezer-visuals.js').read_text()
+  self.assertIn("'minecraft:sugar':'sugar'",runtime)
+  review=json.loads((ROOT/'data/current-freezer-review.json').read_text())
+  self.assertIn('minecraft:sugar',review['ingredient_display']['supported_sprites'])
  def test_deterministic_conversion(self):check()
 if __name__=='__main__':unittest.main()
