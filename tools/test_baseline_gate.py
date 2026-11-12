@@ -2,6 +2,7 @@
 """Adversarial release tests in disposable Git repositories, never a game world."""
 import copy,importlib.util,json,os,subprocess,tempfile,unittest,zipfile
 from pathlib import Path
+from unittest.mock import patch
 spec=importlib.util.spec_from_file_location('gate',Path(__file__).with_name('baseline_gate.py'))
 gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate)
 class BaselineGateTests(unittest.TestCase):
@@ -51,6 +52,26 @@ class BaselineGateTests(unittest.TestCase):
  def test_dirty_release_rejected(self):
   (self.root/'release-history.json').write_text(json.dumps({'1.0.0':self.config['source_trees']},indent=2))
   self.reject('commit reviewed',lambda:gate.check(self.config,release=True))
+ def test_freeze_records_new_version_preserves_history_and_requires_commit(self):
+  previous=json.loads((self.root/'release-history.json').read_text())
+  self.config['version']=[1,0,1]
+  for side in ['BP','RP']:
+   path=self.root/'runtime'/side/'manifest.json';data=json.loads(path.read_text())
+   data['header']['version']=data['modules'][0]['version']=[1,0,1];path.write_text(json.dumps(data))
+  (self.root/'baseline.json').write_text(json.dumps(self.config))
+  with patch.object(gate.sys,'argv',['baseline_gate.py','freeze']):gate.main()
+  frozen=json.loads((self.root/'baseline.json').read_text());history=json.loads((self.root/'release-history.json').read_text())
+  self.assertEqual(history,{**previous,'1.0.1':gate.validate(frozen)[0]})
+  self.assertEqual(frozen['source_trees'],history['1.0.1'])
+  self.reject('commit reviewed',lambda:gate.check(frozen,release=True))
+  self.git('add','.');self.git('commit','-qm','Freeze current release')
+  gate.check(frozen,release=True,history_base=self.base)
+ def test_freeze_reused_version_preserves_baseline_and_history(self):
+  (self.root/'baseline.json').write_text(json.dumps(self.config))
+  (self.root/'runtime/BP/content.json').write_text('{"silent":"patch"}')
+  paths=[self.root/name for name in ['baseline.json','release-history.json']];before=[p.read_bytes() for p in paths]
+  with patch.object(gate.sys,'argv',['baseline_gate.py','freeze']):self.reject('version already used',gate.main)
+  self.assertEqual([p.read_bytes() for p in paths],before)
  def test_patched_export_rejected(self):
   archive=self.root/'bad.mcaddon'
   with zipfile.ZipFile(archive,'w') as z:

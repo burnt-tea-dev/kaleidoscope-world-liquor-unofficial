@@ -1,6 +1,6 @@
 # Baseline maintenance
 
-Use the [pstack agent workflow](https://github.com/burnt-tea-dev/kaleidoscope-tavern-unofficial/blob/5bc82d3d60e1837306eeb3f0ae4da64c7df4b392/family/UPDATE-WORKFLOW.md#pstack-代理入口) for development. The steps below apply when preparing a runtime release.
+Use the [pstack agent workflow](https://github.com/burnt-tea-dev/kaleidoscope-tavern-unofficial/blob/1a992c4831f5bb83e237e70223e63acb7d326c69/family/UPDATE-WORKFLOW.md#pstack-代理入口) for development. The steps below apply when preparing a runtime release.
 
 1. Implement gameplay, rendering, guide and native/API fixes in canonical runtime. Prefer the simplest suitable documented capability, including experimental APIs; declare and verify its engine/experiment requirements. Do not patch them during packaging or installation.
 2. Bump the release version whenever any exported file changes. Update paired manifests, module versions, guide/payload version and dependencies together.
@@ -15,7 +15,7 @@ Historical artifacts and branches are evidence, not release input. A PR being cl
 
 Family operations and integration tooling: `burnt-tea-dev/kaleidoscope-tavern-unofficial/family/MAINTENANCE.md`.
 
-Release freeze now claims the version and exact runtime trees in Git’s shared common directory before changing locks. All local worktrees and known remote-tracking histories are checked for collisions. A conflicting or incomplete claim must be preserved for review; choose a new release version instead of deleting or rewriting it. This coordination guard does not replace PR checks or fresh family deployment evidence.
+Release freeze records the current branch's runtime in `baseline.json` and `release-history.json`. Concurrent candidates reconcile versions through Git and PR review; there is no separate local worktree reservation. Existing-version reuse, append-only history and exported archive checks remain at their release boundaries.
 
 Latest Java author releases per maintained branch drive adaptation. Repairs must reach canonical remote Git before deployment; shared adapters and data migrations follow the current author package. Reuse unchanged validated evidence and retain integrity checks at source/release and deployment state boundaries. Version/hash equality does not prove complete Java parity.
 

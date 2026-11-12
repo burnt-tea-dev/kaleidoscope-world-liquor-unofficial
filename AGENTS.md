@@ -2,8 +2,8 @@
 
 - This is `burnt-tea-dev/kaleidoscope-world-liquor-unofficial`, repository ID `1385218112`, public under organization `burnt-tea-dev` (owner ID `344456559`). Before remote mutation read `.repo-target.json` and verify the authenticated full name, numeric ID, owner and visibility.
 
-- Use the shared [pstack agent workflow](https://github.com/burnt-tea-dev/kaleidoscope-tavern-unofficial/blob/5bc82d3d60e1837306eeb3f0ae4da64c7df4b392/family/UPDATE-WORKFLOW.md#pstack-代理入口) for task routing, host adaptation, collaboration, scoped verification and Draft PR delivery. Its project constraints override upstream defaults; keep World Liquor-specific behavior below.
-- Runtime releases follow [baseline maintenance](docs/BASELINE-MAINTENANCE.md). Tooling or prose with unchanged exports needs no pack bump or deployment. The task's current authorization and environment restrictions take precedence over historical deployment procedures.
+- Follow upstream pstack for development and ready PR delivery through the [shared entry](https://github.com/burnt-tea-dev/kaleidoscope-tavern-unofficial/blob/1a992c4831f5bb83e237e70223e63acb7d326c69/family/UPDATE-WORKFLOW.md#pstack-代理入口). In Codex, read its linked host adapter once before any pstack skill.
+- Runtime releases follow [baseline maintenance](docs/BASELINE-MAINTENANCE.md). Tooling or prose with unchanged exports needs no pack bump or deployment.
 
 ## Project behavior
 
