@@ -95,15 +95,17 @@ def build(output, target='1.26.52.3'):
     for name in ('custom_music_1.ogg', 'custom_music_2.ogg'):
         shutil.copy2(ROOT / 'runtime/RP/sounds/kwl' / name, rp / 'sounds/kwl' / name)
 
-    write(output / 'fixture.json', {
+    fixture = {
         'engine_tested': target,
         'experiments': {'gametest': True, 'upcoming_creator_features': True},
         'script_api': config['script_api'],
-        'beta_apis_experiment': 'gametest',
         'client': False,
         'release_input': False,
-        'probe_script': config['probe'],
-    })
+    }
+    if target == '1.26.60.6':
+        fixture['beta_apis_experiment'] = 'gametest'
+        fixture['probe_script'] = config['probe']
+    write(output / 'fixture.json', fixture)
     return {'BP': BP, 'RP': RP, 'output': str(output), 'target': target}
 
 
