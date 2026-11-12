@@ -1,0 +1,674 @@
+[
+  {
+    "file": "runtime/RP/models/entity/kwl_g_1e3ca522ce764b79.geo.json",
+    "id": "geometry.kwl.g_1e3ca522ce764b79",
+    "faces": 54,
+    "same_facing": [],
+    "two_sided_count": 18
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_d17bbb0c984a1424.geo.json",
+    "id": "geometry.kwl.g_d17bbb0c984a1424",
+    "faces": 54,
+    "same_facing": [],
+    "two_sided_count": 10
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_snow.geo.json",
+    "id": "geometry.kwl.freezer_snow",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_786a423a6bad5e4e.geo.json",
+    "id": "geometry.kwl.g_786a423a6bad5e4e",
+    "faces": 66,
+    "same_facing": [],
+    "two_sided_count": 3
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_f38e665f0987bac0.geo.json",
+    "id": "geometry.kwl.g_f38e665f0987bac0",
+    "faces": 68,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_grape.geo.json",
+    "id": "geometry.kwl.freezer_grape",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl.pendant_lamp_top.geo.json",
+    "id": "geometry.kwl.pendant_lamp_top",
+    "faces": 28,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_highball_111.geo.json",
+    "id": "geometry.kwl.highball_111",
+    "faces": 60,
+    "same_facing": [],
+    "two_sided_count": 7
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_dd882dd2e642f60f.geo.json",
+    "id": "geometry.kwl.g_dd882dd2e642f60f",
+    "faces": 34,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_150ba8acb623e5ca.geo.json",
+    "id": "geometry.kwl.g_150ba8acb623e5ca",
+    "faces": 72,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_84e71b264609bca7.geo.json",
+    "id": "geometry.kwl.g_84e71b264609bca7",
+    "faces": 96,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_d3bb49d5c4673ab1.geo.json",
+    "id": "geometry.kwl.g_d3bb49d5c4673ab1",
+    "faces": 72,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_8a8498cbbc161be4.geo.json",
+    "id": "geometry.kwl.g_8a8498cbbc161be4",
+    "faces": 22,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_13843eba24d8c829.geo.json",
+    "id": "geometry.kwl.g_13843eba24d8c829",
+    "faces": 42,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_b44b46e4ed1b5592.geo.json",
+    "id": "geometry.kwl.g_b44b46e4ed1b5592",
+    "faces": 21,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_e58e1d36a18fe571.geo.json",
+    "id": "geometry.kwl.g_e58e1d36a18fe571",
+    "faces": 18,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_ad5da8558c3bd3ea.geo.json",
+    "id": "geometry.kwl.g_ad5da8558c3bd3ea",
+    "faces": 24,
+    "same_facing": [],
+    "two_sided_count": 5
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_fffa1dd16b639b11.geo.json",
+    "id": "geometry.kwl.g_fffa1dd16b639b11",
+    "faces": 63,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_ee1f956bacf3f60c.geo.json",
+    "id": "geometry.kwl.g_ee1f956bacf3f60c",
+    "faces": 136,
+    "same_facing": [],
+    "two_sided_count": 12
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_83f8f8824eba9010.geo.json",
+    "id": "geometry.kwl.g_83f8f8824eba9010",
+    "faces": 42,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_12157902a015d794.geo.json",
+    "id": "geometry.kwl.g_12157902a015d794",
+    "faces": 36,
+    "same_facing": [],
+    "two_sided_count": 3
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_088ce8ce7ef94a90.geo.json",
+    "id": "geometry.kwl.g_088ce8ce7ef94a90",
+    "faces": 117,
+    "same_facing": [],
+    "two_sided_count": 15
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_b9dead9920359fd1.geo.json",
+    "id": "geometry.kwl.g_b9dead9920359fd1",
+    "faces": 88,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_magma.geo.json",
+    "id": "geometry.kwl.freezer_magma",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_a4ee7f81b9ec6d56.geo.json",
+    "id": "geometry.kwl.g_a4ee7f81b9ec6d56",
+    "faces": 68,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_106eaabfdd755956.geo.json",
+    "id": "geometry.kwl.g_106eaabfdd755956",
+    "faces": 168,
+    "same_facing": [],
+    "two_sided_count": 20
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_blue_dye.geo.json",
+    "id": "geometry.kwl.freezer_blue_dye",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_987bf61b8661fdfa.geo.json",
+    "id": "geometry.kwl.g_987bf61b8661fdfa",
+    "faces": 58,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_e87148eb46475ffa.geo.json",
+    "id": "geometry.kwl.g_e87148eb46475ffa",
+    "faces": 84,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_8c596a0f0cbd0f27.geo.json",
+    "id": "geometry.kwl.g_8c596a0f0cbd0f27",
+    "faces": 36,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_63c6c989bb9185d9.geo.json",
+    "id": "geometry.kwl.g_63c6c989bb9185d9",
+    "faces": 84,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_b1e4f7c0bd85b86a.geo.json",
+    "id": "geometry.kwl.g_b1e4f7c0bd85b86a",
+    "faces": 48,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl.green_pendant_lamp_bottom.geo.json",
+    "id": "geometry.kwl.green_pendant_lamp_bottom",
+    "faces": 40,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_7c341bb644967296.geo.json",
+    "id": "geometry.kwl.g_7c341bb644967296",
+    "faces": 44,
+    "same_facing": [],
+    "two_sided_count": 1
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_3b68817938690854.geo.json",
+    "id": "geometry.kwl.g_3b68817938690854",
+    "faces": 24,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_bf5e1b33950f0930.geo.json",
+    "id": "geometry.kwl.g_bf5e1b33950f0930",
+    "faces": 24,
+    "same_facing": [],
+    "two_sided_count": 5
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_0d0609a1c48d59e9.geo.json",
+    "id": "geometry.kwl.g_0d0609a1c48d59e9",
+    "faces": 84,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_77a76ee480e51888.geo.json",
+    "id": "geometry.kwl.g_77a76ee480e51888",
+    "faces": 24,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_milk_still.geo.json",
+    "id": "geometry.kwl.freezer_milk_still",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_5c2dc573059c2c37.geo.json",
+    "id": "geometry.kwl.g_5c2dc573059c2c37",
+    "faces": 136,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_ca6348dcb1aa0765.geo.json",
+    "id": "geometry.kwl.g_ca6348dcb1aa0765",
+    "faces": 44,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_c2d80d876c810f01.geo.json",
+    "id": "geometry.kwl.g_c2d80d876c810f01",
+    "faces": 63,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_5f317f0af7de6211.geo.json",
+    "id": "geometry.kwl.g_5f317f0af7de6211",
+    "faces": 85,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_2439d66f4d78571d.geo.json",
+    "id": "geometry.kwl.g_2439d66f4d78571d",
+    "faces": 102,
+    "same_facing": [],
+    "two_sided_count": 9
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_39906ca3642f0231.geo.json",
+    "id": "geometry.kwl.g_39906ca3642f0231",
+    "faces": 34,
+    "same_facing": [],
+    "two_sided_count": 3
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_e1663e2f1535b9c4.geo.json",
+    "id": "geometry.kwl.g_e1663e2f1535b9c4",
+    "faces": 54,
+    "same_facing": [],
+    "two_sided_count": 18
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_749eae98236d676e.geo.json",
+    "id": "geometry.kwl.g_749eae98236d676e",
+    "faces": 54,
+    "same_facing": [],
+    "two_sided_count": 18
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_cf0e198621ddb72d.geo.json",
+    "id": "geometry.kwl.g_cf0e198621ddb72d",
+    "faces": 22,
+    "same_facing": [],
+    "two_sided_count": 1
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_5b611b0754ffa64d.geo.json",
+    "id": "geometry.kwl.g_5b611b0754ffa64d",
+    "faces": 16,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_41893bbaa9ae7a77.geo.json",
+    "id": "geometry.kwl.g_41893bbaa9ae7a77",
+    "faces": 48,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_obsidian.geo.json",
+    "id": "geometry.kwl.freezer_obsidian",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_1af65b50fc6a0dd0.geo.json",
+    "id": "geometry.kwl.g_1af65b50fc6a0dd0",
+    "faces": 48,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_b48c697464632831.geo.json",
+    "id": "geometry.kwl.g_b48c697464632831",
+    "faces": 24,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_eaa0cd52c5ff04db.geo.json",
+    "id": "geometry.kwl.g_eaa0cd52c5ff04db",
+    "faces": 96,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_4ac5de89f41d3f5f.geo.json",
+    "id": "geometry.kwl.g_4ac5de89f41d3f5f",
+    "faces": 84,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_42813126567a759f.geo.json",
+    "id": "geometry.kwl.g_42813126567a759f",
+    "faces": 102,
+    "same_facing": [],
+    "two_sided_count": 9
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_3790699d01b991f1.geo.json",
+    "id": "geometry.kwl.g_3790699d01b991f1",
+    "faces": 44,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_ice.geo.json",
+    "id": "geometry.kwl.freezer_ice",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_c95b474969a48785.geo.json",
+    "id": "geometry.kwl.g_c95b474969a48785",
+    "faces": 136,
+    "same_facing": [],
+    "two_sided_count": 12
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_59eb20fb173943a6.geo.json",
+    "id": "geometry.kwl.g_59eb20fb173943a6",
+    "faces": 72,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_3c908a89764781f8.geo.json",
+    "id": "geometry.kwl.g_3c908a89764781f8",
+    "faces": 30,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_bc6f9ff20f8d0f79.geo.json",
+    "id": "geometry.kwl.g_bc6f9ff20f8d0f79",
+    "faces": 12,
+    "same_facing": [],
+    "two_sided_count": 1
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_sweet_berries.geo.json",
+    "id": "geometry.kwl.freezer_sweet_berries",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_e6aa60154803f768.geo.json",
+    "id": "geometry.kwl.g_e6aa60154803f768",
+    "faces": 63,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_slime_ball.geo.json",
+    "id": "geometry.kwl.freezer_slime_ball",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_b368e83514cfebcc.geo.json",
+    "id": "geometry.kwl.g_b368e83514cfebcc",
+    "faces": 156,
+    "same_facing": [],
+    "two_sided_count": 20
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_037b3a838749fb84.geo.json",
+    "id": "geometry.kwl.g_037b3a838749fb84",
+    "faces": 72,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_34b44f2251fc190a.geo.json",
+    "id": "geometry.kwl.g_34b44f2251fc190a",
+    "faces": 102,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_inputs.geo.json",
+    "id": "geometry.kwl_freezer_inputs",
+    "faces": 0,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_snowball.geo.json",
+    "id": "geometry.kwl.freezer_snowball",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_de4929c0f30b7055.geo.json",
+    "id": "geometry.kwl.g_de4929c0f30b7055",
+    "faces": 24,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_ef808015813f7f6f.geo.json",
+    "id": "geometry.kwl.g_ef808015813f7f6f",
+    "faces": 84,
+    "same_facing": [],
+    "two_sided_count": 10
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_50c40dc7e57346a6.geo.json",
+    "id": "geometry.kwl.g_50c40dc7e57346a6",
+    "faces": 48,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_lava.geo.json",
+    "id": "geometry.kwl.freezer_lava",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_f4e8802aeefbe745.geo.json",
+    "id": "geometry.kwl.g_f4e8802aeefbe745",
+    "faces": 126,
+    "same_facing": [],
+    "two_sided_count": 15
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_de80d082d6c1f194.geo.json",
+    "id": "geometry.kwl.g_de80d082d6c1f194",
+    "faces": 21,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_33d63e30edb0052d.geo.json",
+    "id": "geometry.kwl.g_33d63e30edb0052d",
+    "faces": 78,
+    "same_facing": [],
+    "two_sided_count": 10
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_7c9f5c302e968f71.geo.json",
+    "id": "geometry.kwl.g_7c9f5c302e968f71",
+    "faces": 39,
+    "same_facing": [],
+    "two_sided_count": 5
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_40325c0e8945ecfe.geo.json",
+    "id": "geometry.kwl.g_40325c0e8945ecfe",
+    "faces": 96,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_682fa9a149814d9a.geo.json",
+    "id": "geometry.kwl.g_682fa9a149814d9a",
+    "faces": 54,
+    "same_facing": [],
+    "two_sided_count": 18
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_2f2b849bf54b3450.geo.json",
+    "id": "geometry.kwl.g_2f2b849bf54b3450",
+    "faces": 68,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_dd63bdba358cf06b.geo.json",
+    "id": "geometry.kwl.g_dd63bdba358cf06b",
+    "faces": 88,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_58a89086740fadab.geo.json",
+    "id": "geometry.kwl.g_58a89086740fadab",
+    "faces": 21,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_1559f531fcdb7ed3.geo.json",
+    "id": "geometry.kwl.g_1559f531fcdb7ed3",
+    "faces": 26,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_a21c149365149f85.geo.json",
+    "id": "geometry.kwl.g_a21c149365149f85",
+    "faces": 70,
+    "same_facing": [],
+    "two_sided_count": 12
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_2a624035225efb2a.geo.json",
+    "id": "geometry.kwl.g_2a624035225efb2a",
+    "faces": 66,
+    "same_facing": [],
+    "two_sided_count": 6
+  },
+  {
+    "file": "runtime/RP/models/entity/freezer_water.geo.json",
+    "id": "geometry.kwl.freezer_water",
+    "faces": 1,
+    "same_facing": [],
+    "two_sided_count": 0
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_55d1f4143d811e02.geo.json",
+    "id": "geometry.kwl.g_55d1f4143d811e02",
+    "faces": 34,
+    "same_facing": [],
+    "two_sided_count": 3
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl.pink_pendant_lamp_bottom.geo.json",
+    "id": "geometry.kwl.pink_pendant_lamp_bottom",
+    "faces": 40,
+    "same_facing": [],
+    "two_sided_count": 2
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_5b94ca12957dbf05.geo.json",
+    "id": "geometry.kwl.g_5b94ca12957dbf05",
+    "faces": 12,
+    "same_facing": [],
+    "two_sided_count": 1
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_11a251a344d378e8.geo.json",
+    "id": "geometry.kwl.g_11a251a344d378e8",
+    "faces": 96,
+    "same_facing": [],
+    "two_sided_count": 8
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_bf54b74cd369210a.geo.json",
+    "id": "geometry.kwl.g_bf54b74cd369210a",
+    "faces": 42,
+    "same_facing": [],
+    "two_sided_count": 4
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_0eaa2cac76f6618c.geo.json",
+    "id": "geometry.kwl.g_0eaa2cac76f6618c",
+    "faces": 42,
+    "same_facing": [],
+    "two_sided_count": 5
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_5ea58d93bbf7d744.geo.json",
+    "id": "geometry.kwl.g_5ea58d93bbf7d744",
+    "faces": 84,
+    "same_facing": [],
+    "two_sided_count": 10
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_44ac67a6e90bf8ae.geo.json",
+    "id": "geometry.kwl.g_44ac67a6e90bf8ae",
+    "faces": 36,
+    "same_facing": [],
+    "two_sided_count": 3
+  },
+  {
+    "file": "runtime/RP/models/entity/kwl_g_d46cc6545ec13ac4.geo.json",
+    "id": "geometry.kwl.g_d46cc6545ec13ac4",
+    "faces": 64,
+    "same_facing": [],
+    "two_sided_count": 11
+  }
+]
