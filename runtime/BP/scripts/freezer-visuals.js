@@ -1,6 +1,7 @@
 const N='kaleidoscope_world_liquor';
 const fluidKinds={'minecraft:water':'water','minecraft:lava':'lava',[N+':milk_still']:'milk_still','kaleidoscope_tavern:grape_juice':'grape','kaleidoscope_tavern:sweet_berries_juice':'sweet_berries'};
-const items={'minecraft:snowball':'snowball','minecraft:blue_dye':'blue_dye','minecraft:slime_ball':'slime_ball'};
+const items={'minecraft:snowball':'snowball','minecraft:blue_dye':'blue_dye','minecraft:slime_ball':'slime_ball','minecraft:sugar':'sugar'};
+export function freezerIngredientKind(id){return items[id]??null;}
 const f=Math.fround,angle=value=>f(((value+180)%360+360)%360-180);
 export function freezerIngredientPose(position,slot,hasFluid){
  // Java creates a separate 48-bit Random for each original inventory slot.
