@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {freezerResultHeight,freezerIngredientPose,syncFreezerVisuals} from '../runtime/BP/scripts/freezer-visuals.js';
+import {createHash} from 'node:crypto';
+import {freezerResultHeight,freezerIngredientPose,freezerIngredientKind,syncFreezerVisuals} from '../runtime/BP/scripts/freezer-visuals.js';
 test('result height matches current renderer expressions independently executed by the JVM',()=>{
  const rows=fs.readFileSync(new URL('./fixtures/java-freezer-height.jsonl',import.meta.url),'utf8').trim().split('\n').map(JSON.parse);assert.ok(rows.length>0);
  for(const row of rows)assert.equal(freezerResultHeight(row.count,row.max),Math.fround(row.expected),JSON.stringify(row));
@@ -77,4 +78,36 @@ test('unsupported and empty inputs keep original slot numbers; reopening restore
  assert.equal(f.operations.teleport,reconciled,'equivalent float32 rotation must not cause repeated updates');
  f.states[f.N+':open']=false;f.sync(state);f.states[f.N+':open']=true;f.sync(state);
  inputs=f.entities.filter(e=>!e.removed);assert.deepEqual(inputs.map(e=>({location:{...e.location},rotation:e.getRotation()})),before);
+});
+
+
+test('sugar is a fourth pinned freezer sprite and retains the original Java seeded pose',()=>{
+ const source=JSON.parse(fs.readFileSync(new URL('../data/freezer-sugar-source.json',import.meta.url),'utf8'));
+ const png=fs.readFileSync(new URL('../runtime/RP/textures/repair/freezer_sugar.png',import.meta.url));
+ assert.equal(createHash('sha256').update(png).digest('hex'),source.sha256);
+ assert.equal(png.toString('ascii',1,4),'PNG');
+ assert.equal(png.readUInt32BE(16),16);
+ assert.equal(png.readUInt32BE(20),16);
+ assert.equal(source.source.commit,'6c571b0825ee27b81f01127c2bd0d4ba2c89abb9');
+ assert.equal(freezerIngredientKind('minecraft:sugar'),'sugar');
+ assert.equal(freezerIngredientKind('minecraft:potion'),null);
+ const bp=JSON.parse(fs.readFileSync(new URL('../runtime/BP/entities/freezer_sugar_visual.json',import.meta.url),'utf8'));
+ const client=JSON.parse(fs.readFileSync(new URL('../runtime/RP/entity/freezer_sugar.entity.json',import.meta.url),'utf8'));
+ const geometry=JSON.parse(fs.readFileSync(new URL('../runtime/RP/models/entity/freezer_sugar.geo.json',import.meta.url),'utf8'));
+ const controller=JSON.parse(fs.readFileSync(new URL('../runtime/RP/render_controllers/freezer_sugar.json',import.meta.url),'utf8'));
+ assert.equal(bp['minecraft:entity'].description.identifier,'kaleidoscope_world_liquor:freezer_sugar_visual');
+ assert.equal(client['minecraft:client_entity'].description.textures.default,'textures/repair/freezer_sugar');
+ assert.equal(client['minecraft:client_entity'].description.geometry.default,'geometry.kwl.freezer_sugar');
+ assert.ok(controller.render_controllers['controller.render.kwl.freezer_sugar']);
+ assert.deepEqual(geometry['minecraft:geometry'][0].bones[0].cubes[0].uv.up,{uv:[0,0],uv_size:[16,16]});
+ const f=visualFixture();
+ f.sync({input:['minecraft:sugar']});
+ const visual=f.entities.find(e=>e.getDynamicProperty(f.N+':visual_slot')==='input0');
+ assert.ok(visual);
+ assert.equal(visual.typeId,'kaleidoscope_world_liquor:freezer_sugar_visual');
+ const java=javaPlacement.rows.find(row=>row.item==='minecraft:sugar'&&row.slot===0&&!row.fluid&&row.facing==='NORTH');
+ const pose=freezerIngredientPose({x:java.position[0],y:java.position[1],z:java.position[2]},java.slot,false);
+ assert.equal(pose.x,Math.fround(java.sample[0]));
+ assert.equal(pose.z,Math.fround(java.sample[2]));
+ assert.equal(pose.yaw,Math.fround(java.yaw));
 });
