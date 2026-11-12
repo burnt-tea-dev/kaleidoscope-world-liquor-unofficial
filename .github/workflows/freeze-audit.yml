@@ -1,0 +1,21 @@
+name: Temporary baseline freeze calculation
+on:
+  push:
+    branches:
+      - audit/frost-paused-chunk-budget-20261112
+permissions:
+  contents: read
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Freeze new source fingerprint
+        run: python tools/baseline_gate.py freeze
+      - name: Print canonical fingerprints
+        run: python -c "import json; b=json.load(open('baseline.json')); h=json.load(open('release-history.json')); print(json.dumps({'version':b['version'],'source_trees':b['source_trees'],'history_entry':h['.'.join(map(str,b['version']))]},indent=2))"
