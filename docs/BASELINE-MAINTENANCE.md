@@ -1,9 +1,11 @@
 # Baseline maintenance
 
+Use the [pstack agent workflow](https://github.com/burnt-tea-dev/kaleidoscope-tavern-unofficial/blob/5bc82d3d60e1837306eeb3f0ae4da64c7df4b392/family/UPDATE-WORKFLOW.md#pstack-代理入口) for development. The steps below apply when preparing a runtime release.
+
 1. Implement gameplay, rendering, guide and native/API fixes in canonical runtime. Prefer the simplest suitable documented capability, including experimental APIs; declare and verify its engine/experiment requirements. Do not patch them during packaging or installation.
 2. Bump the release version whenever any exported file changes. Update paired manifests, module versions, guide/payload version and dependencies together.
 3. Update `baseline.json` dependencies from verified upstream file metadata. Never infer UUIDs from a version label.
-4. Run the repository's functional regressions. Stage reviewed source files, then run `python tools/baseline_gate.py freeze`. An existing version cannot be assigned new content.
+4. Reuse valid results and run the affected functional regressions. Stage reviewed source files, then run `python tools/baseline_gate.py freeze`. An existing version cannot be assigned new content.
 5. Review and commit the lock/history. `python tools/baseline_gate.py check --release` and the real packager must pass from a clean commit.
 6. Build a family candidate with pinned upstream archives and order. Reuse valid source CI; pass targeted BDS behavior and the same saved-world copy's first-load/restart. The owner authorizes complete-family deployment after those checks and canonical PR/merge. Human/client acceptance is optional; report unverified visuals/audio honestly.
 7. Back up the consistently stopped world, retain the latest complete rollback, pass canonical family_guard, deploy the exact tested complete family, then compare installed files with its receipt. Do not register deferred client acceptance or make human testing a completion prerequisite. No repeated deployment permission; no LIVE restart for documentation-only changes. Subsequent drift fails closed.
