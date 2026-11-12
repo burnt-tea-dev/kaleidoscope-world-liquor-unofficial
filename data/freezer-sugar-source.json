@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "item": "minecraft:sugar",
+  "minecraft": "1.21.1",
+  "texture": "runtime/RP/textures/repair/freezer_sugar.png",
+  "dimensions": [
+    16,
+    16
+  ],
+  "sha256": "978323ef2f75967c503f533cd55fcac6a2733cb2c2f9d19857c6a49bb4a1c4c6",
+  "source": {
+    "repository": "PrismarineJS/minecraft-assets",
+    "commit": "6c571b0825ee27b81f01127c2bd0d4ba2c89abb9",
+    "path": "data/1.21.1/items/sugar.png",
+    "blob": "ab9f1478a59529a0984e76542fda79d116a4c7fa",
+    "note": "Generated Minecraft version asset mirror; this change does not claim a direct re-hash from the official Mojang client JAR."
+  },
+  "renderer": "Existing 4x4 flat freezer item surface; Java-seeded slot placement/yaw and dry/filled height path unchanged.",
+  "client": false
+}
