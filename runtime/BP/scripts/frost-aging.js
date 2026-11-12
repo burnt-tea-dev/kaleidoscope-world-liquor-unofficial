@@ -20,7 +20,7 @@ export function flushFrostedIce(){installed?.flush();}
 
 export class FrostAgingScheduler {
  constructor(world,{random=Math.random}={}){
-  this.world=world;this.random=random;this.rows=new Map();this.shards=new Map();this.watched=new Map();this.dirty=new Set();this.pausedChunks=new Map();this.pausedChunkLastProbe=new Map();
+  this.world=world;this.random=random;this.rows=new Map();this.shards=new Map();this.watched=new Map();this.dirty=new Set();this.activeChunks=new Map();this.pausedChunks=new Map();this.pausedChunkLastProbe=new Map();
   this.clock=world.getDynamicProperty(CLOCK)??0;
   this.order=world.getDynamicProperty(ORDER)??0;
   if(!Number.isSafeInteger(this.order)||this.order<0)throw Error('Invalid frost order');
@@ -41,7 +41,7 @@ export class FrostAgingScheduler {
   }
  }
  shard(row){const {x,y,z}=row.p,index=(x&15)|((z&15)<<4)|((y&15)<<8);return {name:PREFIX+encodeURIComponent(row.dimension)+'/'+Math.floor(x/16)+'/'+Math.floor(y/16)+'/'+Math.floor(z/16)+'/'+Math.floor(index/512),index};}
- remember(row){const id=key(row.dimension,row.p),name=this.shard(row).name;this.rows.set(id,row);if(!this.shards.has(name))this.shards.set(name,new Map());this.shards.get(name).set(id,row);if(row.due===null){const chunk=chunkKey(row);if(!this.pausedChunks.has(chunk))this.pausedChunks.set(chunk,new Map());this.pausedChunks.get(chunk).set(id,row);}}
+ remember(row){const id=key(row.dimension,row.p),name=this.shard(row).name,chunk=chunkKey(row);this.rows.set(id,row);if(!this.shards.has(name))this.shards.set(name,new Map());this.shards.get(name).set(id,row);const target=row.due===null?this.pausedChunks:this.activeChunks;if(!target.has(chunk))target.set(chunk,new Map());target.get(chunk).set(id,row);if(row.due===null&&!this.pausedChunkLastProbe.has(chunk))this.pausedChunkLastProbe.set(chunk,this.clock);}
  mark(row){this.dirty.add(this.shard(row).name);}
  block(row){return frostBlock(this.world.getDimension(row.dimension),row.p);}
  schedule(dimension,p,delay){
@@ -53,10 +53,11 @@ export class FrostAgingScheduler {
   this.schedule(dimension.id,p,frostDelay(this.random,60,120));
   try{this.neighbors({dimension:dimension.id,p});}catch{/* Unavailable boundaries do not suppress reachable ice. */}
  }
- forget(row){const id=key(row.dimension,row.p),name=this.shard(row).name,chunk=chunkKey(row);this.rows.delete(id);this.shards.get(name)?.delete(id);const paused=this.pausedChunks.get(chunk);paused?.delete(id);if(paused&&!paused.size){this.pausedChunks.delete(chunk);this.pausedChunkLastProbe.delete(chunk);}this.mark(row);}
- pause(row,remaining){row.due=null;row.paused=remaining;this.remember(row);this.mark(row);this.pausedChunkLastProbe.set(chunkKey(row),this.clock);}
- resumeChunk(chunk,rows){this.pausedChunks.delete(chunk);this.pausedChunkLastProbe.delete(chunk);for(const [id,row]of rows){if(this.rows.get(id)!==row||row.due!==null)continue;row.due=this.clock+row.paused;row.paused=null;this.mark(row);}}
- probePausedChunks(){let checked=0;for(const [chunk,rows]of this.pausedChunks){if(checked>=MAX_PAUSED_CHUNK_PROBES_PER_TICK)break;if(!rows.size){this.pausedChunks.delete(chunk);this.pausedChunkLastProbe.delete(chunk);continue;}if(this.clock-(this.pausedChunkLastProbe.get(chunk)??-Infinity)<PAUSED_CHUNK_RECHECK_TICKS)continue;this.pausedChunkLastProbe.set(chunk,this.clock);checked++;const row=rows.values().next().value;try{const dimension=this.world.getDimension(row.dimension);const loaded=typeof dimension.isChunkLoaded==='function'?dimension.isChunkLoaded(row.p):!!this.block(row);if(loaded)this.resumeChunk(chunk,[...rows]);}catch{/* Keep paused rows and retry this chunk after the bounded interval. */}}}
+ forget(row){const id=key(row.dimension,row.p),name=this.shard(row).name,chunk=chunkKey(row);this.rows.delete(id);this.shards.get(name)?.delete(id);for(const target of [this.activeChunks,this.pausedChunks]){const group=target.get(chunk);group?.delete(id);if(group&&!group.size)target.delete(chunk);}if(!this.pausedChunks.has(chunk))this.pausedChunkLastProbe.delete(chunk);this.mark(row);}
+ pause(row,remaining){const id=key(row.dimension,row.p),chunk=chunkKey(row),active=this.activeChunks.get(chunk);active?.delete(id);if(active&&!active.size)this.activeChunks.delete(chunk);row.due=null;row.paused=remaining;if(!this.pausedChunks.has(chunk))this.pausedChunks.set(chunk,new Map());this.pausedChunks.get(chunk).set(id,row);this.mark(row);this.pausedChunkLastProbe.set(chunk,this.clock);}
+ resumeChunk(chunk,rows){this.pausedChunks.delete(chunk);this.pausedChunkLastProbe.delete(chunk);for(const [id,row]of rows){if(this.rows.get(id)!==row||row.due!==null)continue;row.due=this.clock+row.paused;row.paused=null;if(!this.activeChunks.has(chunk))this.activeChunks.set(chunk,new Map());this.activeChunks.get(chunk).set(id,row);this.mark(row);}}
+ probeActiveChunks(){for(const [chunk,rows]of [...this.activeChunks]){if(!rows.size){this.activeChunks.delete(chunk);continue;}const row=rows.values().next().value;try{const dimension=this.world.getDimension(row.dimension);if(typeof dimension.isChunkLoaded==='function'&&!dimension.isChunkLoaded(row.p))for(const [id,pending]of [...rows])if(this.rows.get(id)===pending&&pending.due!==null)this.pause(pending,Math.max(0,pending.due-this.clock+1));}catch{for(const [id,pending]of [...rows])if(this.rows.get(id)===pending&&pending.due!==null)this.pause(pending,Math.max(0,pending.due-this.clock+1));}}}
+ probePausedChunks(){let checked=0;while(checked<MAX_PAUSED_CHUNK_PROBES_PER_TICK&&this.pausedChunks.size){const entry=this.pausedChunks.entries().next().value;if(!entry)break;const [chunk,rows]=entry;this.pausedChunks.delete(chunk);this.pausedChunks.set(chunk,rows);if(!rows.size){this.pausedChunks.delete(chunk);this.pausedChunkLastProbe.delete(chunk);continue;}if(this.clock-(this.pausedChunkLastProbe.get(chunk)??-Infinity)<PAUSED_CHUNK_RECHECK_TICKS)continue;this.pausedChunkLastProbe.set(chunk,this.clock);checked++;const row=rows.values().next().value;try{const dimension=this.world.getDimension(row.dimension);const loaded=typeof dimension.isChunkLoaded==='function'?dimension.isChunkLoaded(row.p):!!this.block(row);if(loaded)this.resumeChunk(chunk,[...rows]);}catch{/* Keep paused rows and retry this chunk after the bounded interval. */}}}
  neighbors(row){
   const dimension=this.world.getDimension(row.dimension),found=[];
   for(const d of DIRECTIONS){const p=at(row.p,d),b=frostBlock(dimension,p);if(!b)throw Error('Frost neighbor unavailable');if(b.typeId===FROST){found.push({dimension:row.dimension,p,block:b});const id=key(row.dimension,p);if(!this.rows.has(id))this.watched.set(id,{dimension:row.dimension,p});}}
@@ -95,6 +96,8 @@ export class FrostAgingScheduler {
  tick(){
   if(!this.rows.size&&!this.watched.size)return;
   this.clock++;this.world.setDynamicProperty(CLOCK,this.clock);
+  // One chunk-loaded check replaces per-row native reads while a chunk is unloaded.
+  this.probeActiveChunks();
   // Only due rows need a native block read. Future scheduled rows are unchanged
   // until their deadline; unloaded rows are grouped and rechecked per chunk.
   const due=[...this.rows.values()].filter(row=>row.due!==null&&row.due<=this.clock).sort((a,b)=>a.due-b.due||a.order-b.order);
