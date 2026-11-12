@@ -3,6 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import vm from 'node:vm';
 import {javaFloatRoll} from '../runtime/BP/scripts/combat-source.js';
@@ -172,4 +173,59 @@ test('failed stop restores the same adopted carrier and metadata before successf
 });
 test('the saved playback ID cannot replace the adopted native disc',()=>{
  const {f,b,item}=adoptedRecord();f.rows.set(prefix+'0_64_0',JSON.stringify({...state(),record:'minecraft:music_disc_cat'}));f.ejectRecord(b,state());assert.deepEqual(f.drops,[item]);
+});
+
+
+function buildRecordCapabilityFixture(output,target){
+ const script=new URL('../tools/fixtures/record-capability.py',import.meta.url).pathname;
+ const root=new URL('../',import.meta.url).pathname;
+ const args=[script,'--output',output];
+ if(target)args.push('--target',target);
+ const result=spawnSync('python3',args,{cwd:root,encoding:'utf8'});
+ assert.equal(result.status,0,result.stderr||result.stdout);
+}
+
+test('the historical 1.26.52.3 native record fixture remains pinned and unchanged by default',()=>{
+ const temp=fs.mkdtempSync('/tmp/kwl-record-fixture-old-'),output=temp+'/fixture';
+ try{
+  buildRecordCapabilityFixture(output);
+  const fixture=JSON.parse(fs.readFileSync(output+'/fixture.json','utf8'));
+  const manifest=JSON.parse(fs.readFileSync(output+'/BP/manifest.json','utf8'));
+  assert.equal(fixture.engine_tested,'1.26.52.3');
+  assert.equal(fixture.script_api,'2.11.0-beta');
+  assert.deepEqual(fixture.experiments,{gametest:true,upcoming_creator_features:true});
+  assert.equal(fixture.beta_apis_experiment,undefined);
+  assert.deepEqual(manifest.header.min_engine_version,[1,26,50]);
+  assert.equal(manifest.dependencies.find(d=>d.module_name==='@minecraft/server').version,'2.11.0-beta');
+  assert.equal(fs.readFileSync(output+'/BP/scripts/main.js','utf8'),fs.readFileSync(new URL('../tools/fixtures/record-capability-probe.js',import.meta.url),'utf8'));
+  assert.equal(fs.existsSync(output+'/BP/items/custom60.json'),false);
+ }finally{fs.rmSync(temp,{recursive:true,force:true})}
+});
+
+test('the current 1.26.60.6 fixture uses server 2.12 and tests the 1.26.60 record component',()=>{
+ const temp=fs.mkdtempSync('/tmp/kwl-record-fixture-current-'),output=temp+'/fixture';
+ try{
+  buildRecordCapabilityFixture(output,'1.26.60.6');
+  const fixture=JSON.parse(fs.readFileSync(output+'/fixture.json','utf8'));
+  const manifest=JSON.parse(fs.readFileSync(output+'/BP/manifest.json','utf8'));
+  const vanilla=JSON.parse(fs.readFileSync(output+'/BP/items/vanilla.json','utf8'));
+  const custom=JSON.parse(fs.readFileSync(output+'/BP/items/custom60.json','utf8'));
+  const definitions=JSON.parse(fs.readFileSync(output+'/RP/sounds/sound_definitions.json','utf8')).sound_definitions;
+  assert.equal(fixture.engine_tested,'1.26.60.6');
+  assert.equal(fixture.script_api,'2.12.0-beta');
+  assert.equal(fixture.beta_apis_experiment,'gametest');
+  assert.deepEqual(fixture.experiments,{gametest:true,upcoming_creator_features:true});
+  assert.deepEqual(manifest.header.min_engine_version,[1,26,60]);
+  assert.equal(manifest.dependencies.find(d=>d.module_name==='@minecraft/server').version,'2.12.0-beta');
+  assert.equal(vanilla.format_version,'1.26.60');
+  assert.equal(custom.format_version,'1.26.60');
+  assert.equal(custom['minecraft:item'].components['minecraft:record'].sound_event,'record.record_capability_probe');
+  assert.equal(fixture.probe_script,'record-capability-probe-260.js');
+  const probePath=new URL('../tools/fixtures/record-capability-probe-260.js',import.meta.url).pathname;
+  const syntax=spawnSync('node',['--check',probePath],{encoding:'utf8'});
+  assert.equal(syntax.status,0,syntax.stderr||syntax.stdout);
+  assert.equal(fs.readFileSync(output+'/BP/scripts/main.js','utf8'),fs.readFileSync(probePath,'utf8'));
+  assert.ok(definitions['record.record_capability_probe']);
+  assert.ok(fs.existsSync(output+'/RP/sounds/kwl/custom_music_1.ogg'));
+ }finally{fs.rmSync(temp,{recursive:true,force:true})}
 });
