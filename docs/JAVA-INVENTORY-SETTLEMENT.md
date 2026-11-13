@@ -1,5 +1,9 @@
 # Java inventory settlement
 
+## Source candidate: overflow drop motion (2026-11-13)
+
+The shared full-inventory fallback now requests a head-relative drop position and the official directional initial velocity, retaining one-item settlement and freezer rollback. [Source receipts, JVM cases and limits](evidence/inventory-drop-20261113/README.md) distinguish the passing arithmetic/API checks from untested native trajectory, pickup delay and per-pose eye-height mapping. This is not a release or full Player.drop parity.
+
 ## W207: full Creative inventory (2026-11-09)
 
 A completed freezer product incorrectly spawned on the ground when a Creative player's inventory had no room. The old source regression explicitly expected this wrong result. The shared `java-player-inventory.js` owner now follows the normal selected-slot, offhand, main-stack and empty-slot insertion order first. If all fail and the current mode is Creative, it returns successful discard of the temporary result, without writing inventory or spawning a ground item. The freezer still decrements its output once. Survival continues to drop one product when full. Creative with room still receives its product; this is not a blanket Creative output suppression.

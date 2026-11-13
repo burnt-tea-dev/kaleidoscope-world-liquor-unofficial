@@ -1,0 +1,18 @@
+{
+  "base": "c5984d46f4df4b120be72f0b7e229922f95509d4",
+  "tavern_pin": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
+  "files": {
+    "runtime/BP/scripts/java-player-inventory.js": "6a06bc535705f74febb6c72380fafb4c149acd6f82efec5fab9df6ba2599dce0",
+    "runtime/BP/scripts/motion-source.js": "c3c212073dea03fd4bd0a8962d69be786a6937620e2ce1fd6eab019decc5d680",
+    "tests/player-drop.test.mjs": "24fee570223d2a10e5c7054f8fc9395d1accfa917cb3f85963c1c3ae4b9ca8cd",
+    "tests/fixtures/JavaPlayerDropOracle.java": "b57cd923db9bcfe5d642bc56734b3e034fc5d4fab2e7b4c53904ce353f9a7757",
+    "tests/fixtures/java-player-drop.jsonl": "fd8c28e717d340a8c2c4075e3b55a78790e634dcf909d25405c4e0d665395c03"
+  },
+  "jvm": "OpenJDK 21.0.13+9-1-deb13u2-Debian",
+  "numeric_cases": 280,
+  "focused_tests": 10,
+  "regressions": 165,
+  "native_bds": false,
+  "client": false,
+  "live": false
+}

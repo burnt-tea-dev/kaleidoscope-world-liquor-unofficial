@@ -13,7 +13,7 @@ export class Dimension{
  constructor(){dimensions.set(this.id,this);}
  getBlock(p){const k=JSON.stringify(p);if(!this.blocks.has(k))this.blocks.set(k,new Block(this,{...p}));return this.blocks.get(k);}
  getEntities(){return [];}playSound(s){this.sounds.push(s);const handle={stops:0,stop(){this.stops++;}};this.handles.push(handle);return handle;}
- spawnItem(item,position){if(this.failSpawn)throw Error('injected drop failure');const e={item:item.clone(),position,removed:false,remove(){this.removed=true;}};this.drops.push(e);return e;}
+ spawnItem(item,position){if(this.failSpawn)throw Error('injected drop failure');const e={item:item.clone(),position,removed:false,clearVelocity(){},applyImpulse(){},remove(){this.removed=true;}};this.drops.push(e);return e;}
  spawnEntity(typeId,position){
   const slots=Array(4),data=new Map(),e={id:'carrier'+(++entitySerial),typeId,dimension:this,location:{...position},isValid:true,getDynamicProperty:k=>data.get(k),setDynamicProperty:(k,v)=>data.set(k,v),getComponent:()=>({container:{size:4,getItem:i=>slots[i]?.clone(),setItem:(i,v)=>{slots[i]=v?.clone();}}}),remove(){this.isValid=false;entities.delete(this.id);},tryTeleport(p){this.location={...p};return true;}};entities.set(e.id,e);return e;
  }
@@ -29,7 +29,7 @@ let serial=0;
 export function player(d,mode='survival'){
  const slots=Array(9),inv={size:slots.length,getItem:i=>slots[i]?.clone(),setItem(i,item){if(inv.failWrite){inv.failWrite=false;throw Error('injected inventory failure');}slots[i]=item?.clone();}};
  const equipment={getEquipment:()=>undefined,setEquipment:()=>true};
- return {id:'player'+(++serial),typeId:'minecraft:player',dimension:d,location:{x:0,y:0,z:0},selectedSlotIndex:0,isSneaking:true,getGameMode:()=>mode,getRotation:()=>({x:0,y:0}),getComponent:id=>id==='minecraft:equippable'?equipment:{container:inv},onScreenDisplay:{setActionBar(){}},inv};
+ return {id:'player'+(++serial),typeId:'minecraft:player',dimension:d,location:{x:0,y:0,z:0},selectedSlotIndex:0,isSneaking:true,getGameMode:()=>mode,getRotation:()=>({x:0,y:0}),getHeadLocation(){return {...this.location,y:this.location.y+1.62};},getComponent:id=>id==='minecraft:equippable'?equipment:{container:inv},onScreenDisplay:{setActionBar(){}},inv};
 }
 export function reset(){dynamic.clear();entities.clear();dimensions.clear();queue.length=0;world.failSave=false;world.gameRules.doTileDrops=true;system.currentTick+=10;placeMode='none';}
 
