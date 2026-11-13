@@ -23,6 +23,53 @@ def normalize(value):
     return value
 
 
+def check_native_bottles(content, root=ROOT):
+    """Own complete bottle definitions through current tags and drink wiring.
+
+    Quality IDs, use timing, stack size and creative grouping are the existing
+    Bedrock adaptation. Java resources supply membership, not historical hashes.
+    """
+    tag_root = root / 'upstream/data/kaleidoscope_tavern/tags/item'
+    memberships = {}
+    for path in [tag_root / 'alcohol.json', *sorted(tag_root.glob('cocktail_ingredient_*.json'))]:
+        tag = 'kaleidoscope_tavern:' + path.stem
+        for item in normalize(json.loads(path.read_text())['values']):
+            if isinstance(item, str) and item.startswith(NS):
+                memberships.setdefault(item, set()).add(tag)
+    paths = set()
+    for bottle in content:
+        if bottle['kind'] != 'bottle':
+            continue
+        for quality, item in enumerate(bottle['items'], 1):
+            short = item.split(':', 1)[1]
+            name = 'runtime/BP/items/' + short + '.json'
+            paths.add(name)
+            actual = json.loads((root / name).read_text())
+            components = actual['minecraft:item']['components']
+            tags = components['minecraft:tags']['tags']
+            assert len(tags) == len(set(tags)) and set(tags) == memberships[bottle['base']], ('Native bottle tags differ from Java', item)
+            description = {'identifier': item}
+            if quality == 6:
+                description['menu_category'] = {'category': 'items', 'group': 'kaleidoscope_tavern:itemGroup.name.wines'}
+            expected = {
+                'format_version': '1.26.50',
+                'minecraft:item': {
+                    'description': description,
+                    'components': {
+                        'minecraft:display_name': {'value': 'item.' + item + '.name'},
+                        'minecraft:icon': 'kwl_' + short,
+                        'minecraft:max_stack_size': 16,
+                        'minecraft:tags': {'tags': tags},
+                        'minecraft:use_animation': 'drink',
+                        'minecraft:use_modifiers': {'use_duration': 1.6, 'movement_modifier': .35, 'start_using': 'if_first'},
+                        'kaleidoscope_tavern:drink_effects': {},
+                    },
+                },
+            }
+            assert actual == expected, ('Native bottle consumption/presentation contract differs', item)
+    return paths
+
+
 def check_documents(content, payload, root=ROOT):
     upstream = root / 'upstream'
     sources = {}
@@ -75,7 +122,10 @@ def check_documents(content, payload, root=ROOT):
 
 
 def check(root=ROOT):
-    return check_documents(readjs(root / 'runtime/BP/scripts/content.js'), readjs(root / 'runtime/BP/scripts/payload.js'), root)
+    content = readjs(root / 'runtime/BP/scripts/content.js')
+    result = check_documents(content, readjs(root / 'runtime/BP/scripts/payload.js'), root)
+    result['native_bottle_definitions'] = len(check_native_bottles(content, root))
+    return result
 
 
 if __name__ == '__main__':

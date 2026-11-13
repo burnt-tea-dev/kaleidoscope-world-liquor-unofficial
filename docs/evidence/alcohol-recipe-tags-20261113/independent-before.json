@@ -1,0 +1,24 @@
+{
+  "jar_sha256": "d963089ad0a7f99a8950171d76913cfeea99a0126ee12b16c72c3162f8545da3",
+  "source_owned_alcohol_bases": 14,
+  "expected_eligible_variants": 84,
+  "actual_eligible_variants": 0,
+  "missing_tags": 84,
+  "unexpected_tags": 0,
+  "counterexample": {
+    "grid": [
+      "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "kaleidoscope_world_liquor:absolut_vodka_q1"
+    ],
+    "java_predicate": true,
+    "runtime_predicate": false
+  },
+  "scope": "Source and canonical native-tag data comparison; no in-engine crafting claim."
+}

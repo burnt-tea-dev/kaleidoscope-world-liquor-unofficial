@@ -1,0 +1,39 @@
+{
+  "checked_utc": "2026-11-13T13:19:05.623581+00:00",
+  "canonical_main": "c5984d46f4df4b120be72f0b7e229922f95509d4",
+  "official_source": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/9217896",
+  "official_files_index": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/all",
+  "files_index_sha256": "a4bcdaea9989eb66ec9ed2fec09fec378f9e9b12d9686ed6835d77d020b25f02",
+  "latest_per_supported_branch": {
+    "NeoForge 1.21.1": {
+      "version": "1.1.12",
+      "file_id": 9217896
+    },
+    "Forge 1.20.1": {
+      "version": "1.1.13",
+      "file_id": 9217901
+    }
+  },
+  "checked_implementation": "NeoForge 1.1.12 resource contract",
+  "jar_sha256": "d963089ad0a7f99a8950171d76913cfeea99a0126ee12b16c72c3162f8545da3",
+  "resource_contracts": {
+    "data/kaleidoscope_tavern/tags/item/alcohol.json": {
+      "sha256": "3f12fdbef19e295c2bd5a3f427220359670f771b1d38fd7ec514302cd64aaefe",
+      "tracked_sha256": "3f12fdbef19e295c2bd5a3f427220359670f771b1d38fd7ec514302cd64aaefe",
+      "bytes": 1650,
+      "tracked_resource_byte_identical": true,
+      "functional_resource_equal": true,
+      "nonfunctional_difference": null
+    },
+    "data/kaleidoscope_world_liquor/recipe/custom_record.json": {
+      "sha256": "43e2662f633202616ec38fe251cf878e1cc5a2697ec1b7c56491c3ba4a5c6305",
+      "tracked_sha256": "f82728a869f37b70aa95f1c90a438652d8b20856baa771dd2584589116d5e768",
+      "bytes": 590,
+      "tracked_resource_byte_identical": false,
+      "functional_resource_equal": true,
+      "nonfunctional_difference": "Current Java recipe includes category=misc; the inherited tracked recipe omits it."
+    }
+  },
+  "tavern_peer_commit": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
+  "native_engine_executed": false
+}

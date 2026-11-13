@@ -7,6 +7,11 @@ import java_geometry as geo
 
 ROOT=Path(__file__).resolve().parents[1]
 NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern'
+def merge_item_tags(existing, change):
+    """Apply only this tag delta; unrelated recipe tags must survive."""
+    removed=set(change.get('remove',[]))
+    return list(dict.fromkeys([tag for tag in existing if tag not in removed]+change.get('add',[])))
+
 def write(path,data):
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
@@ -74,7 +79,10 @@ def main():
             if category:content['color']=category[0]
     for item,change in changes.items():
         if item.startswith(NS+':') and (bp_item:=ROOT/'runtime/BP/items'/f"{item.split(':')[1]}.json").exists():
-            definition=json.loads(bp_item.read_text());definition['minecraft:item']['components']['minecraft:tags']={'tags':change['add']};write(bp_item,definition)
+            definition=json.loads(bp_item.read_text());components=definition['minecraft:item']['components']
+            existing=components.get('minecraft:tags',{}).get('tags',[])
+            components['minecraft:tags']={'tags':merge_item_tags(existing,change)}
+            write(bp_item,definition)
     payload['recipes']=[r for r in payload['recipes'] if r['kind']!='shaker']
     for name,row in sorted(recipes.items()):
         payload['recipes'].append({'id':NS+':shaker/'+name,'kind':'shaker','ingredients':row['ingredients'],'output':{'item':row['result'].get('id',row['result'].get('item'))}})
