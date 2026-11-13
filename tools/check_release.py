@@ -15,6 +15,7 @@ subprocess.run([sys.executable,str(root/'tools/entity_material_registry.py')],ch
 subprocess.run([sys.executable,str(root/'tools/test_collision_shapes.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/test_java_face_topology.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/build_drink_colors.py'),'--check'],check=True)
+subprocess.run([sys.executable,str(root/'tools/test_native_item_tags.py')],check=True)
 subprocess.run(['node','--test',str(root/'tools/optional-cookery.test.mjs')],check=True)
 errors=[]
 def check(ok,message):

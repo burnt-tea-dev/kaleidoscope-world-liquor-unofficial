@@ -80,7 +80,7 @@ def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_
 def main():
  from foundation.source_contract import check as check_foundation_sources
  foundation_contract=check_foundation_sources(TAV,ROOT)
- from drink_content_contract import check as check_drink_content, CURRENT_SOURCES
+ from drink_content_contract import check as check_drink_content, check_native_bottles, readjs as current_readjs, CURRENT_SOURCES
  drink_contract=check_drink_content(ROOT)
  # The display owner is checked through current behavior and the original
  # Java method's numerical output, rather than reconstructing older code.
@@ -103,6 +103,12 @@ def main():
  from current_author_art import check as check_current_art, planned
  check_current_art()
  current_resources={path.relative_to(ROOT).as_posix() for path in planned()}
+ # Native bottle tags and all non-tag components have a complete current
+ # resource contract. Retire their old whole-file projection, not its hashes.
+ native_bottles=check_native_bottles(current_readjs(ROOT/'runtime/BP/scripts/content.js'),ROOT)
+ assert not (native_bottles & set(ledger['files']))
+ assert all(not (native_bottles & set(layer['files'])) for layer in ledger['reviewedFunctionalDeltaLayers'])
+ current_resources.update(native_bottles)
  current_resources.add('runtime/RP/textures/kaleidoscope_world_liquor/mob_effect/luck.png')
  current_resources.update('runtime/BP/recipes/'+color+'_pendant_lamp.json' for color in ('green','pink'))
  feedback_spec=importlib.util.spec_from_file_location('world_liquor_break_feedback',ROOT/'tools/build_break_feedback.py')

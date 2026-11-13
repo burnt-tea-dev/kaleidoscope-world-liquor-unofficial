@@ -1,0 +1,681 @@
+{
+  "base": "c5984d46f4df4b120be72f0b7e229922f95509d4",
+  "changed_runtime_files": 84,
+  "non_tag_changes": 0,
+  "RP_changes": 0,
+  "storage_schema_or_identifiers_changed": false,
+  "changes": [
+    {
+      "path": "runtime/BP/items/absolut_vodka_q1.json",
+      "item": "kaleidoscope_world_liquor:absolut_vodka_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/absolut_vodka_q2.json",
+      "item": "kaleidoscope_world_liquor:absolut_vodka_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/absolut_vodka_q3.json",
+      "item": "kaleidoscope_world_liquor:absolut_vodka_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/absolut_vodka_q4.json",
+      "item": "kaleidoscope_world_liquor:absolut_vodka_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/absolut_vodka_q5.json",
+      "item": "kaleidoscope_world_liquor:absolut_vodka_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/absolut_vodka_q6.json",
+      "item": "kaleidoscope_world_liquor:absolut_vodka_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bacardi_carta_blanca_q1.json",
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bacardi_carta_blanca_q2.json",
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bacardi_carta_blanca_q3.json",
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bacardi_carta_blanca_q4.json",
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bacardi_carta_blanca_q5.json",
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bacardi_carta_blanca_q6.json",
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_aqua"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bamboo_leaf_green_liquor_q1.json",
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bamboo_leaf_green_liquor_q2.json",
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bamboo_leaf_green_liquor_q3.json",
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bamboo_leaf_green_liquor_q4.json",
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bamboo_leaf_green_liquor_q5.json",
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bamboo_leaf_green_liquor_q6.json",
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bombay_sapphire_gin_q1.json",
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bombay_sapphire_gin_q2.json",
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bombay_sapphire_gin_q3.json",
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bombay_sapphire_gin_q4.json",
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bombay_sapphire_gin_q5.json",
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/bombay_sapphire_gin_q6.json",
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/dassai_q1.json",
+      "item": "kaleidoscope_world_liquor:dassai_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/dassai_q2.json",
+      "item": "kaleidoscope_world_liquor:dassai_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/dassai_q3.json",
+      "item": "kaleidoscope_world_liquor:dassai_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/dassai_q4.json",
+      "item": "kaleidoscope_world_liquor:dassai_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/dassai_q5.json",
+      "item": "kaleidoscope_world_liquor:dassai_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/dassai_q6.json",
+      "item": "kaleidoscope_world_liquor:dassai_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_green"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/jack_daniel_q1.json",
+      "item": "kaleidoscope_world_liquor:jack_daniel_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_orange"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/jack_daniel_q2.json",
+      "item": "kaleidoscope_world_liquor:jack_daniel_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_orange"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/jack_daniel_q3.json",
+      "item": "kaleidoscope_world_liquor:jack_daniel_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_orange"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/jack_daniel_q4.json",
+      "item": "kaleidoscope_world_liquor:jack_daniel_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_orange"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/jack_daniel_q5.json",
+      "item": "kaleidoscope_world_liquor:jack_daniel_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_orange"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/jack_daniel_q6.json",
+      "item": "kaleidoscope_world_liquor:jack_daniel_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_orange"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/johnnie_walker_q1.json",
+      "item": "kaleidoscope_world_liquor:johnnie_walker_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/johnnie_walker_q2.json",
+      "item": "kaleidoscope_world_liquor:johnnie_walker_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/johnnie_walker_q3.json",
+      "item": "kaleidoscope_world_liquor:johnnie_walker_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/johnnie_walker_q4.json",
+      "item": "kaleidoscope_world_liquor:johnnie_walker_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/johnnie_walker_q5.json",
+      "item": "kaleidoscope_world_liquor:johnnie_walker_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/johnnie_walker_q6.json",
+      "item": "kaleidoscope_world_liquor:johnnie_walker_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_gold"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/lafite_1982_q1.json",
+      "item": "kaleidoscope_world_liquor:lafite_1982_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/lafite_1982_q2.json",
+      "item": "kaleidoscope_world_liquor:lafite_1982_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/lafite_1982_q3.json",
+      "item": "kaleidoscope_world_liquor:lafite_1982_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/lafite_1982_q4.json",
+      "item": "kaleidoscope_world_liquor:lafite_1982_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/lafite_1982_q5.json",
+      "item": "kaleidoscope_world_liquor:lafite_1982_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/lafite_1982_q6.json",
+      "item": "kaleidoscope_world_liquor:lafite_1982_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_purple"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/maotai_q1.json",
+      "item": "kaleidoscope_world_liquor:maotai_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/maotai_q2.json",
+      "item": "kaleidoscope_world_liquor:maotai_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/maotai_q3.json",
+      "item": "kaleidoscope_world_liquor:maotai_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/maotai_q4.json",
+      "item": "kaleidoscope_world_liquor:maotai_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/maotai_q5.json",
+      "item": "kaleidoscope_world_liquor:maotai_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/maotai_q6.json",
+      "item": "kaleidoscope_world_liquor:maotai_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/pina_colada_q1.json",
+      "item": "kaleidoscope_world_liquor:pina_colada_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/pina_colada_q2.json",
+      "item": "kaleidoscope_world_liquor:pina_colada_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/pina_colada_q3.json",
+      "item": "kaleidoscope_world_liquor:pina_colada_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/pina_colada_q4.json",
+      "item": "kaleidoscope_world_liquor:pina_colada_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/pina_colada_q5.json",
+      "item": "kaleidoscope_world_liquor:pina_colada_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/pina_colada_q6.json",
+      "item": "kaleidoscope_world_liquor:pina_colada_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_white"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/skyy_vodka_q1.json",
+      "item": "kaleidoscope_world_liquor:skyy_vodka_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/skyy_vodka_q2.json",
+      "item": "kaleidoscope_world_liquor:skyy_vodka_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/skyy_vodka_q3.json",
+      "item": "kaleidoscope_world_liquor:skyy_vodka_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/skyy_vodka_q4.json",
+      "item": "kaleidoscope_world_liquor:skyy_vodka_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/skyy_vodka_q5.json",
+      "item": "kaleidoscope_world_liquor:skyy_vodka_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/skyy_vodka_q6.json",
+      "item": "kaleidoscope_world_liquor:skyy_vodka_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_dark_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/smirnoff_red_vodka_q1.json",
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/smirnoff_red_vodka_q2.json",
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/smirnoff_red_vodka_q3.json",
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/smirnoff_red_vodka_q4.json",
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/smirnoff_red_vodka_q5.json",
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/smirnoff_red_vodka_q6.json",
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_red"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/spiryt_vodka_q1.json",
+      "item": "kaleidoscope_world_liquor:spiryt_vodka_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/spiryt_vodka_q2.json",
+      "item": "kaleidoscope_world_liquor:spiryt_vodka_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/spiryt_vodka_q3.json",
+      "item": "kaleidoscope_world_liquor:spiryt_vodka_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/spiryt_vodka_q4.json",
+      "item": "kaleidoscope_world_liquor:spiryt_vodka_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/spiryt_vodka_q5.json",
+      "item": "kaleidoscope_world_liquor:spiryt_vodka_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/spiryt_vodka_q6.json",
+      "item": "kaleidoscope_world_liquor:spiryt_vodka_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_light_blue"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/strongbow_q1.json",
+      "item": "kaleidoscope_world_liquor:strongbow_q1",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/strongbow_q2.json",
+      "item": "kaleidoscope_world_liquor:strongbow_q2",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/strongbow_q3.json",
+      "item": "kaleidoscope_world_liquor:strongbow_q3",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/strongbow_q4.json",
+      "item": "kaleidoscope_world_liquor:strongbow_q4",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/strongbow_q5.json",
+      "item": "kaleidoscope_world_liquor:strongbow_q5",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    },
+    {
+      "path": "runtime/BP/items/strongbow_q6.json",
+      "item": "kaleidoscope_world_liquor:strongbow_q6",
+      "preserved_tags": [
+        "kaleidoscope_tavern:cocktail_ingredient_yellow"
+      ],
+      "added": "kaleidoscope_tavern:alcohol"
+    }
+  ]
+}

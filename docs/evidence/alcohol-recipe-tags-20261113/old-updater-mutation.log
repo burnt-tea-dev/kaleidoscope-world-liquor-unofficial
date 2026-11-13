@@ -1,0 +1,25 @@
+test_mixology_delta_preserves_unrelated_tags (test_native_item_tags.NativeItemTags.test_mixology_delta_preserves_unrelated_tags) ... FAIL
+
+======================================================================
+FAIL: test_mixology_delta_preserves_unrelated_tags (test_native_item_tags.NativeItemTags.test_mixology_delta_preserves_unrelated_tags)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "source/tools/test_native_item_tags.py", line 41, in test_mixology_delta_preserves_unrelated_tags
+    self.assertEqual(after, [ALCOHOL, 'example:unrelated', 'example:new_color'])
+AssertionError: Lists differ: ['example:new_color'] != ['kaleidoscope_tavern:alcohol', 'example:unrelated', 'example:new_color']
+
+First differing element 0:
+'example:new_color'
+'kaleidoscope_tavern:alcohol'
+
+Second list contains 2 additional elements.
+First extra element 1:
+'example:unrelated'
+
+- ['example:new_color']
++ ['kaleidoscope_tavern:alcohol', 'example:unrelated', 'example:new_color']
+
+----------------------------------------------------------------------
+Ran 1 test in 0.011s
+
+FAILED (failures=1)
