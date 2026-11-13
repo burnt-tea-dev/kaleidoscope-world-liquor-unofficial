@@ -90,9 +90,16 @@ function removeUnsupported(b,item){
 function say(p,key,args=[]){p.onScreenDisplay.setActionBar({translate:'kwl.'+key,with:args});}
 // Plan inventory changes on copies, then commit storage and inventory together.
 // A full inventory leaves the machine and held item untouched.
-function transaction(p,b,next,{take=0,give=[],permutation,storage}={}){
+function transaction(p,b,next,{take=0,give=[],containerResult,permutation,storage}={}){
  const inv=container(p),snapshot=Array.from({length:inv.size},(_,i)=>inv.getItem(i)),after=snapshot.map(x=>x?.clone()),slot=p.selectedSlotIndex,held=after[slot];
  if(take&&!creative(p)){if(!held||held.amount<take)throw Error('Missing held item');if(held.amount===take)after[slot]=undefined;else held.amount-=take;}
+ // FluidUtil returns a count-one converted container to the original hand;
+ // only additional containers are stowed. Creative retains its original item.
+ if(containerResult&&!creative(p)){
+  if(take!==1)throw Error('EXPECTED_SINGLE_FLUID_CONTAINER');
+  if(!after[slot])after[slot]=new ItemStack(containerResult);
+  else give=[...give,[containerResult,1]];
+ }
  for(const [id,count] of give){let amount=count;const sample=new ItemStack(id);
   for(let i=0;i<after.length&&amount;i++)if(after[i]?.isStackableWith(sample)){const n=Math.min(amount,after[i].maxAmount-after[i].amount);after[i].amount+=n;amount-=n;}
   for(let i=0;i<after.length&&amount;i++)if(!after[i]){const n=Math.min(amount,sample.maxAmount);after[i]=new ItemStack(id,n);amount-=n;}
@@ -134,10 +141,10 @@ function freezer(p,b,s,h){
  }
  // A full tank rejects FluidUtil transfer; Java then stores the filled bucket
  // as an ordinary input, including its metadata and Creative hand debit.
- if(h?.typeId in liquids&&h.typeId!=='minecraft:milk_bucket'&&!s.fluid){s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,give:creative(p)?[]:[['minecraft:bucket',1]]});return;}
+ if(h?.typeId in liquids&&h.typeId!=='minecraft:milk_bucket'&&!s.fluid){s.fluid=liquids[h.typeId];transaction(p,b,s,{take:1,containerResult:'minecraft:bucket'});return;}
  // FluidUtil Creative transfer changes the tank, not the original container
  // or inventory. Unlike ordinary input, it creates no additional filled bucket.
- if(h?.typeId==='minecraft:bucket'&&s.fluid){const filled=Object.keys(liquids).find(x=>liquids[x]===s.fluid);if(filled){s.fluid=null;transaction(p,b,s,{take:1,give:creative(p)?[]:[[filled,1]]});}return;}
+ if(h?.typeId==='minecraft:bucket'&&s.fluid){const filled=Object.keys(liquids).find(x=>liquids[x]===s.fluid);if(filled){s.fluid=null;transaction(p,b,s,{take:1,containerResult:filled});}return;}
  const options=freezerSettlement(b,s);
  const result=h?insertFreezerInput(p,s,options):extractFreezerInput(p,s,options);options.finish();
  if(h&&result.status!=='INSERTED')return;

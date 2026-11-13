@@ -1,0 +1,1620 @@
+(node:51) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[World Liquor] Error: injected save failure
+[World Liquor] Error: injected inventory failure
+[World Liquor] Error: injected save failure
+[World Liquor] Error: injected inventory failure
+✖ survival single fluid container stays in used slot: fill minecraft:water_bucket / earlier empty (7.905068ms)
+✖ survival single fluid container stays in used slot: fill minecraft:water_bucket / existing result (0.705279ms)
+✔ survival single fluid container stays in used slot: fill minecraft:water_bucket / full (0.494931ms)
+✖ adventure single fluid container stays in used slot: fill minecraft:water_bucket / earlier empty (0.515674ms)
+✖ adventure single fluid container stays in used slot: fill minecraft:water_bucket / existing result (0.465407ms)
+✔ adventure single fluid container stays in used slot: fill minecraft:water_bucket / full (0.325923ms)
+✔ creative single fluid container stays in used slot: fill minecraft:water_bucket / earlier empty (0.204961ms)
+✔ creative single fluid container stays in used slot: fill minecraft:water_bucket / existing result (0.244516ms)
+✔ creative single fluid container stays in used slot: fill minecraft:water_bucket / full (0.315509ms)
+✖ survival single fluid container stays in used slot: fill minecraft:lava_bucket / earlier empty (0.526389ms)
+✖ survival single fluid container stays in used slot: fill minecraft:lava_bucket / existing result (0.33565ms)
+✔ survival single fluid container stays in used slot: fill minecraft:lava_bucket / full (0.250469ms)
+✖ adventure single fluid container stays in used slot: fill minecraft:lava_bucket / earlier empty (0.308445ms)
+✖ adventure single fluid container stays in used slot: fill minecraft:lava_bucket / existing result (0.277853ms)
+✔ adventure single fluid container stays in used slot: fill minecraft:lava_bucket / full (0.20621ms)
+✔ creative single fluid container stays in used slot: fill minecraft:lava_bucket / earlier empty (0.234746ms)
+✔ creative single fluid container stays in used slot: fill minecraft:lava_bucket / existing result (0.234295ms)
+✔ creative single fluid container stays in used slot: fill minecraft:lava_bucket / full (0.176477ms)
+✖ survival single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / earlier empty (0.311047ms)
+✖ survival single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / existing result (0.367955ms)
+✔ survival single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / full (0.215244ms)
+✖ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / earlier empty (0.245152ms)
+✖ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / existing result (0.306746ms)
+✔ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / full (0.227043ms)
+✔ creative single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / earlier empty (0.110695ms)
+✔ creative single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / existing result (0.13416ms)
+✔ creative single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / full (0.174667ms)
+✖ survival single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / earlier empty (0.29755ms)
+✖ survival single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / existing result (0.311484ms)
+✔ survival single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / full (0.184728ms)
+✖ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / earlier empty (0.300212ms)
+✖ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / existing result (0.296541ms)
+✔ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / full (0.195016ms)
+✔ creative single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / earlier empty (0.09664ms)
+✔ creative single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / existing result (0.097909ms)
+✔ creative single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / full (0.139102ms)
+✖ survival single fluid container stays in used slot: drain minecraft:water / earlier empty (0.412866ms)
+✖ survival single fluid container stays in used slot: drain minecraft:water / existing result (0.512978ms)
+✔ survival single fluid container stays in used slot: drain minecraft:water / full (0.24372ms)
+✖ adventure single fluid container stays in used slot: drain minecraft:water / earlier empty (0.579775ms)
+✖ adventure single fluid container stays in used slot: drain minecraft:water / existing result (0.328724ms)
+✔ adventure single fluid container stays in used slot: drain minecraft:water / full (0.20392ms)
+✔ creative single fluid container stays in used slot: drain minecraft:water / earlier empty (0.122706ms)
+✔ creative single fluid container stays in used slot: drain minecraft:water / existing result (0.205729ms)
+✔ creative single fluid container stays in used slot: drain minecraft:water / full (0.24425ms)
+✖ survival single fluid container stays in used slot: drain minecraft:lava / earlier empty (0.458957ms)
+✖ survival single fluid container stays in used slot: drain minecraft:lava / existing result (0.483075ms)
+✔ survival single fluid container stays in used slot: drain minecraft:lava / full (0.21958ms)
+✖ adventure single fluid container stays in used slot: drain minecraft:lava / earlier empty (0.387886ms)
+✖ adventure single fluid container stays in used slot: drain minecraft:lava / existing result (0.374935ms)
+✔ adventure single fluid container stays in used slot: drain minecraft:lava / full (0.367833ms)
+✔ creative single fluid container stays in used slot: drain minecraft:lava / earlier empty (0.229462ms)
+✔ creative single fluid container stays in used slot: drain minecraft:lava / existing result (0.135382ms)
+✔ creative single fluid container stays in used slot: drain minecraft:lava / full (2.01148ms)
+✖ survival single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / earlier empty (0.522157ms)
+✖ survival single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / existing result (0.273871ms)
+✔ survival single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / full (0.54286ms)
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / earlier empty (0.326483ms)
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / existing result (0.228016ms)
+✔ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / full (0.362311ms)
+✔ creative single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / earlier empty (0.146465ms)
+✔ creative single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / existing result (0.090659ms)
+✔ creative single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / full (0.112538ms)
+✖ survival single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / earlier empty (0.282528ms)
+✖ survival single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / existing result (0.429354ms)
+✔ survival single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / full (0.179662ms)
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / earlier empty (0.193909ms)
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / existing result (0.301228ms)
+✔ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / full (0.184035ms)
+✔ creative single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / earlier empty (0.092846ms)
+✔ creative single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / existing result (0.078573ms)
+✔ creative single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / full (0.132133ms)
+✖ survival single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / earlier empty (0.878278ms)
+✖ survival single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / existing result (0.937835ms)
+✔ survival single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / full (0.579612ms)
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / earlier empty (0.625854ms)
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / existing result (0.391349ms)
+✔ adventure single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / full (0.48642ms)
+✔ creative single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / earlier empty (0.12216ms)
+✔ creative single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / existing result (0.348624ms)
+✔ creative single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / full (0.186632ms)
+✔ single fluid container fill minecraft:water_bucket restores tank and complete inventory after save failure (0.858505ms)
+✔ single fluid container fill minecraft:water_bucket restores tank and complete inventory after inventory failure (0.762747ms)
+✔ single fluid container drain minecraft:water restores tank and complete inventory after save failure (0.371461ms)
+✔ single fluid container drain minecraft:water restores tank and complete inventory after inventory failure (1.420016ms)
+✔ single fluid container fill minecraft:water_bucket rejects changed accepted hand (0.158208ms)
+✔ single fluid container drain minecraft:water rejects changed accepted hand (0.060209ms)
+ℹ tests 87
+ℹ suites 0
+ℹ pass 51
+ℹ fail 36
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 412.530281
+
+✖ failing tests:
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: fill minecraft:water_bucket / earlier empty (7.905068ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: fill minecraft:water_bucket / existing result (0.705279ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      undefined,
+      ItemStack {
+  +     amount: 2,
+  -     amount: 1,
+        maxAmount: 16,
+        typeId: 'minecraft:bucket'
+      },
+      undefined,
+      undefined,
+  -   ItemStack {
+  -     amount: 1,
+  -     maxAmount: 64,
+  -     typeId: 'minecraft:bucket'
+  -   },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined, { typeId: 'minecraft:bucket', amount: 2, maxAmount: 16 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 16 }, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: fill minecraft:water_bucket / earlier empty (0.515674ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: fill minecraft:water_bucket / existing result (0.465407ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      undefined,
+      ItemStack {
+  +     amount: 2,
+  -     amount: 1,
+        maxAmount: 16,
+        typeId: 'minecraft:bucket'
+      },
+      undefined,
+      undefined,
+  -   ItemStack {
+  -     amount: 1,
+  -     maxAmount: 64,
+  -     typeId: 'minecraft:bucket'
+  -   },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined, { typeId: 'minecraft:bucket', amount: 2, maxAmount: 16 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 16 }, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: fill minecraft:lava_bucket / earlier empty (0.526389ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: fill minecraft:lava_bucket / existing result (0.33565ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      undefined,
+      ItemStack {
+  +     amount: 2,
+  -     amount: 1,
+        maxAmount: 16,
+        typeId: 'minecraft:bucket'
+      },
+      undefined,
+      undefined,
+  -   ItemStack {
+  -     amount: 1,
+  -     maxAmount: 64,
+  -     typeId: 'minecraft:bucket'
+  -   },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined, { typeId: 'minecraft:bucket', amount: 2, maxAmount: 16 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 16 }, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: fill minecraft:lava_bucket / earlier empty (0.308445ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: fill minecraft:lava_bucket / existing result (0.277853ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      undefined,
+      ItemStack {
+  +     amount: 2,
+  -     amount: 1,
+        maxAmount: 16,
+        typeId: 'minecraft:bucket'
+      },
+      undefined,
+      undefined,
+  -   ItemStack {
+  -     amount: 1,
+  -     maxAmount: 64,
+  -     typeId: 'minecraft:bucket'
+  -   },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined, { typeId: 'minecraft:bucket', amount: 2, maxAmount: 16 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 16 }, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / earlier empty (0.311047ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / existing result (0.367955ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      undefined,
+      ItemStack {
+  +     amount: 2,
+  -     amount: 1,
+        maxAmount: 16,
+        typeId: 'minecraft:bucket'
+      },
+      undefined,
+      undefined,
+  -   ItemStack {
+  -     amount: 1,
+  -     maxAmount: 64,
+  -     typeId: 'minecraft:bucket'
+  -   },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined, { typeId: 'minecraft:bucket', amount: 2, maxAmount: 16 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 16 }, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / earlier empty (0.245152ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:grape_bucket / existing result (0.306746ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      undefined,
+      ItemStack {
+  +     amount: 2,
+  -     amount: 1,
+        maxAmount: 16,
+        typeId: 'minecraft:bucket'
+      },
+      undefined,
+      undefined,
+  -   ItemStack {
+  -     amount: 1,
+  -     maxAmount: 64,
+  -     typeId: 'minecraft:bucket'
+  -   },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined, { typeId: 'minecraft:bucket', amount: 2, maxAmount: 16 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 16 }, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / earlier empty (0.29755ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / existing result (0.311484ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      undefined,
+      ItemStack {
+  +     amount: 2,
+  -     amount: 1,
+        maxAmount: 16,
+        typeId: 'minecraft:bucket'
+      },
+      undefined,
+      undefined,
+  -   ItemStack {
+  -     amount: 1,
+  -     maxAmount: 64,
+  -     typeId: 'minecraft:bucket'
+  -   },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined, { typeId: 'minecraft:bucket', amount: 2, maxAmount: 16 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 16 }, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / earlier empty (0.300212ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: fill kaleidoscope_tavern:sweet_berries_bucket / existing result (0.296541ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      undefined,
+      ItemStack {
+  +     amount: 2,
+  -     amount: 1,
+        maxAmount: 16,
+        typeId: 'minecraft:bucket'
+      },
+      undefined,
+      undefined,
+  -   ItemStack {
+  -     amount: 1,
+  -     maxAmount: 64,
+  -     typeId: 'minecraft:bucket'
+  -   },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined, { typeId: 'minecraft:bucket', amount: 2, maxAmount: 16 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 16 }, undefined, undefined, { typeId: 'minecraft:bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain minecraft:water / earlier empty (0.412866ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:water_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain minecraft:water / existing result (0.512978ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 64,
+  -     maxAmount: 1,
+        typeId: 'minecraft:water_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 1,
+  -     maxAmount: 64,
+        typeId: 'minecraft:water_bucket'
+      },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 64 }, { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain minecraft:water / earlier empty (0.579775ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:water_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain minecraft:water / existing result (0.328724ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 64,
+  -     maxAmount: 1,
+        typeId: 'minecraft:water_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 1,
+  -     maxAmount: 64,
+        typeId: 'minecraft:water_bucket'
+      },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 64 }, { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'minecraft:water_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain minecraft:lava / earlier empty (0.458957ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:lava_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain minecraft:lava / existing result (0.483075ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 64,
+  -     maxAmount: 1,
+        typeId: 'minecraft:lava_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 1,
+  -     maxAmount: 64,
+        typeId: 'minecraft:lava_bucket'
+      },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 64 }, { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain minecraft:lava / earlier empty (0.387886ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'minecraft:lava_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain minecraft:lava / existing result (0.374935ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 64,
+  -     maxAmount: 1,
+        typeId: 'minecraft:lava_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 1,
+  -     maxAmount: 64,
+        typeId: 'minecraft:lava_bucket'
+      },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 64 }, { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'minecraft:lava_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / earlier empty (0.522157ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'kaleidoscope_tavern:grape_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / existing result (0.273871ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 64,
+  -     maxAmount: 1,
+        typeId: 'kaleidoscope_tavern:grape_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 1,
+  -     maxAmount: 64,
+        typeId: 'kaleidoscope_tavern:grape_bucket'
+      },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 64 }, { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / earlier empty (0.326483ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'kaleidoscope_tavern:grape_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:grape_juice / existing result (0.228016ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 64,
+  -     maxAmount: 1,
+        typeId: 'kaleidoscope_tavern:grape_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 1,
+  -     maxAmount: 64,
+        typeId: 'kaleidoscope_tavern:grape_bucket'
+      },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 64 }, { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'kaleidoscope_tavern:grape_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / earlier empty (0.282528ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'kaleidoscope_tavern:sweet_berries_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / existing result (0.429354ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 64,
+  -     maxAmount: 1,
+        typeId: 'kaleidoscope_tavern:sweet_berries_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 1,
+  -     maxAmount: 64,
+        typeId: 'kaleidoscope_tavern:sweet_berries_bucket'
+      },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 64 }, { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / earlier empty (0.193909ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 64,
+        typeId: 'kaleidoscope_tavern:sweet_berries_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_tavern:sweet_berries_juice / existing result (0.301228ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 64,
+  -     maxAmount: 1,
+        typeId: 'kaleidoscope_tavern:sweet_berries_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+  +     maxAmount: 1,
+  -     maxAmount: 64,
+        typeId: 'kaleidoscope_tavern:sweet_berries_bucket'
+      },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 64 }, { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'kaleidoscope_tavern:sweet_berries_bucket', amount: 1, maxAmount: 64 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / earlier empty (0.878278ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 1,
+        typeId: 'minecraft:milk_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ survival single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / existing result (0.937835ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 1,
+        typeId: 'minecraft:milk_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 1,
+        typeId: 'minecraft:milk_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / earlier empty (0.625854ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+  -   undefined,
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 1,
+        typeId: 'minecraft:milk_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, undefined, undefined, undefined, { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/freezer-callback.test.mjs:143:155
+✖ adventure single fluid container stays in used slot: drain kaleidoscope_world_liquor:milk_still / existing result (0.391349ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 1,
+        typeId: 'minecraft:milk_bucket'
+      },
+  -   undefined,
+  -   undefined,
+      ItemStack {
+        amount: 1,
+        maxAmount: 1,
+        typeId: 'minecraft:milk_bucket'
+      },
+  ...
+      undefined,
+  +   undefined,
+  +   undefined,
+  +   undefined
+    ]
+
+      at TestContext.<anonymous> (file://<checkout>/tests/freezer-callback.test.mjs:147:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    expected: [ undefined, { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, { typeId: 'minecraft:milk_bucket', amount: 1, maxAmount: 1 }, undefined, undefined, undefined, undefined ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
