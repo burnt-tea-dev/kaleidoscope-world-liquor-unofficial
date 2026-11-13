@@ -5650,9 +5650,9 @@ export const payload = {
         "zh_TW": "酒館唱片"
       },
       "body": {
-        "en_US": "Play\nUse on an empty jukebox to play one of its two tracks at random. Empty-hand use stops playback and returns the disc.\n\nWall display\nSneak-use on a wall to hang it; empty-hand use takes it back. Removing its support also drops the disc.",
-        "zh_CN": "播放\n对空唱片机使用，随机播放两首曲目之一；空手互动停止播放并取回唱片。\n\n挂墙\n潜行对墙面使用可悬挂；空手互动可取回，移除支撑也会掉出唱片。",
-        "zh_TW": "播放\n對空唱片機使用，隨機播放兩首曲目之一；空手互動停止播放並取回唱片。\n\n掛牆\n潛行對牆面使用可懸掛；空手互動可取回，移除支撐也會掉出唱片。"
+        "en_US": "Play\nUse on an empty jukebox to play one of its two tracks at random. Empty-hand use stops playback and returns the disc.\n\nWall display\nSneak-use on a wall to hang it. Use the display to retrieve it, including with an ordinary held item or in Adventure. Sneaking retrieves it only when both hands are empty. Removing its support also drops the disc.",
+        "zh_CN": "播放\n对空唱片机使用，随机播放两首曲目之一；空手互动停止播放并取回唱片。\n\n挂墙\n潜行对墙面使用可悬挂。互动可取回，手持普通物品或冒险模式也可；潜行时须双手均为空。移除支撑也会掉出唱片。",
+        "zh_TW": "播放\n對空唱片機使用，隨機播放兩首曲目之一；空手互動停止播放並取回唱片。\n\n掛牆\n潛行對牆面使用可懸掛。互動可取回，手持普通物品或冒險模式也可；潛行時須雙手均為空。移除支撐也會掉出唱片。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/custom_record",

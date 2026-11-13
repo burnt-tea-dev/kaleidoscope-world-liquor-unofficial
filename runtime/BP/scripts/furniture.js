@@ -197,9 +197,12 @@ function removeWallRecord(b,{permutation=b.permutation,player,native=false}={}){
   throw err;
  }
 }
-function record(p,b,s,h){if(h)return;if(!s.record)return;const k=key(b);wallRemovalTicks.set(k,system.currentTick);try{if(transaction(p,b,undefined,{give:[[s.record,1]],permutation:BlockPermutation.resolve('minecraft:air')}))b.dimension.playSound('itemframe.remove_item',center(b));else wallRemovalTicks.delete(k);}catch(err){wallRemovalTicks.delete(k);throw err;}}
+// Java useWithoutItem is default block use, including ordinary held items.
+// Secondary use bypasses it only when at least one hand is occupied.
+function wallWantsUse(p,item=hand(p)){return String(p.getGameMode()).toLowerCase()!=='spectator'&&(!p.isSneaking||!item&&!p.getComponent('minecraft:equippable')?.getEquipment('Offhand'));}
+function record(p,b,s,h){if(!wallWantsUse(p,h)||!s.record)return;const k=key(b);wallRemovalTicks.set(k,system.currentTick);try{if(transaction(p,b,undefined,{give:[[s.record,1]],permutation:BlockPermutation.resolve('minecraft:air')}))b.dimension.playSound('itemframe.remove_item',center(b));else wallRemovalTicks.delete(k);}catch(err){wallRemovalTicks.delete(k);throw err;}}
 function interact(p,b,face,point){
- if(!furniture(b.typeId)||!mutable(p)&&!(b.typeId===NS+':freezer'&&String(p.getGameMode()).toLowerCase()==='adventure'))return;const stamp=p.id+'/'+key(b);if(system.currentTick-(cooldown.get(stamp)??-100)<5)return;cooldown.set(stamp,system.currentTick);
+ if(!furniture(b.typeId)||!mutable(p)&&!([NS+':freezer',WALL_RECORD].includes(b.typeId)&&String(p.getGameMode()).toLowerCase()==='adventure'))return;const stamp=p.id+'/'+key(b);if(system.currentTick-(cooldown.get(stamp)??-100)<5)return;cooldown.set(stamp,system.currentTick);
  const s=read(b),h=hand(p);if(b.typeId.endsWith(':freezer'))freezer(p,b,s,h);else if(b.typeId.endsWith(':wall_record'))record(p,b,s,h);else if(b.typeId.includes(':bar_stool_')&&!h&&!p.isSneaking)sit(p,b);
 }
 function tick(b){if(b.typeId.endsWith(':freezer')){const plan=advanceFreezerTick(read(b,b.permutation,false),savedFreezerRecipes);if(plan.changed)save(b,plan.state);if(plan.refresh||!plan.changed&&system.currentTick%80===0)syncFreezerVisuals(b,plan.state,savedFreezerRecipes);}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){if(b.typeId===WALL_RECORD){breakFeedback.transaction(b,()=>removeWallRecord(b));return;}removeUnsupported(b,b.typeId);}}}
@@ -248,7 +251,7 @@ export function installFurniture(){
   if(furniture(e.block.typeId)){
    const id=e.block.typeId,held=e.itemStack?.typeId;
    const wantsUse=id.endsWith(':freezer')
-    ||id.endsWith(':wall_record')&&!held
+    ||id===WALL_RECORD&&wallWantsUse(e.player,e.itemStack)
     ||id.includes(':bar_stool_')&&!held&&!e.player.isSneaking;
    if(wantsUse){
     e.cancel=true;if(e.isFirstEvent===false)return;

@@ -79,3 +79,47 @@ test('deferred jukebox insertion preserves normal use and rejects a replaced rec
   assert.equal(JSON.parse(world.getDynamicProperty(key(b))??'null')?.record,changed?undefined:item.typeId);assert.equal(p.inv.getItem(0)?.nameTag,changed?'replacement record':undefined);
  }
 });
+
+// useWithoutItem names the default block callback, not an empty-hand gate.
+function wallUse({model=1,facing=0,mode='survival',held,offhand,sneaking=false}={}){
+ reset();const f=wall(model,facing);f.p=player(f.d,mode);f.p.isSneaking=sneaking;
+ if(held){const stack=new ItemStack(held,3);stack.nameTag='held tool';f.p.inv.setItem(0,stack);}
+ const base=f.p.getComponent.bind(f.p),equipment={item:offhand?new ItemStack(offhand):undefined,getEquipment(){return this.item?.clone();}};f.p.getComponent=id=>id==='minecraft:equippable'?equipment:base(id);
+ const event=()=>({block:f.b,player:f.p,blockFace:'north',itemStack:f.p.inv.getItem(0),isFirstEvent:true,cancel:false});
+ return {...f,equipment,event,direct:()=>c.onPlayerInteract({block:f.b,player:f.p})};
+}
+for(const input of [{mode:'adventure'},{held:'minecraft:stick'},{held:'minecraft:cobblestone'}])test('wall default use admits '+JSON.stringify(input),()=>{
+ const f=wallUse(input),held=f.p.inv.getItem(0),event=f.event();world.beforeEvents.playerInteractWithBlock.emit(event);assert.equal(event.cancel,true);assert.equal(f.b.typeId,WALL_RECORD,'before-event does not remove the wall');system.flush();assert.equal(f.b.isAir,true);if(held)assert.deepEqual(f.p.inv.getItem(0),held);assert.equal(f.p.inv.getItem(held?1:0).typeId,idAt(1));assert.equal(live(f.d).length,0);
+});
+test('wall secondary use with offhand bypasses default retrieval',()=>{
+ const f=wallUse({sneaking:true,offhand:'minecraft:shield'}),event=f.event();world.beforeEvents.playerInteractWithBlock.emit(event);assert.equal(event.cancel,false);system.flush();f.direct();assert.equal(f.b.typeId,WALL_RECORD);assert.equal(f.p.inv.getItem(0),undefined);assert.equal(f.equipment.item.typeId,'minecraft:shield');
+});
+test('wall default-use admission matches 25 models, four facings, modes and ordinary hands',()=>{
+ let cases=0,admitted=0;
+ for(let model=0;model<25;model++)for(let facing=0;facing<4;facing++)for(const mode of ['survival','creative','adventure','spectator'])for(const sneaking of [false,true])for(const held of [undefined,'minecraft:stick','minecraft:cobblestone'])for(const offhand of [undefined,'minecraft:shield']){
+  const f=wallUse({model,facing,mode,sneaking,held,offhand}),before=f.p.inv.getItem(0),other=f.equipment.item?.clone(),event=f.event(),eligible=mode!=='spectator'&&(!sneaking||!held&&!offhand);
+  world.beforeEvents.playerInteractWithBlock.emit(event);assert.equal(event.cancel,eligible,JSON.stringify({model,facing,mode,sneaking,held,offhand}));assert.equal(f.b.typeId,WALL_RECORD);system.flush();if(!event.cancel)f.direct();assert.equal(f.b.isAir,eligible);assert.deepEqual(f.equipment.item,other);
+  if(eligible){admitted++;if(held)assert.deepEqual(f.p.inv.getItem(0),before);assert.equal(f.p.inv.getItem(held?1:0).typeId,idAt(model));assert.equal(f.p.inv.getItem(held?1:0).amount,1);}else assert.deepEqual(f.p.inv.getItem(0),before);
+  assert.equal(live(f.d).length,0);cases++;
+ }
+ assert.equal(cases,4800);assert.equal(admitted,2100);
+});
+test('wall direct-component use has the same Adventure and held-item admission',()=>{
+ for(const input of [{mode:'adventure',held:'minecraft:stick'},{held:'minecraft:cobblestone'},{sneaking:true},{}]){const f=wallUse(input);f.direct();assert.equal(f.b.isAir,true);assert.equal(f.p.inv.getItem(input.held?1:0).typeId,idAt(1));}
+});
+for(const change of ['slot','held metadata','offhand','sneaking','block','spectator'])test('wall deferred retrieval rechecks '+change+' without changing held inventory',()=>{
+ const f=wallUse({held:change==='offhand'?undefined:'minecraft:stick',sneaking:change==='offhand'}),event=f.event();world.beforeEvents.playerInteractWithBlock.emit(event);assert.equal(event.cancel,true);
+ if(change==='slot')f.p.selectedSlotIndex=1;
+ if(change==='held metadata'){const item=f.p.inv.getItem(0);item.nameTag='different item';f.p.inv.setItem(0,item);}
+ if(change==='offhand')f.equipment.item=new ItemStack('minecraft:shield');
+ if(change==='sneaking')f.p.isSneaking=true;
+ if(change==='block')f.b.setType('minecraft:stone');
+ if(change==='spectator')f.p.getGameMode=()=>'spectator';
+ const before=Array.from({length:f.p.inv.size},(_,i)=>f.p.inv.getItem(i));system.flush();assert.equal(f.b.typeId,change==='block'?'minecraft:stone':WALL_RECORD);assert.deepEqual(Array.from({length:f.p.inv.size},(_,i)=>f.p.inv.getItem(i)),before);assert.equal(live(f.d).length,0);
+});
+test('repeated held wall input schedules one return only',()=>{
+ const f=wallUse({held:'minecraft:stick'});world.beforeEvents.playerInteractWithBlock.emit(f.event());for(let i=0;i<3;i++){const event={...f.event(),isFirstEvent:false};world.beforeEvents.playerInteractWithBlock.emit(event);assert.equal(event.cancel,true);}system.flush();assert.equal(f.b.isAir,true);assert.equal(f.p.inv.getItem(0).amount,3);assert.equal(f.p.inv.getItem(1).amount,1);assert.equal(f.p.inv.getItem(2),undefined);
+});
+for(const failure of ['full inventory','inventory write'])test('held wall retrieval preserves both items after '+failure,()=>{
+ const f=wallUse({held:'minecraft:stick'});if(failure==='full inventory')for(let i=1;i<f.p.inv.size;i++)f.p.inv.setItem(i,new ItemStack('minecraft:stone',64));const before=Array.from({length:f.p.inv.size},(_,i)=>f.p.inv.getItem(i));const event=f.event();world.beforeEvents.playerInteractWithBlock.emit(event);if(failure==='inventory write')f.p.inv.failWrite=true;system.flush();assert.equal(f.b.typeId,WALL_RECORD);assert.deepEqual(Array.from({length:f.p.inv.size},(_,i)=>f.p.inv.getItem(i)),before);assert.equal(live(f.d).length,0);
+});

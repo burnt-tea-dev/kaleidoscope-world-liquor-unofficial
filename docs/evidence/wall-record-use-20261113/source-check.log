@@ -1,0 +1,74 @@
+Pinned1.1.9 freezer art matches source; client rendering unverified
+Historical stool/record face masks verified; cabinets are owned by the current author resource contract
+Current author cabinet geometry/atlases and two pendant lamps match source; storage identities conserved.
+27 geometric furniture routes;132 sprite routes; client acceptance pending
+{"ok": true, "native_root_type_preserved": true, "native_root_controls_preserved": 29, "selected_optional_panel": "kaleidoscope_world_liquor_effects.effect_panel", "registered_native_root_redefinitions": 0, "family_optional_roots": 2, "paired_grilling_bridge_verified": false, "resource_order_independent": true, "client": false, "scope": "Pinned Mojang root preservation, optional-control and matching family-bridge catalog resolution; no rendered-client claim."}
+15 original World Liquor effect sprites verified unchanged; client rendering not tested
+World Liquor owns a fully typed panel in its own namespace; never defines hud.root_panel
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.013s
+
+OK
+Pinned1.1.9 freezer art matches source; client rendering unverified
+<checkout>/tools/freezer_surface_animation.py:52: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  for a, b in zip(left.getdata(), right.getdata())
+Four source-backed freezer sheets have explicit client frame selection; client acceptance pending
+{"standard_entry": "materials/entity.material", "custom_materials": 2, "client_entities_and_attachables": 22, "resolved_render_material_references": 22, "client_rendering_tested": false}
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.232s
+
+OK
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.016s
+
+OK
+Historical stool/record face masks verified; cabinets are owned by the current author resource contract
+Java drink colors and tag memberships verified
+✔ strict registration with rice=false panicle=false (81.682594ms)
+✔ strict registration with rice=false panicle=true (30.877124ms)
+✔ strict registration with rice=true panicle=false (29.673428ms)
+✔ strict registration with rice=true panicle=true (23.330517ms)
+✔ missing unrelated ingredient still fails strict validation (2.621385ms)
+✔ future matching preparation removed but other methods retained (5.094704ms)
+✔ item registry lookup failure is not disguised as optional absence (0.448832ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 418.491438
+{"entries":225,"addonProducts":69,"categories":31,"barrelRecipes":18,"shakerRecipes":18,"extraCoreRecipes":8,"preparationRecipes":36,"guidePackets":218,"guidePacketLimit":514,"rawIdsInInstructions":false,"cookery106BilingualFallback":true,"modernHostLocalized":true,"hostStepLimitsChecked":true,"playerSimulation":false}
+{"roots":[{"title":"釀造設備","groups":[{"title":"酒桶釀造","entries":1},{"title":"壓榨與接汁","entries":2},{"title":"雪克杯調酒","entries":1},{"title":"冷凍製作","entries":1}]},{"title":"釀酒百科","groups":[{"title":"酒館本體","entries":25},{"title":"附屬配方","entries":18}]},{"title":"調酒百科","groups":[{"title":"酒館本體","entries":14},{"title":"附屬配方","entries":7}]},{"title":"材料與種植","groups":[{"title":"葡萄與藤架","entries":5},{"title":"果汁","entries":7},{"title":"調酒材料","entries":2}]},{"title":"收納與實用","groups":[{"title":"裝酒容器","entries":2},{"title":"實用工具","entries":1},{"title":"酒櫃","entries":13},{"title":"酒架與杯架","entries":4}]},{"title":"裝飾與家具","groups":[{"title":"吧檯與桌子","entries":2},{"title":"高腳凳","entries":32},{"title":"沙發","entries":16},{"title":"燈飾","entries":22},{"title":"掛畫與唱片","entries":23},{"title":"立式告示牌與黑板","entries":15},{"title":"香薰","entries":8}]},{"title":"食物","groups":[{"title":"冰櫃食品","entries":3},{"title":"工作台食品","entries":1}]}],"entries":225,"totalCategories":31,"simulatedPlayers":false}
+✔ result height matches current renderer expressions independently executed by the JVM (1.340736ms)
+✔ 100 unchanged open-freezer refreshes send no repeated teleports; moved/rotated and missing visuals still reconcile (4.856379ms)
+✔ taking one output still changes the Java result height once; an unchanged result sends no movement (0.335312ms)
+✔ each original Java input slot keeps its seeded position and yaw across four facings (8.80939ms)
+✔ sampled placement matches original Java float operations, including signed integer overflow (5.375578ms)
+✔ unsupported and empty inputs keep original slot numbers; reopening restores the same pose (1.84634ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 31.043724
+Java drink colors and tag memberships verified
+Current author cabinet geometry/atlases and two pendant lamps match source; storage identities conserved.
+{"baselineCommit": "950dc1de414bd18ccdd5329629900acd662bbcc2", "javaReferenceCommit": "c4ec1880bd44cf3139d3ba744ab30bb379cf1416", "cabinetBlockVariants": 10, "helperFamilies": 2, "facings": 4, "poseCases": 48, "vertexComparisons": 4992, "maxCoordinateErrorBlocks": 2.220446049250313e-16, "modelBindings": 90, "preservedFiles": 546, "creativeMenuProjectionFiles": 62, "currentSourceAssets": {"runtime/RP/textures/repair/freezer_blue_dye.png": "6cf7ce48373b5e4d1b42c36abdff0abc847eef2dd10c9886bc1a77903b66617d"}, "foundation": {"sources": ["runtime/BP/scripts/bedrock/extension-furniture.js", "runtime/BP/scripts/bedrock/foundation-bridge.js"], "sdkOwner": "sdk/tavern-foundation-client.js", "consumer": "runtime/BP/scripts/sdk/tavern-foundation-client.js", "syntax": "passed", "ownershipAndWiring": "passed", "behavior": "actual foundation.test.mjs in the existing foundation CI lane; not run by this static check", "nativeInventoryRecovery": false, "bds": false, "client": false}, "molotovKind": 25, "watermelonKind": 44, "playerSimulation": false, "bdsTest": "NOT_RUN", "clientVisualTest": "NOT_RUN"}
+{
+  "namespace": "kaleidoscope_world_liquor",
+  "visible_items": 68,
+  "planned_items": 68,
+  "changed_files": 0
+}
+Native pick definitions: OK
+{"current_source_cups": 4, "authored_inventory_icons": 2, "geometriesChecked": 67, "renderedFacesChecked": 4431, "remainingSameFacingDepthConflicts": 0, "idempotent": true, "historical_witnesses_preserved": true, "clientTest": false}
+{"currentJavaVersion":"NeoForge1.1.12 selected changes; inherited1.1.11 recipes","recipes":18,"recipeOrderCases":108,"extraColors":4,"coreReclassification":true,"highballSourceEffectData":true,"localizedCocktailEffects":7,"actualFlightImplemented":false,"simulatedPlayers":false}
+Current author cabinet geometry/atlases and two pendant lamps match source; storage identities conserved.
+Compiled BP blocks 63 items 159 recipes 41 models 1350 errors 0

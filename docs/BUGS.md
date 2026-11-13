@@ -37,6 +37,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 
 ## 保留實作，仍待真人或特定生命周期驗收
 
+- 壁掛唱片 default use（2026-11-13）：已修普通手持物／Adventure 回收與 sneak+offhand 邊界，185 項來源/API double 回歸通過。完整 native、滿庫存 ItemHandlerHelper 及 metadata 另案仍有界；詳見[矩陣](PARITY-MATRIX.md#壁掛唱片-default-interaction2026-11-13來源候選)。
 - 布丁餘碗（W172）：既有13項來源案例與W198的最後一份／多份／Creative三案真Native完成／扣料已通過，沒有漏碗或多碗，不改runtime或升版本。兩作者、實際同tick階段與其餘未驗範圍只查[布丁餘碗](FOOD-REMAINDER.md)，不宣稱固定下一tick或完整真人／掉落物物理已驗。
 - 斬首與頭顱（W173）：`beheading.js` 依原作 `onLivingIncomingDamage`／`onLivingDropsBeheading`——標記存成目標的 dynamic property（等同 persistent data，圖騰倖存或存檔重啟仍會在下一次死亡掉頭）；命中時在同一個 before-event 上改為攻擊者歸屬的 10000 傷害，下一 tick 若血量未降則依原作設 1、再由攻擊者造成 2 傷害、仍活則歸零；期間以 processing 阻擋重入再抽；死亡後對原生 `entityItemDrop` 掉落清單做 `isSameItemSameComponents` 去重，沒有掉落清單的實體兩 tick 後補發；玩家頭以物品名稱與 lore 記錄 SkullOwner（Bedrock 無法由腳本設定頭顱皮膚）。原生 incoming 取消與另起 playerAttack／mobAttack 傷害來源、圖騰／護甲／Tequila 併發與真人驗收仍待確認。
 - 尋寶指南生物掉落（W174）：`treasure-drops.js` 依原作 `onLivingDrops`——傷害來源的擁有者（箭的射手，不是箭）持有效果時每次死亡擲一次 `0.15+0.05×amplifier`，成功就把原生 `entityItemDrop` 掉落清單的每一項在該物品位置複製一份（快照清單，複製品不再被複製）；取代原本下一 tick 掃附近新物品的作法，不再誤抓同 tick 其他死亡或玩家丟出的物品。沒有掉落清單的死亡兩 tick 後作廢。pickup delay、原生 drop 事件是否含斬首補發的頭、以及真人驗收仍開放。
