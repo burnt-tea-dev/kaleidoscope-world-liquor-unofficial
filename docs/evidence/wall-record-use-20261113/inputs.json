@@ -1,0 +1,19 @@
+{
+  "base_commit": "c5984d46f4df4b120be72f0b7e229922f95509d4",
+  "peers": {
+    "tavern": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
+    "grilling": "7c2d3c0afcb39db314a1f95fa7f0276272b27eb1"
+  },
+  "sha256": {
+    "runtime/BP/scripts/furniture.js": "6a0619a5e34b6ac583df77b51bd76f1ae27ee83bf0272a1f62b41cdfb29bcb5e",
+    "runtime/BP/scripts/payload.js": "f6f76208a7bd650b842510bc21911430bcb99a11a2bf28aa490ac0828abe93f4",
+    "tests/wall-record.test.mjs": "56a3019a22b86d0e6f655e28c60f84802100c6b1822ace521b1af0b205959ac2",
+    "tools/guide_copy.py": "ccbdf5aea9e857960fc4ddec0ce541b30a3493ebcb0f3a550d401e673fb6ab0a",
+    "tests/wall-record-mock.mjs": "1ed52da4178b49e89abf8cb44faf475315cd15d4c51742ddc4729240b3e4230a",
+    "tests/wall-record-loader.mjs": "a171dd6b6d6e45d50a550407e1ba52cdf1522fcf014707adce241677a497184d",
+    ".github/baseline-integration.json": "d65f6ca3f4361948657f87ab254d39aa580c53d895c6220081957e7f11080f51"
+  },
+  "bds": false,
+  "client": false,
+  "deployed": false
+}

@@ -4,6 +4,10 @@ Current source adoption and exact remaining gaps are owned by [the 2026-10-28 re
 
 # World Liquor Java／Bedrock 差距矩陣
 
+## 壁掛唱片 default interaction（2026-11-13，來源候選）
+
+修正普通手持物與 Adventure 不能取回，以及潛行且副手有物品卻被攔截取回的入口。前置事件與直接 callback 共用判斷，延遲重查與既有滿庫存拒絕／回滾保留。15 新案例在 main 為 13 失敗／2 通過，修後唱片 77 項含 4,800 admission 組合、七套相鄰回歸 185 項、4 項 geometry、完整來源檢查均通過；[來源、收據與限制](evidence/wall-record-use-20261113/README.md)。這不是 native／真人或存檔驗收。完整 ItemHandlerHelper 滿庫存語義、任意 item hooks 與獨立 #227 metadata 修復不包含；普通 PR 不執行 manual-only wall job。無版本／部署／模型變更，baseline guard 保留阻擋。
+
 ## Adventure 唱片插入與現行相依（2026-11-09，W208）
 
 原原版唱機入口把 Adventure 與 Spectator 一同交給通用家具 mutable guard，錯擋已核 NeoForge 1.21.1 的 block-use 路徑。現在只在該唱機插入入口拒絕 Spectator；其他家具權限不變。既有真 production callback 測試涵蓋 Survival／Adventure／Creative 的扣手持、原 metadata 保存及取出，另驗 Spectator 不扣物、不建立 storage。沒有直接呼叫 accept 或另造 storage owner。

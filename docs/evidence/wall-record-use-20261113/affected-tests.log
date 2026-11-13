@@ -1,0 +1,249 @@
+(node:21) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[World Liquor freezer redstone] Error: injected save failure
+[World Liquor freezer redstone] Error: injected block failure
+[World Liquor] Error: POTION_IDENTITY_UNAVAILABLE
+[World Liquor] Error: POTION_IDENTITY_UNAVAILABLE
+[World Liquor] Error: injected potion identity failure
+✔ real furniture callback defers writes and starts only on falling power (7.00588ms)
+✔ deferred callback leaves a replaced block and its data untouched (0.376083ms)
+✔ save failure rolls back power state and lid (1.008732ms)
+✔ block failure rolls back power state and lid (0.985506ms)
+✔ non-freezer furniture ignores redstone callback (0.757569ms)
+✔ registered block tick retains the saved countdown and finishes once at its exact last tick (23.764195ms)
+✔ removed saved recipe stops instead of inventing an output item (22.170596ms)
+✔ survival real furniture callback follows source output hand rules (8.339453ms)
+✔ adventure real furniture callback follows source output hand rules (0.991134ms)
+✔ creative real furniture callback follows source output hand rules (0.990907ms)
+✔ wrong bowl shows a localized item before the original pickup event and retains output (6.056942ms)
+✔ survival real milk callback preserves source bucket hand and audio (5.162611ms)
+✔ adventure real milk callback preserves source bucket hand and audio (1.889155ms)
+✔ creative real milk callback preserves source bucket hand and audio (0.943364ms)
+✔ survival registered input callback consumes one ordinary ingredient and plays source add event (4.32679ms)
+✔ adventure registered input callback consumes one ordinary ingredient and plays source add event (2.574102ms)
+✔ creative registered input callback consumes one ordinary ingredient and plays source add event (3.38741ms)
+✔ registered empty-hand removal pops the last saved ingredient and still plays source remove on empty (2.826215ms)
+✔ registered native input preserves name, lore and dynamic data through insertion and extraction (3.515627ms)
+✔ native break drops complete input in Creative even with doTileDrops false, and never invents output drops (1.25891ms)
+✔ registered intrinsic maxAmount1 input is accepted and restored with its original metadata (1.063114ms)
+✔ Creative fluid drain minecraft:water preserves the complete inventory with free slots (2.213279ms)
+✔ Creative fluid drain minecraft:water preserves the complete inventory with full slots (0.69113ms)
+✔ Creative fluid drain minecraft:lava preserves the complete inventory with free slots (0.620862ms)
+✔ Creative fluid drain minecraft:lava preserves the complete inventory with full slots (0.606239ms)
+✔ Creative fluid drain kaleidoscope_tavern:grape_juice preserves the complete inventory with free slots (0.399995ms)
+✔ Creative fluid drain kaleidoscope_tavern:grape_juice preserves the complete inventory with full slots (0.616298ms)
+✔ Creative fluid drain kaleidoscope_tavern:sweet_berries_juice preserves the complete inventory with free slots (0.340956ms)
+✔ Creative fluid drain kaleidoscope_tavern:sweet_berries_juice preserves the complete inventory with full slots (0.962852ms)
+✔ Creative fluid drain kaleidoscope_world_liquor:milk_still preserves the complete inventory with free slots (1.080968ms)
+✔ Creative fluid drain kaleidoscope_world_liquor:milk_still preserves the complete inventory with full slots (1.687599ms)
+✔ Creative fluid fill minecraft:water_bucket already preserves the complete inventory with free slots (0.871576ms)
+✔ Creative fluid fill minecraft:water_bucket already preserves the complete inventory with full slots (0.646886ms)
+✔ Creative fluid fill minecraft:lava_bucket already preserves the complete inventory with free slots (0.274598ms)
+✔ Creative fluid fill minecraft:lava_bucket already preserves the complete inventory with full slots (0.341675ms)
+✔ Creative fluid fill kaleidoscope_tavern:grape_bucket already preserves the complete inventory with free slots (0.465911ms)
+✔ Creative fluid fill kaleidoscope_tavern:grape_bucket already preserves the complete inventory with full slots (0.517555ms)
+✔ Creative fluid fill kaleidoscope_tavern:sweet_berries_bucket already preserves the complete inventory with free slots (0.658417ms)
+✔ Creative fluid fill kaleidoscope_tavern:sweet_berries_bucket already preserves the complete inventory with full slots (0.330719ms)
+✔ survival full-tank minecraft:water_bucket falls through to complete-stack input (0.919151ms)
+✔ creative full-tank minecraft:water_bucket falls through to complete-stack input (0.748202ms)
+✔ survival full-tank minecraft:lava_bucket falls through to complete-stack input (1.113759ms)
+✔ creative full-tank minecraft:lava_bucket falls through to complete-stack input (1.064564ms)
+✔ survival full-tank kaleidoscope_tavern:grape_bucket falls through to complete-stack input (1.217455ms)
+✔ creative full-tank kaleidoscope_tavern:grape_bucket falls through to complete-stack input (4.314934ms)
+✔ survival full-tank kaleidoscope_tavern:sweet_berries_bucket falls through to complete-stack input (1.144996ms)
+✔ creative full-tank kaleidoscope_tavern:sweet_berries_bucket falls through to complete-stack input (0.785021ms)
+✔ survival deferred freezer input keeps the original accepted stack (0.988278ms)
+✔ adventure deferred freezer input keeps the original accepted stack (0.316249ms)
+✔ creative deferred freezer input keeps the original accepted stack (0.207975ms)
+✔ deferred freezer input rejects changed slot (1.421478ms)
+✔ deferred freezer input rejects changed type (0.160361ms)
+✔ deferred freezer input rejects changed count (0.398059ms)
+✔ deferred freezer input rejects changed metadata (0.206465ms)
+✔ deferred freezer input rejects changed dimension (0.213933ms)
+✔ deferred freezer input rejects changed sneaking (0.592353ms)
+✔ deferred freezer input rejects changed block-state (0.33864ms)
+✔ deferred freezer input rejects changed same-block-replacement (1.163275ms)
+✔ deferred potion input retains the original native payload through extraction (2.074124ms)
+✔ deferred potion input rejects effect (0.802539ms)
+✔ deferred potion input rejects delivery (0.655616ms)
+✔ deferred potion input rejects missing-id (0.403041ms)
+✔ deferred potion input rejects missing-component (0.722998ms)
+✔ deferred potion input rejects read-error (1.190194ms)
+✔ registered Creative full-inventory pochi_pudding output decrements once without a drop (1.209173ms)
+✔ registered Creative full-inventory ice output decrements once without a drop (0.58065ms)
+(node:22) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ legacy IDs are readable without entities and adopted alongside complete incoming stacks (8.99952ms)
+✔ API vector enumeration/order is not mistaken for different block coordinates (3.221656ms)
+✔ same-ID stacks retain distinct native metadata and exact last-slot removal (3.503042ms)
+✔ failed machine-row write restores native inventory, markers and original row (1.745829ms)
+✔ craft retirement consumes input once; rollback before finish keeps the same carrier (0.933744ms)
+✔ missing carrier, wrong owner and wrong contents reject without recreating plain IDs (2.504948ms)
+✔ owned moved carrier is reanchored after the strict read, preserving native metadata (2.099791ms)
+(node:23) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ destroyed jukebox returns its stored disc once: Survival, doTileDrops=true (12.004157ms)
+✔ destroyed jukebox returns its stored disc once: Survival, doTileDrops=false (0.722086ms)
+✔ destroyed jukebox returns its stored disc once: Creative, doTileDrops=true (2.189727ms)
+✔ destroyed jukebox returns its stored disc once: Creative, doTileDrops=false (1.465705ms)
+✔ manual jukebox ejection drops into the world without changing inventory: full=false (4.683624ms)
+✔ manual jukebox ejection drops into the world without changing inventory: full=true (1.709475ms)
+✔ manual ejection respects Creative interaction (0.857495ms)
+✔ manual ejection respects Adventure interaction (0.478532ms)
+✔ manual ejection respects Spectator interaction (0.231923ms)
+✔ sneaking with occupied mainhand leaves native block interaction available (0.615787ms)
+✔ sneaking with occupied offhand leaves native block interaction available (1.306176ms)
+✔ a changed accepted hand does not eject a disc on the later tick (0.477469ms)
+(node:29) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[World Liquor] Error: PAYMENT_ALREADY_DEBITED
+[World Liquor] Error: ROW_WRITE_FAILED
+✔ production insert/payment/eject preserves the complete named disc: Survival (8.000835ms)
+✔ production insert/payment/eject preserves the complete named disc: Adventure (1.045406ms)
+✔ production insert/payment/eject preserves the complete named disc: Creative (0.545807ms)
+✔ spectator cannot insert a custom disc or debit the inventory (0.50707ms)
+✔ the break subscriber returns the same adopted metadata (1.009592ms)
+✔ the explosion subscriber returns the same adopted metadata (1.205066ms)
+✔ inventory payment failure restores the held stack, row and native carrier together (2.12444ms)
+✔ insertion row-write failure rolls back the newly created native item (5.229524ms)
+✔ failed native delivery retains the adopted named disc and its saved rows (1.800876ms)
+✔ adopted missing native index never falls back to the row type ID (4.130673ms)
+✔ legacy plain-ID ejection remains available without inventing lost metadata (0.508956ms)
+✔ record reanchor accepts replacement furniture while retaining the same native stack (3.118554ms)
+(node:30) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '<paired-workspace>/grilling-src/projects/grilling/gameplay_core/behavior_pack/scripts/core/storage.js' imported from <checkout>/tests/respawn-family.test.mjs
+    at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    at moduleResolve (node:internal/modules/esm/resolve:879:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    at nextResolve (node:internal/modules/esm/hooks:785:28)
+    at resolve (file://<checkout>/tests/wall-record-loader.mjs:5:9)
+    at nextResolve (node:internal/modules/esm/hooks:785:28)
+    at resolve (file://<checkout>/tests/wall-record-loader.mjs:5:9)
+    at nextResolve (node:internal/modules/esm/hooks:785:28)
+    at AsyncLoaderHooksOnLoaderHookWorker.resolve (node:internal/modules/esm/hooks:269:30)
+    at MessagePort.handleMessage (node:internal/modules/esm/worker:251:24) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file://<paired-workspace>/grilling-src/projects/grilling/gameplay_core/behavior_pack/scripts/core/storage.js'
+}
+
+Node.js v24.22.1
+✖ tests/respawn-family.test.mjs (695.406585ms)
+(node:31) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ production freezer input carrier does not block shared Respawn without a personal point (14.823708ms)
+✔ production freezer input carrier does not block shared Respawn after a proven invalid personal point (8.798435ms)
+✔ all exact owned empty-box definitions resolve, and every other owned entity remains unknown (30.684443ms)
+✔ foreign and unknown same-namespace helpers remain unknown even far away or named like storage (5.3992ms)
+✔ explicit entity facts still take precedence over the owned helper default (1.504857ms)
+(node:32) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[World Liquor] Error: injected inventory failure
+[World Liquor] Error: injected drop failure
+[World Liquor] Error: injected drop failure
+[World Liquor] Error: injected save failure
+[World Liquor] Error: Invalid wall record model state
+[World Liquor] Error: injected inventory failure
+[World Liquor] Error: injected inventory failure
+✔ model 0: exact item, legacy/corrupt/stale DP recovery, native survival drop once (10.946558ms)
+✔ model 1: exact item, legacy/corrupt/stale DP recovery, native survival drop once (1.571678ms)
+✔ model 2: exact item, legacy/corrupt/stale DP recovery, native survival drop once (2.597017ms)
+✔ model 3: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.28307ms)
+✔ model 4: exact item, legacy/corrupt/stale DP recovery, native survival drop once (3.193266ms)
+✔ model 5: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.187506ms)
+✔ model 6: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.163785ms)
+✔ model 7: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.13735ms)
+✔ model 8: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.163755ms)
+✔ model 9: exact item, legacy/corrupt/stale DP recovery, native survival drop once (5.176066ms)
+✔ model 10: exact item, legacy/corrupt/stale DP recovery, native survival drop once (2.083892ms)
+✔ model 11: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.169357ms)
+✔ model 12: exact item, legacy/corrupt/stale DP recovery, native survival drop once (1.682519ms)
+✔ model 13: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.13913ms)
+✔ model 14: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.161794ms)
+✔ model 15: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.15362ms)
+✔ model 16: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.109135ms)
+✔ model 17: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.099412ms)
+✔ model 18: exact item, legacy/corrupt/stale DP recovery, native survival drop once (1.030138ms)
+✔ model 19: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.088528ms)
+✔ model 20: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.06354ms)
+✔ model 21: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.060024ms)
+✔ model 22: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.055038ms)
+✔ model 23: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.268518ms)
+✔ model 24: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.168542ms)
+✔ facing north: all 25 meshes and hitboxes stay on the actual support side (12.385319ms)
+✔ facing east: all 25 meshes and hitboxes stay on the actual support side (6.829549ms)
+✔ facing south: all 25 meshes and hitboxes stay on the actual support side (3.331083ms)
+✔ facing west: all 25 meshes and hitboxes stay on the actual support side (4.060572ms)
+✔ sync onPlace: north placement preserves identity and wall support (5.226773ms)
+✔ sync onPlace: east placement preserves identity and wall support (1.140149ms)
+✔ sync onPlace: south placement preserves identity and wall support (1.228107ms)
+✔ sync onPlace: west placement preserves identity and wall support (1.866579ms)
+✔ deferred onPlace: north placement preserves identity and wall support (1.195426ms)
+✔ deferred onPlace: east placement preserves identity and wall support (1.031088ms)
+✔ deferred onPlace: south placement preserves identity and wall support (0.876706ms)
+✔ deferred onPlace: west placement preserves identity and wall support (0.963913ms)
+✔ north support removal drops the exact recovered disc only once (0.754904ms)
+✔ east support removal drops the exact recovered disc only once (0.384289ms)
+✔ south support removal drops the exact recovered disc only once (1.302082ms)
+✔ west support removal drops the exact recovered disc only once (0.251099ms)
+✔ creative player break does not duplicate records (0.164398ms)
+✔ Creative player break does not duplicate records (0.043101ms)
+✔ doTileDrops=false suppresses native and support-loss drops (0.251744ms)
+✔ normal empty-hand retrieval repairs missing DP, removes once and grants inventory item (0.383101ms)
+✔ inventory write failure during retrieval rolls back the disc and inventory (0.675916ms)
+✔ native drop failure preserves recoverable block (0.354752ms)
+✔ support drop failure preserves recoverable block (0.29686ms)
+✔ block-removal failure rolls back an already spawned item (0.165ms)
+✔ save failure rolls back native drop without creating a second disc (0.133166ms)
+✔ unknown model refuses to guess a disc and restores the wall (0.267643ms)
+✔ destroy and replace at same coordinate resets duplicate guard (0.31228ms)
+✔ deferred placement rejects changed slot (0.165678ms)
+✔ deferred placement rejects changed support (0.081314ms)
+✔ deferred placement rejects changed dimension (0.092678ms)
+✔ deferred placement rejects changed adventure (0.109219ms)
+✔ deferred placement rejects changed spectator (0.207555ms)
+✔ invalid model indices are rejected individually (no clamping/empty item) (0.517053ms)
+✔ failed retrieval does not suppress an immediate real break after rollback (0.446983ms)
+✔ deferred wall placement does not consume a different same-ID stack (0.394345ms)
+✔ deferred painting placement preserves normal placement and rejects changed dimension (0.645657ms)
+✔ deferred jukebox insertion preserves normal use and rejects a replaced record (3.435095ms)
+✔ wall default use admits {"mode":"adventure"} (0.353855ms)
+✔ wall default use admits {"held":"minecraft:stick"} (0.254502ms)
+✔ wall default use admits {"held":"minecraft:cobblestone"} (0.293999ms)
+✔ wall secondary use with offhand bypasses default retrieval (0.188573ms)
+✔ wall default-use admission matches 25 models, four facings, modes and ordinary hands (160.06218ms)
+✔ wall direct-component use has the same Adventure and held-item admission (0.28939ms)
+✔ wall deferred retrieval rechecks slot without changing held inventory (0.457811ms)
+✔ wall deferred retrieval rechecks held metadata without changing held inventory (0.159918ms)
+✔ wall deferred retrieval rechecks offhand without changing held inventory (0.095959ms)
+✔ wall deferred retrieval rechecks sneaking without changing held inventory (0.068419ms)
+✔ wall deferred retrieval rechecks block without changing held inventory (0.061145ms)
+✔ wall deferred retrieval rechecks spectator without changing held inventory (0.120072ms)
+✔ repeated held wall input schedules one return only (0.23481ms)
+✔ held wall retrieval preserves both items after full inventory (0.514639ms)
+✔ held wall retrieval preserves both items after inventory write (0.262822ms)
+ℹ tests 180
+ℹ suites 0
+ℹ pass 179
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 912.683023
+
+✖ failing tests:
+
+test at tests/respawn-family.test.mjs:1:1
+✖ tests/respawn-family.test.mjs (695.406585ms)
+  'test failed'

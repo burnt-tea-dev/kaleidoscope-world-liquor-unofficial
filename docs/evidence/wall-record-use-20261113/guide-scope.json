@@ -1,0 +1,13 @@
+{
+  "only_page_body_changed": [
+    {
+      "id": "kaleidoscope_world_liquor:guide/custom_record",
+      "locales": [
+        "en_US",
+        "zh_CN",
+        "zh_TW"
+      ]
+    }
+  ],
+  "other_payload_unchanged": true
+}
