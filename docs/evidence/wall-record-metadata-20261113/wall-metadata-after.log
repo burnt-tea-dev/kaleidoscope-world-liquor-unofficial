@@ -1,0 +1,268 @@
+(node:13) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[World Liquor freezer redstone] Error: injected save failure
+[World Liquor freezer redstone] Error: injected block failure
+[World Liquor] Error: POTION_IDENTITY_UNAVAILABLE
+[World Liquor] Error: POTION_IDENTITY_UNAVAILABLE
+[World Liquor] Error: injected potion identity failure
+✔ real furniture callback defers writes and starts only on falling power (9.244052ms)
+✔ deferred callback leaves a replaced block and its data untouched (0.238247ms)
+✔ save failure rolls back power state and lid (0.566077ms)
+✔ block failure rolls back power state and lid (0.445593ms)
+✔ non-freezer furniture ignores redstone callback (0.33106ms)
+✔ registered block tick retains the saved countdown and finishes once at its exact last tick (4.862337ms)
+✔ removed saved recipe stops instead of inventing an output item (0.272866ms)
+✔ survival real furniture callback follows source output hand rules (1.223671ms)
+✔ adventure real furniture callback follows source output hand rules (0.312987ms)
+✔ creative real furniture callback follows source output hand rules (1.25275ms)
+✔ wrong bowl shows a localized item before the original pickup event and retains output (1.69666ms)
+✔ survival real milk callback preserves source bucket hand and audio (2.004002ms)
+✔ adventure real milk callback preserves source bucket hand and audio (0.329525ms)
+✔ creative real milk callback preserves source bucket hand and audio (0.237226ms)
+✔ survival registered input callback consumes one ordinary ingredient and plays source add event (0.838072ms)
+✔ adventure registered input callback consumes one ordinary ingredient and plays source add event (0.201096ms)
+✔ creative registered input callback consumes one ordinary ingredient and plays source add event (0.151504ms)
+✔ registered empty-hand removal pops the last saved ingredient and still plays source remove on empty (0.905719ms)
+✔ registered native input preserves name, lore and dynamic data through insertion and extraction (1.242311ms)
+✔ native break drops complete input in Creative even with doTileDrops false, and never invents output drops (1.249597ms)
+✔ registered intrinsic maxAmount1 input is accepted and restored with its original metadata (0.498968ms)
+✔ Creative fluid drain minecraft:water preserves the complete inventory with free slots (2.314138ms)
+✔ Creative fluid drain minecraft:water preserves the complete inventory with full slots (0.406688ms)
+✔ Creative fluid drain minecraft:lava preserves the complete inventory with free slots (0.177939ms)
+✔ Creative fluid drain minecraft:lava preserves the complete inventory with full slots (0.235327ms)
+✔ Creative fluid drain kaleidoscope_tavern:grape_juice preserves the complete inventory with free slots (0.165825ms)
+✔ Creative fluid drain kaleidoscope_tavern:grape_juice preserves the complete inventory with full slots (0.435354ms)
+✔ Creative fluid drain kaleidoscope_tavern:sweet_berries_juice preserves the complete inventory with free slots (0.24821ms)
+✔ Creative fluid drain kaleidoscope_tavern:sweet_berries_juice preserves the complete inventory with full slots (0.231585ms)
+✔ Creative fluid drain kaleidoscope_world_liquor:milk_still preserves the complete inventory with free slots (0.184682ms)
+✔ Creative fluid drain kaleidoscope_world_liquor:milk_still preserves the complete inventory with full slots (0.574676ms)
+✔ Creative fluid fill minecraft:water_bucket already preserves the complete inventory with free slots (0.516213ms)
+✔ Creative fluid fill minecraft:water_bucket already preserves the complete inventory with full slots (0.172145ms)
+✔ Creative fluid fill minecraft:lava_bucket already preserves the complete inventory with free slots (0.1832ms)
+✔ Creative fluid fill minecraft:lava_bucket already preserves the complete inventory with full slots (0.292171ms)
+✔ Creative fluid fill kaleidoscope_tavern:grape_bucket already preserves the complete inventory with free slots (0.327086ms)
+✔ Creative fluid fill kaleidoscope_tavern:grape_bucket already preserves the complete inventory with full slots (0.566478ms)
+✔ Creative fluid fill kaleidoscope_tavern:sweet_berries_bucket already preserves the complete inventory with free slots (0.336001ms)
+✔ Creative fluid fill kaleidoscope_tavern:sweet_berries_bucket already preserves the complete inventory with full slots (0.466391ms)
+✔ survival full-tank minecraft:water_bucket falls through to complete-stack input (0.683756ms)
+✔ creative full-tank minecraft:water_bucket falls through to complete-stack input (0.5241ms)
+✔ survival full-tank minecraft:lava_bucket falls through to complete-stack input (0.338243ms)
+✔ creative full-tank minecraft:lava_bucket falls through to complete-stack input (0.468616ms)
+✔ survival full-tank kaleidoscope_tavern:grape_bucket falls through to complete-stack input (1.840745ms)
+✔ creative full-tank kaleidoscope_tavern:grape_bucket falls through to complete-stack input (0.47618ms)
+✔ survival full-tank kaleidoscope_tavern:sweet_berries_bucket falls through to complete-stack input (0.49216ms)
+✔ creative full-tank kaleidoscope_tavern:sweet_berries_bucket falls through to complete-stack input (0.361519ms)
+✔ survival deferred freezer input keeps the original accepted stack (0.408449ms)
+✔ adventure deferred freezer input keeps the original accepted stack (0.256867ms)
+✔ creative deferred freezer input keeps the original accepted stack (0.147977ms)
+✔ deferred freezer input rejects changed slot (0.394613ms)
+✔ deferred freezer input rejects changed type (0.125641ms)
+✔ deferred freezer input rejects changed count (0.086031ms)
+✔ deferred freezer input rejects changed metadata (0.149425ms)
+✔ deferred freezer input rejects changed dimension (0.116844ms)
+✔ deferred freezer input rejects changed sneaking (0.068642ms)
+✔ deferred freezer input rejects changed block-state (0.065453ms)
+✔ deferred freezer input rejects changed same-block-replacement (0.406375ms)
+✔ deferred potion input retains the original native payload through extraction (0.674823ms)
+✔ deferred potion input rejects effect (0.224466ms)
+✔ deferred potion input rejects delivery (0.126405ms)
+✔ deferred potion input rejects missing-id (0.192768ms)
+✔ deferred potion input rejects missing-component (0.234565ms)
+✔ deferred potion input rejects read-error (0.315412ms)
+✔ registered Creative full-inventory pochi_pudding output decrements once without a drop (0.770544ms)
+✔ registered Creative full-inventory ice output decrements once without a drop (0.290308ms)
+(node:14) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ legacy IDs are readable without entities and adopted alongside complete incoming stacks (8.052699ms)
+✔ API vector enumeration/order is not mistaken for different block coordinates (2.75781ms)
+✔ same-ID stacks retain distinct native metadata and exact last-slot removal (3.42778ms)
+✔ failed machine-row write restores native inventory, markers and original row (1.940182ms)
+✔ craft retirement consumes input once; rollback before finish keeps the same carrier (0.539868ms)
+✔ missing carrier, wrong owner and wrong contents reject without recreating plain IDs (2.701107ms)
+✔ owned moved carrier is reanchored after the strict read, preserving native metadata (5.577895ms)
+(node:20) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ destroyed jukebox returns its stored disc once: Survival, doTileDrops=true (4.605264ms)
+✔ destroyed jukebox returns its stored disc once: Survival, doTileDrops=false (0.628308ms)
+✔ destroyed jukebox returns its stored disc once: Creative, doTileDrops=true (0.324791ms)
+✔ destroyed jukebox returns its stored disc once: Creative, doTileDrops=false (0.410112ms)
+✔ manual jukebox ejection drops into the world without changing inventory: full=false (2.51858ms)
+✔ manual jukebox ejection drops into the world without changing inventory: full=true (0.713098ms)
+✔ manual ejection respects Creative interaction (0.395147ms)
+✔ manual ejection respects Adventure interaction (0.556508ms)
+✔ manual ejection respects Spectator interaction (0.48323ms)
+✔ sneaking with occupied mainhand leaves native block interaction available (0.983154ms)
+✔ sneaking with occupied offhand leaves native block interaction available (0.267213ms)
+✔ a changed accepted hand does not eject a disc on the later tick (0.576597ms)
+(node:21) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[World Liquor] Error: PAYMENT_ALREADY_DEBITED
+[World Liquor] Error: ROW_WRITE_FAILED
+✔ production insert/payment/eject preserves the complete named disc: Survival (21.481001ms)
+✔ production insert/payment/eject preserves the complete named disc: Adventure (0.683747ms)
+✔ production insert/payment/eject preserves the complete named disc: Creative (0.692562ms)
+✔ spectator cannot insert a custom disc or debit the inventory (0.472484ms)
+✔ the break subscriber returns the same adopted metadata (3.448196ms)
+✔ the explosion subscriber returns the same adopted metadata (2.375868ms)
+✔ inventory payment failure restores the held stack, row and native carrier together (1.623066ms)
+✔ insertion row-write failure rolls back the newly created native item (3.225021ms)
+✔ failed native delivery retains the adopted named disc and its saved rows (2.55296ms)
+✔ adopted missing native index never falls back to the row type ID (1.304572ms)
+✔ legacy plain-ID ejection remains available without inventing lost metadata (0.373469ms)
+✔ record reanchor accepts replacement furniture while retaining the same native stack (3.053933ms)
+(node:22) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[World Liquor] Error: injected inventory failure
+[World Liquor] Error: injected drop failure
+[World Liquor] Error: injected drop failure
+[World Liquor] Error: injected save failure
+[World Liquor] Error: Invalid wall record model state
+[World Liquor] Error: injected inventory failure
+[World Liquor] Error: injected inventory failure
+[World Liquor] Error: injected block failure
+[World Liquor] Error: injected save failure
+[World Liquor] Error: injected inventory failure
+[World Liquor] Error: injected block failure
+[World Liquor] Error: injected save failure
+[World Liquor] Error: injected drop failure
+[World Liquor] Error: injected save failure
+[World Liquor item storage] Error: NATIVE_STORAGE_MISSING
+[World Liquor] Error: NATIVE_STORAGE_MISSING
+[World Liquor item storage] Error: NATIVE_STORAGE_MISMATCH
+[World Liquor] Error: NATIVE_STORAGE_MISMATCH
+[World Liquor item storage] Error: NATIVE_STORAGE_UNAVAILABLE
+[World Liquor] Error: NATIVE_STORAGE_UNAVAILABLE
+[World Liquor item storage] Error: NATIVE_STORAGE_WRONG_OWNER
+[World Liquor] Error: NATIVE_STORAGE_WRONG_OWNER
+[World Liquor item storage] Error: NATIVE_STORAGE_CONTENT_MISMATCH
+[World Liquor] Error: NATIVE_STORAGE_CONTENT_MISMATCH
+[World Liquor item storage] Error: NATIVE_STORAGE_MISMATCH
+[World Liquor] Error: NATIVE_STORAGE_MISMATCH
+[World Liquor] Error: CARRIER_CREATE_FAILED
+[World Liquor] Error: CARRIER_WRITE_FAILED
+[World Liquor] Error: injected drop failure
+[World Liquor] Error: injected drop failure
+[World Liquor] Error: injected drop failure
+[World Liquor] Error: INJECTED_WALL_INDEX_WRITE
+[World Liquor] Error: INJECTED_WALL_INDEX_WRITE
+✔ model 0: exact item, legacy/corrupt/stale DP recovery, native survival drop once (8.319481ms)
+✔ model 1: exact item, legacy/corrupt/stale DP recovery, native survival drop once (1.395955ms)
+✔ model 2: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.63086ms)
+✔ model 3: exact item, legacy/corrupt/stale DP recovery, native survival drop once (2.528282ms)
+✔ model 4: exact item, legacy/corrupt/stale DP recovery, native survival drop once (1.270754ms)
+✔ model 5: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.330435ms)
+✔ model 6: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.842545ms)
+✔ model 7: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.390051ms)
+✔ model 8: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.66273ms)
+✔ model 9: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.491767ms)
+✔ model 10: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.3082ms)
+✔ model 11: exact item, legacy/corrupt/stale DP recovery, native survival drop once (1.127452ms)
+✔ model 12: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.475916ms)
+✔ model 13: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.578436ms)
+✔ model 14: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.291526ms)
+✔ model 15: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.226622ms)
+✔ model 16: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.323308ms)
+✔ model 17: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.264915ms)
+✔ model 18: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.254254ms)
+✔ model 19: exact item, legacy/corrupt/stale DP recovery, native survival drop once (2.083222ms)
+✔ model 20: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.462429ms)
+✔ model 21: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.610121ms)
+✔ model 22: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.387241ms)
+✔ model 23: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.219681ms)
+✔ model 24: exact item, legacy/corrupt/stale DP recovery, native survival drop once (0.357679ms)
+✔ facing north: all 25 meshes and hitboxes stay on the actual support side (5.124964ms)
+✔ facing east: all 25 meshes and hitboxes stay on the actual support side (4.255619ms)
+✔ facing south: all 25 meshes and hitboxes stay on the actual support side (3.701975ms)
+✔ facing west: all 25 meshes and hitboxes stay on the actual support side (1.997433ms)
+✔ sync onPlace: north placement preserves identity and wall support (7.229111ms)
+✔ sync onPlace: east placement preserves identity and wall support (2.869478ms)
+✔ sync onPlace: south placement preserves identity and wall support (2.412302ms)
+✔ sync onPlace: west placement preserves identity and wall support (2.329303ms)
+✔ deferred onPlace: north placement preserves identity and wall support (2.454848ms)
+✔ deferred onPlace: east placement preserves identity and wall support (3.781227ms)
+✔ deferred onPlace: south placement preserves identity and wall support (1.7737ms)
+✔ deferred onPlace: west placement preserves identity and wall support (2.551686ms)
+✔ north support removal drops the exact recovered disc only once (1.797956ms)
+✔ east support removal drops the exact recovered disc only once (0.332623ms)
+✔ south support removal drops the exact recovered disc only once (0.550787ms)
+✔ west support removal drops the exact recovered disc only once (1.145594ms)
+✔ creative player break does not duplicate records (0.541075ms)
+✔ Creative player break does not duplicate records (0.102283ms)
+✔ doTileDrops=false suppresses native and support-loss drops (0.580808ms)
+✔ normal empty-hand retrieval repairs missing DP, removes once and grants inventory item (0.785244ms)
+✔ inventory write failure during retrieval rolls back the disc and inventory (0.650404ms)
+✔ native drop failure preserves recoverable block (0.469032ms)
+✔ support drop failure preserves recoverable block (0.487955ms)
+✔ block-removal failure rolls back an already spawned item (0.219059ms)
+✔ save failure rolls back native drop without creating a second disc (0.513349ms)
+✔ unknown model refuses to guess a disc and restores the wall (0.252828ms)
+✔ destroy and replace at same coordinate resets duplicate guard (0.299756ms)
+✔ deferred placement rejects changed slot (0.321646ms)
+✔ deferred placement rejects changed support (0.438876ms)
+✔ deferred placement rejects changed dimension (0.468006ms)
+✔ deferred placement rejects changed adventure (0.188888ms)
+✔ deferred placement rejects changed spectator (0.15287ms)
+✔ invalid model indices are rejected individually (no clamping/empty item) (0.681989ms)
+✔ failed retrieval does not suppress an immediate real break after rollback (0.419661ms)
+✔ deferred wall placement does not consume a different same-ID stack (0.470505ms)
+✔ deferred painting placement preserves normal placement and rejects changed dimension (0.591367ms)
+✔ deferred jukebox insertion preserves normal use and rejects a replaced record (1.528145ms)
+✔ named wall disc retains complete stack: minecraft:music_disc_cat / sync / retrieve (1.472926ms)
+✔ named wall disc retains complete stack: minecraft:music_disc_cat / sync / break (0.482887ms)
+✔ named wall disc retains complete stack: minecraft:music_disc_cat / sync / support (0.482027ms)
+✔ named wall disc retains complete stack: minecraft:music_disc_cat / deferred / retrieve (0.462674ms)
+✔ named wall disc retains complete stack: minecraft:music_disc_cat / deferred / break (0.656283ms)
+✔ named wall disc retains complete stack: minecraft:music_disc_cat / deferred / support (0.779729ms)
+✔ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / sync / retrieve (0.40363ms)
+✔ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / sync / break (0.206507ms)
+✔ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / sync / support (0.325259ms)
+✔ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / deferred / retrieve (0.363555ms)
+✔ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / deferred / break (0.23562ms)
+✔ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / deferred / support (0.306838ms)
+✔ creative wall placement keeps the held metadata and stores one independent copy (0.507016ms)
+✔ Creative wall placement keeps the held metadata and stores one independent copy (0.276194ms)
+✔ named wall placement rolls back all owned state after payment failure (0.887672ms)
+✔ named wall placement rolls back all owned state after block failure (0.480599ms)
+✔ named wall placement rolls back all owned state after storage failure (0.221ms)
+✔ named wall retrieval retains original stack after inventory failure (0.662114ms)
+✔ named wall retrieval retains original stack after block failure (0.562281ms)
+✔ named wall retrieval retains original stack after storage failure (0.522635ms)
+✔ named wall break retains original stack after spawn failure (0.435397ms)
+✔ named wall break retains original stack after storage failure (0.556657ms)
+✔ adopted wall refuses bare-ID fallback after index damage (1.236416ms)
+✔ adopted wall refuses bare-ID fallback after required damage (0.505396ms)
+✔ adopted wall refuses bare-ID fallback after carrier damage (0.27567ms)
+✔ adopted wall refuses bare-ID fallback after token damage (0.509443ms)
+✔ adopted wall refuses bare-ID fallback after stack damage (0.402084ms)
+✔ adopted wall refuses bare-ID fallback after model damage (0.302521ms)
+✔ wall stack is recoverable from persisted native index without a machine row or old JS storage instance (2.839114ms)
+✔ wall carrier uses shared reanchor without replacing its native metadata (3.772741ms)
+✔ wall carrier create failure returns the original hand without an adopted index (2.131197ms)
+✔ wall carrier slot failure returns the original hand without an adopted index (0.674738ms)
+✔ wall break preserves replacement kaleidoscope_world_liquor:freezer (0.853426ms)
+✔ wall break preserves replacement kaleidoscope_world_liquor:freezer on spawn failure (3.136325ms)
+✔ wall break preserves replacement kaleidoscope_world_liquor:test_painting (0.321979ms)
+✔ wall break preserves replacement kaleidoscope_world_liquor:test_painting on spawn failure (0.905914ms)
+✔ wall break preserves replacement minecraft:jukebox (0.419174ms)
+✔ wall break preserves replacement minecraft:jukebox on spawn failure (1.18052ms)
+✔ wall creative break clears only its owned carrier without dropping (0.468853ms)
+✔ wall no tile drops break clears only its owned carrier without dropping (0.838192ms)
+✔ named wall retrieval uses the free hand when every other inventory slot is full (0.681675ms)
+✔ wall and replaced jukebox at one coordinate keep separate native stacks and audio ownership (7.112223ms)
+✔ named wall placement restores carrier and hand after native index write failure (0.661554ms)
+✔ named wall placement restores carrier and hand after display row write failure (0.348811ms)
+✔ new wall display row cannot be mistaken for a legacy jukebox record (1.02114ms)
+✔ retiring a wall clears its own typed row so the replacement jukebox accepts a new disc (1.556525ms)
+ℹ tests 205
+ℹ suites 0
+ℹ pass 205
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 648.764267
