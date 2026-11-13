@@ -1,0 +1,725 @@
+(node:13) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[World Liquor] Error: injected inventory failure
+[World Liquor] Error: injected block failure
+[World Liquor] Error: injected save failure
+[World Liquor] Error: injected inventory failure
+[World Liquor] Error: injected block failure
+[World Liquor] Error: injected save failure
+[World Liquor] Error: injected drop failure
+[World Liquor] Error: injected save failure
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / sync / retrieve (9.196431ms)
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / sync / break (1.827601ms)
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / sync / support (5.156164ms)
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / deferred / retrieve (0.892034ms)
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / deferred / break (0.745694ms)
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / deferred / support (1.113421ms)
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / sync / retrieve (0.825685ms)
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / sync / break (0.569971ms)
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / sync / support (1.260736ms)
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / deferred / retrieve (0.969026ms)
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / deferred / break (0.520127ms)
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / deferred / support (0.827267ms)
+✖ creative wall placement keeps the held metadata and stores one independent copy (1.114137ms)
+✖ Creative wall placement keeps the held metadata and stores one independent copy (0.718997ms)
+✔ named wall placement rolls back all owned state after payment failure (1.001043ms)
+✔ named wall placement rolls back all owned state after block failure (0.439801ms)
+✔ named wall placement rolls back all owned state after storage failure (0.287601ms)
+✖ named wall retrieval retains original stack after inventory failure (1.049675ms)
+✖ named wall retrieval retains original stack after block failure (1.080844ms)
+✖ named wall retrieval retains original stack after storage failure (1.088384ms)
+✖ named wall break retains original stack after spawn failure (0.894162ms)
+✖ named wall break retains original stack after storage failure (1.219046ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 3
+ℹ fail 19
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 443.167242
+
+✖ failing tests:
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / sync / retrieve (9.196431ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:94:95)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / sync / break (1.827601ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:95:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / sync / support (5.156164ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:95:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / deferred / retrieve (0.892034ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:94:95)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / deferred / break (0.745694ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:95:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: minecraft:music_disc_cat / deferred / support (1.113421ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:95:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / sync / retrieve (0.825685ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'kaleidoscope_world_liquor:custom_record'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:94:95)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / sync / break (0.569971ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'kaleidoscope_world_liquor:custom_record'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:95:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / sync / support (1.260736ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'kaleidoscope_world_liquor:custom_record'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:95:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / deferred / retrieve (0.969026ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'kaleidoscope_world_liquor:custom_record'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:94:95)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / deferred / break (0.520127ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'kaleidoscope_world_liquor:custom_record'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:95:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:92:153
+✖ named wall disc retains complete stack: kaleidoscope_world_liquor:custom_record / deferred / support (0.827267ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'kaleidoscope_world_liquor:custom_record'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:95:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'kaleidoscope_world_liquor:custom_record', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:98:47
+✖ creative wall placement keeps the held metadata and stores one independent copy (1.114137ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:99:184)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:98:47
+✖ Creative wall placement keeps the held metadata and stores one independent copy (0.718997ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:99:184)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:104:54
+✖ named wall retrieval retains original stack after inventory failure (1.049675ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:106:74)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:104:54
+✖ named wall retrieval retains original stack after block failure (1.080844ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:106:74)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:104:54
+✖ named wall retrieval retains original stack after storage failure (1.088384ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:106:74)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:108:42
+✖ named wall break retains original stack after spawn failure (0.894162ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:110:67)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/wall-record.test.mjs:108:42
+✖ named wall break retains original stack after storage failure (1.219046ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    ItemStack {
+      amount: 1,
+  +   maxAmount: 64,
+  -   data: {
+  -     'other_addon:serial': 'disc-42'
+  -   },
+  -   keepOnDeath: true,
+  -   lore: [
+  -     'A gift'
+  -   ],
+  -   maxAmount: 1,
+  -   nameTag: 'My original disc',
+      typeId: 'minecraft:music_disc_cat'
+    }
+
+      at TestContext.<anonymous> (file://<checkout>/tests/wall-record.test.mjs:110:67)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 64 },
+    expected: { typeId: 'minecraft:music_disc_cat', amount: 1, maxAmount: 1, nameTag: 'My original disc', lore: [ 'A gift' ], data: { 'other_addon:serial': 'disc-42' }, keepOnDeath: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

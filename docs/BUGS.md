@@ -43,7 +43,7 @@ W144 [PR127](https://github.com/casama233/kaleidoscope-world-liquor-unofficial/p
 - 冰櫃：五個 current recipe、loaded ticks、四槽 native metadata 及來源 height 算術已實作；W199修滿槽桶普通入料，W200修Creative成功取液多給滿桶／滿庫存拒絕清槽；來源反例／native範圍只查[桶原料與流體轉移](FREEZER-FLUID-INPUT.md)。真玩家插取、offhand、unload／crash、任意 metadata 和完整流體／原料／成品渲染另驗，既有零輸入樣本不證明非空冰櫃內容。
 - 酒櫃與家具：原格位、native item carrier、重啟／回滾修補保留；四向座位、玻璃、觸控／游標點選與實際展示仍待比較。
 - Respawn：87 個精確零碰撞 helper、新確認錨 yaw=0／forced=false 及 repeat／取消防線保留；未知來源不放寬，真 Player 床／錨／重生另驗。
-- 唱片：兩首原音檔、牆掛四向及取回保留；W168 已移除 32 station bank，實際聲場、播放／停止、進出與重登 lifecycle 仍待真人驗證。原生 custom record 的 parser compatibility、comparator、hopper 與完整 ItemStack 行為仍開放，見 [可重現證據](RELEASE-NOTES-0.1.168.md)。
+- 唱片：兩首原音檔、牆掛四向及取回保留；2026-11-13壁掛metadata來源候選已補完整native stack保存及回收，舊模型恢復保留，見[來源修復與邊界](evidence/wall-record-metadata-20261113/README.md)。尚未發版或做該改動的BDS／保存重啟；既往已丟metadata不能復原，pick-block、任意外來唱片及Adventure入口仍未補。W168 已移除 32 station bank，實際聲場、播放／停止、進出與重登 lifecycle 仍待真人驗證。原生 custom record 的 parser compatibility、comparator、hopper 仍開放，見 [可重現證據](RELEASE-NOTES-0.1.168.md)。
 - 指南：商品頁與三語製作資料只查[當前payload](../runtime/BP/scripts/payload.js)，合併條目與七入口依[配對指南檢查](../tools/check_guide.mjs)，不沿用舊頁數／條目快照；玩家實際排版／返回、輸入和兩入口閱讀未觀察，不另設交付等待。
 
 ## 分支與歷史

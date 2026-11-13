@@ -1,0 +1,44 @@
+{
+  "base": "c5984d46f4df4b120be72f0b7e229922f95509d4",
+  "tavernPeer": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
+  "authorJarSha256": "d963089ad0a7f99a8950171d76913cfeea99a0126ee12b16c72c3162f8545da3",
+  "authorClassSha256": {
+    "com/bmt/kaleidoscope_world_liquor/block/WallRecordBlock.class": "e59c8533209412203a69fb32d5395cfee225b13bc8606e2d8d9bc563524e244f",
+    "com/bmt/kaleidoscope_world_liquor/block/entity/WallRecordBlockEntity.class": "ad9feb619cb86e1f99b5e6ecfb10ff91909c52fb8a952d6d03f069494fc938ec",
+    "com/bmt/kaleidoscope_world_liquor/event/MusicDiscEvents.class": "14de93d4c88ae180f25449963237ac56d9fe4a02ee79157d3f237616b6b2672e"
+  },
+  "sha256": {
+    "runtime/BP/scripts/furniture.js": "5e57b4480a7f1e184a59b6ecc579b1809565b1d5a74ced5c98b6d50f7cc97977",
+    "runtime/BP/scripts/freezer-native-storage.js": "b8ebc3bd93393dc0b4c5d8ea8ffa5ac0c95f1a63881c1df6887bd9cf9dfd1416",
+    "runtime/BP/scripts/record-storage.js": "c511d20bb742780e4dde4ddbb254be7c60b56285d568acc4fe997f7d9fcf625f",
+    "tests/wall-record.test.mjs": "47d7cb809930fb16566f6d774a8fdfb3f00ef3b7871cd1ac4356506de0f1ab70",
+    "docs/evidence/wall-record-metadata-20261113/baseline-check.log": "65af3961dd4078585e0ebe76aebd49e0a98d85e3dab8521e9335c2ee634e7f1d",
+    "docs/evidence/wall-record-metadata-20261113/check-release.log": "d1f6ecda7c545c4f77486097e1700973373211535cefa925b0b99e435a535a71",
+    "docs/evidence/wall-record-metadata-20261113/wall-generation.log": "4a160235c0add54f7a5997815d0e01a072210439de4899c702c94dd3cd814662",
+    "docs/evidence/wall-record-metadata-20261113/wall-metadata-after.log": "3547ca48c08d0ff47d940ad6b0a4c46a8c33b7cbc60a236ee3b16713d8311770",
+    "docs/evidence/wall-record-metadata-20261113/wall-metadata-before.log": "358beb8a2cdffcf0c2747213232b8ed774e0d463ed288741001a14e679f56e0a"
+  },
+  "initialNewTests": 22,
+  "before": {
+    "pass": 3,
+    "fail": 19
+  },
+  "finalNewTests": 46,
+  "affectedSuite": {
+    "pass": 205,
+    "fail": 0,
+    "skipped": 0
+  },
+  "generationChecks": 4,
+  "aggregate": {
+    "blocks": 63,
+    "items": 159,
+    "recipes": 41,
+    "models": 1350,
+    "errors": 0
+  },
+  "nativeEngineTest": false,
+  "clientTest": false,
+  "savedWorldTest": false,
+  "deployment": false
+}

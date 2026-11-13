@@ -4,6 +4,12 @@ Current source adoption and exact remaining gaps are owned by [the 2026-10-28 re
 
 # World Liquor Java／Bedrock 差距矩陣
 
+## 壁掛唱片metadata來源候選（2026-11-13，未發版）
+
+原放置只保留ID，取回／破壞／失去支撐會清除改名、lore等資料。現沿用既有NativeItemStorage和record-storage交易，為壁掛增加獨立key，保存完整count-one原生stack；新display row標明wall型別，避免誤當唱機。舊25模型仍能在缺／壞／錯DP時恢復ID，但已採用native的內容缺失時拒絕裸ID重建。替換方塊的foreign row保留，自身typed row成功退休則清除。
+
+初始22個正式回呼案例修前19失敗，修後46個新增案例與既有回歸合計205項通過；4項geometry／converter保全及完整來源檢查通過。[詳細證據](evidence/wall-record-metadata-20261113/README.md)區分本機測試與CI。沒有模型、動畫、texture或icon變更；未做BDS、實際保存重啟或客戶端驗收，未部署。既往已丟的metadata不能復原；pick-block、外來JUKEBOX_PLAYABLE物品、Adventure入口、任意script移除及完整Java回收／掉落時序仍不在此候選範圍。
+
 ## Adventure 唱片插入與現行相依（2026-11-09，W208）
 
 原原版唱機入口把 Adventure 與 Spectator 一同交給通用家具 mutable guard，錯擋已核 NeoForge 1.21.1 的 block-use 路徑。現在只在該唱機插入入口拒絕 Spectator；其他家具權限不變。既有真 production callback 測試涵蓋 Survival／Adventure／Creative 的扣手持、原 metadata 保存及取出，另驗 Spectator 不扣物、不建立 storage。沒有直接呼叫 accept 或另造 storage owner。
