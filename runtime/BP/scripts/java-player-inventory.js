@@ -1,7 +1,10 @@
+import {sourcePlayerDropVelocity} from './motion-source.js';
+import {javaFloatRoll} from './combat-source.js';
+
 /** Single-item Java Inventory.add ordering shared by bottle and freezer output.
  * Hooks journal actual writes, not a planned parallel inventory implementation.
  */
-export function giveJavaInventoryItem(player,item,{writeInventory,writeEquipment,recordDrop,allowDrop=true}={}){
+export function giveJavaInventoryItem(player,item,{writeInventory,writeEquipment,recordDrop,allowDrop=true,random=Math.random}={}){
  if(item.amount!==1)throw Error('EXPECTED_SINGLE_INVENTORY_ITEM');
  const inventory=player.getComponent('minecraft:inventory').container;
  const write=(slot,before,after)=>writeInventory?writeInventory(inventory,slot,before,after):inventory.setItem(slot,after);
@@ -22,8 +25,18 @@ export function giveJavaInventoryItem(player,item,{writeInventory,writeEquipment
  // Read the current mode only after all ordinary insertion routes fail.
  if(String(player.getGameMode()).toLowerCase()==='creative')return 'CREATIVE_DISCARDED';
  if(!allowDrop)return 'UNINSERTED';
- // Item count is preserved; exact Player.drop(false) physics/eye position,
- // thrower, packet and pickup delay remain explicit platform gaps.
- const entity=player.dimension.spawnItem(item,player.location);
- if(!entity)throw Error('PLAYER_ITEM_DROP_REJECTED');recordDrop?.(entity);return 'DROP';
+ // Java drops from eye Y - 0.3f at the player's X/Z and sets directional
+ // velocity instead of retaining an unspecified native spawn velocity.
+ const at={...player.location,y:player.getHeadLocation().y-Math.fround(.3)};
+ const entity=player.dimension.spawnItem(item,at);
+ if(!entity)throw Error('PLAYER_ITEM_DROP_REJECTED');recordDrop?.(entity);
+ try{
+  const rotation=player.getRotation(),rolls=Array.from({length:4},()=>javaFloatRoll(random()));
+  entity.clearVelocity();entity.applyImpulse(sourcePlayerDropVelocity({yaw:rotation.y,pitch:rotation.x,rolls}));
+ }catch(error){
+  // Once the native item exists, retain it even if a velocity write fails.
+  // Inventory settlement must not lose or duplicate the single result.
+  console.warn('[World Liquor inventory drop motion] '+error);
+ }
+ return 'DROP';
 }

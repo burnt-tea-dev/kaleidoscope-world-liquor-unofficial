@@ -1,0 +1,20 @@
+[World Liquor inventory drop motion] Error: MOTION_REJECTED
+[World Liquor inventory drop motion] Error: MOTION_REJECTED
+✔ directional drop matches 280 independently executed JVM float/LUT cases (9.870738ms)
+✔ full inventory drops one intact item at source eye-relative height 65.62 (1.710552ms)
+✔ full inventory drops one intact item at source eye-relative height 65.27 (0.416087ms)
+✔ full inventory drops one intact item at source eye-relative height 64.4 (0.268858ms)
+✔ non-drop routes never read pose or consume drop RNG (0.545985ms)
+✔ motion failure retains the single settled item: clear (0.953416ms)
+✔ motion failure retains the single settled item: impulse (0.283005ms)
+✔ failed spawn preserves the previous rejected-drop signal (0.545929ms)
+✔ actual bottled completion consumes once and drops one bottle at the corrected height (0.705545ms)
+✔ actual freezer output settles once and its existing rollback removes the moving item (0.901342ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 185.580348

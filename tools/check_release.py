@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Asset and progression audit; no interaction emulation."""
+"""Asset/progression checks and targeted callback regressions; no native game."""
 from pathlib import Path
 import importlib.util,json,re,subprocess,os,sys
 from PIL import Image
@@ -16,6 +16,7 @@ subprocess.run([sys.executable,str(root/'tools/test_collision_shapes.py')],check
 subprocess.run([sys.executable,str(root/'tools/test_java_face_topology.py')],check=True)
 subprocess.run([sys.executable,str(root/'tools/build_drink_colors.py'),'--check'],check=True)
 subprocess.run(['node','--test',str(root/'tools/optional-cookery.test.mjs')],check=True)
+subprocess.run(['node','--test',str(root/'tests/player-drop.test.mjs')],check=True,cwd=root)
 errors=[]
 def check(ok,message):
  if not ok:errors.append(message)
