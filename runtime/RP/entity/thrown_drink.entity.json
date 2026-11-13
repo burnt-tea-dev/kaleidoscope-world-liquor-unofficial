@@ -7,51 +7,56 @@
         "default": "entity_alphatest_one_sided"
       },
       "textures": {
-        "kind_0": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__absolut_vodka__count1",
-        "kind_1": "textures/kwl/generated/kwl__block__brew__drink__bacardi_carta_blanca__count1",
-        "kind_2": "textures/kwl/generated/kwl__block__brew__drink__bamboo_leaf_green_liquor__count1",
-        "kind_3": "textures/kwl/generated/kwl__block__brew__drink__bombay_sapphire_gin__count1",
-        "kind_4": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__cool_ice_tea__count1",
-        "kind_5": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__dassai__count1",
-        "kind_6": "textures/kwl/generated/smc__block__brew__drink__ice_tea__count1",
-        "kind_7": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__jack_daniel__count1",
-        "kind_8": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__johnnie_walker__count1",
-        "kind_9": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__kwas_chlebowy__count1",
-        "kind_10": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__lafite_1982__count1",
-        "kind_11": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__maotai__count1",
-        "kind_12": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__pina_colada__count1",
-        "kind_13": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__skyy_vodka__count1",
-        "kind_14": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__smirnoff_red_vodka__count1",
-        "kind_15": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__sour_plum__count1",
-        "kind_16": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__spiryt_vodka__count1",
-        "kind_17": "textures/kwl/generated/kaleidoscope_world_liquor__block__brew__drink__strongbow__count1"
+        "kind_0": "textures/kwl/projectiles/absolut_vodka",
+        "kind_1": "textures/kwl/projectiles/bacardi_carta_blanca",
+        "kind_2": "textures/kwl/projectiles/bamboo_leaf_green_liquor",
+        "kind_3": "textures/kwl/projectiles/bombay_sapphire_gin",
+        "kind_4": "textures/kwl/projectiles/cool_tea",
+        "kind_5": "textures/kwl/projectiles/dassai",
+        "kind_6": "textures/kwl/projectiles/ice_tea",
+        "kind_7": "textures/kwl/projectiles/jack_daniel",
+        "kind_8": "textures/kwl/projectiles/johnnie_walker",
+        "kind_9": "textures/kwl/projectiles/kwas_chlebowy",
+        "kind_10": "textures/kwl/projectiles/lafite_1982",
+        "kind_11": "textures/kwl/projectiles/maotai",
+        "kind_12": "textures/kwl/projectiles/pina_colada",
+        "kind_13": "textures/kwl/projectiles/skyy_vodka",
+        "kind_14": "textures/kwl/projectiles/smirnoff_red_vodka",
+        "kind_15": "textures/kwl/projectiles/sour_plum",
+        "kind_16": "textures/kwl/projectiles/spiryt_vodka",
+        "kind_17": "textures/kwl/projectiles/strongbow"
       },
       "geometry": {
-        "kind_0": "geometry.kwl.g_dd882dd2e642f60f",
-        "kind_1": "geometry.kwl.g_3b68817938690854",
-        "kind_2": "geometry.kwl.g_cf0e198621ddb72d",
-        "kind_3": "geometry.kwl.g_77a76ee480e51888",
-        "kind_4": "geometry.kwl.g_0eaa2cac76f6618c",
-        "kind_5": "geometry.kwl.g_55d1f4143d811e02",
-        "kind_6": "geometry.kwl.g_7c9f5c302e968f71",
-        "kind_7": "geometry.kwl.g_b44b46e4ed1b5592",
-        "kind_8": "geometry.kwl.g_58a89086740fadab",
-        "kind_9": "geometry.kwl.g_de80d082d6c1f194",
-        "kind_10": "geometry.kwl.g_5b94ca12957dbf05",
-        "kind_11": "geometry.kwl.g_8a8498cbbc161be4",
-        "kind_12": "geometry.kwl.g_bc6f9ff20f8d0f79",
-        "kind_13": "geometry.kwl.g_3b68817938690854",
-        "kind_14": "geometry.kwl.g_3b68817938690854",
-        "kind_15": "geometry.kwl.g_0eaa2cac76f6618c",
-        "kind_16": "geometry.kwl.g_3b68817938690854",
-        "kind_17": "geometry.kwl.g_39906ca3642f0231"
+        "kind_0": "geometry.kwl.thrown_drink_sprite",
+        "kind_1": "geometry.kwl.thrown_drink_sprite",
+        "kind_2": "geometry.kwl.thrown_drink_sprite",
+        "kind_3": "geometry.kwl.thrown_drink_sprite",
+        "kind_4": "geometry.kwl.thrown_drink_sprite",
+        "kind_5": "geometry.kwl.thrown_drink_sprite",
+        "kind_6": "geometry.kwl.thrown_drink_sprite",
+        "kind_7": "geometry.kwl.thrown_drink_sprite",
+        "kind_8": "geometry.kwl.thrown_drink_sprite",
+        "kind_9": "geometry.kwl.thrown_drink_sprite",
+        "kind_10": "geometry.kwl.thrown_drink_sprite",
+        "kind_11": "geometry.kwl.thrown_drink_sprite",
+        "kind_12": "geometry.kwl.thrown_drink_sprite",
+        "kind_13": "geometry.kwl.thrown_drink_sprite",
+        "kind_14": "geometry.kwl.thrown_drink_sprite",
+        "kind_15": "geometry.kwl.thrown_drink_sprite",
+        "kind_16": "geometry.kwl.thrown_drink_sprite",
+        "kind_17": "geometry.kwl.thrown_drink_sprite"
       },
       "scripts": {
-        "scale": "0.6"
+        "animate": [
+          "flying"
+        ]
       },
       "render_controllers": [
         "controller.render.kwl.thrown_drink"
-      ]
+      ],
+      "animations": {
+        "flying": "animation.kwl.thrown_drink.billboard"
+      }
     }
   }
 }

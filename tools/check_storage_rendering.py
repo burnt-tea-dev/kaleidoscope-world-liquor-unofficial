@@ -103,6 +103,10 @@ def main():
  from current_author_art import check as check_current_art, planned
  check_current_art()
  current_resources={path.relative_to(ROOT).as_posix() for path in planned()}
+ # Current thrown-item sprite source owns this renderer and its generated shell.
+ # Retire the old placed-bottle projection for precisely these validated paths.
+ from thrown_drink_visual import check as check_thrown_drink_visual
+ current_resources.update(check_thrown_drink_visual(ROOT))
  current_resources.add('runtime/RP/textures/kaleidoscope_world_liquor/mob_effect/luck.png')
  current_resources.update('runtime/BP/recipes/'+color+'_pendant_lamp.json' for color in ('green','pink'))
  feedback_spec=importlib.util.spec_from_file_location('world_liquor_break_feedback',ROOT/'tools/build_break_feedback.py')
@@ -127,8 +131,13 @@ def main():
  additions=dict(read(ROOT/'data/freezer-visual-additions.json')['files'])
  # The current Java asset contract owns blue dye. Its old wrong-image witness
  # is retired; hashes below inspect current bytes and never fabricate a past PNG.
- from freezer_ingredient_art import check as check_ingredient_art
+ from freezer_ingredient_art import check as check_ingredient_art, shared_geometry_paths
  current_ingredient_assets=check_ingredient_art()
+ # Exactly equal sprite meshes now share one existing geometry. The source
+ # owner verifies every field and texture, not a restored historical body.
+ shared_freezer_resources=shared_geometry_paths()
+ current_resources.update(shared_freezer_resources)
+ additions={name:digest for name,digest in additions.items() if name not in shared_freezer_resources}
  assert not (set(additions)&set(current_ingredient_assets))
  additions.update(current_ingredient_assets)
  # Current-source result is additive; keep all older art/tree assertions.

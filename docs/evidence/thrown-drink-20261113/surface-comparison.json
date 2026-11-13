@@ -1,0 +1,121 @@
+{
+  "source": "Official World Liquor NeoForge 1.1.12, MC 1.21.1 generated item GROUND",
+  "routes": 18,
+  "shared_geometry_count": 1,
+  "cubes": 23,
+  "native_cube_vertex_allocation": 552,
+  "emitted_faces": 36,
+  "sampled_texels": 475200,
+  "mismatches": 0,
+  "items": [
+    {
+      "item": "kaleidoscope_world_liquor:absolut_vodka",
+      "source_java_quads": 16,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca",
+      "source_java_quads": 13,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor",
+      "source_java_quads": 26,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin",
+      "source_java_quads": 12,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:cool_tea",
+      "source_java_quads": 16,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:dassai",
+      "source_java_quads": 25,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:ice_tea",
+      "source_java_quads": 16,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:jack_daniel",
+      "source_java_quads": 12,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:johnnie_walker",
+      "source_java_quads": 13,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:kwas_chlebowy",
+      "source_java_quads": 13,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:lafite_1982",
+      "source_java_quads": 13,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:maotai",
+      "source_java_quads": 17,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:pina_colada",
+      "source_java_quads": 13,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:skyy_vodka",
+      "source_java_quads": 13,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka",
+      "source_java_quads": 13,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:sour_plum",
+      "source_java_quads": 16,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:spiryt_vodka",
+      "source_java_quads": 13,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    },
+    {
+      "item": "kaleidoscope_world_liquor:strongbow",
+      "source_java_quads": 15,
+      "sampled_texels": 26400,
+      "mismatches": 0
+    }
+  ],
+  "native_client": "NOT_RUN"
+}
