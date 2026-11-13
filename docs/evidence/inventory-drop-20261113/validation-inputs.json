@@ -11,7 +11,7 @@
   "jvm": "OpenJDK 21.0.13+9-1-deb13u2-Debian",
   "numeric_cases": 280,
   "focused_tests": 10,
-  "regressions": 165,
+  "regressions": 202,
   "native_bds": false,
   "client": false,
   "live": false

@@ -7,7 +7,7 @@ Current author cabinet geometry/atlases and two pendant lamps match source; stor
 World Liquor owns a fully typed panel in its own namespace; never defines hud.root_panel
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.014s
+Ran 6 tests in 0.016s
 
 OK
 Pinned1.1.9 freezer art matches source; client rendering unverified
@@ -17,23 +17,23 @@ Four source-backed freezer sheets have explicit client frame selection; client a
 {"standard_entry": "materials/entity.material", "custom_materials": 2, "client_entities_and_attachables": 22, "resolved_render_material_references": 22, "client_rendering_tested": false}
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.225s
+Ran 4 tests in 0.258s
 
 OK
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.016s
+Ran 6 tests in 0.021s
 
 OK
 Historical stool/record face masks verified; cabinets are owned by the current author resource contract
 Java drink colors and tag memberships verified
-✔ strict registration with rice=false panicle=false (65.722951ms)
-✔ strict registration with rice=false panicle=true (28.186109ms)
-✔ strict registration with rice=true panicle=false (23.468209ms)
-✔ strict registration with rice=true panicle=true (21.264266ms)
-✔ missing unrelated ingredient still fails strict validation (2.672052ms)
-✔ future matching preparation removed but other methods retained (2.964659ms)
-✔ item registry lookup failure is not disguised as optional absence (0.162997ms)
+✔ strict registration with rice=false panicle=false (90.74552ms)
+✔ strict registration with rice=false panicle=true (32.573988ms)
+✔ strict registration with rice=true panicle=false (26.213127ms)
+✔ strict registration with rice=true panicle=true (27.080553ms)
+✔ missing unrelated ingredient still fails strict validation (3.034555ms)
+✔ future matching preparation removed but other methods retained (3.445113ms)
+✔ item registry lookup failure is not disguised as optional absence (0.740188ms)
 ℹ tests 7
 ℹ suites 0
 ℹ pass 7
@@ -41,19 +41,19 @@ Java drink colors and tag memberships verified
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 326.222633
+ℹ duration_ms 432.089204
 [World Liquor inventory drop motion] Error: MOTION_REJECTED
 [World Liquor inventory drop motion] Error: MOTION_REJECTED
-✔ directional drop matches 280 independently executed JVM float/LUT cases (6.863893ms)
-✔ full inventory drops one intact item at source eye-relative height 65.62 (1.714705ms)
-✔ full inventory drops one intact item at source eye-relative height 65.27 (0.21356ms)
-✔ full inventory drops one intact item at source eye-relative height 64.4 (0.171339ms)
-✔ non-drop routes never read pose or consume drop RNG (0.650576ms)
-✔ motion failure retains the single settled item: clear (1.150605ms)
-✔ motion failure retains the single settled item: impulse (0.231714ms)
-✔ failed spawn preserves the previous rejected-drop signal (0.550696ms)
-✔ actual bottled completion consumes once and drops one bottle at the corrected height (0.660624ms)
-✔ actual freezer output settles once and its existing rollback removes the moving item (0.74905ms)
+✔ directional drop matches 280 independently executed JVM float/LUT cases (8.525885ms)
+✔ full inventory drops one intact item at source eye-relative height 65.62 (1.483818ms)
+✔ full inventory drops one intact item at source eye-relative height 65.27 (0.527341ms)
+✔ full inventory drops one intact item at source eye-relative height 64.4 (0.436523ms)
+✔ non-drop routes never read pose or consume drop RNG (0.894574ms)
+✔ motion failure retains the single settled item: clear (1.184961ms)
+✔ motion failure retains the single settled item: impulse (0.385091ms)
+✔ failed spawn preserves the previous rejected-drop signal (0.513451ms)
+✔ actual bottled completion consumes once and drops one bottle at the corrected height (0.526678ms)
+✔ actual freezer output settles once and its existing rollback removes the moving item (0.782542ms)
 ℹ tests 10
 ℹ suites 0
 ℹ pass 10
@@ -61,15 +61,15 @@ Java drink colors and tag memberships verified
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 161.312246
+ℹ duration_ms 158.808722
 {"entries":225,"addonProducts":69,"categories":31,"barrelRecipes":18,"shakerRecipes":18,"extraCoreRecipes":8,"preparationRecipes":36,"guidePackets":217,"guidePacketLimit":514,"rawIdsInInstructions":false,"cookery106BilingualFallback":true,"modernHostLocalized":true,"hostStepLimitsChecked":true,"playerSimulation":false}
 {"roots":[{"title":"釀造設備","groups":[{"title":"酒桶釀造","entries":1},{"title":"壓榨與接汁","entries":2},{"title":"雪克杯調酒","entries":1},{"title":"冷凍製作","entries":1}]},{"title":"釀酒百科","groups":[{"title":"酒館本體","entries":25},{"title":"附屬配方","entries":18}]},{"title":"調酒百科","groups":[{"title":"酒館本體","entries":14},{"title":"附屬配方","entries":7}]},{"title":"材料與種植","groups":[{"title":"葡萄與藤架","entries":5},{"title":"果汁","entries":7},{"title":"調酒材料","entries":2}]},{"title":"收納與實用","groups":[{"title":"裝酒容器","entries":2},{"title":"實用工具","entries":1},{"title":"酒櫃","entries":13},{"title":"酒架與杯架","entries":4}]},{"title":"裝飾與家具","groups":[{"title":"吧檯與桌子","entries":2},{"title":"高腳凳","entries":32},{"title":"沙發","entries":16},{"title":"燈飾","entries":22},{"title":"掛畫與唱片","entries":23},{"title":"立式告示牌與黑板","entries":15},{"title":"香薰","entries":8}]},{"title":"食物","groups":[{"title":"冰櫃食品","entries":3},{"title":"工作台食品","entries":1}]}],"entries":225,"totalCategories":31,"simulatedPlayers":false}
-✔ result height matches current renderer expressions independently executed by the JVM (1.422121ms)
-✔ 100 unchanged open-freezer refreshes send no repeated teleports; moved/rotated and missing visuals still reconcile (6.391669ms)
-✔ taking one output still changes the Java result height once; an unchanged result sends no movement (2.849972ms)
-✔ each original Java input slot keeps its seeded position and yaw across four facings (8.942919ms)
-✔ sampled placement matches original Java float operations, including signed integer overflow (2.938288ms)
-✔ unsupported and empty inputs keep original slot numbers; reopening restores the same pose (2.499063ms)
+✔ result height matches current renderer expressions independently executed by the JVM (1.257992ms)
+✔ 100 unchanged open-freezer refreshes send no repeated teleports; moved/rotated and missing visuals still reconcile (8.426984ms)
+✔ taking one output still changes the Java result height once; an unchanged result sends no movement (0.351724ms)
+✔ each original Java input slot keeps its seeded position and yaw across four facings (10.446488ms)
+✔ sampled placement matches original Java float operations, including signed integer overflow (5.015069ms)
+✔ unsupported and empty inputs keep original slot numbers; reopening restores the same pose (3.295016ms)
 ℹ tests 6
 ℹ suites 0
 ℹ pass 6
@@ -77,7 +77,7 @@ Java drink colors and tag memberships verified
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 34.103393
+ℹ duration_ms 38.80318
 Java drink colors and tag memberships verified
 Current author cabinet geometry/atlases and two pendant lamps match source; storage identities conserved.
 {"baselineCommit": "950dc1de414bd18ccdd5329629900acd662bbcc2", "javaReferenceCommit": "c4ec1880bd44cf3139d3ba744ab30bb379cf1416", "cabinetBlockVariants": 10, "helperFamilies": 2, "facings": 4, "poseCases": 48, "vertexComparisons": 4992, "maxCoordinateErrorBlocks": 2.220446049250313e-16, "modelBindings": 90, "preservedFiles": 546, "creativeMenuProjectionFiles": 62, "currentSourceAssets": {"runtime/RP/textures/repair/freezer_blue_dye.png": "6cf7ce48373b5e4d1b42c36abdff0abc847eef2dd10c9886bc1a77903b66617d"}, "foundation": {"sources": ["runtime/BP/scripts/bedrock/extension-furniture.js", "runtime/BP/scripts/bedrock/foundation-bridge.js"], "sdkOwner": "sdk/tavern-foundation-client.js", "consumer": "runtime/BP/scripts/sdk/tavern-foundation-client.js", "syntax": "passed", "ownershipAndWiring": "passed", "behavior": "actual foundation.test.mjs in the existing foundation CI lane; not run by this static check", "nativeInventoryRecovery": false, "bds": false, "client": false}, "molotovKind": 25, "watermelonKind": 44, "playerSimulation": false, "bdsTest": "NOT_RUN", "clientVisualTest": "NOT_RUN"}

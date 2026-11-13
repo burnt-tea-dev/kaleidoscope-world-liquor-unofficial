@@ -18,9 +18,9 @@ function fixture(amount=1,{mode='Survival',typeId=PUDDING}={}){
  const calls=[],queued=[],slots=Array(9);
  const inventory={size:9,getItem:slot=>slots[slot]?.clone(),setItem(slot,stack){calls.push(['write',slot,stack?.typeId,stack?.amount]);slots[slot]=stack?.clone();}};
  const equipment={getEquipment(){return undefined;},setEquipment(){throw Error('unexpected offhand write');}};
- const player={typeId:'minecraft:player',isValid:true,selectedSlotIndex:4,mode,location:{x:1,y:80,z:2},getGameMode(){return this.mode;},
+ const player={typeId:'minecraft:player',isValid:true,selectedSlotIndex:4,mode,location:{x:1,y:80,z:2},getHeadLocation(){return {...this.location,y:this.location.y+1.62};},getRotation:()=>({x:0,y:0}),getGameMode(){return this.mode;},
   getComponent:id=>id==='minecraft:inventory'?{container:inventory}:id==='minecraft:equippable'?equipment:undefined,
-  dimension:{spawnItem(stack,at){calls.push(['drop',stack.typeId,stack.amount,{...at}]);return {id:'item-entity'};}}};
+  dimension:{spawnItem(stack,at){calls.push(['drop',stack.typeId,stack.amount,{...at}]);return {id:'item-entity',clearVelocity(){},applyImpulse(){}};}}};
  slots[4]=new Stack(typeId,amount);
  const event={source:player,itemStack:slots[4].clone()};
  return {player,slots,calls,queued,event,options:{createStack,run:fn=>queued.push(fn)},
