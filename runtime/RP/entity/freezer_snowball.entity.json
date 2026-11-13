@@ -10,7 +10,7 @@
         "default": "textures/repair/freezer_snowball"
       },
       "geometry": {
-        "default": "geometry.kwl.freezer_snowball"
+        "default": "geometry.kwl.freezer_blue_dye"
       },
       "render_controllers": [
         "controller.render.kwl.freezer_snowball"

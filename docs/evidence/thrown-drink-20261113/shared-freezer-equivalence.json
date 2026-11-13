@@ -1,0 +1,167 @@
+{
+  "base_commit": "c5984d46f4df4b120be72f0b7e229922f95509d4",
+  "normal_history_fetch": {
+    "url": "https://github.com/burnt-tea-dev/kaleidoscope-world-liquor-unofficial.git",
+    "operation": "fetch --unshallow --no-tags",
+    "is_shallow": false,
+    "restored_required_commit": "627d125b729d28770f1631a1f4c43c58279d26a7"
+  },
+  "aliases": [
+    {
+      "kind": "slime_ball",
+      "removed_geometry": "runtime/RP/models/entity/freezer_slime_ball.geo.json",
+      "old_geometry_sha256": "22f02461f9a4adcebe1e0bbcfd9605e46180ebe3479591a63e0421348b61aeb7",
+      "shared_geometry": "runtime/RP/models/entity/freezer_blue_dye.geo.json",
+      "shared_geometry_sha256": "952270b1a7415a4f2e7942d4595fd79dfaa761200e707ffe8c1cfe8c499e78ad",
+      "complete_geometry_equal_ignoring_identifier_only": true,
+      "entity_difference": "geometry.default only",
+      "unchanged": {
+        "runtime/BP/entities/freezer_slime_ball_visual.json": "938f7ac7afd8730722443842948cd7177f95f5ce357f0ab92f40b6045a90ff9e",
+        "runtime/RP/render_controllers/freezer_slime_ball.json": "bf2b823bb6d6303df2c2c685d3efa21050288cdd962f4a35180bbc20c5fa5f9d",
+        "runtime/RP/textures/repair/freezer_slime_ball.png": "206d06850fe5572fd5eda272ec25d92f67fe7cd8ec0a6d4b774b2af94f32b1d8",
+        "runtime/RP/textures/repair/freezer_slime_ball.texture_set.json": "8ed3179b89d04a6113a5057405ddd26de8cfea659110bb07b52ac0340269658b"
+      }
+    },
+    {
+      "kind": "snowball",
+      "removed_geometry": "runtime/RP/models/entity/freezer_snowball.geo.json",
+      "old_geometry_sha256": "a67a9c29137e30556b100b69b0a6620917f0c2c96b040073d62cc03557339eee",
+      "shared_geometry": "runtime/RP/models/entity/freezer_blue_dye.geo.json",
+      "shared_geometry_sha256": "952270b1a7415a4f2e7942d4595fd79dfaa761200e707ffe8c1cfe8c499e78ad",
+      "complete_geometry_equal_ignoring_identifier_only": true,
+      "entity_difference": "geometry.default only",
+      "unchanged": {
+        "runtime/BP/entities/freezer_snowball_visual.json": "aef0fb476052cfe065237e48f7f77f035ce12b9bf2db119e1443a9776d075854",
+        "runtime/RP/render_controllers/freezer_snowball.json": "4c431a18fe0771fed5c8c8659839dd9960250c1bb0bbf5713d81fd8b7ca6efb8",
+        "runtime/RP/textures/repair/freezer_snowball.png": "b65ca1f336576ed3e7bdbbe1aa8d802531a473aaa9770d009b1c3428ec5f44a5",
+        "runtime/RP/textures/repair/freezer_snowball.texture_set.json": "f208ac7b13606ddbeeaf8b0e1a29c08fb5692bf159698e3af28d60a0c83e246a"
+      }
+    }
+  ],
+  "prior_projectile_gui_evidence_still_exact": true,
+  "unchanged_projectile_output_count": 21,
+  "scene_equivalence": [
+    {
+      "file": "closed-occlusion.bbmodel",
+      "before_sha256": "11aa8977db0ca028b3d34928e0464cee2e2805df9948c0d14bac7f1379197f33",
+      "after_sha256": "11aa8977db0ca028b3d34928e0464cee2e2805df9948c0d14bac7f1379197f33",
+      "byte_identical": true
+    },
+    {
+      "file": "dry-four-facings.bbmodel",
+      "before_sha256": "e10be47b1b24b9314168a36ffdece8851656f3ec41d219021ae2925eadfb799b",
+      "after_sha256": "e10be47b1b24b9314168a36ffdece8851656f3ec41d219021ae2925eadfb799b",
+      "byte_identical": true
+    },
+    {
+      "file": "pair-close.bbmodel",
+      "before_sha256": "241f60ebc318e0d70478deed34ddd6fda37ab9e4725876c7ccbb3ce720429f1c",
+      "after_sha256": "241f60ebc318e0d70478deed34ddd6fda37ab9e4725876c7ccbb3ce720429f1c",
+      "byte_identical": true
+    },
+    {
+      "file": "pair-open.bbmodel",
+      "before_sha256": "41cda0964aeb296f490ec6f0a2384e0f72d216fa0b0015e87b121e8d80febb69",
+      "after_sha256": "41cda0964aeb296f490ec6f0a2384e0f72d216fa0b0015e87b121e8d80febb69",
+      "byte_identical": true
+    },
+    {
+      "file": "runtime-poses.json",
+      "before_sha256": "713fc01075381d569dc0c5b65dc5eca4e11e85343199aa234b437c2645f70134",
+      "after_sha256": "713fc01075381d569dc0c5b65dc5eca4e11e85343199aa234b437c2645f70134",
+      "byte_identical": true
+    },
+    {
+      "file": "wet-four-facings.bbmodel",
+      "before_sha256": "352e7f7a25d6849c6d5ad7a9cd9919a7ad1d8c3d04792c79f66478c2b3a0b2d9",
+      "after_sha256": "352e7f7a25d6849c6d5ad7a9cd9919a7ad1d8c3d04792c79f66478c2b3a0b2d9",
+      "byte_identical": true
+    }
+  ],
+  "budget": {
+    "geometries": 1350,
+    "base_geometries": 1022,
+    "animated_item_contract_geometries": 5,
+    "animated_item_allocations": {
+      "runtime/RP/models/entity/item_sprite_depth_charge.geo.json": {
+        "ids": 1,
+        "max_allocated_vertices": 744,
+        "max_bones": 1,
+        "display_contexts": 8
+      },
+      "runtime/RP/models/entity/item_sprite_mystery_cocktail.geo.json": {
+        "ids": 1,
+        "max_allocated_vertices": 840,
+        "max_bones": 1,
+        "display_contexts": 8
+      },
+      "runtime/RP/models/entity/item_sprite_nether_special.geo.json": {
+        "ids": 1,
+        "max_allocated_vertices": 696,
+        "max_bones": 1,
+        "display_contexts": 8
+      },
+      "runtime/RP/models/entity/item_sprite_ice_grape.geo.json": {
+        "ids": 1,
+        "max_allocated_vertices": 1008,
+        "max_bones": 1,
+        "display_contexts": 8
+      },
+      "runtime/RP/models/entity/item_sprite_tartaric_acid_painting.geo.json": {
+        "ids": 1,
+        "max_allocated_vertices": 120,
+        "max_bones": 1,
+        "display_contexts": 8
+      }
+    },
+    "animated_item_max_allocated_vertices": 1200,
+    "reviewed_visual_geometries": 316,
+    "visual_allocations": {
+      "runtime/RP/models/entity/board_glyph_outline.geo.json": {
+        "ids": 256,
+        "max_allocated_vertices": 384,
+        "max_bones": 19
+      },
+      "runtime/RP/models/entity/signature_rgb_texels.geo.json": {
+        "ids": 60,
+        "max_allocated_vertices": 672,
+        "max_bones": 1
+      }
+    },
+    "potion_contract_geometries": 4,
+    "potion_allocations": {
+      "runtime/RP/models/entity/potion_bottle_glass.geo.json": {
+        "ids": 1,
+        "max_allocated_vertices": 168,
+        "max_bones": 1
+      },
+      "runtime/RP/models/entity/potion_liquid_texels.geo.json": {
+        "ids": 3,
+        "max_allocated_vertices": 504,
+        "max_bones": 1
+      }
+    },
+    "lamp_contract_geometries": 3,
+    "lamp_allocations": {
+      "geometry.kwl.pendant_lamp_top": {
+        "bones": 7,
+        "cubes": 6,
+        "allocated_vertices": 144
+      },
+      "geometry.kwl.green_pendant_lamp_bottom": {
+        "bones": 9,
+        "cubes": 8,
+        "allocated_vertices": 192
+      },
+      "geometry.kwl.pink_pendant_lamp_bottom": {
+        "bones": 9,
+        "cubes": 8,
+        "allocated_vertices": 192
+      }
+    },
+    "base_limit_exclusive": 1024,
+    "client_verified": false
+  },
+  "aggregate_check": "check_release.py exit 0 using isolated paired sibling layout",
+  "native_client": "NOT_RUN"
+}

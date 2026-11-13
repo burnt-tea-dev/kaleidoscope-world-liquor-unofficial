@@ -50,6 +50,14 @@ class Scene:
  def save(self,name): (OUT/name).write_text(json.dumps(self.j,indent=2)+'\n')
 RP=ROOT/'runtime/RP';SRC=ROOT/'data/java-parity/neoforge-1.1.9/assets/kaleidoscope_world_liquor'
 GEO={'open':'kwl_g_7c341bb644967296.geo.json','close':'kwl_g_5b611b0754ffa64d.geo.json'}
+# Resolve live bindings rather than assuming every texture owns a geometry.
+def helper_assets(kind):
+ entity=read(RP/f'entity/freezer_{kind}.entity.json')['minecraft:client_entity']['description']
+ identifier=entity['geometry']['default']
+ matches=[path for path in (RP/'models/entity').glob('*.json') for g in json.loads(path.read_text()).get('minecraft:geometry',[]) if g['description']['identifier']==identifier]
+ assert len(matches)==1,(kind,identifier,matches)
+ return matches[0],RP/(entity['textures']['default']+'.png')
+
 for state in ('open','close'):
  scene=Scene('Java LEFT / canonical RIGHT - '+state)
  scene.java(SRC/f'models/block/fridge_{state}.json',SRC/'textures/block/fridge.png',[-14,0,0])
@@ -67,7 +75,7 @@ for wet in (False,True):
   scene.bedrock(RP/'models/entity'/GEO['open'],RP/'textures/kwl/generated/kaleidoscope_world_liquor__block__fridge_open.png',offset,[0,90,-180,-90][f],name='Facing '+str(f))
   for ent in row['entities']:
    kind=ent['typeId'].split(':')[1].removeprefix('freezer_').removesuffix('_visual');p=ent['location'];at=[offset[0]+(p['x']-.5)*16,(p['y']-64)*16,offset[2]+(p['z']-.5)*16]
-   scene.bedrock(RP/f'models/entity/freezer_{kind}.geo.json',RP/f'textures/repair/freezer_{kind}.png',at,-ent['rotation'],name=f"Facing {f} {ent['properties']['kaleidoscope_world_liquor:visual_slot']} {kind}")
+   scene.bedrock(*helper_assets(kind),at,-ent['rotation'],name=f"Facing {f} {ent['properties']['kaleidoscope_world_liquor:visual_slot']} {kind}")
  scene.save(('wet' if wet else 'dry')+'-four-facings.bbmodel')
 # Closed lid with identical source-supported planes retained for geometric occlusion only.
 # Runtime actually removes helpers on close, and Java renders them without an open guard.
@@ -75,7 +83,7 @@ scene=Scene('Closed lid occlusion: retained planes - editor only')
 scene.bedrock(RP/'models/entity'/GEO['close'],RP/'textures/kwl/generated/kaleidoscope_world_liquor__block__fridge_close.png')
 for ent in next(r for r in poses if r['wet'] and r['facing']==0)['entities']:
  kind=ent['typeId'].split(':')[1].removeprefix('freezer_').removesuffix('_visual');p=ent['location'];at=[(p['x']-.5)*16,(p['y']-64)*16,(p['z']-.5)*16]
- scene.bedrock(RP/f'models/entity/freezer_{kind}.geo.json',RP/f'textures/repair/freezer_{kind}.png',at,-ent['rotation'],name='retained '+kind)
+ scene.bedrock(*helper_assets(kind),at,-ent['rotation'],name='retained '+kind)
 scene.save('closed-occlusion.bbmodel')
 print('Built',len(list(OUT.glob('*.bbmodel'))),'review-only scenes')
 

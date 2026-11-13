@@ -1,0 +1,81 @@
+{
+  "base_commit": "c5984d46f4df4b120be72f0b7e229922f95509d4",
+  "routes": 18,
+  "editor_front_back_views": 36,
+  "editor_detail_routes": 2,
+  "raw_screenshots": [
+    {
+      "file": "detailiso.jpg",
+      "sha256": "33b96b36fb978fa6aabf50efcbd151fc369816bd0cce49d8b9e3db3a9dc2d55a",
+      "bytes": 92623,
+      "width": 1188,
+      "height": 848
+    },
+    {
+      "file": "page1north.jpg",
+      "sha256": "b7cadc8edc70784d2780c376f9a4d63bb74dcecac42a090ad0734fa63191f6b5",
+      "bytes": 112763,
+      "width": 1188,
+      "height": 848
+    },
+    {
+      "file": "page1south.jpg",
+      "sha256": "b74e801ef9bf2a35c252eb119e2511094586a98bc2ab0aca873f311854ecf6e8",
+      "bytes": 112655,
+      "width": 1188,
+      "height": 848
+    },
+    {
+      "file": "page2north.jpg",
+      "sha256": "8404ea25d5c6d2e292b40e3750f776367e4c3ac323471eaf255244a3453bee7d",
+      "bytes": 111996,
+      "width": 1188,
+      "height": 848
+    },
+    {
+      "file": "page2south.jpg",
+      "sha256": "2e3a09b7f24b41d4d4a38fc2de889709a1874d6f977710352213803de972d3ef",
+      "bytes": 111222,
+      "width": 1188,
+      "height": 848
+    },
+    {
+      "file": "page3north.jpg",
+      "sha256": "0dfec89e5376b2ff2989411ff87bc264b3f86eab6016532c619f6a6f18be55dd",
+      "bytes": 103374,
+      "width": 1188,
+      "height": 848
+    },
+    {
+      "file": "page3south.jpg",
+      "sha256": "ee135797c55ad17f556e1e6f6c4871866fc2b44a3beb0ab93047b37003eee24f",
+      "bytes": 103381,
+      "width": 1188,
+      "height": 848
+    }
+  ],
+  "fixtures": [
+    {
+      "file": "projectiles_1_source_before_after.bbmodel",
+      "sha256": "869b926a1bb54d30c293eae43c53b384a62fa5ecea26f8f4fdd2886c871dd175",
+      "bytes": 189506
+    },
+    {
+      "file": "projectiles_2_source_before_after.bbmodel",
+      "sha256": "394f0e6bf721094c016ba7c6b9c87e921fd4ac56fa48f24e31bd9a9e2cc2dea2",
+      "bytes": 157374
+    },
+    {
+      "file": "projectiles_3_source_before_after.bbmodel",
+      "sha256": "bd45a7f469888986a688d41d32d63190fc55c09064dfd882bc71bf2532a38c57",
+      "bytes": 169317
+    },
+    {
+      "file": "projectiles_detail_source_before_after.bbmodel",
+      "sha256": "3e6bd63781467745e9c6c56228a942b524a1f7eb9c870a4ebe08c69cf19b36ef",
+      "bytes": 64902
+    }
+  ],
+  "legend": "Each group is Java source, old runtime, candidate in +X order; North reverses on-screen group and member order. Top-to-bottom source kind order 0\u20135, 6\u201311, 12\u201317 by page. Detail uses kind 0 and 2.",
+  "scope": "Editor geometry/UV comparison only; no game, flight, native billboard, lighting or filtering observation."
+}

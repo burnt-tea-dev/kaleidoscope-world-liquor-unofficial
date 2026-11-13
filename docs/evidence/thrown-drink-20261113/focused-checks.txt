@@ -1,0 +1,27 @@
+test_all_source_face_texels_independent_of_generator (test_thrown_drink_visual.ThrownDrinkVisualTests.test_all_source_face_texels_independent_of_generator) ... ok
+test_current_catalogue_and_generated_route (test_thrown_drink_visual.ThrownDrinkVisualTests.test_current_catalogue_and_generated_route) ... ok
+test_each_runtime_output_mutation_is_rejected (test_thrown_drink_visual.ThrownDrinkVisualTests.test_each_runtime_output_mutation_is_rejected) ... ok
+test_ground_extents_and_native_billboard (test_thrown_drink_visual.ThrownDrinkVisualTests.test_ground_extents_and_native_billboard) ... ok
+test_old_scale_and_bottle_bindings_are_replaced (test_thrown_drink_visual.ThrownDrinkVisualTests.test_old_scale_and_bottle_bindings_are_replaced) ... ok
+test_source_alpha_gap_stays_transparent (test_thrown_drink_visual.ThrownDrinkVisualTests.test_source_alpha_gap_stays_transparent) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.685s
+
+OK
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.026s
+
+OK
+Pinned1.1.9 freezer art matches source; client rendering unverified
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.011s
+
+OK
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK

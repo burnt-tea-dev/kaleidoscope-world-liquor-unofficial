@@ -215,6 +215,10 @@ for mode in ['holder','cellar_cabinet','tilted_rack','circular_rack','bar_cabine
  rc='controller.render.kwl.'+mode;desc['render_controllers']=[rc];write(RP/f'entity/{actor}.entity.json',rp)
  prop=KT+(':holder_kind' if mode=='holder' else ':storage_kind');index=f"math.clamp(q.property('{prop}') - 1000, 0, {len(bottleids)-1})"
  write(RP/f'render_controllers/{mode}.json',{'format_version':'1.8.0','render_controllers':{rc:{'arrays':{'geometries':{'Array.models':[f'Geometry.kind_{n}' for n in range(len(bottleids))]},'textures':{'Array.textures':[f'Texture.kind_{n}' for n in range(len(bottleids))]}},'geometry':f'Array.models[{index}]','textures':[f'Array.textures[{index}]'],'materials':[{'*':'Material.default'}]}}})
+# Projectiles are Java generated items, not the placed storage bottle.
+# This owner replaces only that renderer after the shared kind table is built.
+from thrown_drink_visual import check as compile_thrown_drink_visual
+compile_thrown_drink_visual(ROOT, write=True)
 # Preserve original crafting / machine recipes. Source example recipes are not registered content.
 colors={'black':0x000000,'dark_blue':0x0000aa,'dark_green':0x00aa00,'dark_aqua':0x00aaaa,'dark_red':0xaa0000,'dark_purple':0xaa00aa,'gold':0xffaa00,'gray':0xaaaaaa,'dark_gray':0x555555,'blue':0x5555ff,'green':0x55ff55,'aqua':0x55ffff,'red':0xff5555,'light_purple':0xff55ff,'yellow':0xffff55,'white':0xffffff}
 inputtags={};inputcolor={}

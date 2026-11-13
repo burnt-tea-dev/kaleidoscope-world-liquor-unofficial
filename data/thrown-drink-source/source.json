@@ -1,0 +1,301 @@
+{
+  "source": {
+    "world_liquor": {
+      "version": "1.1.12",
+      "loader": "NeoForge",
+      "minecraft": "1.21.1",
+      "curseforge_file": 9217896,
+      "sha256": "d963089ad0a7f99a8950171d76913cfeea99a0126ee12b16c72c3162f8545da3"
+    },
+    "tavern": {
+      "version": "1.2.0",
+      "loader": "NeoForge",
+      "minecraft": "1.21.1",
+      "curseforge_file": 8350856,
+      "sha256": "03f35e1e614953b22cd1f5e34345613f3a6a283bf1b1c99659b57d58970edeff"
+    },
+    "minecraft": {
+      "version": "1.21.1",
+      "client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+      "mapping_sha1": "2244b6f072256667bcd9a73df124d6c58de77992"
+    },
+    "bedrock_custom_projectile": {
+      "repository": "microsoft/minecraft-samples",
+      "path": "custom_projectiles/resource_pack/animations/custom.animation.json",
+      "blob_sha": "159a296df26df35a6aa0204d9a59422591b4beba",
+      "url": "https://github.com/microsoft/minecraft-samples/blob/main/custom_projectiles/resource_pack/animations/custom.animation.json"
+    }
+  },
+  "items": [
+    {
+      "item": "kaleidoscope_world_liquor:absolut_vodka",
+      "model": "assets/kaleidoscope_world_liquor/models/item/absolut_vodka.json",
+      "model_sha256": "e3ddecdb71357da9b08fe86f90e157ffdb7ed30efcf4f44ce90a48208851c98c",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/absolut_vodka"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/absolut_vodka.png",
+      "texture_sha256": "cbffd6c4e8faaaf02bf54db6e66946e625a060d2e02288c664f5d4d3b8f92ea0",
+      "runtime_texture": "runtime/RP/textures/kwl/items/absolut_vodka_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:bacardi_carta_blanca",
+      "model": "assets/kaleidoscope_world_liquor/models/item/bacardi_carta_blanca.json",
+      "model_sha256": "8eb2443071e7e18f2aff54790ee253988eb415c9cc9082a0805e0a49efdd74f0",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/bacardi_carta_blanca"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/bacardi_carta_blanca.png",
+      "texture_sha256": "0e0d36e4dcd1fb6ecacc7cceaa811cb5a2be259b79ca8ee2efec69438064850e",
+      "runtime_texture": "runtime/RP/textures/kwl/items/bacardi_carta_blanca_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor",
+      "model": "assets/kaleidoscope_world_liquor/models/item/bamboo_leaf_green_liquor.json",
+      "model_sha256": "1e9dbe4dda3b2e184eba366541f29367395084f079476eba5970721a872642cd",
+      "definition": {
+        "parent": "minecraft:item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/bamboo_leaf_green_liquor"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/bamboo_leaf_green_liquor.png",
+      "texture_sha256": "764ae767eb0eeee16ee79e1b211ed49327dc1c2f3272103951d3bf61fc52d5ce",
+      "runtime_texture": "runtime/RP/textures/kwl/items/bamboo_leaf_green_liquor_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:bombay_sapphire_gin",
+      "model": "assets/kaleidoscope_world_liquor/models/item/bombay_sapphire_gin.json",
+      "model_sha256": "50391b860df14fa33fb70da354ae6ca3112509467d16dfd6eb74bfe62430af3b",
+      "definition": {
+        "parent": "minecraft:item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/bombay_sapphire_gin"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/bombay_sapphire_gin.png",
+      "texture_sha256": "09ce0ab2ef01acb204c8a437b0d8ba214943187aa8a9752363b1585c85dccaa4",
+      "runtime_texture": "runtime/RP/textures/kwl/items/bombay_sapphire_gin_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:cool_tea",
+      "model": "assets/kaleidoscope_world_liquor/models/item/cool_tea.json",
+      "model_sha256": "681021e63ca2ff662e0db6d60e05fe73338150fe705796fc01a8003dd0f22841",
+      "definition": {
+        "parent": "minecraft:item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/cool_ice_tea"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/cool_ice_tea.png",
+      "texture_sha256": "ff1c5cb157fa2efc8e306aef5bed001e52807253cf30175d57e40ac630bbd51a",
+      "runtime_texture": "runtime/RP/textures/kwl/items/cool_tea_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:dassai",
+      "model": "assets/kaleidoscope_world_liquor/models/item/dassai.json",
+      "model_sha256": "8054131dc4e76145786146c8e6ab9ad824d3a59702c5a64f4e4298c7136a9bf6",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/dassai"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/dassai.png",
+      "texture_sha256": "c779ba174baef5f300385fc1d8ecfdc78369236a3013f8d2e76b44b4ce145483",
+      "runtime_texture": "runtime/RP/textures/kwl/items/dassai_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:ice_tea",
+      "model": "assets/kaleidoscope_world_liquor/models/item/ice_tea.json",
+      "model_sha256": "30c75f56a7d54f01789897ad54f4d948d88ac4cc913adff30d9f315d6f0bcfef",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/ice_tea"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/ice_tea.png",
+      "texture_sha256": "abd771ee564e8d7cce7c7f1387a522d3ffdd6d34e41a75132fd9b2d1299dc780",
+      "runtime_texture": "runtime/RP/textures/kwl/items/ice_tea_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:jack_daniel",
+      "model": "assets/kaleidoscope_world_liquor/models/item/jack_daniel.json",
+      "model_sha256": "f72babb9104ad650510b6a59882d180eaa8879883f854cd77a8323fcdc7ca837",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/jack_daniel"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/jack_daniel.png",
+      "texture_sha256": "1ac777fcfb833ee479866366f3ae081f1f49a18c068710b89174c879cc7fa36a",
+      "runtime_texture": "runtime/RP/textures/kwl/items/jack_daniel_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:johnnie_walker",
+      "model": "assets/kaleidoscope_world_liquor/models/item/johnnie_walker.json",
+      "model_sha256": "5eb81f02ac7e4f23a86c5d02c3c337b16923e638e4f82395f2838c7bd193ac56",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/johnnie_walker"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/johnnie_walker.png",
+      "texture_sha256": "bdeaa9d369392ceec8b07465aaa634270bc4ef578b905397ed96a99985b36d5c",
+      "runtime_texture": "runtime/RP/textures/kwl/items/johnnie_walker_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:kwas_chlebowy",
+      "model": "assets/kaleidoscope_world_liquor/models/item/kwas_chlebowy.json",
+      "model_sha256": "d97c5cdebccc367eeecb1135530448f3234d9448a425a43c9c36695f87c83bbc",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/kwas_chlebowy"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/kwas_chlebowy.png",
+      "texture_sha256": "69900fd01f19d4543ea43a8c3ef95d1a98515059eacd2bbb0db353b2715210be",
+      "runtime_texture": "runtime/RP/textures/kwl/items/kwas_chlebowy_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:lafite_1982",
+      "model": "assets/kaleidoscope_world_liquor/models/item/lafite_1982.json",
+      "model_sha256": "60fe8c425ea045acfffc7f6c87143cc43e9c90da522f69d9f5de6e18fe5df634",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/lafite_1982"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/lafite_1982.png",
+      "texture_sha256": "8442ed554d2ab287d86adcf08d0050ba84b8e033f5139c28d768eb87779feffb",
+      "runtime_texture": "runtime/RP/textures/kwl/items/lafite_1982_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:maotai",
+      "model": "assets/kaleidoscope_world_liquor/models/item/maotai.json",
+      "model_sha256": "297d7b3ff0568db1657402a75545e3943b1396e54df3ac5fdad06d8edddf7135",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/maotai"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/maotai.png",
+      "texture_sha256": "9ca2c88ed633c89f0881531d2a8ff50dcafad4136376eba5493a296a2675eb08",
+      "runtime_texture": "runtime/RP/textures/kwl/items/maotai_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:pina_colada",
+      "model": "assets/kaleidoscope_world_liquor/models/item/pina_colada.json",
+      "model_sha256": "9fdc8d701a515a78090e0e47a57b2e294ccf6bb9d67fae57bcaaca306b5e48bc",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/pina_colada"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/pina_colada.png",
+      "texture_sha256": "6cd2077a04d3af94baf985c2dd77174a7441678cd0b51204891db9a9e0e0bdba",
+      "runtime_texture": "runtime/RP/textures/kwl/items/pina_colada_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:skyy_vodka",
+      "model": "assets/kaleidoscope_world_liquor/models/item/skyy_vodka.json",
+      "model_sha256": "df170cbf963b107ac7978aaea63497afb5d4c441fb98c6f4296162653d2c470d",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/skyy_vodka"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/skyy_vodka.png",
+      "texture_sha256": "2821751c4be1df90a03cdc1c99fb24e107bcc08bb325b8a4e51ef7cc898dd0ed",
+      "runtime_texture": "runtime/RP/textures/kwl/items/skyy_vodka_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:smirnoff_red_vodka",
+      "model": "assets/kaleidoscope_world_liquor/models/item/smirnoff_red_vodka.json",
+      "model_sha256": "1fad81721cabcf58ca18bc9f481474784a48ff4cf8eb72f7659865dafc05d736",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/smirnoff_red_vodka"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/smirnoff_red_vodka.png",
+      "texture_sha256": "c14e2daf08b895f32ba2df306bf9fcfdd327dd05d0a8077fee1c7a50b3d6d698",
+      "runtime_texture": "runtime/RP/textures/kwl/items/smirnoff_red_vodka_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:sour_plum",
+      "model": "assets/kaleidoscope_world_liquor/models/item/sour_plum.json",
+      "model_sha256": "c16aca86fbff25eb944e4bd58c86a3c02e1be6a4daceddaea9134a9c2487c4f2",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/sour_plum"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/sour_plum.png",
+      "texture_sha256": "3fc53ea7e2d5d1c2de9ae6095b3fb59f1a91fd1ac7597ed3cccc3d9c6a188e01",
+      "runtime_texture": "runtime/RP/textures/kwl/items/sour_plum_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:spiryt_vodka",
+      "model": "assets/kaleidoscope_world_liquor/models/item/spiryt_vodka.json",
+      "model_sha256": "0104b581cf8a6c7e4acbe5a1a52b4a20af91f630ae90f3cf592b2037e18ade00",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/spiryt_vodka"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/spiryt_vodka.png",
+      "texture_sha256": "9196ffa428d00c1030c3f0598ac4bc2c38f8fced715f8239562888a310ea3538",
+      "runtime_texture": "runtime/RP/textures/kwl/items/spiryt_vodka_q6.png"
+    },
+    {
+      "item": "kaleidoscope_world_liquor:strongbow",
+      "model": "assets/kaleidoscope_world_liquor/models/item/strongbow.json",
+      "model_sha256": "15061366b48c9e9505dd71ab946cd449403bd1e961c36fa7399752a3b097c6cf",
+      "definition": {
+        "parent": "item/generated",
+        "textures": {
+          "layer0": "kaleidoscope_world_liquor:item/strongbow"
+        }
+      },
+      "texture": "assets/kaleidoscope_world_liquor/textures/item/strongbow.png",
+      "texture_sha256": "4b4dcde6b309b497f9d8cd2e3de6f07aba7f0c07f94ba278a0d7f5ac7c6845f2",
+      "runtime_texture": "runtime/RP/textures/kwl/items/strongbow_q6.png"
+    }
+  ],
+  "ground": {
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "translation": [
+      0,
+      2,
+      0
+    ],
+    "scale": [
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "generated_model_sha256": "63190611202e75ad7b812bc9a4b31bd53f3e186895d7b53e5e280b0d1e30a67a"
+}
