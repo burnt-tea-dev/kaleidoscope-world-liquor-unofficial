@@ -1,0 +1,33 @@
+{
+  "base": "c5984d46f4df4b120be72f0b7e229922f95509d4",
+  "tavernPeer": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
+  "sha256": {
+    "runtime/BP/scripts/furniture.js": "fe85cf53f4d3bb5e1c11f702daa09479ce5eaf42e14877ddbabb8ea7e79adeb7",
+    "tests/freezer-callback.test.mjs": "50139ce472739ed7664b22ee01d14177c6fd3e33f870044f43ca2bfb78334aec",
+    "docs/evidence/freezer-fluid-hand-20261113/baseline-check.log": "65af3961dd4078585e0ebe76aebd49e0a98d85e3dab8521e9335c2ee634e7f1d",
+    "docs/evidence/freezer-fluid-hand-20261113/check-release.log": "5e8ca240ed8bf69a5dd510d598e336e64d6a48b12a7194281836e16ace7b921a",
+    "docs/evidence/freezer-fluid-hand-20261113/fluid-hand-after.log": "0c76605c78c607f07283c58d5705d5199577adbd356cf44721835dcd5fecc75f",
+    "docs/evidence/freezer-fluid-hand-20261113/fluid-hand-before.log": "d8a81f70db8a99e9e63da24bf2d3c7c68762f4ec875128e2339d520b1396b992"
+  },
+  "newTests": 87,
+  "before": {
+    "pass": 51,
+    "fail": 36
+  },
+  "after": {
+    "pass": 234,
+    "fail": 0,
+    "skipped": 0
+  },
+  "aggregate": {
+    "blocks": 63,
+    "items": 159,
+    "recipes": 41,
+    "models": 1350,
+    "errors": 0
+  },
+  "nativeEngineTest": false,
+  "clientTest": false,
+  "savedWorldTest": false,
+  "deployment": false
+}

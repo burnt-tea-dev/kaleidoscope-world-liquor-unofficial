@@ -122,3 +122,34 @@ for(const product of ['pochi_pudding','ice'])test('registered Creative full-inve
  world.beforeEvents.playerInteractWithBlock.emit({block:b,player:p,blockFace:'north',itemStack:p.inv.getItem(0),isFirstEvent:true});system.flush();
  assert.equal(JSON.parse(world.getDynamicProperty(key)).output,0);assert.deepEqual(Array.from({length:p.inv.size},(_,slot)=>p.inv.getItem(slot)),before);assert.equal(d.drops.length,0);assert.equal(d.sounds.at(-1),N+'.java.freezer_pickup');
 });
+
+// FluidUtil returns the converted count-one container directly to the used
+// hand. Earlier regressions only used slot zero, hiding accidental stowing.
+const singleFluidRoutes=[
+ ...fluidBucketCases.filter(([id])=>id!=='minecraft:milk_bucket').map(([id,fluid])=>({label:'fill '+id,held:id,result:'minecraft:bucket',before:null,after:fluid})),
+ ...fluidBucketCases.map(([id,fluid])=>({label:'drain '+fluid,held:'minecraft:bucket',result:id,before:fluid,after:null})),
+];
+function singleFluidUse(route,mode='survival',layout='earlier empty'){
+ const {b,d}=fixture();b.setPermutation(b.permutation.withState(N+':open',true));
+ world.setDynamicProperty(key,JSON.stringify({type:N+':freezer',input:[],fluid:route.before,remaining:0,output:0}));
+ const p=player(d,mode);p.isSneaking=false;p.selectedSlotIndex=4;
+ const item=new ItemStack(route.held);item.nameTag='original container';item.lore=['owned metadata'];p.inv.setItem(4,item);
+ if(layout==='existing result'){const old=new ItemStack(route.result);old.maxAmount=route.result==='minecraft:bucket'?16:1;p.inv.setItem(1,old);}
+ if(layout==='full')for(let i=0;i<p.inv.size;i++)if(i!==4)p.inv.setItem(i,new ItemStack('minecraft:stone',64));
+ const before=Array.from({length:p.inv.size},(_,i)=>p.inv.getItem(i)),raw=world.getDynamicProperty(key);
+ const emit=()=>world.beforeEvents.playerInteractWithBlock.emit({block:b,player:p,blockFace:'north',itemStack:p.inv.getItem(4),isFirstEvent:true});
+ return {b,d,p,before,raw,emit};
+}
+for(const route of singleFluidRoutes)for(const mode of ['survival','adventure','creative'])for(const layout of ['earlier empty','existing result','full'])test(mode+' single fluid container stays in used slot: '+route.label+' / '+layout,()=>{
+ const f=singleFluidUse(route,mode,layout);f.emit();assert.deepEqual(Array.from({length:f.p.inv.size},(_,i)=>f.p.inv.getItem(i)),f.before,'before event is read-only');system.flush();
+ assert.equal(JSON.parse(world.getDynamicProperty(key)).fluid,route.after);
+ const expected=f.before.map(s=>s?.clone());if(mode!=='creative')expected[4]=new ItemStack(route.result);
+ assert.deepEqual(Array.from({length:f.p.inv.size},(_,i)=>f.p.inv.getItem(i)),expected);assert.equal(f.d.drops.length,0);assert.deepEqual(JSON.parse(world.getDynamicProperty(key)).input,[]);
+});
+for(const route of [singleFluidRoutes[0],singleFluidRoutes[4]])for(const failure of ['save','inventory'])test('single fluid container '+route.label+' restores tank and complete inventory after '+failure+' failure',()=>{
+ const f=singleFluidUse(route);f.emit();if(failure==='save')world.failSave=true;else f.p.inv.failWrite=true;system.flush();
+ assert.equal(world.getDynamicProperty(key),f.raw);assert.deepEqual(Array.from({length:f.p.inv.size},(_,i)=>f.p.inv.getItem(i)),f.before);assert.equal(f.d.drops.length,0);
+});
+for(const route of [singleFluidRoutes[0],singleFluidRoutes[4]])test('single fluid container '+route.label+' rejects changed accepted hand',()=>{
+ const f=singleFluidUse(route);f.emit();f.p.inv.setItem(4,new ItemStack('minecraft:diamond_sword'));system.flush();assert.equal(world.getDynamicProperty(key),f.raw);assert.equal(f.p.inv.getItem(4).typeId,'minecraft:diamond_sword');assert.equal(f.p.inv.getItem(0),undefined);
+});

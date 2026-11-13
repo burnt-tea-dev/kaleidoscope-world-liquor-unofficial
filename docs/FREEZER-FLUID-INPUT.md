@@ -1,5 +1,17 @@
 # 冰櫃桶原料與Creative流體轉移
 
+## 2026-11-13來源候選：單桶轉移保留使用中的手持槽
+
+目前NeoForge作者1.1.12仍呼叫官方`FluidUtil.interactWithFluidHandler`。其非Creative單件分支直接回傳轉換結果，再由呼叫者寫回原手；只有尚有堆疊剩餘時才收納額外結果。原生既有`transaction.give`一律先合併及搜尋背包，會把單桶轉換結果放到較前的空格／既有桶堆，反而清空玩家正在使用的手持槽。
+
+本候選在同一交易owner加入`containerResult`：扣除後原槽為空，就把轉換結果放回該槽；有剩餘堆疊則沿用原收納流程。只有非牛奶加液體、空桶取液體兩個呼叫使用此選項。Creative仍保留原物與metadata，滿槽普通入料、牛奶特殊加槽、storage格式及交易失敗回復均不變。
+
+[證據與執行範圍](evidence/freezer-fluid-hand-20261113/README.md)：87個新正式回呼案例在修前36失敗、51通過，修後連同既有回呼與storage套件234項全過；完整來源檢查1350個geometry、0錯誤。這是來源／API-double驗證，沒有重用下節舊BDS結果冒充新修復驗收。新候選未做BDS、玩家點擊、客戶端或保存重啟；版本／baseline guard維持未滿足，尚未發版。
+
+已知另一個未修範圍：堆疊容器加滿背包時，Java可走`ItemHandlerHelper.giveItemToPlayer`的溢出流程，目前原生交易仍拒絕。此次不以另一種掉落動作替代、不宣稱完整FluidUtil或offhand／任意流體容器一致。
+
+## 既有W199與W200證據
+
 2026-11-06核對當前NeoForge1.21.1作者1.1.12／CF9217896與Forge1.20.1作者1.1.13／CF9217901。W199修「流體轉移失敗後，整桶仍可放進原料格」；W200只修Creative成功取槽液時的庫存副作用。兩條路徑的Creative扣料規則不同。
 
 ## Java來源與已重現的差異
