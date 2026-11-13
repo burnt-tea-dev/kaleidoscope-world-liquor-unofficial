@@ -185,7 +185,7 @@ def guide_body(short, kind, locale, *, mixable=False):
         ])
 
     if kind == 'stool':
-        return section(triple('Sit', '乘坐', '乘坐'), triple('Empty-hand use while standing to sit. Use your normal dismount control to get up.', '不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。', '不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。'))
+        return section(triple('Sit', '乘坐', '乘坐'), triple('Use an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.', '对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。', '對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。'))
     if kind == 'painting':
         return section(triple('Display', '陈设', '陳設'), triple('Use it on a supporting surface to place it. Breaking the painting or removing its support drops the painting.', '对支撑表面使用即可摆放；破坏挂画或移除支撑会掉出挂画。', '對支撐表面使用即可擺放；破壞掛畫或移除支撐會掉出掛畫。'))
     if kind == 'record':
