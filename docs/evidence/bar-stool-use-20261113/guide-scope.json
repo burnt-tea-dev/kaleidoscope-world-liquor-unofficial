@@ -1,0 +1,22 @@
+{
+  "changed_pages": [
+    "kaleidoscope_world_liquor:guide/bar_stool_white",
+    "kaleidoscope_world_liquor:guide/bar_stool_orange",
+    "kaleidoscope_world_liquor:guide/bar_stool_magenta",
+    "kaleidoscope_world_liquor:guide/bar_stool_light_blue",
+    "kaleidoscope_world_liquor:guide/bar_stool_yellow",
+    "kaleidoscope_world_liquor:guide/bar_stool_lime",
+    "kaleidoscope_world_liquor:guide/bar_stool_pink",
+    "kaleidoscope_world_liquor:guide/bar_stool_gray",
+    "kaleidoscope_world_liquor:guide/bar_stool_light_gray",
+    "kaleidoscope_world_liquor:guide/bar_stool_cyan",
+    "kaleidoscope_world_liquor:guide/bar_stool_purple",
+    "kaleidoscope_world_liquor:guide/bar_stool_blue",
+    "kaleidoscope_world_liquor:guide/bar_stool_brown",
+    "kaleidoscope_world_liquor:guide/bar_stool_green",
+    "kaleidoscope_world_liquor:guide/bar_stool_red",
+    "kaleidoscope_world_liquor:guide/bar_stool_black"
+  ],
+  "only_body_changed": true,
+  "other_payload_data_identical": true
+}

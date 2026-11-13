@@ -1,0 +1,19 @@
+{
+  "base": "c5984d46f4df4b120be72f0b7e229922f95509d4",
+  "tavern_pin": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
+  "files": {
+    "runtime/BP/scripts/furniture.js": "92fd53936f255a563b299e39ddf3d2ec14e4625e9990395252213ab71fd703cf",
+    "runtime/BP/scripts/payload.js": "a8f2cc70ff35e38f08b7c67a5074a1fb531e258d0f4123637bcfbceb8b334d1c",
+    "tools/check_release.py": "07728a2074535dd265552e57b137504b21062f6bd2112ab1659a70bc982db01d",
+    "tools/guide_copy.py": "0fec65220db0d086de19a52900228b2c6e69a024c1a8ab3255932cba17058626",
+    "tests/bar-stool-use.test.mjs": "99175c6e90853ff76406f5e1cd2ae5e330a76be5bf660f41b3d738918450467b"
+  },
+  "focused_tests": 14,
+  "interaction_matrix_cases": 3072,
+  "admitted": 1344,
+  "rejected": 1728,
+  "furniture_regressions": 142,
+  "native_bds": false,
+  "client": false,
+  "live": false
+}

@@ -1,0 +1,25 @@
+(node:12) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/wall-record-loader.mjs", pathToFileURL("./")); register("./tests/wall-record-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ source default block-use is admitted: {"mode":"adventure"} (4.263985ms)
+✔ source default block-use is admitted: {"held":"minecraft:stick"} (1.157571ms)
+✔ source default block-use is admitted: {"held":"minecraft:cobblestone"} (0.322ms)
+✔ source default block-use is admitted: {"sneaking":true} (0.250583ms)
+✔ 16 colors × four facings × all ordinary hand/mode/sneak combinations use the Java admission matrix (137.200929ms)
+✔ the registered component itself admits Adventure and held-item use (0.442975ms)
+✔ occupied stool preserves ordinary held-item use and never ejects its rider (0.530053ms)
+✔ existing empty native seat is reused without duplicating the persistent helper (0.269196ms)
+✔ deferred sitting rejects changed offhand without consuming an item (0.375364ms)
+✔ deferred sitting rejects changed main-hand without consuming an item (0.271884ms)
+✔ deferred sitting rejects changed sneaking without consuming an item (0.182682ms)
+✔ deferred sitting rejects changed block without consuming an item (0.234615ms)
+✔ deferred sitting rejects changed occupied without consuming an item (0.259617ms)
+✔ held input repeats do not schedule additional seat writes (0.504303ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 636.445826

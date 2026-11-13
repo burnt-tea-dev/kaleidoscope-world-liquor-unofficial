@@ -24,6 +24,7 @@ const container=player=>player.getComponent('minecraft:inventory').container;
 export const hand=player=>container(player).getItem(player.selectedSlotIndex);
 const creative=p=>String(p.getGameMode()).toLowerCase()==='creative';
 const mutable=p=>!['adventure','spectator'].includes(String(p.getGameMode()).toLowerCase());
+const stool=id=>id?.startsWith(NS+':bar_stool_');
 const key=b=>NS+':storage/'+b.dimension.id.split(':')[1]+'/'+b.location.x+'_'+b.location.y+'_'+b.location.z;
 const center=b=>({x:b.location.x+.5,y:b.location.y+.5,z:b.location.z+.5});
 const plus=(p,v)=>({x:p.x+v.x,y:p.y+(v.y??0),z:p.z+v.z});
@@ -161,7 +162,15 @@ function freezerRedstone(event){
   try{syncFreezerVisuals(block,plan.state,savedFreezerRecipes);if(plan.open!==open)dimension.playSound(plan.open?'block.barrel.open':'block.barrel.close',center(block));}catch(error){console.warn('[World Liquor freezer visuals] '+error);}
  }catch(error){console.warn('[World Liquor freezer redstone] '+error);}});
 }
-function sit(p,b){const anchor=key(b);let seat=b.dimension.getEntities({type:NS+':seat',location:center(b),maxDistance:1}).find(e=>e.getDynamicProperty(NS+':anchor')===anchor);
+const stoolSeat=b=>b.dimension.getEntities({type:NS+':seat',location:center(b),maxDistance:1}).find(e=>e.getDynamicProperty(NS+':anchor')===key(b));
+function stoolWantsUse(p,b,h){
+ // Java default block use runs before ordinary item.useOn, including Adventure.
+ // Secondary use skips it only while either hand holds an item. An occupied
+ // seat returns PASS, preserving the held item's native interaction instead.
+ if(String(p.getGameMode()).toLowerCase()==='spectator'||p.isSneaking&&(h||p.getComponent('minecraft:equippable')?.getEquipment('Offhand')))return false;
+ return !(stoolSeat(b)?.getComponent('minecraft:rideable')?.getRiders().length);
+}
+function sit(p,b){const anchor=key(b);let seat=stoolSeat(b);
  if(!seat){seat=b.dimension.spawnEntity(NS+':seat',plus(b.location,{x:.5,y:0,z:.5}));seat.setDynamicProperty(NS+':anchor',anchor);seat.setDynamicProperty(NS+':position',JSON.stringify(b.location));seat.setDynamicProperty(NS+':block',b.typeId);}
  const yaw=[180,-90,0,90][b.permutation.getState(FACING)??0];seat.setProperty(KT+':seat_yaw',yaw);seat.setRotation({x:0,y:yaw});seat.getComponent('minecraft:rideable').addRider(p);
 }
@@ -199,8 +208,8 @@ function removeWallRecord(b,{permutation=b.permutation,player,native=false}={}){
 }
 function record(p,b,s,h){if(h)return;if(!s.record)return;const k=key(b);wallRemovalTicks.set(k,system.currentTick);try{if(transaction(p,b,undefined,{give:[[s.record,1]],permutation:BlockPermutation.resolve('minecraft:air')}))b.dimension.playSound('itemframe.remove_item',center(b));else wallRemovalTicks.delete(k);}catch(err){wallRemovalTicks.delete(k);throw err;}}
 function interact(p,b,face,point){
- if(!furniture(b.typeId)||!mutable(p)&&!(b.typeId===NS+':freezer'&&String(p.getGameMode()).toLowerCase()==='adventure'))return;const stamp=p.id+'/'+key(b);if(system.currentTick-(cooldown.get(stamp)??-100)<5)return;cooldown.set(stamp,system.currentTick);
- const s=read(b),h=hand(p);if(b.typeId.endsWith(':freezer'))freezer(p,b,s,h);else if(b.typeId.endsWith(':wall_record'))record(p,b,s,h);else if(b.typeId.includes(':bar_stool_')&&!h&&!p.isSneaking)sit(p,b);
+ if(!furniture(b.typeId)||!mutable(p)&&!((b.typeId===NS+':freezer'||stool(b.typeId))&&String(p.getGameMode()).toLowerCase()==='adventure'))return;const stamp=p.id+'/'+key(b);if(system.currentTick-(cooldown.get(stamp)??-100)<5)return;cooldown.set(stamp,system.currentTick);
+ const s=read(b),h=hand(p);if(b.typeId.endsWith(':freezer'))freezer(p,b,s,h);else if(b.typeId.endsWith(':wall_record'))record(p,b,s,h);else if(stool(b.typeId)&&stoolWantsUse(p,b,h))sit(p,b);
 }
 function tick(b){if(b.typeId.endsWith(':freezer')){const plan=advanceFreezerTick(read(b,b.permutation,false),savedFreezerRecipes);if(plan.changed)save(b,plan.state);if(plan.refresh||!plan.changed&&system.currentTick%80===0)syncFreezerVisuals(b,plan.state,savedFreezerRecipes);}else if(b.typeId.endsWith(':wall_record')||b.typeId.endsWith('_painting')){const f=b.permutation.getState(FACING)??0,attach=b.typeId.endsWith('_painting')?(b.permutation.getState(KT+':attach_face')??0):0,v=attach===1?{x:0,y:-1,z:0}:attach===2?{x:0,y:1,z:0}:vectors[(f+2)%4],support=safeBlock(b.dimension,plus(b.location,v));if(support?.isAir){if(b.typeId===WALL_RECORD){breakFeedback.transaction(b,()=>removeWallRecord(b));return;}removeUnsupported(b,b.typeId);}}}
 function drops(b,oldType,p){
@@ -249,7 +258,7 @@ export function installFurniture(){
    const id=e.block.typeId,held=e.itemStack?.typeId;
    const wantsUse=id.endsWith(':freezer')
     ||id.endsWith(':wall_record')&&!held
-    ||id.includes(':bar_stool_')&&!held&&!e.player.isSneaking;
+    ||stool(id)&&stoolWantsUse(e.player,e.block,e.itemStack);
    if(wantsUse){
     e.cancel=true;if(e.isFirstEvent===false)return;
     const face=e.blockFace,point=e.faceLocation&&{...e.faceLocation};

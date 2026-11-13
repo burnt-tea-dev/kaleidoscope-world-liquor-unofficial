@@ -4872,9 +4872,9 @@ export const payload = {
         "zh_TW": "白色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_white",
@@ -4889,9 +4889,9 @@ export const payload = {
         "zh_TW": "橙色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_orange",
@@ -4906,9 +4906,9 @@ export const payload = {
         "zh_TW": "品紅色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_magenta",
@@ -4923,9 +4923,9 @@ export const payload = {
         "zh_TW": "淺藍色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_light_blue",
@@ -4940,9 +4940,9 @@ export const payload = {
         "zh_TW": "黃色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_yellow",
@@ -4957,9 +4957,9 @@ export const payload = {
         "zh_TW": "黃綠色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_lime",
@@ -4974,9 +4974,9 @@ export const payload = {
         "zh_TW": "粉色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_pink",
@@ -4991,9 +4991,9 @@ export const payload = {
         "zh_TW": "灰色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_gray",
@@ -5008,9 +5008,9 @@ export const payload = {
         "zh_TW": "淺灰色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_light_gray",
@@ -5025,9 +5025,9 @@ export const payload = {
         "zh_TW": "青色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_cyan",
@@ -5042,9 +5042,9 @@ export const payload = {
         "zh_TW": "紫色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_purple",
@@ -5059,9 +5059,9 @@ export const payload = {
         "zh_TW": "藍色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_blue",
@@ -5076,9 +5076,9 @@ export const payload = {
         "zh_TW": "棕色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_brown",
@@ -5093,9 +5093,9 @@ export const payload = {
         "zh_TW": "綠色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_green",
@@ -5110,9 +5110,9 @@ export const payload = {
         "zh_TW": "紅色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_red",
@@ -5127,9 +5127,9 @@ export const payload = {
         "zh_TW": "黑色高腳方凳"
       },
       "body": {
-        "en_US": "Sit\nEmpty-hand use while standing to sit. Use your normal dismount control to get up.",
-        "zh_CN": "乘坐\n不潜行时空手互动即可坐下；使用平常的下坐骑操作起身。",
-        "zh_TW": "乘坐\n不潛行時空手互動即可坐下；使用平常的下坐騎操作起身。"
+        "en_US": "Sit\nUse an unoccupied stool to sit, even while holding an item. Sneaking with an item in either hand keeps normal item use. Use your normal dismount control to get up.",
+        "zh_CN": "乘坐\n对无人乘坐的凳子互动即可坐下，手持物品也可以。潜行时若任一手持物品，则保留正常物品操作。使用平常的下坐骑操作起身。",
+        "zh_TW": "乘坐\n對無人乘坐的凳子互動即可坐下，手持物品也可以。潛行時若任一手持物品，則保留正常物品操作。使用平常的下坐騎操作起身。"
       },
       "recipeIds": [],
       "icon": "textures/kwl/items/bar_stool_black",
