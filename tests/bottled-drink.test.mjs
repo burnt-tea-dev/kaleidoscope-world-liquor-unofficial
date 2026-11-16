@@ -18,7 +18,9 @@ test('completion pitch matches independently executed JVM float expressions',()=
 function fixture(id='cola',amount=1){
  const calls=[],slots=Array(9),inventory={size:9,getItem:slot=>slots[slot]?.clone(),setItem(slot,stack){calls.push(['write',slot,stack?.typeId,stack?.amount]);slots[slot]=stack?.clone();}};
  const equipment={offhand:undefined,getEquipment(){return this.offhand?.clone();},setEquipment(slot,item){calls.push(['offhand',slot]);this.offhand=item.clone();return true;}};
- const player={typeId:'minecraft:player',selectedSlotIndex:4,mode:'Survival',location:{x:1,y:80,z:2},getGameMode(){calls.push(['mode']);return this.mode;},getComponent:id=>id==='minecraft:inventory'?{container:inventory}:id==='minecraft:equippable'?equipment:undefined,addEffect(...args){calls.push(['effect',...args]);},dimension:{playSound(...args){calls.push(['sound',...args]);},spawnItem(item,at){calls.push(['drop',item.typeId,item.amount,{...at}]);return {};}}};
+ const player={typeId:'minecraft:player',selectedSlotIndex:4,mode:'Survival',location:{x:1,y:80,z:2},
+  getHeadLocation(){return {...this.location,y:this.location.y+1.62};},getRotation(){return {x:0,y:0};},
+  getGameMode(){calls.push(['mode']);return this.mode;},getComponent:id=>id==='minecraft:inventory'?{container:inventory}:id==='minecraft:equippable'?equipment:undefined,addEffect(...args){calls.push(['effect',...args]);},dimension:{playSound(...args){calls.push(['sound',...args]);},spawnItem(item,at){calls.push(['drop',item.typeId,item.amount,{...at}]);return {velocity:{x:0,y:0,z:0},clearVelocity(){this.velocity={x:0,y:0,z:0};},applyImpulse(vector){this.velocity={x:this.velocity.x+vector.x,y:this.velocity.y+vector.y,z:this.velocity.z+vector.z};}};}}};
  slots[4]=new Stack('kaleidoscope_world_liquor:'+id,amount,'retained source name');
  const event={source:player,itemStack:slots[4].clone()};let draws=0;
  return {player,slots,inventory,equipment,event,calls,options:{createStack,rng:()=>{draws++;return .5;},worldRng:()=>.5},get draws(){return draws;}};

@@ -11,7 +11,9 @@ function fixture(amount=1,mode='Survival'){
  const slots=Array(9),calls=[],drops=[];let state={recipe:'kaleidoscope_world_liquor:freezer/pochi_pudding',output:1,remaining:0};slots[4]=new Stack('minecraft:bowl',amount,'source bowl name');
  const inventory={size:9,getItem:i=>slots[i]?.clone(),setItem(i,value){calls.push(['write',i,value?.typeId,value?.amount]);slots[i]=value?.clone();}};
  const equipment={value:undefined,getEquipment:()=>equipment.value?.clone(),setEquipment(slot,value){calls.push(['offhand']);equipment.value=value?.clone();return true;}};
- const player={selectedSlotIndex:4,getGameMode:()=>mode,getComponent:id=>id==='minecraft:inventory'?{container:inventory}:equipment,location:{x:1,y:80,z:2},dimension:{spawnItem(item){calls.push(['drop']);const entity={stack:item.clone(),removed:false,remove(){this.removed=true;}};drops.push(entity);return entity;}}};
+ const player={selectedSlotIndex:4,getGameMode:()=>mode,getComponent:id=>id==='minecraft:inventory'?{container:inventory}:equipment,location:{x:1,y:80,z:2},
+  getHeadLocation(){return {...this.location,y:this.location.y+1.62};},getRotation(){return {x:0,y:0};},
+  dimension:{spawnItem(item){calls.push(['drop']);const entity={stack:item.clone(),removed:false,remove(){this.removed=true;},velocity:{x:0,y:0,z:0},clearVelocity(){this.velocity={x:0,y:0,z:0};},applyImpulse(vector){this.velocity={x:this.velocity.x+vector.x,y:this.velocity.y+vector.y,z:this.velocity.z+vector.z};}};drops.push(entity);return entity;}}};
  const original={...state};const options={createStack:(id,n)=>new Stack(id,n),commit:next=>{calls.push(['commit']);state=next;},restore:()=>{calls.push(['restore']);state=original;}};
  return {slots,calls,drops,inventory,equipment,player,options,get state(){return state;},extract:r=>extractFreezerOutput(player,state,r??recipe,options)};
 }
