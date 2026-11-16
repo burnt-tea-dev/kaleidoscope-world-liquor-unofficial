@@ -15,7 +15,7 @@
   "status": "source_prepared_pending_root_exact_head_review",
   "public_notes_path": "CHANGELOG.md",
   "public_notes_inline": "Integrate the reviewed source for Frost paused chunks, thrown-drink sprites, 84 Java alcohol base tags, stool and wall-record interaction, complete record stacks, used-hand freezer containers and inventory drop motion. Preserve canonical respawn metadata reuse and all original release history. Pair with delivered Tavern 0.6.231 and Grilling 2.8.280. This source release preparation adds no new gameplay repair or client acceptance; publication and family installation remain disabled.",
-  "tavern_commit": "bb994d75811d733e38815fc186ab0f6debb078c8",
+  "tavern_commit": "f28b2e284f6371c84d28a794cab5ab8c2a0c4fde",
   "artifact_suffix": "baseline1",
   "peer_pins_final": true,
   "publication_ready": false,
