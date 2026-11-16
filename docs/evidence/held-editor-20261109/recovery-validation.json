@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-10",
+  "reviewed_runtime_commit": "a470278b8a165432ea5fb246844b0da2b685cde2",
+  "exact_tavern_peer": "26485c710f96612881f2a6c1bbfa9033d62d144b",
+  "recovered_contact_sheets": 10,
+  "original_png_archive_recovered": false,
+  "new_gui_acceptance": false,
+  "restored_tools_match_original_git_blobs": true,
+  "regenerated_fixture_count": 96,
+  "regenerated_fixtures_equal_all_original_output_hashes": true,
+  "all_original_input_hashes_match": true,
+  "input_hash_count": 622,
+  "checks": {
+    "check_release.py": "PASS: 63 blocks, 159 items, 41 recipes, 1350 combined models, zero errors; includes all 96 model surface checks and non-drink duplicate regression",
+    "test_texture_paths.py": "5 passed",
+    "test_entity_material_registry.py": "4 passed",
+    "baseline_gate.py check": "PASS unchanged 0.1.208",
+    "py_compile": "PASS",
+    "git diff --check": "PASS"
+  },
+  "runtime_changed": false,
+  "initial_retry_limit": "First recovery aggregate attempt failed because item_render_contract requires sibling tavern-src despite TAVERN_ROOT. Repeated in isolated exact-peer workspace; passed without verifier changes.",
+  "fixture_zip_sha256": "640350893f2ab3bfcc31a2d966f86bd2074760eccc3fc76e5cc4545d26d399d8"
+}

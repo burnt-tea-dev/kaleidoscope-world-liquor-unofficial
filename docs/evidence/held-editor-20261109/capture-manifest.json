@@ -1,0 +1,574 @@
+{
+  "application": "Blockbench 5.2.2, native desktop",
+  "reviewed_commit": "a470278b8a165432ea5fb246844b0da2b685cde2",
+  "method": "Documented CUA keyboard/click input; native Desktop Display/texture playback. No plugin, app evaluation, or Minecraft client.",
+  "native_held_screenshots": 108,
+  "java_source_held_screenshots": 16,
+  "texture_playback_screenshots": 8,
+  "sprite_sheet_screenshots": 4,
+  "projects_opened": 39,
+  "captures": {
+    "Java-bar_stool_white-fp-left.png": {
+      "sha256": "1d51b99cd8f26d64b1ca0418aa43d7a083d6ad678876b69a0876a7a16bb041b4",
+      "bytes": 87578
+    },
+    "Java-bar_stool_white-fp-right.png": {
+      "sha256": "f9c6988dc71acbe6c9536199c6cc50e239a2b9368fe88ace6843ec8778da4e03",
+      "bytes": 86856
+    },
+    "Java-bar_stool_white-tp-left.png": {
+      "sha256": "350c3667a8b7cb04e654234c24b3131e497e884f10d9cca4f963b1b79e70d859",
+      "bytes": 105091
+    },
+    "Java-bar_stool_white-tp-right.png": {
+      "sha256": "b30d4c8732a8157e6cad78ef8e1bc12de8f36320167162c15d886b1f10694c2b",
+      "bytes": 105335
+    },
+    "Java-freezer-fp-left.png": {
+      "sha256": "9b028a97e18891b322495934ee26223d07989756c4173fccc3bc05851a9ec15d",
+      "bytes": 85570
+    },
+    "Java-freezer-fp-right.png": {
+      "sha256": "d99145c0c6dbdd00eea6e6e4cd1dad18d948dcfaf1f5c7fe62f77de33b16aa76",
+      "bytes": 84980
+    },
+    "Java-freezer-tp-left.png": {
+      "sha256": "62e278947211b9c9427e1689d214ff277a9b631d829e579dfaf021ff973af739",
+      "bytes": 104296
+    },
+    "Java-freezer-tp-right.png": {
+      "sha256": "5feb35d8b499e7e1b475de29d0897a9d311e86fc919e37752def7ac7daa5b578",
+      "bytes": 104503
+    },
+    "Java-oak_bar_cabinet-fp-left.png": {
+      "sha256": "81c40e1cf41121bc7f80f2f076e14508c90842f8a7ab50284fc693a4687cf5cc",
+      "bytes": 87734
+    },
+    "Java-oak_bar_cabinet-fp-right.png": {
+      "sha256": "da32cbd6c833d43e5af6ee0be7430e3c172f040437eedb4b7a7af93dfa79811f",
+      "bytes": 87429
+    },
+    "Java-oak_bar_cabinet-tp-left.png": {
+      "sha256": "6cd715b15dd5995801fa5aa381c940279ecba815c75a06785cbed46610d06928",
+      "bytes": 105814
+    },
+    "Java-oak_bar_cabinet-tp-right.png": {
+      "sha256": "2d544f79331163a447d4c45eaa8e63e562a8849f941d1b3665b66250258b15ba",
+      "bytes": 106673
+    },
+    "Java-oak_cellar_cabinet-fp-left.png": {
+      "sha256": "a408fc3399049fd41e343fdf62457609ca48b77acd70049c70cb307722d77d02",
+      "bytes": 87999
+    },
+    "Java-oak_cellar_cabinet-fp-right.png": {
+      "sha256": "e8ceeaebbd4d09695619f0d2c73a304a6e0a3ff8292e129a86e9b78c623ce38e",
+      "bytes": 87699
+    },
+    "Java-oak_cellar_cabinet-tp-left.png": {
+      "sha256": "2c78181c31b5df7cb78a4ded1d9368128c46cb37f9a74c4e9fb86cc9bdbad847",
+      "bytes": 106073
+    },
+    "Java-oak_cellar_cabinet-tp-right.png": {
+      "sha256": "c5b1647b2fb1ca1a989ad114415f81a1b78717eaf4c0211fc58f4f18cc571d02",
+      "bytes": 107289
+    },
+    "Native-bar_stool_black-fp-left.png": {
+      "sha256": "40ee04a658597768da9f1bffd8256f84ec4e9e5bcbe35736cc981b6a7ad603f0",
+      "bytes": 90843
+    },
+    "Native-bar_stool_black-fp-right.png": {
+      "sha256": "fa88c934e9685167887020b55799847e0cdc48bc29aa97b42b2cb62741d10b29",
+      "bytes": 90281
+    },
+    "Native-bar_stool_black-tp-left.png": {
+      "sha256": "19c4260742a640e91bb35cffad1377b441a6e958d19710fa02e8816110232be7",
+      "bytes": 108983
+    },
+    "Native-bar_stool_black-tp-right.png": {
+      "sha256": "a0a674dc974f5c0f81c0211e20b186e74d384f38d8fa672068ed80ada88f6391",
+      "bytes": 109186
+    },
+    "Native-bar_stool_blue-fp-left.png": {
+      "sha256": "3d267c5c7caec0175c9fb72b837cf14fbdaac4f88209a5befc328812ede0b8e0",
+      "bytes": 91233
+    },
+    "Native-bar_stool_blue-fp-right.png": {
+      "sha256": "34f03441a302e8ccad340ffdb7ed9d3ea551088809a6bb76d254bd4982598606",
+      "bytes": 90571
+    },
+    "Native-bar_stool_blue-tp-left.png": {
+      "sha256": "fb160ccff88193f44721b2ad0fecfb5ac5ebc5abae5b9feb48c63c6e8ca72cfa",
+      "bytes": 108845
+    },
+    "Native-bar_stool_blue-tp-right.png": {
+      "sha256": "52a9f513b21e84854d9af2885de74b551f9f3016c85bb7d8e966f8aef3cb3924",
+      "bytes": 109081
+    },
+    "Native-bar_stool_brown-fp-left.png": {
+      "sha256": "4ccca4ec656aa2180f1baeaec8dff7c912be142224b397e4bd8c985509cd587c",
+      "bytes": 91470
+    },
+    "Native-bar_stool_brown-fp-right.png": {
+      "sha256": "b2ae715e732c80d82bbb878cd4ef2d6b7287cb4c9b24f5ac6d721139ffe18db8",
+      "bytes": 90788
+    },
+    "Native-bar_stool_brown-tp-left.png": {
+      "sha256": "9713dbaee78da7c1bdbed71f80941d7e233affa81848c8acc1b8df1ad45e1275",
+      "bytes": 109112
+    },
+    "Native-bar_stool_brown-tp-right.png": {
+      "sha256": "634f983c065dd6b0083414475fcadc512c192b11d274b118e19722713d6bfbe0",
+      "bytes": 109285
+    },
+    "Native-bar_stool_cyan-fp-left.png": {
+      "sha256": "2a2dfdb490103489a54bbe81f2ec598777e026abbc3866f4207ad3edd6bbe86b",
+      "bytes": 91541
+    },
+    "Native-bar_stool_cyan-fp-right.png": {
+      "sha256": "1d801ecd1a8b0b23ec224da6c878264c918cf9b10f0dfe712f61017f78f68ded",
+      "bytes": 90873
+    },
+    "Native-bar_stool_cyan-tp-left.png": {
+      "sha256": "8493df6b31683caebf1ce5bd86a957a25f7e702af600fc70034f2612589e808b",
+      "bytes": 108970
+    },
+    "Native-bar_stool_cyan-tp-right.png": {
+      "sha256": "e8eaa57f7511da4f8804698ee6730c1aad9543b130661fb6cff24f86da5a6f00",
+      "bytes": 109194
+    },
+    "Native-bar_stool_gray-fp-left.png": {
+      "sha256": "260fde10f4d2e104eaf51db1d23f0bbdb59bf9dda382ed042545439a598bfb41",
+      "bytes": 90955
+    },
+    "Native-bar_stool_gray-fp-right.png": {
+      "sha256": "e4104eb600c99360db141585cc2b8602ee17d108b97b640337302c632bda7013",
+      "bytes": 90321
+    },
+    "Native-bar_stool_gray-tp-left.png": {
+      "sha256": "c9379a2f0fa85996ddcd1f2a13a6104ea224dbc60b2ea8eb010b130c25f1106e",
+      "bytes": 108904
+    },
+    "Native-bar_stool_gray-tp-right.png": {
+      "sha256": "6f86e86870c7763694f8beadd56bcd8e9541ab4017fc2cc4b844ff7d065cc1a9",
+      "bytes": 109108
+    },
+    "Native-bar_stool_green-fp-left.png": {
+      "sha256": "2fde1cdb0c17a34dc44850fb87f1f3c126daddf4608deadda8284b3c3cbc8369",
+      "bytes": 91447
+    },
+    "Native-bar_stool_green-fp-right.png": {
+      "sha256": "b3b3e0c05c420a2a83b1a4c644188931f8b7743e0df5a6bc55a7c4965e5f320f",
+      "bytes": 90799
+    },
+    "Native-bar_stool_green-tp-left.png": {
+      "sha256": "a55859d5074e9dd421a11978cf94bbac9d5a7d5fbb4c83ce272a728161163286",
+      "bytes": 109105
+    },
+    "Native-bar_stool_green-tp-right.png": {
+      "sha256": "2e143ea330af5f481490abe88d2e2ea835f40401925623a742d6523d203092ca",
+      "bytes": 109297
+    },
+    "Native-bar_stool_light_blue-fp-left.png": {
+      "sha256": "51ad87cd9541d5a2c23319ed1abf77b5771830fd5c0fec02848695c780fa9809",
+      "bytes": 92200
+    },
+    "Native-bar_stool_light_blue-fp-right.png": {
+      "sha256": "b7ca8230f4124fe82254889a5d38f9bf4c7d002da1e8b1a41e6f17068904c0d0",
+      "bytes": 91493
+    },
+    "Native-bar_stool_light_blue-tp-left.png": {
+      "sha256": "ee905155f793e1081afc459b7e1c78385c9852994edc6873b3c8866bd3f8de71",
+      "bytes": 109529
+    },
+    "Native-bar_stool_light_blue-tp-right.png": {
+      "sha256": "99a8951a42dcc8dad9e1444d4a7357ef659534aeaed8f22a5a82f388e4e4c210",
+      "bytes": 109716
+    },
+    "Native-bar_stool_light_gray-fp-left.png": {
+      "sha256": "1dea5b3c2c00af1a495b699bbe04272629ec79a755cca140bb57dc3b470d8f94",
+      "bytes": 91654
+    },
+    "Native-bar_stool_light_gray-fp-right.png": {
+      "sha256": "30302f00ff07444907bb3aa1d2ee39eaa37a0d21a3ceda695b47c814a4f0effe",
+      "bytes": 91038
+    },
+    "Native-bar_stool_light_gray-tp-left.png": {
+      "sha256": "e8617754171d26a75b326e0693887f25e8068acebd065e3903f082ed222e53fd",
+      "bytes": 109510
+    },
+    "Native-bar_stool_light_gray-tp-right.png": {
+      "sha256": "ffd2f18438493712572465da566588a4d992c1a77d92b69f33078350900cdcd6",
+      "bytes": 109702
+    },
+    "Native-bar_stool_lime-fp-left.png": {
+      "sha256": "cc38911214324cd724daf19a683ea2f3f81e35bdc941fe9ea40f78f344435867",
+      "bytes": 91540
+    },
+    "Native-bar_stool_lime-fp-right.png": {
+      "sha256": "1f56ba8e51abaabc7d0b202bf0228d5bcc0d2480b2f2423c369c16cbf3bf098b",
+      "bytes": 90834
+    },
+    "Native-bar_stool_lime-tp-left.png": {
+      "sha256": "f338adc0b78e0cb297374e6cff38ca7344c47714422696b61d6fdb8ceb59eb14",
+      "bytes": 108944
+    },
+    "Native-bar_stool_lime-tp-right.png": {
+      "sha256": "05227c45cfd87372d3c5ef9d17b53afa8f081fd2758d568b82013c16fe82f868",
+      "bytes": 109140
+    },
+    "Native-bar_stool_magenta-fp-left.png": {
+      "sha256": "7328f28c2d4755506b2b89cab719affe53a01fcfda5ac1ab3913b0dc435783ef",
+      "bytes": 91835
+    },
+    "Native-bar_stool_magenta-fp-right.png": {
+      "sha256": "34f7f2c886719502e81b19adc191527c2a55728b32120564a02f99498e4a3c06",
+      "bytes": 91150
+    },
+    "Native-bar_stool_magenta-tp-left.png": {
+      "sha256": "29a7aa2eeeea3743438ba36cf76fa0002b6e551ce51f01164f4c83382a8f79a9",
+      "bytes": 109368
+    },
+    "Native-bar_stool_magenta-tp-right.png": {
+      "sha256": "6f5c4bac76b3429da173122d51e1b2004ea8ccb2deaf663027483890778e407a",
+      "bytes": 109580
+    },
+    "Native-bar_stool_orange-fp-left.png": {
+      "sha256": "cfe055bda93531359c1bb873b5e754ddab2038efeb1876b353785edece61920d",
+      "bytes": 92302
+    },
+    "Native-bar_stool_orange-fp-right.png": {
+      "sha256": "2bb67198f3d036fe3be922334ed7946faab0f2cfb3ae4f0865e57bc90353be17",
+      "bytes": 91544
+    },
+    "Native-bar_stool_orange-tp-left.png": {
+      "sha256": "3afe1965ca0cb8bcb466a1974303518855e6e046d137f8cf5f709a58e7231dab",
+      "bytes": 109348
+    },
+    "Native-bar_stool_orange-tp-right.png": {
+      "sha256": "70fbffd7db246baf9211192143426ee641299fb4788aa05dbe6e07346fa835c5",
+      "bytes": 109581
+    },
+    "Native-bar_stool_pink-fp-left.png": {
+      "sha256": "f2969783f07288d5b2aa6e26ef73094f9899ead7d880bafc397fad755b01b073",
+      "bytes": 91444
+    },
+    "Native-bar_stool_pink-fp-right.png": {
+      "sha256": "8401118c3b34416d8c6c6fddce1b208dd04122f1bdbfa0e7cc25ce4d83e2cc59",
+      "bytes": 90807
+    },
+    "Native-bar_stool_pink-tp-left.png": {
+      "sha256": "181a7d0f5abe11425a6f7065363eb701ca472d6f11aa7bd87199f42918322f24",
+      "bytes": 108954
+    },
+    "Native-bar_stool_pink-tp-right.png": {
+      "sha256": "6f607b6014b49e69855a052cec25a149eea508a597bf5ec6d570ffca9bcd17d1",
+      "bytes": 109166
+    },
+    "Native-bar_stool_purple-fp-left.png": {
+      "sha256": "87dc801eced14c5ac744ff7462466c398adacbbfdd380045a052725593c519d5",
+      "bytes": 91439
+    },
+    "Native-bar_stool_purple-fp-right.png": {
+      "sha256": "a665f8ba8d2ef7dc55d4180795afcfd8971f9623d3e4079d492a2198e8d5658f",
+      "bytes": 90772
+    },
+    "Native-bar_stool_purple-tp-left.png": {
+      "sha256": "b2356f38bf7ffe8da602b17b11198b69c526f12131241524fc581247cf2b3fd0",
+      "bytes": 109018
+    },
+    "Native-bar_stool_purple-tp-right.png": {
+      "sha256": "8a89fa296774c095f81880bfd228c4bbe94037f19d457987ec115e8c1588289b",
+      "bytes": 109267
+    },
+    "Native-bar_stool_red-fp-left.png": {
+      "sha256": "60dae790e2f52271ca656de346e76ca9fbc96fbefbac0e68b1fb0ef3ae7ef1e2",
+      "bytes": 91299
+    },
+    "Native-bar_stool_red-fp-right.png": {
+      "sha256": "cd00e53f6e76ec0b931aa08c1775751d8bfc7d0c6e286c68f301610d18a610a8",
+      "bytes": 90635
+    },
+    "Native-bar_stool_red-tp-left.png": {
+      "sha256": "eb3f480e5a956801ab48eb9099f465ed6f253f25f5e28acef970508f69f39c96",
+      "bytes": 108898
+    },
+    "Native-bar_stool_red-tp-right.png": {
+      "sha256": "205c6558cd527be2a4f8db8b0f8b0746777f80f91ac834ff6e52d83cfa80e484",
+      "bytes": 109075
+    },
+    "Native-bar_stool_white-fp-left.png": {
+      "sha256": "dded86c6fb49b99b5d81553bbede8d71971549a46e00c568d31af254bdbc01ac",
+      "bytes": 91544
+    },
+    "Native-bar_stool_white-fp-right.png": {
+      "sha256": "b952a74f02b6e4d2f75b17fe3f2738e08a043a70d0efbb0477c5f1f420123319",
+      "bytes": 90856
+    },
+    "Native-bar_stool_white-tp-left.png": {
+      "sha256": "f2cfd7a5af4012469cb56f5d169f9812ed3c45808df33f891f609c18d3221427",
+      "bytes": 109079
+    },
+    "Native-bar_stool_white-tp-right.png": {
+      "sha256": "e3d89836749559c7e99f317761da4ae7c9c162ecc4db7d03a68d8a01be016c36",
+      "bytes": 109342
+    },
+    "Native-bar_stool_yellow-fp-left.png": {
+      "sha256": "8aaffc093b791b4b956cc645526139b093c56201ff11330a8b7679d9e56c1b14",
+      "bytes": 92241
+    },
+    "Native-bar_stool_yellow-fp-right.png": {
+      "sha256": "6b6d217e1378434494b3f67180c8cc1ee8aa823a08dffd60a397115e2f49fb51",
+      "bytes": 91470
+    },
+    "Native-bar_stool_yellow-tp-left.png": {
+      "sha256": "57364966a076d088d2e0212e5cf3ad4554c87f51a455473e7693ac8c5565f085",
+      "bytes": 109245
+    },
+    "Native-bar_stool_yellow-tp-right.png": {
+      "sha256": "e1a3d42597a3586828573bc8bada6e2a31909e052a54be2293c869080cf4662d",
+      "bytes": 109492
+    },
+    "Native-birch_bar_cabinet-fp-left.png": {
+      "sha256": "fc4fad612dcf693ebf68435e4dbec4c720dd4038487d9365488f985feaefcac9",
+      "bytes": 91593
+    },
+    "Native-birch_bar_cabinet-fp-right.png": {
+      "sha256": "ecd1a699a51a9e327ecf7ce49d2b79672bf9a4291f07bcaa55fd254b7bed50c5",
+      "bytes": 91385
+    },
+    "Native-birch_bar_cabinet-tp-left.png": {
+      "sha256": "fd001c62f507a34e59c1c56d83284e0359b4a699d79aa45dfc5d9f3f80ff83a2",
+      "bytes": 109816
+    },
+    "Native-birch_bar_cabinet-tp-right.png": {
+      "sha256": "e573ef16ea81b86f167abf07e9e36b7c56c1a53c4f80b42f4290392a81b7570d",
+      "bytes": 110712
+    },
+    "Native-birch_cellar_cabinet-fp-left.png": {
+      "sha256": "469893a451cd03d6d0a3584965bc6ccdd06475a5b3e787a1b083d4262365cbd5",
+      "bytes": 91833
+    },
+    "Native-birch_cellar_cabinet-fp-right.png": {
+      "sha256": "1f530172c1811d4cdc1dc0e6185cd7460fbeafd1f1105f637a5bed96f21aca8d",
+      "bytes": 91578
+    },
+    "Native-birch_cellar_cabinet-tp-left.png": {
+      "sha256": "641c881aea213695fc2e71a0c62de8b638820abf224f87332dea4a921d1ea7e2",
+      "bytes": 110048
+    },
+    "Native-birch_cellar_cabinet-tp-right.png": {
+      "sha256": "f8476c85cac011a7fe4097b6bcc0407ed85eb233cf05ff750229acd6d5b7a3e5",
+      "bytes": 111311
+    },
+    "Native-cherry_bar_cabinet-fp-left.png": {
+      "sha256": "425c1b2170acaec6160d9d5da5258ccb4be131d7b6e64b4c323906a42f9dc900",
+      "bytes": 91427
+    },
+    "Native-cherry_bar_cabinet-fp-right.png": {
+      "sha256": "e98564c61f82b8ee383c117a6931e82a16b8efcf22a406d70907b3fc5afd5404",
+      "bytes": 91191
+    },
+    "Native-cherry_bar_cabinet-tp-left.png": {
+      "sha256": "73d41434be3f81e99d65529967f4130565d5e3ab3bd4f72b5995c1408989becd",
+      "bytes": 109884
+    },
+    "Native-cherry_bar_cabinet-tp-right.png": {
+      "sha256": "a7beca109162b2f6fb0e4ccaf79dfcbd1fbff59058124a123e659d93c94f29b6",
+      "bytes": 110716
+    },
+    "Native-cherry_cellar_cabinet-fp-left.png": {
+      "sha256": "5eb1a368fb80edd8943a27da43151d17b668ea07b3631e92019754c628cc1a8a",
+      "bytes": 91690
+    },
+    "Native-cherry_cellar_cabinet-fp-right.png": {
+      "sha256": "c1c65553a66d86bc0b3c8cfae84f52134c48515fbaa2f2a7bda34154a8ae318d",
+      "bytes": 91475
+    },
+    "Native-cherry_cellar_cabinet-tp-left.png": {
+      "sha256": "3506bcf3d56e9ebe198b340124acae56fa37d863c8b25f33db303a993b9f772a",
+      "bytes": 110139
+    },
+    "Native-cherry_cellar_cabinet-tp-right.png": {
+      "sha256": "66769e7180a7414ccecfcfeff429455303ee5622178237458038046b7ee3ff54",
+      "bytes": 111299
+    },
+    "Native-dark_oak_bar_cabinet-fp-left.png": {
+      "sha256": "caad07d22e8644c2b151457174946f480dcc9a5683e66d9f4e1ce246744b737b",
+      "bytes": 91595
+    },
+    "Native-dark_oak_bar_cabinet-fp-right.png": {
+      "sha256": "8d65190c31854f10270cc633dc0de4103d1378a5f0e5d6deb13bbfd6a48b0a2d",
+      "bytes": 91419
+    },
+    "Native-dark_oak_bar_cabinet-tp-left.png": {
+      "sha256": "8ec2057d1a1b51cea26b4e6892aa2418064bccb37ea238e2c469695f48bd01d0",
+      "bytes": 110098
+    },
+    "Native-dark_oak_bar_cabinet-tp-right.png": {
+      "sha256": "ccd717a583480e1260378d3155e4e0ea6bb895ce010604d3d0fbadc7ceacc564",
+      "bytes": 110863
+    },
+    "Native-dark_oak_cellar_cabinet-fp-left.png": {
+      "sha256": "fff63b7e00ed1b98bf3c536a3904d86cc9ef67e6c356992577c283a6357905a9",
+      "bytes": 91739
+    },
+    "Native-dark_oak_cellar_cabinet-fp-right.png": {
+      "sha256": "972c46b3bee2cd527afc8b3568004e720a5239d218fab4937721151cf376521b",
+      "bytes": 91589
+    },
+    "Native-dark_oak_cellar_cabinet-tp-left.png": {
+      "sha256": "2078d346fa21e53200b145f7a44d07aa461d548e7a77437a000a0ba9a9d15140",
+      "bytes": 110235
+    },
+    "Native-dark_oak_cellar_cabinet-tp-right.png": {
+      "sha256": "4215121cd643b9ba7c0aee70476178a3ff1e776d77ef59fede2a8c2daa9cfafd",
+      "bytes": 111162
+    },
+    "Native-freezer-fp-left.png": {
+      "sha256": "85963cdbdcab4627645404af9214f86e31ce4a4689bd901e5e79260199657faf",
+      "bytes": 90004
+    },
+    "Native-freezer-fp-right.png": {
+      "sha256": "89f8df2563676dd81fc5a46afbbf946940e0cf79474284177f87379054d718cc",
+      "bytes": 89409
+    },
+    "Native-freezer-tp-left.png": {
+      "sha256": "4a609ec36f5b6f53be1e7062d526b03f5f59e4f45f65ea33719bcd4d2599e638",
+      "bytes": 108799
+    },
+    "Native-freezer-tp-right.png": {
+      "sha256": "6b1566c05bc6d96b459fba3e3ccba9893309b1296fde73a8d9b6c834b600081b",
+      "bytes": 108980
+    },
+    "Native-oak_bar_cabinet-fp-left.png": {
+      "sha256": "d97a5b3e6c63be5203c75a6d9e7d6fef0401cad4c69196db215fd333c0d03b1f",
+      "bytes": 91747
+    },
+    "Native-oak_bar_cabinet-fp-right.png": {
+      "sha256": "d043031067d4a4885daa9273346d387b0abe96de39723b7eccaec74bf54731fa",
+      "bytes": 91420
+    },
+    "Native-oak_bar_cabinet-tp-left.png": {
+      "sha256": "529c2e24203c9755c142aa2e59a2257dfe7c399460d65a040b77df7169f6959f",
+      "bytes": 109835
+    },
+    "Native-oak_bar_cabinet-tp-right.png": {
+      "sha256": "0cab468f2ac932fc138e3d43572ac4c0e92f7d1f718a06b8fd168f4795fe4054",
+      "bytes": 110653
+    },
+    "Native-oak_cellar_cabinet-fp-left.png": {
+      "sha256": "252ee8c7f2124284b4a5fac6b316e4f01f1d5320be538b32b2eecf40ea74e750",
+      "bytes": 91880
+    },
+    "Native-oak_cellar_cabinet-fp-right.png": {
+      "sha256": "c64fca30aa81dd96749cdf93c29de1976ff756c4caa31e9ce0b3e9fd4c1e2660",
+      "bytes": 91569
+    },
+    "Native-oak_cellar_cabinet-tp-left.png": {
+      "sha256": "53b4263ea8a4a7565b663e5fe68180630238df58d754e7242aba43039fd302ef",
+      "bytes": 109985
+    },
+    "Native-oak_cellar_cabinet-tp-right.png": {
+      "sha256": "3aaea52a909f988e5abaed0e4f710988153472ce53626d69baa4d08d8fb3f92f",
+      "bytes": 111191
+    },
+    "Native-spruce_bar_cabinet-fp-left.png": {
+      "sha256": "46ee8e3417661593654efa98c574427777eef7d0c9626f7aa4006f95e7de244c",
+      "bytes": 90210
+    },
+    "Native-spruce_bar_cabinet-fp-right.png": {
+      "sha256": "5cb5dde50339b40a1374ecd01ce3745bafb87ad3835aab82ec45a3ac88c6bf26",
+      "bytes": 90064
+    },
+    "Native-spruce_bar_cabinet-tp-left.png": {
+      "sha256": "784233a22aad9f7ef29d7b7691e94cd99e34211406d107734393508cebe01ab2",
+      "bytes": 109411
+    },
+    "Native-spruce_bar_cabinet-tp-right.png": {
+      "sha256": "f07bb8dc82dee760cac5d61ceda9d0c66b0b604da8c75d3700207c845b19b8b6",
+      "bytes": 110260
+    },
+    "Native-spruce_cellar_cabinet-fp-left.png": {
+      "sha256": "92ba560898fb6a37b67e891e1f4826ae0093d32cbf82987b287223c018200bb6",
+      "bytes": 90372
+    },
+    "Native-spruce_cellar_cabinet-fp-right.png": {
+      "sha256": "86c1d7fdb7815de590a80f4f4e14d776abc28e8f56d5ec14be457b7dbd502ecc",
+      "bytes": 90223
+    },
+    "Native-spruce_cellar_cabinet-tp-left.png": {
+      "sha256": "b054c6a655e41f14d96b62e0cab20d0f2f9f656e5f22661c735ea36700da9907",
+      "bytes": 109613
+    },
+    "Native-spruce_cellar_cabinet-tp-right.png": {
+      "sha256": "ada944e03029a4260a62949dbe77e4f4588f51fd513ae7ff3737e07d3776f359",
+      "bytes": 110465
+    },
+    "animation-lava-frame1.png": {
+      "sha256": "3ecc9d021e6c11b87c65faf5b8309061c82b701ca932f99dfd422a199abd333c",
+      "bytes": 116181
+    },
+    "animation-lava-playing-a.png": {
+      "sha256": "c9f7927b17b2bbfa15d9a95cd426760854f9ade97d5e4b270efc6621fae4198a",
+      "bytes": 101967
+    },
+    "animation-lava-playing-b.png": {
+      "sha256": "5f51d9ba1a9ace7ecdeb4402b3806515d548231a2af38ba9c33dec2b5656e72d",
+      "bytes": 102219
+    },
+    "animation-magma-frame1.png": {
+      "sha256": "529b01e28bf38639c264cde746e7726079a2a966addf7d5e2d105e61b316722d",
+      "bytes": 125193
+    },
+    "animation-magma-playing-a.png": {
+      "sha256": "954717454aeaa109bed9db08480c4967cc1c39d02333425843772907fa607bbd",
+      "bytes": 115778
+    },
+    "animation-magma-playing-b.png": {
+      "sha256": "d0a734bc0770dd970b9fc14d6aa34eacb41cf5c40676462281d94eaf92526f87",
+      "bytes": 113330
+    },
+    "animation-milk_still-frame1.png": {
+      "sha256": "08d058821d1850abf707bdc266ec39b93b7f8b285dee0e8702fd6339c771e940",
+      "bytes": 112983
+    },
+    "animation-milk_still-playing-a.png": {
+      "sha256": "af3aa5ef7211a6454e8a6cf5f808ce67efb6d771449559d1ba8635501893a42d",
+      "bytes": 102069
+    },
+    "animation-milk_still-playing-b.png": {
+      "sha256": "fc0411d1a76cc2c28e8b4e2848c7b2e28acfe2b896a522fc95e849654159e863",
+      "bytes": 104585
+    },
+    "animation-water-frame1.png": {
+      "sha256": "e13a6ec28d155ba85261ae9806a59e194f62272f540a80ed91b1abb2277ba9ae",
+      "bytes": 99306
+    },
+    "animation-water-playing-a.png": {
+      "sha256": "996447641e92ebb4ab640011d494a9a2ac03f2ebf6f6ac281bd5d1e0871bbefa",
+      "bytes": 101597
+    },
+    "animation-water-playing-b.png": {
+      "sha256": "092a1adaae3f719795fa14b78314ed97d3e8fa1e0fd13ae62b372ad777d6cb3f",
+      "bytes": 104693
+    },
+    "sprites-1.png": {
+      "sha256": "b262e5a6331d66c72a3ba19ee2e772f812a0dff1b0ab3e0897bd6f4d48205f20",
+      "bytes": 171728
+    },
+    "sprites-2.png": {
+      "sha256": "66fdabaae2c1407002575dcdb0ec1b99c8d423100cc0f1a42fd430180a15db44",
+      "bytes": 168810
+    },
+    "sprites-3.png": {
+      "sha256": "d00993a36c88bc8240c29706ece98e255f606eb5b037d770a621b538a00d36ca",
+      "bytes": 173625
+    },
+    "sprites-4.png": {
+      "sha256": "59159fb62e4c89827399ea80cbf86d5f5995bf12db3905e4cab273a3441546e1",
+      "bytes": 161830
+    }
+  },
+  "contacts": "Cropped/resized/labelled only for navigation. Original unaltered PNGs are in desktop-captures.zip.",
+  "texture_setup_screenshots": 4
+}
