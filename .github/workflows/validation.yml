@@ -114,7 +114,7 @@ jobs:
           python tools/test_texture_paths.py
           python tools/test_effect_names.py
           python tools/build_effect_names.py --check
-          python ../tavern-src/tools/creative/catalog.py --root . --peer ../tavern-src
+          python ../tavern-src/tools/creative/catalog.py --root .
           python tools/build_storage_visuals.py
           python tools/rebuild_guide.py
           git diff --exit-code -- runtime/
