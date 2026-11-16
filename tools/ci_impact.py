@@ -90,7 +90,7 @@ def main():
     if summary := os.environ.get('GITHUB_STEP_SUMMARY'):
         with open(summary, 'a') as stream:
             stream.write('CI impact: ' + result['reason'] + '.\n\n')
-            stream.write('Baseline, release-claim and workflow contracts always run. ')
+            stream.write('Baseline and workflow contracts always run. ')
             stream.write('Runtime jobs run.\n' if result['runtime'] else
                          'bridge, package and wall-record explicitly skip this prose-only diff.\n')
 
