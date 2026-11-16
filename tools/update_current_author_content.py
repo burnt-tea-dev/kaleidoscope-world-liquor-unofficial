@@ -1,6 +1,7 @@
 """Import the current author's lamp recipes, labels and shared guide data."""
 import json
 from pathlib import Path
+from item_names import generate as generate_item_names
 
 ROOT = Path(__file__).resolve().parents[1]
 NS = 'kaleidoscope_world_liquor'
@@ -47,6 +48,7 @@ def main():
         path.write_text('\n'.join(lines) + '\n' + ''.join(key + '=' + value + '\n' for key, value in additions.items()))
     icon = ROOT / 'runtime/RP/textures' / NS / 'mob_effect/luck.png'
     icon.write_bytes((ROOT / 'upstream/assets' / NS / 'textures/mob_effect/luck.png').read_bytes())
+    generate_item_names(ROOT / 'runtime')
 
 
 if __name__ == '__main__':

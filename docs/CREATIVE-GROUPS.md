@@ -1,56 +1,15 @@
-# 創造欄：裝飾與家具分組
+# Java 創造分頁與原序
 
-## 能力與範圍
+2026-11-11 本機整合；版本固化狀態見 `baseline.json`／`release-history.json`。未發布、未部署、未執行測試，未觀察新 client 畫面。
 
-使用官方 `BP/item_catalog/crafting_item_catalog.json` 的原生可摺疊群組，不改 JSON UI，也不新增頂層分頁或「群組裡面再放群組」。同一 category 內相同名稱的群組由遊戲合併。世界名酒沿用酒館的群組識別；只追加自己的物品，不複製另一套家具分類器。
+權威輸入是本包 [data/java-creative-tabs.json](../data/java-creative-tabs.json)。它分開記錄 Forge 1.20.1 CF9217901／NeoForge 1.21.1 CF9217896 的 `ModCreativeModeTabs`，每列含 Java ID、位置、stack 狀態及現有 Bedrock ID。兩個目前維護分支均只有一個本包 tab；`displayItems` 先呼叫 `addLiquorItems`，再呼叫 `addFurnitureItems`，共61項。舊1.1.8兩頁資料不再作現行分類來源。
 
-官方文件：https://learn.microsoft.com/en-us/minecraft/creator/documents/craftingitemcatalogdocumentation?view=minecraft-bedrock-stable
+本包 tab 投影為 Items 內一個原生群組，使用既有 bombay_sapphire_gin_q6 圖示。酒類、飲料、設備、條件食品、家具、粉／綠吊燈與木櫃保持原序，沒有按 ID 字母或用途排序。圖示的 Java default stack 與 Bedrock q6 代表品差異記在 data；未換 ID 或製造新圖示物品。
 
-原版 Java 酒館在 `ModCreativeTabs.java` 分為主要內容與裝飾兩頁，裝飾頁明確按燈串、沙發、吧椅、招牌、掛畫、香薰順序排列；並非任由英文 ID 混排。
-參考：KaleidoscopeMods/KaleidoscopeTavern，`c4ec1880bd44cf3139d3ba744ab30bb379cf1416`，`src/main/java/com/github/ysbbbbbb/kaleidoscopetavern/init/ModCreativeTabs.java`。
-世界名酒的 pinned Java 語言資源具有一般／家具兩個頁籤名稱；未取得其創造欄 Java 類別，故不宣稱已核對其完整展示順序。
+原 Java 的 `CreativeTabEvents.addPaintingsToTabs` 另將8幅畫放進 Tavern 裝飾 tab。它們由 World Liquor 自己宣告，追加到 Tavern 原群組，使用該群組的 stepladder 圖示；Tavern 本來就是本包必要相依，沒有新增可選包硬相依。Java 反覆對同一 MASTER_MARISA anchor 插入，最終順序為 BFXM、BMT、CHEN、CHA、RABBIT、CH、DREAM、QXXY。原生 catalog 只能追加到群組尾端，無法原樣插在 MASTER_MARISA 後；這個位置差距保留，不由全域 UI 或跨包重排補丁掩蓋。
 
-## 新群組（本體／附屬／合計）
+Java 的 twilight／smc 條件與最高瓶裝 stack 已逐列保留。原生 catalog 無條件查詢及任意 stack metadata；現有 port ID 保留，不聲稱已還原可選 mod 切換。不同品質與放置實作不公開。26.1.2／NeoForge 1.1.6（CF9087098）已另補官方原檔並靜態讀取：原頁52項，未列目前維護分支的7項雞尾酒及兩種吊燈，KWAS與竹葉青先後也不同；其圖示使用最高瓶裝stack。該分支仍擴展相同8幅畫。完整列表獨立保存在data，沒有混進目前1.21.1參考。
 
-| 分組 | 酒館 | 世界名酒 | 合計 |
-|---|---:|---:|---:|
-| 酒櫃 | 3 | 10 | 13 |
-| 酒架與杯架 | 4 | 0 | 4 |
-| 桌子與吧檯 | 2 | 0 | 2 |
-| 沙發 | 16 | 0 | 16 |
-| 吧椅 | 16 | 16 | 32 |
-| 燈串 | 17 | 0 | 17 |
-| 吊燈 | 3 | 0 | 3 |
-| 招牌與黑板 | 15 | 0 | 15 |
-| 掛畫 | 14 | 8 | 22 |
-| 香薰 | 8 | 0 | 8 |
-| 梯子與雜項家具 | 1 | 0 | 1 |
-| 唱片 | 0 | 1 | 1 |
+現行 `_build_port_source.py` 不再先造用途分類或按 ID 排序。既有 Tavern `tools/creative/catalog.py --root <World Liquor root> --write` 讀本包 plan，生成 catalog、可見 menu_category 與三語。`data/creative-decoration-groups.json` 僅保留給歷史摘要 consumer；現行不讀它。
 
-以上保留在原本 `equipment` 大分類；每組可獨立展開。世界名酒的冰櫃加入現有釀造設備組，野生葡萄藤改到 `nature` 的栽培組。
-共整理原本裝飾／儲存相關 136 個可見 ID（134 個在新群組，另 2 個移入既有群組）。創造欄总數不變：酒館 160，世界名酒 66。酒品品質、雞尾酒、食物及其他原本群組內容不刪減；`category: none` 或未公開的實作方塊不被翻成可見，低品質酒也沒有重新放進創造欄。
-
-顏色固定按 Java 酒館次序：白、淺灰、灰、黑、棕、紅、橙、黃、淺綠、綠、青、淺藍、藍、紫、洋紅、粉紅；燈串最前另有無色。群組／物品順序由清單明確指定，不使用英文 ID 排序。同名群組合併後，各包內容片段的先後仍受引擎的包載入順序影響；不能據此保證跨包任意交錯排序。
-
-## 維護
-
-唯一共用分類規格在酒館 `tools/creative/groups.json`，兩包只在各自 `data/creative-decoration-groups.json` 宣告所屬物品和順序。名稱有繁中、簡中及英文，世界名酒追加既有群組時不覆蓋其圖示。新群組由擁有圖示的包定義 icon。
-
-```sh
-python tavern-src/tools/creative/catalog.py --write
-python tavern-src/tools/creative/catalog.py --root world-liquor-src --write
-python tavern-src/tools/creative/catalog.py --peer world-liquor-src
-LIQUOR_SOURCE=/absolute/path/world-liquor-src python tavern-src/tools/creative/test_catalog.py
-```
-
-兩包既有 release 檢查已接入只讀校驗，世界名酒 `build_port.py` 的最後一步重新套用共用分類。未知或漏登記的裝飾項目會要求修訂清單，不再悄悄落進混合裝飾籃。
-
-舊 motion/storage 基準雜湊沒有更新或移除。`data/creative-legacy-menus.json` 只列這次變更前的 menu 欄位；測試用投影先驗證現行分類與計畫一致，再還原舊 menu 後檢查既有整檔／整樹基準。元件、貼圖、模型、配方等任何其他變更仍會使驗證失敗。投影不會寫入遊戲資源。
-
-## 驗證邊界
-
-新增 28 項資料測試：分組數量、色序、跨包同組、圖示解析、本地化、項目不漏不重複、隱藏方塊、生成冪等、舊基準保留，以及意外修改玩法仍被檢出。不是創造欄渲染模擬。既有 55 項 foundation 與 27 項效果條回歸仍須通過。
-
-未執行 Minecraft 客戶端／BDS。實機需確認：空搜尋時各組摺疊／展開、鍵鼠和觸控、三種語言、搜尋單件物品、可合成配方書，以及兩包一起啟用時吧椅／酒櫃／掛畫確實合併。搜尋模式可能按引擎既定方式平鋪結果；這不是自訂 UI。
-
-本批不改版本、manifest、UUID、物品 ID、玩法腳本、配方或 Release 請求；工作分支改動不表示已合併 main 或發布成品。
+[Microsoft 原生 catalog 文件](https://learn.microsoft.com/en-us/minecraft/creator/documents/craftingitemcatalogdocumentation?view=minecraft-bedrock-stable)（2026-11-10 查閱）說明四個 category、自有 item 圖示、同名群組合併與只能附加的限制。「＋不展開」尚未確診；來源重建不表示 client 症狀已解。

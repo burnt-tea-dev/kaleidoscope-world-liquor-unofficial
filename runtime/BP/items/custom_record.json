@@ -5,12 +5,12 @@
       "identifier": "kaleidoscope_world_liquor:custom_record",
       "menu_category": {
         "category": "items",
-        "group": "kaleidoscope_tavern:itemGroup.name.music"
+        "group": "kaleidoscope_world_liquor:itemGroup.main"
       }
     },
     "components": {
       "minecraft:display_name": {
-        "value": "item.kaleidoscope_world_liquor:custom_record.name"
+        "value": "senluo.tooltip.item.kaleidoscope_world_liquor:custom_record.name"
       },
       "minecraft:icon": "kwl_custom_record",
       "minecraft:max_stack_size": 1

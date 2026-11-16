@@ -5,12 +5,12 @@
       "identifier": "kaleidoscope_world_liquor:liangshan_ice_cone",
       "menu_category": {
         "category": "items",
-        "group": "kaleidoscope_cookery:itemGroup.name.foods"
+        "group": "kaleidoscope_world_liquor:itemGroup.main"
       }
     },
     "components": {
       "minecraft:display_name": {
-        "value": "item.kaleidoscope_world_liquor:liangshan_ice_cone.name"
+        "value": "senluo.tooltip.item.kaleidoscope_world_liquor:liangshan_ice_cone.name"
       },
       "minecraft:icon": "kwl_liangshan_ice_cone",
       "minecraft:max_stack_size": 64,

@@ -5,12 +5,12 @@
       "identifier": "kaleidoscope_world_liquor:cola",
       "menu_category": {
         "category": "items",
-        "group": "kaleidoscope_tavern:itemGroup.name.ingredients"
+        "group": "kaleidoscope_world_liquor:itemGroup.main"
       }
     },
     "components": {
       "minecraft:display_name": {
-        "value": "item.kaleidoscope_world_liquor:cola.name"
+        "value": "senluo.tooltip.item.kaleidoscope_world_liquor:cola.name"
       },
       "minecraft:icon": "kwl_cola",
       "minecraft:max_stack_size": 16,

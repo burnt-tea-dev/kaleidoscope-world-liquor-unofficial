@@ -1,5 +1,6 @@
-"""Rebuild the blue-dye surface from its exact official Java item asset."""
+"""Own official blue-dye art and the identical fixed freezer sprite geometry."""
 import argparse
+import copy
 import hashlib
 import json
 from pathlib import Path
@@ -16,6 +17,42 @@ ASSETS = {
 
 def read(path):
     return json.loads(path.read_text())
+
+
+def normalize_shared_geometry(root=ROOT):
+    shared = read(root/'runtime/RP/models/entity/freezer_blue_dye.geo.json')
+    shared_id = shared['minecraft:geometry'][0]['description']['identifier']
+    for name in ('slime_ball', 'snowball'):
+        geometry_path = root/f'runtime/RP/models/entity/freezer_{name}.geo.json'
+        if geometry_path.exists():
+            geometry = read(geometry_path)
+            geometry['minecraft:geometry'][0]['description']['identifier'] = shared_id
+            assert geometry == shared, ('Freezer surfaces differ', name)
+        entity_path = root/f'runtime/RP/entity/freezer_{name}.entity.json'
+        entity = read(entity_path)
+        binding = entity['minecraft:client_entity']['description']['geometry']
+        if binding['default'] != shared_id:
+            binding['default'] = shared_id
+            entity_path.write_text(json.dumps(entity, indent=2)+'\n')
+        if geometry_path.exists():
+            geometry_path.unlink()
+
+
+def shared_geometry_sources(root=ROOT):
+    template = read(root/'runtime/RP/entity/freezer_blue_dye.entity.json')
+    sources = set()
+    for name in ('slime_ball', 'snowball'):
+        entity_path = f'runtime/RP/entity/freezer_{name}.entity.json'
+        geometry_path = f'runtime/RP/models/entity/freezer_{name}.geo.json'
+        expected = copy.deepcopy(template)
+        description = expected['minecraft:client_entity']['description']
+        description['identifier'] = f'kaleidoscope_world_liquor:freezer_{name}_visual'
+        description['textures']['default'] = f'textures/repair/freezer_{name}'
+        description['render_controllers'] = [f'controller.render.kwl.freezer_{name}']
+        assert read(root/entity_path) == expected, ('Shared freezer sprite binding differs', name)
+        assert not (root/geometry_path).exists(), ('Duplicate freezer sprite geometry remains', name)
+        sources.update((entity_path, geometry_path))
+    return sources
 
 
 def source_bytes(jar):

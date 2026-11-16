@@ -10,7 +10,7 @@
         "default": "textures/repair/freezer_slime_ball"
       },
       "geometry": {
-        "default": "geometry.kwl.freezer_slime_ball"
+        "default": "geometry.kwl.freezer_blue_dye"
       },
       "render_controllers": [
         "controller.render.kwl.freezer_slime_ball"

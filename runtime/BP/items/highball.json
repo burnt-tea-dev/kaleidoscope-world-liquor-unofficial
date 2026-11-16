@@ -4,13 +4,13 @@
     "description": {
       "identifier": "kaleidoscope_world_liquor:highball",
       "menu_category": {
-        "category": "equipment",
-        "group": "kaleidoscope_tavern:itemGroup.name.cocktails"
+        "category": "items",
+        "group": "kaleidoscope_world_liquor:itemGroup.main"
       }
     },
     "components": {
       "minecraft:display_name": {
-        "value": "item.kaleidoscope_world_liquor:highball.name"
+        "value": "senluo.tooltip.item.kaleidoscope_world_liquor:highball.name"
       },
       "minecraft:icon": "kwl_highball",
       "minecraft:max_stack_size": 16,

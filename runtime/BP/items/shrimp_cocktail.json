@@ -5,12 +5,12 @@
       "identifier": "kaleidoscope_world_liquor:shrimp_cocktail",
       "menu_category": {
         "category": "items",
-        "group": "kaleidoscope_tavern:itemGroup.name.cocktails"
+        "group": "kaleidoscope_world_liquor:itemGroup.main"
       }
     },
     "components": {
       "minecraft:display_name": {
-        "value": "item.kaleidoscope_world_liquor:shrimp_cocktail.name"
+        "value": "senluo.tooltip.item.kaleidoscope_world_liquor:shrimp_cocktail.name"
       },
       "minecraft:icon": "kwl_shrimp_cocktail",
       "minecraft:max_stack_size": 16,

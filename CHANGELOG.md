@@ -1,3 +1,7 @@
+## 0.1.225 — 2026-11-17
+
+Integrate the reviewed source for Frost paused chunks, thrown-drink sprites, 84 Java alcohol base tags, stool and wall-record interaction, complete record stacks, used-hand freezer containers and inventory drop motion. Preserve canonical respawn metadata reuse and all original release history. Pair with delivered Tavern 0.6.231 and Grilling 2.8.280. This source release preparation adds no new gameplay repair or client acceptance; publication and family installation remain disabled.
+
 ## 0.1.222 — 2026-11-16
 
 Reuse unchanged validated respawn metadata parsing through a WeakMap keyed by the current Player handle. Read native dynamic properties and personal spawn at the original cadence, invalidate on actual raw/point changes, and return detached records. New handles are cold misses; malformed bytes and absent properties cannot revive earlier facts. Preserve Java respawn declarations, cancellation, anchor handling, UUIDs, saved formats and the exact Tavern 0.6.221 peer.

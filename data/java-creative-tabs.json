@@ -1,0 +1,1812 @@
+{
+  "schema": 1,
+  "namespace": "kaleidoscope_world_liquor",
+  "sources": [
+    {
+      "minecraft": "1.20.1",
+      "loader": "Forge",
+      "curseforge_file_id": 9217901,
+      "caller": "com/bmt/kaleidoscope_world_liquor/init/ModCreativeModeTabs.class",
+      "entry_point": "displayItems -> addLiquorItems -> addFurnitureItems",
+      "entries": [
+        {
+          "position": 1,
+          "java": "kaleidoscope_world_liquor:bombay_sapphire_gin",
+          "bedrock": "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 2,
+          "java": "kaleidoscope_world_liquor:jack_daniel",
+          "bedrock": "kaleidoscope_world_liquor:jack_daniel_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 3,
+          "java": "kaleidoscope_world_liquor:smirnoff_red_vodka",
+          "bedrock": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 4,
+          "java": "kaleidoscope_world_liquor:absolut_vodka",
+          "bedrock": "kaleidoscope_world_liquor:absolut_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 5,
+          "java": "kaleidoscope_world_liquor:pina_colada",
+          "bedrock": "kaleidoscope_world_liquor:pina_colada_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 6,
+          "java": "kaleidoscope_world_liquor:maotai",
+          "bedrock": "kaleidoscope_world_liquor:maotai_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 7,
+          "java": "kaleidoscope_world_liquor:bacardi_carta_blanca",
+          "bedrock": "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 8,
+          "java": "kaleidoscope_world_liquor:spiryt_vodka",
+          "bedrock": "kaleidoscope_world_liquor:spiryt_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 9,
+          "java": "kaleidoscope_world_liquor:skyy_vodka",
+          "bedrock": "kaleidoscope_world_liquor:skyy_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 10,
+          "java": "kaleidoscope_world_liquor:johnnie_walker",
+          "bedrock": "kaleidoscope_world_liquor:johnnie_walker_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 11,
+          "java": "kaleidoscope_world_liquor:lafite_1982",
+          "bedrock": "kaleidoscope_world_liquor:lafite_1982_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 12,
+          "java": "kaleidoscope_world_liquor:strongbow",
+          "bedrock": "kaleidoscope_world_liquor:strongbow_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 13,
+          "java": "kaleidoscope_world_liquor:dassai",
+          "bedrock": "kaleidoscope_world_liquor:dassai_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 14,
+          "java": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor",
+          "bedrock": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 15,
+          "java": "kaleidoscope_world_liquor:kwas_chlebowy",
+          "bedrock": "kaleidoscope_world_liquor:kwas_chlebowy_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 16,
+          "java": "kaleidoscope_world_liquor:cool_tea",
+          "bedrock": "kaleidoscope_world_liquor:cool_tea_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 17,
+          "java": "kaleidoscope_world_liquor:sour_plum",
+          "bedrock": "kaleidoscope_world_liquor:sour_plum_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 18,
+          "java": "kaleidoscope_world_liquor:cola",
+          "bedrock": "kaleidoscope_world_liquor:cola",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 19,
+          "java": "kaleidoscope_world_liquor:tonic_water",
+          "bedrock": "kaleidoscope_world_liquor:tonic_water",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 20,
+          "java": "kaleidoscope_world_liquor:jerk",
+          "bedrock": "kaleidoscope_world_liquor:jerk",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 21,
+          "java": "kaleidoscope_world_liquor:shrimp_cocktail",
+          "bedrock": "kaleidoscope_world_liquor:shrimp_cocktail",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 22,
+          "java": "kaleidoscope_world_liquor:around_the_world",
+          "bedrock": "kaleidoscope_world_liquor:around_the_world",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 23,
+          "java": "kaleidoscope_world_liquor:highball",
+          "bedrock": "kaleidoscope_world_liquor:highball",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 24,
+          "java": "kaleidoscope_world_liquor:long_island_iced_tea",
+          "bedrock": "kaleidoscope_world_liquor:long_island_iced_tea",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 25,
+          "java": "kaleidoscope_world_liquor:pine_colada",
+          "bedrock": "kaleidoscope_world_liquor:pine_colada",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 26,
+          "java": "kaleidoscope_world_liquor:gin_tonic",
+          "bedrock": "kaleidoscope_world_liquor:gin_tonic",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 27,
+          "java": "kaleidoscope_world_liquor:freezer",
+          "bedrock": "kaleidoscope_world_liquor:freezer",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 28,
+          "java": "kaleidoscope_world_liquor:custom_record",
+          "bedrock": "kaleidoscope_world_liquor:custom_record",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 29,
+          "java": "kaleidoscope_twilight:liangshan_ice_cone",
+          "bedrock": "kaleidoscope_world_liquor:liangshan_ice_cone",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 30,
+          "java": "kaleidoscope_twilight:kita_stuffed_crisp",
+          "bedrock": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 31,
+          "java": "kaleidoscope_twilight:pochi_pudding",
+          "bedrock": "kaleidoscope_world_liquor:pochi_pudding",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 32,
+          "java": "kaleidoscope_twilight:magic_crispy_corner",
+          "bedrock": "kaleidoscope_world_liquor:magic_crispy_corner",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 33,
+          "java": "smc:ice_tea",
+          "bedrock": "kaleidoscope_world_liquor:ice_tea_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(smc)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 34,
+          "java": "kaleidoscope_world_liquor:bar_stool_white",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_white",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 35,
+          "java": "kaleidoscope_world_liquor:bar_stool_light_gray",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_light_gray",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 36,
+          "java": "kaleidoscope_world_liquor:bar_stool_gray",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_gray",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 37,
+          "java": "kaleidoscope_world_liquor:bar_stool_black",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_black",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 38,
+          "java": "kaleidoscope_world_liquor:bar_stool_brown",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_brown",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 39,
+          "java": "kaleidoscope_world_liquor:bar_stool_red",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_red",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 40,
+          "java": "kaleidoscope_world_liquor:bar_stool_orange",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_orange",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 41,
+          "java": "kaleidoscope_world_liquor:bar_stool_yellow",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_yellow",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 42,
+          "java": "kaleidoscope_world_liquor:bar_stool_lime",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_lime",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 43,
+          "java": "kaleidoscope_world_liquor:bar_stool_green",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_green",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 44,
+          "java": "kaleidoscope_world_liquor:bar_stool_cyan",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_cyan",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 45,
+          "java": "kaleidoscope_world_liquor:bar_stool_light_blue",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_light_blue",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 46,
+          "java": "kaleidoscope_world_liquor:bar_stool_blue",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_blue",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 47,
+          "java": "kaleidoscope_world_liquor:bar_stool_purple",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_purple",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 48,
+          "java": "kaleidoscope_world_liquor:bar_stool_magenta",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_magenta",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 49,
+          "java": "kaleidoscope_world_liquor:bar_stool_pink",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_pink",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 50,
+          "java": "kaleidoscope_world_liquor:pink_pendant_lamp",
+          "bedrock": "kaleidoscope_world_liquor:pink_pendant_lamp",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 51,
+          "java": "kaleidoscope_world_liquor:green_pendant_lamp",
+          "bedrock": "kaleidoscope_world_liquor:green_pendant_lamp",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 52,
+          "java": "kaleidoscope_world_liquor:oak_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:oak_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 53,
+          "java": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 54,
+          "java": "kaleidoscope_world_liquor:birch_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:birch_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 55,
+          "java": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 56,
+          "java": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 57,
+          "java": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 58,
+          "java": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 59,
+          "java": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 60,
+          "java": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 61,
+          "java": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        }
+      ],
+      "icon_state": "default BOMBAY_SAPPHIRE_GIN stack"
+    },
+    {
+      "minecraft": "1.21.1",
+      "loader": "NeoForge",
+      "curseforge_file_id": 9217896,
+      "caller": "com/bmt/kaleidoscope_world_liquor/init/ModCreativeModeTabs.class",
+      "entry_point": "displayItems -> addLiquorItems -> addFurnitureItems",
+      "entries": [
+        {
+          "position": 1,
+          "java": "kaleidoscope_world_liquor:bombay_sapphire_gin",
+          "bedrock": "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 2,
+          "java": "kaleidoscope_world_liquor:jack_daniel",
+          "bedrock": "kaleidoscope_world_liquor:jack_daniel_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 3,
+          "java": "kaleidoscope_world_liquor:smirnoff_red_vodka",
+          "bedrock": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 4,
+          "java": "kaleidoscope_world_liquor:absolut_vodka",
+          "bedrock": "kaleidoscope_world_liquor:absolut_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 5,
+          "java": "kaleidoscope_world_liquor:pina_colada",
+          "bedrock": "kaleidoscope_world_liquor:pina_colada_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 6,
+          "java": "kaleidoscope_world_liquor:maotai",
+          "bedrock": "kaleidoscope_world_liquor:maotai_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 7,
+          "java": "kaleidoscope_world_liquor:bacardi_carta_blanca",
+          "bedrock": "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 8,
+          "java": "kaleidoscope_world_liquor:spiryt_vodka",
+          "bedrock": "kaleidoscope_world_liquor:spiryt_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 9,
+          "java": "kaleidoscope_world_liquor:skyy_vodka",
+          "bedrock": "kaleidoscope_world_liquor:skyy_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 10,
+          "java": "kaleidoscope_world_liquor:johnnie_walker",
+          "bedrock": "kaleidoscope_world_liquor:johnnie_walker_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 11,
+          "java": "kaleidoscope_world_liquor:lafite_1982",
+          "bedrock": "kaleidoscope_world_liquor:lafite_1982_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 12,
+          "java": "kaleidoscope_world_liquor:strongbow",
+          "bedrock": "kaleidoscope_world_liquor:strongbow_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 13,
+          "java": "kaleidoscope_world_liquor:dassai",
+          "bedrock": "kaleidoscope_world_liquor:dassai_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 14,
+          "java": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor",
+          "bedrock": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 15,
+          "java": "kaleidoscope_world_liquor:kwas_chlebowy",
+          "bedrock": "kaleidoscope_world_liquor:kwas_chlebowy_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 16,
+          "java": "kaleidoscope_world_liquor:cool_tea",
+          "bedrock": "kaleidoscope_world_liquor:cool_tea_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 17,
+          "java": "kaleidoscope_world_liquor:sour_plum",
+          "bedrock": "kaleidoscope_world_liquor:sour_plum_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 18,
+          "java": "kaleidoscope_world_liquor:cola",
+          "bedrock": "kaleidoscope_world_liquor:cola",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 19,
+          "java": "kaleidoscope_world_liquor:tonic_water",
+          "bedrock": "kaleidoscope_world_liquor:tonic_water",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 20,
+          "java": "kaleidoscope_world_liquor:jerk",
+          "bedrock": "kaleidoscope_world_liquor:jerk",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 21,
+          "java": "kaleidoscope_world_liquor:shrimp_cocktail",
+          "bedrock": "kaleidoscope_world_liquor:shrimp_cocktail",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 22,
+          "java": "kaleidoscope_world_liquor:around_the_world",
+          "bedrock": "kaleidoscope_world_liquor:around_the_world",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 23,
+          "java": "kaleidoscope_world_liquor:highball",
+          "bedrock": "kaleidoscope_world_liquor:highball",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 24,
+          "java": "kaleidoscope_world_liquor:long_island_iced_tea",
+          "bedrock": "kaleidoscope_world_liquor:long_island_iced_tea",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 25,
+          "java": "kaleidoscope_world_liquor:pine_colada",
+          "bedrock": "kaleidoscope_world_liquor:pine_colada",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 26,
+          "java": "kaleidoscope_world_liquor:gin_tonic",
+          "bedrock": "kaleidoscope_world_liquor:gin_tonic",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 27,
+          "java": "kaleidoscope_world_liquor:freezer",
+          "bedrock": "kaleidoscope_world_liquor:freezer",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 28,
+          "java": "kaleidoscope_world_liquor:custom_record",
+          "bedrock": "kaleidoscope_world_liquor:custom_record",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 29,
+          "java": "kaleidoscope_twilight:liangshan_ice_cone",
+          "bedrock": "kaleidoscope_world_liquor:liangshan_ice_cone",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 30,
+          "java": "kaleidoscope_twilight:kita_stuffed_crisp",
+          "bedrock": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 31,
+          "java": "kaleidoscope_twilight:pochi_pudding",
+          "bedrock": "kaleidoscope_world_liquor:pochi_pudding",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 32,
+          "java": "kaleidoscope_twilight:magic_crispy_corner",
+          "bedrock": "kaleidoscope_world_liquor:magic_crispy_corner",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 33,
+          "java": "smc:ice_tea",
+          "bedrock": "kaleidoscope_world_liquor:ice_tea_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(smc)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 34,
+          "java": "kaleidoscope_world_liquor:bar_stool_white",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_white",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 35,
+          "java": "kaleidoscope_world_liquor:bar_stool_light_gray",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_light_gray",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 36,
+          "java": "kaleidoscope_world_liquor:bar_stool_gray",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_gray",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 37,
+          "java": "kaleidoscope_world_liquor:bar_stool_black",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_black",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 38,
+          "java": "kaleidoscope_world_liquor:bar_stool_brown",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_brown",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 39,
+          "java": "kaleidoscope_world_liquor:bar_stool_red",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_red",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 40,
+          "java": "kaleidoscope_world_liquor:bar_stool_orange",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_orange",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 41,
+          "java": "kaleidoscope_world_liquor:bar_stool_yellow",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_yellow",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 42,
+          "java": "kaleidoscope_world_liquor:bar_stool_lime",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_lime",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 43,
+          "java": "kaleidoscope_world_liquor:bar_stool_green",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_green",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 44,
+          "java": "kaleidoscope_world_liquor:bar_stool_cyan",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_cyan",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 45,
+          "java": "kaleidoscope_world_liquor:bar_stool_light_blue",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_light_blue",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 46,
+          "java": "kaleidoscope_world_liquor:bar_stool_blue",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_blue",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 47,
+          "java": "kaleidoscope_world_liquor:bar_stool_purple",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_purple",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 48,
+          "java": "kaleidoscope_world_liquor:bar_stool_magenta",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_magenta",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 49,
+          "java": "kaleidoscope_world_liquor:bar_stool_pink",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_pink",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 50,
+          "java": "kaleidoscope_world_liquor:pink_pendant_lamp",
+          "bedrock": "kaleidoscope_world_liquor:pink_pendant_lamp",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 51,
+          "java": "kaleidoscope_world_liquor:green_pendant_lamp",
+          "bedrock": "kaleidoscope_world_liquor:green_pendant_lamp",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 52,
+          "java": "kaleidoscope_world_liquor:oak_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:oak_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 53,
+          "java": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 54,
+          "java": "kaleidoscope_world_liquor:birch_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:birch_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 55,
+          "java": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 56,
+          "java": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 57,
+          "java": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 58,
+          "java": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 59,
+          "java": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 60,
+          "java": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 61,
+          "java": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        }
+      ],
+      "icon_state": "default BOMBAY_SAPPHIRE_GIN stack"
+    },
+    {
+      "minecraft": "26.1.2",
+      "loader": "NeoForge",
+      "curseforge_file_id": 9087098,
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/9087098",
+      "caller": "com/bmt/kaleidoscope_world_liquor/init/ModCreativeModeTabs.class",
+      "entry_point": "displayItems -> addLiquorItems -> addFurnitureItems",
+      "selected": false,
+      "icon_state": "getMaxLevelDrink(BOMBAY_SAPPHIRE_GIN)",
+      "entries": [
+        {
+          "position": 1,
+          "java": "kaleidoscope_world_liquor:bombay_sapphire_gin",
+          "bedrock": "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 2,
+          "java": "kaleidoscope_world_liquor:jack_daniel",
+          "bedrock": "kaleidoscope_world_liquor:jack_daniel_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 3,
+          "java": "kaleidoscope_world_liquor:smirnoff_red_vodka",
+          "bedrock": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 4,
+          "java": "kaleidoscope_world_liquor:absolut_vodka",
+          "bedrock": "kaleidoscope_world_liquor:absolut_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 5,
+          "java": "kaleidoscope_world_liquor:pina_colada",
+          "bedrock": "kaleidoscope_world_liquor:pina_colada_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 6,
+          "java": "kaleidoscope_world_liquor:maotai",
+          "bedrock": "kaleidoscope_world_liquor:maotai_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 7,
+          "java": "kaleidoscope_world_liquor:bacardi_carta_blanca",
+          "bedrock": "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 8,
+          "java": "kaleidoscope_world_liquor:spiryt_vodka",
+          "bedrock": "kaleidoscope_world_liquor:spiryt_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 9,
+          "java": "kaleidoscope_world_liquor:skyy_vodka",
+          "bedrock": "kaleidoscope_world_liquor:skyy_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 10,
+          "java": "kaleidoscope_world_liquor:johnnie_walker",
+          "bedrock": "kaleidoscope_world_liquor:johnnie_walker_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 11,
+          "java": "kaleidoscope_world_liquor:lafite_1982",
+          "bedrock": "kaleidoscope_world_liquor:lafite_1982_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 12,
+          "java": "kaleidoscope_world_liquor:strongbow",
+          "bedrock": "kaleidoscope_world_liquor:strongbow_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 13,
+          "java": "kaleidoscope_world_liquor:dassai",
+          "bedrock": "kaleidoscope_world_liquor:dassai_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 14,
+          "java": "kaleidoscope_world_liquor:kwas_chlebowy",
+          "bedrock": "kaleidoscope_world_liquor:kwas_chlebowy_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 15,
+          "java": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor",
+          "bedrock": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 16,
+          "java": "kaleidoscope_world_liquor:cool_tea",
+          "bedrock": "kaleidoscope_world_liquor:cool_tea_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 17,
+          "java": "kaleidoscope_world_liquor:sour_plum",
+          "bedrock": "kaleidoscope_world_liquor:sour_plum_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 18,
+          "java": "kaleidoscope_world_liquor:cola",
+          "bedrock": "kaleidoscope_world_liquor:cola",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 19,
+          "java": "kaleidoscope_world_liquor:tonic_water",
+          "bedrock": "kaleidoscope_world_liquor:tonic_water",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 20,
+          "java": "kaleidoscope_world_liquor:freezer",
+          "bedrock": "kaleidoscope_world_liquor:freezer",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 21,
+          "java": "kaleidoscope_world_liquor:custom_record",
+          "bedrock": "kaleidoscope_world_liquor:custom_record",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 22,
+          "java": "kaleidoscope_twilight:liangshan_ice_cone",
+          "bedrock": "kaleidoscope_world_liquor:liangshan_ice_cone",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)"
+        },
+        {
+          "position": 23,
+          "java": "kaleidoscope_twilight:kita_stuffed_crisp",
+          "bedrock": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)"
+        },
+        {
+          "position": 24,
+          "java": "kaleidoscope_twilight:pochi_pudding",
+          "bedrock": "kaleidoscope_world_liquor:pochi_pudding",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)"
+        },
+        {
+          "position": 25,
+          "java": "kaleidoscope_twilight:magic_crispy_corner",
+          "bedrock": "kaleidoscope_world_liquor:magic_crispy_corner",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)"
+        },
+        {
+          "position": 26,
+          "java": "smc:ice_tea",
+          "bedrock": "kaleidoscope_world_liquor:ice_tea_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(smc)"
+        },
+        {
+          "position": 27,
+          "java": "kaleidoscope_world_liquor:bar_stool_white",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_white",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 28,
+          "java": "kaleidoscope_world_liquor:bar_stool_light_gray",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_light_gray",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 29,
+          "java": "kaleidoscope_world_liquor:bar_stool_gray",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_gray",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 30,
+          "java": "kaleidoscope_world_liquor:bar_stool_black",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_black",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 31,
+          "java": "kaleidoscope_world_liquor:bar_stool_brown",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_brown",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 32,
+          "java": "kaleidoscope_world_liquor:bar_stool_red",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_red",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 33,
+          "java": "kaleidoscope_world_liquor:bar_stool_orange",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_orange",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 34,
+          "java": "kaleidoscope_world_liquor:bar_stool_yellow",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_yellow",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 35,
+          "java": "kaleidoscope_world_liquor:bar_stool_lime",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_lime",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 36,
+          "java": "kaleidoscope_world_liquor:bar_stool_green",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_green",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 37,
+          "java": "kaleidoscope_world_liquor:bar_stool_cyan",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_cyan",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 38,
+          "java": "kaleidoscope_world_liquor:bar_stool_light_blue",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_light_blue",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 39,
+          "java": "kaleidoscope_world_liquor:bar_stool_blue",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_blue",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 40,
+          "java": "kaleidoscope_world_liquor:bar_stool_purple",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_purple",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 41,
+          "java": "kaleidoscope_world_liquor:bar_stool_magenta",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_magenta",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 42,
+          "java": "kaleidoscope_world_liquor:bar_stool_pink",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_pink",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 43,
+          "java": "kaleidoscope_world_liquor:oak_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:oak_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 44,
+          "java": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 45,
+          "java": "kaleidoscope_world_liquor:birch_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:birch_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 46,
+          "java": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 47,
+          "java": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 48,
+          "java": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 49,
+          "java": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 50,
+          "java": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 51,
+          "java": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 52,
+          "java": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        }
+      ],
+      "tab_extensions": {
+        "caller": "event/CreativeTabEvents.addPaintingsToTabs",
+        "sequence": "tabs[1].entries",
+        "insert_after": "kaleidoscope_tavern:master_marisa_painting"
+      }
+    }
+  ],
+  "selected_source": {
+    "minecraft": "1.21.1",
+    "loader": "NeoForge"
+  },
+  "projection": "One current Java own tab -> one native Items group. Java addLiquorItems precedes addFurnitureItems. No alphabetical/semantic sorting.",
+  "tabs": [
+    {
+      "id": "kaleidoscope_world_liquor:kaleidoscope_world_liquor_tab",
+      "title": "itemGroup.kaleidoscope_world_liquor_tab",
+      "category": "items",
+      "group": "kaleidoscope_world_liquor:itemGroup.main",
+      "icon": "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+      "icon_gap": "Java icon is default BOMBAY_SAPPHIRE_GIN; Bedrock has existing quality IDs, so use existing q6 sprite without creating an ID.",
+      "labels": {
+        "en_US": "Kaleidoscope World Liquor",
+        "zh_CN": "森罗酒馆：世界名酒",
+        "zh_TW": "森羅酒館：世界名酒"
+      },
+      "entries": [
+        {
+          "position": 1,
+          "java": "kaleidoscope_world_liquor:bombay_sapphire_gin",
+          "bedrock": "kaleidoscope_world_liquor:bombay_sapphire_gin_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 2,
+          "java": "kaleidoscope_world_liquor:jack_daniel",
+          "bedrock": "kaleidoscope_world_liquor:jack_daniel_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 3,
+          "java": "kaleidoscope_world_liquor:smirnoff_red_vodka",
+          "bedrock": "kaleidoscope_world_liquor:smirnoff_red_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 4,
+          "java": "kaleidoscope_world_liquor:absolut_vodka",
+          "bedrock": "kaleidoscope_world_liquor:absolut_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 5,
+          "java": "kaleidoscope_world_liquor:pina_colada",
+          "bedrock": "kaleidoscope_world_liquor:pina_colada_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 6,
+          "java": "kaleidoscope_world_liquor:maotai",
+          "bedrock": "kaleidoscope_world_liquor:maotai_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 7,
+          "java": "kaleidoscope_world_liquor:bacardi_carta_blanca",
+          "bedrock": "kaleidoscope_world_liquor:bacardi_carta_blanca_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 8,
+          "java": "kaleidoscope_world_liquor:spiryt_vodka",
+          "bedrock": "kaleidoscope_world_liquor:spiryt_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 9,
+          "java": "kaleidoscope_world_liquor:skyy_vodka",
+          "bedrock": "kaleidoscope_world_liquor:skyy_vodka_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 10,
+          "java": "kaleidoscope_world_liquor:johnnie_walker",
+          "bedrock": "kaleidoscope_world_liquor:johnnie_walker_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 11,
+          "java": "kaleidoscope_world_liquor:lafite_1982",
+          "bedrock": "kaleidoscope_world_liquor:lafite_1982_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 12,
+          "java": "kaleidoscope_world_liquor:strongbow",
+          "bedrock": "kaleidoscope_world_liquor:strongbow_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 13,
+          "java": "kaleidoscope_world_liquor:dassai",
+          "bedrock": "kaleidoscope_world_liquor:dassai_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 14,
+          "java": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor",
+          "bedrock": "kaleidoscope_world_liquor:bamboo_leaf_green_liquor_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 15,
+          "java": "kaleidoscope_world_liquor:kwas_chlebowy",
+          "bedrock": "kaleidoscope_world_liquor:kwas_chlebowy_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 16,
+          "java": "kaleidoscope_world_liquor:cool_tea",
+          "bedrock": "kaleidoscope_world_liquor:cool_tea_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 17,
+          "java": "kaleidoscope_world_liquor:sour_plum",
+          "bedrock": "kaleidoscope_world_liquor:sour_plum_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor"
+        },
+        {
+          "position": 18,
+          "java": "kaleidoscope_world_liquor:cola",
+          "bedrock": "kaleidoscope_world_liquor:cola",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 19,
+          "java": "kaleidoscope_world_liquor:tonic_water",
+          "bedrock": "kaleidoscope_world_liquor:tonic_water",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 20,
+          "java": "kaleidoscope_world_liquor:jerk",
+          "bedrock": "kaleidoscope_world_liquor:jerk",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 21,
+          "java": "kaleidoscope_world_liquor:shrimp_cocktail",
+          "bedrock": "kaleidoscope_world_liquor:shrimp_cocktail",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 22,
+          "java": "kaleidoscope_world_liquor:around_the_world",
+          "bedrock": "kaleidoscope_world_liquor:around_the_world",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 23,
+          "java": "kaleidoscope_world_liquor:highball",
+          "bedrock": "kaleidoscope_world_liquor:highball",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 24,
+          "java": "kaleidoscope_world_liquor:long_island_iced_tea",
+          "bedrock": "kaleidoscope_world_liquor:long_island_iced_tea",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 25,
+          "java": "kaleidoscope_world_liquor:pine_colada",
+          "bedrock": "kaleidoscope_world_liquor:pine_colada",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 26,
+          "java": "kaleidoscope_world_liquor:gin_tonic",
+          "bedrock": "kaleidoscope_world_liquor:gin_tonic",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 27,
+          "java": "kaleidoscope_world_liquor:freezer",
+          "bedrock": "kaleidoscope_world_liquor:freezer",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 28,
+          "java": "kaleidoscope_world_liquor:custom_record",
+          "bedrock": "kaleidoscope_world_liquor:custom_record",
+          "state": "default",
+          "section": "liquor"
+        },
+        {
+          "position": 29,
+          "java": "kaleidoscope_twilight:liangshan_ice_cone",
+          "bedrock": "kaleidoscope_world_liquor:liangshan_ice_cone",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 30,
+          "java": "kaleidoscope_twilight:kita_stuffed_crisp",
+          "bedrock": "kaleidoscope_world_liquor:kita_stuffed_crisp",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 31,
+          "java": "kaleidoscope_twilight:pochi_pudding",
+          "bedrock": "kaleidoscope_world_liquor:pochi_pudding",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 32,
+          "java": "kaleidoscope_twilight:magic_crispy_corner",
+          "bedrock": "kaleidoscope_world_liquor:magic_crispy_corner",
+          "state": "default",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(kaleidoscope_twilight)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 33,
+          "java": "smc:ice_tea",
+          "bedrock": "kaleidoscope_world_liquor:ice_tea_q6",
+          "state": "maxLevelDrink",
+          "section": "liquor",
+          "condition": "Java !ModList.isLoaded(smc)",
+          "gap": "Native catalog has no optional-mod predicate; keep the existing owned port ID without adding a hard dependency."
+        },
+        {
+          "position": 34,
+          "java": "kaleidoscope_world_liquor:bar_stool_white",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_white",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 35,
+          "java": "kaleidoscope_world_liquor:bar_stool_light_gray",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_light_gray",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 36,
+          "java": "kaleidoscope_world_liquor:bar_stool_gray",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_gray",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 37,
+          "java": "kaleidoscope_world_liquor:bar_stool_black",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_black",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 38,
+          "java": "kaleidoscope_world_liquor:bar_stool_brown",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_brown",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 39,
+          "java": "kaleidoscope_world_liquor:bar_stool_red",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_red",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 40,
+          "java": "kaleidoscope_world_liquor:bar_stool_orange",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_orange",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 41,
+          "java": "kaleidoscope_world_liquor:bar_stool_yellow",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_yellow",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 42,
+          "java": "kaleidoscope_world_liquor:bar_stool_lime",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_lime",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 43,
+          "java": "kaleidoscope_world_liquor:bar_stool_green",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_green",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 44,
+          "java": "kaleidoscope_world_liquor:bar_stool_cyan",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_cyan",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 45,
+          "java": "kaleidoscope_world_liquor:bar_stool_light_blue",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_light_blue",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 46,
+          "java": "kaleidoscope_world_liquor:bar_stool_blue",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_blue",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 47,
+          "java": "kaleidoscope_world_liquor:bar_stool_purple",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_purple",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 48,
+          "java": "kaleidoscope_world_liquor:bar_stool_magenta",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_magenta",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 49,
+          "java": "kaleidoscope_world_liquor:bar_stool_pink",
+          "bedrock": "kaleidoscope_world_liquor:bar_stool_pink",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 50,
+          "java": "kaleidoscope_world_liquor:pink_pendant_lamp",
+          "bedrock": "kaleidoscope_world_liquor:pink_pendant_lamp",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 51,
+          "java": "kaleidoscope_world_liquor:green_pendant_lamp",
+          "bedrock": "kaleidoscope_world_liquor:green_pendant_lamp",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 52,
+          "java": "kaleidoscope_world_liquor:oak_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:oak_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 53,
+          "java": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:oak_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 54,
+          "java": "kaleidoscope_world_liquor:birch_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:birch_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 55,
+          "java": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:birch_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 56,
+          "java": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:spruce_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 57,
+          "java": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:spruce_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 58,
+          "java": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:dark_oak_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 59,
+          "java": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:dark_oak_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 60,
+          "java": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:cherry_bar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        },
+        {
+          "position": 61,
+          "java": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+          "bedrock": "kaleidoscope_world_liquor:cherry_cellar_cabinet",
+          "state": "default",
+          "section": "furniture"
+        }
+      ]
+    },
+    {
+      "id": "kaleidoscope_tavern:tavern_deco",
+      "kind": "java_tab_extension",
+      "caller": "event/CreativeTabEvents.addPaintingsToTabs",
+      "category": "items",
+      "group": "kaleidoscope_tavern:itemGroup.name.tavern_deco",
+      "icon": "kaleidoscope_tavern:stepladder",
+      "labels": {
+        "en_US": "Kaleidoscope: Tavern Deco",
+        "zh_CN": "森罗物语：酒馆装饰",
+        "zh_TW": "森羅物語酒館・裝飾"
+      },
+      "insert_after": "kaleidoscope_tavern:master_marisa_painting",
+      "gap": "Java repeatedly inserts after the same anchor, reversing call order. Native catalog can only append to the existing Tavern group; exact anchor position is not expressible. Tavern is already a required dependency.",
+      "entries": [
+        {
+          "position": 1,
+          "java": "kaleidoscope_tavern:bfxm_painting",
+          "bedrock": "kaleidoscope_world_liquor:bfxm_painting",
+          "state": "default"
+        },
+        {
+          "position": 2,
+          "java": "kaleidoscope_tavern:bmt_painting",
+          "bedrock": "kaleidoscope_world_liquor:bmt_painting",
+          "state": "default"
+        },
+        {
+          "position": 3,
+          "java": "kaleidoscope_tavern:chen_painting",
+          "bedrock": "kaleidoscope_world_liquor:chen_painting",
+          "state": "default"
+        },
+        {
+          "position": 4,
+          "java": "kaleidoscope_tavern:cha_painting",
+          "bedrock": "kaleidoscope_world_liquor:cha_painting",
+          "state": "default"
+        },
+        {
+          "position": 5,
+          "java": "kaleidoscope_tavern:rabbit_painting",
+          "bedrock": "kaleidoscope_world_liquor:rabbit_painting",
+          "state": "default"
+        },
+        {
+          "position": 6,
+          "java": "kaleidoscope_tavern:ch_painting",
+          "bedrock": "kaleidoscope_world_liquor:ch_painting",
+          "state": "default"
+        },
+        {
+          "position": 7,
+          "java": "kaleidoscope_tavern:dream_painting",
+          "bedrock": "kaleidoscope_world_liquor:dream_painting",
+          "state": "default"
+        },
+        {
+          "position": 8,
+          "java": "kaleidoscope_tavern:qxxy_painting",
+          "bedrock": "kaleidoscope_world_liquor:qxxy_painting",
+          "state": "default"
+        }
+      ]
+    }
+  ],
+  "bedrock_additions": [],
+  "hidden": []
+}
