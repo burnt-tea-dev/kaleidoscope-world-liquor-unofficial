@@ -3,6 +3,7 @@
 // or an explicit declaration. An existing point alone is not historical proof.
 const KEY = 'kaleidoscope_world_liquor:respawn_metadata_v1';
 const installed = new WeakMap();
+const parsedMetadata = new WeakMap();
 const horizontal = [[0, 1], [-1, 0], [0, -1], [1, 0]];
 
 function point(value) {
@@ -37,7 +38,15 @@ function record(value) {
 function stored(player) {
   try {
     const raw = player.getDynamicProperty(KEY);
-    return typeof raw === 'string' ? record(JSON.parse(raw)) : undefined;
+    if (typeof raw !== 'string') { parsedMetadata.delete(player); return undefined; }
+    const cached = parsedMetadata.get(player);
+    if (cached?.raw === raw) return cached.value;
+    // Read the native property every time; only unchanged parsing is reused.
+    // A new handle or changed/invalid bytes must not inherit earlier facts.
+    let value;
+    try { value = record(JSON.parse(raw)); } catch {}
+    parsedMetadata.set(player, {raw, value});
+    return value;
   } catch { return undefined; }
 }
 function write(player, value) {
@@ -54,7 +63,8 @@ export function declareRespawnMetadata(player, value) {
 /** No yaw/forced fallback: stale, malformed or unmatched data stays unknown. */
 export function getRespawnMetadata(player, spawn) {
   const expected = point(spawn), metadata = stored(player);
-  return equal(expected, metadata?.point) ? metadata : undefined;
+  // Keep the public result independent from the private parsed snapshot.
+  return equal(expected, metadata?.point) ? {...metadata, point: {...metadata.point}} : undefined;
 }
 
 function bed(block) {

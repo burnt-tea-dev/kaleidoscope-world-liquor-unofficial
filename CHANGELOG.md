@@ -1,3 +1,9 @@
+## 0.1.222 — 2026-11-16
+
+Reuse unchanged validated respawn metadata parsing through a WeakMap keyed by the current Player handle. Read native dynamic properties and personal spawn at the original cadence, invalidate on actual raw/point changes, and return detached records. New handles are cold misses; malformed bytes and absent properties cannot revive earlier facts. Preserve Java respawn declarations, cancellation, anchor handling, UUIDs, saved formats and the exact Tavern 0.6.221 peer.
+
+In an offline 20-player/1,000-tick sample, native property and spawn reads both remain 20,000 while JSON.parse falls from 20,000 to 20. This measures parsing work on stable handles, not native API reduction, memory, TPS or FPS. The existing 41 respawn source/API checks pass. The [current parity matrix](docs/PARITY-MATRIX.md) reassesses 31 feature domains, marks API candidates and keeps existing PR ownership including corrected frost-aging W221. No new tests, fixtures, CI, API upgrade, BDS, player-device or LIVE operation.
+
 ## 0.1.209 — 2026-11-10
 
 Group drinks, food and furniture by use in the native creative inventory with short labels and shared icons. Restore the two already-visible green/pink pendant lamps to the catalog; keep every hidden variant and Java drink order. Pair both packs with the exact Tavern 0.6.221 source. Existing gameplay, SDK, item identities and saved formats remain unchanged; no new native/client result is claimed.
