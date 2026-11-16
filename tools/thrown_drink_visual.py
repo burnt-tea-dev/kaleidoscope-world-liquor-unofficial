@@ -126,7 +126,7 @@ def configure_entity(entity, bottle_ids):
     return result
 
 
-def generate(root, item_sources):
+def planned(root, item_sources):
     frames = source_frames(root, item_sources)
     shapes = {name: spans(frame) for name, frame in frames}
     required = set().union(*(set(shape) for shape in shapes.values()))
@@ -139,7 +139,25 @@ def generate(root, item_sources):
     output[ANIMATION] = encoded({'format_version': '1.8.0', 'animations': {
         'animation.kwl.thrown_drink.billboard': {'loop': True, 'bones': {
             'body': {'rotation': ['query.camera_rotation(0)', 'query.camera_rotation(1) - query.body_y_rotation', 0.0]}}}}})
-    for name, data in output.items():
+    return output
+
+
+def generate(root, item_sources):
+    for name, data in planned(root, item_sources).items():
         path = root / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
+
+
+def check(root, tavern):
+    item_sources = bottle_item_sources(root)
+    output = planned(root, item_sources)
+    entity = read(tavern / 'runtime/RP/entity/runtime_thrown_drink.entity.json')
+    description = entity['minecraft:client_entity']['description']
+    description['identifier'] = 'kaleidoscope_world_liquor:thrown_drink'
+    description['materials'] = {'default': 'entity_alphatest_one_sided'}
+    description['render_controllers'] = ['controller.render.kwl.thrown_drink']
+    output[ENTITY] = encoded(configure_entity(entity, [name for name, _ in item_sources]))
+    for name, data in output.items():
+        assert (root / name).read_bytes() == data, ('Current thrown-item source differs', name)
+    return frozenset(output)

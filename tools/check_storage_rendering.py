@@ -56,7 +56,7 @@ def storage_reference_bytes(p):
   layer=layers[0]
   assert layer['previousCommit']==PERFORMANCE_PREVIOUS and layer['reviewedCommit']==PERFORMANCE_REVIEWED
   performance_preimage(name,p.read_bytes(),layer['files'][name])
- return previous_bytes(ROOT,p)
+ return previous_bytes(ROOT,p,current_metadata=True)
 def readjs(p):
  return json.loads(storage_reference_bytes(p).decode().split('=',1)[1].strip().rstrip(';'))
 def compact_preimage(p):
@@ -80,7 +80,7 @@ def object_digest(o):return hashlib.sha256(json.dumps(o,ensure_ascii=False,sort_
 def main():
  from foundation.source_contract import check as check_foundation_sources
  foundation_contract=check_foundation_sources(TAV,ROOT)
- from drink_content_contract import check as check_drink_content, CURRENT_SOURCES
+ from drink_content_contract import check as check_drink_content, CURRENT_SOURCES, bottle_item_sources
  drink_contract=check_drink_content(ROOT)
  # The display owner is checked through current behavior and the original
  # Java method's numerical output, rather than reconstructing older code.
@@ -97,12 +97,17 @@ def main():
   layer=next(x for x in read(ROOT/'data/baseline-reconciliation.json')['reviewedFunctionalDeltaLayers'] if x['release']=='0.1.146')
   _,reviewed_source=performance_sources(name)
   performance_preimage(name,reviewed_source,layer['files'][name])
- # Source ownership moves only for the new lamps and changed cabinet art.
+ # Current authoring owners replace their historical whole-file witnesses.
  # Keep all historical JSON records intact and compare the remaining files
  # against their original inventory below. No old hashes are re-authored.
  from current_author_art import check as check_current_art, planned
  check_current_art()
  current_resources={path.relative_to(ROOT).as_posix() for path in planned()}
+ from thrown_drink_visual import check as check_thrown_drink
+ current_resources.update(check_thrown_drink(ROOT,TAV))
+ from freezer_ingredient_art import shared_geometry_sources
+ current_resources.update(shared_geometry_sources(ROOT))
+ current_resources.update(bottle_item_sources(ROOT))
  current_resources.add('runtime/RP/textures/kaleidoscope_world_liquor/mob_effect/luck.png')
  current_resources.update('runtime/BP/recipes/'+color+'_pendant_lamp.json' for color in ('green','pink'))
  feedback_spec=importlib.util.spec_from_file_location('world_liquor_break_feedback',ROOT/'tools/build_break_feedback.py')
@@ -171,6 +176,7 @@ def main():
  for path,h in break_review['additions'].items():
   if path in feedback_resources:continue
   assert path not in additions,('Duplicate reviewed addition',path);additions[path]=h
+ additions={path:h for path,h in additions.items() if path not in current_resources}
  for path,h in additions.items():assert digest(ROOT/path)==h,('Unreviewed runtime addition',path)
  def historical_digest(p,raw=None):
   name=p.relative_to(ROOT).as_posix()

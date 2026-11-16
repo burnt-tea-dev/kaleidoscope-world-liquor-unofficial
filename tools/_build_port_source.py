@@ -7,6 +7,7 @@ from opencc import OpenCC
 import java_geometry as geo
 from item_names import tooltip_key, tooltip_text, SOURCE_NAMES
 from item_base_tags import load_alcohol_items, base_item_tags
+from item_definitions import item_definition
 from thrown_drink_visual import bottle_item_sources, generate as generate_thrown_drink_visual
 ROOT=Path(__file__).resolve().parents[1];UP=ROOT/'upstream';RT=ROOT/'runtime';BP=RT/'BP';RP=RT/'RP'
 TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=json.loads((ROOT/'package.json').read_text())['version'].split('.');VERSION=list(map(int,VERSION));TAV_VERSION=json.loads((TAV/'runtime/BP/manifest.json').read_text())['header']['version'];cc=OpenCC('s2t')
@@ -106,17 +107,7 @@ def icon(item,javaitem=None,modelinfo=None):
 def item(item,kind='plain',javaitem=None,modelinfo=None):
  short=item.split(':')[1];tex=icon(item,javaitem,modelinfo)
  name_key='item.'+item+'.name'
- c={'minecraft:display_name':{'value':name_key if kind=='bottle' else tooltip_key(name_key)},'minecraft:icon':tex,'minecraft:max_stack_size':16 if kind in ['bottle','cocktail','drink'] else 64}
- tags=base_item_tags(item,kind,java_alcohol)
- if tags:c['minecraft:tags']={'tags':tags}
- if kind in ['bottle','cocktail','drink']:
-  c.update({'minecraft:use_animation':'drink','minecraft:use_modifiers':{'use_duration':1.6,'movement_modifier':.35,'start_using':'if_first'},KT+':drink_effects' if kind=='bottle' else KT+':cocktail_effects' if kind=='cocktail' else NS+':consume':{}})
- elif kind=='block':c['minecraft:block_placer']={'block':item,'replace_block_item':True}
- # Only the owner's explicit Java representatives are creative entry points.
- category=CREATIVE_MENUS.get(item)
- description={'identifier':item}
- if category:description['menu_category']=category
- d={'format_version':'1.26.50','minecraft:item':{'description':description,'components':c}}
+ d=item_definition(item,kind,tex,java_alcohol,CREATIVE_MENUS.get(item))
  write(BP/f'items/{short}.json',d);allitems[item]=d
  for lc in langs:
   texts[lc][name_key]=name(javaitem or item,lc)

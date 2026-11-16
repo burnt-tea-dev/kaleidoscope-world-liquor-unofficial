@@ -157,7 +157,7 @@ jobs:
           python tools/test_pick_block.py 2>&1 | tee ../world-liquor-src/dist/native-pick-tests.log
           node --test tools/effect-bar.test.mjs 2>&1 | tee ../world-liquor-src/dist/effect-bar-tests.tap
           python tools/creative/test_catalog.py 2>&1 | tee ../world-liquor-src/dist/creative-tests.log
-          python tools/creative/catalog.py --peer ../world-liquor-src | tee ../world-liquor-src/dist/creative-catalog.json
+          python tools/creative/catalog.py | tee ../world-liquor-src/dist/creative-catalog.json
       - name: Include matching validation evidence
         working-directory: world-liquor-src
         env:

@@ -74,7 +74,42 @@ def check_documents(content, payload, root=ROOT):
     return {'drinks': len(content), 'source_effect_tables': 'passed', 'storage_descriptors': 'passed', 'registration': 'passed', 'client': False}
 
 
+def bottle_item_sources(root=ROOT):
+    payload = readjs(root/'runtime/BP/scripts/payload.js')
+    return {f"runtime/BP/items/{item.split(':')[1]}.json"
+            for row in payload['content'] if row['kind'] == 'bottle' for item in row['items']}
+
+
+def check_bottle_items(root):
+    from item_definitions import item_definition
+    from item_base_tags import load_alcohol_items
+    from update_mixology_111 import merge_item_tags
+    payload = readjs(root/'runtime/BP/scripts/payload.js')
+    plan = json.loads((root/'data/java-creative-tabs.json').read_text())
+    menus = {entry['bedrock']: {'category': tab['category'], 'group': tab['group']}
+             for tab in plan['tabs'] for entry in tab['entries']
+             if entry.get('bedrock') and not entry.get('unavailable')}
+    changes = {row['item']: row for row in payload.get('itemTagChanges', [])}
+    alcohol = load_alcohol_items(root)
+    for row in payload['content']:
+        if row['kind'] != 'bottle':
+            continue
+        for item in row['items']:
+            short = item.split(':')[1]
+            expected = item_definition(item, 'bottle', 'kwl_'+short, alcohol, menus.get(item))
+            components = expected['minecraft:item']['components']
+            tags = merge_item_tags(components.get('minecraft:tags', {}).get('tags', []), changes.get(item, {}))
+            if tags:
+                components['minecraft:tags'] = {'tags': sorted(tags)}
+            actual = json.loads((root/f'runtime/BP/items/{short}.json').read_text())
+            actual_tags = actual['minecraft:item']['components'].get('minecraft:tags')
+            if actual_tags:
+                actual_tags['tags'] = sorted(actual_tags['tags'])
+            assert actual == expected, ('Current bottle item definition differs', item)
+
+
 def check(root=ROOT):
+    check_bottle_items(root)
     return check_documents(readjs(root / 'runtime/BP/scripts/content.js'), readjs(root / 'runtime/BP/scripts/payload.js'), root)
 
 
