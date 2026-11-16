@@ -5,10 +5,15 @@ from pathlib import Path
 from PIL import Image
 from opencc import OpenCC
 import java_geometry as geo
+from item_names import tooltip_key, tooltip_text, SOURCE_NAMES
+from item_base_tags import load_alcohol_items, base_item_tags
+from thrown_drink_visual import bottle_item_sources, generate as generate_thrown_drink_visual
 ROOT=Path(__file__).resolve().parents[1];UP=ROOT/'upstream';RT=ROOT/'runtime';BP=RT/'BP';RP=RT/'RP'
 TAV=ROOT.parent/'tavern-src';NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern';VERSION=json.loads((ROOT/'package.json').read_text())['version'].split('.');VERSION=list(map(int,VERSION));TAV_VERSION=json.loads((TAV/'runtime/BP/manifest.json').read_text())['header']['version'];cc=OpenCC('s2t')
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+CREATIVE_PLAN=read(ROOT/'data/java-creative-tabs.json')
+CREATIVE_MENUS={entry['bedrock']:{'category':tab['category'],'group':tab['group']} for tab in CREATIVE_PLAN['tabs'] for entry in tab['entries'] if entry.get('bedrock') and not entry.get('unavailable')}
 def js(p,name,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text('export const '+name+' = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n')
 def ident(x):
  return {'minecraft:item_frame':'minecraft:frame','minecraft:magma_block':'minecraft:magma','minecraft:snow_block':'minecraft:snow','minecraft:slime_ball':'minecraft:slime_ball','minecraft:lily_of_the_valley':'minecraft:lily_of_the_valley'}.get(x, NS+':'+x.split(':')[1] if x.startswith(('smc:','kaleidoscope_twilight:')) or (x.startswith(KT+':') and x.endswith('_painting') and x.split(':')[1] in paintings) else x)
@@ -26,7 +31,7 @@ legacy=RP/'models/kwl'
 if legacy.exists():shutil.rmtree(legacy)
 (RP/'models/entity').mkdir(parents=True,exist_ok=True)
 for stale in (RP/'models/entity').glob('kwl_g_*.geo.json'):stale.unlink()
-java_alcohol={x.split(':')[1] for x in read(UP/f'data/{KT}/tags/item/alcohol.json')['values'] if x.startswith(NS+':')}
+java_alcohol=load_alcohol_items(ROOT)
 paintings=['bfxm_painting','bmt_painting','dream_painting','cha_painting','chen_painting','rabbit_painting','ch_painting','qxxy_painting']
 def name(item,lc):
  old=item
@@ -100,20 +105,22 @@ def icon(item,javaitem=None,modelinfo=None):
 
 def item(item,kind='plain',javaitem=None,modelinfo=None):
  short=item.split(':')[1];tex=icon(item,javaitem,modelinfo)
- c={'minecraft:display_name':{'value':'item.'+item+'.name'},'minecraft:icon':tex,'minecraft:max_stack_size':16 if kind in ['bottle','cocktail','drink'] else 64}
- if kind=='bottle' and short.rsplit('_q',1)[0] in java_alcohol:c['minecraft:tags']={'tags':[KT+':alcohol']}
+ name_key='item.'+item+'.name'
+ c={'minecraft:display_name':{'value':name_key if kind=='bottle' else tooltip_key(name_key)},'minecraft:icon':tex,'minecraft:max_stack_size':16 if kind in ['bottle','cocktail','drink'] else 64}
+ tags=base_item_tags(item,kind,java_alcohol)
+ if tags:c['minecraft:tags']={'tags':tags}
  if kind in ['bottle','cocktail','drink']:
   c.update({'minecraft:use_animation':'drink','minecraft:use_modifiers':{'use_duration':1.6,'movement_modifier':.35,'start_using':'if_first'},KT+':drink_effects' if kind=='bottle' else KT+':cocktail_effects' if kind=='cocktail' else NS+':consume':{}})
  elif kind=='block':c['minecraft:block_placer']={'block':item,'replace_block_item':True}
- # Match Tavern's creative inventory: quality variants stay out of the broad
- # equipment list, while mixable drinks and decor share Tavern's groups.
- group=('kaleidoscope_cookery:itemGroup.name.foods' if kind=='food' else KT+':itemGroup.name.'+('cocktails' if kind=='cocktail' else 'wines' if kind=='drink' or kind=='bottle' else 'tavern_decor'))
- category=None if kind=='bottle' and not short.endswith('_q6') else {'category':'equipment','group':group}
+ # Only the owner's explicit Java representatives are creative entry points.
+ category=CREATIVE_MENUS.get(item)
  description={'identifier':item}
  if category:description['menu_category']=category
  d={'format_version':'1.26.50','minecraft:item':{'description':description,'components':c}}
  write(BP/f'items/{short}.json',d);allitems[item]=d
- for lc in langs:texts[lc]['item.'+item+'.name']=name(javaitem or item,lc)
+ for lc in langs:
+  texts[lc][name_key]=name(javaitem or item,lc)
+  if kind!='bottle':texts[lc][tooltip_key(name_key)]=tooltip_text(texts[lc][name_key],lc)
  return d
 
 def block(identifier,mi,kind,states=None,perms=None):
@@ -135,14 +142,14 @@ effectdir=UP/f'data/{NS}/datamap/drink_effect'
 effects={ident(d['item']):d['effects'] for p in effectdir.glob('*.json') for d in [read(p)]}
 for p in (UP/'data/smc/datamap/drink_effect').glob('*.json'):
  d=read(p);effects[ident(d['item'])]=d['effects']
-barrels=list((UP/f'data/{NS}/recipe/barrel').glob('*.json'))
-bottleids=sorted({ident(read(p)['result']['id']) for p in barrels});cocktailids=sorted({ident(read(p)['result']['id']) for p in (UP/f'data/{NS}/recipe/shaker').glob('*.json')})
+bottle_sources=bottle_item_sources(ROOT)
+bottleids=[base for base,_ in bottle_sources];cocktailids=sorted({ident(read(p)['result']['id']) for p in (UP/f'data/{NS}/recipe/shaker').glob('*.json')})
 for rows in effects.values():
  for row in rows:
   for effect in row:effect['effect']=ident(effect['effect'])
 blocked=read(UP/f'data/{KT}/tags/item/cellar_cabinet_blocklist.json')['values']
-for n,base in enumerate(bottleids):
- short=base.split(':')[1];space='smc' if short=='ice_tea' else NS
+for n,(base,java_item) in enumerate(bottle_sources):
+ space,short=java_item.split(':',1)
  state=read(UP/f'assets/{space}/blockstates/{short}.json')['variants']; variants={}
  for k,v in state.items():
   props=dict(x.split('=') for x in k.split(','));variants[int(props['count'])]=v['model']
@@ -215,6 +222,8 @@ for mode in ['holder','cellar_cabinet','tilted_rack','circular_rack','bar_cabine
  rc='controller.render.kwl.'+mode;desc['render_controllers']=[rc];write(RP/f'entity/{actor}.entity.json',rp)
  prop=KT+(':holder_kind' if mode=='holder' else ':storage_kind');index=f"math.clamp(q.property('{prop}') - 1000, 0, {len(bottleids)-1})"
  write(RP/f'render_controllers/{mode}.json',{'format_version':'1.8.0','render_controllers':{rc:{'arrays':{'geometries':{'Array.models':[f'Geometry.kind_{n}' for n in range(len(bottleids))]},'textures':{'Array.textures':[f'Texture.kind_{n}' for n in range(len(bottleids))]}},'geometry':f'Array.models[{index}]','textures':[f'Array.textures[{index}]'],'materials':[{'*':'Material.default'}]}}})
+# Projectiles use the original item sprite rather than the placed bottle model.
+generate_thrown_drink_visual(ROOT, bottle_sources)
 # Preserve original crafting / machine recipes. Source example recipes are not registered content.
 colors={'black':0x000000,'dark_blue':0x0000aa,'dark_green':0x00aa00,'dark_aqua':0x00aaaa,'dark_red':0xaa0000,'dark_purple':0xaa00aa,'gold':0xffaa00,'gray':0xaaaaaa,'dark_gray':0x555555,'blue':0x5555ff,'green':0x55ff55,'aqua':0x55ffff,'red':0xff5555,'light_purple':0xff55ff,'yellow':0xffff55,'white':0xffffff}
 inputtags={};inputcolor={}
@@ -380,14 +389,6 @@ wall['minecraft:block']['components']['minecraft:selection_box']={'origin':[-7,1
 write(BP/'blocks/wall_record.json',wall)
 js(BP/'scripts/wall-record-models.js','RECORD_MODELS',{'minecraft:music_disc_'+s:n for n,s in enumerate(['13','cat','blocks','chirp','far','mall','mellohi','stal','strad','ward','11','wait','otherside','pigstep','5','relic','creator','precipice','creator_music_box'])})
 
-# One curated creative entry per aged drink, in Tavern's existing family groups.
-def group(group_name,icon,ids):return {'group_identifier':{'name':group_name,'icon':icon},'items':sorted(ids)}
-wines=[i for i in allitems if i.endswith('_q6') or i in (NS+':cola',NS+':tonic_water')]
-cocktails=[i for i in allitems if i in cocktailids]
-decor=[i for i in allitems if i not in wines and i not in cocktails and not re.search(r'_q[1-5]$',i) and i.split(':')[1] not in ['liangshan_ice_cone','kita_stuffed_crisp','pochi_pudding','magic_crispy_corner']]
-foods=[i for i in allitems if i.split(':')[1] in ['liangshan_ice_cone','kita_stuffed_crisp','pochi_pudding','magic_crispy_corner']]
-write(BP/'item_catalog/crafting_item_catalog.json',{'format_version':'1.21.90','minecraft:crafting_items_catalog':{'categories':[{'category_name':'equipment','groups':[group(KT+':itemGroup.name.wines',NS+':absolut_vodka_q6',wines),group(KT+':itemGroup.name.cocktails',NS+':around_the_world',cocktails),group(KT+':itemGroup.name.tavern_decor',NS+':oak_bar_cabinet',decor),group('kaleidoscope_cookery:itemGroup.name.foods',NS+':pochi_pudding',foods)]}]}})
-
 # Manifests: independent addon, required Tavern base; no player or HUD overrides.
 u=lambda x:str(uuid.uuid5(uuid.NAMESPACE_URL,'https://github.com/casama233/kaleidoscope-world-liquor-unofficial/'+x))
 for pack in ['BP','RP']:
@@ -400,6 +401,7 @@ for pack in ['BP','RP']:
   title={'en_US':'Kaleidoscope World Liquor (Unofficial)','zh_CN':'森罗酒馆：世界名酒（非官方）','zh_TW':'森羅酒館：世界名酒（非官方）'}[lc]
   desc={'en_US':'Unofficial Bedrock port. Requires Kaleidoscope Tavern (Unofficial). Public test build.','zh_CN':'世界名酒的非官方基岩版移植。需要森罗物语：酒馆（非官方）。公开测试版。','zh_TW':'世界名酒的非官方基岩版移植。需要森羅物語：酒館（非官方）。公開測試版。'}[lc]
   rows=texts[lc] if pack=='RP' else {};rows.update({'pack.name':title+' '+pack,'pack.description':desc,NS+':itemGroup.drinks':title,NS+':itemGroup.furniture':title+' — '+{'en_US':'Furniture','zh_CN':'家具','zh_TW':'家具'}[lc]})
+  if pack=='RP':rows['item.'+NS+'.mod_name']=SOURCE_NAMES[lc]
   (RT/pack/f'texts/{lc}.lang').write_text('\n'.join(k+'='+v.replace('\n','\\n') for k,v in rows.items())+'\n')
   for itemid in allitems:
    if itemid.split(':')[1] in paintings:pass
@@ -418,7 +420,7 @@ print('Recipes',len(recipes),'freezer',len(freezers),'crafting',len(crafts),'sha
 import rebuild_guide
 rebuild_guide.main()
 
-# Keep the authored creative grouping after the legacy Java asset conversion.
+# Project this owner's explicit current Java tab list after asset conversion.
 import subprocess
 subprocess.run([sys.executable,str(TAV/'tools/creative/catalog.py'),'--root',str(ROOT),'--write'],check=True)
 

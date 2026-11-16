@@ -4,7 +4,13 @@ Current source adoption and exact remaining gaps are owned by [the 2026-10-28 re
 
 # World Liquor Java／Bedrock 差距矩陣
 
-## 現行功能、API 與成本重審（2026-11-16，W222 候選）
+## 本輪正常來源交審（2026-11-17，W225）
+
+本機稿採入原已審W223／224來源，包含PR220、222、223、224–228的上述功能hunk，保留已合PR229。這是來源收齊與正常配對，不表示各舊PR已merged，也沒有重新觀察畫面／聲音或宣稱完整Java parity。84個alcohol tag由既有共用item_base_tags及正常updater負責，不新增酒種；單機／網路唱片等原未確認範圍保留。
+
+精確同儕來源與版本從[現行peer宣告](../.github/baseline-integration.json)及manifest查詢；本輪為已交付T231／G280，Core048／SDK0.1.2與OTC0.1.70不改。以下31項是原日期重審歷史，保留原engine／實測／未完邊界，不將其舊版本相依當目前宣告。
+
+## 原功能、API與成本重審歷史（2026-11-16，W222候選）
 
 本節以 main `c5984d46f4df4b120be72f0b7e229922f95509d4` 為起點，重審本矩陣、[BUGS](BUGS.md)、各 `JAVA-*` 來源契約及現行 runtime。下表31項是功能領域，包含已修的歷史取捨、仍缺失的行為及現有未合併PR，不代表31個新bug。2026-11-16核對[作者檔案清單](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-world-liquor/files/all)：維護Forge1.20.1為1.1.13／CF9217901，NeoForge1.21.1為1.1.12／CF9217896；獨立26.1.2為1.1.6／CF9087098。[現有來源記錄](../data/current-author-review-20261028.json)與[資產身份](../data/current-author-assets.json)仍是這些維護檔案的逐項依據；本次未重新下載／反編譯JAR，也不把26分支全體行為當成已移植。
 

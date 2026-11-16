@@ -60,3 +60,18 @@ export function nativeJumpImpulse(velocity,target,{slowFalling=false,lava=false}
  if(lava)return {x:target.x*.5,y:(target.y-velocity.y)*.5+(nativeGravity-sourceGravity)/4,z:target.z*.5};
  return {x:target.x*.91,y:(target.y-velocity.y+nativeGravity-sourceGravity)*.98,z:target.z*.91};
 }
+
+/** Official MC 1.21.1 Player.drop(stack, false): directional, not random toss.
+ * Input rolls are the four nextFloat values in source order. Collision, drag,
+ * pickup delay and Java random-generator identity/state are not reproduced.
+ */
+export function sourcePlayerDropVelocity({yaw,pitch,rolls}){
+ const f=Math.fround,rad=f(Math.PI/180),pitchAngle=f(f(pitch)*rad),yawAngle=f(f(yaw)*rad);
+ const sinPitch=sin(pitchAngle),cosPitch=cos(pitchAngle),sinYaw=sin(yawAngle),cosYaw=cos(yawAngle);
+ const [angleRoll,radiusRoll,upRoll,downRoll]=rolls.map(f),angle=f(angleRoll*f(f(Math.PI)*2)),radius=f(f(.02)*radiusRoll);
+ return {
+  x:f(f(-sinYaw*cosPitch)*f(.3))+Math.cos(angle)*radius,
+  y:f(f(f(-sinPitch*f(.3))+f(.1))+f(f(upRoll-downRoll)*f(.1))),
+  z:f(f(cosYaw*cosPitch)*f(.3))+Math.sin(angle)*radius,
+ };
+}

@@ -3,15 +3,46 @@
 import argparse,json,hashlib,math,sys
 from pathlib import Path
 import zipfile
-import java_geometry as geo
+from item_base_tags import load_alcohol_items, base_item_tags
 
 ROOT=Path(__file__).resolve().parents[1]
 NS='kaleidoscope_world_liquor';KT='kaleidoscope_tavern'
+def merge_item_tags(existing, change):
+    """Apply only this tag delta; unrelated recipe tags must survive."""
+    removed=set(change.get('remove',[]))
+    return list(dict.fromkeys([tag for tag in existing if tag not in removed]+change.get('add',[])))
+
 def write(path,data):
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+
+def generate_item_tags(payload):
+    alcohol_items=load_alcohol_items(ROOT)
+    base_tags={item:base_item_tags(row['base'],row['kind'],alcohol_items)
+               for row in payload['content'] if row['kind']=='bottle' for item in row['items']}
+    changes={change['item']:change for change in payload.get('itemTagChanges',[])}
+    for item in dict.fromkeys([*base_tags,*changes]):
+        if item.startswith(NS+':') and (bp_item:=ROOT/'runtime/BP/items'/f"{item.split(':')[1]}.json").exists():
+            definition=json.loads(bp_item.read_text());components=definition['minecraft:item']['components']
+            existing=components.get('minecraft:tags',{}).get('tags',[])
+            tags=merge_item_tags([*existing,*base_tags.get(item,[])],changes.get(item,{}))
+            if tags!=existing:
+                components.setdefault('minecraft:tags',{})['tags']=tags
+                write(bp_item,definition)
+
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--jar',type=Path,required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser(description=__doc__)
+    source=parser.add_mutually_exclusive_group(required=True)
+    source.add_argument('--jar',type=Path)
+    source.add_argument('--item-tags-only',action='store_true',help='Generate item tags from tracked base tags and current payload deltas only')
+    args=parser.parse_args()
+    if args.item_tags_only:
+        path=ROOT/'runtime/BP/scripts/payload.js'
+        payload=json.loads(path.read_text().split('=',1)[1].strip().rstrip(';'))
+        generate_item_tags(payload)
+        return
+    import java_geometry as geo
+    from item_names import tooltip_key, generate as generate_item_names
     ref=ROOT/'data/java-parity/neoforge-1.1.11'
     with zipfile.ZipFile(args.jar) as archive:
         names=[n for n in archive.namelist() if '/recipe/shaker/' in n and n.endswith('.json')]
@@ -72,9 +103,7 @@ def main():
         if content['kind']=='bottle':
             category=changes.get(content['items'][3],{}).get('add',[])
             if category:content['color']=category[0]
-    for item,change in changes.items():
-        if item.startswith(NS+':') and (bp_item:=ROOT/'runtime/BP/items'/f"{item.split(':')[1]}.json").exists():
-            definition=json.loads(bp_item.read_text());definition['minecraft:item']['components']['minecraft:tags']={'tags':change['add']};write(bp_item,definition)
+    generate_item_tags(payload)
     payload['recipes']=[r for r in payload['recipes'] if r['kind']!='shaker']
     for name,row in sorted(recipes.items()):
         payload['recipes'].append({'id':NS+':shaker/'+name,'kind':'shaker','ingredients':row['ingredients'],'output':{'item':row['result'].get('id',row['result'].get('item'))}})
@@ -112,7 +141,7 @@ def main():
     texture='kwl_kaleidoscope_world_liquor__block__mixology__highball'
     for material in components['minecraft:material_instances'].values():material['texture']=texture
     write(bp/'blocks/cup_highball.json',block)
-    item=json.loads((bp/'items/gin_tonic.json').read_text());item=json.loads(json.dumps(item).replace('gin_tonic','highball'));write(bp/'items/highball.json',item)
+    item=json.loads((bp/'items/gin_tonic.json').read_text());item=json.loads(json.dumps(item).replace('gin_tonic','highball'));item['minecraft:item']['components']['minecraft:display_name']['value']=tooltip_key('item.'+NS+':highball.name');write(bp/'items/highball.json',item)
     import shutil
     icon=rp/'textures/kwl/items/highball.png';icon.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/'upstream/assets'/NS/'textures/item/highball.png',icon)
     for filename,key,value in [('textures/item_texture.json','kwl_highball',{'textures':'textures/kwl/items/highball'}),('textures/terrain_texture.json',texture,{'textures':atlas.relative_to(rp).with_suffix('').as_posix()})]:
@@ -129,5 +158,6 @@ def main():
         for name,_ in [('brown',0),('orange',0),('light_blue',0),('pink',0)]:
             key='color.'+KT+'.'+name;value=source.get(key,{'brown':('Brown','棕色'),'orange':('Orange','橙色'),'light_blue':('Light Blue','浅蓝色'),'pink':('Pink','粉色')}[name][0 if locale=='en_US' else 1]);updates[key]=convert(value) if locale=='zh_TW' else value
         rows=[row for row in rows if row.split('=',1)[0] not in updates];path.write_text('\n'.join(rows)+ '\n'+'\n'.join(key+'='+value for key,value in updates.items())+'\n')
+    generate_item_names(ROOT/'runtime')
     print('Adapted all 18 current source recipes, 4 extended colours, tag reclassification and Highball assets')
 if __name__=='__main__':main()

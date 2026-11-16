@@ -4,8 +4,8 @@
     "description": {
       "identifier": "kaleidoscope_world_liquor:green_pendant_lamp",
       "menu_category": {
-        "category": "construction",
-        "group": "kaleidoscope_tavern:itemGroup.name.lighting"
+        "category": "items",
+        "group": "kaleidoscope_world_liquor:itemGroup.main"
       },
       "states": {
         "kaleidoscope_tavern:facing": [
@@ -69,7 +69,8 @@
       },
       "minecraft:connection_rule": {
         "accepts_connections_from": "none"
-      }
+      },
+      "minecraft:display_name": "senluo.tooltip.tile.kaleidoscope_world_liquor:green_pendant_lamp.name"
     },
     "permutations": [
       {

@@ -4,13 +4,13 @@
     "description": {
       "identifier": "kaleidoscope_world_liquor:bmt_painting",
       "menu_category": {
-        "category": "construction",
-        "group": "kaleidoscope_tavern:itemGroup.name.decoration"
+        "category": "items",
+        "group": "kaleidoscope_tavern:itemGroup.name.tavern_deco"
       }
     },
     "components": {
       "minecraft:display_name": {
-        "value": "item.kaleidoscope_world_liquor:bmt_painting.name"
+        "value": "senluo.tooltip.item.kaleidoscope_world_liquor:bmt_painting.name"
       },
       "minecraft:icon": "kwl_bmt_painting",
       "minecraft:max_stack_size": 64,

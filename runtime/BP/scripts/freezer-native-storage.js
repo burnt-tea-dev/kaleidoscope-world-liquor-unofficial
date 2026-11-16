@@ -8,12 +8,13 @@ const check=(ok,code)=>{if(!ok)throw Error(code);};
 export const NATIVE_ITEM_ENTITY='kaleidoscope_world_liquor:freezer_inputs';
 export const NATIVE_STORAGE_OWNER='kaleidoscope_world_liquor:input_owner';
 export const RECORD_ITEM_PREFIX='kaleidoscope_world_liquor:record_items/';
+export const WALL_RECORD_ITEM_PREFIX='kaleidoscope_world_liquor:wall_record_items/';
 export function nativeStorageAnchor(key){
  if(typeof key!=='string')return;
- const prefix=key.startsWith(RECORD_ITEM_PREFIX)?RECORD_ITEM_PREFIX:'kaleidoscope_world_liquor:storage/';
+ const prefix=key.startsWith(RECORD_ITEM_PREFIX)?RECORD_ITEM_PREFIX:key.startsWith(WALL_RECORD_ITEM_PREFIX)?WALL_RECORD_ITEM_PREFIX:'kaleidoscope_world_liquor:storage/';
  if(!key.startsWith(prefix))return;
  const m=/^(overworld|nether|the_end)\/(-?\d+)_(-?\d+)_(-?\d+)$/.exec(key.slice(prefix.length));
- if(m)return {record:prefix===RECORD_ITEM_PREFIX,dimension:m[1],position:{x:Number(m[2]),y:Number(m[3]),z:Number(m[4])}};
+ if(m)return {record:prefix===RECORD_ITEM_PREFIX||prefix===WALL_RECORD_ITEM_PREFIX,dimension:m[1],position:{x:Number(m[2]),y:Number(m[3]),z:Number(m[4])}};
 }
 const OWNER=NATIVE_STORAGE_OWNER,TOKEN='kaleidoscope_world_liquor:input_token';
 const SIZE=4;

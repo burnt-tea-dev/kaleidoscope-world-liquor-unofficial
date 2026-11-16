@@ -5,12 +5,12 @@
       "identifier": "kaleidoscope_world_liquor:long_island_iced_tea",
       "menu_category": {
         "category": "items",
-        "group": "kaleidoscope_tavern:itemGroup.name.cocktails"
+        "group": "kaleidoscope_world_liquor:itemGroup.main"
       }
     },
     "components": {
       "minecraft:display_name": {
-        "value": "item.kaleidoscope_world_liquor:long_island_iced_tea.name"
+        "value": "senluo.tooltip.item.kaleidoscope_world_liquor:long_island_iced_tea.name"
       },
       "minecraft:icon": "kwl_long_island_iced_tea",
       "minecraft:max_stack_size": 16,

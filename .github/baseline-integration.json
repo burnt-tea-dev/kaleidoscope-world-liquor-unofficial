@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "tavern_commit": "d4213d4322e223b2bf8f6b52cec2558af0a5b54f",
-  "tavern_version": "0.6.221",
+  "tavern_commit": "bb994d75811d733e38815fc186ab0f6debb078c8",
+  "tavern_version": "0.6.231",
   "publication_request": false,
-  "grilling_commit": "7c2d3c0afcb39db314a1f95fa7f0276272b27eb1",
-  "grilling_version": "2.8.238",
+  "grilling_commit": "11bbe1900a2e676cfbc51c92d46944b7a65f2619",
+  "grilling_version": "2.8.280",
   "peer_pins_final": true,
-  "peer_pin_status": "exact_source_t221_g238_pair",
-  "peer_pin_note": "Exact immutable Tavern 0.6.221 classification source; BP/RP UUIDs and SDK retained. This source PR depends on the Tavern source PR. Optional Grilling CI peer remains unchanged. No Native/client or saved-world result is added.",
+  "peer_pin_status": "exact_merged_t231_g280",
+  "peer_pin_note": "Both peer refs are actually merged public main commits; World Liquor delivery still awaits exact-head review and normal CI. No client or family publication is claimed.",
   "predecessor_peer_pins": {
     "tavern_commit": "afae50c054487d131829bacaedd4e0ea749a26c0",
     "tavern_version": "0.6.183",
@@ -15,15 +15,16 @@
     "grilling_version": "2.8.155",
     "world_liquor_source_commit": "897245612512b5453a6d95c1acfaac241027c0bf"
   },
-  "tavern_tree": "8deec4f9af28cac86748ff816fc4c8d72d2be651",
+  "tavern_tree": "87043ed64d45ec231ec4306e5baed4ac7459747a",
   "tavern_source_trees": {
     "BP": {
-      "sha256": "5772b83adf530665b596f63b26f88c68824e7cd97d932f521506fa1dd29a6491",
-      "files": 838
+      "sha256": "ca91e384ac996e3b2fbfef736cbad2b6f5135cfbcde406667df2b5a782c1b459",
+      "files": 840
     },
     "RP": {
-      "sha256": "523594798852f8c1ee7efc39258a6f4ca0bbe0dc94a95578e77beb9d621b6e6b",
-      "files": 3200
+      "sha256": "e47fc1b84aef9275f152810c404b82e9272df2d78450a6036989476fdc66a56e",
+      "files": 3205
     }
-  }
+  },
+  "grilling_tree": "521ecd656d800c97cce9df6fe1ec4653daccdfff"
 }

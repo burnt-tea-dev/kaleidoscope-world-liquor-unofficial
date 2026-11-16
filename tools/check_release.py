@@ -95,7 +95,7 @@ subprocess.run(['node',str(root/'tools/check_guide.mjs')],check=True,cwd=root)
 
 subprocess.run([sys.executable,str(root/'tools/check_storage_rendering.py')],check=True,cwd=root)
 
-# Use the host's shared taxonomy and checks, not an addon-specific grouping engine.
+# The shared converter reads World Liquor's own explicit Java tab plan.
 subprocess.run([sys.executable,str(tav/'tools/creative/catalog.py'),'--root',str(root)],check=True,cwd=root)
 
 subprocess.run([sys.executable,str(tav/'tools/pick_block.py'),'--root',str(root)],check=True)

@@ -5,12 +5,12 @@
       "identifier": "kaleidoscope_world_liquor:pochi_pudding",
       "menu_category": {
         "category": "items",
-        "group": "kaleidoscope_cookery:itemGroup.name.foods"
+        "group": "kaleidoscope_world_liquor:itemGroup.main"
       }
     },
     "components": {
       "minecraft:display_name": {
-        "value": "item.kaleidoscope_world_liquor:pochi_pudding.name"
+        "value": "senluo.tooltip.item.kaleidoscope_world_liquor:pochi_pudding.name"
       },
       "minecraft:icon": "kwl_pochi_pudding",
       "minecraft:max_stack_size": 64,

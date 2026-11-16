@@ -11,13 +11,17 @@ from pathlib import Path
 import tempfile
 
 import java_geometry as java
+from item_names import tooltip_key
 
 ROOT = Path(__file__).resolve().parents[1]
 NS = 'kaleidoscope_world_liquor'
 RP = ROOT / 'runtime/RP'
 BP = ROOT / 'runtime/BP'
 SOURCE = ROOT / 'upstream/assets'
-LIGHTING_MENU = {'category': 'construction', 'group': 'kaleidoscope_tavern:itemGroup.name.lighting'}
+CREATIVE_PLAN = json.loads((ROOT / 'data/java-creative-tabs.json').read_text())
+CREATIVE_MENUS = {entry['bedrock']: {'category': tab['category'], 'group': tab['group']}
+                  for tab in CREATIVE_PLAN['tabs'] for entry in tab['entries']
+                  if entry.get('bedrock') and not entry.get('unavailable')}
 
 
 def read(path):
@@ -106,7 +110,8 @@ def planned():
         block = copy.deepcopy(template)
         data = block['minecraft:block']
         data['description']['identifier'] = NS + ':' + short
-        data['description']['menu_category'] = dict(LIGHTING_MENU)
+        data['description']['menu_category'] = dict(CREATIVE_MENUS[NS + ':' + short])
+        data['components']['minecraft:display_name'] = tooltip_key('tile.' + NS + ':' + short + '.name')
         # The author's item is a generated sprite; do not substitute a 3D held model.
         data['components'].pop('minecraft:item_visual', None)
         data['components']['minecraft:geometry'] = {'identifier': top_id}
@@ -124,8 +129,8 @@ def planned():
         data['components']['kaleidoscope_tavern:natural_break'] = {'drop': NS + ':' + short}
         outputs[BP / 'blocks' / (short + '.json')] = encoded(block)
         item = {'format_version': '1.26.50', 'minecraft:item': {
-            'description': {'identifier': NS + ':' + short, 'menu_category': dict(LIGHTING_MENU)},
-            'components': {'minecraft:display_name': {'value': 'item.' + NS + ':' + short + '.name'},
+            'description': {'identifier': NS + ':' + short, 'menu_category': dict(CREATIVE_MENUS[NS + ':' + short])},
+            'components': {'minecraft:display_name': {'value': tooltip_key('item.' + NS + ':' + short + '.name')},
                            'minecraft:icon': alias, 'minecraft:max_stack_size': 64,
                            'minecraft:block_placer': {'block': NS + ':' + short, 'replace_block_item': True}}}}
         outputs[BP / 'items' / (short + '.json')] = encoded(item)
